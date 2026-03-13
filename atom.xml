@@ -10,19 +10,19 @@
   <rights>All rights reserved 2026, GloamFox</rights>
   <subtitle>暮色之狐</subtitle>
   <title>暮色之狐</title>
-  <updated>2026-03-13T09:39:46.831Z</updated>
+  <updated>2026-03-13T10:26:19.963Z</updated>
   <entry>
     <author>
       <name>GloamFox</name>
     </author>
     <id>https://gloamfox.github.io/2026/03/13/hello-world/</id>
     <link href="https://gloamfox.github.io/2026/03/13/hello-world/"/>
-    <published>2026-03-13T09:39:46.831Z</published>
+    <published>2026-03-13T10:26:19.963Z</published>
     <summary>
       <![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a>]]>
     </summary>
     <title>Hello World</title>
-    <updated>2026-03-13T09:39:46.831Z</updated>
+    <updated>2026-03-13T10:26:19.963Z</updated>
   </entry>
   <entry>
     <author>
@@ -44,6 +44,6 @@
 <p>选中单词：ctrl +]]>
     </summary>
     <title>VS Code 快捷键指南</title>
-    <updated>2026-03-13T09:39:46.831Z</updated>
+    <updated>2026-03-13T10:26:19.963Z</updated>
   </entry>
 </feed>
