@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <author>
+    <name>gloamfox</name>
+  </author>
+  <generator uri="https://hexo.io/">Hexo</generator>
+  <id>https://gloamfox.github.io/</id>
+  <link href="https://gloamfox.github.io/" rel="alternate"/>
+  <link href="https://gloamfox.github.io/atom.xml" rel="self"/>
+  <rights>All rights reserved 2026, gloamfox</rights>
+  <subtitle>暮色之狐</subtitle>
+  <title>暮色之狐</title>
+  <updated>2026-03-13T01:59:50.892Z</updated>
+  <entry>
+    <author>
+      <name>gloamfox</name>
+    </author>
+    <id>https://gloamfox.github.io/2026/03/13/hello-world/</id>
+    <link href="https://gloamfox.github.io/2026/03/13/hello-world/"/>
+    <published>2026-03-13T01:59:50.892Z</published>
+    <summary>
+      <![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a>]]>
+    </summary>
+    <title>Hello World</title>
+    <updated>2026-03-13T01:59:50.892Z</updated>
+  </entry>
+</feed>
