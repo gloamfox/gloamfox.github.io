@@ -15,6 +15,35 @@
     </entry>
     
     
+    
+    <entry>
+      <title>VS Code 快捷键指南</title>
+      <link href="/2025/11/18/11111/"/>
+      <url>/2025/11/18/11111/</url>
+      
+        <content type="html"><![CDATA[<p>打开工程：code + 路径</p><p>打开指定文件：ctrl + p</p><p>打开/关闭终端：ctrl + ` (1左边的按键)</p><p>跳转到行：ctrl + g</p><p>按单词移动光标：ctrl + 左右</p><p>选中单词：ctrl + d （重复按可以多选）</p><p>选中行：ctrl + l （重复按会同时选择下一行）</p><p>移动行：alt + 上下</p><p>格式化代码：ctrl + shift + f</p><p>跳转到定义：f12</p><p>查看当前文件符号：ctrl + shift + o</p><p>剪切/复制当前行：ctrl + x / ctrl + c （什么都不选的时候）</p><p>切换tab：alt+数字</p><p>顺序切换tab：ctrl + pageup / pagedown</p><p>关闭文件：ctrl+w</p><p>关闭所有文件：ctrl + k w （ctrl不松手）</p><p>ctrl+b 打开主侧边栏</p><p>ctrl+shift+e 打开文件管理器</p><p>ctrl+0 焦点聚焦到主侧边栏</p><p>ctrl+1 焦点聚焦到代码编辑器</p><p>ctrl+shift+space 重新出现函数信息提示</p><p>ctrl+\ 添加分屏</p><p>ctrl + d 选中当前内容，连续快捷键会逐个选择下一个内容</p><p>ctrl + shift + L 选择所有找到的查找匹配项</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术教程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> VSCode </tag>
+            
+            <tag> 快捷键 </tag>
+            
+            <tag> 代码编辑 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
   
   
 </search>
