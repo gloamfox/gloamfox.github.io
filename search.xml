@@ -101,35 +101,6 @@
     
     
     <entry>
-      <title>进制转换与数据编码</title>
-      <link href="/2026/03/01/shu-ju-de-biao-shi/"/>
-      <url>/2026/03/01/shu-ju-de-biao-shi/</url>
-      
-        <content type="html"><![CDATA[<h1 id="进制转换"><a href="#进制转换" class="headerlink" title="进制转换"></a>进制转换</h1><h2 id="R进制转十进制"><a href="#R进制转十进制" class="headerlink" title="R进制转十进制"></a>R进制转十进制</h2><p>R进制转十进制使用<strong>按权展开法</strong>，具体操作是将R进制的每一位数值使用$R^K$的形式表示，K表示该位与小数点的距离，当该位位于小数点左边，K表示该位和小数点之间间隔数字的个数，当该位位于小数点右侧，K是负数，其绝对值是该位与小数点之间数字个数加1</p><p>例如：<br>二进制 转 十进制 $$ 10100.01 = 1 \cdot 2^4 + 1 \cdot 2^2 + 1 \cdot 2^{-2} $$<br>七进制 转 十进制 $$ 604.01 = 6\cdot7^2+4\cdot7^0+1\cdot7^{-2} $$</p><h2 id="十进制转R进制"><a href="#十进制转R进制" class="headerlink" title="十进制转R进制"></a>十进制转R进制</h2><p>十进制转R进制使用<strong>短除法</strong><br>例如将94转换成二进制数</p><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">94 ÷ 2 = 47 余 0</span><br><span class="line">47 ÷ 2 = 23 余 1</span><br><span class="line">23 ÷ 2 = 11 余 1</span><br><span class="line">11 ÷ 2 = 5  余 1</span><br><span class="line">5  ÷ 2 = 2  余 1</span><br><span class="line">2  ÷ 2 = 1  余 0</span><br><span class="line">1  ÷ 2 = 0  余 1  </span><br></pre></td></tr></tbody></table></figure><p>将余数从后往前书写就是对应的二进制 1011110</p><h2 id="二进制转八进制"><a href="#二进制转八进制" class="headerlink" title="二进制转八进制"></a>二进制转八进制</h2><p>二进制的 <code>111</code> 表示 八进制的 <code>7</code>，<code>000</code>表示八进制的<code>0</code>，二进制转换成八进制时，将二进制从低到高分为3个一组，高位不足三个的补0，分别进行转换<br>例如10001110转换成8进制为 216</p><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">010 001 110</span><br><span class="line">216</span><br></pre></td></tr></tbody></table></figure><h2 id="二进制转十六进制"><a href="#二进制转十六进制" class="headerlink" title="二进制转十六进制"></a>二进制转十六进制</h2><p>二进制的<code>1111</code>表示 十六进制的 <code>15</code>，<code>0000</code>表示十六进制的<code>0</code>，二进制转换成十六进制时，将二进制从低到高分为4个一组，高位不足三个的补0，分别进行转换，而在十六进制中10-15分别使用A-F进行表示<br>例如 1000 1110 转换成16进制为 8E</p><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1000 1110</span><br><span class="line">8     E</span><br></pre></td></tr></tbody></table></figure><h1 id="数据编码"><a href="#数据编码" class="headerlink" title="数据编码"></a>数据编码</h1><h2 id="原码"><a href="#原码" class="headerlink" title="原码"></a>原码</h2><ul><li>定义：<ul><li>最高位（最左边的一位）为符号位：<code>0</code>&nbsp;表示正数，<code>1</code>&nbsp;表示负数。</li><li>其余位为数值位：表示这个数的绝对值的二进制形式。</li></ul></li><li>示例：<ul><li><code>+5</code>&nbsp;-&gt;&nbsp;<code>0000 0101</code>&nbsp;（符号位0，数值是5）</li><li><code>-5</code>&nbsp;-&gt;&nbsp;<code>1000 0101</code>&nbsp;（符号位1，数值是5）</li></ul></li><li>优点：非常直观，容易理解。</li><li>缺点：<ul><li>存在&nbsp;<code>+0</code>&nbsp;和&nbsp;<code>-0</code>：<code>0000 0000</code>&nbsp;和&nbsp;<code>1000 0000</code>&nbsp;都表示0。这会造成歧义和计算上的麻烦。</li><li>运算复杂：CPU的电路设计会变得复杂。例如，做加法时，必须先判断两个数的符号位。如果符号不同，实际上要做的是减法，并且还要判断结果的符号。这大大降低了计算效率。</li></ul></li></ul><h2 id="反码"><a href="#反码" class="headerlink" title="反码"></a>反码</h2><ul><li><p>定义：</p><ul><li>正数的反码：与其原码相同</li><li>负数的反码：将其对应正数的原码按位取反（包括符号位，但结果依然是1表示负）。</li></ul></li><li><p>示例：</p><ul><li><code>+5</code>&nbsp;的原码是&nbsp;<code>0000 0101</code>，所以它的反码也是&nbsp;<code>0000 0101</code></li><li><code>-5</code>&nbsp;的反码：先取&nbsp;<code>+5</code>&nbsp;的原码&nbsp;<code>0000 0101</code>，然后所有位按位取反（0变1，1变0），得到&nbsp;<code>1111 1010</code></li></ul></li><li><p>优点：引入反码后，减法可以用加法来实现。因为&nbsp;<code>X - Y</code>&nbsp;等价于&nbsp;<code>X + (-Y)</code></p></li><li><p>缺点：</p><ul><li>仍然存在&nbsp;<code>+0</code>&nbsp;和&nbsp;<code>-0</code>**：<ul><li><code>+0</code>&nbsp;的反码：<code>0000 0000</code></li><li><code>-0</code>&nbsp;的反码：<code>1111 1111</code></li></ul></li><li>计算循环进位：用反码进行运算时，如果最高位有进位，需要把这个进位“循环”加到结果的最低位（称为“循环进位”或“端回进位”），电路实现仍然不够优雅</li></ul></li></ul><p>反码的核心贡献是：<strong>它首次实现了“将减法运算转换为加法运算”</strong>，从而简化了计算机内部运算器的设计。</p><h2 id="补码"><a href="#补码" class="headerlink" title="补码"></a>补码</h2><ul><li>定义：<ul><li>正数的补码：与其原码相同。</li><li>负数的补码：将其对应正数的原码按位取反后，再加1</li></ul></li><li>示例（8位）：<ul><li><ul><li><code>+5</code>&nbsp;的补码：<code>0000 0101</code>&nbsp;(和原码一样)</li></ul></li><li><code>-5</code>&nbsp;的补码：<ol><li>取&nbsp;<code>+5</code>&nbsp;的原码&nbsp;<code>0000 0101</code></li><li>按位取反得到&nbsp;<code>1111 1010</code>&nbsp;(这一步得到的是反码)</li><li>再加1，得到&nbsp;<code>1111 1011</code></li></ol></li></ul></li><li>核心优点：<ol><li>唯一的0：<code>0</code>&nbsp;的补码只有一种表示：<code>0000 0000</code>。计算&nbsp;<code>-0</code>（即对&nbsp;<code>0000 0000</code>&nbsp;操作）：取反&nbsp;<code>1111 1111</code>，加1后变成&nbsp;<code>(1)0000 0000</code>，最高位1溢出，剩下&nbsp;<code>0000 0000</code>，仍然是0。</li><li>无缝的加减法：可以将减法统一用加法来实现，<strong>不需要任何额外的判断和循环进位</strong>。CPU只需要设计一个加法器电路就可以同时处理加法和减法，极大地简化了硬件设计。</li><li>表示范围更合理：对于n位二进制，补码能表示的范围是&nbsp;<strong>[-2ⁿ⁻¹, 2ⁿ⁻¹ - 1]</strong>。例如8位补码的范围是&nbsp;<code>-128</code>&nbsp;到&nbsp;<code>+127</code>。比原码和反码的&nbsp;<code>-127</code>&nbsp;到&nbsp;<code>+127</code>&nbsp;多表示了一个数 (<code>-128</code>)。</li></ol></li></ul><h2 id="移码"><a href="#移码" class="headerlink" title="移码"></a>移码</h2><ul><li>定义：<ul><li>在补码的基础上，将符号位取反<ul><li>更通用的定义是：对一个数&nbsp;<code>X</code>，将其加上一个固定的偏移值&nbsp;<code>Offset</code>（通常是&nbsp;<code>2ⁿ⁻¹</code>&nbsp;或&nbsp;<code>2ⁿ⁻¹ - 1</code>），然后再用二进制表示。</li></ul></li></ul></li><li>示例（8位，偏移量 Offset = 127）<ul><li><code>+5</code>：其补码是&nbsp;<code>0000 0101</code>。加上偏移量&nbsp;<code>127</code>&nbsp;后是&nbsp;<code>132</code>，<code>132</code>&nbsp;的二进制是&nbsp;<code>1000 0100</code>。</li><li><code>-5</code>：其补码是&nbsp;<code>1111 1011</code>。加上偏移量&nbsp;<code>127</code>&nbsp;后是&nbsp;<code>122</code>，<code>122</code>&nbsp;的二进制是&nbsp;<code>0111 1010</code>。<br>  (如果采用“符号位取反”法：<code>+5</code>的补码是<code>0000 0101</code>，符号位取反得<code>1000 0101</code>；<code>-5</code>的补码是<code>1111 1011</code>，符号位取反得<code>0111 1011</code>。这种方法的结果与标准移码定义通常差1，但比较大小的特性一致)</li></ul></li><li>核心优点：<br>   便于比较：移码表示的所有数（正、负、零），其二进制的大小关系与它所代表的真值的大小关系是完全一致的。计算机可以直接用比较无符号整数的方式来比较移码的大小，速度极快。这对于浮点数运算中判断指数大小至关重要。</li></ul><h2 id="数值表示范围"><a href="#数值表示范围" class="headerlink" title="数值表示范围"></a>数值表示范围</h2><table><thead><tr><th align="center">码制</th><th align="center">定点整数</th><th align="center">定点小数</th></tr></thead><tbody><tr><td align="center">原码</td><td align="center">$-(2^{n-1}-1)$ ~ $(2^{n-1}-1)$</td><td align="center">$-(1-2^{-(n-1)})$ ~ $(1-2^{-(n-1)})$</td></tr><tr><td align="center">反码</td><td align="center">$-(2^{n-1}-1)$ ~ $(2^{n-1}-1)$</td><td align="center">$-(1-2^{-(n-1)})$ ~ $(1-2^{-(n-1)})$</td></tr><tr><td align="center">补码</td><td align="center">$-2^{n-1}$ ~ $(2^{n-1}-1)$</td><td align="center">-1 ~ $(1-2^{-(n-1)})$</td></tr><tr><td align="center">移码</td><td align="center">$-2^{n-1}$ ~ $(2^{n-1}-1)$</td><td align="center">-1 ~ $(1-2^{-(n-1)})$</td></tr></tbody></table><h1 id="浮点数的运算"><a href="#浮点数的运算" class="headerlink" title="浮点数的运算"></a>浮点数的运算</h1><h2 id="浮点数表示"><a href="#浮点数表示" class="headerlink" title="浮点数表示"></a>浮点数表示</h2><p>计算机中通常使用科学计数法的二进制实现，可以在固定长度的存储空间中表示极大范围、不同精度的实数。<br>浮点数表示：$N = 尾数 \cdot 基数 ^ {指数}$<br>例如 $3.14 \times 10^3$ </p><ul><li>尾数：3.14</li><li>基数：10</li><li>指数：3</li></ul><h2 id="运算过程"><a href="#运算过程" class="headerlink" title="运算过程"></a>运算过程</h2><p>例如 $3.14 \times 10^3 + 1.2 \times 10^5$ </p><ul><li>对阶，将两个数据的指数转换成相同的，小的往大的对<ul><li>$0.0314 \times 10^5 + 1.2 \times 10^5$</li></ul></li><li>尾数计算<ul><li>$0.0314 + 1.2 = 1.2314$</li></ul></li><li>结果格式化<ul><li>$1.2314 \times 10^5$</li></ul></li></ul><h2 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h2><ol><li>尾数用补码，阶码用移码</li><li>阶码的位数决定数的表示范围，位数越多范围越大</li><li>尾数的位数决定数的有效精度，位数越多精度越大</li><li>对阶时，小数向大数看齐</li><li>对阶是通过较小数的尾数右移实现的</li></ol>]]></content>
-      
-      
-      <categories>
-          
-          <category> 计算机基础 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 进制转换 </tag>
-            
-            <tag> 数据编码 </tag>
-            
-            <tag> 浮点数运算 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>计算机组成原理</title>
       <link href="/2026/03/01/ji-suan-ji-jie-gou/"/>
       <url>/2026/03/01/ji-suan-ji-jie-gou/</url>
@@ -151,6 +122,35 @@
             <tag> 冯·诺依曼 </tag>
             
             <tag> Flynn分类 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>进制转换与数据编码</title>
+      <link href="/2026/03/01/shu-ju-de-biao-shi/"/>
+      <url>/2026/03/01/shu-ju-de-biao-shi/</url>
+      
+        <content type="html"><![CDATA[<h1 id="进制转换"><a href="#进制转换" class="headerlink" title="进制转换"></a>进制转换</h1><h2 id="R进制转十进制"><a href="#R进制转十进制" class="headerlink" title="R进制转十进制"></a>R进制转十进制</h2><p>R进制转十进制使用<strong>按权展开法</strong>，具体操作是将R进制的每一位数值使用$R^K$的形式表示，K表示该位与小数点的距离，当该位位于小数点左边，K表示该位和小数点之间间隔数字的个数，当该位位于小数点右侧，K是负数，其绝对值是该位与小数点之间数字个数加1</p><p>例如：<br>二进制 转 十进制 $$ 10100.01 = 1 \cdot 2^4 + 1 \cdot 2^2 + 1 \cdot 2^{-2} $$<br>七进制 转 十进制 $$ 604.01 = 6\cdot7^2+4\cdot7^0+1\cdot7^{-2} $$</p><h2 id="十进制转R进制"><a href="#十进制转R进制" class="headerlink" title="十进制转R进制"></a>十进制转R进制</h2><p>十进制转R进制使用<strong>短除法</strong><br>例如将94转换成二进制数</p><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">94 ÷ 2 = 47 余 0</span><br><span class="line">47 ÷ 2 = 23 余 1</span><br><span class="line">23 ÷ 2 = 11 余 1</span><br><span class="line">11 ÷ 2 = 5  余 1</span><br><span class="line">5  ÷ 2 = 2  余 1</span><br><span class="line">2  ÷ 2 = 1  余 0</span><br><span class="line">1  ÷ 2 = 0  余 1  </span><br></pre></td></tr></tbody></table></figure><p>将余数从后往前书写就是对应的二进制 1011110</p><h2 id="二进制转八进制"><a href="#二进制转八进制" class="headerlink" title="二进制转八进制"></a>二进制转八进制</h2><p>二进制的 <code>111</code> 表示 八进制的 <code>7</code>，<code>000</code>表示八进制的<code>0</code>，二进制转换成八进制时，将二进制从低到高分为3个一组，高位不足三个的补0，分别进行转换<br>例如10001110转换成8进制为 216</p><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">010 001 110</span><br><span class="line">216</span><br></pre></td></tr></tbody></table></figure><h2 id="二进制转十六进制"><a href="#二进制转十六进制" class="headerlink" title="二进制转十六进制"></a>二进制转十六进制</h2><p>二进制的<code>1111</code>表示 十六进制的 <code>15</code>，<code>0000</code>表示十六进制的<code>0</code>，二进制转换成十六进制时，将二进制从低到高分为4个一组，高位不足三个的补0，分别进行转换，而在十六进制中10-15分别使用A-F进行表示<br>例如 1000 1110 转换成16进制为 8E</p><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1000 1110</span><br><span class="line">8     E</span><br></pre></td></tr></tbody></table></figure><h1 id="数据编码"><a href="#数据编码" class="headerlink" title="数据编码"></a>数据编码</h1><h2 id="原码"><a href="#原码" class="headerlink" title="原码"></a>原码</h2><ul><li>定义：<ul><li>最高位（最左边的一位）为符号位：<code>0</code>&nbsp;表示正数，<code>1</code>&nbsp;表示负数。</li><li>其余位为数值位：表示这个数的绝对值的二进制形式。</li></ul></li><li>示例：<ul><li><code>+5</code>&nbsp;-&gt;&nbsp;<code>0000 0101</code>&nbsp;（符号位0，数值是5）</li><li><code>-5</code>&nbsp;-&gt;&nbsp;<code>1000 0101</code>&nbsp;（符号位1，数值是5）</li></ul></li><li>优点：非常直观，容易理解。</li><li>缺点：<ul><li>存在&nbsp;<code>+0</code>&nbsp;和&nbsp;<code>-0</code>：<code>0000 0000</code>&nbsp;和&nbsp;<code>1000 0000</code>&nbsp;都表示0。这会造成歧义和计算上的麻烦。</li><li>运算复杂：CPU的电路设计会变得复杂。例如，做加法时，必须先判断两个数的符号位。如果符号不同，实际上要做的是减法，并且还要判断结果的符号。这大大降低了计算效率。</li></ul></li></ul><h2 id="反码"><a href="#反码" class="headerlink" title="反码"></a>反码</h2><ul><li><p>定义：</p><ul><li>正数的反码：与其原码相同</li><li>负数的反码：将其对应正数的原码按位取反（包括符号位，但结果依然是1表示负）。</li></ul></li><li><p>示例：</p><ul><li><code>+5</code>&nbsp;的原码是&nbsp;<code>0000 0101</code>，所以它的反码也是&nbsp;<code>0000 0101</code></li><li><code>-5</code>&nbsp;的反码：先取&nbsp;<code>+5</code>&nbsp;的原码&nbsp;<code>0000 0101</code>，然后所有位按位取反（0变1，1变0），得到&nbsp;<code>1111 1010</code></li></ul></li><li><p>优点：引入反码后，减法可以用加法来实现。因为&nbsp;<code>X - Y</code>&nbsp;等价于&nbsp;<code>X + (-Y)</code></p></li><li><p>缺点：</p><ul><li>仍然存在&nbsp;<code>+0</code>&nbsp;和&nbsp;<code>-0</code>**：<ul><li><code>+0</code>&nbsp;的反码：<code>0000 0000</code></li><li><code>-0</code>&nbsp;的反码：<code>1111 1111</code></li></ul></li><li>计算循环进位：用反码进行运算时，如果最高位有进位，需要把这个进位“循环”加到结果的最低位（称为“循环进位”或“端回进位”），电路实现仍然不够优雅</li></ul></li></ul><p>反码的核心贡献是：<strong>它首次实现了“将减法运算转换为加法运算”</strong>，从而简化了计算机内部运算器的设计。</p><h2 id="补码"><a href="#补码" class="headerlink" title="补码"></a>补码</h2><ul><li>定义：<ul><li>正数的补码：与其原码相同。</li><li>负数的补码：将其对应正数的原码按位取反后，再加1</li></ul></li><li>示例（8位）：<ul><li><ul><li><code>+5</code>&nbsp;的补码：<code>0000 0101</code>&nbsp;(和原码一样)</li></ul></li><li><code>-5</code>&nbsp;的补码：<ol><li>取&nbsp;<code>+5</code>&nbsp;的原码&nbsp;<code>0000 0101</code></li><li>按位取反得到&nbsp;<code>1111 1010</code>&nbsp;(这一步得到的是反码)</li><li>再加1，得到&nbsp;<code>1111 1011</code></li></ol></li></ul></li><li>核心优点：<ol><li>唯一的0：<code>0</code>&nbsp;的补码只有一种表示：<code>0000 0000</code>。计算&nbsp;<code>-0</code>（即对&nbsp;<code>0000 0000</code>&nbsp;操作）：取反&nbsp;<code>1111 1111</code>，加1后变成&nbsp;<code>(1)0000 0000</code>，最高位1溢出，剩下&nbsp;<code>0000 0000</code>，仍然是0。</li><li>无缝的加减法：可以将减法统一用加法来实现，<strong>不需要任何额外的判断和循环进位</strong>。CPU只需要设计一个加法器电路就可以同时处理加法和减法，极大地简化了硬件设计。</li><li>表示范围更合理：对于n位二进制，补码能表示的范围是&nbsp;<strong>[-2ⁿ⁻¹, 2ⁿ⁻¹ - 1]</strong>。例如8位补码的范围是&nbsp;<code>-128</code>&nbsp;到&nbsp;<code>+127</code>。比原码和反码的&nbsp;<code>-127</code>&nbsp;到&nbsp;<code>+127</code>&nbsp;多表示了一个数 (<code>-128</code>)。</li></ol></li></ul><h2 id="移码"><a href="#移码" class="headerlink" title="移码"></a>移码</h2><ul><li>定义：<ul><li>在补码的基础上，将符号位取反<ul><li>更通用的定义是：对一个数&nbsp;<code>X</code>，将其加上一个固定的偏移值&nbsp;<code>Offset</code>（通常是&nbsp;<code>2ⁿ⁻¹</code>&nbsp;或&nbsp;<code>2ⁿ⁻¹ - 1</code>），然后再用二进制表示。</li></ul></li></ul></li><li>示例（8位，偏移量 Offset = 127）<ul><li><code>+5</code>：其补码是&nbsp;<code>0000 0101</code>。加上偏移量&nbsp;<code>127</code>&nbsp;后是&nbsp;<code>132</code>，<code>132</code>&nbsp;的二进制是&nbsp;<code>1000 0100</code>。</li><li><code>-5</code>：其补码是&nbsp;<code>1111 1011</code>。加上偏移量&nbsp;<code>127</code>&nbsp;后是&nbsp;<code>122</code>，<code>122</code>&nbsp;的二进制是&nbsp;<code>0111 1010</code>。<br>  (如果采用“符号位取反”法：<code>+5</code>的补码是<code>0000 0101</code>，符号位取反得<code>1000 0101</code>；<code>-5</code>的补码是<code>1111 1011</code>，符号位取反得<code>0111 1011</code>。这种方法的结果与标准移码定义通常差1，但比较大小的特性一致)</li></ul></li><li>核心优点：<br>   便于比较：移码表示的所有数（正、负、零），其二进制的大小关系与它所代表的真值的大小关系是完全一致的。计算机可以直接用比较无符号整数的方式来比较移码的大小，速度极快。这对于浮点数运算中判断指数大小至关重要。</li></ul><h2 id="数值表示范围"><a href="#数值表示范围" class="headerlink" title="数值表示范围"></a>数值表示范围</h2><table><thead><tr><th align="center">码制</th><th align="center">定点整数</th><th align="center">定点小数</th></tr></thead><tbody><tr><td align="center">原码</td><td align="center">$-(2^{n-1}-1)$ ~ $(2^{n-1}-1)$</td><td align="center">$-(1-2^{-(n-1)})$ ~ $(1-2^{-(n-1)})$</td></tr><tr><td align="center">反码</td><td align="center">$-(2^{n-1}-1)$ ~ $(2^{n-1}-1)$</td><td align="center">$-(1-2^{-(n-1)})$ ~ $(1-2^{-(n-1)})$</td></tr><tr><td align="center">补码</td><td align="center">$-2^{n-1}$ ~ $(2^{n-1}-1)$</td><td align="center">-1 ~ $(1-2^{-(n-1)})$</td></tr><tr><td align="center">移码</td><td align="center">$-2^{n-1}$ ~ $(2^{n-1}-1)$</td><td align="center">-1 ~ $(1-2^{-(n-1)})$</td></tr></tbody></table><h1 id="浮点数的运算"><a href="#浮点数的运算" class="headerlink" title="浮点数的运算"></a>浮点数的运算</h1><h2 id="浮点数表示"><a href="#浮点数表示" class="headerlink" title="浮点数表示"></a>浮点数表示</h2><p>计算机中通常使用科学计数法的二进制实现，可以在固定长度的存储空间中表示极大范围、不同精度的实数。<br>浮点数表示：$N = 尾数 \cdot 基数 ^ {指数}$<br>例如 $3.14 \times 10^3$ </p><ul><li>尾数：3.14</li><li>基数：10</li><li>指数：3</li></ul><h2 id="运算过程"><a href="#运算过程" class="headerlink" title="运算过程"></a>运算过程</h2><p>例如 $3.14 \times 10^3 + 1.2 \times 10^5$ </p><ul><li>对阶，将两个数据的指数转换成相同的，小的往大的对<ul><li>$0.0314 \times 10^5 + 1.2 \times 10^5$</li></ul></li><li>尾数计算<ul><li>$0.0314 + 1.2 = 1.2314$</li></ul></li><li>结果格式化<ul><li>$1.2314 \times 10^5$</li></ul></li></ul><h2 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h2><ol><li>尾数用补码，阶码用移码</li><li>阶码的位数决定数的表示范围，位数越多范围越大</li><li>尾数的位数决定数的有效精度，位数越多精度越大</li><li>对阶时，小数向大数看齐</li><li>对阶是通过较小数的尾数右移实现的</li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 计算机基础 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 进制转换 </tag>
+            
+            <tag> 数据编码 </tag>
+            
+            <tag> 浮点数运算 </tag>
             
         </tags>
       
@@ -304,35 +304,6 @@
     
     
     <entry>
-      <title>VS Code 快捷键指南</title>
-      <link href="/2025/11/18/vs-code-kuai-jie-jian-zhi-nan/"/>
-      <url>/2025/11/18/vs-code-kuai-jie-jian-zhi-nan/</url>
-      
-        <content type="html"><![CDATA[<p>打开工程：code + 路径</p><p>打开指定文件：ctrl + p</p><p>打开/关闭终端：ctrl + ` (1左边的按键)</p><p>跳转到行：ctrl + g</p><p>按单词移动光标：ctrl + 左右</p><p>选中单词：ctrl + d （重复按可以多选）</p><p>选中行：ctrl + l （重复按会同时选择下一行）</p><p>移动行：alt + 上下</p><p>格式化代码：ctrl + shift + f</p><p>跳转到定义：f12</p><p>查看当前文件符号：ctrl + shift + o</p><p>剪切/复制当前行：ctrl + x / ctrl + c （什么都不选的时候）</p><p>切换tab：alt+数字</p><p>顺序切换tab：ctrl + pageup / pagedown</p><p>关闭文件：ctrl+w</p><p>关闭所有文件：ctrl + k w （ctrl不松手）</p><p>ctrl+b 打开主侧边栏</p><p>ctrl+shift+e 打开文件管理器</p><p>ctrl+0 焦点聚焦到主侧边栏</p><p>ctrl+1 焦点聚焦到代码编辑器</p><p>ctrl+shift+space 重新出现函数信息提示</p><p>ctrl+\ 添加分屏</p><p>ctrl + d 选中当前内容，连续快捷键会逐个选择下一个内容</p><p>ctrl + shift + L 选择所有找到的查找匹配项</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 技术教程 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> VSCode </tag>
-            
-            <tag> 快捷键 </tag>
-            
-            <tag> 代码编辑 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>VSCode中Python开发插件</title>
       <link href="/2025/11/18/vscode-chang-yong-python-cha-jian/"/>
       <url>/2025/11/18/vscode-chang-yong-python-cha-jian/</url>
@@ -354,6 +325,35 @@
             <tag> Pylance </tag>
             
             <tag> IntelliCode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>VS Code 快捷键指南</title>
+      <link href="/2025/11/18/vs-code-kuai-jie-jian-zhi-nan/"/>
+      <url>/2025/11/18/vs-code-kuai-jie-jian-zhi-nan/</url>
+      
+        <content type="html"><![CDATA[<p>打开工程：code + 路径</p><p>打开指定文件：ctrl + p</p><p>打开/关闭终端：ctrl + ` (1左边的按键)</p><p>跳转到行：ctrl + g</p><p>按单词移动光标：ctrl + 左右</p><p>选中单词：ctrl + d （重复按可以多选）</p><p>选中行：ctrl + l （重复按会同时选择下一行）</p><p>移动行：alt + 上下</p><p>格式化代码：ctrl + shift + f</p><p>跳转到定义：f12</p><p>查看当前文件符号：ctrl + shift + o</p><p>剪切/复制当前行：ctrl + x / ctrl + c （什么都不选的时候）</p><p>切换tab：alt+数字</p><p>顺序切换tab：ctrl + pageup / pagedown</p><p>关闭文件：ctrl+w</p><p>关闭所有文件：ctrl + k w （ctrl不松手）</p><p>ctrl+b 打开主侧边栏</p><p>ctrl+shift+e 打开文件管理器</p><p>ctrl+0 焦点聚焦到主侧边栏</p><p>ctrl+1 焦点聚焦到代码编辑器</p><p>ctrl+shift+space 重新出现函数信息提示</p><p>ctrl+\ 添加分屏</p><p>ctrl + d 选中当前内容，连续快捷键会逐个选择下一个内容</p><p>ctrl + shift + L 选择所有找到的查找匹配项</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术教程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> VSCode </tag>
+            
+            <tag> 快捷键 </tag>
+            
+            <tag> 代码编辑 </tag>
             
         </tags>
       
