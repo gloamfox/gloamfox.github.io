@@ -498,7 +498,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    546
+                    540
                 </div>
                 
 
@@ -545,7 +545,7 @@
 <h2 id="其他命令"><a href="#其他命令" class="headerlink" title="其他命令"></a>其他命令</h2><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvs --<span class="built_in">help</span> // 查看其他命令的帮助</span><br></pre></td></tr></tbody></table></figure>
 
 
-<h2 id="命令手册"><a href="#命令手册" class="headerlink" title="命令手册"></a>命令手册</h2><p>![[file-1772095367895.png|file-1772095367895.png]]</p>
+<h2 id="命令手册"><a href="#命令手册" class="headerlink" title="命令手册"></a>命令手册</h2><p><img src="/./Assets/%E4%BD%BF%E7%94%A8nvs%E5%B7%A5%E5%85%B7%E5%88%87%E6%8D%A2node%E7%89%88%E6%9C%AC/file-1772095367895.png" alt="file-1772095367895.png"></p>
 <p>一个具体版本或者版本过滤词由一个完整的或者部分的语义版本号或者版本标签（”lts”, “latest”, “Argon”等）组成，也可以是远端的版本名称，或者使用斜杠分隔来指定架构版本。例如：”lts”, “4.6.0”, “6/x86”, “node/6.7/x64”等。</p>
 <h1 id="实用技巧"><a href="#实用技巧" class="headerlink" title="实用技巧"></a>实用技巧</h1><p>如果你不想每次都手动切换 node 版本，希望根据项目配置来，那么你可以把&nbsp;<code>nvs use 16</code>这样的命令，写到项目的 pre 中。<code>package.json</code>示例如下：</p>
 <figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">{</span><br><span class="line">  "scripts": {</span><br><span class="line">    "predev": "nvs use 16",</span><br><span class="line">    "dev": "vue-cli-service serve"</span><br><span class="line">    "prebuild": "nvs use 16",</span><br><span class="line">    "dev": "vue-cli-service build"</span><br><span class="line">  }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
