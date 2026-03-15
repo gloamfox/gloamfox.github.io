@@ -162,6 +162,35 @@
     
     
     <entry>
+      <title>Typora安装与配置教程</title>
+      <link href="/2025/11/18/typora-an-zhuang-pei-zhi/"/>
+      <url>/2025/11/18/typora-an-zhuang-pei-zhi/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Typora安装注册"><a href="#Typora安装注册" class="headerlink" title="Typora安装注册"></a>Typora安装注册</h2><ol><li>先安装 typora-setup-x64-1.2.4.exe，并记录安装路径，<a href="https://wwnu.lanzouy.com/ieCCU0fqgzgj">下载地址</a></li><li>将 app.asar 替换到安装路径下的resources文件夹，替换掉app.asar文件</li><li>重启typora！！！！！！</li><li>输入邮箱、注册码，邮箱随便输入，注册码：E8Q9Y5-KXMTL5-7578SL-4S5XKS</li></ol><p>仅供学习，请在下载24小时之内删除，请支持正版</p><h2 id="图片上传"><a href="#图片上传" class="headerlink" title="图片上传"></a>图片上传</h2><p>文件 -&gt; 偏好设置中设置图像相关配置，上传服务我使用的是PicGo-Core（command line），其实和PicGo-Core(app)一样，主要是我不想托盘中多出一个程序放在那里，看着不舒服</p><p><img src="https://sh-prod-mall-bucket.oss-cn-shanghai.aliyuncs.com/imgupload/blog/image-20230502155900159.png" alt="image-20230502155900159|1178x904"></p><p><img src="https://sh-prod-mall-bucket.oss-cn-shanghai.aliyuncs.com/imgupload/blog/image-20230502160633862.png" alt="image-20230502160633862|1178x904"></p><p>点击下载或更新，下载更新完成后，点击打开配置文件，配置图床的地址，有些版本能直接打开，有些无反应，需要手动进到指定的目录进行修改<code>config.json</code>文件</p><p>picgo 的默认配置文件为<code>~/.picgo/config.json</code>。其中<code>~</code>为用户目录。不同系统的用户目录不太一样。</p><p>linux 和 macOS 均为<code>~/.picgo/config.json</code>。</p><p>windows 则为<code>C:\Users\你的用户名\.picgo\config.json</code></p><p>以下为修改图床使用阿里云OSS的配置</p><p><img src="https://sh-prod-mall-bucket.oss-cn-shanghai.aliyuncs.com/imgupload/blog/image-20230502161235469.png" alt="image-20230502161235469"></p><p>更多PicGo-Core配置文件参考：<a href="https://picgo.github.io/PicGo-Core-Doc/zh/guide/config.html">配置文件 | PicGo-Core</a></p><p>配置完成后，在Typora中进行验证</p><p><img src="https://sh-prod-mall-bucket.oss-cn-shanghai.aliyuncs.com/imgupload/blog/image-20230502161438558.png" alt="image-20230502161438558"></p><p><img src="https://sh-prod-mall-bucket.oss-cn-shanghai.aliyuncs.com/imgupload/blog/image-20230502161446114.png" alt="image-20230502161446114"></p><h2 id="主题优化"><a href="#主题优化" class="headerlink" title="主题优化"></a>主题优化</h2><p>推荐一款作者在用的主题<strong>Drake</strong>，该款主题字体略微有些小，因为在此基础上做了略微更改，把字体改大</p><p><a href="https://github.com/liangjingkanji/DrakeTyporaTheme">GitHub - liangjingkanji/DrakeTyporaTheme: 十二种主题风格 - Material Google JetBrains Vue Juejin Purple Ayu Dark</a></p><p>打开主题文件夹，并将下载的Drake主题文件解压后复制到该文件夹中，重启Typora</p><p><img src="https://sh-prod-mall-bucket.oss-cn-shanghai.aliyuncs.com/imgupload/blog/image-20230502163038894.png" alt="image-20230502163038894"></p><p>工具栏中，主题选择Drake主题</p><p><img src="https://sh-prod-mall-bucket.oss-cn-shanghai.aliyuncs.com/imgupload/blog/image-20230502163309817.png" alt="image-20230502163309817"></p><p>Drake主题默认文字太小，需要将文字大小调大一些</p><p><a href="https://github.com/liangjingkanji/DrakeTyporaTheme/issues/83">修改字体大小 · Issue #83 · liangjingkanji/DrakeTyporaTheme · GitHub</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 软件教程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Typora </tag>
+            
+            <tag> 软件安装 </tag>
+            
+            <tag> 主题优化 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>VS Code 快捷键指南</title>
       <link href="/2025/11/18/vs-code-kuai-jie-jian-zhi-nan/"/>
       <url>/2025/11/18/vs-code-kuai-jie-jian-zhi-nan/</url>
@@ -212,35 +241,6 @@
             <tag> Pylance </tag>
             
             <tag> IntelliCode </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Typora安装与配置教程</title>
-      <link href="/2025/11/18/typora-an-zhuang-pei-zhi/"/>
-      <url>/2025/11/18/typora-an-zhuang-pei-zhi/</url>
-      
-        <content type="html"><![CDATA[<h2 id="Typora安装注册"><a href="#Typora安装注册" class="headerlink" title="Typora安装注册"></a>Typora安装注册</h2><ol><li>先安装 typora-setup-x64-1.2.4.exe，并记录安装路径，<a href="https://wwnu.lanzouy.com/ieCCU0fqgzgj">下载地址</a></li><li>将 app.asar 替换到安装路径下的resources文件夹，替换掉app.asar文件</li><li>重启typora！！！！！！</li><li>输入邮箱、注册码，邮箱随便输入，注册码：E8Q9Y5-KXMTL5-7578SL-4S5XKS</li></ol><p>仅供学习，请在下载24小时之内删除，请支持正版</p><h2 id="图片上传"><a href="#图片上传" class="headerlink" title="图片上传"></a>图片上传</h2><p>文件 -&gt; 偏好设置中设置图像相关配置，上传服务我使用的是PicGo-Core（command line），其实和PicGo-Core(app)一样，主要是我不想托盘中多出一个程序放在那里，看着不舒服</p><p><img src="https://sh-prod-mall-bucket.oss-cn-shanghai.aliyuncs.com/imgupload/blog/image-20230502155900159.png" alt="image-20230502155900159|1178x904"></p><p><img src="https://sh-prod-mall-bucket.oss-cn-shanghai.aliyuncs.com/imgupload/blog/image-20230502160633862.png" alt="image-20230502160633862|1178x904"></p><p>点击下载或更新，下载更新完成后，点击打开配置文件，配置图床的地址，有些版本能直接打开，有些无反应，需要手动进到指定的目录进行修改<code>config.json</code>文件</p><p>picgo 的默认配置文件为<code>~/.picgo/config.json</code>。其中<code>~</code>为用户目录。不同系统的用户目录不太一样。</p><p>linux 和 macOS 均为<code>~/.picgo/config.json</code>。</p><p>windows 则为<code>C:\Users\你的用户名\.picgo\config.json</code></p><p>以下为修改图床使用阿里云OSS的配置</p><p><img src="https://sh-prod-mall-bucket.oss-cn-shanghai.aliyuncs.com/imgupload/blog/image-20230502161235469.png" alt="image-20230502161235469"></p><p>更多PicGo-Core配置文件参考：<a href="https://picgo.github.io/PicGo-Core-Doc/zh/guide/config.html">配置文件 | PicGo-Core</a></p><p>配置完成后，在Typora中进行验证</p><p><img src="https://sh-prod-mall-bucket.oss-cn-shanghai.aliyuncs.com/imgupload/blog/image-20230502161438558.png" alt="image-20230502161438558"></p><p><img src="https://sh-prod-mall-bucket.oss-cn-shanghai.aliyuncs.com/imgupload/blog/image-20230502161446114.png" alt="image-20230502161446114"></p><h2 id="主题优化"><a href="#主题优化" class="headerlink" title="主题优化"></a>主题优化</h2><p>推荐一款作者在用的主题<strong>Drake</strong>，该款主题字体略微有些小，因为在此基础上做了略微更改，把字体改大</p><p><a href="https://github.com/liangjingkanji/DrakeTyporaTheme">GitHub - liangjingkanji/DrakeTyporaTheme: 十二种主题风格 - Material Google JetBrains Vue Juejin Purple Ayu Dark</a></p><p>打开主题文件夹，并将下载的Drake主题文件解压后复制到该文件夹中，重启Typora</p><p><img src="https://sh-prod-mall-bucket.oss-cn-shanghai.aliyuncs.com/imgupload/blog/image-20230502163038894.png" alt="image-20230502163038894"></p><p>工具栏中，主题选择Drake主题</p><p><img src="https://sh-prod-mall-bucket.oss-cn-shanghai.aliyuncs.com/imgupload/blog/image-20230502163309817.png" alt="image-20230502163309817"></p><p>Drake主题默认文字太小，需要将文字大小调大一些</p><p><a href="https://github.com/liangjingkanji/DrakeTyporaTheme/issues/83">修改字体大小 · Issue #83 · liangjingkanji/DrakeTyporaTheme · GitHub</a></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 软件教程 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Typora </tag>
-            
-            <tag> 软件安装 </tag>
-            
-            <tag> 主题优化 </tag>
             
         </tags>
       
