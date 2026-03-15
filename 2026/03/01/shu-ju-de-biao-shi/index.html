@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Markdown,笔记软件,Git同步,插件推荐,主题配置">
+    <meta name="keywords" content="R进制转十进制,原码反码补码,浮点数表示">
     <meta name="description" content="君子以顺德，积小以高大。">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Obsidian打造个人知识库 | 暮色之狐</title>
+    <title>进制转换与数据编码 | 暮色之狐</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -335,12 +335,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Obsidian打造个人知识库</h1>
+                    <h1 class="description center-align post-title">进制转换与数据编码</h1>
                 </div>
             </div>
         </div>
@@ -456,16 +456,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Obsidian/">
-                                <span class="chip bg-color">Obsidian</span>
+                            <a href="/tags/%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2/">
+                                <span class="chip bg-color">进制转换</span>
                             </a>
                         
-                            <a href="/tags/%E7%AC%94%E8%AE%B0%E7%AE%A1%E7%90%86/">
-                                <span class="chip bg-color">笔记管理</span>
+                            <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BC%96%E7%A0%81/">
+                                <span class="chip bg-color">数据编码</span>
                             </a>
                         
-                            <a href="/tags/GitHub%E5%90%8C%E6%AD%A5/">
-                                <span class="chip bg-color">GitHub同步</span>
+                            <a href="/tags/%E6%B5%AE%E7%82%B9%E6%95%B0%E8%BF%90%E7%AE%97/">
+                                <span class="chip bg-color">浮点数运算</span>
                             </a>
                         
                     </div>
@@ -476,8 +476,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E5%B7%A5%E5%85%B7%E6%95%99%E7%A8%8B/" class="post-category">
-                                工具教程
+                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/" class="post-category">
+                                计算机基础
                             </a>
                         
                     </div>
@@ -489,7 +489,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2026-03-02
+                    2026-03-01
                 </div>
                 
 
@@ -498,7 +498,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1k
+                    1.8k
                 </div>
                 
 
@@ -518,54 +518,160 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>之前都是使用Typora编辑笔记和文档，Markdown写笔记或者文档简直不要太方便，熟练语法后，双手可以不离开键盘，目光始终聚焦再文字上面，写作体验非常流畅。</p>
-<p>随着文档的增多，发现文档越来越不好管理，尝试语雀、印象笔记、腾讯文档、飞书文档等软件，功能虽然很多但是总感觉和自己不太搭，而且软件商业化的原因开始绑架免费用户，虽然能够理解但还是很不爽。<br>尝试了Obsidian觉得眼前一亮，颜值是第一吸引力，可以自由搭配的插件以及主题可以解决我的需求。</p>
-<h1 id="数据同步"><a href="#数据同步" class="headerlink" title="数据同步"></a>数据同步</h1><p>身为一名资深的白嫖党，果断拒绝了Obsidian自带的同步功能，可以使用GitHub进行替代，无限容量，私人仓库也是完全免费，用来管理笔记文档简直是降维打击。<br>总的来说就是建立一个git仓库，把笔记都丢进去，将一些文件和目录都忽略掉，然后使用Obsidian打开这个git仓库作为Obsidian的仓库使用。<br>由于Obsidian使用过程中有些自带的文件一直变化，直接忽略掉</p>
-<blockquote>
-<p>由于国内网络的问题，我使用的是阿里云效的代码仓库进行托管</p>
-</blockquote>
-<p>.gitignore 文件内容</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## obsidian的工作区配置</span></span><br><span class="line">.obsidian/workspace.json</span><br><span class="line"><span class="comment">## obsidian移动端的工作区配置</span></span><br><span class="line">.obsidian/workspace-mobile.json</span><br><span class="line"><span class="comment">## 插件的本地配置数据，变更频繁就忽略了</span></span><br><span class="line">.obsidian/plugins/remotely-save/data.json</span><br><span class="line"><span class="comment">## obsidian的本地缓存</span></span><br><span class="line">*.foldersync.old</span><br><span class="line"><span class="comment">## obsidian的文件同步缓存</span></span><br><span class="line">rs-test-folder-*</span><br><span class="line"><span class="comment">## obsidian文件撤回目录</span></span><br><span class="line">.trash</span><br></pre></td></tr></tbody></table></figure>
+                <h1 id="进制转换"><a href="#进制转换" class="headerlink" title="进制转换"></a>进制转换</h1><h2 id="R进制转十进制"><a href="#R进制转十进制" class="headerlink" title="R进制转十进制"></a>R进制转十进制</h2><p>R进制转十进制使用<strong>按权展开法</strong>，具体操作是将R进制的每一位数值使用$R^K$的形式表示，K表示该位与小数点的距离，当该位位于小数点左边，K表示该位和小数点之间间隔数字的个数，当该位位于小数点右侧，K是负数，其绝对值是该位与小数点之间数字个数加1</p>
+<p>例如：<br>二进制 转 十进制 $$ 10100.01 = 1 \cdot 2^4 + 1 \cdot 2^2 + 1 \cdot 2^{-2} $$<br>七进制 转 十进制 $$ 604.01 = 6\cdot7^2+4\cdot7^0+1\cdot7^{-2} $$</p>
+<h2 id="十进制转R进制"><a href="#十进制转R进制" class="headerlink" title="十进制转R进制"></a>十进制转R进制</h2><p>十进制转R进制使用<strong>短除法</strong><br>例如将94转换成二进制数</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">94 ÷ 2 = 47 余 0</span><br><span class="line">47 ÷ 2 = 23 余 1</span><br><span class="line">23 ÷ 2 = 11 余 1</span><br><span class="line">11 ÷ 2 = 5  余 1</span><br><span class="line">5  ÷ 2 = 2  余 1</span><br><span class="line">2  ÷ 2 = 1  余 0</span><br><span class="line">1  ÷ 2 = 0  余 1  </span><br></pre></td></tr></tbody></table></figure>
 
-<p>如何使用git需要单独学习，不想要记忆命令的话，Obsidian有git的插件，直接使用也很方便。</p>
-<h2 id="IOS同步"><a href="#IOS同步" class="headerlink" title="IOS同步"></a>IOS同步</h2><ol>
-<li><p>apple store下载ISH</p>
-</li>
-<li><p>打开ISH执行以下命令</p>
-<ul>
-<li>安装git  <code>apk add git</code></li>
-<li>用于在当前用户的主目录下创建一个名为 “obsidian” 的新文件夹<br><code>cd ~ &amp;&amp; mkdir obsidian</code></li>
-<li>执行以下命令会打开手机文件管理器，之后需要选中本地的obsidian文件夹，点击完成。这样就让obsidian软件中的math文件夹，装载到ish上的obsidian文件夹内 ，之后对于obsidian软件内math文件的修改，iSH上也同步修改<br><code>mount -t ios . obsidian</code>   </li>
-<li>通过cd命令，进入obsidian文件夹内<br><code>cd ~/obsidian</code>   </li>
-<li>Git 克隆仓库到obsidian目录,输入账号和密码（github personal access key）<br><code>git clone https://xxxxxx.git</code></li>
+<p>将余数从后往前书写就是对应的二进制 1011110</p>
+<h2 id="二进制转八进制"><a href="#二进制转八进制" class="headerlink" title="二进制转八进制"></a>二进制转八进制</h2><p>二进制的 <code>111</code> 表示 八进制的 <code>7</code>，<code>000</code>表示八进制的<code>0</code>，二进制转换成八进制时，将二进制从低到高分为3个一组，高位不足三个的补0，分别进行转换<br>例如10001110转换成8进制为 216</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">010 001 110</span><br><span class="line">2	1	6</span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="二进制转十六进制"><a href="#二进制转十六进制" class="headerlink" title="二进制转十六进制"></a>二进制转十六进制</h2><p>二进制的<code>1111</code>表示 十六进制的 <code>15</code>，<code>0000</code>表示十六进制的<code>0</code>，二进制转换成十六进制时，将二进制从低到高分为4个一组，高位不足三个的补0，分别进行转换，而在十六进制中10-15分别使用A-F进行表示<br>例如 1000 1110 转换成16进制为 8E</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1000 1110</span><br><span class="line">8     E</span><br></pre></td></tr></tbody></table></figure>
+
+<h1 id="数据编码"><a href="#数据编码" class="headerlink" title="数据编码"></a>数据编码</h1><h2 id="原码"><a href="#原码" class="headerlink" title="原码"></a>原码</h2><ul>
+<li>定义：<ul>
+<li>最高位（最左边的一位）为符号位：<code>0</code>&nbsp;表示正数，<code>1</code>&nbsp;表示负数。</li>
+<li>其余位为数值位：表示这个数的绝对值的二进制形式。</li>
 </ul>
 </li>
-<li><p>打开obsidian就会看到你的仓库咯</p>
+<li>示例：<ul>
+<li><code>+5</code>&nbsp;-&gt;&nbsp;<code>0000 0101</code>&nbsp;（符号位0，数值是5）</li>
+<li><code>-5</code>&nbsp;-&gt;&nbsp;<code>1000 0101</code>&nbsp;（符号位1，数值是5）</li>
+</ul>
 </li>
+<li>优点：非常直观，容易理解。</li>
+<li>缺点：<ul>
+<li>存在&nbsp;<code>+0</code>&nbsp;和&nbsp;<code>-0</code>：<code>0000 0000</code>&nbsp;和&nbsp;<code>1000 0000</code>&nbsp;都表示0。这会造成歧义和计算上的麻烦。</li>
+<li>运算复杂：CPU的电路设计会变得复杂。例如，做加法时，必须先判断两个数的符号位。如果符号不同，实际上要做的是减法，并且还要判断结果的符号。这大大降低了计算效率。</li>
+</ul>
+</li>
+</ul>
+<h2 id="反码"><a href="#反码" class="headerlink" title="反码"></a>反码</h2><ul>
+<li><p>定义：</p>
+<ul>
+<li>正数的反码：与其原码相同</li>
+<li>负数的反码：将其对应正数的原码按位取反（包括符号位，但结果依然是1表示负）。</li>
+</ul>
+</li>
+<li><p>示例：</p>
+<ul>
+<li><code>+5</code>&nbsp;的原码是&nbsp;<code>0000 0101</code>，所以它的反码也是&nbsp;<code>0000 0101</code></li>
+<li><code>-5</code>&nbsp;的反码：先取&nbsp;<code>+5</code>&nbsp;的原码&nbsp;<code>0000 0101</code>，然后所有位按位取反（0变1，1变0），得到&nbsp;<code>1111 1010</code></li>
+</ul>
+</li>
+<li><p>优点：引入反码后，减法可以用加法来实现。因为&nbsp;<code>X - Y</code>&nbsp;等价于&nbsp;<code>X + (-Y)</code></p>
+</li>
+<li><p>缺点：</p>
+<ul>
+<li>仍然存在&nbsp;<code>+0</code>&nbsp;和&nbsp;<code>-0</code>**：<ul>
+<li><code>+0</code>&nbsp;的反码：<code>0000 0000</code></li>
+<li><code>-0</code>&nbsp;的反码：<code>1111 1111</code></li>
+</ul>
+</li>
+<li>计算循环进位：用反码进行运算时，如果最高位有进位，需要把这个进位“循环”加到结果的最低位（称为“循环进位”或“端回进位”），电路实现仍然不够优雅</li>
+</ul>
+</li>
+</ul>
+<p>反码的核心贡献是：<strong>它首次实现了“将减法运算转换为加法运算”</strong>，从而简化了计算机内部运算器的设计。</p>
+<h2 id="补码"><a href="#补码" class="headerlink" title="补码"></a>补码</h2><ul>
+<li>定义：<ul>
+<li>正数的补码：与其原码相同。</li>
+<li>负数的补码：将其对应正数的原码按位取反后，再加1</li>
+</ul>
+</li>
+<li>示例（8位）：<ul>
+<li><ul>
+<li><code>+5</code>&nbsp;的补码：<code>0000 0101</code>&nbsp;(和原码一样)</li>
+</ul>
+</li>
+<li><code>-5</code>&nbsp;的补码：<ol>
+<li>取&nbsp;<code>+5</code>&nbsp;的原码&nbsp;<code>0000 0101</code></li>
+<li>按位取反得到&nbsp;<code>1111 1010</code>&nbsp;(这一步得到的是反码)</li>
+<li>再加1，得到&nbsp;<code>1111 1011</code></li>
 </ol>
-<h3 id="异常解决"><a href="#异常解决" class="headerlink" title="异常解决"></a>异常解决</h3><p>如果遇到git clone 一直卡着 多次尝试都无法clone成功的</p>
-<ol>
-<li>先创建目录并进入目录</li>
+</li>
+</ul>
+</li>
+<li>核心优点：<ol>
+<li>唯一的0：<code>0</code>&nbsp;的补码只有一种表示：<code>0000 0000</code>。计算&nbsp;<code>-0</code>（即对&nbsp;<code>0000 0000</code>&nbsp;操作）：取反&nbsp;<code>1111 1111</code>，加1后变成&nbsp;<code>(1)0000 0000</code>，最高位1溢出，剩下&nbsp;<code>0000 0000</code>，仍然是0。</li>
+<li>无缝的加减法：可以将减法统一用加法来实现，<strong>不需要任何额外的判断和循环进位</strong>。CPU只需要设计一个加法器电路就可以同时处理加法和减法，极大地简化了硬件设计。</li>
+<li>表示范围更合理：对于n位二进制，补码能表示的范围是&nbsp;<strong>[-2ⁿ⁻¹, 2ⁿ⁻¹ - 1]</strong>。例如8位补码的范围是&nbsp;<code>-128</code>&nbsp;到&nbsp;<code>+127</code>。比原码和反码的&nbsp;<code>-127</code>&nbsp;到&nbsp;<code>+127</code>&nbsp;多表示了一个数 (<code>-128</code>)。</li>
 </ol>
-<figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir ～/obsidian/目录名  </span><br><span class="line">cd ～/obsidian/目录名</span><br></pre></td></tr></tbody></table></figure>
-
-<ol start="2">
-<li>初始化git仓库<br><code>git init</code></li>
-<li>将一个名为 “safe.directory” 的 Git 全局配置设置添加到您的 Git 环境中，并将其设置为“/.gitconfig” 文件中，并且可以被所有在您的本地机器上运行的 Git 仓库使用，以确保它们都知道您选择的安全目录的位置。这个命令是为了帮助您保护您的个人、敏感或重要的 Git 仓库，以防止在错误的位置或受到攻击的计算机上泄露。<br><code>git config --global --add safe.directory ~/obsidian/目录名</code>   </li>
-<li>当 Git 打包一个仓库的对象时，会将这些对象压缩成一个文件存储在 Git 对象库中。这个操作非常耗费资源，因此使用多线程处理可以加速打包过程。设置 “pack.threads” 为 1 意味着 Git 将使用单线程进行打包操作，这样可能会减缓打包速度，但是也能够减少计算机的 CPU 和内存负载。<br><code>git config pack.threads 1</code></li>
-</ol>
-<h1 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h1><p>下面是个人比较喜欢的主题</p>
-<ol>
-<li>Minimal</li>
-<li>iA&nbsp;Writer</li>
-<li>Obsidianotion</li>
-</ol>
-<h1 id="第三方插件"><a href="#第三方插件" class="headerlink" title="第三方插件"></a>第三方插件</h1><ol>
-<li>Excalidraw：画图神器</li>
-<li>Explorer Hider：用于隐藏某些目录不太Obsidian的文件管理上显示</li>
-<li>Code&nbsp;Style：用于代码显示优化</li>
-<li>Style&nbsp;Settings：配合主题的样式设置插件</li>
-<li>Minimal&nbsp;Theme&nbsp;Settings：minimal主题自定义设置插件</li>
+</li>
+</ul>
+<h2 id="移码"><a href="#移码" class="headerlink" title="移码"></a>移码</h2><ul>
+<li>定义：<ul>
+<li>在补码的基础上，将符号位取反<ul>
+<li>更通用的定义是：对一个数&nbsp;<code>X</code>，将其加上一个固定的偏移值&nbsp;<code>Offset</code>（通常是&nbsp;<code>2ⁿ⁻¹</code>&nbsp;或&nbsp;<code>2ⁿ⁻¹ - 1</code>），然后再用二进制表示。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>示例（8位，偏移量 Offset = 127）<ul>
+<li><code>+5</code>：其补码是&nbsp;<code>0000 0101</code>。加上偏移量&nbsp;<code>127</code>&nbsp;后是&nbsp;<code>132</code>，<code>132</code>&nbsp;的二进制是&nbsp;<code>1000 0100</code>。</li>
+<li><code>-5</code>：其补码是&nbsp;<code>1111 1011</code>。加上偏移量&nbsp;<code>127</code>&nbsp;后是&nbsp;<code>122</code>，<code>122</code>&nbsp;的二进制是&nbsp;<code>0111 1010</code>。<br>  (如果采用“符号位取反”法：<code>+5</code>的补码是<code>0000 0101</code>，符号位取反得<code>1000 0101</code>；<code>-5</code>的补码是<code>1111 1011</code>，符号位取反得<code>0111 1011</code>。这种方法的结果与标准移码定义通常差1，但比较大小的特性一致)</li>
+</ul>
+</li>
+<li>核心优点：<br>   便于比较：移码表示的所有数（正、负、零），其二进制的大小关系与它所代表的真值的大小关系是完全一致的。计算机可以直接用比较无符号整数的方式来比较移码的大小，速度极快。这对于浮点数运算中判断指数大小至关重要。</li>
+</ul>
+<h2 id="数值表示范围"><a href="#数值表示范围" class="headerlink" title="数值表示范围"></a>数值表示范围</h2><table>
+<thead>
+<tr>
+<th align="center">码制</th>
+<th align="center">定点整数</th>
+<th align="center">定点小数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">原码</td>
+<td align="center">$-(2^{n-1}-1)$ ~ $(2^{n-1}-1)$</td>
+<td align="center">$-(1-2^{-(n-1)})$ ~ $(1-2^{-(n-1)})$</td>
+</tr>
+<tr>
+<td align="center">反码</td>
+<td align="center">$-(2^{n-1}-1)$ ~ $(2^{n-1}-1)$</td>
+<td align="center">$-(1-2^{-(n-1)})$ ~ $(1-2^{-(n-1)})$</td>
+</tr>
+<tr>
+<td align="center">补码</td>
+<td align="center">$-2^{n-1}$ ~ $(2^{n-1}-1)$</td>
+<td align="center">-1 ~ $(1-2^{-(n-1)})$</td>
+</tr>
+<tr>
+<td align="center">移码</td>
+<td align="center">$-2^{n-1}$ ~ $(2^{n-1}-1)$</td>
+<td align="center">-1 ~ $(1-2^{-(n-1)})$</td>
+</tr>
+</tbody></table>
+<h1 id="浮点数的运算"><a href="#浮点数的运算" class="headerlink" title="浮点数的运算"></a>浮点数的运算</h1><h2 id="浮点数表示"><a href="#浮点数表示" class="headerlink" title="浮点数表示"></a>浮点数表示</h2><p>计算机中通常使用科学计数法的二进制实现，可以在固定长度的存储空间中表示极大范围、不同精度的实数。<br>浮点数表示：$N = 尾数 \cdot 基数 ^ {指数}$<br>例如 $3.14 \times 10^3$ </p>
+<ul>
+<li>尾数：3.14</li>
+<li>基数：10</li>
+<li>指数：3</li>
+</ul>
+<h2 id="运算过程"><a href="#运算过程" class="headerlink" title="运算过程"></a>运算过程</h2><p>例如 $3.14 \times 10^3 + 1.2 \times 10^5$ </p>
+<ul>
+<li>对阶，将两个数据的指数转换成相同的，小的往大的对<ul>
+<li>$0.0314 \times 10^5 + 1.2 \times 10^5$</li>
+</ul>
+</li>
+<li>尾数计算<ul>
+<li>$0.0314 + 1.2 = 1.2314$</li>
+</ul>
+</li>
+<li>结果格式化<ul>
+<li>$1.2314 \times 10^5$</li>
+</ul>
+</li>
+</ul>
+<h2 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h2><ol>
+<li>尾数用补码，阶码用移码</li>
+<li>阶码的位数决定数的表示范围，位数越多范围越大</li>
+<li>尾数的位数决定数的有效精度，位数越多精度越大</li>
+<li>对阶时，小数向大数看齐</li>
+<li>对阶是通过较小数的尾数右移实现的</li>
 </ol>
 
                 
@@ -593,7 +699,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://gloamfox.github.io/2026/03/02/obsidian-da-zao-ge-ren-zhi-shi-ku/">https://gloamfox.github.io/2026/03/02/obsidian-da-zao-ge-ren-zhi-shi-ku/</a>
+                    <a href="https://gloamfox.github.io/2026/03/01/shu-ju-de-biao-shi/">https://gloamfox.github.io/2026/03/01/shu-ju-de-biao-shi/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -631,16 +737,16 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Obsidian/">
-                                    <span class="chip bg-color">Obsidian</span>
+                                <a href="/tags/%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2/">
+                                    <span class="chip bg-color">进制转换</span>
                                 </a>
                             
-                                <a href="/tags/%E7%AC%94%E8%AE%B0%E7%AE%A1%E7%90%86/">
-                                    <span class="chip bg-color">笔记管理</span>
+                                <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BC%96%E7%A0%81/">
+                                    <span class="chip bg-color">数据编码</span>
                                 </a>
                             
-                                <a href="/tags/GitHub%E5%90%8C%E6%AD%A5/">
-                                    <span class="chip bg-color">GitHub同步</span>
+                                <a href="/tags/%E6%B5%AE%E7%82%B9%E6%95%B0%E8%BF%90%E7%AE%97/">
+                                    <span class="chip bg-color">浮点数运算</span>
                                 </a>
                             
                         </div>
@@ -814,32 +920,52 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2026/03/15/hello-world/">
+                <a href="/2026/03/02/obsidian-da-zao-ge-ren-zhi-shi-ku/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="Obsidian打造个人知识库">
                         
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title">Obsidian打造个人知识库</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            作者分享从Typora转向Obsidian的笔记管理经验，重点介绍如何通过GitHub实现免费无限容量同步，并推荐了主题和第三方插件。
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2026-03-15
+                            <i class="far fa-clock fa-fw icon-date"></i>2026-03-02
                         </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            GloamFox
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%B7%A5%E5%85%B7%E6%95%99%E7%A8%8B/" class="post-category">
+                                    工具教程
+                                </a>
+                            
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Obsidian/">
+                        <span class="chip bg-color">Obsidian</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%AC%94%E8%AE%B0%E7%AE%A1%E7%90%86/">
+                        <span class="chip bg-color">笔记管理</span>
+                    </a>
+                    
+                    <a href="/tags/GitHub%E5%90%8C%E6%AD%A5/">
+                        <span class="chip bg-color">GitHub同步</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -851,19 +977,19 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2026/03/01/shu-ju-de-biao-shi/">
+                <a href="/2026/03/01/ji-suan-ji-jie-gou/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="进制转换与数据编码">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="计算机组成原理">
                         
-                        <span class="card-title">进制转换与数据编码</span>
+                        <span class="card-title">计算机组成原理</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            本文详细介绍了不同进制之间的转换方法，包括R进制与十进制的互转、二进制与八进制/十六进制的转换，以及原码、反码、补码和移码等数据编码方式，并探讨了浮点数的表示与运算过程。
+                            本文详细介绍了计算机的经典结构、运算器与控制器、Flynn分类法、指令格式、寻址方式、CISC与RISC、层次化存储结构、总线系统、可靠性计算以及校验码等核心概念，是计算机组成原理的全面概述。
                         
                     </div>
                     <div class="publish-info">
@@ -874,8 +1000,8 @@
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/" class="post-category">
-                                    计算机基础
+                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" class="post-category">
+                                    计算机科学
                                 </a>
                             
                             
@@ -885,16 +1011,16 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2/">
-                        <span class="chip bg-color">进制转换</span>
+                    <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%93%E6%9E%84/">
+                        <span class="chip bg-color">计算机结构</span>
                     </a>
                     
-                    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BC%96%E7%A0%81/">
-                        <span class="chip bg-color">数据编码</span>
+                    <a href="/tags/%E5%86%AF%C2%B7%E8%AF%BA%E4%BE%9D%E6%9B%BC/">
+                        <span class="chip bg-color">冯·诺依曼</span>
                     </a>
                     
-                    <a href="/tags/%E6%B5%AE%E7%82%B9%E6%95%B0%E8%BF%90%E7%AE%97/">
-                        <span class="chip bg-color">浮点数运算</span>
+                    <a href="/tags/Flynn%E5%88%86%E7%B1%BB/">
+                        <span class="chip bg-color">Flynn分类</span>
                     </a>
                     
                 </div>
