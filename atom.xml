@@ -10,19 +10,19 @@
   <rights>All rights reserved 2026, GloamFox</rights>
   <subtitle>暮色之狐</subtitle>
   <title>暮色之狐</title>
-  <updated>2026-03-15T04:04:44.489Z</updated>
+  <updated>2026-03-15T04:22:46.671Z</updated>
   <entry>
     <author>
       <name>GloamFox</name>
     </author>
     <id>https://gloamfox.github.io/2026/03/15/hello-world/</id>
     <link href="https://gloamfox.github.io/2026/03/15/hello-world/"/>
-    <published>2026-03-15T04:04:44.489Z</published>
+    <published>2026-03-15T04:22:46.671Z</published>
     <summary>
       <![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a>]]>
     </summary>
     <title>Hello World</title>
-    <updated>2026-03-15T04:04:44.489Z</updated>
+    <updated>2026-03-15T04:22:46.671Z</updated>
   </entry>
   <entry>
     <author>
@@ -40,7 +40,7 @@
 <p>随着文档的增多，发现文档越来越不好管理，尝试语雀、印象笔记、腾讯文档、飞书文档等软件，功能虽然很多]]>
     </summary>
     <title>Obsidian打造个人知识库</title>
-    <updated>2026-03-15T04:04:44.489Z</updated>
+    <updated>2026-03-15T04:22:46.670Z</updated>
   </entry>
   <entry>
     <author>
@@ -58,7 +58,7 @@
 <p>nvs]]>
     </summary>
     <title>nvs 安装与使用指南</title>
-    <updated>2026-03-15T04:04:44.489Z</updated>
+    <updated>2026-03-15T04:22:46.671Z</updated>
   </entry>
   <entry>
     <author>
@@ -80,7 +80,7 @@
 <p>选中单词：ctrl +]]>
     </summary>
     <title>VS Code 快捷键指南</title>
-    <updated>2026-03-15T04:04:44.489Z</updated>
+    <updated>2026-03-15T04:22:46.670Z</updated>
   </entry>
   <entry>
     <author>
@@ -98,7 +98,24 @@
 <li>先安装]]>
     </summary>
     <title>Typora安装与配置教程</title>
-    <updated>2026-03-15T04:04:44.489Z</updated>
+    <updated>2026-03-15T04:22:46.670Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>GloamFox</name>
+    </author>
+    <category term="开发工具" scheme="https://gloamfox.github.io/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
+    <category term="Jupyter" scheme="https://gloamfox.github.io/tags/Jupyter/"/>
+    <category term="Pylance" scheme="https://gloamfox.github.io/tags/Pylance/"/>
+    <category term="IntelliCode" scheme="https://gloamfox.github.io/tags/IntelliCode/"/>
+    <id>https://gloamfox.github.io/2025/11/18/vscode-chang-yong-python-cha-jian/</id>
+    <link href="https://gloamfox.github.io/2025/11/18/vscode-chang-yong-python-cha-jian/"/>
+    <published>2025-11-18T10:37:50.000Z</published>
+    <summary>
+      <![CDATA[<h2 id="Jupyter"><a href="#Jupyter" class="headerlink"]]>
+    </summary>
+    <title>VSCode中Python开发插件</title>
+    <updated>2026-03-15T04:22:46.670Z</updated>
   </entry>
   <entry>
     <author>
@@ -120,23 +137,6 @@
 <p>选中单词：ctrl +]]>
     </summary>
     <title>VS Code 快捷键指南</title>
-    <updated>2026-03-15T04:04:44.489Z</updated>
-  </entry>
-  <entry>
-    <author>
-      <name>GloamFox</name>
-    </author>
-    <category term="开发工具" scheme="https://gloamfox.github.io/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
-    <category term="Jupyter" scheme="https://gloamfox.github.io/tags/Jupyter/"/>
-    <category term="Pylance" scheme="https://gloamfox.github.io/tags/Pylance/"/>
-    <category term="IntelliCode" scheme="https://gloamfox.github.io/tags/IntelliCode/"/>
-    <id>https://gloamfox.github.io/2025/11/18/vscode-chang-yong-python-cha-jian/</id>
-    <link href="https://gloamfox.github.io/2025/11/18/vscode-chang-yong-python-cha-jian/"/>
-    <published>2025-11-18T10:37:50.000Z</published>
-    <summary>
-      <![CDATA[<h2 id="Jupyter"><a href="#Jupyter" class="headerlink"]]>
-    </summary>
-    <title>VSCode中Python开发插件</title>
-    <updated>2026-03-15T04:04:44.489Z</updated>
+    <updated>2026-03-15T04:22:46.670Z</updated>
   </entry>
 </feed>

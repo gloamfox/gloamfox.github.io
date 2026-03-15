@@ -29,9 +29,9 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 8.1.1">
+<meta name="generator" content="Hexo 8.1.1"><link rel="alternate" href="/atom.xml" title="暮色之狐" type="application/atom+xml">
+
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="alternate" href="/atom.xml" title="暮色之狐" type="application/atom+xml">
 </head>
 
 
@@ -523,26 +523,26 @@
 <h2 id="windows"><a href="#windows" class="headerlink" title="windows"></a>windows</h2><p>推荐通过 msi 的方式安装，就跟正常安装软件一下，双击下一步即可：</p>
 <p><a target="_blank" rel="noopener" href="https://github.com/jasongin/nvs/releases">https://github.com/jasongin/nvs/releases</a></p>
 <h2 id="mac"><a href="#mac" class="headerlink" title="mac"></a>mac</h2><p>用下面三行命令即可：</p>
-<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export NVS_HOME="$HOME/.nvs" git clone https://github.com/jasongin/nvs "$NVS_HOME" . "$NVS_HOME/nvs.sh" install</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export NVS_HOME="$HOME/.nvs" git clone https://github.com/jasongin/nvs "$NVS_HOME" . "$NVS_HOME/nvs.sh" install</span><br></pre></td></tr></tbody></table></figure>
 
 <h1 id="常见命令"><a href="#常见命令" class="headerlink" title="常见命令"></a>常见命令</h1><h2 id="添加Node版本"><a href="#添加Node版本" class="headerlink" title="添加Node版本"></a>添加Node版本</h2><p>如果你想安装最新的 LTS 版本，可以用命令：</p>
-<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvs add lts</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvs add lts</span><br></pre></td></tr></tbody></table></figure>
 
 <p>如果你需要新增一个 Node.js 16的版本，可以用以下命令：</p>
-<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvs add 16</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvs add 16</span><br></pre></td></tr></tbody></table></figure>
 
 <h2 id="更新当前的-Node-小版本"><a href="#更新当前的-Node-小版本" class="headerlink" title="更新当前的 Node 小版本"></a>更新当前的 Node 小版本</h2><p>如果你想要升级 Node 小版本，比方说从 20.13.1升级到20.14.0（当前大版本的最新版），可以使用如下命令：</p>
-<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvs upgrade</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvs upgrade</span><br></pre></td></tr></tbody></table></figure>
 
 <h2 id="配置默认-Node-版本"><a href="#配置默认-Node-版本" class="headerlink" title="配置默认 Node 版本"></a>配置默认 Node 版本</h2><h3 id="全局指定"><a href="#全局指定" class="headerlink" title="全局指定"></a>全局指定</h3><p>这个适用于绝大部分情况，指定默认的 node 版本。</p>
-<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvs link lts # 使用最新的 lts 版本，在所有的终端都生效</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvs <span class="built_in">link</span> lts <span class="comment"># 使用最新的 lts 版本，在所有的终端都生效</span></span><br></pre></td></tr></tbody></table></figure>
 
 <h3 id="局部指定"><a href="#局部指定" class="headerlink" title="局部指定"></a>局部指定</h3><p>这个适用于偶尔用一次指定版本的情况，当你的终端关闭后，下次启动默认还是之前 nvs link 过的版本。</p>
-<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvs use 16 # 在当前的终端使用 16 版本，关闭后失效</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvs use 16 <span class="comment"># 在当前的终端使用 16 版本，关闭后失效</span></span><br></pre></td></tr></tbody></table></figure>
 
-<h2 id="查看所有安装的-Node-版本"><a href="#查看所有安装的-Node-版本" class="headerlink" title="查看所有安装的 Node 版本"></a>查看所有安装的 Node 版本</h2><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvs ls</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="查看所有安装的-Node-版本"><a href="#查看所有安装的-Node-版本" class="headerlink" title="查看所有安装的 Node 版本"></a>查看所有安装的 Node 版本</h2><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvs <span class="built_in">ls</span></span><br></pre></td></tr></tbody></table></figure>
 
-<h2 id="其他命令"><a href="#其他命令" class="headerlink" title="其他命令"></a>其他命令</h2><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvs --help // 查看其他命令的帮助</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="其他命令"><a href="#其他命令" class="headerlink" title="其他命令"></a>其他命令</h2><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvs --<span class="built_in">help</span> // 查看其他命令的帮助</span><br></pre></td></tr></tbody></table></figure>
 
 
 <h2 id="命令手册"><a href="#命令手册" class="headerlink" title="命令手册"></a>命令手册</h2><p>![[file-1772095367895.png|file-1772095367895.png]]</p>
