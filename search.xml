@@ -34,7 +34,7 @@
       <link href="/2026/03/15/hexo-test/"/>
       <url>/2026/03/15/hexo-test/</url>
       
-        <content type="html"><![CDATA[<p><img src="/../Assets/$%7BnoteFileName%7D/file-20260315141025686.png" alt="file-20260315141025686.png"></p><p><img src="/../Assets/$%7BnoteFileName%7D/hexo-test%202026-03-15%2014.56.28.svg" alt="hexo-test 2026-03-15 14.56.28.excalidraw"></p>]]></content>
+        <content type="html"><![CDATA[<p><img src="/../Assets/file-20260315141025686.png" alt="file-20260315141025686.png"></p><p><img src="/../Assets/hexo-test%202026-03-15%2014.56.28.svg" alt="hexo-test 2026-03-15 14.56.28.excalidraw"></p>]]></content>
       
       
       
@@ -246,35 +246,6 @@
     
     
     <entry>
-      <title>VS Code 快捷键指南</title>
-      <link href="/2025/11/18/11111/"/>
-      <url>/2025/11/18/11111/</url>
-      
-        <content type="html"><![CDATA[<p>打开工程：code + 路径</p><p>打开指定文件：ctrl + p</p><p>打开/关闭终端：ctrl + ` (1左边的按键)</p><p>跳转到行：ctrl + g</p><p>按单词移动光标：ctrl + 左右</p><p>选中单词：ctrl + d （重复按可以多选）</p><p>选中行：ctrl + l （重复按会同时选择下一行）</p><p>移动行：alt + 上下</p><p>格式化代码：ctrl + shift + f</p><p>跳转到定义：f12</p><p>查看当前文件符号：ctrl + shift + o</p><p>剪切/复制当前行：ctrl + x / ctrl + c （什么都不选的时候）</p><p>切换tab：alt+数字</p><p>顺序切换tab：ctrl + pageup / pagedown</p><p>关闭文件：ctrl+w</p><p>关闭所有文件：ctrl + k w （ctrl不松手）</p><p>ctrl+b 打开主侧边栏</p><p>ctrl+shift+e 打开文件管理器</p><p>ctrl+0 焦点聚焦到主侧边栏</p><p>ctrl+1 焦点聚焦到代码编辑器</p><p>ctrl+shift+space 重新出现函数信息提示</p><p>ctrl+\ 添加分屏</p><p>ctrl + d 选中当前内容，连续快捷键会逐个选择下一个内容</p><p>ctrl + shift + L 选择所有找到的查找匹配项</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 技术教程 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> VSCode </tag>
-            
-            <tag> 快捷键 </tag>
-            
-            <tag> 代码编辑 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>Typora安装与配置教程</title>
       <link href="/2025/11/18/typora-an-zhuang-pei-zhi/"/>
       <url>/2025/11/18/typora-an-zhuang-pei-zhi/</url>
@@ -296,6 +267,35 @@
             <tag> 软件安装 </tag>
             
             <tag> 主题优化 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>VSCode中Python开发插件</title>
+      <link href="/2025/11/18/vscode-chang-yong-python-cha-jian/"/>
+      <url>/2025/11/18/vscode-chang-yong-python-cha-jian/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Jupyter"><a href="#Jupyter" class="headerlink" title="Jupyter"></a>Jupyter</h2><ul><li><p>VSCode中安装jupter插件</p></li><li><p>使用<code>#%%</code>分割代码块</p></li><li><p><code>.ipynb</code>文件中使用jupyter</p></li></ul><p>vscode中运行jupter时提示需要安装ipykernel,安装报错可以执行以下脚本进行安装 打开工程：code + 路径</p><p>pip install -i <a href="https://pypi.tuna.tsinghua.edu.cn/simple">https://pypi.tuna.tsinghua.edu.cn/simple</a> ipykernel</p><h2 id="Pylance"><a href="#Pylance" class="headerlink" title="Pylance"></a>Pylance</h2><ul><li><p>Python › Analysis: auto format string</p></li><li><p>Python › Analysis › Inlay Hints: Call Argument Names</p><ul><li>选择partial</li></ul></li><li><p>Python › Analysis: Type Checking Mode</p><ul><li>选择standard</li></ul></li><li><p>Python › Analysis: inlay Hints:Function Return Types</p></li></ul><h2 id="IntelliCode-Completions"><a href="#IntelliCode-Completions" class="headerlink" title="IntelliCode Completions"></a>IntelliCode Completions</h2><p>AI自动补全功能</p><h2 id="Code-Spell-Checker"><a href="#Code-Spell-Checker" class="headerlink" title="Code Spell Checker"></a>Code Spell Checker</h2><p>单词拼写检查</p><h2 id="Error-lens"><a href="#Error-lens" class="headerlink" title="Error lens"></a>Error lens</h2><p>错误检查</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 开发工具 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Jupyter </tag>
+            
+            <tag> Pylance </tag>
+            
+            <tag> IntelliCode </tag>
             
         </tags>
       
@@ -333,27 +333,27 @@
     
     
     <entry>
-      <title>VSCode中Python开发插件</title>
-      <link href="/2025/11/18/vscode-chang-yong-python-cha-jian/"/>
-      <url>/2025/11/18/vscode-chang-yong-python-cha-jian/</url>
+      <title>VS Code 快捷键指南</title>
+      <link href="/2025/11/18/11111/"/>
+      <url>/2025/11/18/11111/</url>
       
-        <content type="html"><![CDATA[<h2 id="Jupyter"><a href="#Jupyter" class="headerlink" title="Jupyter"></a>Jupyter</h2><ul><li><p>VSCode中安装jupter插件</p></li><li><p>使用<code>#%%</code>分割代码块</p></li><li><p><code>.ipynb</code>文件中使用jupyter</p></li></ul><p>vscode中运行jupter时提示需要安装ipykernel,安装报错可以执行以下脚本进行安装 打开工程：code + 路径</p><p>pip install -i <a href="https://pypi.tuna.tsinghua.edu.cn/simple">https://pypi.tuna.tsinghua.edu.cn/simple</a> ipykernel</p><h2 id="Pylance"><a href="#Pylance" class="headerlink" title="Pylance"></a>Pylance</h2><ul><li><p>Python › Analysis: auto format string</p></li><li><p>Python › Analysis › Inlay Hints: Call Argument Names</p><ul><li>选择partial</li></ul></li><li><p>Python › Analysis: Type Checking Mode</p><ul><li>选择standard</li></ul></li><li><p>Python › Analysis: inlay Hints:Function Return Types</p></li></ul><h2 id="IntelliCode-Completions"><a href="#IntelliCode-Completions" class="headerlink" title="IntelliCode Completions"></a>IntelliCode Completions</h2><p>AI自动补全功能</p><h2 id="Code-Spell-Checker"><a href="#Code-Spell-Checker" class="headerlink" title="Code Spell Checker"></a>Code Spell Checker</h2><p>单词拼写检查</p><h2 id="Error-lens"><a href="#Error-lens" class="headerlink" title="Error lens"></a>Error lens</h2><p>错误检查</p>]]></content>
+        <content type="html"><![CDATA[<p>打开工程：code + 路径</p><p>打开指定文件：ctrl + p</p><p>打开/关闭终端：ctrl + ` (1左边的按键)</p><p>跳转到行：ctrl + g</p><p>按单词移动光标：ctrl + 左右</p><p>选中单词：ctrl + d （重复按可以多选）</p><p>选中行：ctrl + l （重复按会同时选择下一行）</p><p>移动行：alt + 上下</p><p>格式化代码：ctrl + shift + f</p><p>跳转到定义：f12</p><p>查看当前文件符号：ctrl + shift + o</p><p>剪切/复制当前行：ctrl + x / ctrl + c （什么都不选的时候）</p><p>切换tab：alt+数字</p><p>顺序切换tab：ctrl + pageup / pagedown</p><p>关闭文件：ctrl+w</p><p>关闭所有文件：ctrl + k w （ctrl不松手）</p><p>ctrl+b 打开主侧边栏</p><p>ctrl+shift+e 打开文件管理器</p><p>ctrl+0 焦点聚焦到主侧边栏</p><p>ctrl+1 焦点聚焦到代码编辑器</p><p>ctrl+shift+space 重新出现函数信息提示</p><p>ctrl+\ 添加分屏</p><p>ctrl + d 选中当前内容，连续快捷键会逐个选择下一个内容</p><p>ctrl + shift + L 选择所有找到的查找匹配项</p>]]></content>
       
       
       <categories>
           
-          <category> 开发工具 </category>
+          <category> 技术教程 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> Jupyter </tag>
+            <tag> VSCode </tag>
             
-            <tag> Pylance </tag>
+            <tag> 快捷键 </tag>
             
-            <tag> IntelliCode </tag>
+            <tag> 代码编辑 </tag>
             
         </tags>
       
