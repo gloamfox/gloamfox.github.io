@@ -10,19 +10,37 @@
   <rights>All rights reserved 2026, GloamFox</rights>
   <subtitle>暮色之狐</subtitle>
   <title>暮色之狐</title>
-  <updated>2026-03-13T10:34:36.753Z</updated>
+  <updated>2026-03-15T04:02:13.829Z</updated>
   <entry>
     <author>
       <name>GloamFox</name>
     </author>
-    <id>https://gloamfox.github.io/2026/03/13/hello-world/</id>
-    <link href="https://gloamfox.github.io/2026/03/13/hello-world/"/>
-    <published>2026-03-13T10:34:36.753Z</published>
+    <id>https://gloamfox.github.io/2026/03/15/hello-world/</id>
+    <link href="https://gloamfox.github.io/2026/03/15/hello-world/"/>
+    <published>2026-03-15T04:02:13.829Z</published>
     <summary>
       <![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a>]]>
     </summary>
     <title>Hello World</title>
-    <updated>2026-03-13T10:34:36.753Z</updated>
+    <updated>2026-03-15T04:02:13.829Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>GloamFox</name>
+    </author>
+    <category term="工具教程" scheme="https://gloamfox.github.io/categories/%E5%B7%A5%E5%85%B7%E6%95%99%E7%A8%8B/"/>
+    <category term="Obsidian" scheme="https://gloamfox.github.io/tags/Obsidian/"/>
+    <category term="笔记管理" scheme="https://gloamfox.github.io/tags/%E7%AC%94%E8%AE%B0%E7%AE%A1%E7%90%86/"/>
+    <category term="GitHub同步" scheme="https://gloamfox.github.io/tags/GitHub%E5%90%8C%E6%AD%A5/"/>
+    <id>https://gloamfox.github.io/2026/03/02/obsidian-da-zao-ge-ren-zhi-shi-ku/</id>
+    <link href="https://gloamfox.github.io/2026/03/02/obsidian-da-zao-ge-ren-zhi-shi-ku/"/>
+    <published>2026-03-02T02:04:33.000Z</published>
+    <summary>
+      <![CDATA[<p>之前都是使用Typora编辑笔记和文档，Markdown写笔记或者文档简直不要太方便，熟练语法后，双手可以不离开键盘，目光始终聚焦再文字上面，写作体验非常流畅。</p>
+<p>随着文档的增多，发现文档越来越不好管理，尝试语雀、印象笔记、腾讯文档、飞书文档等软件，功能虽然很多]]>
+    </summary>
+    <title>Obsidian打造个人知识库</title>
+    <updated>2026-03-15T04:02:13.829Z</updated>
   </entry>
   <entry>
     <author>
@@ -44,7 +62,7 @@
 <p>选中单词：ctrl +]]>
     </summary>
     <title>VS Code 快捷键指南</title>
-    <updated>2026-03-13T10:34:36.753Z</updated>
+    <updated>2026-03-15T04:02:13.829Z</updated>
   </entry>
   <entry>
     <author>
@@ -62,7 +80,7 @@
 <li>先安装]]>
     </summary>
     <title>Typora安装与配置教程</title>
-    <updated>2026-03-13T10:34:36.753Z</updated>
+    <updated>2026-03-15T04:02:13.829Z</updated>
   </entry>
   <entry>
     <author>
@@ -84,7 +102,7 @@
 <p>选中单词：ctrl +]]>
     </summary>
     <title>VS Code 快捷键指南</title>
-    <updated>2026-03-13T10:34:36.753Z</updated>
+    <updated>2026-03-15T04:02:13.829Z</updated>
   </entry>
   <entry>
     <author>
@@ -101,6 +119,6 @@
       <![CDATA[<h2 id="Jupyter"><a href="#Jupyter" class="headerlink"]]>
     </summary>
     <title>VSCode中Python开发插件配置</title>
-    <updated>2026-03-13T10:34:36.753Z</updated>
+    <updated>2026-03-15T04:02:13.829Z</updated>
   </entry>
 </feed>

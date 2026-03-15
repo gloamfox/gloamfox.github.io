@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="VSCode,Python插件,代码补全,错误检查">
+    <meta name="keywords" content="Markdown,笔记软件,Git同步,插件推荐,主题配置">
     <meta name="description" content="君子以顺德，积小以高大。">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>VSCode中Python开发插件配置 | 暮色之狐</title>
+    <title>Obsidian打造个人知识库 | 暮色之狐</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -335,12 +335,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">VSCode中Python开发插件配置</h1>
+                    <h1 class="description center-align post-title">Obsidian打造个人知识库</h1>
                 </div>
             </div>
         </div>
@@ -456,16 +456,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Jupyter/">
-                                <span class="chip bg-color">Jupyter</span>
+                            <a href="/tags/Obsidian/">
+                                <span class="chip bg-color">Obsidian</span>
                             </a>
                         
-                            <a href="/tags/Pylance/">
-                                <span class="chip bg-color">Pylance</span>
+                            <a href="/tags/%E7%AC%94%E8%AE%B0%E7%AE%A1%E7%90%86/">
+                                <span class="chip bg-color">笔记管理</span>
                             </a>
                         
-                            <a href="/tags/IntelliCode/">
-                                <span class="chip bg-color">IntelliCode</span>
+                            <a href="/tags/GitHub%E5%90%8C%E6%AD%A5/">
+                                <span class="chip bg-color">GitHub同步</span>
                             </a>
                         
                     </div>
@@ -476,8 +476,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/" class="post-category">
-                                开发工具
+                            <a href="/categories/%E5%B7%A5%E5%85%B7%E6%95%99%E7%A8%8B/" class="post-category">
+                                工具教程
                             </a>
                         
                     </div>
@@ -489,7 +489,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2025-11-18
+                    2026-03-02
                 </div>
                 
 
@@ -498,7 +498,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    119
+                    1k
                 </div>
                 
 
@@ -518,35 +518,55 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="Jupyter"><a href="#Jupyter" class="headerlink" title="Jupyter"></a>Jupyter</h2><ul>
-<li><p>VSCode中安装jupter插件</p>
+                <p>之前都是使用Typora编辑笔记和文档，Markdown写笔记或者文档简直不要太方便，熟练语法后，双手可以不离开键盘，目光始终聚焦再文字上面，写作体验非常流畅。</p>
+<p>随着文档的增多，发现文档越来越不好管理，尝试语雀、印象笔记、腾讯文档、飞书文档等软件，功能虽然很多但是总感觉和自己不太搭，而且软件商业化的原因开始绑架免费用户，虽然能够理解但还是很不爽。<br>尝试了Obsidian觉得眼前一亮，颜值是第一吸引力，可以自由搭配的插件以及主题可以解决我的需求。</p>
+<h1 id="数据同步"><a href="#数据同步" class="headerlink" title="数据同步"></a>数据同步</h1><p>身为一名资深的白嫖党，果断拒绝了Obsidian自带的同步功能，可以使用GitHub进行替代，无限容量，私人仓库也是完全免费，用来管理笔记文档简直是降维打击。<br>总的来说就是建立一个git仓库，把笔记都丢进去，将一些文件和目录都忽略掉，然后使用Obsidian打开这个git仓库作为Obsidian的仓库使用。<br>由于Obsidian使用过程中有些自带的文件一直变化，直接忽略掉</p>
+<blockquote>
+<p>由于国内网络的问题，我使用的是阿里云效的代码仓库进行托管</p>
+</blockquote>
+<p>.gitignore 文件内容</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## obsidian的工作区配置</span></span><br><span class="line">.obsidian/workspace.json</span><br><span class="line"><span class="comment">## obsidian移动端的工作区配置</span></span><br><span class="line">.obsidian/workspace-mobile.json</span><br><span class="line"><span class="comment">## 插件的本地配置数据，变更频繁就忽略了</span></span><br><span class="line">.obsidian/plugins/remotely-save/data.json</span><br><span class="line"><span class="comment">## obsidian的本地缓存</span></span><br><span class="line">*.foldersync.old</span><br><span class="line"><span class="comment">## obsidian的文件同步缓存</span></span><br><span class="line">rs-test-folder-*</span><br><span class="line"><span class="comment">## obsidian文件撤回目录</span></span><br><span class="line">.trash</span><br></pre></td></tr></tbody></table></figure>
+
+<p>如何使用git需要单独学习，不想要记忆命令的话，Obsidian有git的插件，直接使用也很方便。</p>
+<h2 id="IOS同步"><a href="#IOS同步" class="headerlink" title="IOS同步"></a>IOS同步</h2><ol>
+<li><p>apple store下载ISH</p>
 </li>
-<li><p>使用<code>#%%</code>分割代码块</p>
-</li>
-<li><p><code>.ipynb</code>文件中使用jupyter</p>
-</li>
-</ul>
-<p>vscode中运行jupter时提示需要安装ipykernel,安装报错可以执行以下脚本进行安装 打开工程：code + 路径</p>
-<p>pip install -i <a target="_blank" rel="noopener" href="https://pypi.tuna.tsinghua.edu.cn/simple">https://pypi.tuna.tsinghua.edu.cn/simple</a> ipykernel</p>
-<h2 id="Pylance"><a href="#Pylance" class="headerlink" title="Pylance"></a>Pylance</h2><ul>
-<li><p>Python › Analysis: auto format string</p>
-</li>
-<li><p>Python › Analysis › Inlay Hints: Call Argument Names</p>
+<li><p>打开ISH执行以下命令</p>
 <ul>
-<li>选择partial</li>
+<li>安装git  <code>apk add git</code></li>
+<li>用于在当前用户的主目录下创建一个名为 “obsidian” 的新文件夹<br><code>cd ~ &amp;&amp; mkdir obsidian</code></li>
+<li>执行以下命令会打开手机文件管理器，之后需要选中本地的obsidian文件夹，点击完成。这样就让obsidian软件中的math文件夹，装载到ish上的obsidian文件夹内 ，之后对于obsidian软件内math文件的修改，iSH上也同步修改<br><code>mount -t ios . obsidian</code>   </li>
+<li>通过cd命令，进入obsidian文件夹内<br><code>cd ~/obsidian</code>   </li>
+<li>Git 克隆仓库到obsidian目录,输入账号和密码（github personal access key）<br><code>git clone https://xxxxxx.git</code></li>
 </ul>
 </li>
-<li><p>Python › Analysis: Type Checking Mode</p>
-<ul>
-<li>选择standard</li>
-</ul>
+<li><p>打开obsidian就会看到你的仓库咯</p>
 </li>
-<li><p>Python › Analysis: inlay Hints:Function Return Types</p>
-</li>
-</ul>
-<h2 id="IntelliCode-Completions"><a href="#IntelliCode-Completions" class="headerlink" title="IntelliCode Completions"></a>IntelliCode Completions</h2><p>AI自动补全功能</p>
-<h2 id="Code-Spell-Checker"><a href="#Code-Spell-Checker" class="headerlink" title="Code Spell Checker"></a>Code Spell Checker</h2><p>单词拼写检查</p>
-<h2 id="Error-lens"><a href="#Error-lens" class="headerlink" title="Error lens"></a>Error lens</h2><p>错误检查</p>
+</ol>
+<h3 id="异常解决"><a href="#异常解决" class="headerlink" title="异常解决"></a>异常解决</h3><p>如果遇到git clone 一直卡着 多次尝试都无法clone成功的</p>
+<ol>
+<li>先创建目录并进入目录</li>
+</ol>
+<figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir ～/obsidian/目录名  </span><br><span class="line">cd ～/obsidian/目录名</span><br></pre></td></tr></tbody></table></figure>
+
+<ol start="2">
+<li>初始化git仓库<br><code>git init</code></li>
+<li>将一个名为 “safe.directory” 的 Git 全局配置设置添加到您的 Git 环境中，并将其设置为“/.gitconfig” 文件中，并且可以被所有在您的本地机器上运行的 Git 仓库使用，以确保它们都知道您选择的安全目录的位置。这个命令是为了帮助您保护您的个人、敏感或重要的 Git 仓库，以防止在错误的位置或受到攻击的计算机上泄露。<br><code>git config --global --add safe.directory ~/obsidian/目录名</code>   </li>
+<li>当 Git 打包一个仓库的对象时，会将这些对象压缩成一个文件存储在 Git 对象库中。这个操作非常耗费资源，因此使用多线程处理可以加速打包过程。设置 “pack.threads” 为 1 意味着 Git 将使用单线程进行打包操作，这样可能会减缓打包速度，但是也能够减少计算机的 CPU 和内存负载。<br><code>git config pack.threads 1</code></li>
+</ol>
+<h1 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h1><p>下面是个人比较喜欢的主题</p>
+<ol>
+<li>Minimal</li>
+<li>iA&nbsp;Writer</li>
+<li>Obsidianotion</li>
+</ol>
+<h1 id="第三方插件"><a href="#第三方插件" class="headerlink" title="第三方插件"></a>第三方插件</h1><ol>
+<li>Excalidraw：画图神器</li>
+<li>Explorer Hider：用于隐藏某些目录不太Obsidian的文件管理上显示</li>
+<li>Code&nbsp;Style：用于代码显示优化</li>
+<li>Style&nbsp;Settings：配合主题的样式设置插件</li>
+<li>Minimal&nbsp;Theme&nbsp;Settings：minimal主题自定义设置插件</li>
+</ol>
 
                 
             </div>
@@ -573,7 +593,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://gloamfox.github.io/2025/11/18/vscode-chang-yong-python-cha-jian/">https://gloamfox.github.io/2025/11/18/vscode-chang-yong-python-cha-jian/</a>
+                    <a href="https://gloamfox.github.io/2026/03/02/obsidian-da-zao-ge-ren-zhi-shi-ku/">https://gloamfox.github.io/2026/03/02/obsidian-da-zao-ge-ren-zhi-shi-ku/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -611,16 +631,16 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Jupyter/">
-                                    <span class="chip bg-color">Jupyter</span>
+                                <a href="/tags/Obsidian/">
+                                    <span class="chip bg-color">Obsidian</span>
                                 </a>
                             
-                                <a href="/tags/Pylance/">
-                                    <span class="chip bg-color">Pylance</span>
+                                <a href="/tags/%E7%AC%94%E8%AE%B0%E7%AE%A1%E7%90%86/">
+                                    <span class="chip bg-color">笔记管理</span>
                                 </a>
                             
-                                <a href="/tags/IntelliCode/">
-                                    <span class="chip bg-color">IntelliCode</span>
+                                <a href="/tags/GitHub%E5%90%8C%E6%AD%A5/">
+                                    <span class="chip bg-color">GitHub同步</span>
                                 </a>
                             
                         </div>
@@ -794,7 +814,44 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2025/11/18/vs-code-kuai-jie-jian-zhi-nan/">
+                <a href="/2026/03/15/hello-world/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                        
+                        <span class="card-title">Hello World</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2026-03-15
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            GloamFox
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2025/11/18/11111/">
                     <div class="card-image">
                         
                         
@@ -810,9 +867,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2025-11-18
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2025-11-18
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -838,64 +895,6 @@
                     
                     <a href="/tags/%E4%BB%A3%E7%A0%81%E7%BC%96%E8%BE%91/">
                         <span class="chip bg-color">代码编辑</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
-            </div>
-            <div class="card">
-                <a href="/2025/11/18/vscode-chang-yong-python-cha-jian/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="VSCode中Python开发插件配置">
-                        
-                        <span class="card-title">VSCode中Python开发插件配置</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            介绍VSCode中Python开发相关插件配置，包括Jupyter、Pylance、IntelliCode和拼写检查等功能的设置方法。
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2025-11-18
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/" class="post-category">
-                                    开发工具
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/Jupyter/">
-                        <span class="chip bg-color">Jupyter</span>
-                    </a>
-                    
-                    <a href="/tags/Pylance/">
-                        <span class="chip bg-color">Pylance</span>
-                    </a>
-                    
-                    <a href="/tags/IntelliCode/">
-                        <span class="chip bg-color">IntelliCode</span>
                     </a>
                     
                 </div>
