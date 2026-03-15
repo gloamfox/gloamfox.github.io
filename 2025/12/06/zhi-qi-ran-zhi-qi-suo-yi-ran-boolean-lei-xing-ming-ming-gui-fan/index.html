@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Markdown,笔记软件,Git同步,插件推荐,主题配置">
+    <meta name="keywords" content="JavaBean规范,序列化工具,布尔类型命名,Getter方法,反序列化">
     <meta name="description" content="君子以顺德，积小以高大。">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Obsidian打造个人知识库 | 暮色之狐</title>
+    <title>Java布尔类型命名规范与序列化问题分析 | 暮色之狐</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -335,12 +335,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Obsidian打造个人知识库</h1>
+                    <h1 class="description center-align post-title">Java布尔类型命名规范与序列化问题分析</h1>
                 </div>
             </div>
         </div>
@@ -456,16 +456,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Obsidian/">
-                                <span class="chip bg-color">Obsidian</span>
+                            <a href="/tags/Java%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83/">
+                                <span class="chip bg-color">Java命名规范</span>
                             </a>
                         
-                            <a href="/tags/%E7%AC%94%E8%AE%B0%E7%AE%A1%E7%90%86/">
-                                <span class="chip bg-color">笔记管理</span>
+                            <a href="/tags/%E5%BA%8F%E5%88%97%E5%8C%96%E9%97%AE%E9%A2%98/">
+                                <span class="chip bg-color">序列化问题</span>
                             </a>
                         
-                            <a href="/tags/GitHub%E5%90%8C%E6%AD%A5/">
-                                <span class="chip bg-color">GitHub同步</span>
+                            <a href="/tags/Boolean%E7%B1%BB%E5%9E%8B/">
+                                <span class="chip bg-color">Boolean类型</span>
                             </a>
                         
                     </div>
@@ -476,8 +476,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E5%B7%A5%E5%85%B7%E6%95%99%E7%A8%8B/" class="post-category">
-                                工具教程
+                            <a href="/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/" class="post-category">
+                                技术文档
                             </a>
                         
                     </div>
@@ -489,7 +489,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2026-03-02
+                    2025-12-06
                 </div>
                 
 
@@ -498,7 +498,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1k
+                    1.6k
                 </div>
                 
 
@@ -518,55 +518,62 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>之前都是使用Typora编辑笔记和文档，Markdown写笔记或者文档简直不要太方便，熟练语法后，双手可以不离开键盘，目光始终聚焦再文字上面，写作体验非常流畅。</p>
-<p>随着文档的增多，发现文档越来越不好管理，尝试语雀、印象笔记、腾讯文档、飞书文档等软件，功能虽然很多但是总感觉和自己不太搭，而且软件商业化的原因开始绑架免费用户，虽然能够理解但还是很不爽。<br>尝试了Obsidian觉得眼前一亮，颜值是第一吸引力，可以自由搭配的插件以及主题可以解决我的需求。</p>
-<h1 id="数据同步"><a href="#数据同步" class="headerlink" title="数据同步"></a>数据同步</h1><p>身为一名资深的白嫖党，果断拒绝了Obsidian自带的同步功能，可以使用GitHub进行替代，无限容量，私人仓库也是完全免费，用来管理笔记文档简直是降维打击。<br>总的来说就是建立一个git仓库，把笔记都丢进去，将一些文件和目录都忽略掉，然后使用Obsidian打开这个git仓库作为Obsidian的仓库使用。<br>由于Obsidian使用过程中有些自带的文件一直变化，直接忽略掉</p>
-<blockquote>
-<p>由于国内网络的问题，我使用的是阿里云效的代码仓库进行托管</p>
-</blockquote>
-<p>.gitignore 文件内容</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## obsidian的工作区配置</span></span><br><span class="line">.obsidian/workspace.json</span><br><span class="line"><span class="comment">## obsidian移动端的工作区配置</span></span><br><span class="line">.obsidian/workspace-mobile.json</span><br><span class="line"><span class="comment">## 插件的本地配置数据，变更频繁就忽略了</span></span><br><span class="line">.obsidian/plugins/remotely-save/data.json</span><br><span class="line"><span class="comment">## obsidian的本地缓存</span></span><br><span class="line">*.foldersync.old</span><br><span class="line"><span class="comment">## obsidian的文件同步缓存</span></span><br><span class="line">rs-test-folder-*</span><br><span class="line"><span class="comment">## obsidian文件撤回目录</span></span><br><span class="line">.trash</span><br></pre></td></tr></tbody></table></figure>
+                <p><img src="/./Assets/%E7%9F%A5%E5%85%B6%E7%84%B6%E7%9F%A5%E5%85%B6%E6%89%80%E4%BB%A5%E7%84%B6%EF%BC%9ABoolean%E7%B1%BB%E5%9E%8B%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83/file-1764991811367.png" alt="file-1764991811367.png"></p>
+<p>对应<code>阿里巴巴开发手册-编码规约-命名风格</code>第9条，规约中写的比较模糊，之前只知道这样命名可能会存在问题，这里探索一下具体什么场景会存在问题。</p>
+<p>对上面举的反例感觉有些怪，<strong>基本数据类型Boolean isDeleted属性的Getter方法是isDeleted()</strong>，手册应该写的有问题，印象中基本数据类型boolean是这样的，但是Boolean包装类型并不是如此，后面会对这里进行探索，坑很大。</p>
+<h2 id="实例深究"><a href="#实例深究" class="headerlink" title="实例深究"></a>实例深究</h2><h3 id="JavaBean规范"><a href="#JavaBean规范" class="headerlink" title="JavaBean规范"></a>JavaBean规范</h3><p>首先了解下<code>JavaBean</code>的规范，属性应该由一组读写方法(Getter/Setter)来访问，如果操作的字段为boolean类型，此时Getter不应命名为<code>getXXX</code>方法，而应该是<code>isXXX</code>，如果boolean类型的属性名以is开头，则将属性名中的is自动去除，例如boolean <code>isSuccess</code>的Getter是<code>isSuccess()</code>，但是对于Boolean类型的属性并没有明确的规范进行约定。</p>
+<p>以下示例基于<strong>IDEA 2023.1 JDK11</strong></p>
+<p>布尔类型存在基本数据类型和包装类型，所以存在四种情况</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="type">boolean</span> success;</span><br><span class="line"><span class="keyword">private</span> <span class="type">boolean</span> isSuccess;</span><br><span class="line"><span class="keyword">private</span> Boolean success;</span><br><span class="line"><span class="keyword">private</span> Boolean isSuccess;</span><br></pre></td></tr></tbody></table></figure>
 
-<p>如何使用git需要单独学习，不想要记忆命令的话，Obsidian有git的插件，直接使用也很方便。</p>
-<h2 id="IOS同步"><a href="#IOS同步" class="headerlink" title="IOS同步"></a>IOS同步</h2><ol>
-<li><p>apple store下载ISH</p>
-</li>
-<li><p>打开ISH执行以下命令</p>
+<p>通过IDEA自动生成Getter/Setter，可以得到</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Result1</span>{</span><br><span class="line">    <span class="keyword">private</span> <span class="type">boolean</span> success;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">isSuccess</span><span class="params">()</span> {</span><br><span class="line">        <span class="keyword">return</span> success;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setSuccess</span><span class="params">(<span class="type">boolean</span> success)</span> {</span><br><span class="line">        <span class="built_in">this</span>.success = success;</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Result2</span>{</span><br><span class="line">    <span class="keyword">private</span> <span class="type">boolean</span> isSuccess;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">isSuccess</span><span class="params">()</span> {</span><br><span class="line">        <span class="keyword">return</span> isSuccess;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setSuccess</span><span class="params">(<span class="type">boolean</span> success)</span> {</span><br><span class="line">        isSuccess = success;</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Result3</span>{</span><br><span class="line">    <span class="keyword">private</span> Boolean success;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> Boolean <span class="title function_">getSuccess</span><span class="params">()</span> {</span><br><span class="line">        <span class="keyword">return</span> success;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setSuccess</span><span class="params">(Boolean success)</span> {</span><br><span class="line">        <span class="built_in">this</span>.success = success;</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Result4</span>{</span><br><span class="line">    <span class="keyword">private</span> Boolean isSuccess;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> Boolean <span class="title function_">getSuccess</span><span class="params">()</span> {</span><br><span class="line">        <span class="keyword">return</span> isSuccess;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setSuccess</span><span class="params">(Boolean success)</span> {</span><br><span class="line">        isSuccess = success;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>从IDEA自动生成的Getter/Setter可以看出</p>
 <ul>
-<li>安装git  <code>apk add git</code></li>
-<li>用于在当前用户的主目录下创建一个名为 “obsidian” 的新文件夹<br><code>cd ~ &amp;&amp; mkdir obsidian</code></li>
-<li>执行以下命令会打开手机文件管理器，之后需要选中本地的obsidian文件夹，点击完成。这样就让obsidian软件中的math文件夹，装载到ish上的obsidian文件夹内 ，之后对于obsidian软件内math文件的修改，iSH上也同步修改<br><code>mount -t ios . obsidian</code>   </li>
-<li>通过cd命令，进入obsidian文件夹内<br><code>cd ~/obsidian</code>   </li>
-<li>Git 克隆仓库到obsidian目录,输入账号和密码（github personal access key）<br><code>git clone https://xxxxxx.git</code></li>
+<li><p>boolean类型Getter是isXXX()形式，如果以is开头则会省略is</p>
+</li>
+<li><p>Boolean类型Getter是getXXX()形式，如果以is开头则会省略is</p>
+</li>
+<li><p>两种类型的Setter是相同的</p>
+</li>
 </ul>
-</li>
-<li><p>打开obsidian就会看到你的仓库咯</p>
-</li>
-</ol>
-<h3 id="异常解决"><a href="#异常解决" class="headerlink" title="异常解决"></a>异常解决</h3><p>如果遇到git clone 一直卡着 多次尝试都无法clone成功的</p>
-<ol>
-<li>先创建目录并进入目录</li>
-</ol>
-<figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir ～/obsidian/目录名  </span><br><span class="line">cd ～/obsidian/目录名</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="序列化"><a href="#序列化" class="headerlink" title="序列化"></a>序列化</h3><p>开发手册的规约中提到，is开头的属性在部分框架解析时会引起序列化的错误，那么拿常用的JSON序列化进行举例，分别使用JackJson、FastJson和Gson进行序列化以及反序列化来验证</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Result1</span> <span class="variable">result1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Result1</span>();</span><br><span class="line">result1.setSuccess(<span class="literal">true</span>);</span><br><span class="line"></span><br><span class="line"><span class="type">Result2</span> <span class="variable">result2</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Result2</span>();</span><br><span class="line">result2.setSuccess(<span class="literal">true</span>);</span><br><span class="line"></span><br><span class="line"><span class="type">Result3</span> <span class="variable">result3</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Result3</span>();</span><br><span class="line">result3.setSuccess(<span class="literal">true</span>);</span><br><span class="line"></span><br><span class="line"><span class="type">Result4</span> <span class="variable">result4</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Result4</span>();</span><br><span class="line">result4.setSuccess(<span class="literal">true</span>);</span><br><span class="line"></span><br><span class="line"><span class="type">ObjectMapper</span> <span class="variable">jackson</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ObjectMapper</span>();</span><br><span class="line"><span class="type">Gson</span> <span class="variable">gson</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Gson</span>();</span><br><span class="line"></span><br><span class="line">System.out.println(<span class="string">"boolean success"</span>);</span><br><span class="line">System.out.println(<span class="string">"jackson: "</span> + jackson.writeValueAsString(result1));</span><br><span class="line">System.out.println(<span class="string">"gson: "</span> + gson.toJson(result1));</span><br><span class="line">System.out.println(<span class="string">"fastjson: "</span> + JSON.toJSONString(result1));</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">System.out.println(<span class="string">"boolean isSuccess"</span>);</span><br><span class="line">System.out.println(<span class="string">"jackson: "</span> + jackson.writeValueAsString(result2));</span><br><span class="line">System.out.println(<span class="string">"gson: "</span> + gson.toJson(result2));</span><br><span class="line">System.out.println(<span class="string">"fastjson: "</span> + JSON.toJSONString(result2));</span><br><span class="line"></span><br><span class="line">System.out.println(<span class="string">"Boolean success"</span>);</span><br><span class="line">System.out.println(<span class="string">"jackson: "</span> + jackson.writeValueAsString(result3));</span><br><span class="line">System.out.println(<span class="string">"gson: "</span> + gson.toJson(result3));</span><br><span class="line">System.out.println(<span class="string">"fastjson: "</span> + JSON.toJSONString(result3));</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">System.out.println(<span class="string">"Boolean isSuccess"</span>);</span><br><span class="line">System.out.println(<span class="string">"jackson: "</span> + jackson.writeValueAsString(result4));</span><br><span class="line">System.out.println(<span class="string">"gson: "</span> + gson.toJson(result4));</span><br><span class="line">System.out.println(<span class="string">"fastjson: "</span> + JSON.toJSONString(result4));</span><br></pre></td></tr></tbody></table></figure>
 
-<ol start="2">
-<li>初始化git仓库<br><code>git init</code></li>
-<li>将一个名为 “safe.directory” 的 Git 全局配置设置添加到您的 Git 环境中，并将其设置为“/.gitconfig” 文件中，并且可以被所有在您的本地机器上运行的 Git 仓库使用，以确保它们都知道您选择的安全目录的位置。这个命令是为了帮助您保护您的个人、敏感或重要的 Git 仓库，以防止在错误的位置或受到攻击的计算机上泄露。<br><code>git config --global --add safe.directory ~/obsidian/目录名</code>   </li>
-<li>当 Git 打包一个仓库的对象时，会将这些对象压缩成一个文件存储在 Git 对象库中。这个操作非常耗费资源，因此使用多线程处理可以加速打包过程。设置 “pack.threads” 为 1 意味着 Git 将使用单线程进行打包操作，这样可能会减缓打包速度，但是也能够减少计算机的 CPU 和内存负载。<br><code>git config pack.threads 1</code></li>
-</ol>
-<h1 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h1><p>下面是个人比较喜欢的主题</p>
-<ol>
-<li>Minimal</li>
-<li>iA&nbsp;Writer</li>
-<li>Obsidianotion</li>
-</ol>
-<h1 id="第三方插件"><a href="#第三方插件" class="headerlink" title="第三方插件"></a>第三方插件</h1><ol>
-<li>Excalidraw：画图神器</li>
-<li>Explorer Hider：用于隐藏某些目录不太Obsidian的文件管理上显示</li>
-<li>Code&nbsp;Style：用于代码显示优化</li>
-<li>Style&nbsp;Settings：配合主题的样式设置插件</li>
-<li>Minimal&nbsp;Theme&nbsp;Settings：minimal主题自定义设置插件</li>
-</ol>
+<p>运行结果：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">boolean</span> success</span><br><span class="line">jackson: {<span class="string">"success"</span>:<span class="literal">true</span>}</span><br><span class="line">gson: {<span class="string">"success"</span>:<span class="literal">true</span>}</span><br><span class="line">fastjson: {<span class="string">"success"</span>:<span class="literal">true</span>}</span><br><span class="line"></span><br><span class="line"><span class="type">boolean</span> isSuccess</span><br><span class="line">jackson: {<span class="string">"success"</span>:<span class="literal">true</span>}</span><br><span class="line">gson: {<span class="string">"isSuccess"</span>:<span class="literal">true</span>}</span><br><span class="line">fastjson: {<span class="string">"success"</span>:<span class="literal">true</span>}</span><br><span class="line"></span><br><span class="line">Boolean success</span><br><span class="line">jackson: {<span class="string">"success"</span>:<span class="literal">true</span>}</span><br><span class="line">gson: {<span class="string">"success"</span>:<span class="literal">true</span>}</span><br><span class="line">fastjson: {<span class="string">"success"</span>:<span class="literal">true</span>}</span><br><span class="line"></span><br><span class="line">Boolean isSuccess</span><br><span class="line">jackson: {<span class="string">"success"</span>:<span class="literal">true</span>}</span><br><span class="line">gson: {<span class="string">"isSuccess"</span>:<span class="literal">true</span>}</span><br><span class="line">fastjson: {<span class="string">"success"</span>:<span class="literal">true</span>}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>根据这些结果以及对应JSON框架的分析可以得出：</p>
+<ul>
+<li><p>jackson和fastjson在进行对象的序列化时，是通过反射遍历出该类中所有的Getter方法，得到<code>isSuccess()</code>，他们会认为字段属性是success，然后序列化成json</p>
+</li>
+<li><p>Gson是通过反射遍历类中<strong>所有的属性</strong>，并将其值序列化成json</p>
+</li>
+</ul>
+<p>由于不同的序列化工具，在进行序列化时使用的策略并不一致，所以对于同一个对象序列化的结果可能并不一致。</p>
+<h3 id="反序列化"><a href="#反序列化" class="headerlink" title="反序列化"></a>反序列化</h3><p>那么使用相同的json反序列时会发生什么情况呢？</p>
+<figure class="highlight json"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">{</span><span class="attr">"isSuccess"</span><span class="punctuation">:</span><span class="literal"><span class="keyword">true</span></span><span class="punctuation">}</span></span><br></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">jsonString</span> <span class="operator">=</span> <span class="string">"{\"isSuccess\":true}"</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">ObjectMapper</span> <span class="variable">jackson</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ObjectMapper</span>();</span><br><span class="line"><span class="type">Gson</span> <span class="variable">gson</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Gson</span>();</span><br><span class="line"></span><br><span class="line">System.out.println(<span class="string">"boolean success"</span>);</span><br><span class="line"><span class="keyword">try</span>{</span><br><span class="line">    <span class="type">Result1</span> <span class="variable">result1</span> <span class="operator">=</span> jackson.readValue(jsonString, Result1.class);</span><br><span class="line">    System.out.println(<span class="string">"jackson: "</span> + result1);</span><br><span class="line">}<span class="keyword">catch</span> (Exception e){</span><br><span class="line">    System.out.println(<span class="string">"jackson反序列化异常"</span> + e.getMessage());</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span>{</span><br><span class="line">    <span class="type">Result2</span> <span class="variable">result2</span> <span class="operator">=</span> gson.fromJson(jsonString, Result2.class);</span><br><span class="line">    System.out.println(<span class="string">"gson: "</span> + result2);</span><br><span class="line">}<span class="keyword">catch</span> (Exception e){</span><br><span class="line">    System.out.println(<span class="string">"gson反序列化异常"</span> + e.getMessage());</span><br><span class="line"></span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span>{</span><br><span class="line">    <span class="type">Result3</span> <span class="variable">result3</span> <span class="operator">=</span> JSON.parseObject(jsonString, Result3.class);</span><br><span class="line">    System.out.println(<span class="string">"fastjson: "</span> + result3);</span><br><span class="line">}<span class="keyword">catch</span> (Exception e){</span><br><span class="line">    System.out.println(<span class="string">"fastjson反序列化异常"</span> + e.getMessage());</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>执行结果：</p>
+<figure class="highlight text"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">jackson反序列化异常Unrecognized field "isSuccess" (class com.meifute.m2.item.BooleanNameTest$Result1), not marked as ignorable (one known property: "success"])</span><br><span class="line"> at [Source: (String)"{"isSuccess":true}"; line: 1, column: 18] (through reference chain: com.meifute.m2.item.BooleanNameTest$Result1["isSuccess"])</span><br><span class="line">gson: Result2{isSuccess=true}</span><br><span class="line">fastjson: Result3{success=true}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>通过以上执行结果可以看出，jackson反序列化时异常,那么在实际项目中，我们经常会将我们的json序列化工具设置为如果没有字段自动忽略，不要抛出异常的形式，那么再将测试代码执行测试</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">jsonString</span> <span class="operator">=</span> <span class="string">"{\"isSuccess\":true}"</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">ObjectMapper</span> <span class="variable">jackson</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ObjectMapper</span>();</span><br><span class="line">jackson.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, <span class="literal">false</span>);</span><br><span class="line"></span><br><span class="line"><span class="type">Gson</span> <span class="variable">gson</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Gson</span>();</span><br><span class="line"></span><br><span class="line">System.out.println(<span class="string">"boolean success"</span>);</span><br><span class="line"><span class="keyword">try</span>{</span><br><span class="line">    <span class="type">Result1</span> <span class="variable">result1</span> <span class="operator">=</span> jackson.readValue(jsonString, Result1.class);</span><br><span class="line"></span><br><span class="line">    System.out.println(<span class="string">"jackson: "</span> + result1);</span><br><span class="line">}<span class="keyword">catch</span> (Exception e){</span><br><span class="line">    System.out.println(<span class="string">"jackson反序列化异常"</span> + e.getMessage());</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span>{</span><br><span class="line">    <span class="type">Result2</span> <span class="variable">result2</span> <span class="operator">=</span> gson.fromJson(jsonString, Result2.class);</span><br><span class="line">    System.out.println(<span class="string">"gson: "</span> + result2);</span><br><span class="line">}<span class="keyword">catch</span> (Exception e){</span><br><span class="line">    System.out.println(<span class="string">"gson反序列化异常"</span> + e.getMessage());</span><br><span class="line"></span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span>{</span><br><span class="line">    <span class="type">Result3</span> <span class="variable">result3</span> <span class="operator">=</span> JSON.parseObject(jsonString, Result3.class);</span><br><span class="line">    System.out.println(<span class="string">"fastjson: "</span> + result3);</span><br><span class="line">}<span class="keyword">catch</span> (Exception e){</span><br><span class="line">    System.out.println(<span class="string">"fastjson反序列化异常"</span> + e.getMessage());</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>执行结果：</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">boolean success</span><br><span class="line">jackson: Result1{success=false}</span><br><span class="line">gson: Result2{isSuccess=true}</span><br><span class="line">fastjson: Result3{success=true}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>可以看出，jackson在反序列化时，如果忽略不匹配的字段，boolean会存在默认值false，导致预期和匹配不符。</p>
+<p>那么其实反序列化的这个场景，和阿里巴巴开发手册中中这条正是交响呼应（但是这条规约也是有待商榷，Boolean存在null，对于仅是否两种情况下，业务中不处理可能会存在NPE的问题）</p>
+<p>通过上面的例子，可以看到布尔类型为什么不要使用is开头的原因，是因为各种序列化工具的策略不一样，稍有不慎有可能导致预期和结果不符的情况出现。</p>
+<h3 id="Getter深究"><a href="#Getter深究" class="headerlink" title="Getter深究"></a>Getter深究</h3><p>JavaBean规范对boolean类型的Getter进行了明确的约定，但是Boolean并没有明确的约定，IDEA对于is开头的Boolean属性会自动去掉is并生成getXXX样式的Getter，那么所有的开发工具或者代码生成工具都是如此处理的吗？</p>
+<p>带着这个疑问，在eclipse中进行了试用，eclispe中对于boolean属性Getter的生成和IDEA一样是符合JavaBean规范的，但是对于is开头的Boolean属性生成的Getter是getIsXXX样式，和IDEA中不一样。</p>
+<p>那么像经常使用lambok中又是如何处理的呢？经过测试lambok的处理方式和eclipse一致。</p>
+<p>也就是说由于Boolean并没有明确的约定，在具体的项目和团队中，可以根据自己的编码规范和偏好进行调整和约定，那么再结合序列化工具，又有可能带来未知的问题。</p>
+<p>为了避免使用不当可能引发的问题，干脆规约中进行字段命名的限制，也是一定的道理。</p>
 
                 
             </div>
@@ -593,7 +600,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://gloamfox.github.io/2026/03/02/obsidian-da-zao-ge-ren-zhi-shi-ku/">https://gloamfox.github.io/2026/03/02/obsidian-da-zao-ge-ren-zhi-shi-ku/</a>
+                    <a href="https://gloamfox.github.io/2025/12/06/zhi-qi-ran-zhi-qi-suo-yi-ran-boolean-lei-xing-ming-ming-gui-fan/">https://gloamfox.github.io/2025/12/06/zhi-qi-ran-zhi-qi-suo-yi-ran-boolean-lei-xing-ming-ming-gui-fan/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -631,16 +638,16 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Obsidian/">
-                                    <span class="chip bg-color">Obsidian</span>
+                                <a href="/tags/Java%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83/">
+                                    <span class="chip bg-color">Java命名规范</span>
                                 </a>
                             
-                                <a href="/tags/%E7%AC%94%E8%AE%B0%E7%AE%A1%E7%90%86/">
-                                    <span class="chip bg-color">笔记管理</span>
+                                <a href="/tags/%E5%BA%8F%E5%88%97%E5%8C%96%E9%97%AE%E9%A2%98/">
+                                    <span class="chip bg-color">序列化问题</span>
                                 </a>
                             
-                                <a href="/tags/GitHub%E5%90%8C%E6%AD%A5/">
-                                    <span class="chip bg-color">GitHub同步</span>
+                                <a href="/tags/Boolean%E7%B1%BB%E5%9E%8B/">
+                                    <span class="chip bg-color">Boolean类型</span>
                                 </a>
                             
                         </div>
@@ -814,31 +821,31 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2026/03/14/dan-yuan-ce-shi-de-kun-jing-yu-po-ju-wei-he-wo-men-bu-yuan-xie-yi-ji-ru-he-gao-xiao-di-xie/">
+                <a href="/2026/02/26/shi-yong-nvs-gong-ju-qie-huan-node-ban-ben/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="单元测试实践与测试驱动开发">
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="nvs 安装与使用指南">
                         
-                        <span class="card-title">单元测试实践与测试驱动开发</span>
+                        <span class="card-title">nvs 安装与使用指南</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            本文分析了单元测试的重要性、开发人员不愿写单测的原因，并探讨了测试驱动开发的应用，强调通过合理实践提升代码质量和开发效率。
+                            本文介绍了跨平台Node版本管理工具nvs的安装方法、常用命令及实用技巧，帮助开发者高效管理Node.js版本。
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2026-03-14
+                            <i class="far fa-clock fa-fw icon-date"></i>2026-02-26
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/" class="post-category">
-                                    软件开发
+                            <a href="/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/" class="post-category">
+                                    技术教程
                                 </a>
                             
                             
@@ -848,16 +855,16 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/">
-                        <span class="chip bg-color">单元测试</span>
+                    <a href="/tags/Node%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/">
+                        <span class="chip bg-color">Node版本管理</span>
                     </a>
                     
-                    <a href="/tags/%E6%B5%8B%E8%AF%95%E9%A9%B1%E5%8A%A8%E5%BC%80%E5%8F%91/">
-                        <span class="chip bg-color">测试驱动开发</span>
+                    <a href="/tags/nvs%E5%B7%A5%E5%85%B7/">
+                        <span class="chip bg-color">nvs工具</span>
                     </a>
                     
-                    <a href="/tags/%E8%BD%AF%E4%BB%B6%E8%B4%A8%E9%87%8F/">
-                        <span class="chip bg-color">软件质量</span>
+                    <a href="/tags/%E8%B7%A8%E5%B9%B3%E5%8F%B0/">
+                        <span class="chip bg-color">跨平台</span>
                     </a>
                     
                 </div>
@@ -871,31 +878,31 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2026/03/01/shu-ju-de-biao-shi/">
+                <a href="/2025/11/29/xiang-mu-yi-lai-ku-de-gui-fan-tan-suo/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="进制转换与数据编码">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="二方库管理规范">
                         
-                        <span class="card-title">进制转换与数据编码</span>
+                        <span class="card-title">二方库管理规范</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            本文详细介绍了不同进制之间的转换方法，包括R进制与十进制的互转、二进制与八进制/十六进制的转换，以及原码、反码、补码和移码等数据编码方式，并探讨了浮点数的表示与运算过程。
+                            本文介绍二方库的定义、管理原则及关键注意事项，包括精简可控、稳定可追溯原则，以及避免依赖冲突的具体实践建议。
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2026-03-01
+                                <i class="far fa-clock fa-fw icon-date"></i>2025-11-29
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/" class="post-category">
-                                    计算机基础
+                            <a href="/categories/%E6%8A%80%E6%9C%AF%E8%A7%84%E8%8C%83/" class="post-category">
+                                    技术规范
                                 </a>
                             
                             
@@ -905,16 +912,16 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2/">
-                        <span class="chip bg-color">进制转换</span>
+                    <a href="/tags/%E4%BA%8C%E6%96%B9%E5%BA%93/">
+                        <span class="chip bg-color">二方库</span>
                     </a>
                     
-                    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BC%96%E7%A0%81/">
-                        <span class="chip bg-color">数据编码</span>
+                    <a href="/tags/%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/">
+                        <span class="chip bg-color">版本管理</span>
                     </a>
                     
-                    <a href="/tags/%E6%B5%AE%E7%82%B9%E6%95%B0%E8%BF%90%E7%AE%97/">
-                        <span class="chip bg-color">浮点数运算</span>
+                    <a href="/tags/%E4%BE%9D%E8%B5%96%E5%86%B2%E7%AA%81/">
+                        <span class="chip bg-color">依赖冲突</span>
                     </a>
                     
                 </div>
