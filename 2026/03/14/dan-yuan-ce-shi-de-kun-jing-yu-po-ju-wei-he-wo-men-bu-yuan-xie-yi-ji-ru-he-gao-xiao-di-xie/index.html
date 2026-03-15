@@ -29,9 +29,9 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 8.1.1">
+<meta name="generator" content="Hexo 8.1.1"><link rel="alternate" href="/atom.xml" title="暮色之狐" type="application/atom+xml">
+
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="alternate" href="/atom.xml" title="暮色之狐" type="application/atom+xml">
 </head>
 
 
@@ -522,7 +522,7 @@
 <p>单元测试作为软件质量的重要一环，往往在整个开发流程中被大多数开发人员所忽略，本文旨在分析如何写好单元测试并探索一些测试驱动开发的应用。</p>
 </blockquote>
 <h2 id="单元测试原则"><a href="#单元测试原则" class="headerlink" title="单元测试原则"></a>单元测试原则</h2><p>在写单元测试前，先要明确什么是单元测试，单元测试的原则是什么？明确这些问题前不妨先参考一下前人总结的单元测试First原则。</p>
-<p><img src="/./Assets/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E7%9A%84%E5%9B%B0%E5%A2%83%E4%B8%8E%E7%A0%B4%E5%B1%80%EF%BC%9A%E4%B8%BA%E4%BD%95%E6%88%91%E4%BB%AC%E4%B8%8D%E6%84%BF%E5%86%99%EF%BC%8C%E4%BB%A5%E5%8F%8A%E5%A6%82%E4%BD%95%E9%AB%98%E6%95%88%E5%9C%B0%E5%86%99/file-20251120174055747.png" alt=" 600"></p>
+<p><img src="/../Assets/$%7BnoteFileName%7D/file-20251120174055747.png" alt=" 600"></p>
 <p>在工作过程中经常见到一些无效的单测，通常是启动Spring容器、连接数据库、调用方法，最后控制台输出结果，这种并不能称之为有效的单测。</p>
 <figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RunWith(SpringRunner.class)</span></span><br><span class="line"><span class="meta">@SpringBootTest</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">HelloServiceTest</span> {</span><br><span class="line"> </span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> UserService userService;</span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">addUserTest</span><span class="params">()</span> {</span><br><span class="line">        <span class="type">AddUserRequest</span> <span class="variable">addUserRequest</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">AddUserRequest</span>(<span class="string">"zhangsan"</span>, <span class="string">"18865899858"</span>);</span><br><span class="line">        ResultDTO&lt;Long&gt; addResult = userService.addUser(addUserRequest);</span><br><span class="line">        System.out.println(addResult);</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
