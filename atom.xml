@@ -10,19 +10,19 @@
   <rights>All rights reserved 2026, GloamFox</rights>
   <subtitle>暮色之狐</subtitle>
   <title>暮色之狐</title>
-  <updated>2026-03-15T07:36:02.636Z</updated>
+  <updated>2026-03-15T07:38:51.407Z</updated>
   <entry>
     <author>
       <name>GloamFox</name>
     </author>
     <id>https://gloamfox.github.io/2026/03/15/hello-world/</id>
     <link href="https://gloamfox.github.io/2026/03/15/hello-world/"/>
-    <published>2026-03-15T07:36:02.636Z</published>
+    <published>2026-03-15T07:38:51.407Z</published>
     <summary>
       <![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a>]]>
     </summary>
     <title>Hello World</title>
-    <updated>2026-03-15T07:36:02.636Z</updated>
+    <updated>2026-03-15T07:38:51.407Z</updated>
   </entry>
   <entry>
     <author>
@@ -35,7 +35,7 @@
       <![CDATA[<p><img src="/./Assets/Hexo%E6%B5%8B%E8%AF%95/file-1773554854383.png"]]>
     </summary>
     <title>测试Obsidian转换hexo</title>
-    <updated>2026-03-15T07:36:02.636Z</updated>
+    <updated>2026-03-15T07:38:51.406Z</updated>
   </entry>
   <entry>
     <author>
@@ -45,11 +45,11 @@
     <link href="https://gloamfox.github.io/2026/03/15/hexo-test/"/>
     <published>2026-03-15T02:07:19.000Z</published>
     <summary>
-      <![CDATA[<p><img src="/./source/Asset/s/hexo-test/file-20260315141025686.png" alt="file-20260315141025686.png"></p>
+      <![CDATA[<p><img src="/./Assets/hexo-test/file-20260315141025686.png" alt="file-20260315141025686.png"></p>
 <p><img]]>
     </summary>
     <title>测试Obsidian转换hexo</title>
-    <updated>2026-03-15T07:36:02.636Z</updated>
+    <updated>2026-03-15T07:38:51.407Z</updated>
   </entry>
   <entry>
     <author>
@@ -69,7 +69,7 @@
 <h2 id="单元测试原则"><a href="#单元测试原则"]]>
     </summary>
     <title>单元测试实践与测试驱动开发</title>
-    <updated>2026-03-15T07:36:02.636Z</updated>
+    <updated>2026-03-15T07:38:51.407Z</updated>
   </entry>
   <entry>
     <author>
@@ -87,7 +87,7 @@
 <p>随着文档的增多，发现文档越来越不好管理，尝试语雀、印象笔记、腾讯文档、飞书文档等软件，功能虽然很多]]>
     </summary>
     <title>Obsidian打造个人知识库</title>
-    <updated>2026-03-15T07:36:02.636Z</updated>
+    <updated>2026-03-15T07:38:51.406Z</updated>
   </entry>
   <entry>
     <author>
@@ -104,7 +104,7 @@
       <![CDATA[<h1 id="进制转换"><a href="#进制转换" class="headerlink" title="进制转换"></a>进制转换</h1><h2 id="R进制转十进制"><a href="#R进制转十进制" class="headerlink"]]>
     </summary>
     <title>进制转换与数据编码</title>
-    <updated>2026-03-15T07:36:02.636Z</updated>
+    <updated>2026-03-15T07:38:51.407Z</updated>
   </entry>
   <entry>
     <author>
@@ -121,7 +121,7 @@
       <![CDATA[<h1 id="计算机结构"><a href="#计算机结构" class="headerlink"]]>
     </summary>
     <title>计算机组成原理</title>
-    <updated>2026-03-15T07:36:02.637Z</updated>
+    <updated>2026-03-15T07:38:51.407Z</updated>
   </entry>
   <entry>
     <author>
@@ -139,7 +139,7 @@
 <p>nvs]]>
     </summary>
     <title>nvs 安装与使用指南</title>
-    <updated>2026-03-15T07:36:02.636Z</updated>
+    <updated>2026-03-15T07:38:51.407Z</updated>
   </entry>
   <entry>
     <author>
@@ -156,7 +156,7 @@
       <![CDATA[<p><img src="/../Assets/$%7BnoteFileName%7D/file-1764991811367.png"]]>
     </summary>
     <title>Java布尔类型命名规范与序列化问题分析</title>
-    <updated>2026-03-15T07:36:02.637Z</updated>
+    <updated>2026-03-15T07:38:51.407Z</updated>
   </entry>
   <entry>
     <author>
@@ -173,47 +173,7 @@
       <![CDATA[<h2 id="二方库"><a href="#二方库" class="headerlink"]]>
     </summary>
     <title>二方库管理规范</title>
-    <updated>2026-03-15T07:36:02.637Z</updated>
-  </entry>
-  <entry>
-    <author>
-      <name>GloamFox</name>
-    </author>
-    <category term="软件教程" scheme="https://gloamfox.github.io/categories/%E8%BD%AF%E4%BB%B6%E6%95%99%E7%A8%8B/"/>
-    <category term="Typora" scheme="https://gloamfox.github.io/tags/Typora/"/>
-    <category term="软件安装" scheme="https://gloamfox.github.io/tags/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/"/>
-    <category term="主题优化" scheme="https://gloamfox.github.io/tags/%E4%B8%BB%E9%A2%98%E4%BC%98%E5%8C%96/"/>
-    <id>https://gloamfox.github.io/2025/11/18/typora-an-zhuang-pei-zhi/</id>
-    <link href="https://gloamfox.github.io/2025/11/18/typora-an-zhuang-pei-zhi/"/>
-    <published>2025-11-18T10:37:50.000Z</published>
-    <summary>
-      <![CDATA[<h2 id="Typora安装注册"><a href="#Typora安装注册" class="headerlink" title="Typora安装注册"></a>Typora安装注册</h2><ol>
-<li>先安装]]>
-    </summary>
-    <title>Typora安装与配置教程</title>
-    <updated>2026-03-15T07:36:02.636Z</updated>
-  </entry>
-  <entry>
-    <author>
-      <name>GloamFox</name>
-    </author>
-    <category term="技术教程" scheme="https://gloamfox.github.io/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/"/>
-    <category term="VSCode" scheme="https://gloamfox.github.io/tags/VSCode/"/>
-    <category term="快捷键" scheme="https://gloamfox.github.io/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
-    <category term="代码编辑" scheme="https://gloamfox.github.io/tags/%E4%BB%A3%E7%A0%81%E7%BC%96%E8%BE%91/"/>
-    <id>https://gloamfox.github.io/2025/11/18/vs-code-kuai-jie-jian-zhi-nan/</id>
-    <link href="https://gloamfox.github.io/2025/11/18/vs-code-kuai-jie-jian-zhi-nan/"/>
-    <published>2025-11-18T10:37:50.000Z</published>
-    <summary>
-      <![CDATA[<p>打开工程：code + 路径</p>
-<p>打开指定文件：ctrl + p</p>
-<p>打开/关闭终端：ctrl + ` (1左边的按键)</p>
-<p>跳转到行：ctrl + g</p>
-<p>按单词移动光标：ctrl + 左右</p>
-<p>选中单词：ctrl +]]>
-    </summary>
-    <title>VS Code 快捷键指南</title>
-    <updated>2026-03-15T07:36:02.636Z</updated>
+    <updated>2026-03-15T07:38:51.407Z</updated>
   </entry>
   <entry>
     <author>
@@ -235,7 +195,47 @@
 <p>选中单词：ctrl +]]>
     </summary>
     <title>VS Code 快捷键指南</title>
-    <updated>2026-03-15T07:36:02.634Z</updated>
+    <updated>2026-03-15T07:38:51.404Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>GloamFox</name>
+    </author>
+    <category term="软件教程" scheme="https://gloamfox.github.io/categories/%E8%BD%AF%E4%BB%B6%E6%95%99%E7%A8%8B/"/>
+    <category term="Typora" scheme="https://gloamfox.github.io/tags/Typora/"/>
+    <category term="软件安装" scheme="https://gloamfox.github.io/tags/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/"/>
+    <category term="主题优化" scheme="https://gloamfox.github.io/tags/%E4%B8%BB%E9%A2%98%E4%BC%98%E5%8C%96/"/>
+    <id>https://gloamfox.github.io/2025/11/18/typora-an-zhuang-pei-zhi/</id>
+    <link href="https://gloamfox.github.io/2025/11/18/typora-an-zhuang-pei-zhi/"/>
+    <published>2025-11-18T10:37:50.000Z</published>
+    <summary>
+      <![CDATA[<h2 id="Typora安装注册"><a href="#Typora安装注册" class="headerlink" title="Typora安装注册"></a>Typora安装注册</h2><ol>
+<li>先安装]]>
+    </summary>
+    <title>Typora安装与配置教程</title>
+    <updated>2026-03-15T07:38:51.406Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>GloamFox</name>
+    </author>
+    <category term="技术教程" scheme="https://gloamfox.github.io/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/"/>
+    <category term="VSCode" scheme="https://gloamfox.github.io/tags/VSCode/"/>
+    <category term="快捷键" scheme="https://gloamfox.github.io/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
+    <category term="代码编辑" scheme="https://gloamfox.github.io/tags/%E4%BB%A3%E7%A0%81%E7%BC%96%E8%BE%91/"/>
+    <id>https://gloamfox.github.io/2025/11/18/vs-code-kuai-jie-jian-zhi-nan/</id>
+    <link href="https://gloamfox.github.io/2025/11/18/vs-code-kuai-jie-jian-zhi-nan/"/>
+    <published>2025-11-18T10:37:50.000Z</published>
+    <summary>
+      <![CDATA[<p>打开工程：code + 路径</p>
+<p>打开指定文件：ctrl + p</p>
+<p>打开/关闭终端：ctrl + ` (1左边的按键)</p>
+<p>跳转到行：ctrl + g</p>
+<p>按单词移动光标：ctrl + 左右</p>
+<p>选中单词：ctrl +]]>
+    </summary>
+    <title>VS Code 快捷键指南</title>
+    <updated>2026-03-15T07:38:51.406Z</updated>
   </entry>
   <entry>
     <author>
@@ -252,6 +252,6 @@
       <![CDATA[<h2 id="Jupyter"><a href="#Jupyter" class="headerlink"]]>
     </summary>
     <title>VSCode中Python开发插件</title>
-    <updated>2026-03-15T07:36:02.636Z</updated>
+    <updated>2026-03-15T07:38:51.406Z</updated>
   </entry>
 </feed>
