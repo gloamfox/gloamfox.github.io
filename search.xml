@@ -46,11 +46,11 @@
     
     
     <entry>
-      <title>VS Code 快捷键指南</title>
-      <link href="/2025/11/18/11111/"/>
-      <url>/2025/11/18/11111/</url>
+      <title>nvs 安装与使用指南</title>
+      <link href="/2026/02/26/shi-yong-nvs-gong-ju-qie-huan-node-ban-ben/"/>
+      <url>/2026/02/26/shi-yong-nvs-gong-ju-qie-huan-node-ban-ben/</url>
       
-        <content type="html"><![CDATA[<p>打开工程：code + 路径</p><p>打开指定文件：ctrl + p</p><p>打开/关闭终端：ctrl + ` (1左边的按键)</p><p>跳转到行：ctrl + g</p><p>按单词移动光标：ctrl + 左右</p><p>选中单词：ctrl + d （重复按可以多选）</p><p>选中行：ctrl + l （重复按会同时选择下一行）</p><p>移动行：alt + 上下</p><p>格式化代码：ctrl + shift + f</p><p>跳转到定义：f12</p><p>查看当前文件符号：ctrl + shift + o</p><p>剪切/复制当前行：ctrl + x / ctrl + c （什么都不选的时候）</p><p>切换tab：alt+数字</p><p>顺序切换tab：ctrl + pageup / pagedown</p><p>关闭文件：ctrl+w</p><p>关闭所有文件：ctrl + k w （ctrl不松手）</p><p>ctrl+b 打开主侧边栏</p><p>ctrl+shift+e 打开文件管理器</p><p>ctrl+0 焦点聚焦到主侧边栏</p><p>ctrl+1 焦点聚焦到代码编辑器</p><p>ctrl+shift+space 重新出现函数信息提示</p><p>ctrl+\ 添加分屏</p><p>ctrl + d 选中当前内容，连续快捷键会逐个选择下一个内容</p><p>ctrl + shift + L 选择所有找到的查找匹配项</p>]]></content>
+        <content type="html"><![CDATA[<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p><a href="https://github.com/jasongin/nvs">nvs官方仓库</a></p><p>nvs 有跨平台的特性，支持 Windows 、 macOS和 Linux 系统，下面分别介绍两种安装方法。</p><h2 id="windows"><a href="#windows" class="headerlink" title="windows"></a>windows</h2><p>推荐通过 msi 的方式安装，就跟正常安装软件一下，双击下一步即可：</p><p><a href="https://github.com/jasongin/nvs/releases">https://github.com/jasongin/nvs/releases</a></p><h2 id="mac"><a href="#mac" class="headerlink" title="mac"></a>mac</h2><p>用下面三行命令即可：</p><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export NVS_HOME="$HOME/.nvs" git clone https://github.com/jasongin/nvs "$NVS_HOME" . "$NVS_HOME/nvs.sh" install</span><br></pre></td></tr></tbody></table></figure><h1 id="常见命令"><a href="#常见命令" class="headerlink" title="常见命令"></a>常见命令</h1><h2 id="添加Node版本"><a href="#添加Node版本" class="headerlink" title="添加Node版本"></a>添加Node版本</h2><p>如果你想安装最新的 LTS 版本，可以用命令：</p><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvs add lts</span><br></pre></td></tr></tbody></table></figure><p>如果你需要新增一个 Node.js 16的版本，可以用以下命令：</p><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvs add 16</span><br></pre></td></tr></tbody></table></figure><h2 id="更新当前的-Node-小版本"><a href="#更新当前的-Node-小版本" class="headerlink" title="更新当前的 Node 小版本"></a>更新当前的 Node 小版本</h2><p>如果你想要升级 Node 小版本，比方说从 20.13.1升级到20.14.0（当前大版本的最新版），可以使用如下命令：</p><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvs upgrade</span><br></pre></td></tr></tbody></table></figure><h2 id="配置默认-Node-版本"><a href="#配置默认-Node-版本" class="headerlink" title="配置默认 Node 版本"></a>配置默认 Node 版本</h2><h3 id="全局指定"><a href="#全局指定" class="headerlink" title="全局指定"></a>全局指定</h3><p>这个适用于绝大部分情况，指定默认的 node 版本。</p><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvs link lts # 使用最新的 lts 版本，在所有的终端都生效</span><br></pre></td></tr></tbody></table></figure><h3 id="局部指定"><a href="#局部指定" class="headerlink" title="局部指定"></a>局部指定</h3><p>这个适用于偶尔用一次指定版本的情况，当你的终端关闭后，下次启动默认还是之前 nvs link 过的版本。</p><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvs use 16 # 在当前的终端使用 16 版本，关闭后失效</span><br></pre></td></tr></tbody></table></figure><h2 id="查看所有安装的-Node-版本"><a href="#查看所有安装的-Node-版本" class="headerlink" title="查看所有安装的 Node 版本"></a>查看所有安装的 Node 版本</h2><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvs ls</span><br></pre></td></tr></tbody></table></figure><h2 id="其他命令"><a href="#其他命令" class="headerlink" title="其他命令"></a>其他命令</h2><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvs --help // 查看其他命令的帮助</span><br></pre></td></tr></tbody></table></figure><h2 id="命令手册"><a href="#命令手册" class="headerlink" title="命令手册"></a>命令手册</h2><p>![[file-1772095367895.png|file-1772095367895.png]]</p><p>一个具体版本或者版本过滤词由一个完整的或者部分的语义版本号或者版本标签（”lts”, “latest”, “Argon”等）组成，也可以是远端的版本名称，或者使用斜杠分隔来指定架构版本。例如：”lts”, “4.6.0”, “6/x86”, “node/6.7/x64”等。</p><h1 id="实用技巧"><a href="#实用技巧" class="headerlink" title="实用技巧"></a>实用技巧</h1><p>如果你不想每次都手动切换 node 版本，希望根据项目配置来，那么你可以把&nbsp;<code>nvs use 16</code>这样的命令，写到项目的 pre 中。<code>package.json</code>示例如下：</p><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">{</span><br><span class="line">  "scripts": {</span><br><span class="line">    "predev": "nvs use 16",</span><br><span class="line">    "dev": "vue-cli-service serve"</span><br><span class="line">    "prebuild": "nvs use 16",</span><br><span class="line">    "dev": "vue-cli-service build"</span><br><span class="line">  }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure><p>这样你每次启动或者打包项目的之前，都会先执行 pre 开头的 script，然后在执行你当前执行的命令。</p>]]></content>
       
       
       <categories>
@@ -62,11 +62,11 @@
       
         <tags>
             
-            <tag> VSCode </tag>
+            <tag> Node版本管理 </tag>
             
-            <tag> 快捷键 </tag>
+            <tag> nvs工具 </tag>
             
-            <tag> 代码编辑 </tag>
+            <tag> 跨平台 </tag>
             
         </tags>
       
@@ -79,7 +79,7 @@
       <link href="/2025/11/18/typora-an-zhuang-pei-zhi/"/>
       <url>/2025/11/18/typora-an-zhuang-pei-zhi/</url>
       
-        <content type="html"><![CDATA[<h2 id="Typora安装注册"><a href="#Typora安装注册" class="headerlink" title="Typora安装注册"></a>Typora安装注册</h2><ol><li>先安装 typora-setup-x64-1.2.4.exe，并记录安装路径，<a href="https://wwnu.lanzouy.com/ieCCU0fqgzgj">下载地址</a></li><li>将 app.asar 替换到安装路径下的resources文件夹，替换掉app.asar文件</li><li>重启typora！！！！！！</li><li>输入邮箱、注册码，邮箱随便输入，注册码：E8Q9Y5-KXMTL5-7578SL-4S5XKS</li></ol><p>仅供学习，请在下载24小时之内删除，请支持正版</p><h2 id="图片上传"><a href="#图片上传" class="headerlink" title="图片上传"></a>图片上传</h2><p>文件 -&gt; 偏好设置中设置图像相关配置，上传服务我使用的是PicGo-Core（command line），其实和PicGo-Core(app)一样，主要是我不想托盘中多出一个程序放在那里，看着不舒服</p><p><img src="https://sh-prod-mall-bucket.oss-cn-shanghai.aliyuncs.com/imgupload/blog/image-20230502155900159.png" alt="image-20230502155900159"></p><p><img src="https://sh-prod-mall-bucket.oss-cn-shanghai.aliyuncs.com/imgupload/blog/image-20230502160633862.png" alt="image-20230502160633862"></p><p>点击下载或更新，下载更新完成后，点击打开配置文件，配置图床的地址，有些版本能直接打开，有些无反应，需要手动进到指定的目录进行修改<code>config.json</code>文件</p><p>picgo 的默认配置文件为<code>~/.picgo/config.json</code>。其中<code>~</code>为用户目录。不同系统的用户目录不太一样。</p><p>linux 和 macOS 均为<code>~/.picgo/config.json</code>。</p><p>windows 则为<code>C:\Users\你的用户名\.picgo\config.json</code></p><p>以下为修改图床使用阿里云OSS的配置</p><p><img src="https://sh-prod-mall-bucket.oss-cn-shanghai.aliyuncs.com/imgupload/blog/image-20230502161235469.png" alt="image-20230502161235469"></p><p>更多PicGo-Core配置文件参考：<a href="https://picgo.github.io/PicGo-Core-Doc/zh/guide/config.html">配置文件 | PicGo-Core</a></p><p>配置完成后，在Typora中进行验证</p><p><img src="https://sh-prod-mall-bucket.oss-cn-shanghai.aliyuncs.com/imgupload/blog/image-20230502161438558.png" alt="image-20230502161438558"></p><p><img src="https://sh-prod-mall-bucket.oss-cn-shanghai.aliyuncs.com/imgupload/blog/image-20230502161446114.png" alt="image-20230502161446114"></p><h2 id="主题优化"><a href="#主题优化" class="headerlink" title="主题优化"></a>主题优化</h2><p>推荐一款作者在用的主题<strong>Drake</strong>，该款主题字体略微有些小，因为在此基础上做了略微更改，把字体改大</p><p><a href="https://github.com/liangjingkanji/DrakeTyporaTheme">GitHub - liangjingkanji/DrakeTyporaTheme: 十二种主题风格 - Material Google JetBrains Vue Juejin Purple Ayu Dark</a></p><p>打开主题文件夹，并将下载的Drake主题文件解压后复制到该文件夹中，重启Typora</p><p><img src="https://sh-prod-mall-bucket.oss-cn-shanghai.aliyuncs.com/imgupload/blog/image-20230502163038894.png" alt="image-20230502163038894"></p><p>工具栏中，主题选择Drake主题</p><p><img src="https://sh-prod-mall-bucket.oss-cn-shanghai.aliyuncs.com/imgupload/blog/image-20230502163309817.png" alt="image-20230502163309817"></p><p>Drake主题默认文字太小，需要将文字大小调大一些</p><p><a href="https://github.com/liangjingkanji/DrakeTyporaTheme/issues/83">修改字体大小 · Issue #83 · liangjingkanji/DrakeTyporaTheme · GitHub</a></p>]]></content>
+        <content type="html"><![CDATA[<h2 id="Typora安装注册"><a href="#Typora安装注册" class="headerlink" title="Typora安装注册"></a>Typora安装注册</h2><ol><li>先安装 typora-setup-x64-1.2.4.exe，并记录安装路径，<a href="https://wwnu.lanzouy.com/ieCCU0fqgzgj">下载地址</a></li><li>将 app.asar 替换到安装路径下的resources文件夹，替换掉app.asar文件</li><li>重启typora！！！！！！</li><li>输入邮箱、注册码，邮箱随便输入，注册码：E8Q9Y5-KXMTL5-7578SL-4S5XKS</li></ol><p>仅供学习，请在下载24小时之内删除，请支持正版</p><h2 id="图片上传"><a href="#图片上传" class="headerlink" title="图片上传"></a>图片上传</h2><p>文件 -&gt; 偏好设置中设置图像相关配置，上传服务我使用的是PicGo-Core（command line），其实和PicGo-Core(app)一样，主要是我不想托盘中多出一个程序放在那里，看着不舒服</p><p><img src="https://sh-prod-mall-bucket.oss-cn-shanghai.aliyuncs.com/imgupload/blog/image-20230502155900159.png" alt="image-20230502155900159|1178x904"></p><p><img src="https://sh-prod-mall-bucket.oss-cn-shanghai.aliyuncs.com/imgupload/blog/image-20230502160633862.png" alt="image-20230502160633862|1178x904"></p><p>点击下载或更新，下载更新完成后，点击打开配置文件，配置图床的地址，有些版本能直接打开，有些无反应，需要手动进到指定的目录进行修改<code>config.json</code>文件</p><p>picgo 的默认配置文件为<code>~/.picgo/config.json</code>。其中<code>~</code>为用户目录。不同系统的用户目录不太一样。</p><p>linux 和 macOS 均为<code>~/.picgo/config.json</code>。</p><p>windows 则为<code>C:\Users\你的用户名\.picgo\config.json</code></p><p>以下为修改图床使用阿里云OSS的配置</p><p><img src="https://sh-prod-mall-bucket.oss-cn-shanghai.aliyuncs.com/imgupload/blog/image-20230502161235469.png" alt="image-20230502161235469"></p><p>更多PicGo-Core配置文件参考：<a href="https://picgo.github.io/PicGo-Core-Doc/zh/guide/config.html">配置文件 | PicGo-Core</a></p><p>配置完成后，在Typora中进行验证</p><p><img src="https://sh-prod-mall-bucket.oss-cn-shanghai.aliyuncs.com/imgupload/blog/image-20230502161438558.png" alt="image-20230502161438558"></p><p><img src="https://sh-prod-mall-bucket.oss-cn-shanghai.aliyuncs.com/imgupload/blog/image-20230502161446114.png" alt="image-20230502161446114"></p><h2 id="主题优化"><a href="#主题优化" class="headerlink" title="主题优化"></a>主题优化</h2><p>推荐一款作者在用的主题<strong>Drake</strong>，该款主题字体略微有些小，因为在此基础上做了略微更改，把字体改大</p><p><a href="https://github.com/liangjingkanji/DrakeTyporaTheme">GitHub - liangjingkanji/DrakeTyporaTheme: 十二种主题风格 - Material Google JetBrains Vue Juejin Purple Ayu Dark</a></p><p>打开主题文件夹，并将下载的Drake主题文件解压后复制到该文件夹中，重启Typora</p><p><img src="https://sh-prod-mall-bucket.oss-cn-shanghai.aliyuncs.com/imgupload/blog/image-20230502163038894.png" alt="image-20230502163038894"></p><p>工具栏中，主题选择Drake主题</p><p><img src="https://sh-prod-mall-bucket.oss-cn-shanghai.aliyuncs.com/imgupload/blog/image-20230502163309817.png" alt="image-20230502163309817"></p><p>Drake主题默认文字太小，需要将文字大小调大一些</p><p><a href="https://github.com/liangjingkanji/DrakeTyporaTheme/issues/83">修改字体大小 · Issue #83 · liangjingkanji/DrakeTyporaTheme · GitHub</a></p>]]></content>
       
       
       <categories>
@@ -133,7 +133,7 @@
     
     
     <entry>
-      <title>VSCode中Python开发插件配置</title>
+      <title>VSCode中Python开发插件</title>
       <link href="/2025/11/18/vscode-chang-yong-python-cha-jian/"/>
       <url>/2025/11/18/vscode-chang-yong-python-cha-jian/</url>
       
@@ -154,6 +154,35 @@
             <tag> Pylance </tag>
             
             <tag> IntelliCode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>VS Code 快捷键指南</title>
+      <link href="/2025/11/18/11111/"/>
+      <url>/2025/11/18/11111/</url>
+      
+        <content type="html"><![CDATA[<p>打开工程：code + 路径</p><p>打开指定文件：ctrl + p</p><p>打开/关闭终端：ctrl + ` (1左边的按键)</p><p>跳转到行：ctrl + g</p><p>按单词移动光标：ctrl + 左右</p><p>选中单词：ctrl + d （重复按可以多选）</p><p>选中行：ctrl + l （重复按会同时选择下一行）</p><p>移动行：alt + 上下</p><p>格式化代码：ctrl + shift + f</p><p>跳转到定义：f12</p><p>查看当前文件符号：ctrl + shift + o</p><p>剪切/复制当前行：ctrl + x / ctrl + c （什么都不选的时候）</p><p>切换tab：alt+数字</p><p>顺序切换tab：ctrl + pageup / pagedown</p><p>关闭文件：ctrl+w</p><p>关闭所有文件：ctrl + k w （ctrl不松手）</p><p>ctrl+b 打开主侧边栏</p><p>ctrl+shift+e 打开文件管理器</p><p>ctrl+0 焦点聚焦到主侧边栏</p><p>ctrl+1 焦点聚焦到代码编辑器</p><p>ctrl+shift+space 重新出现函数信息提示</p><p>ctrl+\ 添加分屏</p><p>ctrl + d 选中当前内容，连续快捷键会逐个选择下一个内容</p><p>ctrl + shift + L 选择所有找到的查找匹配项</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术教程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> VSCode </tag>
+            
+            <tag> 快捷键 </tag>
+            
+            <tag> 代码编辑 </tag>
             
         </tags>
       
