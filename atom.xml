@@ -1,257 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <author>
-    <name>GloamFox</name>
-  </author>
-  <generator uri="https://hexo.io/">Hexo</generator>
-  <id>https://gloamfox.github.io/</id>
-  <link href="https://gloamfox.github.io/" rel="alternate"/>
-  <link href="https://gloamfox.github.io/atom.xml" rel="self"/>
-  <rights>All rights reserved 2026, GloamFox</rights>
-  <subtitle>暮色之狐</subtitle>
   <title>暮色之狐</title>
-  <updated>2026-03-15T07:50:23.785Z</updated>
+  
+  <subtitle>暮色之狐</subtitle>
+  <link href="https://gloamfox.github.io/atom.xml" rel="self"/>
+  
+  <link href="https://gloamfox.github.io/"/>
+  <updated>2026-03-17T07:14:15.630Z</updated>
+  <id>https://gloamfox.github.io/</id>
+  
+  <author>
+    <name>Gloamfox</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
   <entry>
-    <author>
-      <name>GloamFox</name>
-    </author>
-    <id>https://gloamfox.github.io/2026/03/15/hello-world/</id>
-    <link href="https://gloamfox.github.io/2026/03/15/hello-world/"/>
-    <published>2026-03-15T07:50:23.785Z</published>
-    <summary>
-      <![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a>]]>
-    </summary>
     <title>Hello World</title>
-    <updated>2026-03-15T07:50:23.785Z</updated>
+    <link href="https://gloamfox.github.io/2018/09/12/hello-world/"/>
+    <id>https://gloamfox.github.io/2018/09/12/hello-world/</id>
+    <published>2018-09-12T22:25:00.000Z</published>
+    <updated>2026-03-17T07:14:15.630Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt;</summary>
+        
+      
+    
+    
+    
+    <category term="前端" scheme="https://gloamfox.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="Hexo" scheme="https://gloamfox.github.io/tags/Hexo/"/>
+    
   </entry>
-  <entry>
-    <author>
-      <name>GloamFox</name>
-    </author>
-    <id>https://gloamfox.github.io/2026/03/15/hexo-ce-shi/</id>
-    <link href="https://gloamfox.github.io/2026/03/15/hexo-ce-shi/"/>
-    <published>2026-03-15T02:07:19.000Z</published>
-    <summary>
-      <![CDATA[<p><img src="/./Assets/Hexo%E6%B5%8B%E8%AF%95/file-1773554854383.png"]]>
-    </summary>
-    <title>测试Obsidian转换hexo</title>
-    <updated>2026-03-15T07:50:23.785Z</updated>
-  </entry>
-  <entry>
-    <author>
-      <name>GloamFox</name>
-    </author>
-    <id>https://gloamfox.github.io/2026/03/15/hexo-test/</id>
-    <link href="https://gloamfox.github.io/2026/03/15/hexo-test/"/>
-    <published>2026-03-15T02:07:19.000Z</published>
-    <summary>
-      <![CDATA[<p><img src="/../Assets/file-20260315141025686.png" alt="file-20260315141025686.png"></p>
-<p><img]]>
-    </summary>
-    <title>测试Obsidian转换hexo</title>
-    <updated>2026-03-15T07:50:23.785Z</updated>
-  </entry>
-  <entry>
-    <author>
-      <name>GloamFox</name>
-    </author>
-    <category term="软件开发" scheme="https://gloamfox.github.io/categories/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/"/>
-    <category term="单元测试" scheme="https://gloamfox.github.io/tags/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/"/>
-    <category term="测试驱动开发" scheme="https://gloamfox.github.io/tags/%E6%B5%8B%E8%AF%95%E9%A9%B1%E5%8A%A8%E5%BC%80%E5%8F%91/"/>
-    <category term="软件质量" scheme="https://gloamfox.github.io/tags/%E8%BD%AF%E4%BB%B6%E8%B4%A8%E9%87%8F/"/>
-    <id>https://gloamfox.github.io/2026/03/14/dan-yuan-ce-shi-de-kun-jing-yu-po-ju-wei-he-wo-men-bu-yuan-xie-yi-ji-ru-he-gao-xiao-di-xie/</id>
-    <link href="https://gloamfox.github.io/2026/03/14/dan-yuan-ce-shi-de-kun-jing-yu-po-ju-wei-he-wo-men-bu-yuan-xie-yi-ji-ru-he-gao-xiao-di-xie/"/>
-    <published>2026-03-14T08:51:49.000Z</published>
-    <summary>
-      <![CDATA[<blockquote>
-<p>单元测试作为软件质量的重要一环，往往在整个开发流程中被大多数开发人员所忽略，本文旨在分析如何写好单元测试并探索一些测试驱动开发的应用。</p>
-</blockquote>
-<h2 id="单元测试原则"><a href="#单元测试原则"]]>
-    </summary>
-    <title>单元测试实践与测试驱动开发</title>
-    <updated>2026-03-15T07:50:23.786Z</updated>
-  </entry>
-  <entry>
-    <author>
-      <name>GloamFox</name>
-    </author>
-    <category term="工具教程" scheme="https://gloamfox.github.io/categories/%E5%B7%A5%E5%85%B7%E6%95%99%E7%A8%8B/"/>
-    <category term="Obsidian" scheme="https://gloamfox.github.io/tags/Obsidian/"/>
-    <category term="笔记管理" scheme="https://gloamfox.github.io/tags/%E7%AC%94%E8%AE%B0%E7%AE%A1%E7%90%86/"/>
-    <category term="GitHub同步" scheme="https://gloamfox.github.io/tags/GitHub%E5%90%8C%E6%AD%A5/"/>
-    <id>https://gloamfox.github.io/2026/03/02/obsidian-da-zao-ge-ren-zhi-shi-ku/</id>
-    <link href="https://gloamfox.github.io/2026/03/02/obsidian-da-zao-ge-ren-zhi-shi-ku/"/>
-    <published>2026-03-02T02:04:33.000Z</published>
-    <summary>
-      <![CDATA[<p>之前都是使用Typora编辑笔记和文档，Markdown写笔记或者文档简直不要太方便，熟练语法后，双手可以不离开键盘，目光始终聚焦再文字上面，写作体验非常流畅。</p>
-<p>随着文档的增多，发现文档越来越不好管理，尝试语雀、印象笔记、腾讯文档、飞书文档等软件，功能虽然很多]]>
-    </summary>
-    <title>Obsidian打造个人知识库</title>
-    <updated>2026-03-15T07:50:23.785Z</updated>
-  </entry>
-  <entry>
-    <author>
-      <name>GloamFox</name>
-    </author>
-    <category term="计算机基础" scheme="https://gloamfox.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
-    <category term="进制转换" scheme="https://gloamfox.github.io/tags/%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2/"/>
-    <category term="数据编码" scheme="https://gloamfox.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BC%96%E7%A0%81/"/>
-    <category term="浮点数运算" scheme="https://gloamfox.github.io/tags/%E6%B5%AE%E7%82%B9%E6%95%B0%E8%BF%90%E7%AE%97/"/>
-    <id>https://gloamfox.github.io/2026/03/01/shu-ju-de-biao-shi/</id>
-    <link href="https://gloamfox.github.io/2026/03/01/shu-ju-de-biao-shi/"/>
-    <published>2026-03-01T12:22:43.000Z</published>
-    <summary>
-      <![CDATA[<h1 id="进制转换"><a href="#进制转换" class="headerlink" title="进制转换"></a>进制转换</h1><h2 id="R进制转十进制"><a href="#R进制转十进制" class="headerlink"]]>
-    </summary>
-    <title>进制转换与数据编码</title>
-    <updated>2026-03-15T07:50:23.786Z</updated>
-  </entry>
-  <entry>
-    <author>
-      <name>GloamFox</name>
-    </author>
-    <category term="计算机科学" scheme="https://gloamfox.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/"/>
-    <category term="计算机结构" scheme="https://gloamfox.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%93%E6%9E%84/"/>
-    <category term="冯·诺依曼" scheme="https://gloamfox.github.io/tags/%E5%86%AF%C2%B7%E8%AF%BA%E4%BE%9D%E6%9B%BC/"/>
-    <category term="Flynn分类" scheme="https://gloamfox.github.io/tags/Flynn%E5%88%86%E7%B1%BB/"/>
-    <id>https://gloamfox.github.io/2026/03/01/ji-suan-ji-jie-gou/</id>
-    <link href="https://gloamfox.github.io/2026/03/01/ji-suan-ji-jie-gou/"/>
-    <published>2026-03-01T12:22:43.000Z</published>
-    <summary>
-      <![CDATA[<h1 id="计算机结构"><a href="#计算机结构" class="headerlink"]]>
-    </summary>
-    <title>计算机组成原理</title>
-    <updated>2026-03-15T07:50:23.786Z</updated>
-  </entry>
-  <entry>
-    <author>
-      <name>GloamFox</name>
-    </author>
-    <category term="技术教程" scheme="https://gloamfox.github.io/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/"/>
-    <category term="Node版本管理" scheme="https://gloamfox.github.io/tags/Node%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/"/>
-    <category term="nvs工具" scheme="https://gloamfox.github.io/tags/nvs%E5%B7%A5%E5%85%B7/"/>
-    <category term="跨平台" scheme="https://gloamfox.github.io/tags/%E8%B7%A8%E5%B9%B3%E5%8F%B0/"/>
-    <id>https://gloamfox.github.io/2026/02/26/shi-yong-nvs-gong-ju-qie-huan-node-ban-ben/</id>
-    <link href="https://gloamfox.github.io/2026/02/26/shi-yong-nvs-gong-ju-qie-huan-node-ban-ben/"/>
-    <published>2026-02-26T04:35:40.000Z</published>
-    <summary>
-      <![CDATA[<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p><a href="https://github.com/jasongin/nvs">nvs官方仓库</a></p>
-<p>nvs]]>
-    </summary>
-    <title>nvs 安装与使用指南</title>
-    <updated>2026-03-15T07:50:23.786Z</updated>
-  </entry>
-  <entry>
-    <author>
-      <name>GloamFox</name>
-    </author>
-    <category term="技术文档" scheme="https://gloamfox.github.io/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/"/>
-    <category term="Java命名规范" scheme="https://gloamfox.github.io/tags/Java%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83/"/>
-    <category term="序列化问题" scheme="https://gloamfox.github.io/tags/%E5%BA%8F%E5%88%97%E5%8C%96%E9%97%AE%E9%A2%98/"/>
-    <category term="Boolean类型" scheme="https://gloamfox.github.io/tags/Boolean%E7%B1%BB%E5%9E%8B/"/>
-    <id>https://gloamfox.github.io/2025/12/06/zhi-qi-ran-zhi-qi-suo-yi-ran-boolean-lei-xing-ming-ming-gui-fan/</id>
-    <link href="https://gloamfox.github.io/2025/12/06/zhi-qi-ran-zhi-qi-suo-yi-ran-boolean-lei-xing-ming-ming-gui-fan/"/>
-    <published>2025-12-06T11:28:42.000Z</published>
-    <summary>
-      <![CDATA[<p><img src="/../Assets/$%7BnoteFileName%7D/file-1764991811367.png"]]>
-    </summary>
-    <title>Java布尔类型命名规范与序列化问题分析</title>
-    <updated>2026-03-15T07:50:23.786Z</updated>
-  </entry>
-  <entry>
-    <author>
-      <name>GloamFox</name>
-    </author>
-    <category term="技术规范" scheme="https://gloamfox.github.io/categories/%E6%8A%80%E6%9C%AF%E8%A7%84%E8%8C%83/"/>
-    <category term="二方库" scheme="https://gloamfox.github.io/tags/%E4%BA%8C%E6%96%B9%E5%BA%93/"/>
-    <category term="版本管理" scheme="https://gloamfox.github.io/tags/%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/"/>
-    <category term="依赖冲突" scheme="https://gloamfox.github.io/tags/%E4%BE%9D%E8%B5%96%E5%86%B2%E7%AA%81/"/>
-    <id>https://gloamfox.github.io/2025/11/29/xiang-mu-yi-lai-ku-de-gui-fan-tan-suo/</id>
-    <link href="https://gloamfox.github.io/2025/11/29/xiang-mu-yi-lai-ku-de-gui-fan-tan-suo/"/>
-    <published>2025-11-29T10:56:24.000Z</published>
-    <summary>
-      <![CDATA[<h2 id="二方库"><a href="#二方库" class="headerlink"]]>
-    </summary>
-    <title>二方库管理规范</title>
-    <updated>2026-03-15T07:50:23.786Z</updated>
-  </entry>
-  <entry>
-    <author>
-      <name>GloamFox</name>
-    </author>
-    <category term="技术教程" scheme="https://gloamfox.github.io/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/"/>
-    <category term="VSCode" scheme="https://gloamfox.github.io/tags/VSCode/"/>
-    <category term="快捷键" scheme="https://gloamfox.github.io/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
-    <category term="代码编辑" scheme="https://gloamfox.github.io/tags/%E4%BB%A3%E7%A0%81%E7%BC%96%E8%BE%91/"/>
-    <id>https://gloamfox.github.io/2025/11/18/11111/</id>
-    <link href="https://gloamfox.github.io/2025/11/18/11111/"/>
-    <published>2025-11-18T10:37:50.000Z</published>
-    <summary>
-      <![CDATA[<p>打开工程：code + 路径</p>
-<p>打开指定文件：ctrl + p</p>
-<p>打开/关闭终端：ctrl + ` (1左边的按键)</p>
-<p>跳转到行：ctrl + g</p>
-<p>按单词移动光标：ctrl + 左右</p>
-<p>选中单词：ctrl +]]>
-    </summary>
-    <title>VS Code 快捷键指南</title>
-    <updated>2026-03-15T07:50:23.783Z</updated>
-  </entry>
-  <entry>
-    <author>
-      <name>GloamFox</name>
-    </author>
-    <category term="软件教程" scheme="https://gloamfox.github.io/categories/%E8%BD%AF%E4%BB%B6%E6%95%99%E7%A8%8B/"/>
-    <category term="Typora" scheme="https://gloamfox.github.io/tags/Typora/"/>
-    <category term="软件安装" scheme="https://gloamfox.github.io/tags/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/"/>
-    <category term="主题优化" scheme="https://gloamfox.github.io/tags/%E4%B8%BB%E9%A2%98%E4%BC%98%E5%8C%96/"/>
-    <id>https://gloamfox.github.io/2025/11/18/typora-an-zhuang-pei-zhi/</id>
-    <link href="https://gloamfox.github.io/2025/11/18/typora-an-zhuang-pei-zhi/"/>
-    <published>2025-11-18T10:37:50.000Z</published>
-    <summary>
-      <![CDATA[<h2 id="Typora安装注册"><a href="#Typora安装注册" class="headerlink" title="Typora安装注册"></a>Typora安装注册</h2><ol>
-<li>先安装]]>
-    </summary>
-    <title>Typora安装与配置教程</title>
-    <updated>2026-03-15T07:50:23.785Z</updated>
-  </entry>
-  <entry>
-    <author>
-      <name>GloamFox</name>
-    </author>
-    <category term="技术教程" scheme="https://gloamfox.github.io/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/"/>
-    <category term="VSCode" scheme="https://gloamfox.github.io/tags/VSCode/"/>
-    <category term="快捷键" scheme="https://gloamfox.github.io/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
-    <category term="代码编辑" scheme="https://gloamfox.github.io/tags/%E4%BB%A3%E7%A0%81%E7%BC%96%E8%BE%91/"/>
-    <id>https://gloamfox.github.io/2025/11/18/vs-code-kuai-jie-jian-zhi-nan/</id>
-    <link href="https://gloamfox.github.io/2025/11/18/vs-code-kuai-jie-jian-zhi-nan/"/>
-    <published>2025-11-18T10:37:50.000Z</published>
-    <summary>
-      <![CDATA[<p>打开工程：code + 路径</p>
-<p>打开指定文件：ctrl + p</p>
-<p>打开/关闭终端：ctrl + ` (1左边的按键)</p>
-<p>跳转到行：ctrl + g</p>
-<p>按单词移动光标：ctrl + 左右</p>
-<p>选中单词：ctrl +]]>
-    </summary>
-    <title>VS Code 快捷键指南</title>
-    <updated>2026-03-15T07:50:23.785Z</updated>
-  </entry>
-  <entry>
-    <author>
-      <name>GloamFox</name>
-    </author>
-    <category term="开发工具" scheme="https://gloamfox.github.io/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
-    <category term="Jupyter" scheme="https://gloamfox.github.io/tags/Jupyter/"/>
-    <category term="Pylance" scheme="https://gloamfox.github.io/tags/Pylance/"/>
-    <category term="IntelliCode" scheme="https://gloamfox.github.io/tags/IntelliCode/"/>
-    <id>https://gloamfox.github.io/2025/11/18/vscode-chang-yong-python-cha-jian/</id>
-    <link href="https://gloamfox.github.io/2025/11/18/vscode-chang-yong-python-cha-jian/"/>
-    <published>2025-11-18T10:37:50.000Z</published>
-    <summary>
-      <![CDATA[<h2 id="Jupyter"><a href="#Jupyter" class="headerlink"]]>
-    </summary>
-    <title>VSCode中Python开发插件</title>
-    <updated>2026-03-15T07:50:23.785Z</updated>
-  </entry>
+  
 </feed>
