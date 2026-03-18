@@ -31,6 +31,19 @@
     
     
     <entry>
+      <title>测试Obsidian转换hexo</title>
+      <link href="/2026/03/15/hello-test/"/>
+      <url>/2026/03/15/hello-test/</url>
+      
+        <content type="html"><![CDATA[<p><img src="../Assets/file-1773839875188.png" alt="file-1773839875188.png"></p><p><img src="../Assets/hexo-test%202026-03-15%2014.56.28.svg" alt="hexo-test 2026-03-15 14.56.28.excalidraw"></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Hello World</title>
       <link href="/2018/09/12/hello-world/"/>
       <url>/2018/09/12/hello-world/</url>
