@@ -529,13 +529,13 @@
 <li><strong>主题</strong>：<a target="_blank" rel="noopener" href="https://github.com/blinkfox/hexo-theme-matery">hexo-theme-matery</a>：简洁美观的响应式主题。</li>
 <li><strong>托管平台</strong>：<a target="_blank" rel="noopener" href="https://docs.github.com/zh/pages">GitHub Pages</a>：免费静态网页托管。</li>
 </ul>
-<p>由于我不希望公开所有文章的源文件，我创建了两个 GitHub 仓库： </p>
+<p>由于我不希望公开所有文章的源文件，我创建了两个 GitHub 仓库：</p>
 <ul>
 <li>私有仓库 <code>hexo-project</code> – 存放 Hexo 博客配置、主题和文章源文件。</li>
 <li>公共仓库 <code>&lt;用户名&gt;.github.io</code> – 存放 Hexo 生成的静态文件，供 GitHub Pages 展示。</li>
 </ul>
 <p>整体流程如下图所示：</p>
-<p><img src="../Assets/Obsidian%202026-03-18%2013.04.23.svg" alt="Obsidian 2026-03-18 13.04.23.excalidraw"></p>
+<p><img src="../../file-20260318202156189.md" alt="file-20260318202156189"></p>
 <h2 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h2><h3 id="搭建-Hexo-博客"><a href="#搭建-Hexo-博客" class="headerlink" title="搭建 Hexo 博客"></a>搭建 Hexo 博客</h3><h4 id="安装依赖"><a href="#安装依赖" class="headerlink" title="安装依赖"></a>安装依赖</h4><p>Hexo 依赖 Node.js 和 Git，请根据官方文档完成安装：</p>
 <p><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/#%E5%AE%89%E8%A3%85-Git">安装Git</a><br><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/#%E5%AE%89%E8%A3%85-Node-js">安装Node-js</a></p>
 <h4 id="初始化-Hexo"><a href="#初始化-Hexo" class="headerlink" title="初始化 Hexo"></a>初始化 Hexo</h4><p>安装 Hexo 命令行工具并创建项目：</p>
@@ -576,8 +576,8 @@ hexo s<span aria-hidden="true" class="line-numbers-rows"><span></span><span></sp
 <li>私有仓库 <code>hexo-blog</code> – 用于存放博客源文件及配置。<h4 id="关联本地仓库"><a href="#关联本地仓库" class="headerlink" title="关联本地仓库"></a>关联本地仓库</h4></li>
 </ul>
 <p>将本地的 <code>hexo-blog</code> 文件夹与 GitHub 上的 <code>hexo-blog</code> 私有仓库关联，并推送所有文件。</p>
-<h4 id="生成-Personal-Access-Token"><a href="#生成-Personal-Access-Token" class="headerlink" title="生成 Personal Access Token"></a>生成 Personal Access Token</h4><p>在 GitHub 的 <strong>Settings → Developer settings → Personal access tokens → Tokens (classic)</strong> 中生成一个新 token，赋予 <code>repo</code> 权限。复制并保存该 token（只会显示一次）。<br><img src="../Assets/file-1773813456727.png" alt="file-1773813456727.png"><br><img src="../Assets/file-1773813902971.png" alt="file-1773813902971.png"></p>
-<h4 id="在私有仓库中设置-Secrets"><a href="#在私有仓库中设置-Secrets" class="headerlink" title="在私有仓库中设置 Secrets"></a>在私有仓库中设置 Secrets</h4><p>进入 <code>hexo-blog</code> 仓库的 <strong>Settings → Secrets and variables → Actions</strong>，点击 <strong>New repository secret</strong>，将上一步的 token 粘贴进去，并命名为 <code>HEXO_BLOG_DEPLOY_TOKEN</code>。<br><img src="../Assets/file-1773814105829.png" alt="file-1773814105829.png"></p>
+<h4 id="生成-Personal-Access-Token"><a href="#生成-Personal-Access-Token" class="headerlink" title="生成 Personal Access Token"></a>生成 Personal Access Token</h4><p>在 GitHub 的 <strong>Settings → Developer settings → Personal access tokens → Tokens (classic)</strong> 中生成一个新 token，赋予 <code>repo</code> 权限。复制并保存该 token（只会显示一次）。<br><img src="../Assets/file-20260318202159977.png" alt="file-20260318202159977.png"><br><img src="../Assets/file-20260318202159981.png" alt="file-20260318202159981.png"></p>
+<h4 id="在私有仓库中设置-Secrets"><a href="#在私有仓库中设置-Secrets" class="headerlink" title="在私有仓库中设置 Secrets"></a>在私有仓库中设置 Secrets</h4><p>进入 <code>hexo-blog</code> 仓库的 <strong>Settings → Secrets and variables → Actions</strong>，点击 <strong>New repository secret</strong>，将上一步的 token 粘贴进去，并命名为 <code>HEXO_BLOG_DEPLOY_TOKEN</code>。<br><img src="../Assets/file-20260318202159983.png" alt="file-20260318202159983.png"></p>
 <h4 id="配置-GitHub-Actions-工作流"><a href="#配置-GitHub-Actions-工作流" class="headerlink" title="配置 GitHub Actions 工作流"></a>配置 GitHub Actions 工作流</h4><p>在 <code>hexo-blog</code> 仓库中创建 <code>.github/workflows/deploy.yml</code> 文件，内容如下：</p>
 <pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">name</span><span class="token punctuation">:</span> Deploy Hexo to GitHub Pages
 
@@ -629,7 +629,7 @@ hexo s<span aria-hidden="true" class="line-numbers-rows"><span></span><span></sp
           external_repository<span class="token punctuation">:</span> gloamfox/gloamfox.github.io <span class="token comment"># 更改为你的 GitHub Pages 仓库, username 是你的用户名</span>
           publish_branch<span class="token punctuation">:</span> main <span class="token comment"># GitHub Pages 分支</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>该工作流会在每次向 <code>hexo-blog</code> 仓库的 <code>main</code> 分支推送时自动执行：安装依赖、生成静态文件，并将生成的 <code>public</code>目录推送到你的公共仓库。</p>
-<h4 id="开启-GitHub-Pages"><a href="#开启-GitHub-Pages" class="headerlink" title="开启 GitHub Pages"></a>开启 GitHub Pages</h4><p>进入公共仓库 <code>&lt;你的用户名&gt;.github.io</code> 的 <strong>Settings → Pages</strong>，在 <strong>Branch</strong> 中选择 <code>main</code> 分支，点击保存。GitHub Pages 会提供一个默认域名：<code>https://&lt;你的用户名&gt;.github.io</code>。<br><img src="../Assets/file-1773814816570.png" alt="1007"></p>
+<h4 id="开启-GitHub-Pages"><a href="#开启-GitHub-Pages" class="headerlink" title="开启 GitHub Pages"></a>开启 GitHub Pages</h4><p>进入公共仓库 <code>&lt;你的用户名&gt;.github.io</code> 的 <strong>Settings → Pages</strong>，在 <strong>Branch</strong> 中选择 <code>main</code> 分支，点击保存。GitHub Pages 会提供一个默认域名：<code>https://&lt;你的用户名&gt;.github.io</code>。<br><img src="../Assets/file-20260318202159985.png" alt="1007"></p>
 <h3 id="实现-Obsidian-到博客的一键发布"><a href="#实现-Obsidian-到博客的一键发布" class="headerlink" title="实现 Obsidian 到博客的一键发布"></a>实现 Obsidian 到博客的一键发布</h3><h4 id="痛点与需求"><a href="#痛点与需求" class="headerlink" title="痛点与需求"></a>痛点与需求</h4><p>在写作过程中，我希望：</p>
 <ul>
 <li>只发布部分精选文章，而非全部笔记。</li>
@@ -696,7 +696,7 @@ hexo s<span aria-hidden="true" class="line-numbers-rows"><span></span><span></sp
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://gloamfox.github.io/2026/03/18/obsidian/">https://gloamfox.github.io/2026/03/18/obsidian/</a>
+                    <a href="https://gloamfox.github.io/2026/03/18/obsidian-bo-ke-da-jian-zhi-nan/">https://gloamfox.github.io/2026/03/18/obsidian-bo-ke-da-jian-zhi-nan/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -909,10 +909,9 @@ hexo s<span aria-hidden="true" class="line-numbers-rows"><span></span><span></sp
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
                 <a href="/2026/03/18/obsidian/">
                     <div class="card-image">
@@ -930,9 +929,9 @@ hexo s<span aria-hidden="true" class="line-numbers-rows"><span></span><span></sp
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2026-03-18
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2026-03-18
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -945,7 +944,6 @@ hexo s<span aria-hidden="true" class="line-numbers-rows"><span></span><span></sp
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
@@ -968,31 +966,31 @@ hexo s<span aria-hidden="true" class="line-numbers-rows"><span></span><span></sp
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2026/03/18/obsidian-bo-ke-da-jian-zhi-nan/">
+                <a href="/2018/09/12/hello-world/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/gloamfox/gloamfox.github.io/medias/featureimages/13.jpg" class="responsive-img" alt="从零到一键发布：Obsidian + Hexo + GitHub Pages 个人博客搭建指南">
+                        <img src="https://cdn.jsdelivr.net/gh/gloamfox/gloamfox.github.io/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
                         
-                        <span class="card-title">从零到一键发布：Obsidian + Hexo + GitHub Pages 个人博客搭建指南</span>
+                        <span class="card-title">Hello World</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            本文详细介绍了如何基于Obsidian、Hexo和GitHub Pages搭建个人博客，并通过Enveloppe插件实现从写作到发布的自动化流程，解决图片、链接转换等问题，打造高效的内容创作体验。
+                            
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2026-03-18
+                                <i class="far fa-clock fa-fw icon-date"></i>2018-09-12
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/" class="post-category">
-                                    技术教程
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                    前端
                                 </a>
                             
                             
@@ -1001,10 +999,6 @@ hexo s<span aria-hidden="true" class="line-numbers-rows"><span></span><span></sp
                 </div>
                 
                 <div class="card-action article-tags">
-                    
-                    <a href="/tags/Obsidian/">
-                        <span class="chip bg-color">Obsidian</span>
-                    </a>
                     
                     <a href="/tags/Hexo/">
                         <span class="chip bg-color">Hexo</span>
