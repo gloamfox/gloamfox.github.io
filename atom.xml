@@ -6,7 +6,7 @@
   <link href="https://gloamfox.github.io/atom.xml" rel="self"/>
   
   <link href="https://gloamfox.github.io/"/>
-  <updated>2026-03-18T09:55:28.047Z</updated>
+  <updated>2026-03-18T10:06:03.711Z</updated>
   <id>https://gloamfox.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://gloamfox.github.io/2026/03/18/obsidian/"/>
     <id>https://gloamfox.github.io/2026/03/18/obsidian/</id>
     <published>2026-03-18T10:34:27.000Z</published>
-    <updated>2026-03-18T09:55:28.047Z</updated>
+    <updated>2026-03-18T10:06:03.711Z</updated>
     
     
       
@@ -37,9 +37,9 @@
     <category term="技术教程" scheme="https://gloamfox.github.io/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/"/>
     
     
-    <category term="Obsidian" scheme="https://gloamfox.github.io/tags/Obsidian/"/>
-    
     <category term="Hexo" scheme="https://gloamfox.github.io/tags/Hexo/"/>
+    
+    <category term="Obsidian" scheme="https://gloamfox.github.io/tags/Obsidian/"/>
     
   </entry>
   
@@ -48,7 +48,7 @@
     <link href="https://gloamfox.github.io/2018/09/12/hello-world/"/>
     <id>https://gloamfox.github.io/2018/09/12/hello-world/</id>
     <published>2018-09-12T22:25:00.000Z</published>
-    <updated>2026-03-18T09:55:28.048Z</updated>
+    <updated>2026-03-18T10:06:03.712Z</updated>
     
     
       
