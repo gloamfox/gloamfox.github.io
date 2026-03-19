@@ -2087,19 +2087,13 @@ body.DarkMode .paging .btn-floating:not(.disabled):hover {
 
 /* styles for '...' */
 .block-with-text {
-    /* hide text if it more than N lines  */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;          /* 限制为2行 */
+    -webkit-box-orient: vertical;
     overflow: hidden;
-    /* for set '...' in absolute position */
-    position: relative;
-    /* use this value to count block height */
     line-height: 1.5em;
-    /* max-height = line-height (1.2) * lines max number (3) */
-    max-height: 4.5em;
-    /* fix problem when last visible word doesn't adjoin right side  */
-    text-align: justify;
-    /* place for '...' */
-    margin-right: -1em;
-    padding-right: 1em;
+    /* 可选：固定高度避免布局抖动 */
+    height: calc(1.5em * 2);
 }
 
 /* create the ... style */
