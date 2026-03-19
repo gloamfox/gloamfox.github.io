@@ -611,35 +611,6 @@
     
     
     <entry>
-      <title>VSCode中Python开发插件</title>
-      <link href="/vscode-chang-yong-python-cha-jian/"/>
-      <url>/vscode-chang-yong-python-cha-jian/</url>
-      
-        <content type="html"><![CDATA[<h2 id="Jupyter"><a href="#Jupyter" class="headerlink" title="Jupyter"></a>Jupyter</h2><ul><li>VSCode中安装jupter插件</li><li>使用<code>#%%</code>分割代码块</li><li><code>.ipynb</code>文件中使用jupyter</li></ul><p>vscode中运行jupter时提示需要安装ipykernel,安装报错可以执行以下脚本进行安装 打开工程：code + 路径</p><p>pip install -i <a href="https://pypi.tuna.tsinghua.edu.cn/simple">https://pypi.tuna.tsinghua.edu.cn/simple</a> ipykernel</p><h2 id="Pylance"><a href="#Pylance" class="headerlink" title="Pylance"></a>Pylance</h2><ul><li>Python › Analysis: auto format string</li><li>Python › Analysis › Inlay Hints: Call Argument Names<ul><li>选择partial</li></ul></li><li>Python › Analysis: Type Checking Mode<ul><li>选择standard</li></ul></li><li>Python › Analysis: inlay Hints:Function Return Types</li></ul><h2 id="IntelliCode-Completions"><a href="#IntelliCode-Completions" class="headerlink" title="IntelliCode Completions"></a>IntelliCode Completions</h2><p>AI自动补全功能</p><h2 id="Code-Spell-Checker"><a href="#Code-Spell-Checker" class="headerlink" title="Code Spell Checker"></a>Code Spell Checker</h2><p>单词拼写检查</p><h2 id="Error-lens"><a href="#Error-lens" class="headerlink" title="Error lens"></a>Error lens</h2><p>错误检查</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 开发工具 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Jupyter </tag>
-            
-            <tag> Pylance </tag>
-            
-            <tag> IntelliCode </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>VS Code 快捷键指南</title>
       <link href="/vs-code-kuai-jie-jian-zhi-nan/"/>
       <url>/vs-code-kuai-jie-jian-zhi-nan/</url>
@@ -661,6 +632,35 @@
             <tag> 快捷键 </tag>
             
             <tag> 代码编辑 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>VSCode中Python开发插件</title>
+      <link href="/vscode-chang-yong-python-cha-jian/"/>
+      <url>/vscode-chang-yong-python-cha-jian/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Jupyter"><a href="#Jupyter" class="headerlink" title="Jupyter"></a>Jupyter</h2><ul><li>VSCode中安装jupter插件</li><li>使用<code>#%%</code>分割代码块</li><li><code>.ipynb</code>文件中使用jupyter</li></ul><p>vscode中运行jupter时提示需要安装ipykernel,安装报错可以执行以下脚本进行安装 打开工程：code + 路径</p><p>pip install -i <a href="https://pypi.tuna.tsinghua.edu.cn/simple">https://pypi.tuna.tsinghua.edu.cn/simple</a> ipykernel</p><h2 id="Pylance"><a href="#Pylance" class="headerlink" title="Pylance"></a>Pylance</h2><ul><li>Python › Analysis: auto format string</li><li>Python › Analysis › Inlay Hints: Call Argument Names<ul><li>选择partial</li></ul></li><li>Python › Analysis: Type Checking Mode<ul><li>选择standard</li></ul></li><li>Python › Analysis: inlay Hints:Function Return Types</li></ul><h2 id="IntelliCode-Completions"><a href="#IntelliCode-Completions" class="headerlink" title="IntelliCode Completions"></a>IntelliCode Completions</h2><p>AI自动补全功能</p><h2 id="Code-Spell-Checker"><a href="#Code-Spell-Checker" class="headerlink" title="Code Spell Checker"></a>Code Spell Checker</h2><p>单词拼写检查</p><h2 id="Error-lens"><a href="#Error-lens" class="headerlink" title="Error lens"></a>Error lens</h2><p>错误检查</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 开发工具 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Jupyter </tag>
+            
+            <tag> Pylance </tag>
+            
+            <tag> IntelliCode </tag>
             
         </tags>
       
