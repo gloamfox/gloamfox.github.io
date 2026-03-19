@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>暮色之狐</title>
+  
+  <subtitle>暮色之狐</subtitle>
+  <link href="https://gloamfox.github.io/atom.xml" rel="self"/>
+  
+  <link href="https://gloamfox.github.io/"/>
+  <updated>2026-03-19T01:31:39.161Z</updated>
+  <id>https://gloamfox.github.io/</id>
+  
+  <author>
+    <name>Gloamfox</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>从零到一键发布：Obsidian + Hexo + GitHub Pages 个人博客搭建指南</title>
+    <link href="https://gloamfox.github.io/obsidian-bo-ke-da-jian-zhi-nan/"/>
+    <id>https://gloamfox.github.io/obsidian-bo-ke-da-jian-zhi-nan/</id>
+    <published>2026-03-18T10:34:27.000Z</published>
+    <updated>2026-03-19T01:31:39.161Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;我一直使用 Obsidian</summary>
+        
+      
+    
+    
+    
+    <category term="技术教程" scheme="https://gloamfox.github.io/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/"/>
+    
+    
+    <category term="Obsidian" scheme="https://gloamfox.github.io/tags/Obsidian/"/>
+    
+    <category term="Hexo" scheme="https://gloamfox.github.io/tags/Hexo/"/>
+    
+  </entry>
+  
+</feed>
