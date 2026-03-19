@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Hexo,alt 属性,图片处理,JavaScript,HTML 渲染">
+    <meta name="keywords" content="Typora安装,注册码,图片上传,PicGo-Core,Drake主题">
     <meta name="description" content="君子以顺德，积小以高大。">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Hexo 移除图片 alt 属性的方法 | 暮色之狐</title>
+    <title>Typora安装与配置教程 | 暮色之狐</title>
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/gloamfox/gloamfox.github.io/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/gloamfox/gloamfox.github.io/libs/awesome/css/all.css">
@@ -338,7 +338,7 @@
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Hexo 移除图片 alt 属性的方法</h1>
+                    <h1 class="description center-align post-title">Typora安装与配置教程</h1>
                 </div>
             </div>
         </div>
@@ -454,16 +454,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Hexo/">
-                                <span class="chip bg-color">Hexo</span>
+                            <a href="/tags/Typora/">
+                                <span class="chip bg-color">Typora</span>
                             </a>
                         
-                            <a href="/tags/%E5%9B%BE%E7%89%87%E4%BC%98%E5%8C%96/">
-                                <span class="chip bg-color">图片优化</span>
+                            <a href="/tags/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/">
+                                <span class="chip bg-color">软件安装</span>
                             </a>
                         
-                            <a href="/tags/JavaScript/">
-                                <span class="chip bg-color">JavaScript</span>
+                            <a href="/tags/%E4%B8%BB%E9%A2%98%E4%BC%98%E5%8C%96/">
+                                <span class="chip bg-color">主题优化</span>
                             </a>
                         
                     </div>
@@ -474,8 +474,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/" class="post-category">
-                                前端开发
+                            <a href="/categories/%E8%BD%AF%E4%BB%B6%E6%95%99%E7%A8%8B/" class="post-category">
+                                软件教程
                             </a>
                         
                     </div>
@@ -487,7 +487,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2026-03-19
+                    2025-11-18
                 </div>
                 
 
@@ -496,7 +496,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    189
+                    452
                 </div>
                 
 
@@ -523,15 +523,34 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Hexo 生成图片时，若未手动设置 <code>alt</code>，默认使用文件名作为替代文本，可能导致无意义内容。若希望彻底移除所有 <code>&lt;img&gt;</code> 标签的 <code>alt</code> 属性，在主题或者根目录的<code>scripts/remove-img-alt.js</code>里加入以下代码，</p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">hexo<span class="token punctuation">.</span>extend<span class="token punctuation">.</span>filter<span class="token punctuation">.</span><span class="token function">register</span><span class="token punctuation">(</span><span class="token string">'after_render:html'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">str</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span> <span class="token keyword">return</span> str<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">&lt;img(.*?)alt=".*?"(.*?)></span><span class="token regex-delimiter">/</span><span class="token regex-flags">g</span></span><span class="token punctuation">,</span> <span class="token string">'&lt;img$1$2>'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>此代码在 HTML 渲染后移除所有 <code>alt</code>。</p>
-<p>注意：这会一并删除手动添加的有意义 alt，请按需使用。</p>
-<p><code>scripts</code>这个文件夹需要自己创建，Hexo 的规则是：</p>
-<ul>
-<li>只要在 <strong>Hexo 根目录或主题目录</strong>（和 <code>_config.yml</code> 同一层级）下有 <code>scripts/</code> 目录，里面放的 <code>.js</code> 文件会在生成站点时自动执行。</li>
-</ul>
+                <h2 id="Typora安装注册"><a href="#Typora安装注册" class="headerlink" title="Typora安装注册"></a>Typora安装注册</h2><ol>
+<li>先安装 typora-setup-x64-1.2.4.exe，并记录安装路径，<a target="_blank" rel="noopener" href="https://wwnu.lanzouy.com/ieCCU0fqgzgj">下载地址</a></li>
+<li>将 app.asar 替换到安装路径下的resources文件夹，替换掉app.asar文件</li>
+<li>重启typora！！！！！！</li>
+<li>输入邮箱、注册码，邮箱随便输入，注册码：E8Q9Y5-KXMTL5-7578SL-4S5XKS</li>
+</ol>
+<p>仅供学习，请在下载24小时之内删除，请支持正版</p>
+<h2 id="图片上传"><a href="#图片上传" class="headerlink" title="图片上传"></a>图片上传</h2><p>文件 -&gt; 偏好设置中设置图像相关配置，上传服务我使用的是PicGo-Core（command line），其实和PicGo-Core(app)一样，主要是我不想托盘中多出一个程序放在那里，看着不舒服</p>
+<p><img src="https://sh-prod-mall-bucket.oss-cn-shanghai.aliyuncs.com/imgupload/blog/image-20230502155900159.png" ></p>
+<p><img src="https://sh-prod-mall-bucket.oss-cn-shanghai.aliyuncs.com/imgupload/blog/image-20230502160633862.png" ></p>
+<p>点击下载或更新，下载更新完成后，点击打开配置文件，配置图床的地址，有些版本能直接打开，有些无反应，需要手动进到指定的目录进行修改<code>config.json</code>文件</p>
+<p>picgo 的默认配置文件为<code>~/.picgo/config.json</code>。其中<code>~</code>为用户目录。不同系统的用户目录不太一样。</p>
+<p>linux 和 macOS 均为<code>~/.picgo/config.json</code>。</p>
+<p>windows 则为<code>C:\Users\你的用户名\.picgo\config.json</code></p>
+<p>以下为修改图床使用阿里云OSS的配置</p>
+<p><img src="https://sh-prod-mall-bucket.oss-cn-shanghai.aliyuncs.com/imgupload/blog/image-20230502161235469.png" ></p>
+<p>更多PicGo-Core配置文件参考：<a target="_blank" rel="noopener" href="https://picgo.github.io/PicGo-Core-Doc/zh/guide/config.html">配置文件 | PicGo-Core</a></p>
+<p>配置完成后，在Typora中进行验证</p>
+<p><img src="https://sh-prod-mall-bucket.oss-cn-shanghai.aliyuncs.com/imgupload/blog/image-20230502161438558.png" ></p>
+<p><img src="https://sh-prod-mall-bucket.oss-cn-shanghai.aliyuncs.com/imgupload/blog/image-20230502161446114.png" ></p>
+<h2 id="主题优化"><a href="#主题优化" class="headerlink" title="主题优化"></a>主题优化</h2><p>推荐一款作者在用的主题<strong>Drake</strong>，该款主题字体略微有些小，因为在此基础上做了略微更改，把字体改大</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/liangjingkanji/DrakeTyporaTheme">GitHub - liangjingkanji/DrakeTyporaTheme: 十二种主题风格 - Material Google JetBrains Vue Juejin Purple Ayu Dark</a></p>
+<p>打开主题文件夹，并将下载的Drake主题文件解压后复制到该文件夹中，重启Typora</p>
+<p><img src="https://sh-prod-mall-bucket.oss-cn-shanghai.aliyuncs.com/imgupload/blog/image-20230502163038894.png" ></p>
+<p>工具栏中，主题选择Drake主题</p>
+<p><img src="https://sh-prod-mall-bucket.oss-cn-shanghai.aliyuncs.com/imgupload/blog/image-20230502163309817.png" ></p>
+<p>Drake主题默认文字太小，需要将文字大小调大一些</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/liangjingkanji/DrakeTyporaTheme/issues/83">修改字体大小 · Issue #83 · liangjingkanji/DrakeTyporaTheme · GitHub</a></p>
 
                 
             </div>
@@ -558,7 +577,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://gloamfox.github.io/hexo-yi-chu-tu-pian-mo-ren-alt-shu-xing/">https://gloamfox.github.io/hexo-yi-chu-tu-pian-mo-ren-alt-shu-xing/</a>
+                    <a href="https://gloamfox.github.io/typora-an-zhuang-pei-zhi/">https://gloamfox.github.io/typora-an-zhuang-pei-zhi/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -596,16 +615,16 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Hexo/">
-                                    <span class="chip bg-color">Hexo</span>
+                                <a href="/tags/Typora/">
+                                    <span class="chip bg-color">Typora</span>
                                 </a>
                             
-                                <a href="/tags/%E5%9B%BE%E7%89%87%E4%BC%98%E5%8C%96/">
-                                    <span class="chip bg-color">图片优化</span>
+                                <a href="/tags/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/">
+                                    <span class="chip bg-color">软件安装</span>
                                 </a>
                             
-                                <a href="/tags/JavaScript/">
-                                    <span class="chip bg-color">JavaScript</span>
+                                <a href="/tags/%E4%B8%BB%E9%A2%98%E4%BC%98%E5%8C%96/">
+                                    <span class="chip bg-color">主题优化</span>
                                 </a>
                             
                         </div>
@@ -775,56 +794,54 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/hexo-yi-chu-tu-pian-mo-ren-alt-shu-xing/">
+                <a href="/vmware-xu-ni-ji-she-zhi/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/gloamfox/gloamfox.github.io/medias/featureimages/18.jpg" class="responsive-img" >
+                        <img src="https://cdn.jsdelivr.net/gh/gloamfox/gloamfox.github.io/medias/featureimages/10.jpg" class="responsive-img" >
                         
-                        <span class="card-title">Hexo 移除图片 alt 属性的方法</span>
+                        <span class="card-title">华为云镜像下载与VMware虚拟机配置</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            介绍如何在 Hexo 中通过 JavaScript 代码移除所有图片的 alt 属性，包括代码实现和注意事项。
+                            本文介绍华为云CentOS镜像下载、VMware虚拟机创建、固定IP配置、yum源设置及防火墙关闭的详细步骤。
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2026-03-19
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2025-11-20
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/" class="post-category">
-                                    前端开发
+                            <a href="/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/" class="post-category">
+                                    技术教程
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Hexo/">
-                        <span class="chip bg-color">Hexo</span>
+                    <a href="/tags/%E9%95%9C%E5%83%8F%E4%B8%8B%E8%BD%BD/">
+                        <span class="chip bg-color">镜像下载</span>
                     </a>
                     
-                    <a href="/tags/%E5%9B%BE%E7%89%87%E4%BC%98%E5%8C%96/">
-                        <span class="chip bg-color">图片优化</span>
+                    <a href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA%E9%85%8D%E7%BD%AE/">
+                        <span class="chip bg-color">虚拟机配置</span>
                     </a>
                     
-                    <a href="/tags/JavaScript/">
-                        <span class="chip bg-color">JavaScript</span>
+                    <a href="/tags/%E5%9B%BA%E5%AE%9AIP%E8%AE%BE%E7%BD%AE/">
+                        <span class="chip bg-color">固定IP设置</span>
                     </a>
                     
                 </div>
@@ -838,24 +855,24 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/obsidian-bo-ke-da-jian-zhi-nan/">
+                <a href="/vs-code-kuai-jie-jian-zhi-nan/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/gloamfox/gloamfox.github.io/medias/featureimages/13.jpg" class="responsive-img" >
+                        <img src="https://cdn.jsdelivr.net/gh/gloamfox/gloamfox.github.io/medias/featureimages/6.jpg" class="responsive-img" >
                         
-                        <span class="card-title">从零到一键发布：Obsidian + Hexo + GitHub Pages 个人博客搭建指南</span>
+                        <span class="card-title">VS Code 快捷键指南</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            本文详细介绍了如何基于Obsidian、Hexo和GitHub Pages搭建个人博客，并通过Enveloppe插件实现从写作到发布的自动化流程。
+                            本文整理了 VS Code 常用快捷键，包括文件操作、代码编辑、分屏和终端等功能，帮助用户提高工作效率。
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2026-03-18
+                                <i class="far fa-clock fa-fw icon-date"></i>2025-11-18
                             </span>
                         <span class="publish-author">
                             
@@ -872,12 +889,16 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Hexo/">
-                        <span class="chip bg-color">Hexo</span>
+                    <a href="/tags/VSCode/">
+                        <span class="chip bg-color">VSCode</span>
                     </a>
                     
-                    <a href="/tags/Obsidian/">
-                        <span class="chip bg-color">Obsidian</span>
+                    <a href="/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/">
+                        <span class="chip bg-color">快捷键</span>
+                    </a>
+                    
+                    <a href="/tags/%E4%BB%A3%E7%A0%81%E7%BC%96%E8%BE%91/">
+                        <span class="chip bg-color">代码编辑</span>
                     </a>
                     
                 </div>
