@@ -6,7 +6,7 @@
   <link href="https://gloamfox.github.io/atom.xml" rel="self"/>
   
   <link href="https://gloamfox.github.io/"/>
-  <updated>2026-03-19T03:04:13.557Z</updated>
+  <updated>2026-03-19T03:12:52.681Z</updated>
   <id>https://gloamfox.github.io/</id>
   
   <author>
@@ -17,11 +17,40 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Hexo 移除图片 alt 属性的方法</title>
+    <link href="https://gloamfox.github.io/hexo-yi-chu-tu-pian-mo-ren-alt-shu-xing/"/>
+    <id>https://gloamfox.github.io/hexo-yi-chu-tu-pian-mo-ren-alt-shu-xing/</id>
+    <published>2026-03-19T10:59:42.000Z</published>
+    <updated>2026-03-19T03:12:52.681Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;Hexo</summary>
+        
+      
+    
+    
+    
+    <category term="前端开发" scheme="https://gloamfox.github.io/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
+    
+    
+    <category term="Hexo" scheme="https://gloamfox.github.io/tags/Hexo/"/>
+    
+    <category term="图片优化" scheme="https://gloamfox.github.io/tags/%E5%9B%BE%E7%89%87%E4%BC%98%E5%8C%96/"/>
+    
+    <category term="JavaScript" scheme="https://gloamfox.github.io/tags/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
     <title>从零到一键发布：Obsidian + Hexo + GitHub Pages 个人博客搭建指南</title>
     <link href="https://gloamfox.github.io/obsidian-bo-ke-da-jian-zhi-nan/"/>
     <id>https://gloamfox.github.io/obsidian-bo-ke-da-jian-zhi-nan/</id>
     <published>2026-03-18T10:34:27.000Z</published>
-    <updated>2026-03-19T03:04:13.557Z</updated>
+    <updated>2026-03-19T03:12:52.681Z</updated>
     
     
       
@@ -37,9 +66,9 @@
     <category term="技术教程" scheme="https://gloamfox.github.io/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/"/>
     
     
-    <category term="Obsidian" scheme="https://gloamfox.github.io/tags/Obsidian/"/>
-    
     <category term="Hexo" scheme="https://gloamfox.github.io/tags/Hexo/"/>
+    
+    <category term="Obsidian" scheme="https://gloamfox.github.io/tags/Obsidian/"/>
     
   </entry>
   
