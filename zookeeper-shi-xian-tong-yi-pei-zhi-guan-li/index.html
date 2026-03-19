@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Ubuntu,国内源,apt-get">
+    <meta name="keywords" content="统一配置,Zookeeper,配置同步,集群管理,Java实现">
     <meta name="description" content="君子以顺德，积小以高大。">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Ubuntu 更换国内源提升下载速度 | 暮色之狐</title>
+    <title>基于Zookeeper的统一配置管理实现 | 暮色之狐</title>
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/gloamfox/gloamfox.github.io/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/gloamfox/gloamfox.github.io/libs/awesome/css/all.css">
@@ -333,12 +333,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/gloamfox/gloamfox.github.io/medias/featureimages/23.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/gloamfox/gloamfox.github.io/medias/featureimages/13.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Ubuntu 更换国内源提升下载速度</h1>
+                    <h1 class="description center-align post-title">基于Zookeeper的统一配置管理实现</h1>
                 </div>
             </div>
         </div>
@@ -454,16 +454,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Ubuntu/">
-                                <span class="chip bg-color">Ubuntu</span>
+                            <a href="/tags/Zookeeper/">
+                                <span class="chip bg-color">Zookeeper</span>
                             </a>
                         
-                            <a href="/tags/%E8%BD%AF%E4%BB%B6%E6%BA%90/">
-                                <span class="chip bg-color">软件源</span>
+                            <a href="/tags/%E9%85%8D%E7%BD%AE%E7%AE%A1%E7%90%86/">
+                                <span class="chip bg-color">配置管理</span>
                             </a>
                         
-                            <a href="/tags/%E4%B8%8B%E8%BD%BD%E5%8A%A0%E9%80%9F/">
-                                <span class="chip bg-color">下载加速</span>
+                            <a href="/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F/">
+                                <span class="chip bg-color">分布式系统</span>
                             </a>
                         
                     </div>
@@ -474,8 +474,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E7%B3%BB%E7%BB%9F%E8%BF%90%E7%BB%B4/" class="post-category">
-                                系统运维
+                            <a href="/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/" class="post-category">
+                                技术教程
                             </a>
                         
                     </div>
@@ -487,7 +487,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2025-11-27
+                    2025-11-18
                 </div>
                 
 
@@ -496,14 +496,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    261
+                    905
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    4 分
                 </div>
                 
 
@@ -523,29 +523,173 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>经常使用Ubuntu的同学都会遇到软件安装下载速度慢的情况，究其原因，是因为Ubuntu默认源的地址都在国外所导致，其实国内也有很多优秀的源，比如阿里源、中科大源、清华源、163源等，只需要简单的更换一下源，下载度立刻就上来了。</p>
-<p>以下操作都必须在管理员模式下（使用su命令进入）进行，否则会执行失败</p>
-<p><strong>备份官方源</strong></p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">mv</span> /etc/apt/sources.list /etc/apt/sources.list.bk<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+                <h2 id="为什么需要统一配置？"><a href="#为什么需要统一配置？" class="headerlink" title="为什么需要统一配置？"></a>为什么需要统一配置？</h2><p>我们在开发系统时，一般会将一些信息添加到配置文件中，比如数据库信息、日志等，如果需要更改也是修改配置文件然后再发布到生产中，这种方式在集群的环境下就会显得很麻烦。那么有什么解决方法呢？</p>
+<ol>
+<li>将公共配置抽取出来</li>
+<li>提供统一的配置入口对公共配置进行修改</li>
+<li>修改后的内容能够同步到各集群系统中</li>
+</ol>
+<h2 id="Zookeeper方案"><a href="#Zookeeper方案" class="headerlink" title="Zookeeper方案"></a>Zookeeper方案</h2><p>这里我们采取zookeeper实现统一配置管理，配置信息存放在zookeeper的节点中，一旦配置信息发生改变，zk会通知监听该节点的客户端系统，客户端系统获取最新的配置信息，然后进行配置信息的重新载入。<br>下面基于zookeeper实现了一个粗略的统一配置管理<br>通过Maven引入zkclient.jar</p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;dependency&gt;
+  &lt;groupId&gt;com.101tec&lt;&#x2F;groupId&gt;
+  &lt;artifactId&gt;zkclient&lt;&#x2F;artifactId&gt;
+  &lt;version&gt;0.11&lt;&#x2F;version&gt;
+&lt;&#x2F;dependency&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>创建配置信息实体 Config.java</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>wrxiang<span class="token punctuation">.</span>zk<span class="token punctuation">.</span>util</span><span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>io<span class="token punctuation">.</span></span><span class="token class-name">Serializable</span></span><span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Config</span> <span class="token keyword">implements</span> <span class="token class-name">Serializable</span> <span class="token punctuation">&#123;</span>
+
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token keyword">long</span> serialVersionUID <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">3960940730727782588L</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">private</span> <span class="token class-name">String</span> userName<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token class-name">String</span> password<span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token class-name">Config</span><span class="token punctuation">(</span><span class="token class-name">String</span> userName<span class="token punctuation">,</span> <span class="token class-name">String</span> password<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>userName <span class="token operator">=</span> userName<span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>password <span class="token operator">=</span> password<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">getUserName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> userName<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setUserName</span><span class="token punctuation">(</span><span class="token class-name">String</span> userName<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>userName <span class="token operator">=</span> userName<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">getPassword</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> password<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setPassword</span><span class="token punctuation">(</span><span class="token class-name">String</span> password<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>password <span class="token operator">=</span> password<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> <span class="token string">"Config&#123;"</span> <span class="token operator">+</span>
+                <span class="token string">"userName='"</span> <span class="token operator">+</span> userName <span class="token operator">+</span> <span class="token char">'\''</span> <span class="token operator">+</span>
+                <span class="token string">", password='"</span> <span class="token operator">+</span> password <span class="token operator">+</span> <span class="token char">'\''</span> <span class="token operator">+</span>
+                <span class="token char">'&#125;'</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>配置管理中心ZkConfigMag</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>wrxiang<span class="token punctuation">.</span>zk<span class="token punctuation">.</span>util</span><span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span></span><span class="token class-name">I0Itec</span><span class="token punctuation">.</span>zkclient<span class="token punctuation">.</span>ZkClient<span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ZkConfigMag</span> <span class="token punctuation">&#123;</span>
+
+    <span class="token keyword">private</span> <span class="token class-name">Config</span> config<span class="token punctuation">;</span>
+
+    <span class="token comment">/**
+     * 模拟获取配置文件，从数据库加载或从前台获取
+     * @return
+     */</span>
+    <span class="token keyword">public</span> <span class="token class-name">Config</span> <span class="token function">downLoadConfig</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        config <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Config</span><span class="token punctuation">(</span><span class="token string">"test"</span><span class="token punctuation">,</span> <span class="token string">"123"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> config<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token comment">/**
+     * 更新配置信息
+     * @param userName
+     * @param password
+     */</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">upLoadConfig</span><span class="token punctuation">(</span><span class="token class-name">String</span> userName<span class="token punctuation">,</span> <span class="token class-name">String</span> password<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>config <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            config <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Config</span><span class="token punctuation">(</span>userName<span class="token punctuation">,</span> password<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span><span class="token keyword">else</span><span class="token punctuation">&#123;</span>
+            config<span class="token punctuation">.</span><span class="token function">setUserName</span><span class="token punctuation">(</span>userName<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            config<span class="token punctuation">.</span><span class="token function">setPassword</span><span class="token punctuation">(</span>password<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
 
 
-<p><strong>下载第三方源文件更换</strong></p>
-<p>具体使用哪一个，可以自行测试按照效果选用</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment">#163源</span>
-<span class="token function">wget</span> <span class="token string">'https://gitee.com/zaozuotime/ubuntu-update-source-file/raw/master/163.sources.list'</span> <span class="token parameter variable">-O</span> /etc/apt/sources.list
 
-<span class="token comment">#阿里源</span>
-<span class="token function">wget</span> <span class="token string">'https://gitee.com/zaozuotime/ubuntu-update-source-file/raw/master/aliyun.sources.list'</span> <span class="token parameter variable">-O</span> /etc/apt/sources.list
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">syncConfigToZk</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
 
-<span class="token comment">#清华源</span>
-<span class="token function">wget</span> <span class="token string">'https://gitee.com/zaozuotime/ubuntu-update-source-file/raw/master/tsinghua.sources.list'</span> <span class="token parameter variable">-O</span> /etc/apt/sources.list
+        <span class="token class-name">ZkClient</span> zkClient <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ZkClient</span><span class="token punctuation">(</span><span class="token string">"127.0.0.1:2181"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>zkClient<span class="token punctuation">.</span><span class="token function">exists</span><span class="token punctuation">(</span><span class="token string">"/zkConfig"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            zkClient<span class="token punctuation">.</span><span class="token function">createPersistent</span><span class="token punctuation">(</span><span class="token string">"/zkConfig"</span><span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        zkClient<span class="token punctuation">.</span><span class="token function">writeData</span><span class="token punctuation">(</span><span class="token string">"/zkConfig"</span><span class="token punctuation">,</span> config<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        zkClient<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
 
-<span class="token comment">#中科大源</span>
-<span class="token function">wget</span> <span class="token string">'https://gitee.com/zaozuotime/ubuntu-update-source-file/raw/master/ustc.sources.list'</span> <span class="token parameter variable">-O</span> /etc/apt/sources.list<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>应用监听实现ZkGetConfigClient</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>wrxiang<span class="token punctuation">.</span>zk<span class="token punctuation">.</span>util</span><span class="token punctuation">;</span>
 
-<p><strong>更新资源</strong></p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">apt-get</span> update<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span></span><span class="token class-name">I0Itec</span><span class="token punctuation">.</span>zkclient<span class="token punctuation">.</span>IZkDataListener<span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span></span><span class="token class-name">I0Itec</span><span class="token punctuation">.</span>zkclient<span class="token punctuation">.</span>ZkClient<span class="token punctuation">;</span>
 
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ZkGetConfigClient</span> <span class="token punctuation">&#123;</span>
+
+    <span class="token keyword">private</span> <span class="token class-name">Config</span> config<span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token class-name">Config</span> <span class="token function">getConfig</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">Exception</span> <span class="token punctuation">&#123;</span>
+        <span class="token class-name">ZkClient</span> zkClient <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ZkClient</span><span class="token punctuation">(</span><span class="token string">"127.0.0.1:2181"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>zkClient<span class="token punctuation">.</span><span class="token function">exists</span><span class="token punctuation">(</span><span class="token string">"/zkConfig"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">Exception</span><span class="token punctuation">(</span><span class="token string">"配置信息节点不存在"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        config <span class="token operator">=</span> zkClient<span class="token punctuation">.</span><span class="token function">readData</span><span class="token punctuation">(</span><span class="token string">"/zkConfig"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"加载到配置信息："</span> <span class="token operator">+</span> config<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        zkClient<span class="token punctuation">.</span><span class="token function">subscribeDataChanges</span><span class="token punctuation">(</span><span class="token string">"/zkConfig"</span><span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token class-name">IZkDataListener</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token annotation punctuation">@Override</span>
+            <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">handleDataChange</span><span class="token punctuation">(</span><span class="token class-name">String</span> s<span class="token punctuation">,</span> <span class="token class-name">Object</span> o<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">Exception</span> <span class="token punctuation">&#123;</span>
+                config <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token class-name">Config</span><span class="token punctuation">)</span>o<span class="token punctuation">;</span>
+                <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"监听到配置信息被修改"</span> <span class="token operator">+</span> config<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span>
+
+            <span class="token annotation punctuation">@Override</span>
+            <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">handleDataDeleted</span><span class="token punctuation">(</span><span class="token class-name">String</span> s<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">Exception</span> <span class="token punctuation">&#123;</span>
+                config <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+                <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"监听到配置信息被删除"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span>
+        <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> config<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>测试，启动配置管理中心</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>wrxiang<span class="token punctuation">.</span>zk<span class="token punctuation">.</span>util</span><span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ZkConfigTest</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">Exception</span> <span class="token punctuation">&#123;</span>
+        <span class="token class-name">ZkConfigMag</span> zkConfigMag <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ZkConfigMag</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">Config</span> config <span class="token operator">=</span> zkConfigMag<span class="token punctuation">.</span><span class="token function">downLoadConfig</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"初始化加载配置信息："</span> <span class="token operator">+</span> config<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        zkConfigMag<span class="token punctuation">.</span><span class="token function">syncConfigToZk</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"同步配置信息至zookeeper"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token class-name">ZkGetConfigClient</span> zkGetConfigClient <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ZkGetConfigClient</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        zkGetConfigClient<span class="token punctuation">.</span><span class="token function">getConfig</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment">//暂停一会</span>
+        <span class="token class-name">Thread</span><span class="token punctuation">.</span><span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        zkConfigMag<span class="token punctuation">.</span><span class="token function">upLoadConfig</span><span class="token punctuation">(</span><span class="token string">"test222"</span><span class="token punctuation">,</span> <span class="token string">"3336666"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"修改配置文件："</span> <span class="token operator">+</span> config<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        zkConfigMag<span class="token punctuation">.</span><span class="token function">syncConfigToZk</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"同步配置文件至zookeeper"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token class-name">Thread</span><span class="token punctuation">.</span><span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>启动测试后，控制台输出</p>
+<pre class="line-numbers language-none"><code class="language-none">初始化加载配置信息：Config&#123;userName&#x3D;&#39;test&#39;, password&#x3D;&#39;123&#39;&#125;
+同步配置信息至zookeeper
+加载到配置信息：Config&#123;userName&#x3D;&#39;test&#39;, password&#x3D;&#39;123&#39;&#125;
+修改配置文件：Config&#123;userName&#x3D;&#39;test222&#39;, password&#x3D;&#39;3336666&#39;&#125;
+同步配置文件至zookeeper
+监听到配置信息被修改Config&#123;userName&#x3D;&#39;test222&#39;, password&#x3D;&#39;3336666&#39;&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>通过上述例子介绍如何使用zokeeper实现简单的配置管理，实际系统应用肯定更加复杂，但是原理类似。</p>
 
                 
             </div>
@@ -572,7 +716,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://gloamfox.github.io/ubuntu-xiu-gai-guo-nei-yuan-jie-jue-xia-zai-wen-ti/">https://gloamfox.github.io/ubuntu-xiu-gai-guo-nei-yuan-jie-jue-xia-zai-wen-ti/</a>
+                    <a href="https://gloamfox.github.io/zookeeper-shi-xian-tong-yi-pei-zhi-guan-li/">https://gloamfox.github.io/zookeeper-shi-xian-tong-yi-pei-zhi-guan-li/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -610,16 +754,16 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Ubuntu/">
-                                    <span class="chip bg-color">Ubuntu</span>
+                                <a href="/tags/Zookeeper/">
+                                    <span class="chip bg-color">Zookeeper</span>
                                 </a>
                             
-                                <a href="/tags/%E8%BD%AF%E4%BB%B6%E6%BA%90/">
-                                    <span class="chip bg-color">软件源</span>
+                                <a href="/tags/%E9%85%8D%E7%BD%AE%E7%AE%A1%E7%90%86/">
+                                    <span class="chip bg-color">配置管理</span>
                                 </a>
                             
-                                <a href="/tags/%E4%B8%8B%E8%BD%BD%E5%8A%A0%E9%80%9F/">
-                                    <span class="chip bg-color">下载加速</span>
+                                <a href="/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F/">
+                                    <span class="chip bg-color">分布式系统</span>
                                 </a>
                             
                         </div>
@@ -793,31 +937,31 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/shi-yong-nvs-gong-ju-qie-huan-node-ban-ben/">
+                <a href="/vscode-chang-yong-python-cha-jian/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/gloamfox/gloamfox.github.io/medias/featureimages/14.jpg" class="responsive-img" >
+                        <img src="https://cdn.jsdelivr.net/gh/gloamfox/gloamfox.github.io/medias/featureimages/4.jpg" class="responsive-img" >
                         
-                        <span class="card-title">nvs 安装与使用指南</span>
+                        <span class="card-title">VSCode中Python开发插件</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            本文介绍了跨平台Node版本管理工具nvs的安装方法、常用命令及实用技巧。
+                            介绍VSCode中Python开发相关插件配置，包括Jupyter、Pylance、IntelliCode和拼写检查等功能的设置方法。
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2026-02-26
+                            <i class="far fa-clock fa-fw icon-date"></i>2025-11-18
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/" class="post-category">
-                                    技术教程
+                            <a href="/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/" class="post-category">
+                                    开发工具
                                 </a>
                             
                             
@@ -827,16 +971,16 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Node%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/">
-                        <span class="chip bg-color">Node版本管理</span>
+                    <a href="/tags/Jupyter/">
+                        <span class="chip bg-color">Jupyter</span>
                     </a>
                     
-                    <a href="/tags/nvs%E5%B7%A5%E5%85%B7/">
-                        <span class="chip bg-color">nvs工具</span>
+                    <a href="/tags/Pylance/">
+                        <span class="chip bg-color">Pylance</span>
                     </a>
                     
-                    <a href="/tags/%E8%B7%A8%E5%B9%B3%E5%8F%B0/">
-                        <span class="chip bg-color">跨平台</span>
+                    <a href="/tags/IntelliCode/">
+                        <span class="chip bg-color">IntelliCode</span>
                     </a>
                     
                 </div>
@@ -847,27 +991,27 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+                本篇&nbsp;<i class="far fa-dot-circle"></i>
             </div>
             <div class="card">
-                <a href="/vmware-xu-ni-ji-she-zhi/">
+                <a href="/zookeeper-shi-xian-tong-yi-pei-zhi-guan-li/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/gloamfox/gloamfox.github.io/medias/featureimages/10.jpg" class="responsive-img" >
+                        <img src="https://cdn.jsdelivr.net/gh/gloamfox/gloamfox.github.io/medias/featureimages/13.jpg" class="responsive-img" >
                         
-                        <span class="card-title">华为云镜像下载与VMware虚拟机配置</span>
+                        <span class="card-title">基于Zookeeper的统一配置管理实现</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            本文介绍华为云CentOS镜像下载、VMware虚拟机创建、固定IP配置、yum源设置及防火墙关闭的详细步骤。
+                            本文介绍了使用Zookeeper实现统一配置管理的方法，并给出了完整的Java代码示例。
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2025-11-20
+                                <i class="far fa-clock fa-fw icon-date"></i>2025-11-18
                             </span>
                         <span class="publish-author">
                             
@@ -881,19 +1025,20 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E9%95%9C%E5%83%8F%E4%B8%8B%E8%BD%BD/">
-                        <span class="chip bg-color">镜像下载</span>
+                    <a href="/tags/Zookeeper/">
+                        <span class="chip bg-color">Zookeeper</span>
                     </a>
                     
-                    <a href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA%E9%85%8D%E7%BD%AE/">
-                        <span class="chip bg-color">虚拟机配置</span>
+                    <a href="/tags/%E9%85%8D%E7%BD%AE%E7%AE%A1%E7%90%86/">
+                        <span class="chip bg-color">配置管理</span>
                     </a>
                     
-                    <a href="/tags/%E5%9B%BA%E5%AE%9AIP%E8%AE%BE%E7%BD%AE/">
-                        <span class="chip bg-color">固定IP设置</span>
+                    <a href="/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F/">
+                        <span class="chip bg-color">分布式系统</span>
                     </a>
                     
                 </div>
