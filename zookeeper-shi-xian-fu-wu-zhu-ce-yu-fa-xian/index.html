@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="IDEA激活,工具包安装,激活码,永久破解,环境变量配置">
+    <meta name="keywords" content="服务注册,服务发现,Zookeeper,zkclient,分布式架构">
     <meta name="description" content="君子以顺德，积小以高大。">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>IntelliJ IDEA 2023.1 激活工具包教程 | 暮色之狐</title>
+    <title>基于Zookeeper的服务注册与发现实现 | 暮色之狐</title>
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/gloamfox/gloamfox.github.io/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/gloamfox/gloamfox.github.io/libs/awesome/css/all.css">
@@ -333,12 +333,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/gloamfox/gloamfox.github.io/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/gloamfox/gloamfox.github.io/medias/featureimages/3.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">IntelliJ IDEA 2023.1 激活工具包教程</h1>
+                    <h1 class="description center-align post-title">基于Zookeeper的服务注册与发现实现</h1>
                 </div>
             </div>
         </div>
@@ -454,16 +454,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/IDEA/">
-                                <span class="chip bg-color">IDEA</span>
+                            <a href="/tags/%E6%9C%8D%E5%8A%A1%E6%B3%A8%E5%86%8C/">
+                                <span class="chip bg-color">服务注册</span>
                             </a>
                         
-                            <a href="/tags/%E6%BF%80%E6%B4%BB%E5%B7%A5%E5%85%B7/">
-                                <span class="chip bg-color">激活工具</span>
+                            <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%8F%91%E7%8E%B0/">
+                                <span class="chip bg-color">服务发现</span>
                             </a>
                         
-                            <a href="/tags/%E7%A0%B4%E8%A7%A3%E6%95%99%E7%A8%8B/">
-                                <span class="chip bg-color">破解教程</span>
+                            <a href="/tags/Zookeeper/">
+                                <span class="chip bg-color">Zookeeper</span>
                             </a>
                         
                     </div>
@@ -474,8 +474,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/" class="post-category">
-                                软件开发
+                            <a href="/categories/%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F/" class="post-category">
+                                分布式系统
                             </a>
                         
                     </div>
@@ -496,14 +496,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    667
+                    604
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    3 分
                 </div>
                 
 
@@ -523,42 +523,131 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="下载工具包"><a href="#下载工具包" class="headerlink" title="下载工具包"></a>下载工具包</h2><p><a target="_blank" rel="noopener" href="https://wwnu.lanzouy.com/iLPK40uhhmgd">工具包下载地址</a></p>
-<blockquote>
-<p>重要说明：</p>
-<p>1、工具包下载后，放到本地合适的位置，存放路径不要有汉字和空格，否则可能会导致激活失败</p>
-<p>2、工具下载后是zip格式，需要解压，然后按照下面步骤进行</p>
-<p>3、工具安装后，不要移动或者删除工具包，否则后续IDEA打开会出现闪退，或提示找不到Jar文件</p>
-</blockquote>
-<p>激活工具包解压后，目录结构：</p>
-<p><img src="https://sh-prod-mall-bucket.oss-cn-shanghai.aliyuncs.com/imgupload/blog/image-20230502173337596.png" ></p>
-<h2 id="破解激活"><a href="#破解激活" class="headerlink" title="破解激活"></a>破解激活</h2><h3 id="工具包安装"><a href="#工具包安装" class="headerlink" title="工具包安装"></a>工具包安装</h3><p>执行工具包解压后<code>scripts</code>目录下的脚本文件<code>install-all-users.vbs 或者 install-current-user.vbs 脚本</code>进行脚本文件的安装，脚本 <code>install-all-users.vbs</code> 和 <code>install-current-user.vbs</code> 的区别，只在于环境变量是为系统变量还是用户变量。</p>
-<p>最好使用管理员权限执行，如果需要卸载只需要执行相应的卸载脚本即可</p>
-<p><img src="https://sh-prod-mall-bucket.oss-cn-shanghai.aliyuncs.com/imgupload/blog/image-20230502173706678.png" ></p>
-<p>当看到如上图中提示 <strong>Done</strong> 时，表示工具安装配置完成。</p>
-<p><strong>检查确认：执行命令 <code>echo %IDEA_VM_OPTIONS%</code>，若指向 <code>jetbra/jetbra/vmoptions/idea.vmoptions</code> 则表示工具包安装正确。若指向不是这个，则很可能是旧有的破解工具配置，请自行卸载旧有工具之后再安装此工具包。</strong></p>
-<blockquote>
-<p>说明：</p>
-<ol>
-<li>因为脚本会修改环境变量，所以在 Windows 系统中，可能会被安全软件拦截，允许执行即可。</li>
-<li>激活完成后，绝不能移动或删除工具，否则会造成激活失效，甚至无法启动IDEA。若的确需要更换工具路径，路径更换完后，先执行对应的卸载脚本 uninstall，再重新按上面的步骤，执行安装脚本。</li>
-<li>若没有以管理员方式执行脚本，后面提示 “key is invalid” 或 “激活码失效” 时，需要重启机器才行。</li>
-</ol>
-</blockquote>
-<h3 id="使用激活码"><a href="#使用激活码" class="headerlink" title="使用激活码"></a>使用激活码</h3><p>启动IntelliJ IDEA2023.1，输入激活码</p>
-<pre class="line-numbers language-none"><code class="language-none">6G5NXCPJZB-eyJsaWNlbnNlSWQiOiI2RzVOWENQSlpCIiwibGljZW5zZWVOYW1lIjoic2lnbnVwIHNjb290ZXIiLCJhc3NpZ25lZU5hbWUiOiIiLCJhc3NpZ25lZUVtYWlsIjoiIiwibGljZW5zZVJlc3RyaWN0aW9uIjoiIiwiY2hlY2tDb25jdXJyZW50VXNlIjpmYWxzZSwicHJvZHVjdHMiOlt7ImNvZGUiOiJQU0kiLCJmYWxsYmFja0RhdGUiOiIyMDI1LTA4LTAxIiwicGFpZFVwVG8iOiIyMDI1LTA4LTAxIiwiZXh0ZW5kZWQiOnRydWV9LHsiY29kZSI6IlBEQiIsImZhbGxiYWNrRGF0ZSI6IjIwMjUtMDgtMDEiLCJwYWlkVXBUbyI6IjIwMjUtMDgtMDEiLCJleHRlbmRlZCI6dHJ1ZX0seyJjb2RlIjoiSUkiLCJmYWxsYmFja0RhdGUiOiIyMDI1LTA4LTAxIiwicGFpZFVwVG8iOiIyMDI1LTA4LTAxIiwiZXh0ZW5kZWQiOmZhbHNlfSx7ImNvZGUiOiJQUEMiLCJmYWxsYmFja0RhdGUiOiIyMDI1LTA4LTAxIiwicGFpZFVwVG8iOiIyMDI1LTA4LTAxIiwiZXh0ZW5kZWQiOnRydWV9LHsiY29kZSI6IlBHTyIsImZhbGxiYWNrRGF0ZSI6IjIwMjUtMDgtMDEiLCJwYWlkVXBUbyI6IjIwMjUtMDgtMDEiLCJleHRlbmRlZCI6dHJ1ZX0seyJjb2RlIjoiUFNXIiwiZmFsbGJhY2tEYXRlIjoiMjAyNS0wOC0wMSIsInBhaWRVcFRvIjoiMjAyNS0wOC0wMSIsImV4dGVuZGVkIjp0cnVlfSx7ImNvZGUiOiJQV1MiLCJmYWxsYmFja0RhdGUiOiIyMDI1LTA4LTAxIiwicGFpZFVwVG8iOiIyMDI1LTA4LTAxIiwiZXh0ZW5kZWQiOnRydWV9LHsiY29kZSI6IlBQUyIsImZhbGxiYWNrRGF0ZSI6IjIwMjUtMDgtMDEiLCJwYWlkVXBUbyI6IjIwMjUtMDgtMDEiLCJleHRlbmRlZCI6dHJ1ZX0seyJjb2RlIjoiUFJCIiwiZmFsbGJhY2tEYXRlIjoiMjAyNS0wOC0wMSIsInBhaWRVcFRvIjoiMjAyNS0wOC0wMSIsImV4dGVuZGVkIjp0cnVlfSx7ImNvZGUiOiJQQ1dNUCIsImZhbGxiYWNrRGF0ZSI6IjIwMjUtMDgtMDEiLCJwYWlkVXBUbyI6IjIwMjUtMDgtMDEiLCJleHRlbmRlZCI6dHJ1ZX1dLCJtZXRhZGF0YSI6IjAxMjAyMjA5MDJQU0FOMDAwMDA1IiwiaGFzaCI6IlRSSUFMOi0xMDc4MzkwNTY4IiwiZ3JhY2VQZXJpb2REYXlzIjo3LCJhdXRvUHJvbG9uZ2F0ZWQiOmZhbHNlLCJpc0F1dG9Qcm9sb25nYXRlZCI6ZmFsc2V9-SnRVlQQR1&#x2F;9nxZ2AXsQ0seYwU5OjaiUMXrnQIIdNRvykzqQ0Q+vjXlmO7iAUwhwlsyfoMrLuvmLYwoD7fV8Mpz9Gs2gsTR8DfSHuAdvZlFENlIuFoIqyO8BneM9paD0yLxiqxy&#x2F;WWuOqW6c1v9ubbfdT6z9UnzSUjPKlsjXfq9J2gcDALrv9E0RPTOZqKfnsg7PF0wNQ0&#x2F;d00dy1k3zI+zJyTRpDxkCaGgijlY&#x2F;LZ&#x2F;wqd&#x2F;kRfcbQuRzdJ&#x2F;JXa3nj26rACqykKXaBH5thuvkTyySOpZwZMJVJyW7B7ro&#x2F;hkFCljZug3K+bTw5VwySzJtDcQ9tDYuu0zSAeXrcv2qrOg&#x3D;&#x3D;-MIIETDCCAjSgAwIBAgIBDTANBgkqhkiG9w0BAQsFADAYMRYwFAYDVQQDDA1KZXRQcm9maWxlIENBMB4XDTIwMTAxOTA5MDU1M1oXDTIyMTAyMTA5MDU1M1owHzEdMBsGA1UEAwwUcHJvZDJ5LWZyb20tMjAyMDEwMTkwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCUlaUFc1wf+CfY9wzFWEL2euKQ5nswqb57V8QZG7d7RoR6rwYUIXseTOAFq210oMEe++LCjzKDuqwDfsyhgDNTgZBPAaC4vUU2oy+XR+Fq8nBixWIsH668HeOnRK6RRhsr0rJzRB95aZ3EAPzBuQ2qPaNGm17pAX0Rd6MPRgjp75IWwI9eA6aMEdPQEVN7uyOtM5zSsjoj79Lbu1fjShOnQZuJcsV8tqnayeFkNzv2LTOlofU&#x2F;Tbx502Ro073gGjoeRzNvrynAP03pL486P3KCAyiNPhDs2z8&#x2F;COMrxRlZW5mfzo0xsK0dQGNH3UoG&#x2F;9RVwHG4eS8LFpMTR9oetHZBAgMBAAGjgZkwgZYwCQYDVR0TBAIwADAdBgNVHQ4EFgQUJNoRIpb1hUHAk0foMSNM9MCEAv8wSAYDVR0jBEEwP4AUo562SGdCEjZBvW3gubSgUouX8bOhHKQaMBgxFjAUBgNVBAMMDUpldFByb2ZpbGUgQ0GCCQDSbLGDsoN54TATBgNVHSUEDDAKBggrBgEFBQcDATALBgNVHQ8EBAMCBaAwDQYJKoZIhvcNAQELBQADggIBABqRoNGxAQct9dQUFK8xqhiZaYPd30TlmCmSAaGJ0eBpvkVeqA2jGYhAQRqFiAlFC63JKvWvRZO1iRuWCEfUMkdqQ9VQPXziE&#x2F;BlsOIgrL6RlJfuFcEZ8TK3syIfIGQZNCxYhLLUuet2HE6LJYPQ5c0jH4kDooRpcVZ4rBxNwddpctUO2te9UU5&#x2F;FjhioZQsPvd92qOTsV+8Cyl2fvNhNKD1Uu9ff5AkVIQn4JU23ozdB&#x2F;R5oUlebwaTE6WZNBs+TA&#x2F;qPj+5&#x2F;we9NH71WRB0hqUoLI2AKKyiPw++FtN4Su1vsdDlrAzDj9ILjpjJKA1ImuVcG329&#x2F;WTYIKysZ1CWK3zATg9BeCUPAV1pQy8ToXOq+RSYen6winZ2OO93eyHv2Iw5kbn1dqfBw1BuTE29V2FJKicJSu8iEOpfoafwJISXmz1wnnWL3V&#x2F;0NxTulfWsXugOoLfv0ZIBP1xH9kmf22jjQ2JiHhQZP7ZDsreRrOeIQ&#x2F;c4yR8IQvMLfC0WKQqrHu5ZzXTH4NO3CwGWSlTY74kE91zXB5mwWAx1jig+UXYc2w4RkVhy0&#x2F;&#x2F;lOmVya&#x2F;PEepuuTTI4+UJwC7qbVlh5zfhj8oTNUXgN0AOc+Q0&#x2F;WFPl1aw5VV&#x2F;VrO8FCoB15lFVlpKaQ1Yh+DVU8ke+rt9Th0BCHXe0uZOEmH0nOnH&#x2F;0onD<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>​</p>
-<p><img src="https://sh-prod-mall-bucket.oss-cn-shanghai.aliyuncs.com/imgupload/blog/image-20230502173952067.png" ></p>
-<p><strong>若是这里显示 “Key is invalid”，请做如下排查和尝试</strong></p>
-<blockquote>
-<ol>
-<li>确保工具包安装配置成功，检查环境变量是否正确配置，避免被安全软件拦截</li>
-<li>尝试重启IDEA</li>
-<li>尝试断网并重启IDEA</li>
-</ol>
-</blockquote>
-<p><img src="https://sh-prod-mall-bucket.oss-cn-shanghai.aliyuncs.com/imgupload/blog/image-20230502174056564.png" ></p>
-<p>注意，这里显示只激活到2025年，但实际是永久激活的，即使过了这个时间，此激活也仍然有效，IDEA也可以继续使用。</p>
+                <p>在分布式架构中，系统经常被暴漏为服务供其他系统调用，为使系统间能够相互通信，需要有一个协调系统来管理这些服务，这就是服务注册与服务发现，这个协调者也被称之为注册中心。<br>下面基于zookeeper来实现一个简单的服务注册与发现功能</p>
+<p>通过Maven引入需要的jar包</p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;dependency&gt;
+  &lt;groupId&gt;com.101tec&lt;&#x2F;groupId&gt;
+  &lt;artifactId&gt;zkclient&lt;&#x2F;artifactId&gt;
+  &lt;version&gt;0.11&lt;&#x2F;version&gt;
+&lt;&#x2F;dependency&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>创建服务注册类</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>wrxiang<span class="token punctuation">.</span>zk<span class="token punctuation">.</span>util</span><span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span></span><span class="token class-name">I0Itec</span><span class="token punctuation">.</span>zkclient<span class="token punctuation">.</span>ZkClient<span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ZkServiceRegistry</span> <span class="token punctuation">&#123;</span>
+
+    <span class="token keyword">private</span> <span class="token class-name">ZkClient</span> zkClient<span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">registry</span><span class="token punctuation">(</span><span class="token class-name">String</span> serviceName<span class="token punctuation">,</span> <span class="token class-name">String</span> serviceAddress<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+
+        zkClient <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ZkClient</span><span class="token punctuation">(</span><span class="token string">"127.0.0.1"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment">//创建registry节点</span>
+        <span class="token class-name">String</span> registryAddress <span class="token operator">=</span> <span class="token string">"/services"</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>zkClient<span class="token punctuation">.</span><span class="token function">exists</span><span class="token punctuation">(</span>registryAddress<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            zkClient<span class="token punctuation">.</span><span class="token function">createPersistent</span><span class="token punctuation">(</span>registryAddress<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"创建服务注册节点"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+
+        <span class="token comment">//创建service节点</span>
+        <span class="token class-name">String</span> servicePath <span class="token operator">=</span> registryAddress <span class="token operator">+</span> <span class="token string">"/"</span> <span class="token operator">+</span> serviceName<span class="token punctuation">;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>zkClient<span class="token punctuation">.</span><span class="token function">exists</span><span class="token punctuation">(</span>servicePath<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            zkClient<span class="token punctuation">.</span><span class="token function">createPersistent</span><span class="token punctuation">(</span>servicePath<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"创建服务节点，服务名："</span> <span class="token operator">+</span> serviceName<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+
+        <span class="token comment">//创建address节点（临时）</span>
+        <span class="token class-name">String</span> addressPath <span class="token operator">=</span> servicePath <span class="token operator">+</span> <span class="token string">"/address-"</span><span class="token punctuation">;</span>
+        <span class="token class-name">String</span> addressNode <span class="token operator">=</span> zkClient<span class="token punctuation">.</span><span class="token function">createEphemeralSequential</span><span class="token punctuation">(</span>addressPath<span class="token punctuation">,</span> serviceAddress<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"创建服务地址节点："</span> <span class="token operator">+</span> addressNode<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>创建服务发现类</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>wrxiang<span class="token punctuation">.</span>zk<span class="token punctuation">.</span>util</span><span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span></span><span class="token class-name">I0Itec</span><span class="token punctuation">.</span>zkclient<span class="token punctuation">.</span>ZkClient<span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span><span class="token class-name">CollectionUtils</span></span><span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span><span class="token class-name">Collection</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span><span class="token class-name">List</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>concurrent<span class="token punctuation">.</span></span><span class="token class-name">CopyOnWriteArrayList</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>concurrent<span class="token punctuation">.</span></span><span class="token class-name">ThreadLocalRandom</span></span><span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ZkServiceDiscovery</span> <span class="token punctuation">&#123;</span>
+
+    <span class="token keyword">private</span> <span class="token keyword">final</span> <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">></span></span> addressCache <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">CopyOnWriteArrayList</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">private</span> <span class="token class-name">ZkClient</span> zkClient<span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">discovery</span><span class="token punctuation">(</span><span class="token class-name">String</span> serviceName<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+
+        zkClient<span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ZkClient</span><span class="token punctuation">(</span><span class="token string">"127.0.0.1"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token class-name">String</span> servicePath <span class="token operator">=</span>  <span class="token string">"/services/"</span> <span class="token operator">+</span> serviceName<span class="token punctuation">;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>zkClient<span class="token punctuation">.</span><span class="token function">exists</span><span class="token punctuation">(</span>servicePath<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">RuntimeException</span><span class="token punctuation">(</span><span class="token string">"未发现服务节点："</span> <span class="token operator">+</span> servicePath<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+
+        <span class="token class-name">String</span> address<span class="token punctuation">;</span>
+
+        <span class="token comment">//先从本地系统缓存中取</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>addressCache<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            address <span class="token operator">=</span> addressCache<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span><span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>addressCache<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">></span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            address <span class="token operator">=</span> addressCache<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token class-name">ThreadLocalRandom</span><span class="token punctuation">.</span><span class="token function">current</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">nextInt</span><span class="token punctuation">(</span>addressCache<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span><span class="token keyword">else</span><span class="token punctuation">&#123;</span>
+            <span class="token comment">//从ZK注册中心中取</span>
+            <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">></span></span> addressList <span class="token operator">=</span> zkClient<span class="token punctuation">.</span><span class="token function">getChildren</span><span class="token punctuation">(</span>servicePath<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            addressCache<span class="token punctuation">.</span><span class="token function">clear</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            addressCache<span class="token punctuation">.</span><span class="token function">addAll</span><span class="token punctuation">(</span>addressList<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            zkClient<span class="token punctuation">.</span><span class="token function">subscribeChildChanges</span><span class="token punctuation">(</span>servicePath<span class="token punctuation">,</span><span class="token punctuation">(</span>parentPath<span class="token punctuation">,</span>currentChilds<span class="token punctuation">)</span><span class="token operator">-></span><span class="token punctuation">&#123;</span>
+                <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"监听服务节点发生变化："</span> <span class="token operator">+</span> parentPath<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                addressCache<span class="token punctuation">.</span><span class="token function">clear</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                addressCache<span class="token punctuation">.</span><span class="token function">addAll</span><span class="token punctuation">(</span>currentChilds<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token class-name">CollectionUtils</span><span class="token punctuation">.</span><span class="token function">isEmpty</span><span class="token punctuation">(</span>addressCache<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+                <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">RuntimeException</span><span class="token punctuation">(</span><span class="token string">"未发现有效的服务节点"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span>
+
+            <span class="token keyword">if</span><span class="token punctuation">(</span>addressList<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+                address <span class="token operator">=</span> addressList<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span><span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+                address <span class="token operator">=</span> addressList<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token class-name">ThreadLocalRandom</span><span class="token punctuation">.</span><span class="token function">current</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">nextInt</span><span class="token punctuation">(</span>addressList<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span>
+        <span class="token punctuation">&#125;</span>
+
+        <span class="token comment">//获取实际地址</span>
+        <span class="token class-name">String</span> addressPath <span class="token operator">=</span> servicePath <span class="token operator">+</span> <span class="token string">"/"</span> <span class="token operator">+</span> address<span class="token punctuation">;</span>
+        <span class="token class-name">String</span> hostAndPort <span class="token operator">=</span> zkClient<span class="token punctuation">.</span><span class="token function">readData</span><span class="token punctuation">(</span>addressPath<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"获取到实际访问地址："</span> <span class="token operator">+</span> hostAndPort<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        zkClient<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> hostAndPort<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>创建测试类</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>wrxiang<span class="token punctuation">.</span>zk<span class="token punctuation">.</span>util</span><span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ZookeeperApplicationTest</span> <span class="token punctuation">&#123;</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">InterruptedException</span> <span class="token punctuation">&#123;</span>
+
+        <span class="token class-name">String</span> serviceName <span class="token operator">=</span> <span class="token string">"test.com"</span><span class="token punctuation">;</span>
+
+        <span class="token class-name">ZkServiceRegistry</span> registry <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ZkServiceRegistry</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        registry<span class="token punctuation">.</span><span class="token function">registry</span><span class="token punctuation">(</span>serviceName<span class="token punctuation">,</span><span class="token string">"192.168.3.1:8080"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token class-name">Thread</span><span class="token punctuation">.</span><span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token class-name">ZkServiceDiscovery</span> zkServiceDiscovery <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ZkServiceDiscovery</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        zkServiceDiscovery<span class="token punctuation">.</span><span class="token function">discovery</span><span class="token punctuation">(</span>serviceName<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>启动zookeeper，然后运行测试类，可以发现服务能够正常注册到zookeeper，也能够被正常的发现。</p>
 
                 
             </div>
@@ -585,7 +674,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://gloamfox.github.io/idea-2023.1.1-po-jie-ji-huo/">https://gloamfox.github.io/idea-2023.1.1-po-jie-ji-huo/</a>
+                    <a href="https://gloamfox.github.io/zookeeper-shi-xian-fu-wu-zhu-ce-yu-fa-xian/">https://gloamfox.github.io/zookeeper-shi-xian-fu-wu-zhu-ce-yu-fa-xian/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -623,16 +712,16 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/IDEA/">
-                                    <span class="chip bg-color">IDEA</span>
+                                <a href="/tags/%E6%9C%8D%E5%8A%A1%E6%B3%A8%E5%86%8C/">
+                                    <span class="chip bg-color">服务注册</span>
                                 </a>
                             
-                                <a href="/tags/%E6%BF%80%E6%B4%BB%E5%B7%A5%E5%85%B7/">
-                                    <span class="chip bg-color">激活工具</span>
+                                <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%8F%91%E7%8E%B0/">
+                                    <span class="chip bg-color">服务发现</span>
                                 </a>
                             
-                                <a href="/tags/%E7%A0%B4%E8%A7%A3%E6%95%99%E7%A8%8B/">
-                                    <span class="chip bg-color">破解教程</span>
+                                <a href="/tags/Zookeeper/">
+                                    <span class="chip bg-color">Zookeeper</span>
                                 </a>
                             
                         </div>
@@ -806,25 +895,82 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/vmware-xu-ni-ji-she-zhi/">
+                <a href="/vscode-chang-yong-python-cha-jian/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/gloamfox/gloamfox.github.io/medias/featureimages/10.jpg" class="responsive-img" >
+                        <img src="https://cdn.jsdelivr.net/gh/gloamfox/gloamfox.github.io/medias/featureimages/4.jpg" class="responsive-img" >
                         
-                        <span class="card-title">华为云镜像下载与VMware虚拟机配置</span>
+                        <span class="card-title">VSCode中Python开发插件</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            本文介绍华为云CentOS镜像下载、VMware虚拟机创建、固定IP配置、yum源设置及防火墙关闭的详细步骤。
+                            介绍VSCode中Python开发相关插件配置，包括Jupyter、Pylance、IntelliCode和拼写检查等功能的设置方法。
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2025-11-20
+                            <i class="far fa-clock fa-fw icon-date"></i>2025-11-18
                         </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/" class="post-category">
+                                    开发工具
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Jupyter/">
+                        <span class="chip bg-color">Jupyter</span>
+                    </a>
+                    
+                    <a href="/tags/Pylance/">
+                        <span class="chip bg-color">Pylance</span>
+                    </a>
+                    
+                    <a href="/tags/IntelliCode/">
+                        <span class="chip bg-color">IntelliCode</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/zookeeper-shi-xian-tong-yi-pei-zhi-guan-li/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/gloamfox/gloamfox.github.io/medias/featureimages/13.jpg" class="responsive-img" >
+                        
+                        <span class="card-title">基于Zookeeper的统一配置管理实现</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            本文介绍了使用Zookeeper实现统一配置管理的方法，并给出了完整的Java代码示例。
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2025-11-18
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -840,73 +986,16 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E9%95%9C%E5%83%8F%E4%B8%8B%E8%BD%BD/">
-                        <span class="chip bg-color">镜像下载</span>
+                    <a href="/tags/Zookeeper/">
+                        <span class="chip bg-color">Zookeeper</span>
                     </a>
                     
-                    <a href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA%E9%85%8D%E7%BD%AE/">
-                        <span class="chip bg-color">虚拟机配置</span>
+                    <a href="/tags/%E9%85%8D%E7%BD%AE%E7%AE%A1%E7%90%86/">
+                        <span class="chip bg-color">配置管理</span>
                     </a>
                     
-                    <a href="/tags/%E5%9B%BA%E5%AE%9AIP%E8%AE%BE%E7%BD%AE/">
-                        <span class="chip bg-color">固定IP设置</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/typora-an-zhuang-pei-zhi/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="https://cdn.jsdelivr.net/gh/gloamfox/gloamfox.github.io/medias/featureimages/18.jpg" class="responsive-img" >
-                        
-                        <span class="card-title">Typora安装与配置教程</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            本文介绍Typora的安装注册方法、图片上传配置以及Drake主题的优化步骤。
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2025-11-18
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E8%BD%AF%E4%BB%B6%E6%95%99%E7%A8%8B/" class="post-category">
-                                    软件教程
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/Typora/">
-                        <span class="chip bg-color">Typora</span>
-                    </a>
-                    
-                    <a href="/tags/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/">
-                        <span class="chip bg-color">软件安装</span>
-                    </a>
-                    
-                    <a href="/tags/%E4%B8%BB%E9%A2%98%E4%BC%98%E5%8C%96/">
-                        <span class="chip bg-color">主题优化</span>
+                    <a href="/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F/">
+                        <span class="chip bg-color">分布式系统</span>
                     </a>
                     
                 </div>
