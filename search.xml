@@ -33,6 +33,35 @@
     
     
     <entry>
+      <title>Oracle数据库特殊字符处理</title>
+      <link href="/oracle-qu-chu-biao-zhong-de-te-shu-zi-fu/"/>
+      <url>/oracle-qu-chu-biao-zhong-de-te-shu-zi-fu/</url>
+      
+        <content type="html"><![CDATA[<p>在Oracle数据库中，有时字段中会存入一些特殊字符（设计不当或者程序BUG），例如制表符、换行符以及回车符等，如果包含特殊字符是看不出来的，但是在进行字段关联的时候就会查不出数据。</p><p>特殊字符ASCII码定义：</p><blockquote><p>制表符 chr(9)<br>换行符 chr(10)<br>回车符 chr(13)</p></blockquote><h2 id="去掉表中的特殊字符"><a href="#去掉表中的特殊字符" class="headerlink" title="去掉表中的特殊字符"></a>去掉表中的特殊字符</h2><pre class="line-numbers language-SQL" data-language="SQL"><code class="language-SQL">update table set field&#x3D;replace(field,chr(9), &#39;&#39;) where instr(field, chr(9)) &gt; 0<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h2 id="其他特殊字符也可以使用ascii函数查出ASCII码然后进行替换"><a href="#其他特殊字符也可以使用ascii函数查出ASCII码然后进行替换" class="headerlink" title="其他特殊字符也可以使用ascii函数查出ASCII码然后进行替换"></a>其他特殊字符也可以使用ascii函数查出ASCII码然后进行替换</h2><pre class="line-numbers language-SQL" data-language="SQL"><code class="language-SQL">select ascii(&#39;?&#39;) from dual;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 数据库管理 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Oracle数据库 </tag>
+            
+            <tag> 特殊字符 </tag>
+            
+            <tag> SQL </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>从零到一键发布：Obsidian + Hexo + GitHub Pages 个人博客搭建指南</title>
       <link href="/obsidian-bo-ke-da-jian-zhi-nan/"/>
       <url>/obsidian-bo-ke-da-jian-zhi-nan/</url>

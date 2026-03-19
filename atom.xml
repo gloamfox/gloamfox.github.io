@@ -6,7 +6,7 @@
   <link href="https://gloamfox.github.io/atom.xml" rel="self"/>
   
   <link href="https://gloamfox.github.io/"/>
-  <updated>2026-03-19T05:17:53.378Z</updated>
+  <updated>2026-03-19T05:20:49.857Z</updated>
   <id>https://gloamfox.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://gloamfox.github.io/hexo-yi-chu-tu-pian-mo-ren-alt-shu-xing/"/>
     <id>https://gloamfox.github.io/hexo-yi-chu-tu-pian-mo-ren-alt-shu-xing/</id>
     <published>2026-03-19T10:59:42.000Z</published>
-    <updated>2026-03-19T05:17:53.378Z</updated>
+    <updated>2026-03-19T05:20:49.857Z</updated>
     
     
       
@@ -46,11 +46,43 @@
   </entry>
   
   <entry>
+    <title>Oracle数据库特殊字符处理</title>
+    <link href="https://gloamfox.github.io/oracle-qu-chu-biao-zhong-de-te-shu-zi-fu/"/>
+    <id>https://gloamfox.github.io/oracle-qu-chu-biao-zhong-de-te-shu-zi-fu/</id>
+    <published>2026-03-19T05:20:49.858Z</published>
+    <updated>2026-03-19T05:20:49.858Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;在Oracle数据库中，有时字段中会存入一些特殊字符（设计不当或者程序BUG），例如制表符、换行符以及回车符等，如果包含特殊字符是看不出来的，但是在进行字段关联的时候就会查不出数据。&lt;/p&gt;
+&lt;p&gt;特殊字符ASCII码定义：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;制表符</summary>
+        
+      
+    
+    
+    
+    <category term="数据库管理" scheme="https://gloamfox.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86/"/>
+    
+    
+    <category term="Oracle数据库" scheme="https://gloamfox.github.io/tags/Oracle%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    <category term="特殊字符" scheme="https://gloamfox.github.io/tags/%E7%89%B9%E6%AE%8A%E5%AD%97%E7%AC%A6/"/>
+    
+    <category term="SQL" scheme="https://gloamfox.github.io/tags/SQL/"/>
+    
+  </entry>
+  
+  <entry>
     <title>从零到一键发布：Obsidian + Hexo + GitHub Pages 个人博客搭建指南</title>
     <link href="https://gloamfox.github.io/obsidian-bo-ke-da-jian-zhi-nan/"/>
     <id>https://gloamfox.github.io/obsidian-bo-ke-da-jian-zhi-nan/</id>
     <published>2026-03-18T10:34:27.000Z</published>
-    <updated>2026-03-19T05:17:53.380Z</updated>
+    <updated>2026-03-19T05:20:49.858Z</updated>
     
     
       
@@ -77,7 +109,7 @@
     <link href="https://gloamfox.github.io/obsidian-da-zao-ge-ren-zhi-shi-ku/"/>
     <id>https://gloamfox.github.io/obsidian-da-zao-ge-ren-zhi-shi-ku/</id>
     <published>2026-03-02T02:04:33.000Z</published>
-    <updated>2026-03-19T05:17:53.380Z</updated>
+    <updated>2026-03-19T05:20:49.858Z</updated>
     
     
       
@@ -107,7 +139,7 @@
     <link href="https://gloamfox.github.io/shi-yong-nvs-gong-ju-qie-huan-node-ban-ben/"/>
     <id>https://gloamfox.github.io/shi-yong-nvs-gong-ju-qie-huan-node-ban-ben/</id>
     <published>2026-02-26T04:35:40.000Z</published>
-    <updated>2026-03-19T05:17:53.380Z</updated>
+    <updated>2026-03-19T05:20:49.858Z</updated>
     
     
       
@@ -137,7 +169,7 @@
     <link href="https://gloamfox.github.io/ubuntu-xiu-gai-guo-nei-yuan-jie-jue-xia-zai-wen-ti/"/>
     <id>https://gloamfox.github.io/ubuntu-xiu-gai-guo-nei-yuan-jie-jue-xia-zai-wen-ti/</id>
     <published>2025-11-27T04:43:39.000Z</published>
-    <updated>2026-03-19T05:17:53.380Z</updated>
+    <updated>2026-03-19T05:20:49.858Z</updated>
     
     
       
@@ -167,7 +199,7 @@
     <link href="https://gloamfox.github.io/shutdown-ming-ling-wu-fa-wan-quan-ting-zhi-tomcat/"/>
     <id>https://gloamfox.github.io/shutdown-ming-ling-wu-fa-wan-quan-ting-zhi-tomcat/</id>
     <published>2025-11-20T06:25:56.000Z</published>
-    <updated>2026-03-19T05:17:53.380Z</updated>
+    <updated>2026-03-19T05:20:49.858Z</updated>
     
     
       
@@ -196,7 +228,7 @@
     <link href="https://gloamfox.github.io/vmware-xu-ni-ji-she-zhi/"/>
     <id>https://gloamfox.github.io/vmware-xu-ni-ji-she-zhi/</id>
     <published>2025-11-20T05:52:51.000Z</published>
-    <updated>2026-03-19T05:17:53.380Z</updated>
+    <updated>2026-03-19T05:20:49.858Z</updated>
     
     
       
@@ -225,7 +257,7 @@
     <link href="https://gloamfox.github.io/windows-an-zhuang-openssh-fu-wu/"/>
     <id>https://gloamfox.github.io/windows-an-zhuang-openssh-fu-wu/</id>
     <published>2025-11-20T05:44:03.000Z</published>
-    <updated>2026-03-19T05:17:53.380Z</updated>
+    <updated>2026-03-19T05:20:49.858Z</updated>
     
     
       
@@ -254,7 +286,7 @@
     <link href="https://gloamfox.github.io/spring-mvc-jie-kou-jian-kong-bi-bei-yuan-shi-lu-jing-mo-ban-huo-qu-quan-jie-xi/"/>
     <id>https://gloamfox.github.io/spring-mvc-jie-kou-jian-kong-bi-bei-yuan-shi-lu-jing-mo-ban-huo-qu-quan-jie-xi/</id>
     <published>2025-11-20T03:08:46.000Z</published>
-    <updated>2026-03-19T05:17:53.380Z</updated>
+    <updated>2026-03-19T05:20:49.858Z</updated>
     
     
       
@@ -283,7 +315,7 @@
     <link href="https://gloamfox.github.io/idea-2023.1.1-po-jie-ji-huo/"/>
     <id>https://gloamfox.github.io/idea-2023.1.1-po-jie-ji-huo/</id>
     <published>2025-11-18T10:37:50.000Z</published>
-    <updated>2026-03-19T05:17:53.380Z</updated>
+    <updated>2026-03-19T05:20:49.858Z</updated>
     
     
       
@@ -312,7 +344,7 @@
     <link href="https://gloamfox.github.io/spring-shi-jian-jian-ting-zai-ye-wu-shi-yong-zhong-de-you-hua/"/>
     <id>https://gloamfox.github.io/spring-shi-jian-jian-ting-zai-ye-wu-shi-yong-zhong-de-you-hua/</id>
     <published>2025-11-18T10:37:50.000Z</published>
-    <updated>2026-03-19T05:17:53.380Z</updated>
+    <updated>2026-03-19T05:20:49.858Z</updated>
     
     
       
@@ -343,7 +375,7 @@
     <link href="https://gloamfox.github.io/typora-an-zhuang-pei-zhi/"/>
     <id>https://gloamfox.github.io/typora-an-zhuang-pei-zhi/</id>
     <published>2025-11-18T10:37:50.000Z</published>
-    <updated>2026-03-19T05:17:53.380Z</updated>
+    <updated>2026-03-19T05:20:49.858Z</updated>
     
     
       
@@ -373,7 +405,7 @@
     <link href="https://gloamfox.github.io/vs-code-kuai-jie-jian-zhi-nan/"/>
     <id>https://gloamfox.github.io/vs-code-kuai-jie-jian-zhi-nan/</id>
     <published>2025-11-18T10:37:50.000Z</published>
-    <updated>2026-03-19T05:17:53.380Z</updated>
+    <updated>2026-03-19T05:20:49.858Z</updated>
     
     
       
@@ -407,7 +439,7 @@
     <link href="https://gloamfox.github.io/vscode-chang-yong-python-cha-jian/"/>
     <id>https://gloamfox.github.io/vscode-chang-yong-python-cha-jian/</id>
     <published>2025-11-18T10:37:50.000Z</published>
-    <updated>2026-03-19T05:17:53.380Z</updated>
+    <updated>2026-03-19T05:20:49.858Z</updated>
     
     
       
@@ -436,7 +468,7 @@
     <link href="https://gloamfox.github.io/zookeeper-ke-yi-zuo-shi-me/"/>
     <id>https://gloamfox.github.io/zookeeper-ke-yi-zuo-shi-me/</id>
     <published>2025-11-18T10:37:50.000Z</published>
-    <updated>2026-03-19T05:17:53.380Z</updated>
+    <updated>2026-03-19T05:20:49.858Z</updated>
     
     
       
@@ -465,7 +497,7 @@
     <link href="https://gloamfox.github.io/zookeeper-shi-xian-fu-wu-zhu-ce-yu-fa-xian/"/>
     <id>https://gloamfox.github.io/zookeeper-shi-xian-fu-wu-zhu-ce-yu-fa-xian/</id>
     <published>2025-11-18T10:37:50.000Z</published>
-    <updated>2026-03-19T05:17:53.380Z</updated>
+    <updated>2026-03-19T05:20:49.858Z</updated>
     
     
       
@@ -495,7 +527,7 @@
     <link href="https://gloamfox.github.io/zookeeper-shi-xian-tong-yi-pei-zhi-guan-li/"/>
     <id>https://gloamfox.github.io/zookeeper-shi-xian-tong-yi-pei-zhi-guan-li/</id>
     <published>2025-11-18T10:37:50.000Z</published>
-    <updated>2026-03-19T05:17:53.380Z</updated>
+    <updated>2026-03-19T05:20:49.858Z</updated>
     
     
       
