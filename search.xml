@@ -49,9 +49,38 @@
       
         <tags>
             
+            <tag> Obsidian </tag>
+            
             <tag> Hexo </tag>
             
-            <tag> Obsidian </tag>
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>华为云镜像下载与VMware虚拟机配置</title>
+      <link href="/vmware-xu-ni-ji-she-zhi/"/>
+      <url>/vmware-xu-ni-ji-she-zhi/</url>
+      
+        <content type="html"><![CDATA[<h2 id="镜像下载"><a href="#镜像下载" class="headerlink" title="镜像下载"></a>镜像下载</h2><p>华为云镜像下载CentOS镜像，镜像使用 CentOS-7-x86_64-Minimal-2207-02.iso<br><a href="https://repo.huaweicloud.com/centos/7/isos/x86_64/">镜像下载</a></p><h2 id="VMware创建虚拟机"><a href="#VMware创建虚拟机" class="headerlink" title="VMware创建虚拟机"></a>VMware创建虚拟机</h2><p>版本：VMware® Workstation 16 Pro</p><p>步骤忽略，选中镜像，一直点击下一步就可以</p><h2 id="设置固定IP"><a href="#设置固定IP" class="headerlink" title="设置固定IP"></a>设置固定IP</h2><h3 id="虚拟机网络连接方式"><a href="#虚拟机网络连接方式" class="headerlink" title="虚拟机网络连接方式"></a>虚拟机网络连接方式</h3><p><img src="../Assets/file-1763633908095.png" alt="file-1763633908095.png"></p><h3 id="配置虚拟机的NAT模式具体地址参数"><a href="#配置虚拟机的NAT模式具体地址参数" class="headerlink" title="配置虚拟机的NAT模式具体地址参数"></a><strong>配置虚拟机的NAT模式具体地址参数</strong></h3><p><img src="../Assets/file-1763633962024.png" alt="file-1763633962024.png"></p><p>选择VMnet8–取消勾选使用本地DHCP–设置子网IP–网关IP设置（记住此处设置，后面要用到），如下图</p><p><img src="../Assets/file-1763633986646.png" alt="file-1763633986646.png"></p><p>说明：修改子网IP设置，实现自由设置固定IP，IP网段最后一位0-255，子网IP占用一位，网关IP占用一位，剩余的都可以自由分配</p><p>若你想设置固定IP为192.168.2.2-255，比如192.168.2.2，则子网IP为192.168.2.0； </p><p>若你想设置固定IP为192.168.1.2-255，比如192.168.1.2，则子网IP为192.168.1.0； </p><p>也就是说，你想配置成哪个网段，IP地址最后那位为0即可。</p><p>记录一下上面的网关地址，虚拟机中设置固定IP时需要用到，这里的网关IP也可以自行设置，只要网段一致即可。</p><p><img src="../Assets/file-1763634031791.png" alt="file-1763634031791.png"></p><h3 id="配置电脑具体VMnet8本地地址参数"><a href="#配置电脑具体VMnet8本地地址参数" class="headerlink" title="配置电脑具体VMnet8本地地址参数"></a><strong>配置电脑具体VMnet8本地地址参数</strong></h3><p>会自动配置VMnet8的IP以及子网掩码，此处记录一下需要知晓本地电脑在局域网的IP</p><p><img src="../Assets/file-1763634057124.png" alt="file-1763634057124.png"></p><h3 id="虚拟机设置固定IP"><a href="#虚拟机设置固定IP" class="headerlink" title="虚拟机设置固定IP"></a>虚拟机设置固定IP</h3><h4 id="编辑网络"><a href="#编辑网络" class="headerlink" title="编辑网络"></a>编辑网络</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">cd</span> /etc/sysconfig/network-scripts<span class="token function">ls</span><span class="token function">vi</span> ifconfig-ens33<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><p><img src="../Assets/file-1763634076190.png" alt="file-1763634076190.png"></p><p><img src="../Assets/file-1763634100002.png" alt="file-1763634100002.png"></p><p>说明：</p><pre class="line-numbers language-text" data-language="text"><code class="language-text">BOOTPROTO=static        #网络配置，设置为静态IP，有dhcp及staticONBOOT=yes              #设置为开机启动DNS1=114.114.114.114    #这个是国内的DNS地址，是固定的IPADDR=192.168.2.3      #你想要设置的固定IP，除VMware配置的子网IP、网关IP以及VMnet8设置的3个IP外，同网段 0-255之间都可以，自行设置NETMASK=255.255.255.0   #子网掩码GATEWAY=192.168.2.2     #网关IPork restart<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>重启网络服务</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">service</span> network restart<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h4 id="验证"><a href="#验证" class="headerlink" title="验证"></a>验证</h4><p>查看linux中的ip地址</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">ip</span> addr<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p><img src="../Assets/file-1763634145216.png" alt="file-1763634145216.png"></p><p>访问互联网，是否能正常访问</p><pre class="line-numbers language-text" data-language="text"><code class="language-text">ping www.baidu.com<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>实体机访问虚拟机IP，是否能正常访问</p><pre class="line-numbers language-none"><code class="language-none">ping 192.168.2.2<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h2 id="设置yum源为阿里云"><a href="#设置yum源为阿里云" class="headerlink" title="设置yum源为阿里云"></a>设置yum源为阿里云</h2><p>下载阿里云CentOS 7的文件，替换虚拟机中的 /etc/yum.repos.d/CentOS-Base.repo 文件内容</p><p>或者直接使用wget下载文件直接进行替换</p><pre class="line-numbers language-text" data-language="text"><code class="language-text">[root@localhost ~]# cd /etc/yum.repos.d## 备份原文件[root@localhost ~]# mv CentOS-Base.repo CentOS-Base_bak.repo## 下载阿里云的镜像描述文件[root@localhost ~]# wget https://mirrors.aliyun.com/repo/Centos-7.repo -O CentOS-Base.repo<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>执行以下命令</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">yum clean all yum makecache yum update <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><h2 id="关闭防火墙"><a href="#关闭防火墙" class="headerlink" title="关闭防火墙"></a>关闭防火墙</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment">## 停止防火墙服务</span><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># systemctl stop firewalld.service</span><span class="token comment">## 查看防火墙服务状态</span><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># systemctl status firewalld.service</span><span class="token comment">## 永久关闭防火墙服务</span><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># systemctl disable firewalld.service</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术教程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 镜像下载 </tag>
+            
+            <tag> 虚拟机配置 </tag>
+            
+            <tag> 固定IP设置 </tag>
             
         </tags>
       
