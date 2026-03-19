@@ -147,6 +147,35 @@
     
     
     <entry>
+      <title>Tomcat停止后Java进程残留问题及解决方法</title>
+      <link href="/shutdown-ming-ling-wu-fa-wan-quan-ting-zhi-tomcat/"/>
+      <url>/shutdown-ming-ling-wu-fa-wan-quan-ting-zhi-tomcat/</url>
+      
+        <content type="html"><![CDATA[<p>运行shutdown.sh,tomcat停止, 但它的java进程还在, 不过状态为S(sleep), 不是运行时的R(Runnable), 如果不kill的话, 这种进程越来越多，导致JVM进程越来越多, 占据了大量的内存空间, 有可能使得新程序在启动JVM时由于内存不够用而无法启动。</p><h2 id="kill强制杀死进程"><a href="#kill强制杀死进程" class="headerlink" title="kill强制杀死进程"></a>kill强制杀死进程</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">ps</span> -ef<span class="token operator">|</span><span class="token function">grep</span> <span class="token function">java</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>若显示以下内容代表使用的java进程还存在，没有完全停止</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">root     <span class="token number">50530</span>     <span class="token number">1</span> <span class="token number">99</span> <span class="token number">10</span>:25 pts/0    00:00:45 /usr/local/java/jdk1.7.0_51/jre/bin/java <span class="token parameter variable">-Djava.util.logging.config.file</span><span class="token operator">=</span>/usr/local/tomcat/apache-tomcat-7.0.92/conf/logging.properties <span class="token parameter variable">-Djava.util.logging.manager</span><span class="token operator">=</span>org.apache.juli.ClassLoaderLogManager <span class="token parameter variable">-Djdk.tls.ephemeralDHKeySize</span><span class="token operator">=</span><span class="token number">2048</span> <span class="token parameter variable">-Dignore.endorsed.dirs</span><span class="token operator">=</span> <span class="token parameter variable">-classpath</span> /usr/local/tomcat/apache-tomcat-7.0.92/bin/bootstrap.jar:/usr/local/tomcat/apache-tomcat-7.0.92/bin/tomcat-juli.jar <span class="token parameter variable">-Dcatalina.base</span><span class="token operator">=</span>/usr/local/tomcat/apache-tomcat-7.0.92 <span class="token parameter variable">-Dcatalina.home</span><span class="token operator">=</span>/usr/local/tomcat/apache-tomcat-7.0.92 <span class="token parameter variable">-Djava.io.tmpdir</span><span class="token operator">=</span>/usr/local/tomcat/apache-tomcat-7.0.92/temp org.apache.catalina.startup.Bootstrap startroot     <span class="token number">50934</span> <span class="token number">48933</span>  <span class="token number">0</span> <span class="token number">10</span>:26 pts/0    00:00:00 <span class="token function">grep</span> <span class="token parameter variable">--color</span><span class="token operator">=</span>auto <span class="token function">java</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><p>使用kill命令，杀死进程</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">kill</span> <span class="token parameter variable">-9</span> <span class="token number">50530</span> <span class="token comment">#50530为进程id</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h2 id="tomcat-解决"><a href="#tomcat-解决" class="headerlink" title="tomcat 解决"></a>tomcat 解决</h2><p>在tomcat/bin/shutdown.sh文件中增加一个参数</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">exec</span> <span class="token string">"<span class="token variable">$PRGDIR</span>"</span>/<span class="token string">"<span class="token variable">$EXECUTABLE</span>"</span> stop <span class="token string">"<span class="token variable">$@</span>"</span>  <span class="token comment">#原来的</span><span class="token builtin class-name">exec</span> <span class="token string">"<span class="token variable">$PRGDIR</span>"</span>/<span class="token string">"<span class="token variable">$EXECUTABLE</span>"</span> stop <span class="token parameter variable">-force</span> <span class="token string">"<span class="token variable">$@</span>"</span> <span class="token comment">#增加参数后</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><p>在tomcat/bin/catalina.sh脚中，加入下面这三行</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token parameter variable">-z</span> <span class="token string">"<span class="token variable">$CATALINA_PID</span>"</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>    <span class="token assign-left variable">CATALINA_PID</span><span class="token operator">=</span><span class="token variable">$PRGDIR</span>/CATALINA_PID    <span class="token function">cat</span> <span class="token variable">$CATALINA_PID</span><span class="token keyword">fi</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 服务器运维 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Tomcat </tag>
+            
+            <tag> Java进程 </tag>
+            
+            <tag> 进程管理 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>华为云镜像下载与VMware虚拟机配置</title>
       <link href="/vmware-xu-ni-ji-she-zhi/"/>
       <url>/vmware-xu-ni-ji-she-zhi/</url>
