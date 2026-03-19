@@ -6,7 +6,7 @@
   <link href="https://gloamfox.github.io/atom.xml" rel="self"/>
   
   <link href="https://gloamfox.github.io/"/>
-  <updated>2026-03-19T05:05:34.391Z</updated>
+  <updated>2026-03-19T05:05:48.207Z</updated>
   <id>https://gloamfox.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://gloamfox.github.io/hexo-yi-chu-tu-pian-mo-ren-alt-shu-xing/"/>
     <id>https://gloamfox.github.io/hexo-yi-chu-tu-pian-mo-ren-alt-shu-xing/</id>
     <published>2026-03-19T10:59:42.000Z</published>
-    <updated>2026-03-19T05:05:34.391Z</updated>
+    <updated>2026-03-19T05:05:48.207Z</updated>
     
     
       
@@ -50,7 +50,7 @@
     <link href="https://gloamfox.github.io/obsidian-bo-ke-da-jian-zhi-nan/"/>
     <id>https://gloamfox.github.io/obsidian-bo-ke-da-jian-zhi-nan/</id>
     <published>2026-03-18T10:34:27.000Z</published>
-    <updated>2026-03-19T05:05:34.392Z</updated>
+    <updated>2026-03-19T05:05:48.208Z</updated>
     
     
       
@@ -73,11 +73,41 @@
   </entry>
   
   <entry>
+    <title>nvs 安装与使用指南</title>
+    <link href="https://gloamfox.github.io/shi-yong-nvs-gong-ju-qie-huan-node-ban-ben/"/>
+    <id>https://gloamfox.github.io/shi-yong-nvs-gong-ju-qie-huan-node-ban-ben/</id>
+    <published>2026-02-26T04:35:40.000Z</published>
+    <updated>2026-03-19T05:05:48.208Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;安装&quot;&gt;&lt;a href=&quot;#安装&quot; class=&quot;headerlink&quot; title=&quot;安装&quot;&gt;&lt;/a&gt;安装&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/jasongin/nvs&quot;&gt;nvs官方仓库&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;nvs</summary>
+        
+      
+    
+    
+    
+    <category term="技术教程" scheme="https://gloamfox.github.io/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/"/>
+    
+    
+    <category term="Node版本管理" scheme="https://gloamfox.github.io/tags/Node%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/"/>
+    
+    <category term="nvs工具" scheme="https://gloamfox.github.io/tags/nvs%E5%B7%A5%E5%85%B7/"/>
+    
+    <category term="跨平台" scheme="https://gloamfox.github.io/tags/%E8%B7%A8%E5%B9%B3%E5%8F%B0/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Ubuntu 更换国内源提升下载速度</title>
     <link href="https://gloamfox.github.io/ubuntu-xiu-gai-guo-nei-yuan-jie-jue-xia-zai-wen-ti/"/>
     <id>https://gloamfox.github.io/ubuntu-xiu-gai-guo-nei-yuan-jie-jue-xia-zai-wen-ti/</id>
     <published>2025-11-27T04:43:39.000Z</published>
-    <updated>2026-03-19T05:05:34.392Z</updated>
+    <updated>2026-03-19T05:05:48.208Z</updated>
     
     
       
@@ -107,7 +137,7 @@
     <link href="https://gloamfox.github.io/vmware-xu-ni-ji-she-zhi/"/>
     <id>https://gloamfox.github.io/vmware-xu-ni-ji-she-zhi/</id>
     <published>2025-11-20T05:52:51.000Z</published>
-    <updated>2026-03-19T05:05:34.392Z</updated>
+    <updated>2026-03-19T05:05:48.208Z</updated>
     
     
       
@@ -136,7 +166,7 @@
     <link href="https://gloamfox.github.io/typora-an-zhuang-pei-zhi/"/>
     <id>https://gloamfox.github.io/typora-an-zhuang-pei-zhi/</id>
     <published>2025-11-18T10:37:50.000Z</published>
-    <updated>2026-03-19T05:05:34.392Z</updated>
+    <updated>2026-03-19T05:05:48.208Z</updated>
     
     
       
@@ -166,7 +196,7 @@
     <link href="https://gloamfox.github.io/vs-code-kuai-jie-jian-zhi-nan/"/>
     <id>https://gloamfox.github.io/vs-code-kuai-jie-jian-zhi-nan/</id>
     <published>2025-11-18T10:37:50.000Z</published>
-    <updated>2026-03-19T05:05:34.392Z</updated>
+    <updated>2026-03-19T05:05:48.208Z</updated>
     
     
       
@@ -200,7 +230,7 @@
     <link href="https://gloamfox.github.io/vscode-chang-yong-python-cha-jian/"/>
     <id>https://gloamfox.github.io/vscode-chang-yong-python-cha-jian/</id>
     <published>2025-11-18T10:37:50.000Z</published>
-    <updated>2026-03-19T05:05:34.392Z</updated>
+    <updated>2026-03-19T05:05:48.208Z</updated>
     
     
       

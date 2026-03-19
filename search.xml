@@ -60,6 +60,35 @@
     
     
     <entry>
+      <title>nvs 安装与使用指南</title>
+      <link href="/shi-yong-nvs-gong-ju-qie-huan-node-ban-ben/"/>
+      <url>/shi-yong-nvs-gong-ju-qie-huan-node-ban-ben/</url>
+      
+        <content type="html"><![CDATA[<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p><a href="https://github.com/jasongin/nvs">nvs官方仓库</a></p><p>nvs 有跨平台的特性，支持 Windows 、 macOS和 Linux 系统，下面分别介绍两种安装方法。</p><h2 id="windows"><a href="#windows" class="headerlink" title="windows"></a>windows</h2><p>推荐通过 msi 的方式安装，就跟正常安装软件一下，双击下一步即可：</p><p><a href="https://github.com/jasongin/nvs/releases">https://github.com/jasongin/nvs/releases</a></p><h2 id="mac"><a href="#mac" class="headerlink" title="mac"></a>mac</h2><p>用下面三行命令即可：</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">export</span> <span class="token assign-left variable">NVS_HOME</span><span class="token operator">=</span><span class="token string">"<span class="token environment constant">$HOME</span>/.nvs"</span> <span class="token function">git</span> clone https://github.com/jasongin/nvs <span class="token string">"<span class="token variable">$NVS_HOME</span>"</span> <span class="token builtin class-name">.</span> <span class="token string">"<span class="token variable">$NVS_HOME</span>/nvs.sh"</span> <span class="token function">install</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h1 id="常见命令"><a href="#常见命令" class="headerlink" title="常见命令"></a>常见命令</h1><h2 id="添加Node版本"><a href="#添加Node版本" class="headerlink" title="添加Node版本"></a>添加Node版本</h2><p>如果你想安装最新的 LTS 版本，可以用命令：</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">nvs <span class="token function">add</span> lts<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>如果你需要新增一个 Node.js 16的版本，可以用以下命令：</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">nvs <span class="token function">add</span> <span class="token number">16</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h2 id="更新当前的-Node-小版本"><a href="#更新当前的-Node-小版本" class="headerlink" title="更新当前的 Node 小版本"></a>更新当前的 Node 小版本</h2><p>如果你想要升级 Node 小版本，比方说从 20.13.1升级到20.14.0（当前大版本的最新版），可以使用如下命令：</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">nvs upgrade<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h2 id="配置默认-Node-版本"><a href="#配置默认-Node-版本" class="headerlink" title="配置默认 Node 版本"></a>配置默认 Node 版本</h2><h3 id="全局指定"><a href="#全局指定" class="headerlink" title="全局指定"></a>全局指定</h3><p>这个适用于绝大部分情况，指定默认的 node 版本。</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">nvs <span class="token function">link</span> lts <span class="token comment"># 使用最新的 lts 版本，在所有的终端都生效</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="局部指定"><a href="#局部指定" class="headerlink" title="局部指定"></a>局部指定</h3><p>这个适用于偶尔用一次指定版本的情况，当你的终端关闭后，下次启动默认还是之前 nvs link 过的版本。</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">nvs use <span class="token number">16</span> <span class="token comment"># 在当前的终端使用 16 版本，关闭后失效</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h2 id="查看所有安装的-Node-版本"><a href="#查看所有安装的-Node-版本" class="headerlink" title="查看所有安装的 Node 版本"></a>查看所有安装的 Node 版本</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">nvs <span class="token function">ls</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h2 id="其他命令"><a href="#其他命令" class="headerlink" title="其他命令"></a>其他命令</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">nvs <span class="token parameter variable">--help</span> // 查看其他命令的帮助<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h2 id="命令手册"><a href="#命令手册" class="headerlink" title="命令手册"></a>命令手册</h2><p><img src="../Assets/file-1772095367895.png" alt="file-1772095367895.png"></p><p>一个具体版本或者版本过滤词由一个完整的或者部分的语义版本号或者版本标签（”lts”, “latest”, “Argon”等）组成，也可以是远端的版本名称，或者使用斜杠分隔来指定架构版本。例如：”lts”, “4.6.0”, “6/x86”, “node/6.7/x64”等。</p><h1 id="实用技巧"><a href="#实用技巧" class="headerlink" title="实用技巧"></a>实用技巧</h1><p>如果你不想每次都手动切换 node 版本，希望根据项目配置来，那么你可以把 <code>nvs use 16</code>这样的命令，写到项目的 pre 中。<code>package.json</code>示例如下：</p><pre class="line-numbers language-none"><code class="language-none">&#123;  &quot;scripts&quot;: &#123;    &quot;predev&quot;: &quot;nvs use 16&quot;,    &quot;dev&quot;: &quot;vue-cli-service serve&quot;    &quot;prebuild&quot;: &quot;nvs use 16&quot;,    &quot;dev&quot;: &quot;vue-cli-service build&quot;  &#125;&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>这样你每次启动或者打包项目的之前，都会先执行 pre 开头的 script，然后在执行你当前执行的命令。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术教程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Node版本管理 </tag>
+            
+            <tag> nvs工具 </tag>
+            
+            <tag> 跨平台 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Ubuntu 更换国内源提升下载速度</title>
       <link href="/ubuntu-xiu-gai-guo-nei-yuan-jie-jue-xia-zai-wen-ti/"/>
       <url>/ubuntu-xiu-gai-guo-nei-yuan-jie-jue-xia-zai-wen-ti/</url>
