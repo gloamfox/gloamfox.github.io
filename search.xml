@@ -8,7 +8,7 @@
       <link href="/hello-test/"/>
       <url>/hello-test/</url>
       
-        <content type="html"><![CDATA[<p><img src="../Assets/file-1773888301650.png" alt="file-1773888301650.png"></p>]]></content>
+        <content type="html"><![CDATA[<p><img src="../Assets/file-1773888301650.png" alt="file-1773888301650.png"></p><p><img src="../../file-20260318202156189.md" alt="file-20260318202156189"></p>]]></content>
       
       
       
