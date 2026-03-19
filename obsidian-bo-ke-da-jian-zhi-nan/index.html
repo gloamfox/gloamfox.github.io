@@ -661,7 +661,7 @@ hexo s<span aria-hidden="true" class="line-numbers-rows"><span></span><span></sp
 <p>推送完成后，GitHub Actions 会自动触发，几分钟后你的博客就会更新。</p>
 <h4 id="遇到的问题与解决"><a href="#遇到的问题与解决" class="headerlink" title="遇到的问题与解决"></a>遇到的问题与解决</h4><ul>
 <li><strong>私有仓库上传路径错误</strong>：早期版本中，Enveloppe 将文件上传到了仓库根目录，而非 <code>source/_posts</code>。该问题已在 GitHub 上的 <a target="_blank" rel="noopener" href="https://github.com/Enveloppe/obsidian-enveloppe/issues/414">issue #414</a> 中修复，截至到文章发布插件市场尚未发布修复版本。如需提前使用修复版，可手动下载插件的最新源码替换本地插件。</li>
-<li><strong>图片无法显示</strong>：确保附件文件夹设置为 <code>source/Assets</code>，并在文章中通过相对路径引用（例如 <code>![](/Assets/文章名/图片.png)</code>）。Enveloppe 会自动调整链接。1</li>
+<li><strong>图片无法显示</strong>：确保附件文件夹设置为 <code>source/Assets</code>，并在文章中通过相对路径引用（例如 <code>![](/Assets/文章名/图片.png)</code>）。Enveloppe 会自动调整链接。</li>
 </ul>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>通过以上步骤，我们实现了：</p>
 <ol>
