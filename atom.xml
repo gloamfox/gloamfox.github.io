@@ -6,7 +6,7 @@
   <link href="https://gloamfox.github.io/atom.xml" rel="self"/>
   
   <link href="https://gloamfox.github.io/"/>
-  <updated>2026-03-19T03:21:52.732Z</updated>
+  <updated>2026-03-19T03:22:06.868Z</updated>
   <id>https://gloamfox.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://gloamfox.github.io/hexo-yi-chu-tu-pian-mo-ren-alt-shu-xing/"/>
     <id>https://gloamfox.github.io/hexo-yi-chu-tu-pian-mo-ren-alt-shu-xing/</id>
     <published>2026-03-19T10:59:42.000Z</published>
-    <updated>2026-03-19T03:21:52.732Z</updated>
+    <updated>2026-03-19T03:22:06.868Z</updated>
     
     
       
@@ -50,7 +50,7 @@
     <link href="https://gloamfox.github.io/obsidian-bo-ke-da-jian-zhi-nan/"/>
     <id>https://gloamfox.github.io/obsidian-bo-ke-da-jian-zhi-nan/</id>
     <published>2026-03-18T10:34:27.000Z</published>
-    <updated>2026-03-19T03:21:52.733Z</updated>
+    <updated>2026-03-19T03:22:06.869Z</updated>
     
     
       
@@ -73,11 +73,45 @@
   </entry>
   
   <entry>
+    <title>VS Code 快捷键指南</title>
+    <link href="https://gloamfox.github.io/vs-code-kuai-jie-jian-zhi-nan/"/>
+    <id>https://gloamfox.github.io/vs-code-kuai-jie-jian-zhi-nan/</id>
+    <published>2025-11-18T10:37:50.000Z</published>
+    <updated>2026-03-19T03:22:06.869Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;打开工程：code + 路径&lt;/p&gt;
+&lt;p&gt;打开指定文件：ctrl + p&lt;/p&gt;
+&lt;p&gt;打开/关闭终端：ctrl + ` (1左边的按键)&lt;/p&gt;
+&lt;p&gt;跳转到行：ctrl + g&lt;/p&gt;
+&lt;p&gt;按单词移动光标：ctrl + 左右&lt;/p&gt;
+&lt;p&gt;选中单词：ctrl +</summary>
+        
+      
+    
+    
+    
+    <category term="技术教程" scheme="https://gloamfox.github.io/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/"/>
+    
+    
+    <category term="VSCode" scheme="https://gloamfox.github.io/tags/VSCode/"/>
+    
+    <category term="快捷键" scheme="https://gloamfox.github.io/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
+    
+    <category term="代码编辑" scheme="https://gloamfox.github.io/tags/%E4%BB%A3%E7%A0%81%E7%BC%96%E8%BE%91/"/>
+    
+  </entry>
+  
+  <entry>
     <title>VSCode中Python开发插件</title>
     <link href="https://gloamfox.github.io/vscode-chang-yong-python-cha-jian/"/>
     <id>https://gloamfox.github.io/vscode-chang-yong-python-cha-jian/</id>
     <published>2025-11-18T10:37:50.000Z</published>
-    <updated>2026-03-19T03:21:52.733Z</updated>
+    <updated>2026-03-19T03:22:06.869Z</updated>
     
     
       
