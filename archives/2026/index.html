@@ -500,7 +500,7 @@
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    介绍如何通过 Hexo 的 filter 机制在 HTML 渲染后移除所有图片标签的 alt 属性，但需注意会删除手动设置的有意义 alt 内容。
+                                    Hexo 生成图片时，若未手动设置 alt，默认使用文件名作为替代文本，可能导致无意义内容。若希望彻底移除所有 &lt;img&gt; 标签的 alt 属性，在主题或者根目录的scripts/remove-img-alt.js里加入以下代码
                                 
                             </div>
                             <div class="publish-info">
@@ -620,7 +620,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;&nbsp;<span
-                class="white-color">2k</span>&nbsp;字
+                class="white-color">2.1k</span>&nbsp;字
             
             
             
