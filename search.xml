@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>hello-test</title>
+      <link href="/hello-test/"/>
+      <url>/hello-test/</url>
+      
+        <content type="html"><![CDATA[<p><img src="../Assets/file-1773888301650.png" alt="file-1773888301650.png"></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>从零到一键发布：Obsidian + Hexo + GitHub Pages 个人博客搭建指南</title>
       <link href="/obsidian-bo-ke-da-jian-zhi-nan/"/>
       <url>/obsidian-bo-ke-da-jian-zhi-nan/</url>
