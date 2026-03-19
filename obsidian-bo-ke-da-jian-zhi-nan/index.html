@@ -535,7 +535,7 @@
 <li>公共仓库 <code>&lt;用户名&gt;.github.io</code> – 存放 Hexo 生成的静态文件，供 GitHub Pages 展示。</li>
 </ul>
 <p>整体流程如下图所示：</p>
-<p><img src="../Assets/Obsidian%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97%202026-03-19%2010.52.14.svg" ></p>
+<p><img src="../../file-20260319161403604.md" ></p>
 <h2 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h2><h3 id="搭建-Hexo-博客"><a href="#搭建-Hexo-博客" class="headerlink" title="搭建 Hexo 博客"></a>搭建 Hexo 博客</h3><h4 id="安装依赖"><a href="#安装依赖" class="headerlink" title="安装依赖"></a>安装依赖</h4><p>Hexo 依赖 Node.js 和 Git，请根据官方文档完成安装：</p>
 <p><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/#%E5%AE%89%E8%A3%85-Git">安装Git</a><br><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/#%E5%AE%89%E8%A3%85-Node-js">安装Node-js</a></p>
 <h4 id="初始化-Hexo"><a href="#初始化-Hexo" class="headerlink" title="初始化 Hexo"></a>初始化 Hexo</h4><p>安装 Hexo 命令行工具并创建项目：</p>
@@ -576,8 +576,8 @@ hexo s<span aria-hidden="true" class="line-numbers-rows"><span></span><span></sp
 <li>私有仓库 <code>hexo-blog</code> – 用于存放博客源文件及配置。<h4 id="关联本地仓库"><a href="#关联本地仓库" class="headerlink" title="关联本地仓库"></a>关联本地仓库</h4></li>
 </ul>
 <p>将本地的 <code>hexo-blog</code> 文件夹与 GitHub 上的 <code>hexo-blog</code> 私有仓库关联，并推送所有文件。</p>
-<h4 id="生成-Personal-Access-Token"><a href="#生成-Personal-Access-Token" class="headerlink" title="生成 Personal Access Token"></a>生成 Personal Access Token</h4><p>在 GitHub 的 <strong>Settings → Developer settings → Personal access tokens → Tokens (classic)</strong> 中生成一个新 token，赋予 <code>repo</code> 权限。复制并保存该 token（只会显示一次）。<br><img src="../Assets/file-20260318202159977.png" ><br><img src="../Assets/file-20260318202159981.png" ></p>
-<h4 id="在私有仓库中设置-Secrets"><a href="#在私有仓库中设置-Secrets" class="headerlink" title="在私有仓库中设置 Secrets"></a>在私有仓库中设置 Secrets</h4><p>进入 <code>hexo-blog</code> 仓库的 <strong>Settings → Secrets and variables → Actions</strong>，点击 <strong>New repository secret</strong>，将上一步的 token 粘贴进去，并命名为 <code>HEXO_BLOG_DEPLOY_TOKEN</code>。<br><img src="../Assets/file-20260318202159983.png" ></p>
+<h4 id="生成-Personal-Access-Token"><a href="#生成-Personal-Access-Token" class="headerlink" title="生成 Personal Access Token"></a>生成 Personal Access Token</h4><p>在 GitHub 的 <strong>Settings → Developer settings → Personal access tokens → Tokens (classic)</strong> 中生成一个新 token，赋予 <code>repo</code> 权限。复制并保存该 token（只会显示一次）。<br><img src="../Assets/file-20260319161417611.png" ><br><img src="../Assets/file-20260319161417612.png" ></p>
+<h4 id="在私有仓库中设置-Secrets"><a href="#在私有仓库中设置-Secrets" class="headerlink" title="在私有仓库中设置 Secrets"></a>在私有仓库中设置 Secrets</h4><p>进入 <code>hexo-blog</code> 仓库的 <strong>Settings → Secrets and variables → Actions</strong>，点击 <strong>New repository secret</strong>，将上一步的 token 粘贴进去，并命名为 <code>HEXO_BLOG_DEPLOY_TOKEN</code>。<br><img src="../Assets/file-20260319161417612%201.png" ></p>
 <h4 id="配置-GitHub-Actions-工作流"><a href="#配置-GitHub-Actions-工作流" class="headerlink" title="配置 GitHub Actions 工作流"></a>配置 GitHub Actions 工作流</h4><p>在 <code>hexo-blog</code> 仓库中创建 <code>.github/workflows/deploy.yml</code> 文件，内容如下：</p>
 <pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">name</span><span class="token punctuation">:</span> Deploy Hexo to GitHub Pages
 
@@ -629,7 +629,7 @@ hexo s<span aria-hidden="true" class="line-numbers-rows"><span></span><span></sp
           external_repository<span class="token punctuation">:</span> gloamfox/gloamfox.github.io <span class="token comment"># 更改为你的 GitHub Pages 仓库, username 是你的用户名</span>
           publish_branch<span class="token punctuation">:</span> main <span class="token comment"># GitHub Pages 分支</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>该工作流会在每次向 <code>hexo-blog</code> 仓库的 <code>main</code> 分支推送时自动执行：安装依赖、生成静态文件，并将生成的 <code>public</code>目录推送到你的公共仓库。</p>
-<h4 id="开启-GitHub-Pages"><a href="#开启-GitHub-Pages" class="headerlink" title="开启 GitHub Pages"></a>开启 GitHub Pages</h4><p>进入公共仓库 <code>&lt;你的用户名&gt;.github.io</code> 的 <strong>Settings → Pages</strong>，在 <strong>Branch</strong> 中选择 <code>main</code> 分支，点击保存。GitHub Pages 会提供一个默认域名：<code>https://&lt;你的用户名&gt;.github.io</code>。<br><img src="../Assets/file-20260318202159985.png" ></p>
+<h4 id="开启-GitHub-Pages"><a href="#开启-GitHub-Pages" class="headerlink" title="开启 GitHub Pages"></a>开启 GitHub Pages</h4><p>进入公共仓库 <code>&lt;你的用户名&gt;.github.io</code> 的 <strong>Settings → Pages</strong>，在 <strong>Branch</strong> 中选择 <code>main</code> 分支，点击保存。GitHub Pages 会提供一个默认域名：<code>https://&lt;你的用户名&gt;.github.io</code>。<br><img src="../Assets/file-20260319161417613.png" ></p>
 <h3 id="实现-Obsidian-到博客的一键发布"><a href="#实现-Obsidian-到博客的一键发布" class="headerlink" title="实现 Obsidian 到博客的一键发布"></a>实现 Obsidian 到博客的一键发布</h3><h4 id="痛点与需求"><a href="#痛点与需求" class="headerlink" title="痛点与需求"></a>痛点与需求</h4><p>在写作过程中，我希望：</p>
 <ul>
 <li>只发布部分精选文章，而非全部笔记。</li>
@@ -970,31 +970,31 @@ hexo s<span aria-hidden="true" class="line-numbers-rows"><span></span><span></sp
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/dan-yuan-ce-shi-de-kun-jing-yu-po-ju-wei-he-wo-men-bu-yuan-xie-yi-ji-ru-he-gao-xiao-di-xie/">
+                <a href="/jie-ou-fu-za-ye-wu-ji-yu-ze-ren-lian-yu-shang-xia-wen-de-chong-gou-shi-zhan/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" >
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" >
                         
-                        <span class="card-title">单元测试实践与测试驱动开发</span>
+                        <span class="card-title">解耦复杂业务：基于责任链与上下文的重构实战</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            本文分析了单元测试的重要性、开发人员不愿写单测的原因，并探讨了测试驱动开发的应用，强调通过合理实践提升代码质量和开发效率。
+                            本文介绍了订单计算方法的重构过程，通过过程分解、上下文处理和责任链模式，解决了代码复杂度高、业务逻辑混乱等问题，提升了代码的可维护性和可读性。
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2026-03-14
+                                <i class="far fa-clock fa-fw icon-date"></i>2026-03-16
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/" class="post-category">
-                                    软件开发
+                            <a href="/categories/%E6%8A%80%E6%9C%AF%E5%AE%9E%E8%B7%B5/" class="post-category">
+                                    技术实践
                                 </a>
                             
                             
@@ -1004,16 +1004,16 @@ hexo s<span aria-hidden="true" class="line-numbers-rows"><span></span><span></sp
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/">
-                        <span class="chip bg-color">单元测试</span>
+                    <a href="/tags/%E4%BB%A3%E7%A0%81%E9%87%8D%E6%9E%84/">
+                        <span class="chip bg-color">代码重构</span>
                     </a>
                     
-                    <a href="/tags/%E6%B5%8B%E8%AF%95%E9%A9%B1%E5%8A%A8%E5%BC%80%E5%8F%91/">
-                        <span class="chip bg-color">测试驱动开发</span>
+                    <a href="/tags/%E8%B4%A3%E4%BB%BB%E9%93%BE%E6%A8%A1%E5%BC%8F/">
+                        <span class="chip bg-color">责任链模式</span>
                     </a>
                     
-                    <a href="/tags/%E8%BD%AF%E4%BB%B6%E8%B4%A8%E9%87%8F/">
-                        <span class="chip bg-color">软件质量</span>
+                    <a href="/tags/%E9%A2%86%E5%9F%9F%E9%A9%B1%E5%8A%A8%E8%AE%BE%E8%AE%A1/">
+                        <span class="chip bg-color">领域驱动设计</span>
                     </a>
                     
                 </div>
@@ -1163,7 +1163,7 @@ hexo s<span aria-hidden="true" class="line-numbers-rows"><span></span><span></sp
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;&nbsp;<span
-                class="white-color">53.1k</span>&nbsp;字
+                class="white-color">64.4k</span>&nbsp;字
             
             
             
