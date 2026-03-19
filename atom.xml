@@ -6,7 +6,7 @@
   <link href="https://gloamfox.github.io/atom.xml" rel="self"/>
   
   <link href="https://gloamfox.github.io/"/>
-  <updated>2026-03-19T05:04:25.158Z</updated>
+  <updated>2026-03-19T05:05:21.227Z</updated>
   <id>https://gloamfox.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://gloamfox.github.io/hexo-yi-chu-tu-pian-mo-ren-alt-shu-xing/"/>
     <id>https://gloamfox.github.io/hexo-yi-chu-tu-pian-mo-ren-alt-shu-xing/</id>
     <published>2026-03-19T10:59:42.000Z</published>
-    <updated>2026-03-19T05:04:25.158Z</updated>
+    <updated>2026-03-19T05:05:21.227Z</updated>
     
     
       
@@ -50,7 +50,7 @@
     <link href="https://gloamfox.github.io/obsidian-bo-ke-da-jian-zhi-nan/"/>
     <id>https://gloamfox.github.io/obsidian-bo-ke-da-jian-zhi-nan/</id>
     <published>2026-03-18T10:34:27.000Z</published>
-    <updated>2026-03-19T05:04:25.158Z</updated>
+    <updated>2026-03-19T05:05:21.228Z</updated>
     
     
       
@@ -73,11 +73,41 @@
   </entry>
   
   <entry>
+    <title>Ubuntu 更换国内源提升下载速度</title>
+    <link href="https://gloamfox.github.io/ubuntu-xiu-gai-guo-nei-yuan-jie-jue-xia-zai-wen-ti/"/>
+    <id>https://gloamfox.github.io/ubuntu-xiu-gai-guo-nei-yuan-jie-jue-xia-zai-wen-ti/</id>
+    <published>2025-11-27T04:43:39.000Z</published>
+    <updated>2026-03-19T05:05:21.228Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;经常使用Ubuntu的同学都会遇到软件安装下载速度慢的情况，究其原因，是因为Ubuntu默认源的地址都在国外所导致，其实国内也有很多优秀的源，比如阿里源、中科大源、清华源、163源等，只需要简单的更换一下源，下载度立刻就上来了。&lt;/p&gt;
+&lt;p&gt;以下操作都必须在管理员模式下（</summary>
+        
+      
+    
+    
+    
+    <category term="系统运维" scheme="https://gloamfox.github.io/categories/%E7%B3%BB%E7%BB%9F%E8%BF%90%E7%BB%B4/"/>
+    
+    
+    <category term="Ubuntu" scheme="https://gloamfox.github.io/tags/Ubuntu/"/>
+    
+    <category term="软件源" scheme="https://gloamfox.github.io/tags/%E8%BD%AF%E4%BB%B6%E6%BA%90/"/>
+    
+    <category term="下载加速" scheme="https://gloamfox.github.io/tags/%E4%B8%8B%E8%BD%BD%E5%8A%A0%E9%80%9F/"/>
+    
+  </entry>
+  
+  <entry>
     <title>华为云镜像下载与VMware虚拟机配置</title>
     <link href="https://gloamfox.github.io/vmware-xu-ni-ji-she-zhi/"/>
     <id>https://gloamfox.github.io/vmware-xu-ni-ji-she-zhi/</id>
     <published>2025-11-20T05:52:51.000Z</published>
-    <updated>2026-03-19T05:04:25.158Z</updated>
+    <updated>2026-03-19T05:05:21.228Z</updated>
     
     
       
@@ -106,7 +136,7 @@
     <link href="https://gloamfox.github.io/typora-an-zhuang-pei-zhi/"/>
     <id>https://gloamfox.github.io/typora-an-zhuang-pei-zhi/</id>
     <published>2025-11-18T10:37:50.000Z</published>
-    <updated>2026-03-19T05:04:25.158Z</updated>
+    <updated>2026-03-19T05:05:21.228Z</updated>
     
     
       
@@ -136,7 +166,7 @@
     <link href="https://gloamfox.github.io/vs-code-kuai-jie-jian-zhi-nan/"/>
     <id>https://gloamfox.github.io/vs-code-kuai-jie-jian-zhi-nan/</id>
     <published>2025-11-18T10:37:50.000Z</published>
-    <updated>2026-03-19T05:04:25.158Z</updated>
+    <updated>2026-03-19T05:05:21.228Z</updated>
     
     
       
@@ -170,7 +200,7 @@
     <link href="https://gloamfox.github.io/vscode-chang-yong-python-cha-jian/"/>
     <id>https://gloamfox.github.io/vscode-chang-yong-python-cha-jian/</id>
     <published>2025-11-18T10:37:50.000Z</published>
-    <updated>2026-03-19T05:04:25.158Z</updated>
+    <updated>2026-03-19T05:05:21.228Z</updated>
     
     
       

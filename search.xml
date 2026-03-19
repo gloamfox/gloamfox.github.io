@@ -60,6 +60,35 @@
     
     
     <entry>
+      <title>Ubuntu 更换国内源提升下载速度</title>
+      <link href="/ubuntu-xiu-gai-guo-nei-yuan-jie-jue-xia-zai-wen-ti/"/>
+      <url>/ubuntu-xiu-gai-guo-nei-yuan-jie-jue-xia-zai-wen-ti/</url>
+      
+        <content type="html"><![CDATA[<p>经常使用Ubuntu的同学都会遇到软件安装下载速度慢的情况，究其原因，是因为Ubuntu默认源的地址都在国外所导致，其实国内也有很多优秀的源，比如阿里源、中科大源、清华源、163源等，只需要简单的更换一下源，下载度立刻就上来了。</p><p>以下操作都必须在管理员模式下（使用su命令进入）进行，否则会执行失败</p><p><strong>备份官方源</strong></p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">mv</span> /etc/apt/sources.list /etc/apt/sources.list.bk<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p><strong>下载第三方源文件更换</strong></p><p>具体使用哪一个，可以自行测试按照效果选用</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment">#163源</span><span class="token function">wget</span> <span class="token string">'https://gitee.com/zaozuotime/ubuntu-update-source-file/raw/master/163.sources.list'</span> <span class="token parameter variable">-O</span> /etc/apt/sources.list<span class="token comment">#阿里源</span><span class="token function">wget</span> <span class="token string">'https://gitee.com/zaozuotime/ubuntu-update-source-file/raw/master/aliyun.sources.list'</span> <span class="token parameter variable">-O</span> /etc/apt/sources.list<span class="token comment">#清华源</span><span class="token function">wget</span> <span class="token string">'https://gitee.com/zaozuotime/ubuntu-update-source-file/raw/master/tsinghua.sources.list'</span> <span class="token parameter variable">-O</span> /etc/apt/sources.list<span class="token comment">#中科大源</span><span class="token function">wget</span> <span class="token string">'https://gitee.com/zaozuotime/ubuntu-update-source-file/raw/master/ustc.sources.list'</span> <span class="token parameter variable">-O</span> /etc/apt/sources.list<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p><strong>更新资源</strong></p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">apt-get</span> update<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 系统运维 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Ubuntu </tag>
+            
+            <tag> 软件源 </tag>
+            
+            <tag> 下载加速 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>华为云镜像下载与VMware虚拟机配置</title>
       <link href="/vmware-xu-ni-ji-she-zhi/"/>
       <url>/vmware-xu-ni-ji-she-zhi/</url>
