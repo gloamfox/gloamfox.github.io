@@ -6,7 +6,7 @@
   <link href="https://gloamfox.github.io/atom.xml" rel="self"/>
   
   <link href="https://gloamfox.github.io/"/>
-  <updated>2026-03-19T05:06:15.812Z</updated>
+  <updated>2026-03-19T05:06:34.458Z</updated>
   <id>https://gloamfox.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://gloamfox.github.io/hexo-yi-chu-tu-pian-mo-ren-alt-shu-xing/"/>
     <id>https://gloamfox.github.io/hexo-yi-chu-tu-pian-mo-ren-alt-shu-xing/</id>
     <published>2026-03-19T10:59:42.000Z</published>
-    <updated>2026-03-19T05:06:15.812Z</updated>
+    <updated>2026-03-19T05:06:34.458Z</updated>
     
     
       
@@ -50,7 +50,7 @@
     <link href="https://gloamfox.github.io/obsidian-bo-ke-da-jian-zhi-nan/"/>
     <id>https://gloamfox.github.io/obsidian-bo-ke-da-jian-zhi-nan/</id>
     <published>2026-03-18T10:34:27.000Z</published>
-    <updated>2026-03-19T05:06:15.814Z</updated>
+    <updated>2026-03-19T05:06:34.460Z</updated>
     
     
       
@@ -73,11 +73,41 @@
   </entry>
   
   <entry>
+    <title>Obsidian打造个人知识库</title>
+    <link href="https://gloamfox.github.io/obsidian-da-zao-ge-ren-zhi-shi-ku/"/>
+    <id>https://gloamfox.github.io/obsidian-da-zao-ge-ren-zhi-shi-ku/</id>
+    <published>2026-03-02T02:04:33.000Z</published>
+    <updated>2026-03-19T05:06:34.460Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;之前都是使用Typora编辑笔记和文档，Markdown写笔记或者文档简直不要太方便，熟练语法后，双手可以不离开键盘，目光始终聚焦再文字上面，写作体验非常流畅。&lt;/p&gt;
+&lt;p&gt;随着文档的增多，发现文档越来越不好管理，尝试语雀、印象笔记、腾讯文档、飞书文档等软件，功能虽然很多</summary>
+        
+      
+    
+    
+    
+    <category term="工具教程" scheme="https://gloamfox.github.io/categories/%E5%B7%A5%E5%85%B7%E6%95%99%E7%A8%8B/"/>
+    
+    
+    <category term="Obsidian" scheme="https://gloamfox.github.io/tags/Obsidian/"/>
+    
+    <category term="笔记管理" scheme="https://gloamfox.github.io/tags/%E7%AC%94%E8%AE%B0%E7%AE%A1%E7%90%86/"/>
+    
+    <category term="GitHub同步" scheme="https://gloamfox.github.io/tags/GitHub%E5%90%8C%E6%AD%A5/"/>
+    
+  </entry>
+  
+  <entry>
     <title>nvs 安装与使用指南</title>
     <link href="https://gloamfox.github.io/shi-yong-nvs-gong-ju-qie-huan-node-ban-ben/"/>
     <id>https://gloamfox.github.io/shi-yong-nvs-gong-ju-qie-huan-node-ban-ben/</id>
     <published>2026-02-26T04:35:40.000Z</published>
-    <updated>2026-03-19T05:06:15.814Z</updated>
+    <updated>2026-03-19T05:06:34.460Z</updated>
     
     
       
@@ -107,7 +137,7 @@
     <link href="https://gloamfox.github.io/ubuntu-xiu-gai-guo-nei-yuan-jie-jue-xia-zai-wen-ti/"/>
     <id>https://gloamfox.github.io/ubuntu-xiu-gai-guo-nei-yuan-jie-jue-xia-zai-wen-ti/</id>
     <published>2025-11-27T04:43:39.000Z</published>
-    <updated>2026-03-19T05:06:15.814Z</updated>
+    <updated>2026-03-19T05:06:34.460Z</updated>
     
     
       
@@ -137,7 +167,7 @@
     <link href="https://gloamfox.github.io/vmware-xu-ni-ji-she-zhi/"/>
     <id>https://gloamfox.github.io/vmware-xu-ni-ji-she-zhi/</id>
     <published>2025-11-20T05:52:51.000Z</published>
-    <updated>2026-03-19T05:06:15.814Z</updated>
+    <updated>2026-03-19T05:06:34.460Z</updated>
     
     
       
@@ -166,7 +196,7 @@
     <link href="https://gloamfox.github.io/idea-2023.1.1-po-jie-ji-huo/"/>
     <id>https://gloamfox.github.io/idea-2023.1.1-po-jie-ji-huo/</id>
     <published>2025-11-18T10:37:50.000Z</published>
-    <updated>2026-03-19T05:06:15.814Z</updated>
+    <updated>2026-03-19T05:06:34.460Z</updated>
     
     
       
@@ -195,7 +225,7 @@
     <link href="https://gloamfox.github.io/typora-an-zhuang-pei-zhi/"/>
     <id>https://gloamfox.github.io/typora-an-zhuang-pei-zhi/</id>
     <published>2025-11-18T10:37:50.000Z</published>
-    <updated>2026-03-19T05:06:15.814Z</updated>
+    <updated>2026-03-19T05:06:34.460Z</updated>
     
     
       
@@ -221,40 +251,11 @@
   </entry>
   
   <entry>
-    <title>VSCode中Python开发插件</title>
-    <link href="https://gloamfox.github.io/vscode-chang-yong-python-cha-jian/"/>
-    <id>https://gloamfox.github.io/vscode-chang-yong-python-cha-jian/</id>
-    <published>2025-11-18T10:37:50.000Z</published>
-    <updated>2026-03-19T05:06:15.814Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;Jupyter&quot;&gt;&lt;a href=&quot;#Jupyter&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="开发工具" scheme="https://gloamfox.github.io/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
-    
-    
-    <category term="Jupyter" scheme="https://gloamfox.github.io/tags/Jupyter/"/>
-    
-    <category term="Pylance" scheme="https://gloamfox.github.io/tags/Pylance/"/>
-    
-    <category term="IntelliCode" scheme="https://gloamfox.github.io/tags/IntelliCode/"/>
-    
-  </entry>
-  
-  <entry>
     <title>VS Code 快捷键指南</title>
     <link href="https://gloamfox.github.io/vs-code-kuai-jie-jian-zhi-nan/"/>
     <id>https://gloamfox.github.io/vs-code-kuai-jie-jian-zhi-nan/</id>
     <published>2025-11-18T10:37:50.000Z</published>
-    <updated>2026-03-19T05:06:15.814Z</updated>
+    <updated>2026-03-19T05:06:34.460Z</updated>
     
     
       
@@ -280,6 +281,35 @@
     <category term="快捷键" scheme="https://gloamfox.github.io/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
     
     <category term="代码编辑" scheme="https://gloamfox.github.io/tags/%E4%BB%A3%E7%A0%81%E7%BC%96%E8%BE%91/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>VSCode中Python开发插件</title>
+    <link href="https://gloamfox.github.io/vscode-chang-yong-python-cha-jian/"/>
+    <id>https://gloamfox.github.io/vscode-chang-yong-python-cha-jian/</id>
+    <published>2025-11-18T10:37:50.000Z</published>
+    <updated>2026-03-19T05:06:34.460Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Jupyter&quot;&gt;&lt;a href=&quot;#Jupyter&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="开发工具" scheme="https://gloamfox.github.io/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
+    
+    
+    <category term="Jupyter" scheme="https://gloamfox.github.io/tags/Jupyter/"/>
+    
+    <category term="Pylance" scheme="https://gloamfox.github.io/tags/Pylance/"/>
+    
+    <category term="IntelliCode" scheme="https://gloamfox.github.io/tags/IntelliCode/"/>
     
   </entry>
   
