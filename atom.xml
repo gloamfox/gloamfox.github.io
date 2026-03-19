@@ -6,7 +6,7 @@
   <link href="https://gloamfox.github.io/atom.xml" rel="self"/>
   
   <link href="https://gloamfox.github.io/"/>
-  <updated>2026-03-19T03:21:14.711Z</updated>
+  <updated>2026-03-19T03:21:52.732Z</updated>
   <id>https://gloamfox.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://gloamfox.github.io/hexo-yi-chu-tu-pian-mo-ren-alt-shu-xing/"/>
     <id>https://gloamfox.github.io/hexo-yi-chu-tu-pian-mo-ren-alt-shu-xing/</id>
     <published>2026-03-19T10:59:42.000Z</published>
-    <updated>2026-03-19T03:21:14.711Z</updated>
+    <updated>2026-03-19T03:21:52.732Z</updated>
     
     
       
@@ -50,7 +50,7 @@
     <link href="https://gloamfox.github.io/obsidian-bo-ke-da-jian-zhi-nan/"/>
     <id>https://gloamfox.github.io/obsidian-bo-ke-da-jian-zhi-nan/</id>
     <published>2026-03-18T10:34:27.000Z</published>
-    <updated>2026-03-19T03:21:14.713Z</updated>
+    <updated>2026-03-19T03:21:52.733Z</updated>
     
     
       
@@ -69,6 +69,35 @@
     <category term="Hexo" scheme="https://gloamfox.github.io/tags/Hexo/"/>
     
     <category term="Obsidian" scheme="https://gloamfox.github.io/tags/Obsidian/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>VSCode中Python开发插件</title>
+    <link href="https://gloamfox.github.io/vscode-chang-yong-python-cha-jian/"/>
+    <id>https://gloamfox.github.io/vscode-chang-yong-python-cha-jian/</id>
+    <published>2025-11-18T10:37:50.000Z</published>
+    <updated>2026-03-19T03:21:52.733Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Jupyter&quot;&gt;&lt;a href=&quot;#Jupyter&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="开发工具" scheme="https://gloamfox.github.io/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
+    
+    
+    <category term="Jupyter" scheme="https://gloamfox.github.io/tags/Jupyter/"/>
+    
+    <category term="Pylance" scheme="https://gloamfox.github.io/tags/Pylance/"/>
+    
+    <category term="IntelliCode" scheme="https://gloamfox.github.io/tags/IntelliCode/"/>
     
   </entry>
   
