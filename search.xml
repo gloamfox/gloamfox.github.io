@@ -4,35 +4,6 @@
   
     
     <entry>
-      <title>Hexo 移除图片 alt 属性的方法</title>
-      <link href="/hexo-yi-chu-tu-pian-mo-ren-alt-shu-xing/"/>
-      <url>/hexo-yi-chu-tu-pian-mo-ren-alt-shu-xing/</url>
-      
-        <content type="html"><![CDATA[<p>Hexo 生成图片时，若未手动设置 <code>alt</code>，默认使用文件名作为替代文本，可能导致无意义内容。若希望彻底移除所有 <code>&lt;img&gt;</code> 标签的 <code>alt</code> 属性，在主题或者根目录的<code>scripts/remove-img-alt.js</code>里加入以下代码，</p><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">hexo<span class="token punctuation">.</span>extend<span class="token punctuation">.</span>filter<span class="token punctuation">.</span><span class="token function">register</span><span class="token punctuation">(</span><span class="token string">'after_render:html'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">str</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span> <span class="token keyword">return</span> str<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">&lt;img(.*?)alt=".*?"(.*?)></span><span class="token regex-delimiter">/</span><span class="token regex-flags">g</span></span><span class="token punctuation">,</span> <span class="token string">'&lt;img$1$2>'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>此代码在 HTML 渲染后移除所有 <code>alt</code>。</p><p>注意：这会一并删除手动添加的有意义 alt，请按需使用。</p><p><code>scripts</code>这个文件夹需要自己创建，Hexo 的规则是：</p><ul><li>只要在 <strong>Hexo 根目录或主题目录</strong>（和 <code>_config.yml</code> 同一层级）下有 <code>scripts/</code> 目录，里面放的 <code>.js</code> 文件会在生成站点时自动执行。</li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> 前端开发 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Hexo </tag>
-            
-            <tag> 图片优化 </tag>
-            
-            <tag> JavaScript </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>Oracle数据库特殊字符处理</title>
       <link href="/oracle-qu-chu-biao-zhong-de-te-shu-zi-fu/"/>
       <url>/oracle-qu-chu-biao-zhong-de-te-shu-zi-fu/</url>
@@ -83,6 +54,35 @@
             <tag> 声明式事务 </tag>
             
             <tag> 事务优化 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Hexo 移除图片 alt 属性的方法</title>
+      <link href="/hexo-yi-chu-tu-pian-mo-ren-alt-shu-xing/"/>
+      <url>/hexo-yi-chu-tu-pian-mo-ren-alt-shu-xing/</url>
+      
+        <content type="html"><![CDATA[<p>Hexo 生成图片时，若未手动设置 <code>alt</code>，默认使用文件名作为替代文本，可能导致无意义内容。若希望彻底移除所有 <code>&lt;img&gt;</code> 标签的 <code>alt</code> 属性，在主题或者根目录的<code>scripts/remove-img-alt.js</code>里加入以下代码，</p><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">hexo<span class="token punctuation">.</span>extend<span class="token punctuation">.</span>filter<span class="token punctuation">.</span><span class="token function">register</span><span class="token punctuation">(</span><span class="token string">'after_render:html'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">str</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span> <span class="token keyword">return</span> str<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">&lt;img(.*?)alt=".*?"(.*?)></span><span class="token regex-delimiter">/</span><span class="token regex-flags">g</span></span><span class="token punctuation">,</span> <span class="token string">'&lt;img$1$2>'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>此代码在 HTML 渲染后移除所有 <code>alt</code>。</p><p>注意：这会一并删除手动添加的有意义 alt，请按需使用。</p><p><code>scripts</code>这个文件夹需要自己创建，Hexo 的规则是：</p><ul><li>只要在 <strong>Hexo 根目录或主题目录</strong>（和 <code>_config.yml</code> 同一层级）下有 <code>scripts/</code> 目录，里面放的 <code>.js</code> 文件会在生成站点时自动执行。</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端开发 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+            <tag> 图片优化 </tag>
+            
+            <tag> JavaScript </tag>
             
         </tags>
       
