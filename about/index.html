@@ -368,10 +368,20 @@
 </div>
 
 
+
+
+
 <script>
-    // 每天切换 banner 图.  Switch banner image every day.
-    var bannerUrl = "/medias/banner/" + new Date().getDay() + '.jpg';
-    $('.bg-cover').css('background-image', 'url(' + bannerUrl + ')');
+    // // 每天切换 banner 图.  Switch banner image every day.
+    // var bannerUrl = "/medias/banner/" + new Date().getDay() + '.jpg';
+    // $('.bg-cover').css('background-image', 'url(' + bannerUrl + ')');
+
+    
+        var bannerImages = ["https://tacdn.51jobcdn.com/internal-srv-v1/test/images/1774002210183_e2701bdb-c5c8-4681-8efd-f5cee8fc8193.jpg","https://tacdn.51jobcdn.com/internal-srv-v1/test/images/1774002233959_59b5a71d-0665-4d15-9a31-c8fdb04f3550.jpg","https://tacdn.51jobcdn.com/internal-srv-v1/test/images/1774002249254_a26862c8-ff32-479d-b1e3-6e415e08e366.jpg","https://tacdn.51jobcdn.com/internal-srv-v1/test/images/1774002267290_a72a1954-adbb-459d-a0f0-eeaccc6cd55f.jpg","https://tacdn.51jobcdn.com/internal-srv-v1/test/images/1774002288393_9b627282-a6cb-4765-b525-6d2391ae422d.jpg","https://tacdn.51jobcdn.com/internal-srv-v1/test/images/1774002304478_1c0ac040-21a9-4323-a5df-63131c88e008.jpg","https://tacdn.51jobcdn.com/internal-srv-v1/test/images/1774002319337_4aa21c52-b67b-47b8-bd84-3eda7c6682cc.jpg"];
+        var bannerUrl = bannerImages[new Date().getDay()];
+        $('.bg-cover').css('background-image', 'url(' + bannerUrl + ')');
+    
+    
 </script>
 
 
@@ -617,7 +627,7 @@
                 type: 'pie',
                 radius: '50%',
                 color: ['#6772e5', '#ff9e0f', '#fa755a', '#3ecf8e', '#82d3f4', '#ab47bc', '#525f7f', '#f51c47', '#26A69A'],
-                data: [{"name":"前端开发","value":1},{"name":"系统运维","value":2},{"name":"软件开发","value":4},{"name":"技术教程","value":8},{"name":"工具教程","value":1},{"name":"数据库管理","value":1},{"name":"后端开发","value":2},{"name":"技术实现","value":1},{"name":"软件教程","value":1},{"name":"开发工具","value":1},{"name":"技术架构","value":2},{"name":"分布式系统","value":1},{"name":"运维技术","value":1},{"name":"服务器运维","value":1},{"name":"学习方法","value":1},{"name":"职业发展","value":1},{"name":"职业规划","value":1},{"name":"技术文档","value":2},{"name":"计算机基础","value":1},{"name":"编程技术","value":1},{"name":"技术故障分析","value":1},{"name":"技术实践","value":1},{"name":"数学","value":1},{"name":"技术分享","value":2},{"name":"计算机科学","value":1},{"name":"Web服务器","value":1},{"name":"技术规范","value":1}],
+                data: [{"name":"软件开发","value":4},{"name":"系统运维","value":2},{"name":"前端开发","value":1},{"name":"技术教程","value":8},{"name":"工具教程","value":1},{"name":"数据库管理","value":1},{"name":"后端开发","value":2},{"name":"技术实现","value":1},{"name":"软件教程","value":1},{"name":"开发工具","value":1},{"name":"技术架构","value":2},{"name":"分布式系统","value":1},{"name":"服务器运维","value":1},{"name":"运维技术","value":1},{"name":"学习方法","value":1},{"name":"职业发展","value":1},{"name":"职业规划","value":1},{"name":"计算机基础","value":1},{"name":"技术文档","value":2},{"name":"编程技术","value":1},{"name":"技术故障分析","value":1},{"name":"技术分享","value":2},{"name":"数学","value":1},{"name":"技术实践","value":1},{"name":"计算机科学","value":1},{"name":"Web服务器","value":1},{"name":"技术规范","value":1}],
                 itemStyle: {
                     emphasis: {
                         shadowBlur: 10,
@@ -641,7 +651,7 @@
         xAxis: [
             {
                 type: 'category',
-                data: ["Zookeeper","Hexo","Obsidian","笔记管理","Jenkins","单元测试","代码重构","软件设计","图片优化","JavaScript"]
+                data: ["Zookeeper","Hexo","Obsidian","笔记管理","Jenkins","单元测试","软件设计","代码重构","IDEA","激活工具"]
             }
         ],
         yAxis: [
@@ -772,17 +782,21 @@
         <div class="tag-chips center-align">
             
             
-            <a href="/tags/Hexo/">
-                <span class="chip center-align waves-effect waves-light chip-default">Hexo</span>
+            <a href="/tags/IDEA/">
+                <span class="chip center-align waves-effect waves-light chip-default">IDEA</span>
             </a>
             
             
             
-            <a href="/tags/%E5%9B%BE%E7%89%87%E4%BC%98%E5%8C%96/">
-                <span class="chip center-align waves-effect waves-light chip-default">图片优化</span>
+            <a href="/tags/%E6%BF%80%E6%B4%BB%E5%B7%A5%E5%85%B7/">
+                <span class="chip center-align waves-effect waves-light chip-default">激活工具</span>
             </a>
             
             
+            
+            <a href="/tags/%E7%A0%B4%E8%A7%A3%E6%95%99%E7%A8%8B/">
+                <span class="chip center-align waves-effect waves-light chip-default">破解教程</span>
+            </a>
             
             
             
@@ -804,21 +818,17 @@
             
             
             
-            <a href="/tags/IDEA/">
-                <span class="chip center-align waves-effect waves-light chip-default">IDEA</span>
+            <a href="/tags/Hexo/">
+                <span class="chip center-align waves-effect waves-light chip-default">Hexo</span>
             </a>
             
             
             
-            <a href="/tags/%E6%BF%80%E6%B4%BB%E5%B7%A5%E5%85%B7/">
-                <span class="chip center-align waves-effect waves-light chip-default">激活工具</span>
+            <a href="/tags/%E5%9B%BE%E7%89%87%E4%BC%98%E5%8C%96/">
+                <span class="chip center-align waves-effect waves-light chip-default">图片优化</span>
             </a>
             
             
-            
-            <a href="/tags/%E7%A0%B4%E8%A7%A3%E6%95%99%E7%A8%8B/">
-                <span class="chip center-align waves-effect waves-light chip-default">破解教程</span>
-            </a>
             
             
             
@@ -980,24 +990,6 @@
             
             
             
-            <a href="/tags/Jupyter/">
-                <span class="chip center-align waves-effect waves-light chip-default">Jupyter</span>
-            </a>
-            
-            
-            
-            <a href="/tags/Pylance/">
-                <span class="chip center-align waves-effect waves-light chip-default">Pylance</span>
-            </a>
-            
-            
-            
-            <a href="/tags/IntelliCode/">
-                <span class="chip center-align waves-effect waves-light chip-default">IntelliCode</span>
-            </a>
-            
-            
-            
             <a href="/tags/VSCode/">
                 <span class="chip center-align waves-effect waves-light chip-default">VSCode</span>
             </a>
@@ -1012,6 +1004,24 @@
             
             <a href="/tags/%E4%BB%A3%E7%A0%81%E7%BC%96%E8%BE%91/">
                 <span class="chip center-align waves-effect waves-light chip-default">代码编辑</span>
+            </a>
+            
+            
+            
+            <a href="/tags/Jupyter/">
+                <span class="chip center-align waves-effect waves-light chip-default">Jupyter</span>
+            </a>
+            
+            
+            
+            <a href="/tags/Pylance/">
+                <span class="chip center-align waves-effect waves-light chip-default">Pylance</span>
+            </a>
+            
+            
+            
+            <a href="/tags/IntelliCode/">
+                <span class="chip center-align waves-effect waves-light chip-default">IntelliCode</span>
             </a>
             
             
@@ -1094,18 +1104,6 @@
             
             
             
-            <a href="/tags/Windows%E9%83%A8%E7%BD%B2/">
-                <span class="chip center-align waves-effect waves-light chip-default">Windows部署</span>
-            </a>
-            
-            
-            
-            <a href="/tags/Tomcat%E6%9C%8D%E5%8A%A1/">
-                <span class="chip center-align waves-effect waves-light chip-default">Tomcat服务</span>
-            </a>
-            
-            
-            
             <a href="/tags/Tomcat/">
                 <span class="chip center-align waves-effect waves-light chip-default">Tomcat</span>
             </a>
@@ -1120,6 +1118,18 @@
             
             <a href="/tags/%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/">
                 <span class="chip center-align waves-effect waves-light chip-default">进程管理</span>
+            </a>
+            
+            
+            
+            <a href="/tags/Windows%E9%83%A8%E7%BD%B2/">
+                <span class="chip center-align waves-effect waves-light chip-default">Windows部署</span>
+            </a>
+            
+            
+            
+            <a href="/tags/Tomcat%E6%9C%8D%E5%8A%A1/">
+                <span class="chip center-align waves-effect waves-light chip-default">Tomcat服务</span>
             </a>
             
             
@@ -1178,18 +1188,6 @@
             
             
             
-            <a href="/tags/%E7%9F%A5%E8%AF%86%E7%BB%84%E7%BB%87/">
-                <span class="chip center-align waves-effect waves-light chip-default">知识组织</span>
-            </a>
-            
-            
-            
-            <a href="/tags/%E5%8F%8C%E9%93%BE%E7%AC%94%E8%AE%B0/">
-                <span class="chip center-align waves-effect waves-light chip-default">双链笔记</span>
-            </a>
-            
-            
-            
             <a href="/tags/%E6%B5%8B%E8%AF%95%E9%A9%B1%E5%8A%A8%E5%BC%80%E5%8F%91/">
                 <span class="chip center-align waves-effect waves-light chip-default">测试驱动开发</span>
             </a>
@@ -1198,6 +1196,18 @@
             
             <a href="/tags/%E8%BD%AF%E4%BB%B6%E8%B4%A8%E9%87%8F/">
                 <span class="chip center-align waves-effect waves-light chip-default">软件质量</span>
+            </a>
+            
+            
+            
+            <a href="/tags/%E7%9F%A5%E8%AF%86%E7%BB%84%E7%BB%87/">
+                <span class="chip center-align waves-effect waves-light chip-default">知识组织</span>
+            </a>
+            
+            
+            
+            <a href="/tags/%E5%8F%8C%E9%93%BE%E7%AC%94%E8%AE%B0/">
+                <span class="chip center-align waves-effect waves-light chip-default">双链笔记</span>
             </a>
             
             
@@ -1238,24 +1248,6 @@
             
             
             
-            <a href="/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/">
-                <span class="chip center-align waves-effect waves-light chip-default">性能优化</span>
-            </a>
-            
-            
-            
-            <a href="/tags/%E6%8A%80%E6%9C%AF%E8%B0%83%E4%BC%98/">
-                <span class="chip center-align waves-effect waves-light chip-default">技术调优</span>
-            </a>
-            
-            
-            
-            <a href="/tags/%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84/">
-                <span class="chip center-align waves-effect waves-light chip-default">系统架构</span>
-            </a>
-            
-            
-            
             <a href="/tags/%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2/">
                 <span class="chip center-align waves-effect waves-light chip-default">进制转换</span>
             </a>
@@ -1270,6 +1262,24 @@
             
             <a href="/tags/%E6%B5%AE%E7%82%B9%E6%95%B0%E8%BF%90%E7%AE%97/">
                 <span class="chip center-align waves-effect waves-light chip-default">浮点数运算</span>
+            </a>
+            
+            
+            
+            <a href="/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/">
+                <span class="chip center-align waves-effect waves-light chip-default">性能优化</span>
+            </a>
+            
+            
+            
+            <a href="/tags/%E6%8A%80%E6%9C%AF%E8%B0%83%E4%BC%98/">
+                <span class="chip center-align waves-effect waves-light chip-default">技术调优</span>
+            </a>
+            
+            
+            
+            <a href="/tags/%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84/">
+                <span class="chip center-align waves-effect waves-light chip-default">系统架构</span>
             </a>
             
             
@@ -1324,20 +1334,20 @@
             
             
             
-            <a href="/tags/%E4%BB%A3%E7%A0%81%E9%87%8D%E6%9E%84/">
-                <span class="chip center-align waves-effect waves-light chip-default">代码重构</span>
+            <a href="/tags/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/">
+                <span class="chip center-align waves-effect waves-light chip-default">软件设计</span>
             </a>
             
             
             
-            <a href="/tags/%E8%B4%A3%E4%BB%BB%E9%93%BE%E6%A8%A1%E5%BC%8F/">
-                <span class="chip center-align waves-effect waves-light chip-default">责任链模式</span>
+            <a href="/tags/%E4%BB%A3%E7%A0%81%E4%BC%98%E5%8C%96/">
+                <span class="chip center-align waves-effect waves-light chip-default">代码优化</span>
             </a>
             
             
             
-            <a href="/tags/%E9%A2%86%E5%9F%9F%E9%A9%B1%E5%8A%A8%E8%AE%BE%E8%AE%A1/">
-                <span class="chip center-align waves-effect waves-light chip-default">领域驱动设计</span>
+            <a href="/tags/%E9%97%AE%E9%A2%98%E5%A4%8D%E7%9B%98/">
+                <span class="chip center-align waves-effect waves-light chip-default">问题复盘</span>
             </a>
             
             
@@ -1360,20 +1370,20 @@
             
             
             
-            <a href="/tags/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/">
-                <span class="chip center-align waves-effect waves-light chip-default">软件设计</span>
+            <a href="/tags/%E4%BB%A3%E7%A0%81%E9%87%8D%E6%9E%84/">
+                <span class="chip center-align waves-effect waves-light chip-default">代码重构</span>
             </a>
             
             
             
-            <a href="/tags/%E4%BB%A3%E7%A0%81%E4%BC%98%E5%8C%96/">
-                <span class="chip center-align waves-effect waves-light chip-default">代码优化</span>
+            <a href="/tags/%E8%B4%A3%E4%BB%BB%E9%93%BE%E6%A8%A1%E5%BC%8F/">
+                <span class="chip center-align waves-effect waves-light chip-default">责任链模式</span>
             </a>
             
             
             
-            <a href="/tags/%E9%97%AE%E9%A2%98%E5%A4%8D%E7%9B%98/">
-                <span class="chip center-align waves-effect waves-light chip-default">问题复盘</span>
+            <a href="/tags/%E9%A2%86%E5%9F%9F%E9%A9%B1%E5%8A%A8%E8%AE%BE%E8%AE%A1/">
+                <span class="chip center-align waves-effect waves-light chip-default">领域驱动设计</span>
             </a>
             
             
@@ -1392,24 +1402,6 @@
             
             <a href="/tags/Flynn%E5%88%86%E7%B1%BB/">
                 <span class="chip center-align waves-effect waves-light chip-default">Flynn分类</span>
-            </a>
-            
-            
-            
-            <a href="/tags/%E7%BC%96%E7%A8%8B%E9%A3%8E%E6%A0%BC/">
-                <span class="chip center-align waves-effect waves-light chip-default">编程风格</span>
-            </a>
-            
-            
-            
-            <a href="/tags/%E4%BB%A3%E7%A0%81%E8%B4%A8%E9%87%8F/">
-                <span class="chip center-align waves-effect waves-light chip-default">代码质量</span>
-            </a>
-            
-            
-            
-            <a href="/tags/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/">
-                <span class="chip center-align waves-effect waves-light chip-default">软件开发</span>
             </a>
             
             
@@ -1434,6 +1426,24 @@
             
             <a href="/tags/SOLID%E5%8E%9F%E5%88%99/">
                 <span class="chip center-align waves-effect waves-light chip-default">SOLID原则</span>
+            </a>
+            
+            
+            
+            <a href="/tags/%E7%BC%96%E7%A8%8B%E9%A3%8E%E6%A0%BC/">
+                <span class="chip center-align waves-effect waves-light chip-default">编程风格</span>
+            </a>
+            
+            
+            
+            <a href="/tags/%E4%BB%A3%E7%A0%81%E8%B4%A8%E9%87%8F/">
+                <span class="chip center-align waves-effect waves-light chip-default">代码质量</span>
+            </a>
+            
+            
+            
+            <a href="/tags/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/">
+                <span class="chip center-align waves-effect waves-light chip-default">软件开发</span>
             </a>
             
             

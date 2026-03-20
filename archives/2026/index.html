@@ -361,10 +361,20 @@
 </div>
 
 
+
+
+
 <script>
-    // 每天切换 banner 图.  Switch banner image every day.
-    var bannerUrl = "/medias/banner/" + new Date().getDay() + '.jpg';
-    $('.bg-cover').css('background-image', 'url(' + bannerUrl + ')');
+    // // 每天切换 banner 图.  Switch banner image every day.
+    // var bannerUrl = "/medias/banner/" + new Date().getDay() + '.jpg';
+    // $('.bg-cover').css('background-image', 'url(' + bannerUrl + ')');
+
+    
+        var bannerImages = ["https://tacdn.51jobcdn.com/internal-srv-v1/test/images/1774002210183_e2701bdb-c5c8-4681-8efd-f5cee8fc8193.jpg","https://tacdn.51jobcdn.com/internal-srv-v1/test/images/1774002233959_59b5a71d-0665-4d15-9a31-c8fdb04f3550.jpg","https://tacdn.51jobcdn.com/internal-srv-v1/test/images/1774002249254_a26862c8-ff32-479d-b1e3-6e415e08e366.jpg","https://tacdn.51jobcdn.com/internal-srv-v1/test/images/1774002267290_a72a1954-adbb-459d-a0f0-eeaccc6cd55f.jpg","https://tacdn.51jobcdn.com/internal-srv-v1/test/images/1774002288393_9b627282-a6cb-4765-b525-6d2391ae422d.jpg","https://tacdn.51jobcdn.com/internal-srv-v1/test/images/1774002304478_1c0ac040-21a9-4323-a5df-63131c88e008.jpg","https://tacdn.51jobcdn.com/internal-srv-v1/test/images/1774002319337_4aa21c52-b67b-47b8-bd84-3eda7c6682cc.jpg"];
+        var bannerUrl = bannerImages[new Date().getDay()];
+        $('.bg-cover').css('background-image', 'url(' + bannerUrl + ')');
+    
+    
 </script>
 
 
