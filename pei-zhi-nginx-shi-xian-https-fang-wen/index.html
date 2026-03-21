@@ -532,9 +532,9 @@
 <li>在环境变量path的末尾添加 <code>%OPENSSL_HOME%\bin</code></li>
 </ol>
 <h2 id="生成证书"><a href="#生成证书" class="headerlink" title="生成证书"></a>生成证书</h2><p>在nginx安装目录创建 <code>ssl</code>文件夹，用于存放证书，如我的是 <code>F:\nginx-1.16.1\ssl</code>，以管理员权限运行cmd并进入创建的ssl目录</p>
-<h3 id="创建私钥"><a href="#创建私钥" class="headerlink" title="创建私钥"></a>创建私钥</h3><p>在命令行中执行命令 <code>openssl genrsa -des3 -out demo.key 1024</code> ，demo是私钥文件名，可以自定义，此处需要输入和验证密码，输入的密码请记住，后面会用到，这里输入的密码是 <code>123456</code><br><img src="https://img2020.cnblogs.com/blog/2504560/202108/2504560-20210815215244664-2116983592.png" ></p>
+<h3 id="创建私钥"><a href="#创建私钥" class="headerlink" title="创建私钥"></a>创建私钥</h3><p>在命令行中执行命令 <code>openssl genrsa -des3 -out demo.key 1024</code> ，demo是私钥文件名，可以自定义，此处需要输入和验证密码，输入的密码请记住，后面会用到，这里输入的密码是 <code>123456</code><br><img src="../Assets/file-1774074047684.png" ></p>
 <h3 id="创建crs证书"><a href="#创建crs证书" class="headerlink" title="创建crs证书"></a>创建crs证书</h3><p>在命令行中执行 <code>openssl req -new -key demo.key -out demo.csr</code>，其中key文件就是第一步生成的私钥，demo为自定义的文件名，如下所示，这里主要设置的是国家地区以及组织的一些信息，其中最重要的是 <code>Common Name</code>，这里输入的就是我们要用https访问的域名，也是nginx中所要配置的 <code>server_name</code>，完成所有步骤后，ssl文件夹中会生成demo.csr和demo.key两个文件</p>
-<p><img src="https://img2020.cnblogs.com/blog/2504560/202108/2504560-20210815215243716-1159247009.png" ></p>
+<p><img src="../Assets/file-1774074074554.png" ></p>
 <h3 id="去除密码"><a href="#去除密码" class="headerlink" title="去除密码"></a>去除密码</h3><p>在加载SSL支持的Nginx并使用上述私钥时除去必须的口令，否则会在启动nginx的时候需要输入密码。复制demo.key并重命名为demo.key.org。<br>在命令行中执行此命令：<code>openssl rsa -in demo.key.org -out demo.key</code>  如下图所示，此命令需要输入刚才设置的密码。</p>
 <h3 id="生成crt证书"><a href="#生成crt证书" class="headerlink" title="生成crt证书"></a>生成crt证书</h3><p>在命令行中执行此命令：<code>openssl x509 -req -days 365 -in demo.csr -signkey demo.key -out demo.crt</code></p>
 <p>证书生成完毕，我们在ssl文件夹中可以看到生辰的证书文件，我们要用到的就是demo.crt和demo.key。</p>
@@ -551,7 +551,8 @@
         &#125;
     &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="启动nginx"><a href="#启动nginx" class="headerlink" title="启动nginx"></a>启动nginx</h2><p>正常启动nginx后，使用 <a target="_blank" rel="noopener" href="https://127.0.0.1/">https://127.0.0.1:443</a> 访问，可以正常跳转<br><img src="https://img2020.cnblogs.com/blog/2504560/202108/2504560-20210815215247361-576389821.png" ></p>
+<h2 id="启动nginx"><a href="#启动nginx" class="headerlink" title="启动nginx"></a>启动nginx</h2><p>正常启动nginx后，使用 <a target="_blank" rel="noopener" href="https://127.0.0.1/">https://127.0.0.1:443</a> 访问，可以正常跳转</p>
+<p><img src="../Assets/file-1774074102573.png" ></p>
 
                 
             </div>
