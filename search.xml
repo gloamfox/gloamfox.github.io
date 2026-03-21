@@ -843,35 +843,6 @@
     
     
     <entry>
-      <title>VS Code 快捷键指南</title>
-      <link href="/vs-code-kuai-jie-jian-zhi-nan/"/>
-      <url>/vs-code-kuai-jie-jian-zhi-nan/</url>
-      
-        <content type="html"><![CDATA[<p>打开工程：code + 路径</p><p>打开指定文件：ctrl + p</p><p>打开/关闭终端：ctrl + ` (1左边的按键)</p><p>跳转到行：ctrl + g</p><p>按单词移动光标：ctrl + 左右</p><p>选中单词：ctrl + d （重复按可以多选）</p><p>选中行：ctrl + l （重复按会同时选择下一行）</p><p>移动行：alt + 上下</p><p>格式化代码：ctrl + shift + f</p><p>跳转到定义：f12</p><p>查看当前文件符号：ctrl + shift + o</p><p>剪切/复制当前行：ctrl + x / ctrl + c （什么都不选的时候）</p><p>切换tab：alt+数字</p><p>顺序切换tab：ctrl + pageup / pagedown</p><p>关闭文件：ctrl+w</p><p>关闭所有文件：ctrl + k w （ctrl不松手）</p><p>ctrl+b 打开主侧边栏</p><p>ctrl+shift+e 打开文件管理器</p><p>ctrl+0 焦点聚焦到主侧边栏</p><p>ctrl+1 焦点聚焦到代码编辑器</p><p>ctrl+shift+space 重新出现函数信息提示</p><p>ctrl+\ 添加分屏</p><p>ctrl + d 选中当前内容，连续快捷键会逐个选择下一个内容</p><p>ctrl + shift + L 选择所有找到的查找匹配项</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 技术教程 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> VSCode </tag>
-            
-            <tag> 快捷键 </tag>
-            
-            <tag> 代码编辑 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>VSCode中Python开发插件</title>
       <link href="/vscode-chang-yong-python-cha-jian/"/>
       <url>/vscode-chang-yong-python-cha-jian/</url>
@@ -901,35 +872,6 @@
     
     
     <entry>
-      <title>Zookeeper 分布式服务框架详解</title>
-      <link href="/zookeeper-ke-yi-zuo-shi-me/"/>
-      <url>/zookeeper-ke-yi-zuo-shi-me/</url>
-      
-        <content type="html"><![CDATA[<p>Zookeeper是一个分布式服务框架，是Apache Hadoop的一个子项目，它主要用于解决分布式应用中经常遇到的一些数据管理问题，比如配置管理、命名服务、分布式锁、集群管理等。<br>刚接触zookeeper的时候有些云里雾里，不知从哪里入手好，其实简单的说zookeeper就是 <strong>文件系统 + 监听通知机制</strong>。</p><h2 id="系统原理"><a href="#系统原理" class="headerlink" title="系统原理"></a>系统原理</h2><h3 id="文件系统"><a href="#文件系统" class="headerlink" title="文件系统"></a>文件系统</h3><p>在zookeeper中维护了类似Unix系统的树形文件节点，可以往这个节点中存储或者获取数据，我们将这些节点称为znode，每个znode默认能够存储1Mb的数据，znode有四种不同的类型。</p><ul><li><strong>PERSISTENT 持久化目录节点</strong> 所谓持久节点就是指节点创建后，除非进行删除操作就一直存在，不会因创建该节点的客户端会话失效或者zookeeper服务停止而消失</li><li><strong>PERSISTENT_SEQUENTIAL 持久化顺序编号节点</strong>  和持久节点基本特性一致，额外的特点是，每个父节点会为他的第一级子节点维护一份时序，会记录每个子节点创建的先后顺序。在创建子节点的过程中，zookeeper会自动给子节点的名称后面增加一个数字后缀。例如创建名为”test”的子节点，zookeeper会给 “test_“ 后自动补充数字。</li><li><strong>EPHEMERAL 临时目录节点</strong> 和持久节点不同，临时节点的生命周期和客户端会话绑定，也就是说，如果客户端会话失效，那么这个节点会被自动清除掉。这里有几点需要注意，首先这里说的是会话失效而不是连接断开，其次临时节点下不能创建子节点，另外客户端会话失效后，所有的节点也不是瞬间消失，而是要过一段时间，大概10s以内。</li><li><strong>EPHEMERAL_SEQUENTIAL 临时顺序编号目录节点</strong> 节点属于临时节点，不过创建的子节点带有顺序，客户端会话结束节点会自动消失。</li></ul><p>通过上面的节点类型可以看出，znode的节点有临时/持久，顺序/无序两大类，组合成四种不同的节点类型。</p><h3 id="监听通知机制"><a href="#监听通知机制" class="headerlink" title="监听通知机制"></a>监听通知机制</h3><p>客户端注册到zookeeper上监听它所关心的目录节点，当目录节点发生变化（数据改变、节点被删除、子目录节点增加或删除）时，zookeeper会通知客户端该节点发生了变化。</p><h2 id="Zookeeper的作用"><a href="#Zookeeper的作用" class="headerlink" title="Zookeeper的作用"></a>Zookeeper的作用</h2><h3 id="配置管理"><a href="#配置管理" class="headerlink" title="配置管理"></a>配置管理</h3><p>在我们的应用程序肯定会有很多的配置，例如数据库连接、日志等。一般都是通过配置文件的方式引入系统，当我们只有少数几种配置或只有一台服务器，并且不经常修改的情况下，这是一种很好的做法，但是当我们的配置文件非常多，存在很多应用服务器，那么在修改配置文件的时候是一件很恐怖的事情。这个时候就需要一种集中管理配置的方法，在这个集中管理的地方修改了配置，所有关系这个配置的地方都能获取变更并进行修改。<br>那么zookeeper如何实现呢？我们将配置信息放到zookeeper的某个目录节点中，然后所有相关的应用程序对这个目录节点进行监听，一旦配置信息发生变化，每个应用程序都会收到zookeeper的通知，然后从zookeeper中获取最新的配置信息。</p><h3 id="命名服务"><a href="#命名服务" class="headerlink" title="命名服务"></a>命名服务</h3><p>命名服务就比较好理解了，以网络访问为例，通常我们如果要访问一个系统，需要知道这个系统服务的ip，但是ip对人来说是不友好的，那么我们可以通过域名来访问，但是计算机是无法直接识别出域名的。如果我们每台计算机上都存在一份域名到ip的映射，那么可以简单的解决这一问题。但是如果域名对应的ip发生了变化怎么办呢？于是我们有了DNS这个东西，我们只需要访问一个大家都熟知的点，它会告诉你这个域名对应的ip是什么。<br>而在我们的系统中存在类似的问题，当我们的服务特别多时，保存或者配置服务的地址就会变得非常不方便，同样的，如果我们访问一个大家都熟悉的点，这里提供统一的入口，在进行服务调用时不需要关心服务的具体地址,那么维护起来就方便的多了。<br>以两个服务调用为例,被调用的服务首先在zookeeper上创建以服务名命名的持久化顺序编号目录节点，然后创建临时子节点存储地址信息，为什么要创建一个父节点然后在子节点中存储地址信息呢？因为被调用方有可能是集群服务，那么就有多个地址可供访问。调用方根据服务名去zookeeper中获取创建的持久化顺序编号的目录节点，子节点若有多个的话随机获取一个得到子节点存储的地址信息。</p><h3 id="分布式锁"><a href="#分布式锁" class="headerlink" title="分布式锁"></a>分布式锁</h3><p>为保证系统的可靠性，一般是将系统进行集群部署，如果一个任务每个集群中的服务都要运行的话就要相互协调，防止数据的不一致性。通常的做法是使用分布式锁，当一个服务持有锁的时候，其他服务等待，一旦锁释放，其他服务竞争锁，然后得到锁的服务运行，其他服务继续等待锁（这里只是简单的原理，实际肯定更为复杂）。<br>zookeeper实现分布式锁是利用文件系统的顺序编号目录节点，首先创建一个持久化顺序节点，每个线程或者系统获取锁前先创建自己的子目录节点，释放锁时删除自己创建的节点。由于子节点存在顺序并且递增，可以规定最小的那个节点获得锁，每个线程或者系统创建完属于自己的子节点后判断该节点是否最小，最小则获得锁，否则等待通知，只需要等待前一个节点的通知即可。当锁释放即节点删除时，后一个接到通知占有锁。这样第一个通知第二个，第二个通知第三个，击鼓传花似的依次向后。</p><h3 id="集群管理"><a href="#集群管理" class="headerlink" title="集群管理"></a>集群管理</h3><p>在分布式集群服务中，经常由于各种原因，比如硬件故障、网络问题、软件故障等，某些节点会进进出出，既有新的节点加入进来也有老的节点退出，这个时候集群的其他机器需要感知到这种变化，然后根据这种变化制订响应的策略。比如在一个分布式架构的系统中，服务是一个集群提供的，当消费者访问某个服务时，就需要采取某些机制发现现在还有哪些节点可以提供该服务，这也称之为服务发现。这里可以和zookeeper的命名服务配合理解，被调用方创建临时目录存储调用地址，如若退出集群，临时节点删除，消费者自然无法发现该服务。</p><h2 id="设计目的"><a href="#设计目的" class="headerlink" title="设计目的"></a>设计目的</h2><ol><li>最终一致性：client 不论连接到哪个 Server，展示给它都是同一个视图，这是 zookeeper 最重要的性能。</li><li>可靠性：具有简单、健壮、良好的性能，如果消息 m 被到一台服务器接受，那么它 将被所有的服务器接受。</li><li>实时性：Zookeeper 保证客户端将在一个时间间隔范围内获得服务器的更新信息，或 者服务器失效的信息。但由于网络延时等原因，Zookeeper 不能保证两个客户端能同时得到 刚更新的数据，如果需要最新数据，应该在读数据之前调用 sync()接口。</li><li>等待无关（wait-free）：慢的或者失效的 client 不得干预快速的 client 的请求，使得每 个 client 都能有效的等待。</li><li>原子性：更新只能成功或者失败，没有中间状态。</li><li>顺序性：包括全局有序和偏序两种：全局有序是指如果在一台服务器上消息 a 在消息 b 前发布，则在所有 Server 上消息 a 都将在消息 b 前被发布；偏序是指如果一个消息 b 在消 息 a 后被同一个发送者发布，a 必将排在 b 前面。</li></ol><h2 id="Zookeeper集群中的角色"><a href="#Zookeeper集群中的角色" class="headerlink" title="Zookeeper集群中的角色"></a>Zookeeper集群中的角色</h2><p>zookeeper集群中的角色主要有以下三类：</p><ol><li>领导者 Leader： 领导者负责进行投票的发起和决议，更新系统状态</li><li>学习者 Learner</li></ol><ul><li>跟随者 Follower： 跟随者用于接收客户端请求并向客户端返回结果，在选主过程中参与投票</li><li>观察者 Observer：观察者可以接收客户端连接，将写请求转发给leader节点，但观察者不参与投票过程，只同步leader的状态，观察者的目的是为了扩展系统，提高读取速度</li></ul><ol start="3"><li>客户端 Client：请求发起方</li></ol>]]></content>
-      
-      
-      <categories>
-          
-          <category> 技术架构 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 分布式 </tag>
-            
-            <tag> Zookeeper </tag>
-            
-            <tag> 集群管理 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>基于Zookeeper的服务注册与发现实现</title>
       <link href="/zookeeper-shi-xian-fu-wu-zhu-ce-yu-fa-xian/"/>
       <url>/zookeeper-shi-xian-fu-wu-zhu-ce-yu-fa-xian/</url>
@@ -946,11 +888,40 @@
       
         <tags>
             
-            <tag> Zookeeper </tag>
-            
             <tag> 服务注册 </tag>
             
             <tag> 服务发现 </tag>
+            
+            <tag> Zookeeper </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>VS Code 快捷键指南</title>
+      <link href="/vs-code-kuai-jie-jian-zhi-nan/"/>
+      <url>/vs-code-kuai-jie-jian-zhi-nan/</url>
+      
+        <content type="html"><![CDATA[<p>打开工程：code + 路径</p><p>打开指定文件：ctrl + p</p><p>打开/关闭终端：ctrl + ` (1左边的按键)</p><p>跳转到行：ctrl + g</p><p>按单词移动光标：ctrl + 左右</p><p>选中单词：ctrl + d （重复按可以多选）</p><p>选中行：ctrl + l （重复按会同时选择下一行）</p><p>移动行：alt + 上下</p><p>格式化代码：ctrl + shift + f</p><p>跳转到定义：f12</p><p>查看当前文件符号：ctrl + shift + o</p><p>剪切/复制当前行：ctrl + x / ctrl + c （什么都不选的时候）</p><p>切换tab：alt+数字</p><p>顺序切换tab：ctrl + pageup / pagedown</p><p>关闭文件：ctrl+w</p><p>关闭所有文件：ctrl + k w （ctrl不松手）</p><p>ctrl+b 打开主侧边栏</p><p>ctrl+shift+e 打开文件管理器</p><p>ctrl+0 焦点聚焦到主侧边栏</p><p>ctrl+1 焦点聚焦到代码编辑器</p><p>ctrl+shift+space 重新出现函数信息提示</p><p>ctrl+\ 添加分屏</p><p>ctrl + d 选中当前内容，连续快捷键会逐个选择下一个内容</p><p>ctrl + shift + L 选择所有找到的查找匹配项</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术教程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> VSCode </tag>
+            
+            <tag> 快捷键 </tag>
+            
+            <tag> 代码编辑 </tag>
             
         </tags>
       
@@ -988,35 +959,6 @@
     
     
     <entry>
-      <title>linux主机通过ssh登录windows服务器启动tomcat所踩的坑</title>
-      <link href="/linux-zhu-ji-tong-guo-ssh-deng-lu-windows-fu-wu-qi-qi-dong-tomcat-suo-cai-de-keng/"/>
-      <url>/linux-zhu-ji-tong-guo-ssh-deng-lu-windows-fu-wu-qi-qi-dong-tomcat-suo-cai-de-keng/</url>
-      
-        <content type="html"><![CDATA[<h2 id="情景描述"><a href="#情景描述" class="headerlink" title="情景描述"></a>情景描述</h2><p>公司的Jenkins服务安装在linux系统上，但是很多应用服务器都是windows系统，那么在jenkisn上编译生成的war包如何传输到windows服务器上并且进行tomcat服务的重启呢？相对于linux的应用服务器，使用jenkins在windows上做自动发布还是遇到了一些不好解决的问题，windows系统在运维上还是有许多不便的（默默吐槽一句）。</p><h2 id="发布步骤"><a href="#发布步骤" class="headerlink" title="发布步骤"></a>发布步骤</h2><p>类比linux的应用服务器，首选是通过ssh远程登录的方式进行，这样的话jenkins的配置都不需要怎么更改，简单的发布步骤如下：</p><ol><li>jenkins中使用MAVEN编译打包，生成所需的war包</li><li>scp将war包传输到应用服务器</li><li>ssh远程执行应用服务器的部署重启脚本</li><li>发布完成</li></ol><p>windows默认是不支持ssh服务的，这里我采用的是微软官方的解决方案OpenSSH，安装步骤可以参考：<a href="./Windows%E5%AE%89%E8%A3%85OpenSSH%E6%9C%8D%E5%8A%A1.md">Windows安装OpenSSH服务</a></p><h2 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h2><p>jenkisn远程调用应用服务器上的部署脚本后，tomcat服务没有启动，但是在应用服务器上手动运行脚本是能够完成项目的部署以及重启的，通过调试发现远程调用bat脚本确实将tomcat服务停掉并进行了重启，但是随着ssh连接的断开，通过ssh启动的进程也一同销毁。<br>通过搜索问题发现，在ssh到windows的情况下，只要ssh退出，ssh启动的任务都会被kill掉。万事具备，只欠重启，这步实现不了，那之前的工作和没有做一样，没办法，只能找各种方案进行尝试。</p><h2 id="尝试过的方案"><a href="#尝试过的方案" class="headerlink" title="尝试过的方案"></a>尝试过的方案</h2><h3 id="防止jenkins杀掉进程"><a href="#防止jenkins杀掉进程" class="headerlink" title="防止jenkins杀掉进程"></a>防止jenkins杀掉进程</h3><p>执行脚本前增加 <code>export BUILD_ID=notkillme</code>，告诉jenkins任务结束后不要杀掉通过它启动的进程。jenkins和tomcat在同一台服务器上可以实现，但这是ssh断开的服务和jenkins无关。</p><h3 id="shell脚本"><a href="#shell脚本" class="headerlink" title="shell脚本"></a>shell脚本</h3><p>在windows 上安装linux的shell环境，我是通过安装一个git，然后将git的cmd和bin配置到环境变量path中来实现的。<br>shell中可以使用nohup命令启动tomcat，nohup 命令会忽略所有挂断（SIGHUP）信号。在注销后使用 nohup 命令运行的程序不会注销，仍会运行。<br>但是ssh远程启动脚本的情况下，ssh连接断开，通过nohup启动的服务也会注销</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">nohup</span> ./startup.sh <span class="token operator">&amp;</span>  <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="将tomcat注册为服务"><a href="#将tomcat注册为服务" class="headerlink" title="将tomcat注册为服务"></a>将tomcat注册为服务</h3><p>通过将tomcat注册成服务，在bat脚本中通过服务的方式启动，在ssh断开之后服务能够正常运行。</p><pre class="line-numbers language-none"><code class="language-none"># 停止tomcat服务net stop tomcat7# 启动tomcat服务net start tomcat7<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><p>通过这种方式，能够保证tomcat在ssh断开后仍能够运行，但是实践中发现我们项目不止要使用tomcat,还依赖一些中间件，例如zookeeper，MQ等，他们在windows下不能被注册为服务（zookeeper虽然可以注册为服务，但是都不建议在生产环境运行），此种方式使用场景有限制。</p><h3 id="调用windows上的执行计划"><a href="#调用windows上的执行计划" class="headerlink" title="调用windows上的执行计划"></a>调用windows上的执行计划</h3><p>在windows上创建一个执行计划，执行计划调用部署重启的脚本，ssh远程启动这个执行计划，通过这种方式触发的脚本能够保证在ssh断开后，服务一直可以运行，和手动执行脚本没有区别，此方式实际项目中使用。</p><pre class="line-numbers language-none"><code class="language-none"># 启动名为DEPLOY的执行计划schtasks &#x2F;Run &#x2F;TN &quot;DEPLOY&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>]]></content>
-      
-      
-      <categories>
-          
-          <category> 运维技术 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Jenkins </tag>
-            
-            <tag> Windows部署 </tag>
-            
-            <tag> Tomcat服务 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>事件驱动架构：业务解耦与异步处理</title>
       <link href="/shi-jian-qu-dong-jia-gou-ye-wu-jie-ou-yu-yi-bu-chu-li/"/>
       <url>/shi-jian-qu-dong-jia-gou-ye-wu-jie-ou-yu-yi-bu-chu-li/</url>
@@ -1046,6 +988,64 @@
     
     
     <entry>
+      <title>Zookeeper 分布式服务框架详解</title>
+      <link href="/zookeeper-ke-yi-zuo-shi-me/"/>
+      <url>/zookeeper-ke-yi-zuo-shi-me/</url>
+      
+        <content type="html"><![CDATA[<p>Zookeeper是一个分布式服务框架，是Apache Hadoop的一个子项目，它主要用于解决分布式应用中经常遇到的一些数据管理问题，比如配置管理、命名服务、分布式锁、集群管理等。<br>刚接触zookeeper的时候有些云里雾里，不知从哪里入手好，其实简单的说zookeeper就是 <strong>文件系统 + 监听通知机制</strong>。</p><h2 id="系统原理"><a href="#系统原理" class="headerlink" title="系统原理"></a>系统原理</h2><h3 id="文件系统"><a href="#文件系统" class="headerlink" title="文件系统"></a>文件系统</h3><p>在zookeeper中维护了类似Unix系统的树形文件节点，可以往这个节点中存储或者获取数据，我们将这些节点称为znode，每个znode默认能够存储1Mb的数据，znode有四种不同的类型。</p><ul><li><strong>PERSISTENT 持久化目录节点</strong> 所谓持久节点就是指节点创建后，除非进行删除操作就一直存在，不会因创建该节点的客户端会话失效或者zookeeper服务停止而消失</li><li><strong>PERSISTENT_SEQUENTIAL 持久化顺序编号节点</strong>  和持久节点基本特性一致，额外的特点是，每个父节点会为他的第一级子节点维护一份时序，会记录每个子节点创建的先后顺序。在创建子节点的过程中，zookeeper会自动给子节点的名称后面增加一个数字后缀。例如创建名为”test”的子节点，zookeeper会给 “test_“ 后自动补充数字。</li><li><strong>EPHEMERAL 临时目录节点</strong> 和持久节点不同，临时节点的生命周期和客户端会话绑定，也就是说，如果客户端会话失效，那么这个节点会被自动清除掉。这里有几点需要注意，首先这里说的是会话失效而不是连接断开，其次临时节点下不能创建子节点，另外客户端会话失效后，所有的节点也不是瞬间消失，而是要过一段时间，大概10s以内。</li><li><strong>EPHEMERAL_SEQUENTIAL 临时顺序编号目录节点</strong> 节点属于临时节点，不过创建的子节点带有顺序，客户端会话结束节点会自动消失。</li></ul><p>通过上面的节点类型可以看出，znode的节点有临时/持久，顺序/无序两大类，组合成四种不同的节点类型。</p><h3 id="监听通知机制"><a href="#监听通知机制" class="headerlink" title="监听通知机制"></a>监听通知机制</h3><p>客户端注册到zookeeper上监听它所关心的目录节点，当目录节点发生变化（数据改变、节点被删除、子目录节点增加或删除）时，zookeeper会通知客户端该节点发生了变化。</p><h2 id="Zookeeper的作用"><a href="#Zookeeper的作用" class="headerlink" title="Zookeeper的作用"></a>Zookeeper的作用</h2><h3 id="配置管理"><a href="#配置管理" class="headerlink" title="配置管理"></a>配置管理</h3><p>在我们的应用程序肯定会有很多的配置，例如数据库连接、日志等。一般都是通过配置文件的方式引入系统，当我们只有少数几种配置或只有一台服务器，并且不经常修改的情况下，这是一种很好的做法，但是当我们的配置文件非常多，存在很多应用服务器，那么在修改配置文件的时候是一件很恐怖的事情。这个时候就需要一种集中管理配置的方法，在这个集中管理的地方修改了配置，所有关系这个配置的地方都能获取变更并进行修改。<br>那么zookeeper如何实现呢？我们将配置信息放到zookeeper的某个目录节点中，然后所有相关的应用程序对这个目录节点进行监听，一旦配置信息发生变化，每个应用程序都会收到zookeeper的通知，然后从zookeeper中获取最新的配置信息。</p><h3 id="命名服务"><a href="#命名服务" class="headerlink" title="命名服务"></a>命名服务</h3><p>命名服务就比较好理解了，以网络访问为例，通常我们如果要访问一个系统，需要知道这个系统服务的ip，但是ip对人来说是不友好的，那么我们可以通过域名来访问，但是计算机是无法直接识别出域名的。如果我们每台计算机上都存在一份域名到ip的映射，那么可以简单的解决这一问题。但是如果域名对应的ip发生了变化怎么办呢？于是我们有了DNS这个东西，我们只需要访问一个大家都熟知的点，它会告诉你这个域名对应的ip是什么。<br>而在我们的系统中存在类似的问题，当我们的服务特别多时，保存或者配置服务的地址就会变得非常不方便，同样的，如果我们访问一个大家都熟悉的点，这里提供统一的入口，在进行服务调用时不需要关心服务的具体地址,那么维护起来就方便的多了。<br>以两个服务调用为例,被调用的服务首先在zookeeper上创建以服务名命名的持久化顺序编号目录节点，然后创建临时子节点存储地址信息，为什么要创建一个父节点然后在子节点中存储地址信息呢？因为被调用方有可能是集群服务，那么就有多个地址可供访问。调用方根据服务名去zookeeper中获取创建的持久化顺序编号的目录节点，子节点若有多个的话随机获取一个得到子节点存储的地址信息。</p><h3 id="分布式锁"><a href="#分布式锁" class="headerlink" title="分布式锁"></a>分布式锁</h3><p>为保证系统的可靠性，一般是将系统进行集群部署，如果一个任务每个集群中的服务都要运行的话就要相互协调，防止数据的不一致性。通常的做法是使用分布式锁，当一个服务持有锁的时候，其他服务等待，一旦锁释放，其他服务竞争锁，然后得到锁的服务运行，其他服务继续等待锁（这里只是简单的原理，实际肯定更为复杂）。<br>zookeeper实现分布式锁是利用文件系统的顺序编号目录节点，首先创建一个持久化顺序节点，每个线程或者系统获取锁前先创建自己的子目录节点，释放锁时删除自己创建的节点。由于子节点存在顺序并且递增，可以规定最小的那个节点获得锁，每个线程或者系统创建完属于自己的子节点后判断该节点是否最小，最小则获得锁，否则等待通知，只需要等待前一个节点的通知即可。当锁释放即节点删除时，后一个接到通知占有锁。这样第一个通知第二个，第二个通知第三个，击鼓传花似的依次向后。</p><h3 id="集群管理"><a href="#集群管理" class="headerlink" title="集群管理"></a>集群管理</h3><p>在分布式集群服务中，经常由于各种原因，比如硬件故障、网络问题、软件故障等，某些节点会进进出出，既有新的节点加入进来也有老的节点退出，这个时候集群的其他机器需要感知到这种变化，然后根据这种变化制订响应的策略。比如在一个分布式架构的系统中，服务是一个集群提供的，当消费者访问某个服务时，就需要采取某些机制发现现在还有哪些节点可以提供该服务，这也称之为服务发现。这里可以和zookeeper的命名服务配合理解，被调用方创建临时目录存储调用地址，如若退出集群，临时节点删除，消费者自然无法发现该服务。</p><h2 id="设计目的"><a href="#设计目的" class="headerlink" title="设计目的"></a>设计目的</h2><ol><li>最终一致性：client 不论连接到哪个 Server，展示给它都是同一个视图，这是 zookeeper 最重要的性能。</li><li>可靠性：具有简单、健壮、良好的性能，如果消息 m 被到一台服务器接受，那么它 将被所有的服务器接受。</li><li>实时性：Zookeeper 保证客户端将在一个时间间隔范围内获得服务器的更新信息，或 者服务器失效的信息。但由于网络延时等原因，Zookeeper 不能保证两个客户端能同时得到 刚更新的数据，如果需要最新数据，应该在读数据之前调用 sync()接口。</li><li>等待无关（wait-free）：慢的或者失效的 client 不得干预快速的 client 的请求，使得每 个 client 都能有效的等待。</li><li>原子性：更新只能成功或者失败，没有中间状态。</li><li>顺序性：包括全局有序和偏序两种：全局有序是指如果在一台服务器上消息 a 在消息 b 前发布，则在所有 Server 上消息 a 都将在消息 b 前被发布；偏序是指如果一个消息 b 在消 息 a 后被同一个发送者发布，a 必将排在 b 前面。</li></ol><h2 id="Zookeeper集群中的角色"><a href="#Zookeeper集群中的角色" class="headerlink" title="Zookeeper集群中的角色"></a>Zookeeper集群中的角色</h2><p>zookeeper集群中的角色主要有以下三类：</p><ol><li>领导者 Leader： 领导者负责进行投票的发起和决议，更新系统状态</li><li>学习者 Learner</li></ol><ul><li>跟随者 Follower： 跟随者用于接收客户端请求并向客户端返回结果，在选主过程中参与投票</li><li>观察者 Observer：观察者可以接收客户端连接，将写请求转发给leader节点，但观察者不参与投票过程，只同步leader的状态，观察者的目的是为了扩展系统，提高读取速度</li></ul><ol start="3"><li>客户端 Client：请求发起方</li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术架构 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Zookeeper </tag>
+            
+            <tag> 分布式 </tag>
+            
+            <tag> 集群管理 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>linux主机通过ssh登录windows服务器启动tomcat所踩的坑</title>
+      <link href="/linux-zhu-ji-tong-guo-ssh-deng-lu-windows-fu-wu-qi-qi-dong-tomcat-suo-cai-de-keng/"/>
+      <url>/linux-zhu-ji-tong-guo-ssh-deng-lu-windows-fu-wu-qi-qi-dong-tomcat-suo-cai-de-keng/</url>
+      
+        <content type="html"><![CDATA[<h2 id="情景描述"><a href="#情景描述" class="headerlink" title="情景描述"></a>情景描述</h2><p>公司的Jenkins服务安装在linux系统上，但是很多应用服务器都是windows系统，那么在jenkisn上编译生成的war包如何传输到windows服务器上并且进行tomcat服务的重启呢？相对于linux的应用服务器，使用jenkins在windows上做自动发布还是遇到了一些不好解决的问题，windows系统在运维上还是有许多不便的（默默吐槽一句）。</p><h2 id="发布步骤"><a href="#发布步骤" class="headerlink" title="发布步骤"></a>发布步骤</h2><p>类比linux的应用服务器，首选是通过ssh远程登录的方式进行，这样的话jenkins的配置都不需要怎么更改，简单的发布步骤如下：</p><ol><li>jenkins中使用MAVEN编译打包，生成所需的war包</li><li>scp将war包传输到应用服务器</li><li>ssh远程执行应用服务器的部署重启脚本</li><li>发布完成</li></ol><p>windows默认是不支持ssh服务的，这里我采用的是微软官方的解决方案OpenSSH，安装步骤可以参考：<a href="./Windows%E5%AE%89%E8%A3%85OpenSSH%E6%9C%8D%E5%8A%A1.md">Windows安装OpenSSH服务</a></p><h2 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h2><p>jenkisn远程调用应用服务器上的部署脚本后，tomcat服务没有启动，但是在应用服务器上手动运行脚本是能够完成项目的部署以及重启的，通过调试发现远程调用bat脚本确实将tomcat服务停掉并进行了重启，但是随着ssh连接的断开，通过ssh启动的进程也一同销毁。<br>通过搜索问题发现，在ssh到windows的情况下，只要ssh退出，ssh启动的任务都会被kill掉。万事具备，只欠重启，这步实现不了，那之前的工作和没有做一样，没办法，只能找各种方案进行尝试。</p><h2 id="尝试过的方案"><a href="#尝试过的方案" class="headerlink" title="尝试过的方案"></a>尝试过的方案</h2><h3 id="防止jenkins杀掉进程"><a href="#防止jenkins杀掉进程" class="headerlink" title="防止jenkins杀掉进程"></a>防止jenkins杀掉进程</h3><p>执行脚本前增加 <code>export BUILD_ID=notkillme</code>，告诉jenkins任务结束后不要杀掉通过它启动的进程。jenkins和tomcat在同一台服务器上可以实现，但这是ssh断开的服务和jenkins无关。</p><h3 id="shell脚本"><a href="#shell脚本" class="headerlink" title="shell脚本"></a>shell脚本</h3><p>在windows 上安装linux的shell环境，我是通过安装一个git，然后将git的cmd和bin配置到环境变量path中来实现的。<br>shell中可以使用nohup命令启动tomcat，nohup 命令会忽略所有挂断（SIGHUP）信号。在注销后使用 nohup 命令运行的程序不会注销，仍会运行。<br>但是ssh远程启动脚本的情况下，ssh连接断开，通过nohup启动的服务也会注销</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">nohup</span> ./startup.sh <span class="token operator">&amp;</span>  <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="将tomcat注册为服务"><a href="#将tomcat注册为服务" class="headerlink" title="将tomcat注册为服务"></a>将tomcat注册为服务</h3><p>通过将tomcat注册成服务，在bat脚本中通过服务的方式启动，在ssh断开之后服务能够正常运行。</p><pre class="line-numbers language-none"><code class="language-none"># 停止tomcat服务net stop tomcat7# 启动tomcat服务net start tomcat7<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><p>通过这种方式，能够保证tomcat在ssh断开后仍能够运行，但是实践中发现我们项目不止要使用tomcat,还依赖一些中间件，例如zookeeper，MQ等，他们在windows下不能被注册为服务（zookeeper虽然可以注册为服务，但是都不建议在生产环境运行），此种方式使用场景有限制。</p><h3 id="调用windows上的执行计划"><a href="#调用windows上的执行计划" class="headerlink" title="调用windows上的执行计划"></a>调用windows上的执行计划</h3><p>在windows上创建一个执行计划，执行计划调用部署重启的脚本，ssh远程启动这个执行计划，通过这种方式触发的脚本能够保证在ssh断开后，服务一直可以运行，和手动执行脚本没有区别，此方式实际项目中使用。</p><pre class="line-numbers language-none"><code class="language-none"># 启动名为DEPLOY的执行计划schtasks &#x2F;Run &#x2F;TN &quot;DEPLOY&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 运维技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Jenkins </tag>
+            
+            <tag> Windows部署 </tag>
+            
+            <tag> Tomcat服务 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Java单元测试框架：JUnit与Mockito详解</title>
       <link href="/cong-junit-dao-mockito-gou-jian-ke-kao-java-dan-yuan-ce-shi/"/>
       <url>/cong-junit-dao-mockito-gou-jian-ke-kao-java-dan-yuan-ce-shi/</url>
@@ -1062,11 +1062,11 @@
       
         <tags>
             
+            <tag> 单元测试 </tag>
+            
             <tag> JUnit </tag>
             
             <tag> Mockito </tag>
-            
-            <tag> 单元测试 </tag>
             
         </tags>
       
@@ -1162,35 +1162,6 @@
     
     
     <entry>
-      <title>Nginx配置HTTPS自签名证书教程</title>
-      <link href="/pei-zhi-nginx-shi-xian-https-fang-wen/"/>
-      <url>/pei-zhi-nginx-shi-xian-https-fang-wen/</url>
-      
-        <content type="html"><![CDATA[<h2 id="安装nginx"><a href="#安装nginx" class="headerlink" title="安装nginx"></a>安装nginx</h2><p>在<a href="http://nginx.org/en/download.html">官网</a>下载和系统匹配的nginx，解压即可</p><h2 id="安装OpenSSL"><a href="#安装OpenSSL" class="headerlink" title="安装OpenSSL"></a>安装OpenSSL</h2><p><strong>若网站有https的证书跳过2、3、4步即可，若没有证书则需要自己生成</strong></p><p>由于代理https需要使用证书，这里我们使用OpenSSL生成自签名的证书，可以下载与系统相匹配的OpenSSL程序进行安装，安装过程一直下一步即可，<a href="http://slproweb.com/products/Win32OpenSSL.html">下载地址</a></p><h2 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a>配置环境变量</h2><ol><li>新增环境变量 <code>OPENSSL_HOME</code>，变量值为 <code>D:\OpenSSL-Win64</code>，指向OpenSSL的安装路径</li><li>新增环境变量 <code>OPENSSL_CONF</code>，变量值为 <code>D:\OpenSSL-Win64\bin\openssl.cfg</code>，指向openssl.cfg文件目录</li><li>在环境变量path的末尾添加 <code>%OPENSSL_HOME%\bin</code></li></ol><h2 id="生成证书"><a href="#生成证书" class="headerlink" title="生成证书"></a>生成证书</h2><p>在nginx安装目录创建 <code>ssl</code>文件夹，用于存放证书，如我的是 <code>F:\nginx-1.16.1\ssl</code>，以管理员权限运行cmd并进入创建的ssl目录</p><h3 id="创建私钥"><a href="#创建私钥" class="headerlink" title="创建私钥"></a>创建私钥</h3><p>在命令行中执行命令 <code>openssl genrsa -des3 -out demo.key 1024</code> ，demo是私钥文件名，可以自定义，此处需要输入和验证密码，输入的密码请记住，后面会用到，这里输入的密码是 <code>123456</code><br><img src="../Assets/file-1774074047684.png" alt="file-1774074047684.png"></p><h3 id="创建crs证书"><a href="#创建crs证书" class="headerlink" title="创建crs证书"></a>创建crs证书</h3><p>在命令行中执行 <code>openssl req -new -key demo.key -out demo.csr</code>，其中key文件就是第一步生成的私钥，demo为自定义的文件名，如下所示，这里主要设置的是国家地区以及组织的一些信息，其中最重要的是 <code>Common Name</code>，这里输入的就是我们要用https访问的域名，也是nginx中所要配置的 <code>server_name</code>，完成所有步骤后，ssl文件夹中会生成demo.csr和demo.key两个文件</p><p><img src="../Assets/file-1774074074554.png" alt="file-1774074074554.png"></p><h3 id="去除密码"><a href="#去除密码" class="headerlink" title="去除密码"></a>去除密码</h3><p>在加载SSL支持的Nginx并使用上述私钥时除去必须的口令，否则会在启动nginx的时候需要输入密码。复制demo.key并重命名为demo.key.org。<br>在命令行中执行此命令：<code>openssl rsa -in demo.key.org -out demo.key</code>  如下图所示，此命令需要输入刚才设置的密码。</p><h3 id="生成crt证书"><a href="#生成crt证书" class="headerlink" title="生成crt证书"></a>生成crt证书</h3><p>在命令行中执行此命令：<code>openssl x509 -req -days 365 -in demo.csr -signkey demo.key -out demo.crt</code></p><p>证书生成完毕，我们在ssl文件夹中可以看到生辰的证书文件，我们要用到的就是demo.crt和demo.key。</p><h2 id="修改nginx配置"><a href="#修改nginx配置" class="headerlink" title="修改nginx配置"></a>修改nginx配置</h2><p>在nginx.conf配置文件中添加一个如下server</p><pre class="line-numbers language-none"><code class="language-none">server &#123;        listen  443 ssl;        server_name  www.demo.com;        ssl_certificate      F:&#x2F;nginx-1.16.1&#x2F;ssl&#x2F;demo.crt;        ssl_certificate_key  F:&#x2F;nginx-1.16.1&#x2F;ssl&#x2F;demo.key;        location &#x2F; &#123;          root   html;          index  index.html index.htm;        &#125;    &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h2 id="启动nginx"><a href="#启动nginx" class="headerlink" title="启动nginx"></a>启动nginx</h2><p>正常启动nginx后，使用 <a href="https://127.0.0.1/">https://127.0.0.1:443</a> 访问，可以正常跳转</p><p><img src="../Assets/file-1774074102573.png" alt="file-1774074102573.png"></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> Web服务器 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Nginx </tag>
-            
-            <tag> HTTPS </tag>
-            
-            <tag> OpenSSL </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>面向对象的设计原则</title>
       <link href="/mian-xiang-dui-xiang-de-she-ji-yuan-ze/"/>
       <url>/mian-xiang-dui-xiang-de-she-ji-yuan-ze/</url>
@@ -1212,6 +1183,35 @@
             <tag> 代码重构 </tag>
             
             <tag> SOLID原则 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Nginx配置HTTPS自签名证书教程</title>
+      <link href="/pei-zhi-nginx-shi-xian-https-fang-wen/"/>
+      <url>/pei-zhi-nginx-shi-xian-https-fang-wen/</url>
+      
+        <content type="html"><![CDATA[<h2 id="安装nginx"><a href="#安装nginx" class="headerlink" title="安装nginx"></a>安装nginx</h2><p>在<a href="http://nginx.org/en/download.html">官网</a>下载和系统匹配的nginx，解压即可</p><h2 id="安装OpenSSL"><a href="#安装OpenSSL" class="headerlink" title="安装OpenSSL"></a>安装OpenSSL</h2><p><strong>若网站有https的证书跳过2、3、4步即可，若没有证书则需要自己生成</strong></p><p>由于代理https需要使用证书，这里我们使用OpenSSL生成自签名的证书，可以下载与系统相匹配的OpenSSL程序进行安装，安装过程一直下一步即可，<a href="http://slproweb.com/products/Win32OpenSSL.html">下载地址</a></p><h2 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a>配置环境变量</h2><ol><li>新增环境变量 <code>OPENSSL_HOME</code>，变量值为 <code>D:\OpenSSL-Win64</code>，指向OpenSSL的安装路径</li><li>新增环境变量 <code>OPENSSL_CONF</code>，变量值为 <code>D:\OpenSSL-Win64\bin\openssl.cfg</code>，指向openssl.cfg文件目录</li><li>在环境变量path的末尾添加 <code>%OPENSSL_HOME%\bin</code></li></ol><h2 id="生成证书"><a href="#生成证书" class="headerlink" title="生成证书"></a>生成证书</h2><p>在nginx安装目录创建 <code>ssl</code>文件夹，用于存放证书，如我的是 <code>F:\nginx-1.16.1\ssl</code>，以管理员权限运行cmd并进入创建的ssl目录</p><h3 id="创建私钥"><a href="#创建私钥" class="headerlink" title="创建私钥"></a>创建私钥</h3><p>在命令行中执行命令 <code>openssl genrsa -des3 -out demo.key 1024</code> ，demo是私钥文件名，可以自定义，此处需要输入和验证密码，输入的密码请记住，后面会用到，这里输入的密码是 <code>123456</code><br><img src="../Assets/file-1774074047684.png" alt="file-1774074047684.png"></p><h3 id="创建crs证书"><a href="#创建crs证书" class="headerlink" title="创建crs证书"></a>创建crs证书</h3><p>在命令行中执行 <code>openssl req -new -key demo.key -out demo.csr</code>，其中key文件就是第一步生成的私钥，demo为自定义的文件名，如下所示，这里主要设置的是国家地区以及组织的一些信息，其中最重要的是 <code>Common Name</code>，这里输入的就是我们要用https访问的域名，也是nginx中所要配置的 <code>server_name</code>，完成所有步骤后，ssl文件夹中会生成demo.csr和demo.key两个文件</p><p><img src="../Assets/file-1774074074554.png" alt="file-1774074074554.png"></p><h3 id="去除密码"><a href="#去除密码" class="headerlink" title="去除密码"></a>去除密码</h3><p>在加载SSL支持的Nginx并使用上述私钥时除去必须的口令，否则会在启动nginx的时候需要输入密码。复制demo.key并重命名为demo.key.org。<br>在命令行中执行此命令：<code>openssl rsa -in demo.key.org -out demo.key</code>  如下图所示，此命令需要输入刚才设置的密码。</p><h3 id="生成crt证书"><a href="#生成crt证书" class="headerlink" title="生成crt证书"></a>生成crt证书</h3><p>在命令行中执行此命令：<code>openssl x509 -req -days 365 -in demo.csr -signkey demo.key -out demo.crt</code></p><p>证书生成完毕，我们在ssl文件夹中可以看到生辰的证书文件，我们要用到的就是demo.crt和demo.key。</p><h2 id="修改nginx配置"><a href="#修改nginx配置" class="headerlink" title="修改nginx配置"></a>修改nginx配置</h2><p>在nginx.conf配置文件中添加一个如下server</p><pre class="line-numbers language-none"><code class="language-none">server &#123;        listen  443 ssl;        server_name  www.demo.com;        ssl_certificate      F:&#x2F;nginx-1.16.1&#x2F;ssl&#x2F;demo.crt;        ssl_certificate_key  F:&#x2F;nginx-1.16.1&#x2F;ssl&#x2F;demo.key;        location &#x2F; &#123;          root   html;          index  index.html index.htm;        &#125;    &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h2 id="启动nginx"><a href="#启动nginx" class="headerlink" title="启动nginx"></a>启动nginx</h2><p>正常启动nginx后，使用 <a href="https://127.0.0.1/">https://127.0.0.1:443</a> 访问，可以正常跳转</p><p><img src="../Assets/file-1774074102573.png" alt="file-1774074102573.png"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Web服务器 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Nginx </tag>
+            
+            <tag> HTTPS </tag>
+            
+            <tag> OpenSSL </tag>
             
         </tags>
       
