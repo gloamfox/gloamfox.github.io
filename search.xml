@@ -843,6 +843,35 @@
     
     
     <entry>
+      <title>VS Code 快捷键指南</title>
+      <link href="/vs-code-kuai-jie-jian-zhi-nan/"/>
+      <url>/vs-code-kuai-jie-jian-zhi-nan/</url>
+      
+        <content type="html"><![CDATA[<p>打开工程：code + 路径</p><p>打开指定文件：ctrl + p</p><p>打开/关闭终端：ctrl + ` (1左边的按键)</p><p>跳转到行：ctrl + g</p><p>按单词移动光标：ctrl + 左右</p><p>选中单词：ctrl + d （重复按可以多选）</p><p>选中行：ctrl + l （重复按会同时选择下一行）</p><p>移动行：alt + 上下</p><p>格式化代码：ctrl + shift + f</p><p>跳转到定义：f12</p><p>查看当前文件符号：ctrl + shift + o</p><p>剪切/复制当前行：ctrl + x / ctrl + c （什么都不选的时候）</p><p>切换tab：alt+数字</p><p>顺序切换tab：ctrl + pageup / pagedown</p><p>关闭文件：ctrl+w</p><p>关闭所有文件：ctrl + k w （ctrl不松手）</p><p>ctrl+b 打开主侧边栏</p><p>ctrl+shift+e 打开文件管理器</p><p>ctrl+0 焦点聚焦到主侧边栏</p><p>ctrl+1 焦点聚焦到代码编辑器</p><p>ctrl+shift+space 重新出现函数信息提示</p><p>ctrl+\ 添加分屏</p><p>ctrl + d 选中当前内容，连续快捷键会逐个选择下一个内容</p><p>ctrl + shift + L 选择所有找到的查找匹配项</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术教程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> VSCode </tag>
+            
+            <tag> 快捷键 </tag>
+            
+            <tag> 代码编辑 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>VSCode中Python开发插件</title>
       <link href="/vscode-chang-yong-python-cha-jian/"/>
       <url>/vscode-chang-yong-python-cha-jian/</url>
@@ -951,35 +980,6 @@
             <tag> 配置管理 </tag>
             
             <tag> 分布式系统 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>VS Code 快捷键指南</title>
-      <link href="/vs-code-kuai-jie-jian-zhi-nan/"/>
-      <url>/vs-code-kuai-jie-jian-zhi-nan/</url>
-      
-        <content type="html"><![CDATA[<p>打开工程：code + 路径</p><p>打开指定文件：ctrl + p</p><p>打开/关闭终端：ctrl + ` (1左边的按键)</p><p>跳转到行：ctrl + g</p><p>按单词移动光标：ctrl + 左右</p><p>选中单词：ctrl + d （重复按可以多选）</p><p>选中行：ctrl + l （重复按会同时选择下一行）</p><p>移动行：alt + 上下</p><p>格式化代码：ctrl + shift + f</p><p>跳转到定义：f12</p><p>查看当前文件符号：ctrl + shift + o</p><p>剪切/复制当前行：ctrl + x / ctrl + c （什么都不选的时候）</p><p>切换tab：alt+数字</p><p>顺序切换tab：ctrl + pageup / pagedown</p><p>关闭文件：ctrl+w</p><p>关闭所有文件：ctrl + k w （ctrl不松手）</p><p>ctrl+b 打开主侧边栏</p><p>ctrl+shift+e 打开文件管理器</p><p>ctrl+0 焦点聚焦到主侧边栏</p><p>ctrl+1 焦点聚焦到代码编辑器</p><p>ctrl+shift+space 重新出现函数信息提示</p><p>ctrl+\ 添加分屏</p><p>ctrl + d 选中当前内容，连续快捷键会逐个选择下一个内容</p><p>ctrl + shift + L 选择所有找到的查找匹配项</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 技术教程 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> VSCode </tag>
-            
-            <tag> 快捷键 </tag>
-            
-            <tag> 代码编辑 </tag>
             
         </tags>
       
@@ -1162,35 +1162,6 @@
     
     
     <entry>
-      <title>Nginx配置HTTPS自签名证书教程</title>
-      <link href="/pei-zhi-nginx-shi-xian-https-fang-wen/"/>
-      <url>/pei-zhi-nginx-shi-xian-https-fang-wen/</url>
-      
-        <content type="html"><![CDATA[<h2 id="安装nginx"><a href="#安装nginx" class="headerlink" title="安装nginx"></a>安装nginx</h2><p>在<a href="http://nginx.org/en/download.html">官网</a>下载和系统匹配的nginx，解压即可</p><h2 id="安装OpenSSL"><a href="#安装OpenSSL" class="headerlink" title="安装OpenSSL"></a>安装OpenSSL</h2><p><strong>若网站有https的证书跳过2、3、4步即可，若没有证书则需要自己生成</strong></p><p>由于代理https需要使用证书，这里我们使用OpenSSL生成自签名的证书，可以下载与系统相匹配的OpenSSL程序进行安装，安装过程一直下一步即可，<a href="http://slproweb.com/products/Win32OpenSSL.html">下载地址</a></p><h2 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a>配置环境变量</h2><ol><li>新增环境变量 <code>OPENSSL_HOME</code>，变量值为 <code>D:\OpenSSL-Win64</code>，指向OpenSSL的安装路径</li><li>新增环境变量 <code>OPENSSL_CONF</code>，变量值为 <code>D:\OpenSSL-Win64\bin\openssl.cfg</code>，指向openssl.cfg文件目录</li><li>在环境变量path的末尾添加 <code>%OPENSSL_HOME%\bin</code></li></ol><h2 id="生成证书"><a href="#生成证书" class="headerlink" title="生成证书"></a>生成证书</h2><p>在nginx安装目录创建 <code>ssl</code>文件夹，用于存放证书，如我的是 <code>F:\nginx-1.16.1\ssl</code>，以管理员权限运行cmd并进入创建的ssl目录</p><h3 id="创建私钥"><a href="#创建私钥" class="headerlink" title="创建私钥"></a>创建私钥</h3><p>在命令行中执行命令 <code>openssl genrsa -des3 -out demo.key 1024</code> ，demo是私钥文件名，可以自定义，此处需要输入和验证密码，输入的密码请记住，后面会用到，这里输入的密码是 <code>123456</code><br><img src="../Assets/file-1774074047684.png" alt="file-1774074047684.png"></p><h3 id="创建crs证书"><a href="#创建crs证书" class="headerlink" title="创建crs证书"></a>创建crs证书</h3><p>在命令行中执行 <code>openssl req -new -key demo.key -out demo.csr</code>，其中key文件就是第一步生成的私钥，demo为自定义的文件名，如下所示，这里主要设置的是国家地区以及组织的一些信息，其中最重要的是 <code>Common Name</code>，这里输入的就是我们要用https访问的域名，也是nginx中所要配置的 <code>server_name</code>，完成所有步骤后，ssl文件夹中会生成demo.csr和demo.key两个文件</p><p><img src="../Assets/file-1774074074554.png" alt="file-1774074074554.png"></p><h3 id="去除密码"><a href="#去除密码" class="headerlink" title="去除密码"></a>去除密码</h3><p>在加载SSL支持的Nginx并使用上述私钥时除去必须的口令，否则会在启动nginx的时候需要输入密码。复制demo.key并重命名为demo.key.org。<br>在命令行中执行此命令：<code>openssl rsa -in demo.key.org -out demo.key</code>  如下图所示，此命令需要输入刚才设置的密码。</p><h3 id="生成crt证书"><a href="#生成crt证书" class="headerlink" title="生成crt证书"></a>生成crt证书</h3><p>在命令行中执行此命令：<code>openssl x509 -req -days 365 -in demo.csr -signkey demo.key -out demo.crt</code></p><p>证书生成完毕，我们在ssl文件夹中可以看到生辰的证书文件，我们要用到的就是demo.crt和demo.key。</p><h2 id="修改nginx配置"><a href="#修改nginx配置" class="headerlink" title="修改nginx配置"></a>修改nginx配置</h2><p>在nginx.conf配置文件中添加一个如下server</p><pre class="line-numbers language-none"><code class="language-none">server &#123;        listen  443 ssl;        server_name  www.demo.com;        ssl_certificate      F:&#x2F;nginx-1.16.1&#x2F;ssl&#x2F;demo.crt;        ssl_certificate_key  F:&#x2F;nginx-1.16.1&#x2F;ssl&#x2F;demo.key;        location &#x2F; &#123;          root   html;          index  index.html index.htm;        &#125;    &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h2 id="启动nginx"><a href="#启动nginx" class="headerlink" title="启动nginx"></a>启动nginx</h2><p>正常启动nginx后，使用 <a href="https://127.0.0.1/">https://127.0.0.1:443</a> 访问，可以正常跳转</p><p><img src="../Assets/file-1774074102573.png" alt="file-1774074102573.png"></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> Web服务器 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Nginx </tag>
-            
-            <tag> HTTPS </tag>
-            
-            <tag> OpenSSL </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>面向对象的设计原则</title>
       <link href="/mian-xiang-dui-xiang-de-she-ji-yuan-ze/"/>
       <url>/mian-xiang-dui-xiang-de-she-ji-yuan-ze/</url>
@@ -1212,6 +1183,35 @@
             <tag> 代码重构 </tag>
             
             <tag> SOLID原则 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Nginx配置HTTPS自签名证书教程</title>
+      <link href="/pei-zhi-nginx-shi-xian-https-fang-wen/"/>
+      <url>/pei-zhi-nginx-shi-xian-https-fang-wen/</url>
+      
+        <content type="html"><![CDATA[<h2 id="安装nginx"><a href="#安装nginx" class="headerlink" title="安装nginx"></a>安装nginx</h2><p>在<a href="http://nginx.org/en/download.html">官网</a>下载和系统匹配的nginx，解压即可</p><h2 id="安装OpenSSL"><a href="#安装OpenSSL" class="headerlink" title="安装OpenSSL"></a>安装OpenSSL</h2><p><strong>若网站有https的证书跳过2、3、4步即可，若没有证书则需要自己生成</strong></p><p>由于代理https需要使用证书，这里我们使用OpenSSL生成自签名的证书，可以下载与系统相匹配的OpenSSL程序进行安装，安装过程一直下一步即可，<a href="http://slproweb.com/products/Win32OpenSSL.html">下载地址</a></p><h2 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a>配置环境变量</h2><ol><li>新增环境变量 <code>OPENSSL_HOME</code>，变量值为 <code>D:\OpenSSL-Win64</code>，指向OpenSSL的安装路径</li><li>新增环境变量 <code>OPENSSL_CONF</code>，变量值为 <code>D:\OpenSSL-Win64\bin\openssl.cfg</code>，指向openssl.cfg文件目录</li><li>在环境变量path的末尾添加 <code>%OPENSSL_HOME%\bin</code></li></ol><h2 id="生成证书"><a href="#生成证书" class="headerlink" title="生成证书"></a>生成证书</h2><p>在nginx安装目录创建 <code>ssl</code>文件夹，用于存放证书，如我的是 <code>F:\nginx-1.16.1\ssl</code>，以管理员权限运行cmd并进入创建的ssl目录</p><h3 id="创建私钥"><a href="#创建私钥" class="headerlink" title="创建私钥"></a>创建私钥</h3><p>在命令行中执行命令 <code>openssl genrsa -des3 -out demo.key 1024</code> ，demo是私钥文件名，可以自定义，此处需要输入和验证密码，输入的密码请记住，后面会用到，这里输入的密码是 <code>123456</code><br><img src="../Assets/file-1774074047684.png" alt="file-1774074047684.png"></p><h3 id="创建crs证书"><a href="#创建crs证书" class="headerlink" title="创建crs证书"></a>创建crs证书</h3><p>在命令行中执行 <code>openssl req -new -key demo.key -out demo.csr</code>，其中key文件就是第一步生成的私钥，demo为自定义的文件名，如下所示，这里主要设置的是国家地区以及组织的一些信息，其中最重要的是 <code>Common Name</code>，这里输入的就是我们要用https访问的域名，也是nginx中所要配置的 <code>server_name</code>，完成所有步骤后，ssl文件夹中会生成demo.csr和demo.key两个文件</p><p><img src="../Assets/file-1774074074554.png" alt="file-1774074074554.png"></p><h3 id="去除密码"><a href="#去除密码" class="headerlink" title="去除密码"></a>去除密码</h3><p>在加载SSL支持的Nginx并使用上述私钥时除去必须的口令，否则会在启动nginx的时候需要输入密码。复制demo.key并重命名为demo.key.org。<br>在命令行中执行此命令：<code>openssl rsa -in demo.key.org -out demo.key</code>  如下图所示，此命令需要输入刚才设置的密码。</p><h3 id="生成crt证书"><a href="#生成crt证书" class="headerlink" title="生成crt证书"></a>生成crt证书</h3><p>在命令行中执行此命令：<code>openssl x509 -req -days 365 -in demo.csr -signkey demo.key -out demo.crt</code></p><p>证书生成完毕，我们在ssl文件夹中可以看到生辰的证书文件，我们要用到的就是demo.crt和demo.key。</p><h2 id="修改nginx配置"><a href="#修改nginx配置" class="headerlink" title="修改nginx配置"></a>修改nginx配置</h2><p>在nginx.conf配置文件中添加一个如下server</p><pre class="line-numbers language-none"><code class="language-none">server &#123;        listen  443 ssl;        server_name  www.demo.com;        ssl_certificate      F:&#x2F;nginx-1.16.1&#x2F;ssl&#x2F;demo.crt;        ssl_certificate_key  F:&#x2F;nginx-1.16.1&#x2F;ssl&#x2F;demo.key;        location &#x2F; &#123;          root   html;          index  index.html index.htm;        &#125;    &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h2 id="启动nginx"><a href="#启动nginx" class="headerlink" title="启动nginx"></a>启动nginx</h2><p>正常启动nginx后，使用 <a href="https://127.0.0.1/">https://127.0.0.1:443</a> 访问，可以正常跳转</p><p><img src="../Assets/file-1774074102573.png" alt="file-1774074102573.png"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Web服务器 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Nginx </tag>
+            
+            <tag> HTTPS </tag>
+            
+            <tag> OpenSSL </tag>
             
         </tags>
       
