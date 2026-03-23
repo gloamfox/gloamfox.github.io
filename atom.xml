@@ -6,7 +6,7 @@
   <link href="https://gloamfox.github.io/atom.xml" rel="self"/>
   
   <link href="https://gloamfox.github.io/"/>
-  <updated>2026-03-23T10:21:26.128Z</updated>
+  <updated>2026-03-23T10:24:20.128Z</updated>
   <id>https://gloamfox.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://gloamfox.github.io/tu-pian-ya-suo-yu-ge-shi-you-hua-zhi-nan/"/>
     <id>https://gloamfox.github.io/tu-pian-ya-suo-yu-ge-shi-you-hua-zhi-nan/</id>
     <published>2026-03-23T06:02:38.000Z</published>
-    <updated>2026-03-23T10:21:26.128Z</updated>
+    <updated>2026-03-23T10:24:20.128Z</updated>
     
     
       
@@ -47,40 +47,11 @@
   </entry>
   
   <entry>
-    <title>Spring事务代码重构实战：用事务回调优化业务逻辑</title>
-    <link href="https://gloamfox.github.io/spring-shi-wu-dai-ma-chong-gou-shi-zhan-yong-shi-wu-hui-diao-you-hua-ye-wu-luo-ji/"/>
-    <id>https://gloamfox.github.io/spring-shi-wu-dai-ma-chong-gou-shi-zhan-yong-shi-wu-hui-diao-you-hua-ye-wu-luo-ji/</id>
-    <published>2026-03-21T01:13:30.000Z</published>
-    <updated>2026-03-23T10:21:26.128Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="后端开发" scheme="https://gloamfox.github.io/categories/%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
-    
-    
-    <category term="Spring事务" scheme="https://gloamfox.github.io/tags/Spring%E4%BA%8B%E5%8A%A1/"/>
-    
-    <category term="声明式事务" scheme="https://gloamfox.github.io/tags/%E5%A3%B0%E6%98%8E%E5%BC%8F%E4%BA%8B%E5%8A%A1/"/>
-    
-    <category term="事务优化" scheme="https://gloamfox.github.io/tags/%E4%BA%8B%E5%8A%A1%E4%BC%98%E5%8C%96/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Hexo 移除图片 alt 属性的方法</title>
     <link href="https://gloamfox.github.io/hexo-yi-chu-tu-pian-mo-ren-alt-shu-xing/"/>
     <id>https://gloamfox.github.io/hexo-yi-chu-tu-pian-mo-ren-alt-shu-xing/</id>
     <published>2026-03-19T10:59:42.000Z</published>
-    <updated>2026-03-23T10:21:26.127Z</updated>
+    <updated>2026-03-23T10:24:20.126Z</updated>
     
     
       
@@ -109,7 +80,7 @@
     <link href="https://gloamfox.github.io/jsdelivr-huan-cun-shua-xin-yu-ban-ben-kong-zhi/"/>
     <id>https://gloamfox.github.io/jsdelivr-huan-cun-shua-xin-yu-ban-ben-kong-zhi/</id>
     <published>2026-03-19T03:46:56.000Z</published>
-    <updated>2026-03-23T10:21:26.128Z</updated>
+    <updated>2026-03-23T10:24:20.128Z</updated>
     
     
       
@@ -140,7 +111,7 @@
     <link href="https://gloamfox.github.io/obsidian-bo-ke-da-jian-zhi-nan/"/>
     <id>https://gloamfox.github.io/obsidian-bo-ke-da-jian-zhi-nan/</id>
     <published>2026-03-18T10:34:27.000Z</published>
-    <updated>2026-03-23T10:21:26.128Z</updated>
+    <updated>2026-03-23T10:24:20.128Z</updated>
     
     
       
@@ -167,7 +138,7 @@
     <link href="https://gloamfox.github.io/jie-ou-fu-za-ye-wu-ji-yu-ze-ren-lian-yu-shang-xia-wen-de-chong-gou-shi-zhan/"/>
     <id>https://gloamfox.github.io/jie-ou-fu-za-ye-wu-ji-yu-ze-ren-lian-yu-shang-xia-wen-de-chong-gou-shi-zhan/</id>
     <published>2026-03-16T09:08:20.000Z</published>
-    <updated>2026-03-23T10:21:26.129Z</updated>
+    <updated>2026-03-23T10:24:20.129Z</updated>
     
     
       
@@ -196,7 +167,7 @@
     <link href="https://gloamfox.github.io/dan-yuan-ce-shi-de-kun-jing-yu-po-ju-wei-he-wo-men-bu-yuan-xie-yi-ji-ru-he-gao-xiao-di-xie/"/>
     <id>https://gloamfox.github.io/dan-yuan-ce-shi-de-kun-jing-yu-po-ju-wei-he-wo-men-bu-yuan-xie-yi-ji-ru-he-gao-xiao-di-xie/</id>
     <published>2026-03-14T08:51:49.000Z</published>
-    <updated>2026-03-23T10:21:26.128Z</updated>
+    <updated>2026-03-23T10:24:20.128Z</updated>
     
     
       
@@ -228,7 +199,7 @@
     <link href="https://gloamfox.github.io/obsidian-da-zao-ge-ren-zhi-shi-ku/"/>
     <id>https://gloamfox.github.io/obsidian-da-zao-ge-ren-zhi-shi-ku/</id>
     <published>2026-03-02T02:04:33.000Z</published>
-    <updated>2026-03-23T10:21:26.128Z</updated>
+    <updated>2026-03-23T10:24:20.128Z</updated>
     
     
       
@@ -258,7 +229,7 @@
     <link href="https://gloamfox.github.io/gao-bie-fen-lei-jiao-lu-rang-bi-ji-zi-ran-sheng-chang-liu-dong/"/>
     <id>https://gloamfox.github.io/gao-bie-fen-lei-jiao-lu-rang-bi-ji-zi-ran-sheng-chang-liu-dong/</id>
     <published>2026-03-02T02:04:33.000Z</published>
-    <updated>2026-03-23T10:21:26.128Z</updated>
+    <updated>2026-03-23T10:24:20.128Z</updated>
     
     
       
@@ -283,11 +254,40 @@
   </entry>
   
   <entry>
+    <title>性能优化全景图：七大维度深度解析</title>
+    <link href="https://gloamfox.github.io/xing-neng-you-hua-quan-jing-tu-qi-da-wei-du-shen-du-jie-xi/"/>
+    <id>https://gloamfox.github.io/xing-neng-you-hua-quan-jing-tu-qi-da-wei-du-shen-du-jie-xi/</id>
+    <published>2026-03-02T02:04:33.000Z</published>
+    <updated>2026-03-23T10:24:20.128Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;代码&quot;&gt;&lt;a href=&quot;#代码&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="技术文档" scheme="https://gloamfox.github.io/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/"/>
+    
+    
+    <category term="性能优化" scheme="https://gloamfox.github.io/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
+    
+    <category term="技术调优" scheme="https://gloamfox.github.io/tags/%E6%8A%80%E6%9C%AF%E8%B0%83%E4%BC%98/"/>
+    
+    <category term="系统架构" scheme="https://gloamfox.github.io/tags/%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84/"/>
+    
+  </entry>
+  
+  <entry>
     <title>技术面试经验与思考</title>
     <link href="https://gloamfox.github.io/ru-he-zuo-hao-ji-zhu-mian-shi/"/>
     <id>https://gloamfox.github.io/ru-he-zuo-hao-ji-zhu-mian-shi/</id>
     <published>2026-03-02T02:04:33.000Z</published>
-    <updated>2026-03-23T10:21:26.128Z</updated>
+    <updated>2026-03-23T10:24:20.128Z</updated>
     
     
       
@@ -315,40 +315,11 @@
   </entry>
   
   <entry>
-    <title>性能优化全景图：七大维度深度解析</title>
-    <link href="https://gloamfox.github.io/xing-neng-you-hua-quan-jing-tu-qi-da-wei-du-shen-du-jie-xi/"/>
-    <id>https://gloamfox.github.io/xing-neng-you-hua-quan-jing-tu-qi-da-wei-du-shen-du-jie-xi/</id>
-    <published>2026-03-02T02:04:33.000Z</published>
-    <updated>2026-03-23T10:21:26.129Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;代码&quot;&gt;&lt;a href=&quot;#代码&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="技术文档" scheme="https://gloamfox.github.io/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/"/>
-    
-    
-    <category term="性能优化" scheme="https://gloamfox.github.io/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
-    
-    <category term="技术调优" scheme="https://gloamfox.github.io/tags/%E6%8A%80%E6%9C%AF%E8%B0%83%E4%BC%98/"/>
-    
-    <category term="系统架构" scheme="https://gloamfox.github.io/tags/%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84/"/>
-    
-  </entry>
-  
-  <entry>
     <title>翻译翻译什么是惊喜：一次线上问题的思考</title>
     <link href="https://gloamfox.github.io/fan-yi-fan-yi-shi-me-shi-liang-xi-yi-ci-xian-shang-wen-ti-de-si-kao/"/>
     <id>https://gloamfox.github.io/fan-yi-fan-yi-shi-me-shi-liang-xi-yi-ci-xian-shang-wen-ti-de-si-kao/</id>
     <published>2026-03-02T02:04:33.000Z</published>
-    <updated>2026-03-23T10:21:26.129Z</updated>
+    <updated>2026-03-23T10:24:20.129Z</updated>
     
     
       
@@ -380,7 +351,7 @@
     <link href="https://gloamfox.github.io/bi-mian-zhe-xie-bian-cheng-xian-jing-qi-chong-rang-ni-dai-ma-shi-kong-de-kai-fa-feng-ge/"/>
     <id>https://gloamfox.github.io/bi-mian-zhe-xie-bian-cheng-xian-jing-qi-chong-rang-ni-dai-ma-shi-kong-de-kai-fa-feng-ge/</id>
     <published>2026-03-02T02:04:33.000Z</published>
-    <updated>2026-03-23T10:21:26.129Z</updated>
+    <updated>2026-03-23T10:24:20.129Z</updated>
     
     
       
@@ -409,7 +380,7 @@
     <link href="https://gloamfox.github.io/shu-ju-de-biao-shi/"/>
     <id>https://gloamfox.github.io/shu-ju-de-biao-shi/</id>
     <published>2026-03-01T12:22:43.000Z</published>
-    <updated>2026-03-23T10:21:26.129Z</updated>
+    <updated>2026-03-23T10:24:20.128Z</updated>
     
     
       
@@ -438,7 +409,7 @@
     <link href="https://gloamfox.github.io/ji-suan-ji-jie-gou/"/>
     <id>https://gloamfox.github.io/ji-suan-ji-jie-gou/</id>
     <published>2026-03-01T12:22:43.000Z</published>
-    <updated>2026-03-23T10:21:26.129Z</updated>
+    <updated>2026-03-23T10:24:20.129Z</updated>
     
     
       
@@ -467,7 +438,7 @@
     <link href="https://gloamfox.github.io/shi-yong-nvs-gong-ju-qie-huan-node-ban-ben/"/>
     <id>https://gloamfox.github.io/shi-yong-nvs-gong-ju-qie-huan-node-ban-ben/</id>
     <published>2026-02-26T04:35:40.000Z</published>
-    <updated>2026-03-23T10:21:26.128Z</updated>
+    <updated>2026-03-23T10:24:20.128Z</updated>
     
     
       
@@ -497,7 +468,7 @@
     <link href="https://gloamfox.github.io/meng-ti-huo-er-wen-ti-jing-dian-de-san-shan-men-wen-ti/"/>
     <id>https://gloamfox.github.io/meng-ti-huo-er-wen-ti-jing-dian-de-san-shan-men-wen-ti/</id>
     <published>2026-01-30T03:22:21.000Z</published>
-    <updated>2026-03-23T10:21:26.129Z</updated>
+    <updated>2026-03-23T10:24:20.129Z</updated>
     
     
       
@@ -528,7 +499,7 @@
     <link href="https://gloamfox.github.io/zhi-qi-ran-zhi-qi-suo-yi-ran-boolean-lei-xing-ming-ming-gui-fan/"/>
     <id>https://gloamfox.github.io/zhi-qi-ran-zhi-qi-suo-yi-ran-boolean-lei-xing-ming-ming-gui-fan/</id>
     <published>2025-12-06T11:28:42.000Z</published>
-    <updated>2026-03-23T10:21:26.129Z</updated>
+    <updated>2026-03-23T10:24:20.129Z</updated>
     
     
       
@@ -557,7 +528,7 @@
     <link href="https://gloamfox.github.io/ubuntu-an-zhuang-docker/"/>
     <id>https://gloamfox.github.io/ubuntu-an-zhuang-docker/</id>
     <published>2025-12-06T10:50:08.000Z</published>
-    <updated>2026-03-23T10:21:26.128Z</updated>
+    <updated>2026-03-23T10:24:20.128Z</updated>
     
     
       
@@ -587,7 +558,7 @@
     <link href="https://gloamfox.github.io/xiang-mu-yi-lai-ku-de-gui-fan-tan-suo/"/>
     <id>https://gloamfox.github.io/xiang-mu-yi-lai-ku-de-gui-fan-tan-suo/</id>
     <published>2025-11-29T10:56:24.000Z</published>
-    <updated>2026-03-23T10:21:26.129Z</updated>
+    <updated>2026-03-23T10:24:20.129Z</updated>
     
     
       
@@ -608,6 +579,36 @@
     <category term="版本管理" scheme="https://gloamfox.github.io/tags/%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/"/>
     
     <category term="依赖冲突" scheme="https://gloamfox.github.io/tags/%E4%BE%9D%E8%B5%96%E5%86%B2%E7%AA%81/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Ubuntu 更换国内源提升下载速度</title>
+    <link href="https://gloamfox.github.io/ubuntu-xiu-gai-guo-nei-yuan-jie-jue-xia-zai-wen-ti/"/>
+    <id>https://gloamfox.github.io/ubuntu-xiu-gai-guo-nei-yuan-jie-jue-xia-zai-wen-ti/</id>
+    <published>2025-11-27T04:43:39.000Z</published>
+    <updated>2026-03-23T10:24:20.128Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;经常使用Ubuntu的同学都会遇到软件安装下载速度慢的情况，究其原因，是因为Ubuntu默认源的地址都在国外所导致，其实国内也有很多优秀的源，比如阿里源、中科大源、清华源、163源等，只需要简单的更换一下源，下载度立刻就上来了。&lt;/p&gt;
+&lt;p&gt;以下操作都必须在管理员模式下（</summary>
+        
+      
+    
+    
+    
+    <category term="系统运维" scheme="https://gloamfox.github.io/categories/%E7%B3%BB%E7%BB%9F%E8%BF%90%E7%BB%B4/"/>
+    
+    
+    <category term="Ubuntu" scheme="https://gloamfox.github.io/tags/Ubuntu/"/>
+    
+    <category term="软件源" scheme="https://gloamfox.github.io/tags/%E8%BD%AF%E4%BB%B6%E6%BA%90/"/>
+    
+    <category term="下载加速" scheme="https://gloamfox.github.io/tags/%E4%B8%8B%E8%BD%BD%E5%8A%A0%E9%80%9F/"/>
     
   </entry>
   
