@@ -371,9 +371,10 @@
     // $('.bg-cover').css('background-image', 'url(' + bannerUrl + ')');
 
     
-        var bannerImages = ["https://tacdn.51jobcdn.com/internal-srv-v1/test/images/1774002210183_e2701bdb-c5c8-4681-8efd-f5cee8fc8193.jpg","https://tacdn.51jobcdn.com/internal-srv-v1/test/images/1774002233959_59b5a71d-0665-4d15-9a31-c8fdb04f3550.jpg","https://tacdn.51jobcdn.com/internal-srv-v1/test/images/1774002249254_a26862c8-ff32-479d-b1e3-6e415e08e366.jpg","https://tacdn.51jobcdn.com/internal-srv-v1/test/images/1774002267290_a72a1954-adbb-459d-a0f0-eeaccc6cd55f.jpg","https://tacdn.51jobcdn.com/internal-srv-v1/test/images/1774002288393_9b627282-a6cb-4765-b525-6d2391ae422d.jpg","https://tacdn.51jobcdn.com/internal-srv-v1/test/images/1774002304478_1c0ac040-21a9-4323-a5df-63131c88e008.jpg","https://tacdn.51jobcdn.com/internal-srv-v1/test/images/1774002319337_4aa21c52-b67b-47b8-bd84-3eda7c6682cc.jpg"];
-        var bannerUrl = bannerImages[new Date().getDay()];
-        $('.bg-cover').css('background-image', 'url(' + bannerUrl + ')');
+
+        // 每天切换 banner 图.  Switch banner image every day.
+        var bannerUrl = "/medias/banner/" + new Date().getDay() + '.jpg';
+         $('.bg-cover').css('background-image', 'url(' + bannerUrl + ')');
     
     
 </script>
@@ -395,20 +396,20 @@
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/cong-junit-dao-mockito-gou-jian-ke-kao-java-dan-yuan-ce-shi/">
+                    <a href="/shi-jian-qu-dong-jia-gou-ye-wu-jie-ou-yu-yi-bu-chu-li/">
                         <div class="card-image">
                             
                             
-                            <img src="/medias/featureimages/9.jpg" class="responsive-img" >
+                            <img src="/medias/featureimages/15.jpg" class="responsive-img" >
                             
-                            <span class="card-title">Java单元测试框架：JUnit与Mockito详解</span>
+                            <span class="card-title">事件驱动架构：业务解耦与异步处理</span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                本文详细介绍了JUnit 4与JUnit 5的区别、Mockito的核心API及使用场景，以及PowerMockito和SpringBoot中的测试注解，帮助开发者掌握Java单元测试的实践方法。
+                                事件驱动架构通过事件驱动系统运作，实现接口解耦和系统解耦，提升性能和可扩展性。实践中需解决幂等性和失败补偿问题，通过生产者消费者模型和持久化机制确保系统可靠性。
                             
                         </div>
                         <div class="publish-info">
@@ -419,8 +420,8 @@
                                 
                                 <i class="fas fa-bookmark fa-fw icon-category"></i>
                                 
-                                <a href="/categories/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/" class="post-category">
-                                    软件开发
+                                <a href="/categories/%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84/" class="post-category">
+                                    技术架构
                                 </a>
                                 
                                 
@@ -431,16 +432,16 @@
                     
                     <div class="card-action article-tags">
                         
-                        <a href="/tags/JUnit/">
-                            <span class="chip bg-color">JUnit</span>
+                        <a href="/tags/%E4%BA%8B%E4%BB%B6%E9%A9%B1%E5%8A%A8/">
+                            <span class="chip bg-color">事件驱动</span>
                         </a>
                         
-                        <a href="/tags/Mockito/">
-                            <span class="chip bg-color">Mockito</span>
+                        <a href="/tags/%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/">
+                            <span class="chip bg-color">系统设计</span>
                         </a>
                         
-                        <a href="/tags/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/">
-                            <span class="chip bg-color">单元测试</span>
+                        <a href="/tags/%E8%A7%A3%E8%80%A6/">
+                            <span class="chip bg-color">解耦</span>
                         </a>
                         
                     </div>

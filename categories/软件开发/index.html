@@ -370,9 +370,10 @@
     // $('.bg-cover').css('background-image', 'url(' + bannerUrl + ')');
 
     
-        var bannerImages = ["https://tacdn.51jobcdn.com/internal-srv-v1/test/images/1774002210183_e2701bdb-c5c8-4681-8efd-f5cee8fc8193.jpg","https://tacdn.51jobcdn.com/internal-srv-v1/test/images/1774002233959_59b5a71d-0665-4d15-9a31-c8fdb04f3550.jpg","https://tacdn.51jobcdn.com/internal-srv-v1/test/images/1774002249254_a26862c8-ff32-479d-b1e3-6e415e08e366.jpg","https://tacdn.51jobcdn.com/internal-srv-v1/test/images/1774002267290_a72a1954-adbb-459d-a0f0-eeaccc6cd55f.jpg","https://tacdn.51jobcdn.com/internal-srv-v1/test/images/1774002288393_9b627282-a6cb-4765-b525-6d2391ae422d.jpg","https://tacdn.51jobcdn.com/internal-srv-v1/test/images/1774002304478_1c0ac040-21a9-4323-a5df-63131c88e008.jpg","https://tacdn.51jobcdn.com/internal-srv-v1/test/images/1774002319337_4aa21c52-b67b-47b8-bd84-3eda7c6682cc.jpg"];
-        var bannerUrl = bannerImages[new Date().getDay()];
-        $('.bg-cover').css('background-image', 'url(' + bannerUrl + ')');
+
+        // 每天切换 banner 图.  Switch banner image every day.
+        var bannerUrl = "/medias/banner/" + new Date().getDay() + '.jpg';
+         $('.bg-cover').css('background-image', 'url(' + bannerUrl + ')');
     
     
 </script>
@@ -395,20 +396,20 @@
                 
                 
                 
-                <a href="/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/" title="前端开发: 1">
+                <a href="/categories/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/" title="软件开发: 4">
                     <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            style="background-color: #F9EBEA;">前端开发
-                        <span class="tag-length">1</span>
+                             chip-active "
+                            style="background-color: #F9EBEA;">软件开发
+                        <span class="tag-length">4</span>
                     </span>
                 </a>
                 
                 
-                <a href="/categories/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/" title="软件开发: 4">
+                <a href="/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/" title="前端开发: 1">
                     <span class="chip center-align waves-effect waves-light
-                             chip-active "
-                            style="background-color: #F5EEF8;">软件开发
-                        <span class="tag-length">4</span>
+                             chip-default "
+                            style="background-color: #F5EEF8;">前端开发
+                        <span class="tag-length">1</span>
                     </span>
                 </a>
                 
@@ -431,19 +432,19 @@
                 </a>
                 
                 
-                <a href="/categories/%E5%B7%A5%E5%85%B7%E6%95%99%E7%A8%8B/" title="工具教程: 1">
+                <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86/" title="数据库管理: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #FEF9E7;">工具教程
+                            style="background-color: #FEF9E7;">数据库管理
                         <span class="tag-length">1</span>
                     </span>
                 </a>
                 
                 
-                <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86/" title="数据库管理: 1">
+                <a href="/categories/%E5%B7%A5%E5%85%B7%E6%95%99%E7%A8%8B/" title="工具教程: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #F8F9F9;">数据库管理
+                            style="background-color: #F8F9F9;">工具教程
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -476,19 +477,10 @@
                 </a>
                 
                 
-                <a href="/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/" title="开发工具: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            style="background-color: #85C1E9;">开发工具
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
                 <a href="/categories/%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84/" title="技术架构: 2">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #F8C471;">技术架构
+                            style="background-color: #85C1E9;">技术架构
                         <span class="tag-length">2</span>
                     </span>
                 </a>
@@ -497,7 +489,7 @@
                 <a href="/categories/%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F/" title="分布式系统: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #F9E79F;">分布式系统
+                            style="background-color: #F8C471;">分布式系统
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -506,7 +498,16 @@
                 <a href="/categories/%E8%BF%90%E7%BB%B4%E6%8A%80%E6%9C%AF/" title="运维技术: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #F8F9F9;">运维技术
+                            style="background-color: #F9E79F;">运维技术
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/" title="开发工具: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #F9E79F;">开发工具
                         <span class="tag-length">1</span>
                     </span>
                 </a>
