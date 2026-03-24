@@ -31,6 +31,7 @@ var searchFunc = function (path, search_id, content_id) {
                     var index_title = -1;
                     var index_content = -1;
                     var first_occur = -1;
+                    var siteOrigin = location.origin;  
                     // only match artiles with not empty titles and contents
                     if (data_title != '' && data_content != '') {
                         keywords.forEach(function (keyword, i) {
@@ -50,7 +51,7 @@ var searchFunc = function (path, search_id, content_id) {
                     }
                     // show search results
                     if (isMatch) {
-                        str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                        str += "<li><a href='" + siteOrigin + data_url + "' class='search-result-title'>" + data_title + "</a>";
                         var content = data.content.trim().replace(/<[^>]+>/g, "");
                         if (first_occur >= 0) {
                             // cut out 100 characters

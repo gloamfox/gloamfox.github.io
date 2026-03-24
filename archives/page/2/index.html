@@ -499,7 +499,7 @@
             <article class="cd-timeline-content" data-aos="fade-up">
                 <div class="article col s12 m6">
                     <div class="card">
-                        <a href="/posts/20260302020433.html">
+                        <a href="/post/20260302020433.html">
                             <div class="card-image">
                                 
                                 
@@ -562,7 +562,7 @@
             <article class="cd-timeline-content" data-aos="fade-up">
                 <div class="article col s12 m6">
                     <div class="card">
-                        <a href="/posts/20260301122243.html">
+                        <a href="/post/20260301122243.html">
                             <div class="card-image">
                                 
                                 
@@ -625,7 +625,7 @@
             <article class="cd-timeline-content" data-aos="fade-up">
                 <div class="article col s12 m6">
                     <div class="card">
-                        <a href="/posts/20260301122243.html">
+                        <a href="/post/20260301122243.html">
                             <div class="card-image">
                                 
                                 
@@ -693,7 +693,7 @@
             <article class="cd-timeline-content" data-aos="fade-up">
                 <div class="article col s12 m6">
                     <div class="card">
-                        <a href="/posts/20260226043540.html">
+                        <a href="/post/20260226043540.html">
                             <div class="card-image">
                                 
                                 
@@ -761,7 +761,7 @@
             <article class="cd-timeline-content" data-aos="fade-up">
                 <div class="article col s12 m6">
                     <div class="card">
-                        <a href="/posts/20260130032221.html">
+                        <a href="/post/20260130032221.html">
                             <div class="card-image">
                                 
                                 
@@ -834,7 +834,7 @@
             <article class="cd-timeline-content" data-aos="fade-up">
                 <div class="article col s12 m6">
                     <div class="card">
-                        <a href="/posts/20251206112842.html">
+                        <a href="/post/20251206112842.html">
                             <div class="card-image">
                                 
                                 
@@ -897,7 +897,7 @@
             <article class="cd-timeline-content" data-aos="fade-up">
                 <div class="article col s12 m6">
                     <div class="card">
-                        <a href="/posts/20251206105008.html">
+                        <a href="/post/20251206105008.html">
                             <div class="card-image">
                                 
                                 
@@ -965,7 +965,7 @@
             <article class="cd-timeline-content" data-aos="fade-up">
                 <div class="article col s12 m6">
                     <div class="card">
-                        <a href="/posts/20251129105624.html">
+                        <a href="/post/20251129105624.html">
                             <div class="card-image">
                                 
                                 
@@ -1028,7 +1028,7 @@
             <article class="cd-timeline-content" data-aos="fade-up">
                 <div class="article col s12 m6">
                     <div class="card">
-                        <a href="/posts/20251127044339.html">
+                        <a href="/post/20251127044339.html">
                             <div class="card-image">
                                 
                                 
@@ -1091,7 +1091,7 @@
             <article class="cd-timeline-content" data-aos="fade-up">
                 <div class="article col s12 m6">
                     <div class="card">
-                        <a href="/posts/20251120062556.html">
+                        <a href="/post/20251120062556.html">
                             <div class="card-image">
                                 
                                 
@@ -1154,7 +1154,7 @@
             <article class="cd-timeline-content" data-aos="fade-up">
                 <div class="article col s12 m6">
                     <div class="card">
-                        <a href="/posts/20251120055251.html">
+                        <a href="/post/20251120055251.html">
                             <div class="card-image">
                                 
                                 
@@ -1217,7 +1217,7 @@
             <article class="cd-timeline-content" data-aos="fade-up">
                 <div class="article col s12 m6">
                     <div class="card">
-                        <a href="/posts/20251120054819.html">
+                        <a href="/post/20251120054819.html">
                             <div class="card-image">
                                 
                                 
@@ -1460,6 +1460,7 @@ $(function () {
                         var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
                         var data_url = data.url;
                         data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var siteOrigin = location.origin;  
                         var index_title = -1;
                         var index_content = -1;
                         var first_occur = -1;
@@ -1482,7 +1483,7 @@ $(function () {
                         }
                         // show search results
                         if (isMatch) {
-                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            str += "<li><a href='" + siteOrigin + data_url + "' class='search-result-title'>" + data_title + "</a>";
                             var content = data.content.trim().replace(/<[^>]+>/g, "");
                             if (first_occur >= 0) {
                                 // cut out 100 characters

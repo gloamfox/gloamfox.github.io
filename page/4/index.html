@@ -396,7 +396,7 @@
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/posts/20251118103750.html">
+                    <a href="/post/20251118103750.html">
                         <div class="card-image">
                             
                             
@@ -451,7 +451,7 @@
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/posts/20251118103750.html">
+                    <a href="/post/20251118103750.html">
                         <div class="card-image">
                             
                             
@@ -506,7 +506,7 @@
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/posts/20251118103750.html">
+                    <a href="/post/20251118103750.html">
                         <div class="card-image">
                             
                             
@@ -561,7 +561,7 @@
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/posts/20251118103750.html">
+                    <a href="/post/20251118103750.html">
                         <div class="card-image">
                             
                             
@@ -616,7 +616,7 @@
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/posts/20251118103750.html">
+                    <a href="/post/20251118103750.html">
                         <div class="card-image">
                             
                             
@@ -671,7 +671,7 @@
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/posts/20251118103750.html">
+                    <a href="/post/20251118103750.html">
                         <div class="card-image">
                             
                             
@@ -726,7 +726,7 @@
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/posts/20251118103750.html">
+                    <a href="/post/20251118103750.html">
                         <div class="card-image">
                             
                             
@@ -781,7 +781,7 @@
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/posts/20251118103750.html">
+                    <a href="/post/20251118103750.html">
                         <div class="card-image">
                             
                             
@@ -836,7 +836,7 @@
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/posts/20250919050557.html">
+                    <a href="/post/20250919050557.html">
                         <div class="card-image">
                             
                             
@@ -1084,6 +1084,7 @@ $(function () {
                         var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
                         var data_url = data.url;
                         data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var siteOrigin = location.origin;  
                         var index_title = -1;
                         var index_content = -1;
                         var first_occur = -1;
@@ -1106,7 +1107,7 @@ $(function () {
                         }
                         // show search results
                         if (isMatch) {
-                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            str += "<li><a href='" + siteOrigin + data_url + "' class='search-result-title'>" + data_title + "</a>";
                             var content = data.content.trim().replace(/<[^>]+>/g, "");
                             if (first_occur >= 0) {
                                 // cut out 100 characters

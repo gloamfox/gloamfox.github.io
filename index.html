@@ -589,7 +589,7 @@
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/posts/20260324094537.html">
+                    <a href="/post/20260324094537.html">
                         <div class="card-image">
                             
                             
@@ -644,7 +644,7 @@
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/posts/20260323060238.html">
+                    <a href="/post/20260323060238.html">
                         <div class="card-image">
                             
                             
@@ -699,7 +699,7 @@
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/posts/20260319105942.html">
+                    <a href="/post/20260319105942.html">
                         <div class="card-image">
                             
                             
@@ -754,7 +754,7 @@
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/posts/20260319034656.html">
+                    <a href="/post/20260319034656.html">
                         <div class="card-image">
                             
                             
@@ -809,7 +809,7 @@
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/posts/20260318103427.html">
+                    <a href="/post/20260318103427.html">
                         <div class="card-image">
                             
                             
@@ -860,7 +860,7 @@
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/posts/20260316090820.html">
+                    <a href="/post/20260316090820.html">
                         <div class="card-image">
                             
                             
@@ -915,7 +915,7 @@
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/posts/20260314085149.html">
+                    <a href="/post/20260314085149.html">
                         <div class="card-image">
                             
                             
@@ -970,7 +970,7 @@
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/posts/20260302020433.html">
+                    <a href="/post/20260302020433.html">
                         <div class="card-image">
                             
                             
@@ -1025,7 +1025,7 @@
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/posts/20260302020433.html">
+                    <a href="/post/20260302020433.html">
                         <div class="card-image">
                             
                             
@@ -1080,7 +1080,7 @@
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/posts/20260302020433.html">
+                    <a href="/post/20260302020433.html">
                         <div class="card-image">
                             
                             
@@ -1135,7 +1135,7 @@
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/posts/20260302020433.html">
+                    <a href="/post/20260302020433.html">
                         <div class="card-image">
                             
                             
@@ -1190,7 +1190,7 @@
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/posts/20260302020433.html">
+                    <a href="/post/20260302020433.html">
                         <div class="card-image">
                             
                             
@@ -1438,6 +1438,7 @@ $(function () {
                         var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
                         var data_url = data.url;
                         data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var siteOrigin = location.origin;  
                         var index_title = -1;
                         var index_content = -1;
                         var first_occur = -1;
@@ -1460,7 +1461,7 @@ $(function () {
                         }
                         // show search results
                         if (isMatch) {
-                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            str += "<li><a href='" + siteOrigin + data_url + "' class='search-result-title'>" + data_title + "</a>";
                             var content = data.content.trim().replace(/<[^>]+>/g, "");
                             if (first_occur >= 0) {
                                 // cut out 100 characters

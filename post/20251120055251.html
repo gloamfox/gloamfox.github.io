@@ -619,7 +619,7 @@ yum update <span aria-hidden="true" class="line-numbers-rows"><span></span><span
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://gloamfox.github.io/posts/20251120055251.html">https://gloamfox.github.io/posts/20251120055251.html</a>
+                    <a href="https://gloamfox.github.io/post/20251120055251.html">https://gloamfox.github.io/post/20251120055251.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -840,7 +840,7 @@ yum update <span aria-hidden="true" class="line-numbers-rows"><span></span><span
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/20251120062556.html">
+                <a href="/post/20251120062556.html">
                     <div class="card-image">
                         
                         
@@ -897,7 +897,7 @@ yum update <span aria-hidden="true" class="line-numbers-rows"><span></span><span
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/20251120054819.html">
+                <a href="/post/20251120054819.html">
                     <div class="card-image">
                         
                         
@@ -1237,6 +1237,7 @@ $(function () {
                         var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
                         var data_url = data.url;
                         data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var siteOrigin = location.origin;  
                         var index_title = -1;
                         var index_content = -1;
                         var first_occur = -1;
@@ -1259,7 +1260,7 @@ $(function () {
                         }
                         // show search results
                         if (isMatch) {
-                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            str += "<li><a href='" + siteOrigin + data_url + "' class='search-result-title'>" + data_title + "</a>";
                             var content = data.content.trim().replace(/<[^>]+>/g, "");
                             if (first_occur >= 0) {
                                 // cut out 100 characters

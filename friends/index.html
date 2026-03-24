@@ -925,6 +925,7 @@ $(function () {
                         var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
                         var data_url = data.url;
                         data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var siteOrigin = location.origin;  
                         var index_title = -1;
                         var index_content = -1;
                         var first_occur = -1;
@@ -947,7 +948,7 @@ $(function () {
                         }
                         // show search results
                         if (isMatch) {
-                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            str += "<li><a href='" + siteOrigin + data_url + "' class='search-result-title'>" + data_title + "</a>";
                             var content = data.content.trim().replace(/<[^>]+>/g, "");
                             if (first_occur >= 0) {
                                 // cut out 100 characters
