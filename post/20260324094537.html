@@ -532,19 +532,19 @@
 <p>该方案完全依赖 Hexo 原生功能，无需额外插件；生成的 URL 简洁、无中文乱码、长度固定；只要在每篇文章的 Front-matter 中明确设置 <code>date</code> 字段，链接即可永久不变，彻底解决了文件名修改、中文转义等痛点，是兼顾 SEO 与稳定性的最优解。</p>
 <p>下面详细分析各方案的优缺点，根据实际需求选择。</p>
 <h2 id="默认配置"><a href="#默认配置" class="headerlink" title="默认配置"></a>默认配置</h2><p>Hexo 生成永久链接的常规设置位于站点根目录的 <code>_config.yml</code> 文件中，如下所示：</p>
-<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">permalink</span><span class="token punctuation">:</span> <span class="token punctuation">:</span>layout/<span class="token punctuation">:</span>year<span class="token punctuation">:</span>month<span class="token punctuation">:</span>day<span class="token punctuation">:</span>hour<span class="token punctuation">:</span>minute<span class="token punctuation">:</span>second.html  
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">permalink</span><span class="token punctuation">:</span> <span class="token punctuation">:</span>year<span class="token punctuation">:</span>month<span class="token punctuation">:</span>day<span class="token punctuation">:</span>hour<span class="token punctuation">:</span>minute<span class="token punctuation">:</span>second.html  
 <span class="token key atrule">permalink_defaults</span><span class="token punctuation">:</span>  
 <span class="token key atrule">pretty_urls</span><span class="token punctuation">:</span>  
   <span class="token key atrule">trailing_index</span><span class="token punctuation">:</span> <span class="token boolean important">true</span> <span class="token comment"># 设为 false 可移除 URL 末尾的 'index.html'  </span>
   <span class="token key atrule">trailing_html</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>  <span class="token comment"># 设为 false 可移除 URL 末尾的 '.html'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>然而，默认的 <code>:layout/:year/:month/:day/:title/</code> 格式存在一个明显问题：当文章标题为中文时，生成的 URL 会包含中文，分享时会被转义为一串乱码，不仅影响用户体验，也不利于 SEO。</p>
+<p>然而，默认的 <code>:year/:month/:day/:title/</code> 格式存在一个明显问题：当文章标题为中文时，生成的 URL 会包含中文，分享时会被转义为一串乱码，不仅影响用户体验，也不利于 SEO。</p>
 <p><strong>理想的 URL 应尽量简洁</strong>。百度建议 URL 长度不超过 255 字节（英文字符占 1 字节，中文字符占 2 字节）。下文将分析几种常见的优化方案及其优缺点。</p>
 <h2 id="使用-title-生成-URL"><a href="#使用-title-生成-URL" class="headerlink" title="使用 :title 生成 URL"></a>使用 <code>:title</code> 生成 URL</h2><p>将 <code>permalink</code> 设置为 <code>:title.html</code>，例如：</p>
 <pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">permalink</span><span class="token punctuation">:</span> <span class="token punctuation">:</span>title.html<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>若文章文件名为 <code>hello-hexo.md</code>，生成的链接为：</p>
-<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml">https<span class="token punctuation">:</span>//www.gloamfox.cn/hello<span class="token punctuation">-</span>hexo.html<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml">https<span class="token punctuation">:</span>//gloamfox.github.io/hello<span class="token punctuation">-</span>hexo.html<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 
 <p><strong>优点</strong>：结构简单。</p>
@@ -556,7 +556,7 @@
 </ul>
 <h2 id="使用-hexo-permalink-pinyin-插件"><a href="#使用-hexo-permalink-pinyin-插件" class="headerlink" title="使用 hexo-permalink-pinyin 插件"></a>使用 <code>hexo-permalink-pinyin</code> 插件</h2><p>该插件可将中文标题自动转换为拼音，解决中文 URL 乱码问题。</p>
 <p>安装：</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> i hexo-permalink-pinyin <span class="token parameter variable">--save</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> hexo-permalink-pinyin <span class="token parameter variable">--save</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>配置<code>_config.yml</code></p>
 <pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">permalink_pinyin</span><span class="token punctuation">:</span>
@@ -564,7 +564,7 @@
   <span class="token key atrule">separator</span><span class="token punctuation">:</span> <span class="token string">'-'</span> <span class="token comment"># 分隔符，默认为 '-'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 <p>例如，文章《图片压缩与格式优化指南》生成的链接为：</p>
-<pre class="line-numbers language-none"><code class="language-none">http:&#x2F;&#x2F;www.gloamfox.cn&#x2F;tu-pian-ya-suo-yu-ge-shi-you-hua-zhi-nan&#x2F;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-none"><code class="language-none">https:&#x2F;&#x2F;gloamfox.github.io&#x2F;tu-pian-ya-suo-yu-ge-shi-you-hua-zhi-nan&#x2F;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p><strong>优点</strong>：解决中文乱码。<br><strong>缺点</strong>：文件名依然影响 URL 结构，修改文件名仍会导致链接变化。</p>
 <h2 id="使用-hexo-abbrlink-插件"><a href="#使用-hexo-abbrlink-插件" class="headerlink" title="使用 hexo-abbrlink 插件"></a>使用 <code>hexo-abbrlink</code> 插件</h2><p>该插件通过文章标题生成固定哈希值作为链接标识，文章修改后链接保持不变。</p>
@@ -579,8 +579,8 @@
 
 <p>生成链接示例：</p>
 <ul>
-<li><code>crc16 &amp; hex</code>：<code>https://test.com/posts/55c6.html</code></li>
-<li><code>crc32 &amp; dec</code>：<code>https://test.com/posts/1521457752.html</code></li>
+<li><code>crc16 &amp; hex</code>：<code>https://gloamfox.github.io/posts/55c6.html</code></li>
+<li><code>crc32 &amp; dec</code>：<code>https://gloamfox.github.io/posts/1521457752.html</code></li>
 </ul>
 <p><strong>优点</strong>：解决中文问题，链接短且稳定，修改文件名不影响 URL。<br><strong>缺点</strong>：哈希值依赖标题，若标题相同可能产生“碰撞”（虽然插件有处理机制），且链接随机，不易记忆。</p>
 <h2 id="使用-hexo-abbrlink2-插件"><a href="#使用-hexo-abbrlink2-插件" class="headerlink" title="使用 hexo-abbrlink2 插件"></a>使用 <code>hexo-abbrlink2</code> 插件</h2><p>这是 <code>hexo-abbrlink</code> 的升级版，采用自增 ID 机制，而非哈希算法。</p>
@@ -595,9 +595,9 @@
 
 
 <p>配置后生成的链接为：</p>
-<pre class="line-numbers language-none"><code class="language-none">https:&#x2F;&#x2F;www.gloamfox.cn&#x2F;1.html
-https:&#x2F;&#x2F;www.gloamfox.cn&#x2F;2.html
-https:&#x2F;&#x2F;www.gloamfox.cn&#x2F;3.html<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-none"><code class="language-none">https:&#x2F;&#x2F;gloamfox.github.io&#x2F;1.html
+https:&#x2F;&#x2F;gloamfox.github.io&#x2F;2.html
+https:&#x2F;&#x2F;gloamfox.github.io&#x2F;3.html<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 
 <p><strong>优点</strong>：极短且唯一，不受标题内容影响。<br><strong>缺点</strong>：</p>
@@ -610,7 +610,7 @@ https:&#x2F;&#x2F;www.gloamfox.cn&#x2F;3.html<span aria-hidden="true" class="lin
 <pre class="line-numbers language-none"><code class="language-none">permalink: :hash.html<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>生成链接示例：</p>
-<pre class="line-numbers language-none"><code class="language-none">https:&#x2F;&#x2F;www.gloamfox.cn&#x2F;3b48da9a3b8b.html<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-none"><code class="language-none">https:&#x2F;&#x2F;gloamfox.github.io&#x2F;3b48da9a3b8b.html<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p><strong>优点</strong>：简短，<code>date</code> 字段在创建时就确定，链接稳定。<br><strong>缺点</strong>：若后续修改文件名，URL 也会变化，不够灵活。</p>
 <h2 id="使用-year-month-day-hour-minute-second-生成-URL（推荐）"><a href="#使用-year-month-day-hour-minute-second-生成-URL（推荐）" class="headerlink" title="使用 :year:month:day:hour:minute:second 生成 URL（推荐）"></a>使用 <code>:year:month:day:hour:minute:second</code> 生成 URL（推荐）</h2><p>这是 Hexo 原生支持的方案，利用文章创建时间生成唯一链接。</p>
@@ -618,7 +618,7 @@ https:&#x2F;&#x2F;www.gloamfox.cn&#x2F;3.html<span aria-hidden="true" class="lin
 <pre class="line-numbers language-none"><code class="language-none">permalink: :year:month:day:hour:minute:second.html<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>生成链接示例：</p>
-<pre class="line-numbers language-none"><code class="language-none">https:&#x2F;&#x2F;www.gloamfox.cn&#x2F;20210412131554.html<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-none"><code class="language-none">https:&#x2F;&#x2F;gloamfox.github.io&#x2F;20210412131554.html<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>配合 <code>pretty_urls</code> 设置可进一步优化：</p>
 <pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">pretty_urls</span><span class="token punctuation">:</span>
@@ -944,31 +944,31 @@ https:&#x2F;&#x2F;www.gloamfox.cn&#x2F;3.html<span aria-hidden="true" class="lin
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/post/20260323060238.html">
+                <a href="/post/20260324025235.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" >
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" >
                         
-                        <span class="card-title">图片压缩与格式优化指南</span>
+                        <span class="card-title">Hexo博客搜索链接丢失域名问题修复</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            介绍图片压缩的重要性，推荐在线工具TinyPNG，并对比WebP和AVIF格式的优势与兼容性，帮助优化网站图片性能。
+                            Hexo博客搜索功能正常但点击结果链接丢失域名，原因是搜索插件只记录相对路径。通过修改主题JavaScript文件，将相对路径与站点根路径拼接生成绝对链接即可解决。
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2026-03-23
+                                <i class="far fa-clock fa-fw icon-date"></i>2026-03-24
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E7%BD%91%E7%AB%99%E4%BC%98%E5%8C%96/" class="post-category">
-                                    网站优化
+                            <a href="/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/" class="post-category">
+                                    技术教程
                                 </a>
                             
                             
@@ -978,16 +978,16 @@ https:&#x2F;&#x2F;www.gloamfox.cn&#x2F;3.html<span aria-hidden="true" class="lin
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%9B%BE%E7%89%87%E5%8E%8B%E7%BC%A9/">
-                        <span class="chip bg-color">图片压缩</span>
+                    <a href="/tags/Hexo/">
+                        <span class="chip bg-color">Hexo</span>
                     </a>
                     
-                    <a href="/tags/WebP%E6%A0%BC%E5%BC%8F/">
-                        <span class="chip bg-color">WebP格式</span>
+                    <a href="/tags/%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD/">
+                        <span class="chip bg-color">搜索功能</span>
                     </a>
                     
-                    <a href="/tags/AVIF%E6%A0%BC%E5%BC%8F/">
-                        <span class="chip bg-color">AVIF格式</span>
+                    <a href="/tags/%E5%9F%9F%E5%90%8D%E4%BF%AE%E5%A4%8D/">
+                        <span class="chip bg-color">域名修复</span>
                     </a>
                     
                 </div>
@@ -1137,7 +1137,7 @@ https:&#x2F;&#x2F;www.gloamfox.cn&#x2F;3.html<span aria-hidden="true" class="lin
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;&nbsp;<span
-                class="white-color">68.1k</span>&nbsp;字
+                class="white-color">68.6k</span>&nbsp;字
             
             
             
