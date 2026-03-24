@@ -496,14 +496,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.2k
+                    1.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    5 分
                 </div>
                 
 
@@ -581,12 +581,27 @@
 </ul>
 <p><strong>优点</strong>：解决中文问题，链接短且稳定，修改文件名不影响 URL。<br><strong>缺点</strong>：哈希值依赖标题，若标题相同可能产生“碰撞”（虽然插件有处理机制），且链接随机，不易记忆。</p>
 <h2 id="使用-hexo-abbrlink2-插件"><a href="#使用-hexo-abbrlink2-插件" class="headerlink" title="使用 hexo-abbrlink2 插件"></a>使用 <code>hexo-abbrlink2</code> 插件</h2><p>这是 <code>hexo-abbrlink</code> 的升级版，采用自增 ID 机制，而非哈希算法。</p>
+<p>安装</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> hexo-abbrlink2 <span class="token parameter variable">--save</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>配置</p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">permalink</span><span class="token punctuation">:</span> posts/<span class="token punctuation">:</span>abbrlink.html
+
+<span class="token key atrule">abbrlink</span><span class="token punctuation">:</span>
+  <span class="token key atrule">start</span><span class="token punctuation">:</span> <span class="token number">100</span> <span class="token comment"># 启起始文章id，默认为0 ，可以自定义，比如100</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+
 <p>配置后生成的链接为：</p>
 <pre class="line-numbers language-none"><code class="language-none">https:&#x2F;&#x2F;www.gloamfox.cn&#x2F;1.html
 https:&#x2F;&#x2F;www.gloamfox.cn&#x2F;2.html
 https:&#x2F;&#x2F;www.gloamfox.cn&#x2F;3.html<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
-<p><strong>优点</strong>：极短且唯一，不受标题内容影响。<br><strong>缺点</strong>：ID 生成依赖文章生成顺序，部署顺序改变可能导致链接变化。</p>
+
+<p><strong>优点</strong>：极短且唯一，不受标题内容影响。<br><strong>缺点</strong>：</p>
+<ul>
+<li>ID 生成依赖文章生成顺序，部署顺序改变可能导致链接变化。</li>
+<li>实际使用过程中发现生成的ID有重复，应该是插件的bug，<strong>不可使用</strong></li>
+</ul>
 <h2 id="使用-hash-生成-URL"><a href="#使用-hash-生成-URL" class="headerlink" title="使用 :hash 生成 URL"></a>使用 <code>:hash</code> 生成 URL</h2><p>Hexo 原生支持通过 <code>:hash</code> 生成基于文件名和 <code>date</code> 字段的哈希值链接。</p>
 <p>配置：</p>
 <pre class="line-numbers language-none"><code class="language-none">permalink: :hash.html<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
