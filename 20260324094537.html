@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Ubuntu,国内源,apt-get">
+    <meta name="keywords" content="永久链接,Hexo配置,URL优化,SEO,日期方案">
     <meta name="description" content="君子以顺德，积小以高大。">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Ubuntu 更换国内源提升下载速度 | 暮色之狐</title>
+    <title>Hexo永久链接最佳实践：终极方案与优化指南 | 暮色之狐</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -333,12 +333,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Ubuntu 更换国内源提升下载速度</h1>
+                    <h1 class="description center-align post-title">Hexo永久链接最佳实践：终极方案与优化指南</h1>
                 </div>
             </div>
         </div>
@@ -454,16 +454,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Ubuntu/">
-                                <span class="chip bg-color">Ubuntu</span>
+                            <a href="/tags/Hexo/">
+                                <span class="chip bg-color">Hexo</span>
                             </a>
                         
-                            <a href="/tags/%E8%BD%AF%E4%BB%B6%E6%BA%90/">
-                                <span class="chip bg-color">软件源</span>
+                            <a href="/tags/%E6%B0%B8%E4%B9%85%E9%93%BE%E6%8E%A5/">
+                                <span class="chip bg-color">永久链接</span>
                             </a>
                         
-                            <a href="/tags/%E4%B8%8B%E8%BD%BD%E5%8A%A0%E9%80%9F/">
-                                <span class="chip bg-color">下载加速</span>
+                            <a href="/tags/SEO%E4%BC%98%E5%8C%96/">
+                                <span class="chip bg-color">SEO优化</span>
                             </a>
                         
                     </div>
@@ -474,8 +474,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E7%B3%BB%E7%BB%9F%E8%BF%90%E7%BB%B4/" class="post-category">
-                                系统运维
+                            <a href="/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/" class="post-category">
+                                技术教程
                             </a>
                         
                     </div>
@@ -487,7 +487,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2025-11-27
+                    2026-03-24
                 </div>
                 
 
@@ -496,14 +496,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    261
+                    1.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    5 分
                 </div>
                 
 
@@ -526,29 +526,118 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>经常使用Ubuntu的同学都会遇到软件安装下载速度慢的情况，究其原因，是因为Ubuntu默认源的地址都在国外所导致，其实国内也有很多优秀的源，比如阿里源、中科大源、清华源、163源等，只需要简单的更换一下源，下载度立刻就上来了。</p>
-<p>以下操作都必须在管理员模式下（使用su命令进入）进行，否则会执行失败</p>
-<p><strong>备份官方源</strong></p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">mv</span> /etc/apt/sources.list /etc/apt/sources.list.bk<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+                <h2 id="结论先行：日期方案是最佳选择"><a href="#结论先行：日期方案是最佳选择" class="headerlink" title="结论先行：日期方案是最佳选择"></a>结论先行：日期方案是最佳选择</h2><p>经过多种方案的对比与实践，<strong>推荐使用基于文章创建时间的日期格式作为永久链接</strong>，即:</p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">permalink</span><span class="token punctuation">:</span> <span class="token punctuation">:</span>year<span class="token punctuation">:</span>month<span class="token punctuation">:</span>day<span class="token punctuation">:</span>hour<span class="token punctuation">:</span>minute<span class="token punctuation">:</span>second.html<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>该方案完全依赖 Hexo 原生功能，无需额外插件；生成的 URL 简洁、无中文乱码、长度固定；只要在每篇文章的 Front-matter 中明确设置 <code>date</code> 字段，链接即可永久不变，彻底解决了文件名修改、中文转义等痛点，是兼顾 SEO 与稳定性的最优解。</p>
+<p>下面详细分析各方案的优缺点，根据实际需求选择。</p>
+<h2 id="默认配置"><a href="#默认配置" class="headerlink" title="默认配置"></a>默认配置</h2><p>Hexo 生成永久链接的常规设置位于站点根目录的 <code>_config.yml</code> 文件中，如下所示：</p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">permalink</span><span class="token punctuation">:</span> <span class="token punctuation">:</span>year<span class="token punctuation">:</span>month<span class="token punctuation">:</span>day<span class="token punctuation">:</span>hour<span class="token punctuation">:</span>minute<span class="token punctuation">:</span>second.html  
+<span class="token key atrule">permalink_defaults</span><span class="token punctuation">:</span>  
+<span class="token key atrule">pretty_urls</span><span class="token punctuation">:</span>  
+  <span class="token key atrule">trailing_index</span><span class="token punctuation">:</span> <span class="token boolean important">true</span> <span class="token comment"># 设为 false 可移除 URL 末尾的 'index.html'  </span>
+  <span class="token key atrule">trailing_html</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>  <span class="token comment"># 设为 false 可移除 URL 末尾的 '.html'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>然而，默认的 <code>:year/:month/:day/:title/</code> 格式存在一个明显问题：当文章标题为中文时，生成的 URL 会包含中文，分享时会被转义为一串乱码，不仅影响用户体验，也不利于 SEO。</p>
+<p><strong>理想的 URL 应尽量简洁</strong>。百度建议 URL 长度不超过 255 字节（英文字符占 1 字节，中文字符占 2 字节）。下文将分析几种常见的优化方案及其优缺点。</p>
+<h2 id="使用-title-生成-URL"><a href="#使用-title-生成-URL" class="headerlink" title="使用 :title 生成 URL"></a>使用 <code>:title</code> 生成 URL</h2><p>将 <code>permalink</code> 设置为 <code>:title.html</code>，例如：</p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">permalink</span><span class="token punctuation">:</span> <span class="token punctuation">:</span>title.html<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>若文章文件名为 <code>hello-hexo.md</code>，生成的链接为：</p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml">https<span class="token punctuation">:</span>//gloamfox.github.io/hello<span class="token punctuation">-</span>hexo.html<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 
-<p><strong>下载第三方源文件更换</strong></p>
-<p>具体使用哪一个，可以自行测试按照效果选用</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment">#163源</span>
-<span class="token function">wget</span> <span class="token string">'https://gitee.com/zaozuotime/ubuntu-update-source-file/raw/master/163.sources.list'</span> <span class="token parameter variable">-O</span> /etc/apt/sources.list
+<p><strong>优点</strong>：结构简单。</p>
+<p><strong>缺点</strong>：</p>
+<ul>
+<li>文章文件名必须为英文，否则中文会被转义；</li>
+<li>文件名一旦修改，URL 也会改变，导致链接失效；</li>
+<li>文件名过长会使 URL 冗长，影响美观与 SEO。</li>
+</ul>
+<h2 id="使用-hexo-permalink-pinyin-插件"><a href="#使用-hexo-permalink-pinyin-插件" class="headerlink" title="使用 hexo-permalink-pinyin 插件"></a>使用 <code>hexo-permalink-pinyin</code> 插件</h2><p>该插件可将中文标题自动转换为拼音，解决中文 URL 乱码问题。</p>
+<p>安装：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> hexo-permalink-pinyin <span class="token parameter variable">--save</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<span class="token comment">#阿里源</span>
-<span class="token function">wget</span> <span class="token string">'https://gitee.com/zaozuotime/ubuntu-update-source-file/raw/master/aliyun.sources.list'</span> <span class="token parameter variable">-O</span> /etc/apt/sources.list
+<p>配置<code>_config.yml</code></p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">permalink_pinyin</span><span class="token punctuation">:</span>
+  <span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+  <span class="token key atrule">separator</span><span class="token punctuation">:</span> <span class="token string">'-'</span> <span class="token comment"># 分隔符，默认为 '-'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
-<span class="token comment">#清华源</span>
-<span class="token function">wget</span> <span class="token string">'https://gitee.com/zaozuotime/ubuntu-update-source-file/raw/master/tsinghua.sources.list'</span> <span class="token parameter variable">-O</span> /etc/apt/sources.list
+<p>例如，文章《图片压缩与格式优化指南》生成的链接为：</p>
+<pre class="line-numbers language-none"><code class="language-none">https:&#x2F;&#x2F;gloamfox.github.io&#x2F;tu-pian-ya-suo-yu-ge-shi-you-hua-zhi-nan&#x2F;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<span class="token comment">#中科大源</span>
-<span class="token function">wget</span> <span class="token string">'https://gitee.com/zaozuotime/ubuntu-update-source-file/raw/master/ustc.sources.list'</span> <span class="token parameter variable">-O</span> /etc/apt/sources.list<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>优点</strong>：解决中文乱码。<br><strong>缺点</strong>：文件名依然影响 URL 结构，修改文件名仍会导致链接变化。</p>
+<h2 id="使用-hexo-abbrlink-插件"><a href="#使用-hexo-abbrlink-插件" class="headerlink" title="使用 hexo-abbrlink 插件"></a>使用 <code>hexo-abbrlink</code> 插件</h2><p>该插件通过文章标题生成固定哈希值作为链接标识，文章修改后链接保持不变。</p>
+<p>安装：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> hexo-abbrlink <span class="token parameter variable">--save</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p><strong>更新资源</strong></p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">apt-get</span> update<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>配置<code>_config.yml</code></p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">permalink</span><span class="token punctuation">:</span> <span class="token punctuation">:</span>abbrlink.html
+<span class="token key atrule">abbrlink</span><span class="token punctuation">:</span>
+  <span class="token key atrule">alg</span><span class="token punctuation">:</span> crc32   <span class="token comment"># 算法：crc16（默认）或 crc32</span>
+  <span class="token key atrule">rep</span><span class="token punctuation">:</span> dec     <span class="token comment"># 格式：dec（十进制）或 hex（十六进制）</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
+<p>生成链接示例：</p>
+<ul>
+<li><code>crc16 &amp; hex</code>：<code>https://gloamfox.github.io/posts/55c6.html</code></li>
+<li><code>crc32 &amp; dec</code>：<code>https://gloamfox.github.io/posts/1521457752.html</code></li>
+</ul>
+<p><strong>优点</strong>：解决中文问题，链接短且稳定，修改文件名不影响 URL。<br><strong>缺点</strong>：哈希值依赖标题，若标题相同可能产生“碰撞”（虽然插件有处理机制），且链接随机，不易记忆。</p>
+<h2 id="使用-hexo-abbrlink2-插件"><a href="#使用-hexo-abbrlink2-插件" class="headerlink" title="使用 hexo-abbrlink2 插件"></a>使用 <code>hexo-abbrlink2</code> 插件</h2><p>这是 <code>hexo-abbrlink</code> 的升级版，采用自增 ID 机制，而非哈希算法。</p>
+<p>安装</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> hexo-abbrlink2 <span class="token parameter variable">--save</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>配置</p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">permalink</span><span class="token punctuation">:</span> posts/<span class="token punctuation">:</span>abbrlink.html
+
+<span class="token key atrule">abbrlink</span><span class="token punctuation">:</span>
+  <span class="token key atrule">start</span><span class="token punctuation">:</span> <span class="token number">100</span> <span class="token comment"># 启起始文章id，默认为0 ，可以自定义，比如100</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+<p>配置后生成的链接为：</p>
+<pre class="line-numbers language-none"><code class="language-none">https:&#x2F;&#x2F;gloamfox.github.io&#x2F;1.html
+https:&#x2F;&#x2F;gloamfox.github.io&#x2F;2.html
+https:&#x2F;&#x2F;gloamfox.github.io&#x2F;3.html<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+
+<p><strong>优点</strong>：极短且唯一，不受标题内容影响。<br><strong>缺点</strong>：</p>
+<ul>
+<li>ID 生成依赖文章生成顺序，部署顺序改变可能导致链接变化。</li>
+<li>实际使用过程中发现生成的ID有重复，应该是插件的bug，<strong>不可使用</strong></li>
+</ul>
+<h2 id="使用-hash-生成-URL"><a href="#使用-hash-生成-URL" class="headerlink" title="使用 :hash 生成 URL"></a>使用 <code>:hash</code> 生成 URL</h2><p>Hexo 原生支持通过 <code>:hash</code> 生成基于文件名和 <code>date</code> 字段的哈希值链接。</p>
+<p>配置：</p>
+<pre class="line-numbers language-none"><code class="language-none">permalink: :hash.html<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>生成链接示例：</p>
+<pre class="line-numbers language-none"><code class="language-none">https:&#x2F;&#x2F;gloamfox.github.io&#x2F;3b48da9a3b8b.html<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><strong>优点</strong>：简短，<code>date</code> 字段在创建时就确定，链接稳定。<br><strong>缺点</strong>：若后续修改文件名，URL 也会变化，不够灵活。</p>
+<h2 id="使用-year-month-day-hour-minute-second-生成-URL（推荐）"><a href="#使用-year-month-day-hour-minute-second-生成-URL（推荐）" class="headerlink" title="使用 :year:month:day:hour:minute:second 生成 URL（推荐）"></a>使用 <code>:year:month:day:hour:minute:second</code> 生成 URL（推荐）</h2><p>这是 Hexo 原生支持的方案，利用文章创建时间生成唯一链接。</p>
+<p>配置：</p>
+<pre class="line-numbers language-none"><code class="language-none">permalink: :year:month:day:hour:minute:second.html<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>生成链接示例：</p>
+<pre class="line-numbers language-none"><code class="language-none">https:&#x2F;&#x2F;gloamfox.github.io&#x2F;20210412131554.html<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>配合 <code>pretty_urls</code> 设置可进一步优化：</p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">pretty_urls</span><span class="token punctuation">:</span>
+  <span class="token key atrule">trailing_index</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+  <span class="token key atrule">trailing_html</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>   <span class="token comment"># 若设为 false，则 URL 末尾不显示 .html</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>优点</strong>：</p>
+<ul>
+<li>完全原生，无需插件；</li>
+<li>链接基于文章的 <code>date</code> 字段（创建时已确定），永不改变；</li>
+<li>结构清晰、长度固定、无乱码，SEO 友好；</li>
+<li>不受文件名修改影响。</li>
+</ul>
+<p><strong>注意事项</strong>：</p>
+<ul>
+<li>若去掉 <code>.html</code>（<code>trailing_html: false</code>），某些平台发外链时可能自动追加 <code>/</code> 导致 404，建议保留 <code>.html</code>；</li>
+<li><code>date</code> 字段需在每篇文章的 Front-matter 中明确指定，避免使用文件创建时间作为替代，以确保跨环境一致性。</li>
+</ul>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>对于绝大多数 Hexo 用户，<strong>采用日期生成永久链接是最稳妥、最简洁的终极方案</strong>。它不仅解决了中文乱码、文件名变动等核心痛点，还能保持 URL 的永久有效，是提升博客 SEO 与用户体验的最佳实践。</p>
 
                 
             </div>
@@ -575,7 +664,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://gloamfox.github.io/post/20251127044339.html">https://gloamfox.github.io/post/20251127044339.html</a>
+                    <a href="https://gloamfox.github.io/20260324094537.html">https://gloamfox.github.io/20260324094537.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -613,16 +702,16 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Ubuntu/">
-                                    <span class="chip bg-color">Ubuntu</span>
+                                <a href="/tags/Hexo/">
+                                    <span class="chip bg-color">Hexo</span>
                                 </a>
                             
-                                <a href="/tags/%E8%BD%AF%E4%BB%B6%E6%BA%90/">
-                                    <span class="chip bg-color">软件源</span>
+                                <a href="/tags/%E6%B0%B8%E4%B9%85%E9%93%BE%E6%8E%A5/">
+                                    <span class="chip bg-color">永久链接</span>
                                 </a>
                             
-                                <a href="/tags/%E4%B8%8B%E8%BD%BD%E5%8A%A0%E9%80%9F/">
-                                    <span class="chip bg-color">下载加速</span>
+                                <a href="/tags/SEO%E4%BC%98%E5%8C%96/">
+                                    <span class="chip bg-color">SEO优化</span>
                                 </a>
                             
                         </div>
@@ -792,54 +881,56 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/post/20251129105624.html">
+                <a href="/20260324094537.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" >
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" >
                         
-                        <span class="card-title">项目依赖库的规范探索</span>
+                        <span class="card-title">Hexo永久链接最佳实践：终极方案与优化指南</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            本文介绍二方库的定义、管理原则及关键注意事项，包括精简可控、稳定可追溯原则，以及避免依赖冲突的具体实践建议。
+                            本文对比多种Hexo永久链接方案，推荐基于文章创建时间的日期格式，无需插件、无乱码、链接稳定，是兼顾SEO与用户体验的最优解。
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2025-11-29
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2026-03-24
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%8A%80%E6%9C%AF%E8%A7%84%E8%8C%83/" class="post-category">
-                                    技术规范
+                            <a href="/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/" class="post-category">
+                                    技术教程
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E4%BA%8C%E6%96%B9%E5%BA%93/">
-                        <span class="chip bg-color">二方库</span>
+                    <a href="/tags/Hexo/">
+                        <span class="chip bg-color">Hexo</span>
                     </a>
                     
-                    <a href="/tags/%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/">
-                        <span class="chip bg-color">版本管理</span>
+                    <a href="/tags/%E6%B0%B8%E4%B9%85%E9%93%BE%E6%8E%A5/">
+                        <span class="chip bg-color">永久链接</span>
                     </a>
                     
-                    <a href="/tags/%E4%BE%9D%E8%B5%96%E5%86%B2%E7%AA%81/">
-                        <span class="chip bg-color">依赖冲突</span>
+                    <a href="/tags/SEO%E4%BC%98%E5%8C%96/">
+                        <span class="chip bg-color">SEO优化</span>
                     </a>
                     
                 </div>
@@ -853,31 +944,31 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/post/20251120062556.html">
+                <a href="/20260324025235.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" >
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" >
                         
-                        <span class="card-title">Tomcat停止后Java进程残留问题及解决方法</span>
+                        <span class="card-title">Hexo博客搜索链接丢失域名问题修复</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Tomcat使用shutdown.sh停止后，Java进程可能残留并占用内存，影响系统性能。本文介绍了如何使用kill命令强制结束残留进程，并通过修改Tomcat脚本彻底解决问题。
+                            Hexo博客搜索功能正常但点击结果链接丢失域名，原因是搜索插件只记录相对路径。通过修改主题JavaScript文件，将相对路径与站点根路径拼接生成绝对链接即可解决。
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2025-11-20
+                                <i class="far fa-clock fa-fw icon-date"></i>2026-03-24
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%90%E7%BB%B4/" class="post-category">
-                                    服务器运维
+                            <a href="/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/" class="post-category">
+                                    技术教程
                                 </a>
                             
                             
@@ -887,16 +978,16 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Tomcat/">
-                        <span class="chip bg-color">Tomcat</span>
+                    <a href="/tags/Hexo/">
+                        <span class="chip bg-color">Hexo</span>
                     </a>
                     
-                    <a href="/tags/Java%E8%BF%9B%E7%A8%8B/">
-                        <span class="chip bg-color">Java进程</span>
+                    <a href="/tags/%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD/">
+                        <span class="chip bg-color">搜索功能</span>
                     </a>
                     
-                    <a href="/tags/%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/">
-                        <span class="chip bg-color">进程管理</span>
+                    <a href="/tags/%E5%9F%9F%E5%90%8D%E4%BF%AE%E5%A4%8D/">
+                        <span class="chip bg-color">域名修复</span>
                     </a>
                     
                 </div>
