@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="设计原则,代码质量,SOLID,重构,DRY">
+    <meta name="keywords" content="单元测试原则,测试驱动开发,代码可测性,Mock测试,软件质量保障">
     <meta name="description" content="君子以顺德，积小以高大。">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>面向对象的设计原则 | 暮色之狐</title>
+    <title>单元测试的困境与破局：为何我们不愿写，以及如何高效地写 | 暮色之狐</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -333,12 +333,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">面向对象的设计原则</h1>
+                    <h1 class="description center-align post-title">单元测试的困境与破局：为何我们不愿写，以及如何高效地写</h1>
                 </div>
             </div>
         </div>
@@ -454,16 +454,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/">
-                                <span class="chip bg-color">软件设计</span>
+                            <a href="/tags/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/">
+                                <span class="chip bg-color">单元测试</span>
                             </a>
                         
-                            <a href="/tags/%E4%BB%A3%E7%A0%81%E9%87%8D%E6%9E%84/">
-                                <span class="chip bg-color">代码重构</span>
+                            <a href="/tags/%E6%B5%8B%E8%AF%95%E9%A9%B1%E5%8A%A8%E5%BC%80%E5%8F%91/">
+                                <span class="chip bg-color">测试驱动开发</span>
                             </a>
                         
-                            <a href="/tags/SOLID%E5%8E%9F%E5%88%99/">
-                                <span class="chip bg-color">SOLID原则</span>
+                            <a href="/tags/%E8%BD%AF%E4%BB%B6%E8%B4%A8%E9%87%8F/">
+                                <span class="chip bg-color">软件质量</span>
                             </a>
                         
                     </div>
@@ -487,7 +487,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2025-11-18
+                    2026-03-14
                 </div>
                 
 
@@ -496,14 +496,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    4.3k
+                    1.9k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    15 分
+                    6 分
                 </div>
                 
 
@@ -523,204 +523,58 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>什么样的代码可以称之为好代码？又如何评价代码比较差？每个人也许都有自己的标准，但是在软件设计领域中，有一套通过经验总结出来的，可以有效解决问题的指导思想和方法论，遵从这些原则，可以事半功倍，反之则有可能带来一些麻烦。</p>
-<h2 id="SOLID"><a href="#SOLID" class="headerlink" title="SOLID"></a>SOLID</h2><p><code>SOLID</code>是五种设计原则首字母的缩写，有趣的是这个单词本身就有<code>稳定</code>的含义，遵从这些设计原则，有助于我们设计出更灵活，易于拓展和维护的软件系统。</p>
-<ul>
-<li><p>Single Responsibility Principle（SRP）：单一职责原则</p>
-</li>
-<li><p>Open Close Principle（OCP）：开闭原则原则</p>
-</li>
-<li><p>Liskov Substitution Principle（LSP）：里氏替换原则</p>
-</li>
-<li><p>Interface Segregation Principle（ISP）：接口隔离原则</p>
-</li>
-<li><p>Dependency Inversion Principle（DIP）：依赖倒置原则</p>
-</li>
-</ul>
-<p>SOLID原则之间并不是相互孤立的，彼此间存在着一定关联，一个原则可以是另一个原则的加强或基础；违反其中的某一个原则，可能同时违反了其他原则。其中，开闭原则和里氏代换原则是设计目标；单一职责 原则、接口分隔原则和依赖倒置原则是设计方法。</p>
-<h3 id="单一职责原则（SRP）"><a href="#单一职责原则（SRP）" class="headerlink" title="单一职责原则（SRP）"></a>单一职责原则（SRP）</h3><blockquote>
-<p>尽量让每个类只负责软件中的一个功能，并将该功能完全封装在该类中</p>
+                <blockquote>
+<p>单元测试作为软件质量的重要一环，往往在整个开发流程中被大多数开发人员所忽略，本文旨在分析如何写好单元测试并探索一些测试驱动开发的应用。</p>
 </blockquote>
-<p>这条原则的目的是为了减少类的复杂度。其实只有当程序规模不断扩大，变更不断增加后，违反单一职责的问题才会逐步显现出来，到了某个时间，类会变得过于庞大，以至于无法记清其中的细节，查找代码也会变得非常缓慢，必须浏览整个类或者整个程序才能找到需要的东西，需要看的东西实在太多，会让人感觉到对代码失去控制。另外的一个问题是，如果一个类负责的职责过多，那么当需求发生变更时，极有可能需要改动你并不想改动的部分，导致影响范围不可控。</p>
-<p>单一职责可以称之为最简单的设计原则，简单到稍有经验的程序员即使从未了解过设计原则和设计模式的相关知识，也从未听说过单一职责的原则，在进行代码设计时也会不自觉的遵守这个原则，因为在软件开发迭代的过程中，谁也不希望因为修改了一个功能，而导致其他功能出现故障。虽然单一职责是如此的简单，但是它又是最容易被违背的设计原则之一，即使经验很丰富的开发人员写出的代码也会有违背这一原则的存在。</p>
-<h3 id="开闭原则原则（OCP）"><a href="#开闭原则原则（OCP）" class="headerlink" title="开闭原则原则（OCP）"></a>开闭原则原则（OCP）</h3><blockquote>
-<p>软件功能应该对拓展开放，对修改关闭。</p>
-</blockquote>
-<p>对拓展开发意味着当有新的需求或者变更发生时，可以进行拓展以适应新的情况。对修改关闭意味着代码一旦设计开发完成，就可以独立的进行工作，而不需要对代码内部进行修改。</p>
-<p>可拓展性是衡量软件质量的重要指标，在软件的生命周期中，需求的新增与变更是不可避免的，如果有某种方法，既可以拓展软件功能而不需要修改原有的代码，那这在软件开发和交付时是梦寐以求的。</p>
-<p>很多设计模式都是以达到OCP为目标的，例如装饰者模式，可以在不改变被装饰对象的情况下，通过包装一个类来拓展功能；策略模式通过制定策略接口，让不同的策略实现成为可能；适配器模式在不改变原有类的基础上，适配新的功能；观察者模式可以灵活的添加/删除观察者来拓展系统功能。</p>
-<h3 id="里氏替换原则（LSP）"><a href="#里氏替换原则（LSP）" class="headerlink" title="里氏替换原则（LSP）"></a>里氏替换原则（LSP）</h3><blockquote>
-<p>程序中的对象应该是可以在不改变程序正确性的前提下被它的子类所替换，即子类应该可以替换任何基类能够出现的地方，并且经过替换后，代码还能正常工作。</p>
-</blockquote>
-<p>违反LSP原则最为频繁的一个地方就是子类方法覆盖父类方法，并且更改了其中的含义，而这在里氏替换时会发生意想不到的问题，发生这种问题往往是错误的继承关系导致的。经典的设计<strong>正方形-矩形问题</strong>就反映了这个问题。</p>
-<p>按照常规理解，正方形是一个矩形，但是如果将正方形设计成矩形的子类，就会出现一些意料之外的问题。</p>
-<p>定义一个矩形类</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Rectangle</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">int</span> length<span class="token punctuation">;</span>
-    <span class="token keyword">int</span> width<span class="token punctuation">;</span>
-
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setLength</span><span class="token punctuation">(</span><span class="token keyword">int</span> length<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token keyword">this</span><span class="token punctuation">.</span>length <span class="token operator">=</span> length<span class="token punctuation">;</span>
+<h2 id="单元测试原则"><a href="#单元测试原则" class="headerlink" title="单元测试原则"></a>单元测试原则</h2><p>在写单元测试前，先要明确什么是单元测试，单元测试的原则是什么？明确这些问题前不妨先参考一下前人总结的单元测试First原则。</p>
+<p><img src="../Assets/file-20251120174055747.png" ></p>
+<p>在工作过程中经常见到一些无效的单测，通常是启动Spring容器、连接数据库、调用方法，最后控制台输出结果，这种并不能称之为有效的单测。</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token annotation punctuation">@RunWith</span><span class="token punctuation">(</span><span class="token class-name">SpringRunner</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span>
+<span class="token annotation punctuation">@SpringBootTest</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">HelloServiceTest</span> <span class="token punctuation">&#123;</span>
+ 
+    <span class="token annotation punctuation">@Autowired</span>
+    <span class="token keyword">private</span> <span class="token class-name">UserService</span> userService<span class="token punctuation">;</span>
+    <span class="token annotation punctuation">@Test</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">addUserTest</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token class-name">AddUserRequest</span> addUserRequest <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">AddUserRequest</span><span class="token punctuation">(</span><span class="token string">"zhangsan"</span><span class="token punctuation">,</span> <span class="token string">"18865899858"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">ResultDTO</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Long</span><span class="token punctuation">></span></span> addResult <span class="token operator">=</span> userService<span class="token punctuation">.</span><span class="token function">addUser</span><span class="token punctuation">(</span>addUserRequest<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>addResult<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setWidth</span><span class="token punctuation">(</span><span class="token keyword">int</span> width<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token keyword">this</span><span class="token punctuation">.</span>width <span class="token operator">=</span> width<span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-
-    <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">getArea</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token keyword">return</span> length <span class="token operator">*</span> width<span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>子类正方形继承父类矩形，由于正方形的长宽是相同的，重写两个 <em>setter</em> 方法保证长宽一致：</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Square</span> <span class="token keyword">extends</span> <span class="token class-name">Rectangle</span> <span class="token punctuation">&#123;</span>
-    
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setLength</span><span class="token punctuation">(</span><span class="token keyword">int</span> length<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token keyword">this</span><span class="token punctuation">.</span>length <span class="token operator">=</span> length<span class="token punctuation">;</span>
-        <span class="token keyword">this</span><span class="token punctuation">.</span>width <span class="token operator">=</span> length<span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setWidth</span><span class="token punctuation">(</span><span class="token keyword">int</span> width<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token keyword">this</span><span class="token punctuation">.</span>width <span class="token operator">=</span> width<span class="token punctuation">;</span>
-        <span class="token keyword">this</span><span class="token punctuation">.</span>length <span class="token operator">=</span> width<span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>这时我们在对矩形进行测试式极有可能出现问题，我们生产一个正方形，并且指派一个矩形质检员来负责检查这个正方形是否合格。质检员把长设为 4，宽设为 3，检查最后得到的面积是否为 12</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">boolean</span> <span class="token function">test</span><span class="token punctuation">(</span><span class="token class-name">Rectangle</span> rectangle<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    rectangle<span class="token punctuation">.</span><span class="token function">setLength</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    rectangle<span class="token punctuation">.</span><span class="token function">setWidth</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">return</span> rectangle<span class="token punctuation">.</span><span class="token function">getArea</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">4</span> <span class="token operator">*</span> <span class="token number">3</span><span class="token punctuation">;</span> <span class="token comment">// Oops... 9 != 12</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>问题出现了，矩形质检员并不知道这是一个正方形，他使用传统的质检矩形的方法来检查竟然发现这个正方形连矩形也不是，难道正方形不是矩形？</p>
-<p>其实对这个问题进行分析可以发现，矩形这个类同时包含了正方形和长方形两个语义，对于矩形而言，长宽是特征属性，正是长款决定了矩形是正方形还是长方形。而对于求面积这个功能并不是矩形所独有的功能，应该是所有封闭图形都有的功能。</p>
-<p>那么如何打破正方形不是矩形的悖论呢？抽象是解决问题的一个方法。</p>
-<p>长方形类和正方形类作为子类继承抽象矩形类。对于长方形，定义两个 <em>final</em> 修饰的字段 <em>length &amp; width</em> 表示长宽，这是为了保证特征属性的不可变。对于正方形，定义一个 <em>final</em> 修饰的字段 <em>sideLength</em> 表示边长，并且构造函数只传入一个参数以保证其作为正方形的正确性。</p>
-<p>分别重写父类的两个抽象方法和接口的一个抽象方法：</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">interface</span> <span class="token class-name">ClosedFigure</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">int</span> <span class="token function">getArea</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span>
-
-<span class="token keyword">abstract</span> <span class="token keyword">class</span> <span class="token class-name">AbstractRectangle</span> <span class="token keyword">implements</span> <span class="token class-name">ClosedFigure</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">abstract</span> <span class="token keyword">int</span> <span class="token function">getLength</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">abstract</span> <span class="token keyword">int</span> <span class="token function">getWidth</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>重写抽象矩形类作为父类，并实现 <em>ClosedFigure</em> 接口，这个接口的功能是求面积。求面积这个功能并不是矩阵本身具有的，而是它作为一个封闭图形能够实现的功能，所以需要用接口来实现。而抽象矩形定义两个方法，分别用来获取长和宽。</p>
-<p>长方形类和正方形类作为子类继承抽象矩形类。对于长方形，定义两个 <em>final</em> 修饰的字段 <em>length &amp; width</em> 表示长宽，这是为了保证特征属性的不可变。对于正方形，定义一个 <em>final</em> 修饰的字段 <em>sideLength</em> 表示边长，并且构造函数只传入一个参数以保证其作为正方形的正确性。</p>
-<p>分别重写父类的两个抽象方法和接口的一个抽象方法：</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">Rectangle</span> <span class="token keyword">extends</span> <span class="token class-name">AbstractRectangle</span> <span class="token keyword">implements</span> <span class="token class-name">ClosedFigure</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">private</span> <span class="token keyword">final</span> <span class="token keyword">int</span> length<span class="token punctuation">;</span>
-    <span class="token keyword">private</span> <span class="token keyword">final</span> <span class="token keyword">int</span> width<span class="token punctuation">;</span>
-
-    <span class="token class-name">Rectangle</span><span class="token punctuation">(</span><span class="token keyword">int</span> length<span class="token punctuation">,</span> <span class="token keyword">int</span> width<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token keyword">this</span><span class="token punctuation">.</span>length <span class="token operator">=</span> length<span class="token punctuation">;</span>
-        <span class="token keyword">this</span><span class="token punctuation">.</span>width <span class="token operator">=</span> width<span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-
-    <span class="token annotation punctuation">@Override</span>
-    <span class="token keyword">int</span> <span class="token function">getLength</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token keyword">return</span> length<span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-
-    <span class="token annotation punctuation">@Override</span>
-    <span class="token keyword">int</span> <span class="token function">getWidth</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token keyword">return</span> width<span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-
-    <span class="token annotation punctuation">@Override</span>
-    <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">getArea</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token keyword">return</span> length <span class="token operator">*</span> width<span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span>
-
-<span class="token keyword">class</span> <span class="token class-name">Square</span> <span class="token keyword">extends</span> <span class="token class-name">AbstractRectangle</span> <span class="token keyword">implements</span> <span class="token class-name">ClosedFigure</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">private</span> <span class="token keyword">final</span> <span class="token keyword">int</span> sideLength<span class="token punctuation">;</span>
-
-    <span class="token class-name">Square</span><span class="token punctuation">(</span><span class="token keyword">int</span> sideLength<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token keyword">this</span><span class="token punctuation">.</span>sideLength <span class="token operator">=</span> sideLength<span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-
-    <span class="token annotation punctuation">@Override</span>
-    <span class="token keyword">int</span> <span class="token function">getLength</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token keyword">return</span> sideLength<span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-
-    <span class="token annotation punctuation">@Override</span>
-    <span class="token keyword">int</span> <span class="token function">getWidth</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token keyword">return</span> sideLength<span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-
-    <span class="token annotation punctuation">@Override</span>
-    <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">getArea</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token keyword">return</span> sideLength <span class="token operator">*</span> sideLength<span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-    
-    <span class="token comment">// 追加功能，获取边长</span>
-    <span class="token keyword">int</span> <span class="token function">getSideLength</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token keyword">return</span> sideLength<span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="接口隔离原则（ISP）"><a href="#接口隔离原则（ISP）" class="headerlink" title="接口隔离原则（ISP）"></a>接口隔离原则（ISP）</h3><blockquote>
-<p>接口隔离原则要求一个类对另一个类的依赖性应当建立在最小的接口上，一个类只能有一个查询方法的接口。这样做可以避免角色冲突、污染代码等问题。同时，提供调用者需要的方法、屏蔽不需要的方法也是接口隔离的原则之一。</p>
-</blockquote>
-<p>遵循ISP的接口设计在依赖关系和语义表达上会更加精准，最大的好处是可以将外部依赖减少到最小，只需要依赖自己需要的东西而不需要关注自己不用的东西，这样可以显著的降低模块之间的耦合度。</p>
-<h3 id="依赖倒置原则（DIP）"><a href="#依赖倒置原则（DIP）" class="headerlink" title="依赖倒置原则（DIP）"></a>依赖倒置原则（DIP）</h3><blockquote>
-<p>模块之间交互应该依赖抽象，而不是实现。高层模块不应该依赖底层模块，应该依赖于抽象。抽象不应该依赖细节，细节应该依赖于抽象。</p>
-</blockquote>
-<p>一个类如果需要依赖于其他类协助完成功能，不应该直接依赖于特定类的实现，而是应该依赖于抽象，这也就是经常说的“面向接口编程”，面向接口编程正是DIP的一个体现。</p>
-<p>遵循DIP会大大提高系统的灵活性。如果类只关心它们用于支持的特定 契约，而不是特定类型的组件，就可以快速而轻松地修改这些低级服务 的功能，同时最大限度地降低对系统其余部分的影响。</p>
-<p>在Java应用中使用Logger框架有很多选择，比如log4j、logback、 common logging等。每个Logger的API和用法都稍有不同，如果要切换 不同的Logger框架，会非常复杂，可能要改动很多地方。产生这些问题 的原因是我们直接依赖了Logger框架，应用和Logger框架强耦合在一起了,而如果我们的业务代码中依赖SL4J而不是具体的实现，那么在需要切换日志框架时，只需要将相应的日志框架引入即可。</p>
-<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>上面的五项原则，正是告诉我们用抽象构建框架，用实现拓展细节的注意事项。</p>
+<p>上面使用<code>Spring Boot Test</code>实现了常见的单元测试，尽管在某些情况下使用Spring框架可以方便地进行单元测试，但依赖Spring的单元测试也存在一些潜在的坏处：</p>
 <ol>
-<li>单一职责告诉我们实现类要单一</li>
-<li>里氏替换告诉我们不要破坏继承结构</li>
-<li>依赖倒置告诉我们合理的依赖，面向接口编程</li>
-<li>接口隔离告诉我们在设计接口时要精简单一</li>
-<li>开闭原则是总纲，告诉我们要对拓展开发，对修改关闭</li>
+<li><strong>复杂性增加</strong>：依赖Spring框架进行单元测试会引入更多的复杂性。Spring本身是一个庞大的框架，包含了许多功能和组件，这可能使得测试用例变得更加复杂和难以理解。</li>
+<li><strong>启动时间延长</strong>：由于Spring框架需要初始化和加载各种组件、上下文等，因此依赖它的单元测试通常需要较长的启动时间。这可能导致测试套件的执行变慢，影响开发人员的迭代速度。</li>
+<li><strong>可靠性下降</strong>：依赖Spring的单元测试对外部环境和配置有一定的依赖。如果测试运行时的配置与实际生产环境不同，就可能导致测试结果不准确或测试用例无法正确执行。</li>
+<li><strong>难以调试和定位问题</strong>：当依赖Spring进行单元测试时，由于框架的封装和复杂性，测试失败或出现问题时定位和调试问题可能会更困难。这会增加调试时间和精力。</li>
+<li><strong>限制可移植性</strong>：如果测试依赖于Spring框架的特定功能或组件，那么这些测试可能在没有Spring环境的其他场景中无法运行。这限制了测试的可移植性和共享性。</li>
 </ol>
-<p>对于SOLID的遵守并不是是与否的问题，而是多与少的问题，也就是说我们一般不会说有没有遵守，而是说遵守程度的多少。任何事情都是过犹不及，设计原则也是一样，他要求我们灵活的使用这些原则，对于他们的遵守程度只要在一个合理范围内，就可以说是良好的设计。</p>
-<p>如下图所示，如果小圆形代表系统，五边形代表系统设计对于SOLID的遵循，大圆代表遵循SOLID的所有原则，那么设计1和设计2都是良好的设计，对于SOLID的遵循都在合理范围内，设计3和设计4虽然有些不足，但是也在可接受范围内，设计5则是严重不足，对各项原则都没有很好的遵守，而设计6则是遵循过度，设计5和设计6都是迫切需要重构的设计。</p>
-<img src="https://img2023.cnblogs.com/blog/2504560/202306/2504560-20230623004139028-1232854585.png"  style="zoom:80%;" />
-
-<h2 id="重构原则"><a href="#重构原则" class="headerlink" title="重构原则"></a>重构原则</h2><h3 id="避免重复（DRY）"><a href="#避免重复（DRY）" class="headerlink" title="避免重复（DRY）"></a>避免重复（DRY）</h3><blockquote>
-<p>DRY是Don’t Repeat Yourself的缩写，DRY原则特指在程序设计和计算 中避免重复代码，因为这样会降低代码的灵活性和简洁性，并且可能导致代码之间的矛盾。</p>
-</blockquote>
-<p>DRY是The Pragmatic Programmer 一书中提出的核心原则。系统的每一个功能都应该有唯一的实现。也就是说，如果多次遇到同样 的问题，就应该抽象出一个共同的解决方法，不要重复开发同样的功能。</p>
-<p>贯彻DRY可以让我们避免陷入“散弹式修改（Shotgun Surgery）”的麻烦，“散弹式修改”是Robert Martin在《重构》一书中列出的一个典型代码“坏味道”，由于代码重复而导致一个小小的改动，会牵扯很多地方。</p>
-<h3 id="不需要原则-YAGNI"><a href="#不需要原则-YAGNI" class="headerlink" title="不需要原则(YAGNI)"></a>不需要原则(YAGNI)</h3><blockquote>
-<p>YAGNI（You Ain’t Gonna Need It）的意思是“你不会需要它”，出自Ron Jeffries的 “极限编程” 一书，也就是系统设计编码时常说的避免过度设计。</p>
-</blockquote>
-<p>YAGNI是针对“大设计”（Big Design）提出来的，是“极限编程”提倡的 原则，是指你自以为有用的功能，实际上都是用不到的。</p>
-<p>这条原则的含义就是不要设计当前用不到的功能，不要去编写当前用不到的代码，核心思想是：<strong>不要过度设计</strong>。YAGNI也是敏捷开发方法中的一项原则，他的目的是避免花费过多的时间和精力在开发无用的代码上，从而提高开发效率和代码质量。</p>
-<p>但是，这里出现了一个问题。仔细推敲，会发现DRY原则和YAGNI 原则是不兼容的。前者追求“抽象化”，要求找到通用的解决方法；后者 追求“快和省”，意味着不要把精力放在抽象化上面，因为很可能“你不会需要它”。因此，就有了Rule of Three原则。</p>
-<h3 id="三次原则-Rule-of-Three"><a href="#三次原则-Rule-of-Three" class="headerlink" title="三次原则(Rule of Three)"></a>三次原则(Rule of Three)</h3><blockquote>
-<p>Rule of Three也被称为“三次原则”，是指当某个功能第三次出现时，就有必要进行“抽象化”了。这也是软件大师Martin Fowler在《重构》一书中提出的思想。</p>
-</blockquote>
-<p>三次原则指导我们可以通过以下步骤来写代码。 </p>
+<p>回归到单元测试的目的，我们需要用单元测试来验证数据库或redis这些系统依赖的操作吗？也许并不是，单元测试更重要是对于我们业务代码逻辑正确与否的测试。单元测试应该专注于被测试单元的逻辑，尽量减少外部依赖，而集成测试和端到端测试则更适合验证整个系统的功能和交互。</p>
+<p>单元测试应该尽量避免对Spring的依赖，但在某些情况下，使用Spring测试框架进行集成测试或端到端测试仍然是有意义的。这样的测试可以验证整个系统的交互和集成，并确保各个组件能够正确协同工作。因此，在选择测试策略时，需要根据具体情况进行权衡。</p>
+<h2 id="开发人员为什么不愿意写单元测试？"><a href="#开发人员为什么不愿意写单元测试？" class="headerlink" title="开发人员为什么不愿意写单元测试？"></a>开发人员为什么不愿意写单元测试？</h2><p>下面总结了一些开发人员不愿意编写单元测试的常见理由：</p>
 <ol>
-<li>第一次用到某个功能时，写一个特定的解决方法。 </li>
-<li>第二次又用到的时候，复制上一次的代码。 </li>
-<li>第三次出现的时候，才着手“抽象化”，写出通用的解决方法。</li>
+<li><strong>时间压力</strong>：开发周期紧张，任务繁重，缺乏足够的时间来编写单元测试。</li>
+<li><strong>浪费时间</strong>：认为编写单元测试是浪费时间，更愿意将时间用于功能开发。</li>
+<li><strong>公司文化</strong>：领导和公司对单元测试的重要性和价值没有充分认知，不重视单元测试。</li>
+<li><strong>项目管理优先</strong>：项目管理者关注进度和交付，往往忽视了单元测试所带来的好处。</li>
+<li><strong>不清楚如何编写有效的单元测试</strong>：缺乏对编写高质量单元测试的具体要求和实践经验。</li>
+<li><strong>工具和技术的不熟悉</strong>：缺乏熟悉和掌握单元测试所需的工具、框架和方法。</li>
+<li><strong>维护成本和持续迭代</strong>：单元测试维护成本高，随着需求的变化和系统的迭代，单元测试也需要不断地调整和维护。</li>
 </ol>
-<p>这3个步骤是对DRY原则和YAGNI原则的折中，是代码冗余和开发成本的平衡点。同时也提醒我们反思，是否做了很多无用的超前设计、代码 是否开始出现冗余、是否要重新设计。软件设计本身就是一个平衡的艺术，我们既反对过度设计，也绝对不赞成无设计。</p>
-<h3 id="保持简单、愚蠢原则-KISS"><a href="#保持简单、愚蠢原则-KISS" class="headerlink" title="保持简单、愚蠢原则(KISS)"></a>保持简单、愚蠢原则(KISS)</h3><blockquote>
-<p>KISS（Keep It Simple and Stupid）最早由Robert S. Kaplan在著名的平衡计分卡理论中提出。他认为把事情变复杂很简单，把事情变简单很复杂。好的目标不是越复杂越好，反而是越简洁越好。</p>
-</blockquote>
-<p>KISS原则被运用到软件设计领域中，常常会被误解，这成了很多没有设计能力的工程人员的挡箭牌。在此，我们一定要理解“简单”和“简陋”的区别。</p>
-<p>真正的“简单”绝不是毫无设计感，上来就写代码，而是“宝剑锋从磨砺 出”，亮剑的时候犹如一道华丽的闪电，背后却有着大量的艰辛和积累。真正的简单，不是不思考，而是先发散、再收敛。在纷繁复杂中，把握问题的核心。</p>
-<h3 id="最小惊奇原则-POLA"><a href="#最小惊奇原则-POLA" class="headerlink" title="最小惊奇原则(POLA)"></a>最小惊奇原则(POLA)</h3><blockquote>
-<p>POLA（Principle of least astonishment）是最小惊奇原则，写代码不是写侦探小说，要的是简单易懂，而不是时不时冒出个“惊喜”。</p>
-</blockquote>
-<p>如何减少惊奇，首要的当然切实可行的规范和标准，而且要有相应的机制保证标准和规范能够执行下去，还要针对不同的业务不断的总结设计规范，给出建议的落地实施方案，让大家对系统设计的整体认知处在相似的维度。</p>
-<h3 id="小结-1"><a href="#小结-1" class="headerlink" title="小结"></a>小结</h3><p>KISS原则讲的是“如何做”（尽量保持简单）</p>
-<p>YAGNI原则讲的是“要不要做”（当前不需要的，就不要做）</p>
-<p>三次原则讲的是“什么时候做”（需要做的时候就做）</p>
-<p>DRY原则讲的是“不要重复做”</p>
-<p>POLA原则讲的是“惊奇的事情不要做”</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>设计原则能够知道我们编写出更好的代码，但是<strong>不要教条</strong>，过度设计要不得，软件是一种平衡的艺术，我们不是为了设计原则而编码，他只是背后的指导思想，我们的目的是构建可用的软件系统，并尽量减少系统的复杂度，在不能满足所有的设计原则时，要懂得适当的取舍。</p>
+<p>许多开发人员对编写单元测试持抵触态度，主要基于以下三个原因：</p>
+<ol>
+<li><strong>主观意愿</strong>：某些开发人员可能没有养成编写单元测试的习惯，或者他们认为单元测试是额外的工作，会增加开发时间和精力。这种主观意愿问题可能源于个人偏好、经验不足或对测试价值的理解不够。</li>
+<li><strong>外部环境限制</strong>：有时，开发人员可能处于一些客观条件下，使得编写单元测试变得困难或不可行。这可能包括紧迫的项目截止日期、缺乏适当的测试工具或资源，或者组织文化不支持单元测试等。</li>
+<li><strong>缺乏知识和技能</strong>：一些开发人员可能不清楚如何编写有效的单元测试，缺乏相关的培训或经验。他们可能不熟悉测试框架、工具或最佳实践，并且不确定如何设计和覆盖各种测试用例。</li>
+</ol>
+<p>开发人员不愿意编写单元测试的主要原因，涵盖了主观和客观方面以及技能层面的问题。解决这些原因也许可以帮助我们更好地理解和解决开发人员在编写单元测试方面的挑战，通过培训、资源支持和文化的引导来推动更广泛的单元测试实践。</p>
+<h2 id="测试驱动开发-DDD"><a href="#测试驱动开发-DDD" class="headerlink" title="测试驱动开发(DDD)"></a>测试驱动开发(DDD)</h2><p>测试驱动开发是软件开发过程中的一种方法，其倡导先写测试程序，然后编码实现功能而得名。从实践来看，TDD可能只是一种理想状态，完全遵守TDD原则难度非常大，毕竟完成需求总是第一目的，而且需求总是不断变化的。</p>
+<p><strong>边开发边写单测</strong>：先写少量功能，紧接着写单测，重复这个过程，直到完成功能的开发</p>
+<p><strong>开发后写单测</strong>：这种方式往往效果是最差的，已完成的代码往往可测性比较差，而且补单测时很容易顺着当前实现的思路去测试代码，容易忽略实际的逻辑，导致单侧无效，最后开发后补单测往往会导致单测的场景覆盖率比较差。</p>
+<p>TDD虽然实践起来比较困难，但是它的思路还是值得我们借鉴，在进行功能设计前就要考虑到代码的可测性，虽然没有提前将单测写完，但是要考量单测的覆盖场景，这样会单测会比较高效。</p>
+<p>另一个方面，在分工合作的场景下，特别是在微服务架构中，使用单元测试和模拟（Mock）的方式非常适合验证自己的业务代码是否正确，尤其是当依赖的其他服务接口尚未完成或不稳定时。它允许团队以独立、快速、灵活和可靠的方式开发和测试业务功能，同时降低对其他服务的依赖和耦合。</p>
 
                 
             </div>
@@ -747,7 +601,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://gloamfox.github.io/20251118103750.html">https://gloamfox.github.io/20251118103750.html</a>
+                    <a href="https://gloamfox.github.io/posts/20260314085149.html">https://gloamfox.github.io/posts/20260314085149.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -785,16 +639,16 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/">
-                                    <span class="chip bg-color">软件设计</span>
+                                <a href="/tags/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/">
+                                    <span class="chip bg-color">单元测试</span>
                                 </a>
                             
-                                <a href="/tags/%E4%BB%A3%E7%A0%81%E9%87%8D%E6%9E%84/">
-                                    <span class="chip bg-color">代码重构</span>
+                                <a href="/tags/%E6%B5%8B%E8%AF%95%E9%A9%B1%E5%8A%A8%E5%BC%80%E5%8F%91/">
+                                    <span class="chip bg-color">测试驱动开发</span>
                                 </a>
                             
-                                <a href="/tags/SOLID%E5%8E%9F%E5%88%99/">
-                                    <span class="chip bg-color">SOLID原则</span>
+                                <a href="/tags/%E8%BD%AF%E4%BB%B6%E8%B4%A8%E9%87%8F/">
+                                    <span class="chip bg-color">软件质量</span>
                                 </a>
                             
                         </div>
@@ -968,31 +822,31 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/20251118103750.html">
+                <a href="/posts/20260316090820.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" >
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" >
                         
-                        <span class="card-title">Nginx配置HTTPS自签名证书教程</span>
+                        <span class="card-title">解耦复杂业务：基于责任链与上下文的重构实战</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            本文详细介绍如何在Windows环境下安装Nginx和OpenSSL，生成自签名HTTPS证书，并配置Nginx以支持HTTPS访问。
+                            本文介绍了订单计算方法的重构过程，通过过程分解、上下文处理和责任链模式，解决了代码复杂度高、业务逻辑混乱等问题，提升了代码的可维护性和可读性。
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2025-11-18
+                            <i class="far fa-clock fa-fw icon-date"></i>2026-03-16
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Web%E6%9C%8D%E5%8A%A1%E5%99%A8/" class="post-category">
-                                    Web服务器
+                            <a href="/categories/%E6%8A%80%E6%9C%AF%E5%AE%9E%E8%B7%B5/" class="post-category">
+                                    技术实践
                                 </a>
                             
                             
@@ -1002,16 +856,16 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Nginx/">
-                        <span class="chip bg-color">Nginx</span>
+                    <a href="/tags/%E4%BB%A3%E7%A0%81%E9%87%8D%E6%9E%84/">
+                        <span class="chip bg-color">代码重构</span>
                     </a>
                     
-                    <a href="/tags/HTTPS/">
-                        <span class="chip bg-color">HTTPS</span>
+                    <a href="/tags/%E8%B4%A3%E4%BB%BB%E9%93%BE%E6%A8%A1%E5%BC%8F/">
+                        <span class="chip bg-color">责任链模式</span>
                     </a>
                     
-                    <a href="/tags/OpenSSL/">
-                        <span class="chip bg-color">OpenSSL</span>
+                    <a href="/tags/%E9%A2%86%E5%9F%9F%E9%A9%B1%E5%8A%A8%E8%AE%BE%E8%AE%A1/">
+                        <span class="chip bg-color">领域驱动设计</span>
                     </a>
                     
                 </div>
@@ -1025,31 +879,31 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/20250919050557.html">
+                <a href="/posts/20260302020433.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" >
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" >
                         
-                        <span class="card-title">Markdown中的LaTeX公式指南</span>
+                        <span class="card-title">Obsidian打造个人知识库</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            本文详细介绍了如何在Markdown中使用LaTeX输入数学公式。
+                            作者分享从Typora转向Obsidian的笔记管理经验。
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2025-09-19
+                                <i class="far fa-clock fa-fw icon-date"></i>2026-03-02
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/" class="post-category">
-                                    技术教程
+                            <a href="/categories/%E5%B7%A5%E5%85%B7%E6%95%99%E7%A8%8B/" class="post-category">
+                                    工具教程
                                 </a>
                             
                             
@@ -1059,16 +913,16 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Markdown/">
-                        <span class="chip bg-color">Markdown</span>
+                    <a href="/tags/Obsidian/">
+                        <span class="chip bg-color">Obsidian</span>
                     </a>
                     
-                    <a href="/tags/LaTeX/">
-                        <span class="chip bg-color">LaTeX</span>
+                    <a href="/tags/%E7%AC%94%E8%AE%B0%E7%AE%A1%E7%90%86/">
+                        <span class="chip bg-color">笔记管理</span>
                     </a>
                     
-                    <a href="/tags/%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/">
-                        <span class="chip bg-color">数学公式</span>
+                    <a href="/tags/GitHub%E5%90%8C%E6%AD%A5/">
+                        <span class="chip bg-color">GitHub同步</span>
                     </a>
                     
                 </div>

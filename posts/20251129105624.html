@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="图片压缩,WebP,AVIF,加载速度,格式优化">
+    <meta name="keywords" content="二方库,版本控制,依赖管理,API设计,Maven">
     <meta name="description" content="君子以顺德，积小以高大。">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>图片压缩与格式优化指南 | 暮色之狐</title>
+    <title>项目依赖库的规范探索 | 暮色之狐</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -333,12 +333,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">图片压缩与格式优化指南</h1>
+                    <h1 class="description center-align post-title">项目依赖库的规范探索</h1>
                 </div>
             </div>
         </div>
@@ -454,16 +454,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E5%9B%BE%E7%89%87%E5%8E%8B%E7%BC%A9/">
-                                <span class="chip bg-color">图片压缩</span>
+                            <a href="/tags/%E4%BA%8C%E6%96%B9%E5%BA%93/">
+                                <span class="chip bg-color">二方库</span>
                             </a>
                         
-                            <a href="/tags/WebP%E6%A0%BC%E5%BC%8F/">
-                                <span class="chip bg-color">WebP格式</span>
+                            <a href="/tags/%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/">
+                                <span class="chip bg-color">版本管理</span>
                             </a>
                         
-                            <a href="/tags/AVIF%E6%A0%BC%E5%BC%8F/">
-                                <span class="chip bg-color">AVIF格式</span>
+                            <a href="/tags/%E4%BE%9D%E8%B5%96%E5%86%B2%E7%AA%81/">
+                                <span class="chip bg-color">依赖冲突</span>
                             </a>
                         
                     </div>
@@ -474,8 +474,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E7%BD%91%E7%AB%99%E4%BC%98%E5%8C%96/" class="post-category">
-                                网站优化
+                            <a href="/categories/%E6%8A%80%E6%9C%AF%E8%A7%84%E8%8C%83/" class="post-category">
+                                技术规范
                             </a>
                         
                     </div>
@@ -487,7 +487,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2026-03-23
+                    2025-11-29
                 </div>
                 
 
@@ -496,14 +496,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    386
+                    884
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    3 分
                 </div>
                 
 
@@ -523,21 +523,49 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>太大的图片不仅会影响加载速度，而且会让捉襟见肘的网站流量变得更多，为此有必要在上传图片前先确认下图片的大小，如果图片太大建议先进行一下图片的压缩。</p>
-<h2 id="图片压缩"><a href="#图片压缩" class="headerlink" title="图片压缩"></a>图片压缩</h2><p>那么如何压缩图片呢？个人使用的是一个在线的网站工具：<a target="_blank" rel="noopener" href="https://tinypng.com/">tinypng.com</a>，完全免费，可以批量压缩 20 张图片，最大 5MB。</p>
-<p>该网站还提供了：</p>
+                <h2 id="二方库"><a href="#二方库" class="headerlink" title="二方库"></a>二方库</h2><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>一方库</td>
+<td>指项目内的各个模块，一般不会被项目组外所使用，通常使用的是最新版本</td>
+</tr>
+<tr>
+<td>二方库</td>
+<td>指公司内部公共库，会被公司的各个项目组所使用，而且每个项目组所依赖的版本不一定一致，需要严格管理版本</td>
+</tr>
+<tr>
+<td>三方库</td>
+<td>一般代指公司外部的公共库，由公司外的开发团队进行版本维护，版本可控性难以控制，公司引入的时候要进行严格的版本验证</td>
+</tr>
+</tbody></table>
+<p>在实际项目中一个订单系统最简单的分层通常会是下面的结构</p>
+<p><img src="../Assets/%E9%A1%B9%E7%9B%AE%E4%BE%9D%E8%B5%96%E5%BA%93%E7%9A%84%E8%A7%84%E8%8C%83%E6%8E%A2%E7%B4%A2%202026-03-21%2014.12.54.svg" ></p>
+<p>order-server中是订单系统的业务代码，而order-api中会定义一些接口和入参和返回值，order-api会被同项目的其他系统所依赖，也有可能会被其他项目组的系统所依赖，所以一方库和二方库的界限一般比较模糊，下面主要探索api项目的结构规范。</p>
+<p>为避免二方库的依赖冲突问题，二方库的发布应该遵循以下原则</p>
 <ul>
-<li>API ，开发者可以调用它来为自己的产品提供图片压缩服务，但每月只能调用 500 次。</li>
-<li>Mac 的桌面端工具 TinyPNG4Mac，开源在 <a target="_blank" rel="noopener" href="https://github.com/kyleduo/TinyPNG4Mac">GitHub</a>，可以压缩超过 5M 的图片。</li>
+<li><strong>精简可控原则</strong>，移除一切不必要的API和依赖，只包含Service API，必要的领域模型对象，常量、枚举等，如果依赖其他的二方库或者三方库，尽量的使用<code>provided</code>引入，让使用者选择具体使用的版本号。</li>
+<li><strong>稳定可追溯原则</strong>，每个版本的变化应该被记录，除非用户主动升级版本，否则二方库的行为不应该发生变化。二方库的新增或者升级需保持功能点之外的依赖不应该发生改变，如果需要发生改变，需要给出明确的评估和验证。</li>
 </ul>
-<h2 id="webp-avif-格式"><a href="#webp-avif-格式" class="headerlink" title="webp / avif 格式"></a>webp / avif 格式</h2><p>webp 和 avif 格式比起传统的 jpg 格式体积更小，也是目前非常主流的图片格式。</p>
-<p>WebP 使用了更优的图像数据压缩算法，能带来更小的图片体积。例如微信文章里的很多图片都是 webp 格式。<br>avif 格式压缩的更厉害，体积更小。一些主流网站使用的图片就是avif格式的。</p>
-<p>但是这两种格式得考虑兼容性问题，读者可以去 <a target="_blank" rel="noopener" href="https://caniuse.com/">caniuse.com</a> 搜索各大浏览器的兼容情况。</p>
-<p>感兴趣的同学可以参考以下博客进行了解</p>
+<p>除以上两个原则外，还总结了以下需要注意的关键点</p>
 <ul>
-<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/1906095904517264210">什么是WebP？使用WebP格式的图片提供网站加载速度</a></li>
-<li><a target="_blank" rel="noopener" href="https://blog.zhheo.com/p/c552e321.html">WebP 相对于 PNG、JPG 有什么优势？ </a></li>
-<li><a target="_blank" rel="noopener" href="https://blog.zhheo.com/p/6a933575.html">实现全站图片使用avif格式，替代臃肿的webp教程 </a></li>
+<li><p>二方库中可以定义枚举类型，参数可以使用枚举类型，但接口的返回值禁止使用枚举类型或者包含枚举类型的对象。</p>
+<p>说明：随着功能的迭代，枚举类型有可能发生变化，参数中使用枚举类型可以限制相关字段的合法性，但是返回值中则不同，如果后续版本中枚举增加，而其他系统依赖的是低版本的库，那么使用者在进行反序列化时会发生异常。</p>
+</li>
+<li><p>二方库的新增或升级，保持除功能点之外的其它 jar 包仲裁结果不变。如果有改变，必须明确评 估和验证。</p>
+<p>说明：在升级时，进行 <code>dependency:resolve</code> 前后信息比对，如果仲裁结果完全不一致，那么通过 <code>dependency:tree</code> 命 令，找出差异点，进行排除 jar 包。</p>
+</li>
+<li><p>建议将依赖的放在父项目的<dependencies>中，所有版本仲裁放在<dependencyManagement>语句块中。</p>
+<p>说明：<dependencyManagement>只声明版本，并不引入，因此子项目中需要显示的引入，version和scope都读取<dependencyManagement>中的声明。而<dependencies>所有声明里的依赖都会自动引入，并默认被所有的子项目继承。</p>
+</li>
+<li><p>二方库中尽量不要有配置项，配置项应该由使用者进行定义</p>
+</li>
+<li><p>二方库应该尽量的简洁，如果必须使用一些三方库，尽量的使用provided引入，例如需要使用lombok，那么使用provided由使用者去进行引入，否则可能会造成版本冲突。</p>
+</li>
 </ul>
 
                 
@@ -565,7 +593,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://gloamfox.github.io/20260323060238.html">https://gloamfox.github.io/20260323060238.html</a>
+                    <a href="https://gloamfox.github.io/posts/20251129105624.html">https://gloamfox.github.io/posts/20251129105624.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -603,16 +631,16 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E5%9B%BE%E7%89%87%E5%8E%8B%E7%BC%A9/">
-                                    <span class="chip bg-color">图片压缩</span>
+                                <a href="/tags/%E4%BA%8C%E6%96%B9%E5%BA%93/">
+                                    <span class="chip bg-color">二方库</span>
                                 </a>
                             
-                                <a href="/tags/WebP%E6%A0%BC%E5%BC%8F/">
-                                    <span class="chip bg-color">WebP格式</span>
+                                <a href="/tags/%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/">
+                                    <span class="chip bg-color">版本管理</span>
                                 </a>
                             
-                                <a href="/tags/AVIF%E6%A0%BC%E5%BC%8F/">
-                                    <span class="chip bg-color">AVIF格式</span>
+                                <a href="/tags/%E4%BE%9D%E8%B5%96%E5%86%B2%E7%AA%81/">
+                                    <span class="chip bg-color">依赖冲突</span>
                                 </a>
                             
                         </div>
@@ -786,24 +814,24 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/20260324094537.html">
+                <a href="/posts/20251206105008.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" >
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" >
                         
-                        <span class="card-title">Hexo永久链接最佳实践：终极方案与优化指南</span>
+                        <span class="card-title">Ubuntu 安装 Docker 操作手册</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            本文对比多种Hexo永久链接方案，推荐基于文章创建时间的日期格式，无需插件、无乱码、链接稳定，是兼顾SEO与用户体验的最优解。
+                            本文档详细介绍了在 Ubuntu 系统上安装 Docker 引擎的步骤，包括系统要求、卸载旧版本、使用 apt 仓库安装、配置国内镜像源、验证安装以及后续配置等。
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2026-03-24
+                            <i class="far fa-clock fa-fw icon-date"></i>2025-12-06
                         </span>
                         <span class="publish-author">
                             
@@ -820,16 +848,16 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Hexo/">
-                        <span class="chip bg-color">Hexo</span>
+                    <a href="/tags/Ubuntu/">
+                        <span class="chip bg-color">Ubuntu</span>
                     </a>
                     
-                    <a href="/tags/%E6%B0%B8%E4%B9%85%E9%93%BE%E6%8E%A5/">
-                        <span class="chip bg-color">永久链接</span>
+                    <a href="/tags/Docker/">
+                        <span class="chip bg-color">Docker</span>
                     </a>
                     
-                    <a href="/tags/SEO%E4%BC%98%E5%8C%96/">
-                        <span class="chip bg-color">SEO优化</span>
+                    <a href="/tags/%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/">
+                        <span class="chip bg-color">安装教程</span>
                     </a>
                     
                 </div>
@@ -843,31 +871,31 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/20260319105942.html">
+                <a href="/posts/20251127044339.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" >
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" >
                         
-                        <span class="card-title">Hexo 移除图片 alt 属性的方法</span>
+                        <span class="card-title">Ubuntu 更换国内源提升下载速度</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            介绍如何在 Hexo 中通过 JavaScript 代码移除所有图片的 alt 属性，包括代码实现和注意事项。
+                            本文介绍了如何通过更换Ubuntu的软件源为国内源来解决下载速度慢的问题。
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2026-03-19
+                                <i class="far fa-clock fa-fw icon-date"></i>2025-11-27
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/" class="post-category">
-                                    前端开发
+                            <a href="/categories/%E7%B3%BB%E7%BB%9F%E8%BF%90%E7%BB%B4/" class="post-category">
+                                    系统运维
                                 </a>
                             
                             
@@ -877,16 +905,16 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Hexo/">
-                        <span class="chip bg-color">Hexo</span>
+                    <a href="/tags/Ubuntu/">
+                        <span class="chip bg-color">Ubuntu</span>
                     </a>
                     
-                    <a href="/tags/%E5%9B%BE%E7%89%87%E4%BC%98%E5%8C%96/">
-                        <span class="chip bg-color">图片优化</span>
+                    <a href="/tags/%E8%BD%AF%E4%BB%B6%E6%BA%90/">
+                        <span class="chip bg-color">软件源</span>
                     </a>
                     
-                    <a href="/tags/JavaScript/">
-                        <span class="chip bg-color">JavaScript</span>
+                    <a href="/tags/%E4%B8%8B%E8%BD%BD%E5%8A%A0%E9%80%9F/">
+                        <span class="chip bg-color">下载加速</span>
                     </a>
                     
                 </div>
