@@ -6,7 +6,7 @@
   <link href="https://gloamfox.github.io/atom.xml" rel="self"/>
   
   <link href="https://gloamfox.github.io/"/>
-  <updated>2026-03-24T03:20:27.214Z</updated>
+  <updated>2026-03-24T03:22:06.466Z</updated>
   <id>https://gloamfox.github.io/</id>
   
   <author>
@@ -18,10 +18,10 @@
   
   <entry>
     <title>Hexo永久链接最佳实践：终极方案与优化指南</title>
-    <link href="https://gloamfox.github.io/hexo-yong-jiu-lian-jie-zui-jia-shi-jian-zhong-ji-fang-an-yu-you-hua-zhi-nan/"/>
-    <id>https://gloamfox.github.io/hexo-yong-jiu-lian-jie-zui-jia-shi-jian-zhong-ji-fang-an-yu-you-hua-zhi-nan/</id>
+    <link href="https://gloamfox.github.io/20260324094537.html"/>
+    <id>https://gloamfox.github.io/20260324094537.html</id>
     <published>2026-03-24T09:45:37.000Z</published>
-    <updated>2026-03-24T03:20:27.214Z</updated>
+    <updated>2026-03-24T03:22:06.466Z</updated>
     
     
       
@@ -47,10 +47,10 @@
   
   <entry>
     <title>图片压缩与格式优化指南</title>
-    <link href="https://gloamfox.github.io/tu-pian-ya-suo-yu-ge-shi-you-hua-zhi-nan/"/>
-    <id>https://gloamfox.github.io/tu-pian-ya-suo-yu-ge-shi-you-hua-zhi-nan/</id>
+    <link href="https://gloamfox.github.io/20260323060238.html"/>
+    <id>https://gloamfox.github.io/20260323060238.html</id>
     <published>2026-03-23T06:02:38.000Z</published>
-    <updated>2026-03-24T03:20:27.216Z</updated>
+    <updated>2026-03-24T03:22:06.471Z</updated>
     
     
       
@@ -77,10 +77,10 @@
   
   <entry>
     <title>Hexo 移除图片 alt 属性的方法</title>
-    <link href="https://gloamfox.github.io/hexo-yi-chu-tu-pian-mo-ren-alt-shu-xing/"/>
-    <id>https://gloamfox.github.io/hexo-yi-chu-tu-pian-mo-ren-alt-shu-xing/</id>
+    <link href="https://gloamfox.github.io/20260319105942.html"/>
+    <id>https://gloamfox.github.io/20260319105942.html</id>
     <published>2026-03-19T10:59:42.000Z</published>
-    <updated>2026-03-24T03:20:27.216Z</updated>
+    <updated>2026-03-24T03:22:06.466Z</updated>
     
     
       
@@ -106,10 +106,10 @@
   
   <entry>
     <title>jsDelivr 缓存刷新与版本控制</title>
-    <link href="https://gloamfox.github.io/jsdelivr-huan-cun-shua-xin-yu-ban-ben-kong-zhi/"/>
-    <id>https://gloamfox.github.io/jsdelivr-huan-cun-shua-xin-yu-ban-ben-kong-zhi/</id>
+    <link href="https://gloamfox.github.io/20260319034656.html"/>
+    <id>https://gloamfox.github.io/20260319034656.html</id>
     <published>2026-03-19T03:46:56.000Z</published>
-    <updated>2026-03-24T03:20:27.216Z</updated>
+    <updated>2026-03-24T03:22:06.470Z</updated>
     
     
       
@@ -137,10 +137,10 @@
   
   <entry>
     <title>从零到一键发布：Obsidian + Hexo + GitHub Pages 个人博客搭建指南</title>
-    <link href="https://gloamfox.github.io/obsidian-bo-ke-da-jian-zhi-nan/"/>
-    <id>https://gloamfox.github.io/obsidian-bo-ke-da-jian-zhi-nan/</id>
+    <link href="https://gloamfox.github.io/20260318103427.html"/>
+    <id>https://gloamfox.github.io/20260318103427.html</id>
     <published>2026-03-18T10:34:27.000Z</published>
-    <updated>2026-03-24T03:20:27.216Z</updated>
+    <updated>2026-03-24T03:22:06.466Z</updated>
     
     
       
@@ -164,10 +164,10 @@
   
   <entry>
     <title>解耦复杂业务：基于责任链与上下文的重构实战</title>
-    <link href="https://gloamfox.github.io/jie-ou-fu-za-ye-wu-ji-yu-ze-ren-lian-yu-shang-xia-wen-de-chong-gou-shi-zhan/"/>
-    <id>https://gloamfox.github.io/jie-ou-fu-za-ye-wu-ji-yu-ze-ren-lian-yu-shang-xia-wen-de-chong-gou-shi-zhan/</id>
+    <link href="https://gloamfox.github.io/20260316090820.html"/>
+    <id>https://gloamfox.github.io/20260316090820.html</id>
     <published>2026-03-16T09:08:20.000Z</published>
-    <updated>2026-03-24T03:20:27.216Z</updated>
+    <updated>2026-03-24T03:22:06.472Z</updated>
     
     
       
@@ -193,10 +193,10 @@
   
   <entry>
     <title>单元测试的困境与破局：为何我们不愿写，以及如何高效地写</title>
-    <link href="https://gloamfox.github.io/dan-yuan-ce-shi-de-kun-jing-yu-po-ju-wei-he-wo-men-bu-yuan-xie-yi-ji-ru-he-gao-xiao-di-xie/"/>
-    <id>https://gloamfox.github.io/dan-yuan-ce-shi-de-kun-jing-yu-po-ju-wei-he-wo-men-bu-yuan-xie-yi-ji-ru-he-gao-xiao-di-xie/</id>
+    <link href="https://gloamfox.github.io/20260314085149.html"/>
+    <id>https://gloamfox.github.io/20260314085149.html</id>
     <published>2026-03-14T08:51:49.000Z</published>
-    <updated>2026-03-24T03:20:27.216Z</updated>
+    <updated>2026-03-24T03:22:06.470Z</updated>
     
     
       
@@ -225,10 +225,10 @@
   
   <entry>
     <title>Obsidian打造个人知识库</title>
-    <link href="https://gloamfox.github.io/obsidian-da-zao-ge-ren-zhi-shi-ku/"/>
-    <id>https://gloamfox.github.io/obsidian-da-zao-ge-ren-zhi-shi-ku/</id>
+    <link href="https://gloamfox.github.io/20260302020433.html"/>
+    <id>https://gloamfox.github.io/20260302020433.html</id>
     <published>2026-03-02T02:04:33.000Z</published>
-    <updated>2026-03-24T03:20:27.216Z</updated>
+    <updated>2026-03-24T03:22:06.468Z</updated>
     
     
       
@@ -255,10 +255,10 @@
   
   <entry>
     <title>告别分类焦虑：让笔记自然生长流动</title>
-    <link href="https://gloamfox.github.io/gao-bie-fen-lei-jiao-lu-rang-bi-ji-zi-ran-sheng-chang-liu-dong/"/>
-    <id>https://gloamfox.github.io/gao-bie-fen-lei-jiao-lu-rang-bi-ji-zi-ran-sheng-chang-liu-dong/</id>
+    <link href="https://gloamfox.github.io/20260302020433.html"/>
+    <id>https://gloamfox.github.io/20260302020433.html</id>
     <published>2026-03-02T02:04:33.000Z</published>
-    <updated>2026-03-24T03:20:27.216Z</updated>
+    <updated>2026-03-24T03:22:06.470Z</updated>
     
     
       
@@ -284,10 +284,10 @@
   
   <entry>
     <title>技术面试经验与思考</title>
-    <link href="https://gloamfox.github.io/ru-he-zuo-hao-ji-zhu-mian-shi/"/>
-    <id>https://gloamfox.github.io/ru-he-zuo-hao-ji-zhu-mian-shi/</id>
+    <link href="https://gloamfox.github.io/20260302020433.html"/>
+    <id>https://gloamfox.github.io/20260302020433.html</id>
     <published>2026-03-02T02:04:33.000Z</published>
-    <updated>2026-03-24T03:20:27.216Z</updated>
+    <updated>2026-03-24T03:22:06.471Z</updated>
     
     
       
@@ -316,10 +316,10 @@
   
   <entry>
     <title>性能优化全景图：七大维度深度解析</title>
-    <link href="https://gloamfox.github.io/xing-neng-you-hua-quan-jing-tu-qi-da-wei-du-shen-du-jie-xi/"/>
-    <id>https://gloamfox.github.io/xing-neng-you-hua-quan-jing-tu-qi-da-wei-du-shen-du-jie-xi/</id>
+    <link href="https://gloamfox.github.io/20260302020433.html"/>
+    <id>https://gloamfox.github.io/20260302020433.html</id>
     <published>2026-03-02T02:04:33.000Z</published>
-    <updated>2026-03-24T03:20:27.216Z</updated>
+    <updated>2026-03-24T03:22:06.471Z</updated>
     
     
       
@@ -345,10 +345,10 @@
   
   <entry>
     <title>翻译翻译什么是惊喜：一次线上问题的思考</title>
-    <link href="https://gloamfox.github.io/fan-yi-fan-yi-shi-me-shi-liang-xi-yi-ci-xian-shang-wen-ti-de-si-kao/"/>
-    <id>https://gloamfox.github.io/fan-yi-fan-yi-shi-me-shi-liang-xi-yi-ci-xian-shang-wen-ti-de-si-kao/</id>
+    <link href="https://gloamfox.github.io/20260302020433.html"/>
+    <id>https://gloamfox.github.io/20260302020433.html</id>
     <published>2026-03-02T02:04:33.000Z</published>
-    <updated>2026-03-24T03:20:27.216Z</updated>
+    <updated>2026-03-24T03:22:06.472Z</updated>
     
     
       
@@ -377,10 +377,10 @@
   
   <entry>
     <title>避免这些编程陷阱：七种让你代码失控的开发风格</title>
-    <link href="https://gloamfox.github.io/bi-mian-zhe-xie-bian-cheng-xian-jing-qi-chong-rang-ni-dai-ma-shi-kong-de-kai-fa-feng-ge/"/>
-    <id>https://gloamfox.github.io/bi-mian-zhe-xie-bian-cheng-xian-jing-qi-chong-rang-ni-dai-ma-shi-kong-de-kai-fa-feng-ge/</id>
+    <link href="https://gloamfox.github.io/20260302020433.html"/>
+    <id>https://gloamfox.github.io/20260302020433.html</id>
     <published>2026-03-02T02:04:33.000Z</published>
-    <updated>2026-03-24T03:20:27.217Z</updated>
+    <updated>2026-03-24T03:22:06.473Z</updated>
     
     
       
@@ -406,10 +406,10 @@
   
   <entry>
     <title>进制转换与数据编码</title>
-    <link href="https://gloamfox.github.io/shu-ju-de-biao-shi/"/>
-    <id>https://gloamfox.github.io/shu-ju-de-biao-shi/</id>
+    <link href="https://gloamfox.github.io/20260301122243.html"/>
+    <id>https://gloamfox.github.io/20260301122243.html</id>
     <published>2026-03-01T12:22:43.000Z</published>
-    <updated>2026-03-24T03:20:27.216Z</updated>
+    <updated>2026-03-24T03:22:06.472Z</updated>
     
     
       
@@ -435,10 +435,10 @@
   
   <entry>
     <title>计算机组成原理</title>
-    <link href="https://gloamfox.github.io/ji-suan-ji-jie-gou/"/>
-    <id>https://gloamfox.github.io/ji-suan-ji-jie-gou/</id>
+    <link href="https://gloamfox.github.io/20260301122243.html"/>
+    <id>https://gloamfox.github.io/20260301122243.html</id>
     <published>2026-03-01T12:22:43.000Z</published>
-    <updated>2026-03-24T03:20:27.217Z</updated>
+    <updated>2026-03-24T03:22:06.472Z</updated>
     
     
       
@@ -464,10 +464,10 @@
   
   <entry>
     <title>nvs 安装与使用指南</title>
-    <link href="https://gloamfox.github.io/shi-yong-nvs-gong-ju-qie-huan-node-ban-ben/"/>
-    <id>https://gloamfox.github.io/shi-yong-nvs-gong-ju-qie-huan-node-ban-ben/</id>
+    <link href="https://gloamfox.github.io/20260226043540.html"/>
+    <id>https://gloamfox.github.io/20260226043540.html</id>
     <published>2026-02-26T04:35:40.000Z</published>
-    <updated>2026-03-24T03:20:27.216Z</updated>
+    <updated>2026-03-24T03:22:06.470Z</updated>
     
     
       
@@ -494,10 +494,10 @@
   
   <entry>
     <title>蒙提霍尔问题-经典的三扇门问题</title>
-    <link href="https://gloamfox.github.io/meng-ti-huo-er-wen-ti-jing-dian-de-san-shan-men-wen-ti/"/>
-    <id>https://gloamfox.github.io/meng-ti-huo-er-wen-ti-jing-dian-de-san-shan-men-wen-ti/</id>
+    <link href="https://gloamfox.github.io/20260130032221.html"/>
+    <id>https://gloamfox.github.io/20260130032221.html</id>
     <published>2026-01-30T03:22:21.000Z</published>
-    <updated>2026-03-24T03:20:27.216Z</updated>
+    <updated>2026-03-24T03:22:06.472Z</updated>
     
     
       
@@ -525,10 +525,10 @@
   
   <entry>
     <title>Java布尔类型命名规范与序列化问题分析</title>
-    <link href="https://gloamfox.github.io/zhi-qi-ran-zhi-qi-suo-yi-ran-boolean-lei-xing-ming-ming-gui-fan/"/>
-    <id>https://gloamfox.github.io/zhi-qi-ran-zhi-qi-suo-yi-ran-boolean-lei-xing-ming-ming-gui-fan/</id>
+    <link href="https://gloamfox.github.io/20251206112842.html"/>
+    <id>https://gloamfox.github.io/20251206112842.html</id>
     <published>2025-12-06T11:28:42.000Z</published>
-    <updated>2026-03-24T03:20:27.216Z</updated>
+    <updated>2026-03-24T03:22:06.472Z</updated>
     
     
       
@@ -554,10 +554,10 @@
   
   <entry>
     <title>Ubuntu 安装 Docker 操作手册</title>
-    <link href="https://gloamfox.github.io/ubuntu-an-zhuang-docker/"/>
-    <id>https://gloamfox.github.io/ubuntu-an-zhuang-docker/</id>
+    <link href="https://gloamfox.github.io/20251206105008.html"/>
+    <id>https://gloamfox.github.io/20251206105008.html</id>
     <published>2025-12-06T10:50:08.000Z</published>
-    <updated>2026-03-24T03:20:27.216Z</updated>
+    <updated>2026-03-24T03:22:06.469Z</updated>
     
     
       
@@ -584,10 +584,10 @@
   
   <entry>
     <title>项目依赖库的规范探索</title>
-    <link href="https://gloamfox.github.io/xiang-mu-yi-lai-ku-de-gui-fan-tan-suo/"/>
-    <id>https://gloamfox.github.io/xiang-mu-yi-lai-ku-de-gui-fan-tan-suo/</id>
+    <link href="https://gloamfox.github.io/20251129105624.html"/>
+    <id>https://gloamfox.github.io/20251129105624.html</id>
     <published>2025-11-29T10:56:24.000Z</published>
-    <updated>2026-03-24T03:20:27.217Z</updated>
+    <updated>2026-03-24T03:22:06.473Z</updated>
     
     
       
