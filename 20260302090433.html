@@ -1,0 +1,1700 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="用户空间,内核空间,IO模型,多路复用,系统调用">
+    <meta name="description" content="君子以顺德，积小以高大。">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>高并发基石：IO多路复用深度剖析 | 暮色之狐</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="暮色之狐" type="application/atom+xml">
+</head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" >
+                    
+                    <span class="logo-span">暮色之狐</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="" class="waves-effect waves-light">
+
+      
+      <i class="fas fa-list" style="zoom: 0.6;"></i>
+      
+      <span>统计</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="/tags">
+          
+          <i class="fas fa-tags" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>标签</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/categories">
+          
+          <i class="fas fa-bookmark" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>分类</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/archives">
+          
+          <i class="fas fa-archive" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>归档</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">暮色之狐</div>
+        <div class="logo-desc">
+            
+            君子以顺德，积小以高大。
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fa-fw fas fa-list"></i>
+			
+			统计
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul  style="background:  ;" >
+              
+                <li>
+
+                  <a href="/tags " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-tags" style="position: absolute;left:50px" ></i>
+			      
+		          <span>标签</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/categories " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-bookmark" style="position: absolute;left:50px" ></i>
+			      
+		          <span>分类</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/archives " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-archive" style="position: absolute;left:50px" ></i>
+			      
+		          <span>归档</span>
+                  </a>
+                </li>
+              
+            </ul>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/gloamfox" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/gloamfox" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">高并发基石：IO多路复用深度剖析</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">
+                                <span class="chip bg-color">操作系统</span>
+                            </a>
+                        
+                            <a href="/tags/IO%E6%A8%A1%E5%9E%8B/">
+                                <span class="chip bg-color">IO模型</span>
+                            </a>
+                        
+                            <a href="/tags/%E7%B3%BB%E7%BB%9F%E8%B0%83%E7%94%A8/">
+                                <span class="chip bg-color">系统调用</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" class="post-category">
+                                计算机科学
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2026-03-02
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    4.3k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    15 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="用户空间-内核空间"><a href="#用户空间-内核空间" class="headerlink" title="用户空间-内核空间"></a>用户空间-内核空间</h1><p>我们通常将操作系统内核和应用程序运行的空间分为内核空间和用户空间，这是为了提供保护和控制。下面将详细解释这两个概念，并给出它们之间的区别和交互方式。</p>
+<ul>
+<li><strong>用户空间（User Space）</strong>：这是应用程序运行的空间。它只能访问受限的资源，不能直接访问硬件设备等敏感资源。如果应用程序需要执行特权操作（如读写磁盘、发送网络数据包等），它必须通过系统调用（System Call）请求内核代为执行。</li>
+<li><strong>内核空间（Kernel Space）</strong>：这是操作系统内核运行的空间，具有最高的特权级别，可以访问所有硬件资源和内存。内核负责管理进程调度、内存管理、设备驱动、系统安全等。</li>
+</ul>
+<h2 id="为什么要有这样的分离？"><a href="#为什么要有这样的分离？" class="headerlink" title="为什么要有这样的分离？"></a>为什么要有这样的分离？</h2><ol>
+<li><strong>稳定性与安全性</strong>：如果应用程序可以直接访问硬件和内核数据，那么一个应用程序的错误可能导致整个系统崩溃。通过分离，即使应用程序崩溃，也不会影响内核和其他应用程序。</li>
+<li><strong>多任务与资源管理</strong>：内核可以公平地分配资源给多个应用程序，并防止应用程序之间相互干扰。</li>
+<li><strong>虚拟内存</strong>：每个进程都有自己的虚拟地址空间，其中一部分映射到内核空间，一部分映射到用户空间。这样，每个进程都认为它独占了整个内存，而实际上内核在背后管理物理内存的分配。</li>
+</ol>
+<h2 id="系统调用过程"><a href="#系统调用过程" class="headerlink" title="系统调用过程"></a>系统调用过程</h2><p>下图显示了以文件读取为例的系统调用过程</p>
+<p><img src="../../file-20251123212554878.md" ></p>
+<p>总的来说，一次IO操作分为两个阶段</p>
+<ol>
+<li>数据准备阶段</li>
+<li>内核空间复制到用户进程缓冲区阶段</li>
+</ol>
+<h1 id="IO的五种模型"><a href="#IO的五种模型" class="headerlink" title="IO的五种模型"></a>IO的五种模型</h1><h2 id="blocking-IO-阻塞式IO模型"><a href="#blocking-IO-阻塞式IO模型" class="headerlink" title="blocking IO 阻塞式IO模型"></a>blocking IO 阻塞式IO模型</h2><p>阻塞式IO是最传统、最简单的IO模型，在这种模型中，当应用程序发起一个IO操作（如读取网络数据）时，调用线程会被挂起，直到所请求的数据完全准备好并被复制到应用程序的缓冲区中。</p>
+<p><img src="../../file-20251123212554879.md" ></p>
+<h3 id="技术特点"><a href="#技术特点" class="headerlink" title="技术特点"></a>技术特点</h3><ul>
+<li><p>✅ <strong>编程简单直观</strong>：代码逻辑清晰，易于理解和维护</p>
+</li>
+<li><p>✅ <strong>线程模型简单</strong>：一个连接一个线程，逻辑隔离性好</p>
+</li>
+<li><p>✅ <strong>资源消耗可预测</strong>：每个连接的内存占用相对固定，不消耗CPU资源</p>
+</li>
+<li><p>❌ <strong>线程资源浪费</strong>：大量线程处于阻塞等待状态，CPU利用率低</p>
+</li>
+<li><p>❌ <strong>扩展性差</strong>：受限于操作系统线程数限制（通常几千个）</p>
+</li>
+<li><p>❌ <strong>响应延迟</strong>：每个操作都必须等待I/O完成</p>
+</li>
+</ul>
+<h2 id="noblocking-IO-非阻塞式IO模型"><a href="#noblocking-IO-非阻塞式IO模型" class="headerlink" title="noblocking IO 非阻塞式IO模型"></a>noblocking IO 非阻塞式IO模型</h2><p>非阻塞式IO模型，应用发起IO系统调用后，如果内核缓冲区没有数据，需要到IO设备中读取，进程返回一个错误而不会被阻塞；进程发起IO系统调用后，如果内核缓冲区有数据，内核就会把数据返回进程。</p>
+<p><img src="../../file-20251123212554879%201.md" ></p>
+<h3 id="技术特点-1"><a href="#技术特点-1" class="headerlink" title="技术特点"></a>技术特点</h3><ul>
+<li><p>✅ <strong>线程不阻塞</strong>：I/O操作不会阻塞线程，可以同时处理其他任务</p>
+</li>
+<li><p>✅ <strong>更好的资源利用</strong>：单个线程可以管理多个连接</p>
+</li>
+<li><p>✅ <strong>响应性提高</strong>：不会因为单个连接的慢I/O而影响其他连接</p>
+</li>
+<li><p>❌ <strong>CPU资源浪费</strong>：需要不断轮询检查数据是否就绪，导致CPU空转</p>
+</li>
+<li><p>❌ <strong>编程复杂度高</strong>：需要手动管理连接状态和轮询逻辑</p>
+</li>
+<li><p>❌ <strong>延迟问题</strong>：数据就绪后可能不能立即被处理，需要等待下一次轮询</p>
+</li>
+<li><p>❌ <strong>系统调用开销</strong>：频繁的系统调用增加开销</p>
+</li>
+</ul>
+<h2 id="signal-driven-IO-信号驱动IO"><a href="#signal-driven-IO-信号驱动IO" class="headerlink" title="signal driven IO 信号驱动IO"></a>signal driven IO 信号驱动IO</h2><p>当进程发起一个IO操作，会向内核注册一个信号处理函数，然后进程返回不阻塞；当内核数据就绪时会发送一个信号给进程，进程便在信号处理函数中调用IO读取数据。</p>
+<p><img src="../../file-20251123212554880.md" ></p>
+<h3 id="技术特点-2"><a href="#技术特点-2" class="headerlink" title="技术特点"></a>技术特点</h3><ul>
+<li><p>✅ <strong>真正的异步通知</strong>：内核主动通知应用程序，无需轮询</p>
+</li>
+<li><p>✅ <strong>CPU效率高</strong>：应用程序在等待期间可以执行其他任务</p>
+</li>
+<li><p>✅ <strong>响应及时</strong>：数据就绪后立即得到处理</p>
+</li>
+<li><p>✅ <strong>资源利用率好</strong>：单个进程可以处理多个连接</p>
+</li>
+<li><p>❌ <strong>编程复杂度高</strong>：信号处理需要特殊注意，存在重入问题，信号时序问题难以调试</p>
+</li>
+<li><p>❌ <strong>平台依赖性</strong>：不同Unix系统的实现有差异，LINUX 2.5 版本内核首现，2.6 版本产品的内核标准特性</p>
+</li>
+<li><p>❌ <strong>信号处理限制</strong>：信号处理函数中只能使用异步信号安全的函数</p>
+</li>
+<li><p>❌ <strong>扩展性有限</strong>：对于大量连接，信号可能丢失或合并</p>
+</li>
+</ul>
+<p>信号驱动I/O模型在理论上是优雅的异步解决方案，但在实际应用中存在诸多限制。它提供了真正的异步通知机制，但受限于信号处理的特性和平台差异性，在现代高并发服务器中并未被广泛采用。</p>
+<h2 id="asynchronous-IO-异步IO模型"><a href="#asynchronous-IO-异步IO模型" class="headerlink" title="asynchronous IO 异步IO模型"></a>asynchronous IO 异步IO模型</h2><p>应用程序发起一个I/O操作后立即返回，不会阻塞当前线程。当整个I/O操作（包括数据从内核空间到用户空间的拷贝）完成后，内核会通知应用程序。与信号驱动I/O不同，异步I/O是在<strong>操作完成时</strong>通知，而不是在<strong>可以开始操作时</strong>通知。</p>
+<p><img src="../../file-20251123212554880%201.md" ></p>
+<h3 id="技术特点-3"><a href="#技术特点-3" class="headerlink" title="技术特点"></a>技术特点</h3><ul>
+<li><p>✅ <strong>真正的异步</strong>：应用程序发起I/O后立即返回，内核完成所有工作</p>
+</li>
+<li><p>✅ <strong>无阻塞</strong>：线程永远不会因为I/O操作而阻塞</p>
+</li>
+<li><p>✅ <strong>高性能</strong>：可以高效处理大量并发连接</p>
+</li>
+<li><p>✅ <strong>资源利用率高</strong>：用少量线程处理大量I/O操作</p>
+</li>
+<li><p>✅ <strong>编程模型清晰</strong>：回调机制使代码逻辑清晰</p>
+</li>
+<li><p>❌ <strong>编程复杂度高</strong>：回调地狱（Callback Hell）问题</p>
+</li>
+<li><p>❌ <strong>调试困难</strong>：异步执行流程难以跟踪和调试</p>
+</li>
+<li><p>❌ <strong>平台支持有限</strong>：不同操作系统实现差异大</p>
+</li>
+<li><p>❌ <strong>内存管理复杂</strong>：需要手动管理缓冲区生命周期</p>
+</li>
+<li><p>❌ <strong>错误处理复杂</strong>：异常可能在任意回调中发生</p>
+</li>
+</ul>
+<h2 id="multiplexing-IO-多路复用IO模型"><a href="#multiplexing-IO-多路复用IO模型" class="headerlink" title="multiplexing IO 多路复用IO模型"></a>multiplexing IO 多路复用IO模型</h2><p><strong>I/O多路复用</strong>（I/O Multiplexing）是一种同步I/O模型，它允许单个进程/线程同时监视多个文件描述符（通常是网络套接字），并在其中任何一个或多个描述符就绪时得到通知。这种模型的核心思想是<strong>使用一个专门的系统调用来同时监视多个I/O通道，而不是为每个通道创建单独的线程</strong>。</p>
+<p>多路复用主要有三种技术：select、poll、epoll。epoll是最新的，也是目前最好的多路复用技术。</p>
+<h3 id="技术特点-4"><a href="#技术特点-4" class="headerlink" title="技术特点"></a>技术特点</h3><ul>
+<li><p>✅ <strong>高并发支持</strong>：单个线程可以处理成千上万个连接</p>
+</li>
+<li><p>✅ <strong>资源效率高</strong>：大幅减少线程数量和内存开销</p>
+</li>
+<li><p>✅ <strong>响应性好</strong>：能够及时处理多个连接的事件</p>
+</li>
+<li><p>✅ <strong>可扩展性强</strong>：连接数增加时性能下降平缓</p>
+</li>
+<li><p>✅ <strong>避免轮询开销</strong>：内核通知机制，无需主动检查</p>
+</li>
+<li><p>❌ <strong>编程复杂度高</strong>：需要管理连接状态和事件处理</p>
+</li>
+<li><p>❌ <strong>调试困难</strong>：异步事件流难以跟踪</p>
+</li>
+<li><p>❌ <strong>平台差异</strong>：不同操作系统实现不同</p>
+</li>
+<li><p>❌ <strong>缓冲区管理</strong>：需要手动管理数据缓冲区</p>
+</li>
+<li><p>❌ <strong>错误处理复杂</strong>：需要在多个点处理异常</p>
+</li>
+</ul>
+<h1 id="IO多路复用详解"><a href="#IO多路复用详解" class="headerlink" title="IO多路复用详解"></a>IO多路复用详解</h1><h2 id="select"><a href="#select" class="headerlink" title="select"></a>select</h2><h3 id="什么是-fd-set？"><a href="#什么是-fd-set？" class="headerlink" title="什么是 fd_set？"></a>什么是 fd_set？</h3><p><code>fd_set</code> 是一个<strong>文件描述符集合</strong>的数据结构，用于在 select 系统中告诉内核：”请帮我监视这些文件描述符，当它们有I/O活动时通知我”。在大多数系统中，fd_set 实际上是一个位图(bit array)</p>
+<p>在调用select之前，我们需要初始化fd_set，并将我们想要监视的文件描述符添加到fd_set中。</p>
+<h3 id="select-工作流程"><a href="#select-工作流程" class="headerlink" title="select 工作流程"></a>select 工作流程</h3><p><img src="../../file-20251123212554881.md" ></p>
+<h3 id="技术特点-5"><a href="#技术特点-5" class="headerlink" title="技术特点"></a>技术特点</h3><ul>
+<li>✅ <strong>同步模型简单</strong>：编程模型相对简单，符合直觉</li>
+<li>✅ <strong>跨平台兼容</strong>：几乎所有Unix-like系统都支持</li>
+<li>✅ <strong>超时控制</strong>：可以精确控制等待时间</li>
+<li>❌ <strong>性能瓶颈</strong>：每次调用都要遍历所有fd，O(n)复杂度</li>
+<li>❌ <strong>fd数量限制</strong>：通常最多1024个文件描述符</li>
+<li>❌ <strong>内存拷贝开销</strong>：每次都要在用户空间和内核空间之间拷贝fd_set</li>
+<li>❌ <strong>重复工作</strong>：即使只有一个fd就绪，也要检查所有fd</li>
+</ul>
+<h2 id="poll"><a href="#poll" class="headerlink" title="poll"></a>poll</h2><p>poll 是 select 的改进版，解决了 select 的一些关键限制。它使用<strong>pollfd结构数组</strong>而不是位图来表示文件描述符，从而突破了文件描述符数量的限制。</p>
+<h3 id="pollfd-数据结构"><a href="#pollfd-数据结构" class="headerlink" title="pollfd 数据结构"></a>pollfd 数据结构</h3><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;poll.h></span></span>
+
+<span class="token keyword">struct</span> <span class="token class-name">pollfd</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">int</span>   fd<span class="token punctuation">;</span>         <span class="token comment">/* 文件描述符 */</span>
+    <span class="token keyword">short</span> events<span class="token punctuation">;</span>     <span class="token comment">/* 请求监视的事件 */</span>
+    <span class="token keyword">short</span> revents<span class="token punctuation">;</span>    <span class="token comment">/* 实际发生的事件 */</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="事件类型常量"><a href="#事件类型常量" class="headerlink" title="事件类型常量"></a>事件类型常量</h3><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token comment">// 输入事件（可读）</span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">POLLIN</span>      <span class="token expression"><span class="token number">0x001</span>   </span><span class="token comment">// 有数据可读</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">POLLPRI</span>     <span class="token expression"><span class="token number">0x002</span>   </span><span class="token comment">// 有紧急数据可读</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">POLLRDNORM</span>  <span class="token expression"><span class="token number">0x040</span>   </span><span class="token comment">// 普通数据可读</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">POLLRDBAND</span>  <span class="token expression"><span class="token number">0x080</span>   </span><span class="token comment">// 优先级带数据可读</span></span>
+
+<span class="token comment">// 输出事件（可写）  </span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">POLLOUT</span>     <span class="token expression"><span class="token number">0x004</span>   </span><span class="token comment">// 现在可以写数据</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">POLLWRNORM</span>  <span class="token expression"><span class="token number">0x100</span>   </span><span class="token comment">// 可以写普通数据</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">POLLWRBAND</span>  <span class="token expression"><span class="token number">0x200</span>   </span><span class="token comment">// 可以写优先级带数据</span></span>
+
+<span class="token comment">// 错误事件</span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">POLLERR</span>     <span class="token expression"><span class="token number">0x008</span>   </span><span class="token comment">// 发生错误</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">POLLHUP</span>     <span class="token expression"><span class="token number">0x010</span>   </span><span class="token comment">// 挂起</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">POLLNVAL</span>    <span class="token expression"><span class="token number">0x020</span>   </span><span class="token comment">// 无效的文件描述符</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="函数原型"><a href="#函数原型" class="headerlink" title="函数原型"></a>函数原型</h3><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;poll.h></span></span>
+
+<span class="token keyword">int</span> <span class="token function">poll</span><span class="token punctuation">(</span><span class="token keyword">struct</span> <span class="token class-name">pollfd</span> <span class="token operator">*</span>fds<span class="token punctuation">,</span> <span class="token class-name">nfds_t</span> nfds<span class="token punctuation">,</span> <span class="token keyword">int</span> timeout<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>参数说明：</strong></p>
+<ul>
+<li><code>fds</code>: pollfd 结构数组指针</li>
+<li><code>nfds</code>: 数组中元素的数量</li>
+<li><code>timeout</code>: 超时时间（毫秒）<ul>
+<li><code>-1</code>: 无限等待</li>
+<li><code>0</code>: 立即返回</li>
+<li><code>&gt;0</code>: 等待指定毫秒数</li>
+</ul>
+</li>
+</ul>
+<p><strong>返回值：</strong></p>
+<ul>
+<li><code>&gt;0</code>: 就绪的文件描述符数量</li>
+<li><code>0</code>: 超时</li>
+<li><code>-1</code>: 出错</li>
+</ul>
+<h3 id="poll-工作流程"><a href="#poll-工作流程" class="headerlink" title="poll 工作流程"></a>poll 工作流程</h3><p><img src="../../file-20251123212554881%201.md" ></p>
+<h3 id="技术特点-6"><a href="#技术特点-6" class="headerlink" title="技术特点"></a>技术特点</h3><ul>
+<li>✅ <strong>文件描述符数量限制</strong>：使用动态数组而非固定位图</li>
+<li>✅ <strong>事件类型丰富性</strong>：提供更详细的事件区分</li>
+<li>✅ <strong>接口友好性</strong>：无需每次重新初始化数据结构</li>
+<li>❌ <strong>性能瓶颈</strong>：性能仍然是 O(n) 级别</li>
+<li>❌ <strong>内存拷贝开销</strong>：需要在内核和用户空间之间拷贝整个数组</li>
+<li>❌ <strong>重复工作</strong>：即使只有一个fd就绪，也要检查所有fd</li>
+</ul>
+<p>因此，poll 可以看作是 select 到 epoll 的过渡方案。</p>
+<h2 id="epoll"><a href="#epoll" class="headerlink" title="epoll"></a>epoll</h2><p>epoll 是 Linux 特有的高性能 I/O 多路复用机制，解决了 select 和 poll 的性能瓶颈。它采用<strong>事件驱动</strong>架构，只在文件描述符状态变化时通知应用程序，而不是每次都扫描所有描述符。</p>
+<h3 id="epoll-架构与工作流程"><a href="#epoll-架构与工作流程" class="headerlink" title="epoll 架构与工作流程"></a>epoll 架构与工作流程</h3><p><img src="../../file-20251123212554882.md" ></p>
+<h3 id="epoll-三大核心系统调用"><a href="#epoll-三大核心系统调用" class="headerlink" title="epoll 三大核心系统调用"></a>epoll 三大核心系统调用</h3><h4 id="epoll-create-创建-epoll-实例"><a href="#epoll-create-创建-epoll-实例" class="headerlink" title="epoll_create - 创建 epoll 实例"></a>epoll_create - 创建 epoll 实例</h4><p>创建一个epoll实例，返回一个文件描述符</p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;sys/epoll.h></span></span>
+
+<span class="token keyword">int</span> <span class="token function">epoll_create</span><span class="token punctuation">(</span><span class="token keyword">int</span> size<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// 旧版本，size参数被忽略，但必须大于0</span>
+<span class="token keyword">int</span> <span class="token function">epoll_create1</span><span class="token punctuation">(</span><span class="token keyword">int</span> flags<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 新版本，flags可以设置为0或EPOLL_CLOEXEC</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="epoll-ctl-管理监控列表"><a href="#epoll-ctl-管理监控列表" class="headerlink" title="epoll_ctl - 管理监控列表"></a>epoll_ctl - 管理监控列表</h4><p>向epoll实例中添加、修改或删除要监视的文件描述符</p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">int</span> <span class="token function">epoll_ctl</span><span class="token punctuation">(</span><span class="token keyword">int</span> epfd<span class="token punctuation">,</span> <span class="token keyword">int</span> op<span class="token punctuation">,</span> <span class="token keyword">int</span> fd<span class="token punctuation">,</span> <span class="token keyword">struct</span> <span class="token class-name">epoll_event</span> <span class="token operator">*</span>event<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// op参数：</span>
+<span class="token comment">// EPOLL_CTL_ADD：添加一个需要监视的文件描述符</span>
+<span class="token comment">// EPOLL_CTL_MOD：修改一个已经存在的文件描述符的监视事件</span>
+<span class="token comment">// EPOLL_CTL_DEL：从epoll实例中删除一个文件描述符</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="epoll-wait-等待事件"><a href="#epoll-wait-等待事件" class="headerlink" title="epoll_wait - 等待事件"></a>epoll_wait - 等待事件</h4><p>等待事件的发生，返回就绪的文件描述符列表。</p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">int</span> <span class="token function">epoll_wait</span><span class="token punctuation">(</span><span class="token keyword">int</span> epfd<span class="token punctuation">,</span> <span class="token keyword">struct</span> <span class="token class-name">epoll_event</span> <span class="token operator">*</span>events<span class="token punctuation">,</span> <span class="token keyword">int</span> maxevents<span class="token punctuation">,</span> <span class="token keyword">int</span> timeout<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// events：用于回传就绪的事件数组</span>
+<span class="token comment">// maxevents：每次能处理的最大事件数</span>
+<span class="token comment">// timeout：超时时间（毫秒），-1表示阻塞，0表示立即返回</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>epoll_event 结构</strong></p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">typedef</span> <span class="token keyword">union</span> epoll_data <span class="token punctuation">&#123;</span>
+    <span class="token keyword">void</span>    <span class="token operator">*</span>ptr<span class="token punctuation">;</span>
+    <span class="token keyword">int</span>      fd<span class="token punctuation">;</span>
+    <span class="token class-name">uint32_t</span> u32<span class="token punctuation">;</span>
+    <span class="token class-name">uint64_t</span> u64<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span> <span class="token class-name">epoll_data_t</span><span class="token punctuation">;</span>
+
+<span class="token keyword">struct</span> <span class="token class-name">epoll_event</span> <span class="token punctuation">&#123;</span>
+    <span class="token class-name">uint32_t</span>     events<span class="token punctuation">;</span>    <span class="token comment">/* Epoll events */</span>
+    <span class="token class-name">epoll_data_t</span> data<span class="token punctuation">;</span>      <span class="token comment">/* User data variable */</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 常用事件：</span>
+<span class="token comment">// EPOLLIN：可读事件</span>
+<span class="token comment">// EPOLLOUT：可写事件</span>
+<span class="token comment">// EPOLLET：边缘触发模式</span>
+<span class="token comment">// EPOLLONESHOT：只监听一次事件，事件发生后需要重新添加</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+<h3 id="工作模式"><a href="#工作模式" class="headerlink" title="工作模式"></a>工作模式</h3><h4 id="水平触发（LT-Level-Triggered）"><a href="#水平触发（LT-Level-Triggered）" class="headerlink" title="水平触发（LT, Level-Triggered）"></a>水平触发（LT, Level-Triggered）</h4><ul>
+<li><p>默认模式。</p>
+</li>
+<li><p>只要文件描述符的读缓冲区还有数据，epoll_wait就会一直返回该文件描述符的可读事件。</p>
+</li>
+<li><p>只要文件描述符的写缓冲区可写，epoll_wait就会一直返回该文件描述符的可写事件。</p>
+</li>
+<li><p>编程相对简单，但可能效率较低，因为每次epoll_wait返回后可能只有部分数据被处理。</p>
+<h4 id="边缘触发（ET-Edge-Triggered）"><a href="#边缘触发（ET-Edge-Triggered）" class="headerlink" title="边缘触发（ET, Edge-Triggered）"></a>边缘触发（ET, Edge-Triggered）</h4></li>
+<li><p>只有当文件描述符的状态发生变化时（例如，从不可读变为可读，或从不可写变为可写），epoll_wait才会返回该文件描述符的事件。</p>
+</li>
+<li><p>在ET模式下，当epoll_wait返回一个可读事件时，必须一次性将缓冲区中的数据全部读完，直到read返回EAGAIN错误，否则可能会丢失事件。</p>
+</li>
+<li><p>在ET模式下，通常需要将文件描述符设置为非阻塞模式，以避免在读取或写入时阻塞。</p>
+</li>
+</ul>
+<h3 id="工作流程详解"><a href="#工作流程详解" class="headerlink" title="工作流程详解"></a>工作流程详解</h3><p><img src="../../file-20251123212554882%201.md" ></p>
+<h3 id="技术特点-7"><a href="#技术特点-7" class="headerlink" title="技术特点"></a>技术特点</h3><ul>
+<li>✅ <strong>高并发服务器</strong>：数万以上并发连接</li>
+<li>✅ <strong>长连接服务</strong>：如聊天服务器、游戏服务器</li>
+<li>✅ <strong>高性能代理</strong>：负载均衡器、API网关</li>
+<li>✅ <strong>实时系统</strong>：要求低延迟响应</li>
+<li>❌ <strong>跨平台应用</strong>：epoll 是 Linux 特有</li>
+<li>❌ <strong>简单应用</strong>：连接数少，select/poll 足够</li>
+<li>❌ <strong>Windows 平台</strong>：使用 IOCP 代替</li>
+</ul>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>epoll 通过以下机制实现高性能：</p>
+<ol>
+<li><strong>事件驱动架构</strong>：只在状态变化时通知，避免无效扫描</li>
+<li><strong>内核数据结构</strong>：红黑树高效管理，就绪链表快速返回</li>
+<li><strong>内存映射</strong>：减少用户空间和内核空间的数据拷贝</li>
+<li><strong>边缘触发模式</strong>：减少系统调用次数，提高吞吐量</li>
+</ol>
+<h1 id="为什么选择了IO多路复用而不是异步IO或信号驱动IO"><a href="#为什么选择了IO多路复用而不是异步IO或信号驱动IO" class="headerlink" title="为什么选择了IO多路复用而不是异步IO或信号驱动IO"></a>为什么选择了IO多路复用而不是异步IO或信号驱动IO</h1><p>这是一个很好的架构选择问题。让我们从技术可行性、实际约束和工程实践角度深入分析。</p>
+<p><img src="../../file-20251123212554883.md" ></p>
+<h2 id="平台兼容性与标准化"><a href="#平台兼容性与标准化" class="headerlink" title="平台兼容性与标准化"></a>平台兼容性与标准化</h2><p><strong>I/O多路复用 (胜出)</strong></p>
+<ul>
+<li>✅ <strong>跨平台标准</strong>：select/poll在所有Unix系统上可用</li>
+<li>✅ <strong>Linux优化</strong>：epoll在Linux上性能卓越</li>
+<li>✅ <strong>BSD支持</strong>：kqueue在BSD/macOS上表现优秀</li>
+<li>✅ <strong>Windows支持</strong>：通过IOCP或select模拟</li>
+</ul>
+<p><strong>异步I/O (AIO)</strong></p>
+<ul>
+<li>❌ <strong>Linux AIO</strong>：仅支持文件I/O，网络I/O支持有限</li>
+<li>❌ <strong>Windows IOCP</strong>：优秀但仅限于Windows</li>
+<li>❌ <strong>平台碎片化</strong>：不同系统API差异巨大</li>
+</ul>
+<p><strong>信号驱动I/O</strong></p>
+<ul>
+<li>❌ <strong>信号处理复杂</strong>：信号处理器中只能使用异步安全函数</li>
+<li>❌ <strong>信号丢失风险</strong>：高负载下可能丢失信号</li>
+<li>❌ <strong>调试困难</strong>：信号时序问题难以重现</li>
+</ul>
+<h2 id="编程模型复杂度"><a href="#编程模型复杂度" class="headerlink" title="编程模型复杂度"></a>编程模型复杂度</h2><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">// I/O多路复用 - 相对直观</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MultiplexingServer</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">serve</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">IOException</span> <span class="token punctuation">&#123;</span>
+        <span class="token class-name">Selector</span> selector <span class="token operator">=</span> <span class="token class-name">Selector</span><span class="token punctuation">.</span><span class="token keyword">open</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">ServerSocketChannel</span> server <span class="token operator">=</span> <span class="token class-name">ServerSocketChannel</span><span class="token punctuation">.</span><span class="token keyword">open</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        server<span class="token punctuation">.</span><span class="token function">configureBlocking</span><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        server<span class="token punctuation">.</span><span class="token function">register</span><span class="token punctuation">(</span>selector<span class="token punctuation">,</span> <span class="token class-name">SelectionKey</span><span class="token punctuation">.</span><span class="token constant">OP_ACCEPT</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        
+        <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            selector<span class="token punctuation">.</span><span class="token function">select</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 阻塞等待事件</span>
+            <span class="token class-name">Set</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">SelectionKey</span><span class="token punctuation">></span></span> keys <span class="token operator">=</span> selector<span class="token punctuation">.</span><span class="token function">selectedKeys</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            
+            <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token class-name">SelectionKey</span> key <span class="token operator">:</span> keys<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span>key<span class="token punctuation">.</span><span class="token function">isAcceptable</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span> <span class="token comment">/* 处理连接 */</span> <span class="token punctuation">&#125;</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span>key<span class="token punctuation">.</span><span class="token function">isReadable</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span> <span class="token comment">/* 处理读取 */</span> <span class="token punctuation">&#125;</span>
+            <span class="token punctuation">&#125;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token comment">// 异步I/O - 回调地狱风险</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">AsyncServer</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">serve</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token class-name">AsynchronousServerSocketChannel</span> server <span class="token operator">=</span> 
+            <span class="token class-name">AsynchronousServerSocketChannel</span><span class="token punctuation">.</span><span class="token keyword">open</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        server<span class="token punctuation">.</span><span class="token function">accept</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token class-name">CompletionHandler</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token annotation punctuation">@Override</span>
+            <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">completed</span><span class="token punctuation">(</span><span class="token class-name">AsynchronousSocketChannel</span> client<span class="token punctuation">,</span> <span class="token class-name">Object</span> attachment<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                <span class="token comment">// 处理新连接</span>
+                <span class="token class-name">ByteBuffer</span> buffer <span class="token operator">=</span> <span class="token class-name">ByteBuffer</span><span class="token punctuation">.</span><span class="token function">allocate</span><span class="token punctuation">(</span><span class="token number">1024</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                client<span class="token punctuation">.</span><span class="token function">read</span><span class="token punctuation">(</span>buffer<span class="token punctuation">,</span> buffer<span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token class-name">CompletionHandler</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                    <span class="token annotation punctuation">@Override</span>
+                    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">completed</span><span class="token punctuation">(</span><span class="token class-name">Integer</span> result<span class="token punctuation">,</span> <span class="token class-name">ByteBuffer</span> buffer<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                        <span class="token comment">// 处理读取 - 嵌套回调开始</span>
+                        <span class="token comment">// 更多嵌套回调...</span>
+                    <span class="token punctuation">&#125;</span>
+                <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span>
+        <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="性能表现"><a href="#性能表现" class="headerlink" title="性能表现"></a>性能表现</h2><table>
+<thead>
+<tr>
+<th>场景</th>
+<th>I/O多路复用</th>
+<th>异步I/O</th>
+<th>信号驱动I/O</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>连接数 &lt; 1000</strong></td>
+<td>优秀</td>
+<td>优秀</td>
+<td>良好</td>
+</tr>
+<tr>
+<td><strong>连接数 10,000</strong></td>
+<td>优秀</td>
+<td>优秀</td>
+<td>一般</td>
+</tr>
+<tr>
+<td><strong>连接数 100,000+</strong></td>
+<td>优秀</td>
+<td>优秀</td>
+<td>较差</td>
+</tr>
+<tr>
+<td><strong>内存使用</strong></td>
+<td>低</td>
+<td>低</td>
+<td>中等</td>
+</tr>
+<tr>
+<td><strong>CPU效率</strong></td>
+<td>高</td>
+<td>高</td>
+<td>中</td>
+</tr>
+<tr>
+<td><strong>关键洞察</strong>：在大多数实际场景中，性能差距并不明显，但复杂度差距很大。</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id="生态系统与工具链"><a href="#生态系统与工具链" class="headerlink" title="生态系统与工具链"></a>生态系统与工具链</h2><p><strong>I/O多路复用的成熟生态：</strong></p>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">应用框架层：   Netty, Twisted, Node.js(底层), Tornado
+网络库层：     libevent, libuv, Boost.Asio
+操作系统层：   epoll(Linux), kqueue(BSD), IOCP(Windows)
+调试工具：     strace, perf, 各种profiler<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>异步I/O的生态挑战：</strong></p>
+<ul>
+<li>Linux AIO生态系统不完善</li>
+<li>不同平台需要不同实现</li>
+<li>调试工具支持有限</li>
+</ul>
+<h2 id="维护和调试成本"><a href="#维护和调试成本" class="headerlink" title="维护和调试成本"></a>维护和调试成本</h2><pre class="line-numbers language-text" data-language="text"><code class="language-text">I/O多路复用调试：
+  - 可以逐步跟踪事件处理
+  - 状态相对容易检查
+  - 有丰富的监控指标
+
+异步I/O调试：  
+  - 回调执行顺序难以跟踪
+  - 异常可能在任何回调中发生
+  - 内存泄漏更难检测<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+<h2 id="总结-1"><a href="#总结-1" class="headerlink" title="总结"></a>总结</h2><p><strong>大多数应用选择I/O多路复用的根本原因：</strong></p>
+<ol>
+<li><strong>“足够好”的性能</strong>：对于绝大多数应用，I/O多路复用性能完全足够</li>
+<li><strong>更低的复杂度成本</strong>：同步思维更容易理解、调试和维护</li>
+<li><strong>更好的生态系统</strong>：工具链、文档、社区支持更完善</li>
+<li><strong>跨平台一致性</strong>：不同操作系统上行为更一致</li>
+<li><strong>团队技能匹配</strong>：大多数工程师更熟悉这种编程模型</li>
+</ol>
+<p>在技术选型中，<strong>简单性、可维护性和团队能力</strong>往往比理论性能峰值更重要，这就是为什么I/O多路复用成为主流选择的原因。</p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">Gloamfox</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://gloamfox.github.io/20260302090433.html">https://gloamfox.github.io/20260302090433.html</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">Gloamfox</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">
+                                    <span class="chip bg-color">操作系统</span>
+                                </a>
+                            
+                                <a href="/tags/IO%E6%A8%A1%E5%9E%8B/">
+                                    <span class="chip bg-color">IO模型</span>
+                                </a>
+                            
+                                <a href="/tags/%E7%B3%BB%E7%BB%9F%E8%B0%83%E7%94%A8/">
+                                    <span class="chip bg-color">系统调用</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" >
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" >
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/20260302122243.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" >
+                        
+                        <span class="card-title">进制转换与数据编码</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            本文详细介绍了不同进制之间的转换方法，包括R进制与十进制的互转、二进制与八进制/十六进制的转换，以及原码、反码、补码和移码等数据编码方式，并探讨了浮点数的表示与运算过程。
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2026-03-02
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/" class="post-category">
+                                    计算机基础
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2/">
+                        <span class="chip bg-color">进制转换</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BC%96%E7%A0%81/">
+                        <span class="chip bg-color">数据编码</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%B5%AE%E7%82%B9%E6%95%B0%E8%BF%90%E7%AE%97/">
+                        <span class="chip bg-color">浮点数运算</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/20260302020833.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" >
+                        
+                        <span class="card-title">避免这些编程陷阱：七种让你代码失控的开发风格</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            本文分析了多种不良编程风格，如散弹枪编程、撞大运编程等，指出这些是逃避思考的策略，强调优秀的编程应回归本质：清晰理解问题，用可读方式表达解决方案，并对代码保持敬畏与责任。
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2026-03-02
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/" class="post-category">
+                                    技术分享
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E7%BC%96%E7%A8%8B%E9%A3%8E%E6%A0%BC/">
+                        <span class="chip bg-color">编程风格</span>
+                    </a>
+                    
+                    <a href="/tags/%E4%BB%A3%E7%A0%81%E8%B4%A8%E9%87%8F/">
+                        <span class="chip bg-color">代码质量</span>
+                    </a>
+                    
+                    <a href="/tags/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/">
+                        <span class="chip bg-color">软件开发</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+    <div class="container row center-align" style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            
+            <a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            &nbsp;&copy;
+            
+                <span id="year">2025-2026</span>
+            
+            <!-- <span id="year">2025</span> -->
+            <a href="/about" target="_blank">Gloamfox</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;&nbsp;<span
+                class="white-color">72.9k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <span id="sitetime">载入运行时间...</span>
+            <script>
+                function siteTime() {
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2025";
+                    var startMonth = "09";
+                    var startDate = "13";
+                    var startHour = "0";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已运行 " + diffDays + " 天 ";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已运行 " + diffYears + " 年 " + diffDays + " 天 ";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/gloamfox" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:rxhome@163.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=527884920" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 527884920" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var siteOrigin = location.origin;  
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + siteOrigin + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+	
+    
+
+    
+    
+    <script type="text/javascript" size="150" alpha='0.6'
+        zIndex="-1" src="/libs/background/ribbon-refresh.min.js" async="async"></script>
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
