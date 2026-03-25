@@ -588,7 +588,7 @@ hexo<span class="token punctuation">.</span>extend<span class="token punctuation
 
 
 <p>在hexo根据markdown文章生成网页之后，匹配<code>&lt;a&gt;</code>标签中<code>href</code>是以 <em>.md</em>  结尾的文件，将原本的href属性替换为对应文件真正的跳转路径。</p>
-<h3 id="工作原理"><a href="#工作原理" class="headerlink" title="工作原理"></a>工作原理</h3><ol>
+<h2 id="工作原理"><a href="#工作原理" class="headerlink" title="工作原理"></a>工作原理</h2><ol>
 <li>在 Hexo 完成文章渲染后，通过 <code>after_post_render</code> 过滤器处理每篇文章的 HTML 内容。</li>
 <li>使用正则表达式匹配所有 <code>href</code> 以 <code>.md</code> 结尾的 <code>&lt;a&gt;</code> 标签。</li>
 <li>解析相对路径，定位到源文件夹中对应的 Markdown 文件。</li>
