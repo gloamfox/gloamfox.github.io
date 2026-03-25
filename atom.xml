@@ -6,7 +6,7 @@
   <link href="https://gloamfox.github.io/atom.xml" rel="self"/>
   
   <link href="https://gloamfox.github.io/"/>
-  <updated>2026-03-25T09:13:32.578Z</updated>
+  <updated>2026-03-25T09:33:39.545Z</updated>
   <id>https://gloamfox.github.io/</id>
   
   <author>
@@ -17,11 +17,40 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>uniCloud加速GitHub Pages博客访问</title>
+    <link href="https://gloamfox.github.io/20260325161216.html"/>
+    <id>https://gloamfox.github.io/20260325161216.html</id>
+    <published>2026-03-25T16:12:16.000Z</published>
+    <updated>2026-03-25T09:33:39.545Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;GitHub Pages 提供了免费、便捷的静态网页托管服务，让我们可以轻松地将博客部署在 GitHub 上。然而，由于网络原因，国内访问 GitHub</summary>
+        
+      
+    
+    
+    
+    <category term="技术教程" scheme="https://gloamfox.github.io/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/"/>
+    
+    
+    <category term="GitHub" scheme="https://gloamfox.github.io/tags/GitHub/"/>
+    
+    <category term="uniCloud" scheme="https://gloamfox.github.io/tags/uniCloud/"/>
+    
+    <category term="博客托管" scheme="https://gloamfox.github.io/tags/%E5%8D%9A%E5%AE%A2%E6%89%98%E7%AE%A1/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Hexo 插件：自动转换 Markdown 相对路径链接</title>
     <link href="https://gloamfox.github.io/20260325102944.html"/>
     <id>https://gloamfox.github.io/20260325102944.html</id>
     <published>2026-03-25T10:29:44.000Z</published>
-    <updated>2026-03-25T09:13:32.578Z</updated>
+    <updated>2026-03-25T09:33:39.543Z</updated>
     
     
       
@@ -51,7 +80,7 @@
     <link href="https://gloamfox.github.io/20260324145235.html"/>
     <id>https://gloamfox.github.io/20260324145235.html</id>
     <published>2026-03-24T14:52:35.000Z</published>
-    <updated>2026-03-25T09:13:32.579Z</updated>
+    <updated>2026-03-25T09:33:39.545Z</updated>
     
     
       
@@ -80,7 +109,7 @@
     <link href="https://gloamfox.github.io/20260324094537.html"/>
     <id>https://gloamfox.github.io/20260324094537.html</id>
     <published>2026-03-24T09:45:37.000Z</published>
-    <updated>2026-03-25T09:13:32.579Z</updated>
+    <updated>2026-03-25T09:33:39.545Z</updated>
     
     
       
@@ -109,7 +138,7 @@
     <link href="https://gloamfox.github.io/20260323060238.html"/>
     <id>https://gloamfox.github.io/20260323060238.html</id>
     <published>2026-03-23T06:02:38.000Z</published>
-    <updated>2026-03-25T09:13:32.580Z</updated>
+    <updated>2026-03-25T09:33:39.545Z</updated>
     
     
       
@@ -139,7 +168,7 @@
     <link href="https://gloamfox.github.io/20260319105942.html"/>
     <id>https://gloamfox.github.io/20260319105942.html</id>
     <published>2026-03-19T10:59:42.000Z</published>
-    <updated>2026-03-25T09:13:32.579Z</updated>
+    <updated>2026-03-25T09:33:39.545Z</updated>
     
     
       
@@ -168,7 +197,7 @@
     <link href="https://gloamfox.github.io/20260319034656.html"/>
     <id>https://gloamfox.github.io/20260319034656.html</id>
     <published>2026-03-19T03:46:56.000Z</published>
-    <updated>2026-03-25T09:13:32.580Z</updated>
+    <updated>2026-03-25T09:33:39.545Z</updated>
     
     
       
@@ -199,7 +228,34 @@
     <link href="https://gloamfox.github.io/20260318103427.html"/>
     <id>https://gloamfox.github.io/20260318103427.html</id>
     <published>2026-03-18T10:34:27.000Z</published>
-    <updated>2026-03-25T09:13:32.579Z</updated>
+    <updated>2026-03-25T09:33:39.545Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;我一直使用 Obsidian</summary>
+        
+      
+    
+    
+    
+    <category term="技术教程" scheme="https://gloamfox.github.io/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/"/>
+    
+    
+    <category term="Hexo" scheme="https://gloamfox.github.io/tags/Hexo/"/>
+    
+    <category term="Obsidian" scheme="https://gloamfox.github.io/tags/Obsidian/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>从零到一键发布：Obsidian + Hexo + GitHub Pages 个人博客搭建指南</title>
+    <link href="https://gloamfox.github.io/20260318103427.html"/>
+    <id>https://gloamfox.github.io/20260318103427.html</id>
+    <published>2026-03-18T10:34:27.000Z</published>
+    <updated>2026-03-25T09:33:39.545Z</updated>
     
     
       
@@ -226,7 +282,7 @@
     <link href="https://gloamfox.github.io/20260316090820.html"/>
     <id>https://gloamfox.github.io/20260316090820.html</id>
     <published>2026-03-16T09:08:20.000Z</published>
-    <updated>2026-03-25T09:13:32.581Z</updated>
+    <updated>2026-03-25T09:33:39.546Z</updated>
     
     
       
@@ -255,7 +311,7 @@
     <link href="https://gloamfox.github.io/20260314085149.html"/>
     <id>https://gloamfox.github.io/20260314085149.html</id>
     <published>2026-03-14T08:51:49.000Z</published>
-    <updated>2026-03-25T09:13:32.580Z</updated>
+    <updated>2026-03-25T09:33:39.545Z</updated>
     
     
       
@@ -287,7 +343,7 @@
     <link href="https://gloamfox.github.io/20260303020433.html"/>
     <id>https://gloamfox.github.io/20260303020433.html</id>
     <published>2026-03-03T02:04:33.000Z</published>
-    <updated>2026-03-25T09:13:32.580Z</updated>
+    <updated>2026-03-25T09:33:39.545Z</updated>
     
     
       
@@ -316,7 +372,7 @@
     <link href="https://gloamfox.github.io/20260302122243.html"/>
     <id>https://gloamfox.github.io/20260302122243.html</id>
     <published>2026-03-02T12:22:43.000Z</published>
-    <updated>2026-03-25T09:13:32.581Z</updated>
+    <updated>2026-03-25T09:33:39.546Z</updated>
     
     
       
@@ -345,7 +401,7 @@
     <link href="https://gloamfox.github.io/20260302090433.html"/>
     <id>https://gloamfox.github.io/20260302090433.html</id>
     <published>2026-03-02T09:04:33.000Z</published>
-    <updated>2026-03-25T09:13:32.582Z</updated>
+    <updated>2026-03-25T09:33:39.547Z</updated>
     
     
       
@@ -374,7 +430,7 @@
     <link href="https://gloamfox.github.io/20260302020833.html"/>
     <id>https://gloamfox.github.io/20260302020833.html</id>
     <published>2026-03-02T02:08:33.000Z</published>
-    <updated>2026-03-25T09:13:32.582Z</updated>
+    <updated>2026-03-25T09:33:39.546Z</updated>
     
     
       
@@ -403,7 +459,7 @@
     <link href="https://gloamfox.github.io/20260302020450.html"/>
     <id>https://gloamfox.github.io/20260302020450.html</id>
     <published>2026-03-02T02:04:50.000Z</published>
-    <updated>2026-03-25T09:13:32.581Z</updated>
+    <updated>2026-03-25T09:33:39.545Z</updated>
     
     
       
@@ -435,7 +491,7 @@
     <link href="https://gloamfox.github.io/20260302020435.html"/>
     <id>https://gloamfox.github.io/20260302020435.html</id>
     <published>2026-03-02T02:04:35.000Z</published>
-    <updated>2026-03-25T09:13:32.579Z</updated>
+    <updated>2026-03-25T09:33:39.545Z</updated>
     
     
       
@@ -465,7 +521,7 @@
     <link href="https://gloamfox.github.io/20260302020433.html"/>
     <id>https://gloamfox.github.io/20260302020433.html</id>
     <published>2026-03-02T02:04:33.000Z</published>
-    <updated>2026-03-25T09:13:32.581Z</updated>
+    <updated>2026-03-25T09:33:39.546Z</updated>
     
     
       
@@ -494,7 +550,7 @@
     <link href="https://gloamfox.github.io/20260302020433.html"/>
     <id>https://gloamfox.github.io/20260302020433.html</id>
     <published>2026-03-02T02:04:33.000Z</published>
-    <updated>2026-03-25T09:13:32.581Z</updated>
+    <updated>2026-03-25T09:33:39.546Z</updated>
     
     
       
@@ -526,7 +582,7 @@
     <link href="https://gloamfox.github.io/20260301122243.html"/>
     <id>https://gloamfox.github.io/20260301122243.html</id>
     <published>2026-03-01T12:22:43.000Z</published>
-    <updated>2026-03-25T09:13:32.582Z</updated>
+    <updated>2026-03-25T09:33:39.546Z</updated>
     
     
       
@@ -547,66 +603,6 @@
     <category term="冯·诺依曼" scheme="https://gloamfox.github.io/tags/%E5%86%AF%C2%B7%E8%AF%BA%E4%BE%9D%E6%9B%BC/"/>
     
     <category term="Flynn分类" scheme="https://gloamfox.github.io/tags/Flynn%E5%88%86%E7%B1%BB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>nvs 安装与使用指南</title>
-    <link href="https://gloamfox.github.io/20260226043540.html"/>
-    <id>https://gloamfox.github.io/20260226043540.html</id>
-    <published>2026-02-26T04:35:40.000Z</published>
-    <updated>2026-03-25T09:13:32.580Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;安装&quot;&gt;&lt;a href=&quot;#安装&quot; class=&quot;headerlink&quot; title=&quot;安装&quot;&gt;&lt;/a&gt;安装&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/jasongin/nvs&quot;&gt;nvs官方仓库&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;nvs</summary>
-        
-      
-    
-    
-    
-    <category term="技术教程" scheme="https://gloamfox.github.io/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/"/>
-    
-    
-    <category term="Node版本管理" scheme="https://gloamfox.github.io/tags/Node%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/"/>
-    
-    <category term="nvs工具" scheme="https://gloamfox.github.io/tags/nvs%E5%B7%A5%E5%85%B7/"/>
-    
-    <category term="跨平台" scheme="https://gloamfox.github.io/tags/%E8%B7%A8%E5%B9%B3%E5%8F%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>蒙提霍尔问题-经典的三扇门问题</title>
-    <link href="https://gloamfox.github.io/20260130032221.html"/>
-    <id>https://gloamfox.github.io/20260130032221.html</id>
-    <published>2026-01-30T03:22:21.000Z</published>
-    <updated>2026-03-25T09:13:32.581Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h3 id=&quot;问题设定&quot;&gt;&lt;a href=&quot;#问题设定&quot; class=&quot;headerlink&quot; title=&quot;问题设定&quot;&gt;&lt;/a&gt;问题设定&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;三扇门：一扇后面有汽车（奖品），两扇后面有山羊。 </summary>
-        
-      
-    
-    
-    
-    <category term="数学" scheme="https://gloamfox.github.io/categories/%E6%95%B0%E5%AD%A6/"/>
-    
-    
-    <category term="概率论" scheme="https://gloamfox.github.io/tags/%E6%A6%82%E7%8E%87%E8%AE%BA/"/>
-    
-    <category term="游戏策略" scheme="https://gloamfox.github.io/tags/%E6%B8%B8%E6%88%8F%E7%AD%96%E7%95%A5/"/>
-    
-    <category term="决策分析" scheme="https://gloamfox.github.io/tags/%E5%86%B3%E7%AD%96%E5%88%86%E6%9E%90/"/>
     
   </entry>
   
