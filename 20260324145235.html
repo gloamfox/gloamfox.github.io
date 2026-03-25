@@ -529,7 +529,7 @@
                 <p><strong>问题现象</strong>：博客搜索功能正常，但点击搜索结果后跳转链接丢失了站点域名，例如实际文章链接为 <code>http://www.gloam.cn:4000/20260302020433.html</code>，搜索后却指向 <code>http://20260302020433.html</code>，导致无法访问。</p>
 <p><strong>根本原因</strong>：Hexo 搜索插件在生成搜索数据时，只记录了文章的相对路径（即 <code>permalink</code> 配置值），没有自动补全站点的完整域名。</p>
 <p><strong>解决方案</strong>：修改主题中负责渲染搜索结果的 JavaScript 文件，将文章的相对路径拼接上站点的根路径（如 <code>location.origin</code>），生成绝对链接即可解决。</p>
-<h2 id="问题复现"><a href="#问题复现" class="headerlink" title="问题复现"></a>问题复现</h2><p>根据 <a href="https://gloamfox.github.io/20260324094537.html">Hexo永久链接最佳实践：终极方案与优化指南</a> 对文章的url进行了优化，但是优化后通过搜索无法跳转到正确的文章。</p>
+<h2 id="问题复现"><a href="#问题复现" class="headerlink" title="问题复现"></a>问题复现</h2><p>根据 <a href="./Hexo%E6%B0%B8%E4%B9%85%E9%93%BE%E6%8E%A5%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5%EF%BC%9A%E7%BB%88%E6%9E%81%E6%96%B9%E6%A1%88%E4%B8%8E%E4%BC%98%E5%8C%96%E6%8C%87%E5%8D%97.md">Hexo永久链接最佳实践：终极方案与优化指南</a> 对文章的url进行了优化，但是优化后通过搜索无法跳转到正确的文章。</p>
 <pre class="line-numbers language-none"><code class="language-none">实际链接:
 http:&#x2F;&#x2F;www.gloam.cn:4000&#x2F;20260302020433.html
 
@@ -796,30 +796,29 @@ str <span class="token operator">+=</span> <span class="token string">"&lt;li>&l
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/20260324145235.html">
+                <a href="/20260325102944.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" >
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" >
                         
-                        <span class="card-title">Hexo博客搜索链接丢失域名问题修复</span>
+                        <span class="card-title">Hexo 插件：自动转换 Markdown 相对路径链接</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Hexo博客搜索功能正常但点击结果链接丢失域名，原因是搜索插件只记录相对路径。通过修改主题JavaScript文件，将相对路径与站点根路径拼接生成绝对链接即可解决。
+                            本文介绍在Hexo博客中解决Markdown相对链接失效的问题，通过JavaScript脚本将.md文件路径转换为正确的永久链接，确保文章间链接正常跳转。
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2026-03-24
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2026-03-25
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -832,7 +831,6 @@ str <span class="token operator">+=</span> <span class="token string">"&lt;li>&l
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
@@ -840,12 +838,12 @@ str <span class="token operator">+=</span> <span class="token string">"&lt;li>&l
                         <span class="chip bg-color">Hexo</span>
                     </a>
                     
-                    <a href="/tags/%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD/">
-                        <span class="chip bg-color">搜索功能</span>
+                    <a href="/tags/Markdown/">
+                        <span class="chip bg-color">Markdown</span>
                     </a>
                     
-                    <a href="/tags/%E5%9F%9F%E5%90%8D%E4%BF%AE%E5%A4%8D/">
-                        <span class="chip bg-color">域名修复</span>
+                    <a href="/tags/%E6%B0%B8%E4%B9%85%E9%93%BE%E6%8E%A5/">
+                        <span class="chip bg-color">永久链接</span>
                     </a>
                     
                 </div>
@@ -1052,7 +1050,7 @@ str <span class="token operator">+=</span> <span class="token string">"&lt;li>&l
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;&nbsp;<span
-                class="white-color">72.9k</span>&nbsp;字
+                class="white-color">73.5k</span>&nbsp;字
             
             
             
