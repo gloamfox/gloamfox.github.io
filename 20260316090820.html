@@ -526,211 +526,208 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>在版本迭代的过程中发现，订单计算的方法过于复杂，在新增或者修改功能时往往需要通篇将方法通读一遍甚至多遍，不能迅速找到应该修改的地方进行功能的改造，通过分析发现存在以下的缺陷（姑且称之为缺陷）  </p>
+                <h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>在版本迭代的过程中发现，订单计算的方法过于复杂，在新增或者修改功能时往往需要通篇将方法通读一遍甚至多遍，不能迅速找到应该修改的地方进行功能的改造，通过分析发现存在以下的缺陷（姑且称之为缺陷）</p>
 <ol>
-<li><p>没有进行逻辑划分，代码行数太长  </p>
-</li>
-<li><p>没有进行有效的封装抽象，虽然将部分代码封装成函数，但是函数放在一个类中，又造成了订单服务这个类变成了大泥球的类  </p>
-</li>
-<li><p>业务逻辑不统一，比如签名校验的逻辑散落在方法的各个地方  </p>
-</li>
-<li><p>业务语义性不强，各种get set遍布，无法体现出业务的含义  </p>
-<h2 id="重构过程"><a href="#重构过程" class="headerlink" title="重构过程"></a>重构过程</h2></li>
+<li>没有进行逻辑划分，代码行数太长</li>
+<li>没有进行有效的封装抽象，虽然将部分代码封装成函数，但是函数放在一个类中，又造成了订单服务这个类变成了大泥球的类</li>
+<li>业务逻辑不统一，比如签名校验的逻辑散落在方法的各个地方</li>
+<li>业务语义性不强，各种get set遍布，无法体现出业务的含义</li>
 </ol>
-<hr>
-<h3 id="过程分解"><a href="#过程分解" class="headerlink" title="过程分解"></a>过程分解</h3><p>对于复杂度较高的代码，无论是进行代码的重构还是在此基础上进行功能的迭代，对于过程的分解是必不可少的。通过通篇阅读代码，整个订单计算的逻辑可以分解为几部分组成  </p>
-<p><img src="../Assets/file-1774071885597.png" >  </p>
-<p>得到上面分解后的逻辑，那么想到的自然是分而治之，根据分解的逻辑将功能抽象到一个方法中，然后在订单计算的方法中进行依次调用即可。这样做虽然能够将订单计算的逻辑整理的相对容易阅读，但是所有的业务代码全都写在订单业务的一个类中，造成类的膨胀，让订单业务类变成一个大泥球的类，影响这个类的可阅读性，而且也不能做到逻辑代码的整体复用。  </p>
-<p>那么我们就需要将这些业务逻辑，根据功能重新进行抽象并创建不同的类，以体现单一职责的要求，并且也能够做到业务逻辑代码的整体复用，也有利于我们进行业务编排。  </p>
-<h3 id="上下文处理"><a href="#上下文处理" class="headerlink" title="上下文处理"></a>上下文处理</h3><p>在对业务代码进行过程分解中发现了两个问题，  </p>
+<h2 id="重构过程"><a href="#重构过程" class="headerlink" title="重构过程"></a>重构过程</h2><hr>
+<h3 id="过程分解"><a href="#过程分解" class="headerlink" title="过程分解"></a>过程分解</h3><p>对于复杂度较高的代码，无论是进行代码的重构还是在此基础上进行功能的迭代，对于过程的分解是必不可少的。通过通篇阅读代码，整个订单计算的逻辑可以分解为几部分组成</p>
+<p><img src="../Assets/file-1774071885597.png" ></p>
+<p>得到上面分解后的逻辑，那么想到的自然是分而治之，根据分解的逻辑将功能抽象到一个方法中，然后在订单计算的方法中进行依次调用即可。这样做虽然能够将订单计算的逻辑整理的相对容易阅读，但是所有的业务代码全都写在订单业务的一个类中，造成类的膨胀，让订单业务类变成一个大泥球的类，影响这个类的可阅读性，而且也不能做到逻辑代码的整体复用。</p>
+<p>那么我们就需要将这些业务逻辑，根据功能重新进行抽象并创建不同的类，以体现单一职责的要求，并且也能够做到业务逻辑代码的整体复用，也有利于我们进行业务编排。</p>
+<h3 id="上下文处理"><a href="#上下文处理" class="headerlink" title="上下文处理"></a>上下文处理</h3><p>在对业务代码进行过程分解中发现了两个问题，</p>
 <ol>
-<li><p>有很多的变量是贯穿整个订单计算过程的，比如当前操作人的对象，订单中商品对象、优惠券对象等，这些对象都是根据前端传值，然后通过数据库查询或者远程调用获取得到，现在将业务进行拆分到不同的业务类中，那么这些贯穿整个订单计算过程的对象如何处理？  </p>
+<li><p>有很多的变量是贯穿整个订单计算过程的，比如当前操作人的对象，订单中商品对象、优惠券对象等，这些对象都是根据前端传值，然后通过数据库查询或者远程调用获取得到，现在将业务进行拆分到不同的业务类中，那么这些贯穿整个订单计算过程的对象如何处理？</p>
 </li>
-<li><p>业务类在进行业务处理后，会得到一些结果，比如优惠券优惠金额等，这些结果在其他业务类处理时又需要用到，如果进行这些值的传递  </p>
+<li><p>业务类在进行业务处理后，会得到一些结果，比如优惠券优惠金额等，这些结果在其他业务类处理时又需要用到，如果进行这些值的传递</p>
 </li>
 </ol>
-<p><strong>思考</strong>：  </p>
-<p>第一个问题，业务类需要的对象，可以通过参数传值的方式进行，需要哪个参数传哪个，但是这种方式会存在拓展性不好的缺点，业务类随着业务的迭代，有可能需要增加参数或者减少参数，如果将需要的对象传过去，一者参数的长度太长，二者以后如果再进行修改时可能不太容易，特别是如果业务类在不同的地方被用到的情况下。  </p>
-<p>第二个问题，每个业务类返回的结果各不相同，而我们的订单计算是需要对业务类进行编排的，不同的返回值会造成订单计算时业务编排逻辑变复杂。  </p>
-<p><strong>实践</strong>  </p>
-<p>使用上下文的方式实现参数和返回值的处理，将业务类需要的参数放到上下文中，业务类通过上下文去取，业务类生成的结果也放到上下文中，其他业务类如果有需要也可以通过上下文得到，所有业务执行器执行完成后，得到整个订单计算的结果。  </p>
-<p><img src="../Assets/file-1774071933147.png" >  </p>
-<h3 id="业务编排"><a href="#业务编排" class="headerlink" title="业务编排"></a>业务编排</h3><p>通过过程分解和上下文处理，我们得到了多个业务类和订单计算过程中的上下文信息，那么如何在订单计算的方法中对这些业务进行编排呢？  </p>
-<p>还是回到业务逻辑的过程分解，业务逻辑执行过程中会有几个特点  </p>
+<p><strong>思考</strong>：</p>
+<p>第一个问题，业务类需要的对象，可以通过参数传值的方式进行，需要哪个参数传哪个，但是这种方式会存在拓展性不好的缺点，业务类随着业务的迭代，有可能需要增加参数或者减少参数，如果将需要的对象传过去，一者参数的长度太长，二者以后如果再进行修改时可能不太容易，特别是如果业务类在不同的地方被用到的情况下。</p>
+<p>第二个问题，每个业务类返回的结果各不相同，而我们的订单计算是需要对业务类进行编排的，不同的返回值会造成订单计算时业务编排逻辑变复杂。</p>
+<p><strong>实践</strong></p>
+<p>使用上下文的方式实现参数和返回值的处理，将业务类需要的参数放到上下文中，业务类通过上下文去取，业务类生成的结果也放到上下文中，其他业务类如果有需要也可以通过上下文得到，所有业务执行器执行完成后，得到整个订单计算的结果。</p>
+<p><img src="../Assets/file-1774071933147.png" ></p>
+<h3 id="业务编排"><a href="#业务编排" class="headerlink" title="业务编排"></a>业务编排</h3><p>通过过程分解和上下文处理，我们得到了多个业务类和订单计算过程中的上下文信息，那么如何在订单计算的方法中对这些业务进行编排呢？</p>
+<p>还是回到业务逻辑的过程分解，业务逻辑执行过程中会有几个特点</p>
 <ol>
-<li><p>业务逻辑执行过程中会有成功和失败两种情况，条件符合后执行业务逻辑，如果不符合的话，有可能就会直接返回异常信息，方法结束，注意这里说的不是抛异常，例如对于sku的校验，如果校验不通过，需要将校验不通过的sku信息组装后返回  </p>
+<li>业务逻辑执行过程中会有成功和失败两种情况，条件符合后执行业务逻辑，如果不符合的话，有可能就会直接返回异常信息，方法结束，注意这里说的不是抛异常，例如对于sku的校验，如果校验不通过，需要将校验不通过的sku信息组装后返回</li>
+<li>上一个业务执行成功，下一个业务才能执行</li>
+<li>业务类执行过程虽然是顺序执行中可能存在跳转，比如某种情况发生后，后续所有的业务都不再执行，直接返回结果</li>
+<li>通过所有的业务执行器后，得到一个结果，这个结果就是订单计算的结果</li>
+</ol>
+<p>通过对于业务编排的分析，发现责任链的设计模式非常适合处理这种场景。</p>
+<h3 id="具体实现"><a href="#具体实现" class="headerlink" title="具体实现"></a>具体实现</h3><ol>
+<li><p>定义上下文信息</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token annotation punctuation">@Data</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">TradeContext</span> <span class="token punctuation">&#123;</span>
+
+    <span class="token keyword">private</span> <span class="token class-name">Long</span> userId<span class="token punctuation">;</span>
+
+    <span class="token keyword">private</span> <span class="token class-name">Boolean</span> submit<span class="token punctuation">;</span>
+
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token annotation punctuation">@EqualsAndHashCode</span><span class="token punctuation">(</span>callSuper <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">)</span>
+<span class="token annotation punctuation">@Data</span>
+<span class="token annotation punctuation">@Accessors</span><span class="token punctuation">(</span>chain <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">TradeCalculateContext</span> <span class="token keyword">extends</span> <span class="token class-name">TradeContext</span> <span class="token punctuation">&#123;</span>
+
+
+    <span class="token comment">/**
+     * 订单计算参数
+     */</span>
+    <span class="token keyword">private</span> <span class="token class-name">MyTradeParam</span> calculateParam<span class="token punctuation">;</span>
+
+    <span class="token comment">/**
+     * 收货地址信息
+     */</span>
+    <span class="token keyword">private</span> <span class="token class-name">AddressInfoDTO</span> addressInfo<span class="token punctuation">;</span>
+
+    <span class="token comment">/**
+     * 当前用户人信息
+     */</span>
+    <span class="token keyword">private</span> <span class="token class-name">SimpleCustomerUserDTO</span> currentUser<span class="token punctuation">;</span>
+
+    <span class="token comment">/**
+     * app会员等级信息
+     */</span>
+    <span class="token keyword">private</span> <span class="token class-name">CustomerLevelDTO</span> invitorLevelInfo<span class="token punctuation">;</span>
+    
+    <span class="token comment">/**
+     * 订单计算返回信息
+     */</span>
+    <span class="token keyword">private</span> <span class="token class-name">MyTradeInfoDTO</span> calculateResult<span class="token punctuation">;</span>
+
+
+	<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
-<li><p>上一个业务执行成功，下一个业务才能执行  </p>
+<li><p>定义责任链</p>
 </li>
-<li><p>业务类执行过程虽然是顺序执行中可能存在跳转，比如某种情况发生后，后续所有的业务都不再执行，直接返回结果  </p>
-</li>
-<li><p>通过所有的业务执行器后，得到一个结果，这个结果就是订单计算的结果  </p>
-<p>通过对于业务编排的分析，发现责任链的设计模式非常适合处理这种场景。  </p>
-<h3 id="具体实现"><a href="#具体实现" class="headerlink" title="具体实现"></a>具体实现</h3></li>
-<li><p>定义上下文信息  </p>
-<pre><code class="java">@Data  
-public class TradeContext &#123;  
-  
-    private Long userId;  
-  
-    private Boolean submit;  
-  
-&#125;  
-</code></pre>
-<pre><code class="java">@EqualsAndHashCode(callSuper = true)  
-@Data  
-@Accessors(chain = true)  
-public class TradeCalculateContext extends TradeContext &#123;  
-  
-  
-    /**  
-     * 订单计算参数  
-     */  
-    private MyTradeParam calculateParam;  
-  
-    /**  
-     * 收货地址信息  
-     */  
-    private AddressInfoDTO addressInfo;  
-  
-    /**  
-     * 当前用户人信息  
-     */  
-    private SimpleCustomerUserDTO currentUser;  
-  
-    /**  
-     * app会员等级信息  
-     */  
-    private CustomerLevelDTO invitorLevelInfo;  
-      
-    /**  
-     * 订单计算返回信息  
-     */  
-    private MyTradeInfoDTO calculateResult;  
-  
-  
-    ......  
-&#125;  
-</code></pre>
-</li>
-<li><p>定义责任链  </p>
-<pre><code class="java">public interface TradeHandler &#123;  
+</ol>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">TradeHandler</span> <span class="token punctuation">&#123;</span>
 
- boolean process(TradeContext tradeContext);  
-&#125;  
-</code></pre>
-<pre><code class="java">public class TradeHandlerChain &#123;  
+    <span class="token keyword">boolean</span> <span class="token function">process</span><span class="token punctuation">(</span><span class="token class-name">TradeContext</span> tradeContext<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
- List&lt;TradeHandler&gt; tradeHandlerList = new ArrayList&lt;&gt;();  
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">TradeHandlerChain</span> <span class="token punctuation">&#123;</span>
+
+    <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">TradeHandler</span><span class="token punctuation">></span></span> tradeHandlerList <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
 
- /**  
-  * 添加处理器  
-  * @param tradeHandler 处理器  
-  */  
- public TradeHandlerChain addHandler(TradeHandler tradeHandler) &#123;  
-     tradeHandlerList.add(tradeHandler);  
-     return this;  
- &#125;  
+    <span class="token comment">/**
+     * 添加处理器
+     * @param tradeHandler 处理器
+     */</span>
+    <span class="token keyword">public</span> <span class="token class-name">TradeHandlerChain</span> <span class="token function">addHandler</span><span class="token punctuation">(</span><span class="token class-name">TradeHandler</span> tradeHandler<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        tradeHandlerList<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>tradeHandler<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
 
 
- /**  
-  * 业务处理  
-  * @param tradeContext 上下文信息  
-  */  
- public void handler(TradeContext tradeContext) &#123;  
-     for (TradeHandler tradeHandler : tradeHandlerList) &#123;  
+    <span class="token comment">/**
+     * 业务处理
+     * @param tradeContext 上下文信息
+     */</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">handler</span><span class="token punctuation">(</span><span class="token class-name">TradeContext</span> tradeContext<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token class-name">TradeHandler</span> tradeHandler <span class="token operator">:</span> tradeHandlerList<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
 
-         if (!tradeHandler.process(tradeContext)) &#123;  
-             return;  
-         &#125;  
-     &#125;  
- &#125;  
-&#125;  
-</code></pre>
-</li>
-<li><p>定义业务处理器  </p>
-<p>业务处理器有多个，以下仅为其中一个的示例  </p>
-<pre><code class="java">@Component  
-public class TradeAddressValidateHandler implements TradeHandler &#123;  
+            <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>tradeHandler<span class="token punctuation">.</span><span class="token function">process</span><span class="token punctuation">(</span>tradeContext<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                <span class="token keyword">return</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
- @Autowired  
- private AddressServiceB addressServiceB;  
+<ol start="3">
+<li>定义业务处理器</li>
+</ol>
+<p>业务处理器有多个，以下仅为其中一个的示例</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token annotation punctuation">@Component</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">TradeAddressValidateHandler</span> <span class="token keyword">implements</span> <span class="token class-name">TradeHandler</span> <span class="token punctuation">&#123;</span>
 
- @Override  
- public boolean process(TradeContext tradeContext) &#123;  
+    <span class="token annotation punctuation">@Autowired</span>
+    <span class="token keyword">private</span> <span class="token class-name">AddressServiceB</span> addressServiceB<span class="token punctuation">;</span>
 
-     TradeConfirmContext tradeConfirmContext = (TradeConfirmContext) tradeContext;  
-     MyTradeDTO confirmParam = tradeConfirmContext.getConfirmParam();  
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">process</span><span class="token punctuation">(</span><span class="token class-name">TradeContext</span> tradeContext<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
 
-     if (Objects.nonNull(tradeConfirmContext.getAddressInfo())) &#123;  
-         return true;  
-     &#125;  
+        <span class="token class-name">TradeConfirmContext</span> tradeConfirmContext <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token class-name">TradeConfirmContext</span><span class="token punctuation">)</span> tradeContext<span class="token punctuation">;</span>
+        <span class="token class-name">MyTradeDTO</span> confirmParam <span class="token operator">=</span> tradeConfirmContext<span class="token punctuation">.</span><span class="token function">getConfirmParam</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-     Optional&lt;AddressInfoDTO&gt; optionalAddressInfoDto = addressServiceB.queryAddressById(confirmParam.getAddressId());  
-     if (optionalAddressInfoDto.isEmpty()) &#123;  
-         throw new MallException(&quot;地址信息不存在&quot;);  
-     &#125;  
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token class-name">Objects</span><span class="token punctuation">.</span><span class="token function">nonNull</span><span class="token punctuation">(</span>tradeConfirmContext<span class="token punctuation">.</span><span class="token function">getAddressInfo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
 
-     tradeConfirmContext.setAddressInfo(optionalAddressInfoDto.get());  
+        <span class="token class-name">Optional</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">AddressInfoDTO</span><span class="token punctuation">></span></span> optionalAddressInfoDto <span class="token operator">=</span> addressServiceB<span class="token punctuation">.</span><span class="token function">queryAddressById</span><span class="token punctuation">(</span>confirmParam<span class="token punctuation">.</span><span class="token function">getAddressId</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>optionalAddressInfoDto<span class="token punctuation">.</span><span class="token function">isEmpty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">MallException</span><span class="token punctuation">(</span><span class="token string">"地址信息不存在"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
 
-     return true;  
- &#125;  
-&#125;  
-</code></pre>
-</li>
-<li><p>将业务处理器组装成责任链  </p>
-<pre><code class="java">@Component  
-public class TradeChainFactory &#123;  
+        tradeConfirmContext<span class="token punctuation">.</span><span class="token function">setAddressInfo</span><span class="token punctuation">(</span>optionalAddressInfoDto<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
- @Autowired  
- private CouponCompatibleValueHandler couponCompatibleValueHandler;  
+        <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
- 省略业务处理器的注入  
- ......  
+<ol start="4">
+<li>将业务处理器组装成责任链</li>
+</ol>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token annotation punctuation">@Component</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">TradeChainFactory</span> <span class="token punctuation">&#123;</span>
+
+    <span class="token annotation punctuation">@Autowired</span>
+    <span class="token keyword">private</span> <span class="token class-name">CouponCompatibleValueHandler</span> couponCompatibleValueHandler<span class="token punctuation">;</span>
+
+    省略业务处理器的注入
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
 
 
- public TradeHandlerChain createCalculateChain() &#123;  
+    <span class="token keyword">public</span> <span class="token class-name">TradeHandlerChain</span> <span class="token function">createCalculateChain</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
 
-     TradeHandlerChain tradeHandlerChain = new TradeHandlerChain();  
-     tradeHandlerChain.addHandler(couponCompatibleValueHandler)  
-             .addHandler(tradeSkuStockValidateHandler)  
-             .addHandler(tradeSplitHandler)  
-             .addHandler(tradeReceiptAddressHandler)  
-             .addHandler(goodsCouponHandler)  
-             .addHandler(previousCalculateCacheGetHandler)  
-             .addHandler(tradeComputeHandler)  
-             .addHandler(tradeFreePostFeeValidateHandler)  
-             .addHandler(tradeSignHandler)  
-             .addHandler(tradePaymentVariationHandler)  
-             .addHandler(tradeCalculateVersionCompatibleHandler)  
-             .addHandler(mallExceptionRecommendCouponHandler);  
+        <span class="token class-name">TradeHandlerChain</span> tradeHandlerChain <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">TradeHandlerChain</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        tradeHandlerChain<span class="token punctuation">.</span><span class="token function">addHandler</span><span class="token punctuation">(</span>couponCompatibleValueHandler<span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">addHandler</span><span class="token punctuation">(</span>tradeSkuStockValidateHandler<span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">addHandler</span><span class="token punctuation">(</span>tradeSplitHandler<span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">addHandler</span><span class="token punctuation">(</span>tradeReceiptAddressHandler<span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">addHandler</span><span class="token punctuation">(</span>goodsCouponHandler<span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">addHandler</span><span class="token punctuation">(</span>previousCalculateCacheGetHandler<span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">addHandler</span><span class="token punctuation">(</span>tradeComputeHandler<span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">addHandler</span><span class="token punctuation">(</span>tradeFreePostFeeValidateHandler<span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">addHandler</span><span class="token punctuation">(</span>tradeSignHandler<span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">addHandler</span><span class="token punctuation">(</span>tradePaymentVariationHandler<span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">addHandler</span><span class="token punctuation">(</span>tradeCalculateVersionCompatibleHandler<span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">addHandler</span><span class="token punctuation">(</span>mallExceptionRecommendCouponHandler<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-     return tradeHandlerChain;  
- &#125;  
+        <span class="token keyword">return</span> tradeHandlerChain<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
 
-&#125;  
-</code></pre>
-</li>
-<li><p>责任链执行  </p>
-<pre><code class="java">@InvitorCheck  
-public MyTradeInfoDTO calculationOrder(MyTradeParam myTradeParam, Long userId) &#123;  
+<span class="token punctuation">&#125;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
- TradeCalculateContext tradeCalculateContext = TradeCalculateContext.init(userId, myTradeParam);  
+<ol start="5">
+<li>责任链执行</li>
+</ol>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token annotation punctuation">@InvitorCheck</span>
+<span class="token keyword">public</span> <span class="token class-name">MyTradeInfoDTO</span> <span class="token function">calculationOrder</span><span class="token punctuation">(</span><span class="token class-name">MyTradeParam</span> myTradeParam<span class="token punctuation">,</span> <span class="token class-name">Long</span> userId<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
 
- // 责任链处理订单计算的整个过程  
- TradeHandlerChain tradeHandlerChain = tradeChainFactory.createCalculateChain();  
- tradeHandlerChain.handler(tradeCalculateContext);  
+    <span class="token class-name">TradeCalculateContext</span> tradeCalculateContext <span class="token operator">=</span> <span class="token class-name">TradeCalculateContext</span><span class="token punctuation">.</span><span class="token function">init</span><span class="token punctuation">(</span>userId<span class="token punctuation">,</span> myTradeParam<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
- return tradeCalculateContext.getCalculateResult();  
-&#125;  
-</code></pre>
-<h2 id="思考"><a href="#思考" class="headerlink" title="思考"></a>思考</h2><p>整个重构过程除了对业务逻辑的改造外，最大的改动就是根据职责单一的原则进行了过程分解，然后优化了代码的组织方式，使得功能更加聚合。  </p>
-<p>在重构的过程中还发现另一个问题是原先代码中各种get set遍布，但是单纯的get set方法并不能有效的表达业务语义，整个订单计算过程中有优惠券优惠金额，有包邮活动减免金额等，那么对于订单的实际应付金额的计算是应该在不同业务中调用set赋值呢？还是统一有个方法计算应付金额？而这也是我们在领域设计时需要考虑到的领域方法。  </p>
-<p>在领域驱动设计的过程中，有时我们过于关注领域模型和领域服务的设计，忽略了应用层的编写，而应用层的业务编排往往是最容易产生代码腐败的地方。往往复杂的业务并不会因为优秀领域模型的设计而降低原本的业务复杂度，那么如果应用层的业务编排还是流程式、过程式的代码组织方式，我们的应用层也许又变成了泥球式的应用。  </p>
+    <span class="token comment">// 责任链处理订单计算的整个过程</span>
+    <span class="token class-name">TradeHandlerChain</span> tradeHandlerChain <span class="token operator">=</span> tradeChainFactory<span class="token punctuation">.</span><span class="token function">createCalculateChain</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    tradeHandlerChain<span class="token punctuation">.</span><span class="token function">handler</span><span class="token punctuation">(</span>tradeCalculateContext<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">return</span> tradeCalculateContext<span class="token punctuation">.</span><span class="token function">getCalculateResult</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="思考"><a href="#思考" class="headerlink" title="思考"></a>思考</h2><p>整个重构过程除了对业务逻辑的改造外，最大的改动就是根据职责单一的原则进行了过程分解，然后优化了代码的组织方式，使得功能更加聚合。</p>
+<p>在重构的过程中还发现另一个问题是原先代码中各种get set遍布，但是单纯的get set方法并不能有效的表达业务语义，整个订单计算过程中有优惠券优惠金额，有包邮活动减免金额等，那么对于订单的实际应付金额的计算是应该在不同业务中调用set赋值呢？还是统一有个方法计算应付金额？而这也是我们在领域设计时需要考虑到的领域方法。</p>
+<p>在领域驱动设计的过程中，有时我们过于关注领域模型和领域服务的设计，忽略了应用层的编写，而应用层的业务编排往往是最容易产生代码腐败的地方。往往复杂的业务并不会因为优秀领域模型的设计而降低原本的业务复杂度，那么如果应用层的业务编排还是流程式、过程式的代码组织方式，我们的应用层也许又变成了泥球式的应用。</p>
 <p>而自上而下的结构化分解+自下而上的面向对象分析，这也许是写出干净整洁易维护代码的方式。</p>
-</li>
-</ol>
 
                 
             </div>
