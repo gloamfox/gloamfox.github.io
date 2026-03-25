@@ -861,7 +861,7 @@
 </blockquote>
 <h2 id="存储层次金字塔"><a href="#存储层次金字塔" class="headerlink" title="存储层次金字塔"></a>存储层次金字塔</h2></li>
 </ul>
-<p>![[计算机结构 2026-03-21 13.58.33.excalidraw]]</p>
+<p>![[file-20260321135833.excalidraw]]</p>
 <h2 id="Cache"><a href="#Cache" class="headerlink" title="Cache"></a>Cache</h2><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><p>Cache（高速缓存）是位于CPU和主内存之间的高速存储器，其作用是存放最常用的主内存数据副本，以解决CPU与主内存之间的速度差距。<br>在计算机的存储体系中中，除寄存器外Cache是访问最快的层次，使用Cacheg改善系统性能的依据是程序的<strong>局部性原理</strong></p>
 <p>如果以h代表对Cache的访问命中率，t表示Cache的周期时间，$t_2$ 表示主存储器周期时间，以读操作为例，使用”Cache+主存储器”的系统的平均周期为$t_3$ 则<br>$$t_3 = h \times t_1 + (1-h) \times t_2$$</p>
 <p>其中$（1-h）$ 又称为失效率（未命中率）</p>
@@ -1040,12 +1040,13 @@
 <li>地址总线（Address Bus）：用来指定在RAM之中存储的数据的地址。</li>
 <li>控制总线（Control Bus）：将微处理器控制单元（Control Unit）的信号传送到周边设备，一般常见的为USB Bus和1394 Bus。</li>
 </ul>
-<h1 id="串联系统与并联系统"><a href="#串联系统与并联系统" class="headerlink" title="串联系统与并联系统"></a>串联系统与并联系统</h1><h2 id="串联系统"><a href="#串联系统" class="headerlink" title="串联系统"></a>串联系统</h2><p>![[file-20250920121315948|800]]</p>
+<h1 id="串联系统与并联系统"><a href="#串联系统与并联系统" class="headerlink" title="串联系统与并联系统"></a>串联系统与并联系统</h1><h2 id="串联系统"><a href="#串联系统" class="headerlink" title="串联系统"></a>串联系统</h2><p>![[file-202603251418271827.excalidraw|800]]</p>
 <p>系统可靠性 $R = R1 \times R2 \times … \times R_n$<br>系统故障率 $\lambda = \lambda_1 + \lambda_2 + … + \lambda_n$ </p>
-<h2 id="并联系统"><a href="#并联系统" class="headerlink" title="并联系统"></a>并联系统</h2><p>![[file-20250920121315949|600]]</p>
+<h2 id="并联系统"><a href="#并联系统" class="headerlink" title="并联系统"></a>并联系统</h2><p>![[file-202603251419241924.excalidraw|600]]</p>
 <p>系统可靠性 $R = 1 - (1-R_1) \times (1-R_2) \times … \times (1-R_n)$ </p>
 <p><strong>推导过程：</strong><br>假设一个并联系统由 <code>n</code> 个独立的组件组成，每个组件的可靠性（正常工作的概率）分别为 R1,R2,…,Rn​。每个组件的不可靠性（失效的概率）则为 $Fi=1−Ri$​。<br>由于系统失效需要所有组件同时失效，这个事件的概率是各组件不可靠性的乘积：<br>$Fs=F1×F2×…×Fn=(1−R1)×(1−R2)×…×(1−Rn)$<br>那么，系统的可靠性 RsRs​ 就是系统不失效的概率，即用 1 减去所有组件都失效的概率：<br>$R=1−Fs=1−[(1−R1)×(1−R2)×…×(1−Rn)]$</p>
-<h2 id="N模混合系统"><a href="#N模混合系统" class="headerlink" title="N模混合系统"></a>N模混合系统</h2><p>![[file-20250920121315957|800]]<br>将混合系统分解为基本的串联和并联子系统，分别计算每个子系统的系统可靠性<br>可靠性 $R=R\times(1-(1-R)^3)\times(1-(1-R)^2)$</p>
+<h2 id="N模混合系统"><a href="#N模混合系统" class="headerlink" title="N模混合系统"></a>N模混合系统</h2><p>![[file-20260325142004204.excalidraw | 800]]</p>
+<p>将混合系统分解为基本的串联和并联子系统，分别计算每个子系统的系统可靠性<br>可靠性 $R=R\times(1-(1-R)^3)\times(1-(1-R)^2)$</p>
 <h1 id="校验码"><a href="#校验码" class="headerlink" title="校验码"></a>校验码</h1><p>校验码是在原始数据（信息位）的基础上，附加一些额外的冗余码（校验位）而组成的一种编码，通过增加冗余信息，使合法的编码符合某种特定的规律（如奇偶性、能被某个数整除等）。如果接收到的编码不符合这个规律，就表明发生了错误。</p>
 <p><strong>目的与作用</strong></p>
 <ul>

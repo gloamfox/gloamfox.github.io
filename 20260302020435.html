@@ -526,70 +526,66 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>之前都是使用Typora编辑笔记和文档，Markdown写笔记或者文档简直不要太方便，熟练语法后，双手可以不离开键盘，目光始终聚焦再文字上面，写作体验非常流畅。  </p>
-<p>随着文档的增多，发现文档越来越不好管理，尝试语雀、印象笔记、腾讯文档、飞书文档等软件，功能虽然很多但是总感觉和自己不太搭，而且软件商业化的原因开始绑架免费用户，虽然能够理解但还是很不爽。<br>尝试了Obsidian觉得眼前一亮，颜值是第一吸引力，可以自由搭配的插件以及主题可以解决我的需求。  </p>
-<h1 id="数据同步"><a href="#数据同步" class="headerlink" title="数据同步"></a>数据同步</h1><p>身为一名资深的白嫖党，果断拒绝了Obsidian自带的同步功能，可以使用GitHub进行替代，无限容量，私人仓库也是完全免费，用来管理笔记文档简直是降维打击。<br>总的来说就是建立一个git仓库，把笔记都丢进去，将一些文件和目录都忽略掉，然后使用Obsidian打开这个git仓库作为Obsidian的仓库使用。<br>由于Obsidian使用过程中有些自带的文件一直变化，直接忽略掉。  </p>
+                <p>之前都是使用Typora编辑笔记和文档，Markdown写笔记或者文档简直不要太方便，熟练语法后，双手可以不离开键盘，目光始终聚焦再文字上面，写作体验非常流畅。</p>
+<p>随着文档的增多，发现文档越来越不好管理，尝试语雀、印象笔记、腾讯文档、飞书文档等软件，功能虽然很多但是总感觉和自己不太搭，而且软件商业化的原因开始绑架免费用户，虽然能够理解但还是很不爽。<br>尝试了Obsidian觉得眼前一亮，颜值是第一吸引力，可以自由搭配的插件以及主题可以解决我的需求。</p>
+<h1 id="数据同步"><a href="#数据同步" class="headerlink" title="数据同步"></a>数据同步</h1><p>身为一名资深的白嫖党，果断拒绝了Obsidian自带的同步功能，可以使用GitHub进行替代，无限容量，私人仓库也是完全免费，用来管理笔记文档简直是降维打击。<br>总的来说就是建立一个git仓库，把笔记都丢进去，将一些文件和目录都忽略掉，然后使用Obsidian打开这个git仓库作为Obsidian的仓库使用。<br>由于Obsidian使用过程中有些自带的文件一直变化，直接忽略掉。</p>
 <blockquote>
-<p>由于国内网络的问题，我使用的是阿里云效的代码仓库进行托管  </p>
+<p>由于国内网络的问题，我使用的是阿里云效的代码仓库进行托管</p>
 </blockquote>
-<p>.gitignore 文件内容  </p>
-<pre><code class="bash">## obsidian的工作区配置  
-.obsidian/workspace.json  
-## obsidian移动端的工作区配置  
-.obsidian/workspace-mobile.json  
-## 插件的本地配置数据，变更频繁就忽略了  
-.obsidian/plugins/remotely-save/data.json  
-## obsidian的本地缓存  
-*.foldersync.old  
-## obsidian的文件同步缓存  
-rs-test-folder-*  
-## obsidian文件撤回目录  
-.trash  
-</code></pre>
-<p>如何使用git需要单独学习，不想要记忆命令的话，Obsidian有git的插件，直接使用也很方便。  </p>
+<p>.gitignore 文件内容</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment">## obsidian的工作区配置</span>
+.obsidian/workspace.json
+<span class="token comment">## obsidian移动端的工作区配置</span>
+.obsidian/workspace-mobile.json
+<span class="token comment">## 插件的本地配置数据，变更频繁就忽略了</span>
+.obsidian/plugins/remotely-save/data.json
+<span class="token comment">## obsidian的本地缓存</span>
+*.foldersync.old
+<span class="token comment">## obsidian的文件同步缓存</span>
+rs-test-folder-*
+<span class="token comment">## obsidian文件撤回目录</span>
+.trash<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>如何使用git需要单独学习，不想要记忆命令的话，Obsidian有git的插件，直接使用也很方便。</p>
 <h2 id="IOS同步"><a href="#IOS同步" class="headerlink" title="IOS同步"></a>IOS同步</h2><ol>
-<li><p>apple store下载ISH  </p>
+<li><p>apple store下载ISH</p>
 </li>
-<li><p>打开ISH执行以下命令  </p>
+<li><p>打开ISH执行以下命令</p>
 <ul>
-<li>安装git  <code>apk add git</code>  </li>
-<li>用于在当前用户的主目录下创建一个名为 “obsidian” 的新文件夹<br><code>cd ~ &amp;&amp; mkdir obsidian</code>  </li>
-<li>执行以下命令会打开手机文件管理器，之后需要选中本地的obsidian文件夹，点击完成。这样就让obsidian软件中的math文件夹，装载到ish上的obsidian文件夹内 ，之后对于obsidian软件内math文件的修改，iSH上也同步修改<br><code>mount -t ios . obsidian</code>     </li>
-<li>通过cd命令，进入obsidian文件夹内<br><code>cd ~/obsidian</code>     </li>
-<li>Git 克隆仓库到obsidian目录,输入账号和密码（github personal access key）<br><code>git clone https://xxxxxx.git</code>     </li>
+<li>安装git  <code>apk add git</code></li>
+<li>用于在当前用户的主目录下创建一个名为 “obsidian” 的新文件夹<br><code>cd ~ &amp;&amp; mkdir obsidian</code></li>
+<li>执行以下命令会打开手机文件管理器，之后需要选中本地的obsidian文件夹，点击完成。这样就让obsidian软件中的math文件夹，装载到ish上的obsidian文件夹内 ，之后对于obsidian软件内math文件的修改，iSH上也同步修改<br><code>mount -t ios . obsidian</code>   </li>
+<li>通过cd命令，进入obsidian文件夹内<br><code>cd ~/obsidian</code>   </li>
+<li>Git 克隆仓库到obsidian目录,输入账号和密码（github personal access key）<br><code>git clone https://xxxxxx.git</code>   </li>
 </ul>
 </li>
-<li><p>打开obsidian就会看到你的仓库咯  </p>
-<h3 id="异常解决"><a href="#异常解决" class="headerlink" title="异常解决"></a>异常解决</h3><p>如果遇到git clone 一直卡着 多次尝试都无法clone成功的  </p>
+<li><p>打开obsidian就会看到你的仓库咯</p>
 </li>
-<li><p>先创建目录并进入目录  </p>
-<pre><code class="shell">mkdir ～/obsidian/目录名    
-cd ～/obsidian/目录名  
-</code></pre>
-</li>
-<li><p>初始化git仓库<br><code>git init</code>  </p>
-</li>
-<li><p>将一个名为 “safe.directory” 的 Git 全局配置设置添加到您的 Git 环境中，并将其设置为“/.gitconfig” 文件中，并且可以被所有在您的本地机器上运行的 Git 仓库使用，以确保它们都知道您选择的安全目录的位置。这个命令是为了帮助您保护您的个人、敏感或重要的 Git 仓库，以防止在错误的位置或受到攻击的计算机上泄露。<br><code>git config --global --add safe.directory ~/obsidian/目录名</code>     </p>
-</li>
-<li><p>当 Git 打包一个仓库的对象时，会将这些对象压缩成一个文件存储在 Git 对象库中。这个操作非常耗费资源，因此使用多线程处理可以加速打包过程。设置 “pack.threads” 为 1 意味着 Git 将使用单线程进行打包操作，这样可能会减缓打包速度，但是也能够减少计算机的 CPU 和内存负载。<br><code>git config pack.threads 1</code>     </p>
-<h1 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h1><p>下面是个人比较喜欢的主题  </p>
-</li>
-<li><p>Minimal  </p>
-</li>
-<li><p>iA Writer  </p>
-</li>
-<li><p>Obsidianotion  </p>
-<h1 id="第三方插件"><a href="#第三方插件" class="headerlink" title="第三方插件"></a>第三方插件</h1></li>
-<li><p>Excalidraw：画图神器  </p>
-</li>
-<li><p>Explorer Hider：用于隐藏某些目录不太Obsidian的文件管理上显示  </p>
-</li>
-<li><p>Code Style：用于代码显示优化  </p>
-</li>
-<li><p>Style Settings：配合主题的样式设置插件  </p>
-</li>
-<li><p>Minimal Theme Settings：minimal主题自定义设置插件</p>
-</li>
+</ol>
+<h3 id="异常解决"><a href="#异常解决" class="headerlink" title="异常解决"></a>异常解决</h3><p>如果遇到git clone 一直卡着 多次尝试都无法clone成功的</p>
+<ol>
+<li>先创建目录并进入目录</li>
+</ol>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">mkdir</span> ～/obsidian/目录名  
+<span class="token builtin class-name">cd</span> ～/obsidian/目录名<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<ol start="2">
+<li>初始化git仓库<br><code>git init</code></li>
+<li>将一个名为 “safe.directory” 的 Git 全局配置设置添加到您的 Git 环境中，并将其设置为“/.gitconfig” 文件中，并且可以被所有在您的本地机器上运行的 Git 仓库使用，以确保它们都知道您选择的安全目录的位置。这个命令是为了帮助您保护您的个人、敏感或重要的 Git 仓库，以防止在错误的位置或受到攻击的计算机上泄露。<br><code>git config --global --add safe.directory ~/obsidian/目录名</code>   </li>
+<li>当 Git 打包一个仓库的对象时，会将这些对象压缩成一个文件存储在 Git 对象库中。这个操作非常耗费资源，因此使用多线程处理可以加速打包过程。设置 “pack.threads” 为 1 意味着 Git 将使用单线程进行打包操作，这样可能会减缓打包速度，但是也能够减少计算机的 CPU 和内存负载。<br><code>git config pack.threads 1</code>   </li>
+</ol>
+<h1 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h1><p>下面是个人比较喜欢的主题</p>
+<ol>
+<li>Minimal</li>
+<li>iA Writer</li>
+<li>Obsidianotion</li>
+</ol>
+<h1 id="第三方插件"><a href="#第三方插件" class="headerlink" title="第三方插件"></a>第三方插件</h1><ol>
+<li>Excalidraw：画图神器</li>
+<li>Explorer Hider：用于隐藏某些目录不太Obsidian的文件管理上显示</li>
+<li>Code Style：用于代码显示优化</li>
+<li>Style Settings：配合主题的样式设置插件</li>
+<li>Minimal Theme Settings：minimal主题自定义设置插件</li>
 </ol>
 
                 
