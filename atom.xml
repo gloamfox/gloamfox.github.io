@@ -6,7 +6,7 @@
   <link href="https://gloamfox.github.io/atom.xml" rel="self"/>
   
   <link href="https://gloamfox.github.io/"/>
-  <updated>2026-03-25T02:30:57.547Z</updated>
+  <updated>2026-03-25T02:49:34.145Z</updated>
   <id>https://gloamfox.github.io/</id>
   
   <author>
@@ -17,40 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Hexo永久链接最佳实践：终极方案与优化指南</title>
-    <link href="https://gloamfox.github.io/20260324094537.html"/>
-    <id>https://gloamfox.github.io/20260324094537.html</id>
-    <published>2026-03-24T09:45:37.000Z</published>
-    <updated>2026-03-25T02:30:57.547Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;结论先行：日期方案是最佳选择&quot;&gt;&lt;a href=&quot;#结论先行：日期方案是最佳选择&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="技术教程" scheme="https://gloamfox.github.io/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/"/>
-    
-    
-    <category term="Hexo" scheme="https://gloamfox.github.io/tags/Hexo/"/>
-    
-    <category term="永久链接" scheme="https://gloamfox.github.io/tags/%E6%B0%B8%E4%B9%85%E9%93%BE%E6%8E%A5/"/>
-    
-    <category term="SEO优化" scheme="https://gloamfox.github.io/tags/SEO%E4%BC%98%E5%8C%96/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Hexo博客搜索链接丢失域名问题修复</title>
-    <link href="https://gloamfox.github.io/20260324025235.html"/>
-    <id>https://gloamfox.github.io/20260324025235.html</id>
-    <published>2026-03-24T02:52:35.000Z</published>
-    <updated>2026-03-25T02:30:57.545Z</updated>
+    <link href="https://gloamfox.github.io/20260324145235.html"/>
+    <id>https://gloamfox.github.io/20260324145235.html</id>
+    <published>2026-03-24T14:52:35.000Z</published>
+    <updated>2026-03-25T02:49:34.145Z</updated>
     
     
       
@@ -75,11 +46,40 @@
   </entry>
   
   <entry>
+    <title>Hexo永久链接最佳实践：终极方案与优化指南</title>
+    <link href="https://gloamfox.github.io/20260324094537.html"/>
+    <id>https://gloamfox.github.io/20260324094537.html</id>
+    <published>2026-03-24T09:45:37.000Z</published>
+    <updated>2026-03-25T02:49:34.145Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;结论先行：日期方案是最佳选择&quot;&gt;&lt;a href=&quot;#结论先行：日期方案是最佳选择&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="技术教程" scheme="https://gloamfox.github.io/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/"/>
+    
+    
+    <category term="Hexo" scheme="https://gloamfox.github.io/tags/Hexo/"/>
+    
+    <category term="永久链接" scheme="https://gloamfox.github.io/tags/%E6%B0%B8%E4%B9%85%E9%93%BE%E6%8E%A5/"/>
+    
+    <category term="SEO优化" scheme="https://gloamfox.github.io/tags/SEO%E4%BC%98%E5%8C%96/"/>
+    
+  </entry>
+  
+  <entry>
     <title>图片压缩与格式优化指南</title>
     <link href="https://gloamfox.github.io/20260323060238.html"/>
     <id>https://gloamfox.github.io/20260323060238.html</id>
     <published>2026-03-23T06:02:38.000Z</published>
-    <updated>2026-03-25T02:30:57.548Z</updated>
+    <updated>2026-03-25T02:49:34.148Z</updated>
     
     
       
@@ -109,7 +109,7 @@
     <link href="https://gloamfox.github.io/20260319105942.html"/>
     <id>https://gloamfox.github.io/20260319105942.html</id>
     <published>2026-03-19T10:59:42.000Z</published>
-    <updated>2026-03-25T02:30:57.547Z</updated>
+    <updated>2026-03-25T02:49:34.145Z</updated>
     
     
       
@@ -138,7 +138,7 @@
     <link href="https://gloamfox.github.io/20260319034656.html"/>
     <id>https://gloamfox.github.io/20260319034656.html</id>
     <published>2026-03-19T03:46:56.000Z</published>
-    <updated>2026-03-25T02:30:57.547Z</updated>
+    <updated>2026-03-25T02:49:34.147Z</updated>
     
     
       
@@ -169,7 +169,7 @@
     <link href="https://gloamfox.github.io/20260318103427.html"/>
     <id>https://gloamfox.github.io/20260318103427.html</id>
     <published>2026-03-18T10:34:27.000Z</published>
-    <updated>2026-03-25T02:30:57.547Z</updated>
+    <updated>2026-03-25T02:49:34.145Z</updated>
     
     
       
@@ -196,7 +196,7 @@
     <link href="https://gloamfox.github.io/20260316090820.html"/>
     <id>https://gloamfox.github.io/20260316090820.html</id>
     <published>2026-03-16T09:08:20.000Z</published>
-    <updated>2026-03-25T02:30:57.549Z</updated>
+    <updated>2026-03-25T02:49:34.149Z</updated>
     
     
       
@@ -225,7 +225,7 @@
     <link href="https://gloamfox.github.io/20260314085149.html"/>
     <id>https://gloamfox.github.io/20260314085149.html</id>
     <published>2026-03-14T08:51:49.000Z</published>
-    <updated>2026-03-25T02:30:57.548Z</updated>
+    <updated>2026-03-25T02:49:34.148Z</updated>
     
     
       
@@ -257,7 +257,7 @@
     <link href="https://gloamfox.github.io/20260303020433.html"/>
     <id>https://gloamfox.github.io/20260303020433.html</id>
     <published>2026-03-03T02:04:33.000Z</published>
-    <updated>2026-03-25T02:30:57.548Z</updated>
+    <updated>2026-03-25T02:49:34.148Z</updated>
     
     
       
@@ -286,7 +286,7 @@
     <link href="https://gloamfox.github.io/20260302122243.html"/>
     <id>https://gloamfox.github.io/20260302122243.html</id>
     <published>2026-03-02T12:22:43.000Z</published>
-    <updated>2026-03-25T02:30:57.549Z</updated>
+    <updated>2026-03-25T02:49:34.148Z</updated>
     
     
       
@@ -315,7 +315,7 @@
     <link href="https://gloamfox.github.io/20260302090433.html"/>
     <id>https://gloamfox.github.io/20260302090433.html</id>
     <published>2026-03-02T09:04:33.000Z</published>
-    <updated>2026-03-25T02:30:57.550Z</updated>
+    <updated>2026-03-25T02:49:34.150Z</updated>
     
     
       
@@ -344,7 +344,7 @@
     <link href="https://gloamfox.github.io/20260302020833.html"/>
     <id>https://gloamfox.github.io/20260302020833.html</id>
     <published>2026-03-02T02:08:33.000Z</published>
-    <updated>2026-03-25T02:30:57.549Z</updated>
+    <updated>2026-03-25T02:49:34.149Z</updated>
     
     
       
@@ -373,7 +373,7 @@
     <link href="https://gloamfox.github.io/20260302020450.html"/>
     <id>https://gloamfox.github.io/20260302020450.html</id>
     <published>2026-03-02T02:04:50.000Z</published>
-    <updated>2026-03-25T02:30:57.548Z</updated>
+    <updated>2026-03-25T02:49:34.148Z</updated>
     
     
       
@@ -405,7 +405,7 @@
     <link href="https://gloamfox.github.io/20260302020435.html"/>
     <id>https://gloamfox.github.io/20260302020435.html</id>
     <published>2026-03-02T02:04:35.000Z</published>
-    <updated>2026-03-25T02:30:57.547Z</updated>
+    <updated>2026-03-25T02:49:34.146Z</updated>
     
     
       
@@ -435,7 +435,7 @@
     <link href="https://gloamfox.github.io/20260302020433.html"/>
     <id>https://gloamfox.github.io/20260302020433.html</id>
     <published>2026-03-02T02:04:33.000Z</published>
-    <updated>2026-03-25T02:30:57.548Z</updated>
+    <updated>2026-03-25T02:49:34.148Z</updated>
     
     
       
@@ -464,7 +464,7 @@
     <link href="https://gloamfox.github.io/20260302020433.html"/>
     <id>https://gloamfox.github.io/20260302020433.html</id>
     <published>2026-03-02T02:04:33.000Z</published>
-    <updated>2026-03-25T02:30:57.549Z</updated>
+    <updated>2026-03-25T02:49:34.149Z</updated>
     
     
       
@@ -496,7 +496,7 @@
     <link href="https://gloamfox.github.io/20260301122243.html"/>
     <id>https://gloamfox.github.io/20260301122243.html</id>
     <published>2026-03-01T12:22:43.000Z</published>
-    <updated>2026-03-25T02:30:57.549Z</updated>
+    <updated>2026-03-25T02:49:34.149Z</updated>
     
     
       
@@ -525,7 +525,7 @@
     <link href="https://gloamfox.github.io/20260226043540.html"/>
     <id>https://gloamfox.github.io/20260226043540.html</id>
     <published>2026-02-26T04:35:40.000Z</published>
-    <updated>2026-03-25T02:30:57.548Z</updated>
+    <updated>2026-03-25T02:49:34.147Z</updated>
     
     
       
@@ -555,7 +555,7 @@
     <link href="https://gloamfox.github.io/20260130032221.html"/>
     <id>https://gloamfox.github.io/20260130032221.html</id>
     <published>2026-01-30T03:22:21.000Z</published>
-    <updated>2026-03-25T02:30:57.549Z</updated>
+    <updated>2026-03-25T02:49:34.149Z</updated>
     
     
       
@@ -586,7 +586,7 @@
     <link href="https://gloamfox.github.io/20251218123750.html"/>
     <id>https://gloamfox.github.io/20251218123750.html</id>
     <published>2025-12-18T12:37:50.000Z</published>
-    <updated>2026-03-25T02:30:57.548Z</updated>
+    <updated>2026-03-25T02:49:34.147Z</updated>
     
     
       
