@@ -496,7 +496,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    651
+                    658
                 </div>
                 
 
@@ -526,39 +526,36 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="安装nginx"><a href="#安装nginx" class="headerlink" title="安装nginx"></a>安装nginx</h2><p>在<a target="_blank" rel="noopener" href="http://nginx.org/en/download.html">官网</a>下载和系统匹配的nginx，解压即可  </p>
-<h2 id="安装OpenSSL"><a href="#安装OpenSSL" class="headerlink" title="安装OpenSSL"></a>安装OpenSSL</h2><p><strong>若网站有https的证书跳过2、3、4步即可，若没有证书则需要自己生成</strong>  </p>
-<p>由于代理https需要使用证书，这里我们使用OpenSSL生成自签名的证书，可以下载与系统相匹配的OpenSSL程序进行安装，安装过程一直下一步即可，<a target="_blank" rel="noopener" href="http://slproweb.com/products/Win32OpenSSL.html">下载地址</a>  </p>
+                <h2 id="安装nginx"><a href="#安装nginx" class="headerlink" title="安装nginx"></a>安装nginx</h2><p>在<a target="_blank" rel="noopener" href="http://nginx.org/en/download.html">官网</a>下载和系统匹配的nginx，解压即可</p>
+<h2 id="安装OpenSSL"><a href="#安装OpenSSL" class="headerlink" title="安装OpenSSL"></a>安装OpenSSL</h2><p><strong>若网站有https的证书跳过2、3、4步即可，若没有证书则需要自己生成</strong></p>
+<p>由于代理https需要使用证书，这里我们使用OpenSSL生成自签名的证书，可以下载与系统相匹配的OpenSSL程序进行安装，安装过程一直下一步即可，<a target="_blank" rel="noopener" href="http://slproweb.com/products/Win32OpenSSL.html">下载地址</a></p>
 <h2 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a>配置环境变量</h2><ol>
-<li><p>新增环境变量 <code>OPENSSL_HOME</code>，变量值为 <code>D:\OpenSSL-Win64</code>，指向OpenSSL的安装路径  </p>
-</li>
-<li><p>新增环境变量 <code>OPENSSL_CONF</code>，变量值为 <code>D:\OpenSSL-Win64\bin\openssl.cfg</code>，指向openssl.cfg文件目录  </p>
-</li>
-<li><p>在环境变量path的末尾添加 <code>%OPENSSL_HOME%\bin</code>  </p>
-<h2 id="生成证书"><a href="#生成证书" class="headerlink" title="生成证书"></a>生成证书</h2><p>在nginx安装目录创建 <code>ssl</code>文件夹，用于存放证书，如我的是 <code>F:\nginx-1.16.1\ssl</code>，以管理员权限运行cmd并进入创建的ssl目录  </p>
-<h3 id="创建私钥"><a href="#创建私钥" class="headerlink" title="创建私钥"></a>创建私钥</h3><p>在命令行中执行命令 <code>openssl genrsa -des3 -out demo.key 1024</code> ，demo是私钥文件名，可以自定义，此处需要输入和验证密码，输入的密码请记住，后面会用到，这里输入的密码是 <code>123456</code><br><img src="../Assets/file-1774074047684.png" >  </p>
-<h3 id="创建crs证书"><a href="#创建crs证书" class="headerlink" title="创建crs证书"></a>创建crs证书</h3><p>在命令行中执行 <code>openssl req -new -key demo.key -out demo.csr</code>，其中key文件就是第一步生成的私钥，demo为自定义的文件名，如下所示，这里主要设置的是国家地区以及组织的一些信息，其中最重要的是 <code>Common Name</code>，这里输入的就是我们要用https访问的域名，也是nginx中所要配置的 <code>server_name</code>，完成所有步骤后，ssl文件夹中会生成demo.csr和demo.key两个文件  </p>
-<p><img src="../Assets/file-1774074074554.png" >  </p>
-<h3 id="去除密码"><a href="#去除密码" class="headerlink" title="去除密码"></a>去除密码</h3><p>在加载SSL支持的Nginx并使用上述私钥时除去必须的口令，否则会在启动nginx的时候需要输入密码。复制demo.key并重命名为demo.key.org。<br>在命令行中执行此命令：<code>openssl rsa -in demo.key.org -out demo.key</code>  如下图所示，此命令需要输入刚才设置的密码。  </p>
-<h3 id="生成crt证书"><a href="#生成crt证书" class="headerlink" title="生成crt证书"></a>生成crt证书</h3><p>在命令行中执行此命令：<code>openssl x509 -req -days 365 -in demo.csr -signkey demo.key -out demo.crt</code>  </p>
-<p>证书生成完毕，我们在ssl文件夹中可以看到生辰的证书文件，我们要用到的就是demo.crt和demo.key。  </p>
-<h2 id="修改nginx配置"><a href="#修改nginx配置" class="headerlink" title="修改nginx配置"></a>修改nginx配置</h2><p>在nginx.conf配置文件中添加一个如下server  </p>
-<pre><code>server &#123;  
-     listen  443 ssl;  
-     server_name  www.demo.com;  
-     ssl_certificate      F:/nginx-1.16.1/ssl/demo.crt;  
-     ssl_certificate_key  F:/nginx-1.16.1/ssl/demo.key;  
-
-     location / &#123;  
-       root   html;  
-       index  index.html index.htm;  
-     &#125;  
- &#125;  
-</code></pre>
-<h2 id="启动nginx"><a href="#启动nginx" class="headerlink" title="启动nginx"></a>启动nginx</h2><p>正常启动nginx后，使用 <a target="_blank" rel="noopener" href="https://127.0.0.1/">https://127.0.0.1:443</a> 访问，可以正常跳转  </p>
-<p><img src="../Assets/file-1774074102573.png" ></p>
-</li>
+<li>新增环境变量 <code>OPENSSL_HOME</code>，变量值为 <code>D:\OpenSSL-Win64</code>，指向OpenSSL的安装路径</li>
+<li>新增环境变量 <code>OPENSSL_CONF</code>，变量值为 <code>D:\OpenSSL-Win64\bin\openssl.cfg</code>，指向openssl.cfg文件目录</li>
+<li>在环境变量path的末尾添加 <code>%OPENSSL_HOME%\bin</code></li>
 </ol>
+<h2 id="生成证书"><a href="#生成证书" class="headerlink" title="生成证书"></a>生成证书</h2><p>在nginx安装目录创建 <code>ssl</code>文件夹，用于存放证书，如我的是 <code>F:\nginx-1.16.1\ssl</code>，以管理员权限运行cmd并进入创建的ssl目录</p>
+<h3 id="创建私钥"><a href="#创建私钥" class="headerlink" title="创建私钥"></a>创建私钥</h3><p>在命令行中执行命令 <code>openssl genrsa -des3 -out demo.key 1024</code> ，demo是私钥文件名，可以自定义，此处需要输入和验证密码，输入的密码请记住，后面会用到，这里输入的密码是 <code>123456</code><br><img src="../Assets/file-1774074047684.png" ></p>
+<h3 id="创建crs证书"><a href="#创建crs证书" class="headerlink" title="创建crs证书"></a>创建crs证书</h3><p>在命令行中执行 <code>openssl req -new -key demo.key -out demo.csr</code>，其中key文件就是第一步生成的私钥，demo为自定义的文件名，如下所示，这里主要设置的是国家地区以及组织的一些信息，其中最重要的是 <code>Common Name</code>，这里输入的就是我们要用https访问的域名，也是nginx中所要配置的 <code>server_name</code>，完成所有步骤后，ssl文件夹中会生成demo.csr和demo.key两个文件</p>
+<p><img src="../Assets/file-1774074074554.png" ></p>
+<h3 id="去除密码"><a href="#去除密码" class="headerlink" title="去除密码"></a>去除密码</h3><p>在加载SSL支持的Nginx并使用上述私钥时除去必须的口令，否则会在启动nginx的时候需要输入密码。复制demo.key并重命名为demo.key.org。<br>在命令行中执行此命令：<code>openssl rsa -in demo.key.org -out demo.key</code>  如下图所示，此命令需要输入刚才设置的密码。</p>
+<h3 id="生成crt证书"><a href="#生成crt证书" class="headerlink" title="生成crt证书"></a>生成crt证书</h3><p>在命令行中执行此命令：<code>openssl x509 -req -days 365 -in demo.csr -signkey demo.key -out demo.crt</code></p>
+<p>证书生成完毕，我们在ssl文件夹中可以看到生辰的证书文件，我们要用到的就是demo.crt和demo.key。</p>
+<h2 id="修改nginx配置"><a href="#修改nginx配置" class="headerlink" title="修改nginx配置"></a>修改nginx配置</h2><p>在nginx.conf配置文件中添加一个如下server</p>
+<pre class="line-numbers language-none"><code class="language-none">server &#123;
+        listen  443 ssl;
+        server_name  www.demo.com;
+        ssl_certificate      F:&#x2F;nginx-1.16.1&#x2F;ssl&#x2F;demo.crt;
+        ssl_certificate_key  F:&#x2F;nginx-1.16.1&#x2F;ssl&#x2F;demo.key;
+
+        location &#x2F; &#123;
+          root   html;
+          index  index.html index.htm;
+        &#125;
+    &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="启动nginx"><a href="#启动nginx" class="headerlink" title="启动nginx"></a>启动nginx</h2><p>正常启动nginx后，使用 <a target="_blank" rel="noopener" href="https://127.0.0.1/">https://127.0.0.1:443</a> 访问，可以正常跳转</p>
+<p><img src="../Assets/file-1774074102573.png" ></p>
 
                 
             </div>

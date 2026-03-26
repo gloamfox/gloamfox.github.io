@@ -526,122 +526,118 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="结论先行：日期方案是最佳选择"><a href="#结论先行：日期方案是最佳选择" class="headerlink" title="结论先行：日期方案是最佳选择"></a>结论先行：日期方案是最佳选择</h2><p>经过多种方案的对比与实践，<strong>推荐使用基于文章创建时间的日期格式作为永久链接</strong>，即:  </p>
-<pre><code class="yaml">permalink: :year:month:day:hour:minute:second.html  
-</code></pre>
-<p>该方案完全依赖 Hexo 原生功能，无需额外插件；生成的 URL 简洁、无中文乱码、长度固定；只要在每篇文章的 Front-matter 中明确设置 <code>date</code> 字段，链接即可永久不变，彻底解决了文件名修改、中文转义等痛点，是兼顾 SEO 与稳定性的最优解。  </p>
-<p>下面详细分析各方案的优缺点，根据实际需求选择。  </p>
-<h2 id="默认配置"><a href="#默认配置" class="headerlink" title="默认配置"></a>默认配置</h2><p>Hexo 生成永久链接的常规设置位于站点根目录的 <code>_config.yml</code> 文件中，如下所示：  </p>
-<pre><code class="yaml">permalink: :year:month:day:hour:minute:second.html    
-permalink_defaults:    
-pretty_urls:    
-  trailing_index: true # 设为 false 可移除 URL 末尾的 &#39;index.html&#39;    
-  trailing_html: true  # 设为 false 可移除 URL 末尾的 &#39;.html&#39;  
-</code></pre>
-<p>然而，默认的 <code>:year/:month/:day/:title/</code> 格式存在一个明显问题：当文章标题为中文时，生成的 URL 会包含中文，分享时会被转义为一串乱码，不仅影响用户体验，也不利于 SEO。  </p>
-<p><strong>理想的 URL 应尽量简洁</strong>。百度建议 URL 长度不超过 255 字节（英文字符占 1 字节，中文字符占 2 字节）。下文将分析几种常见的优化方案及其优缺点。  </p>
-<h2 id="使用-title-生成-URL"><a href="#使用-title-生成-URL" class="headerlink" title="使用 :title 生成 URL"></a>使用 <code>:title</code> 生成 URL</h2><p>将 <code>permalink</code> 设置为 <code>:title.html</code>，例如：  </p>
-<pre><code class="yaml">permalink: :title.html  
-</code></pre>
-<p>若文章文件名为 <code>hello-hexo.md</code>，生成的链接为：  </p>
-<pre><code class="yaml">https://gloamfox.github.io/hello-hexo.html  
-</code></pre>
-<p><strong>优点</strong>：结构简单。  </p>
-<p><strong>缺点</strong>：  </p>
+                <h2 id="结论先行：日期方案是最佳选择"><a href="#结论先行：日期方案是最佳选择" class="headerlink" title="结论先行：日期方案是最佳选择"></a>结论先行：日期方案是最佳选择</h2><p>经过多种方案的对比与实践，<strong>推荐使用基于文章创建时间的日期格式作为永久链接</strong>，即:</p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">permalink</span><span class="token punctuation">:</span> <span class="token punctuation">:</span>year<span class="token punctuation">:</span>month<span class="token punctuation">:</span>day<span class="token punctuation">:</span>hour<span class="token punctuation">:</span>minute<span class="token punctuation">:</span>second.html<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>该方案完全依赖 Hexo 原生功能，无需额外插件；生成的 URL 简洁、无中文乱码、长度固定；只要在每篇文章的 Front-matter 中明确设置 <code>date</code> 字段，链接即可永久不变，彻底解决了文件名修改、中文转义等痛点，是兼顾 SEO 与稳定性的最优解。</p>
+<p>下面详细分析各方案的优缺点，根据实际需求选择。</p>
+<h2 id="默认配置"><a href="#默认配置" class="headerlink" title="默认配置"></a>默认配置</h2><p>Hexo 生成永久链接的常规设置位于站点根目录的 <code>_config.yml</code> 文件中，如下所示：</p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">permalink</span><span class="token punctuation">:</span> <span class="token punctuation">:</span>year<span class="token punctuation">:</span>month<span class="token punctuation">:</span>day<span class="token punctuation">:</span>hour<span class="token punctuation">:</span>minute<span class="token punctuation">:</span>second.html  
+<span class="token key atrule">permalink_defaults</span><span class="token punctuation">:</span>  
+<span class="token key atrule">pretty_urls</span><span class="token punctuation">:</span>  
+  <span class="token key atrule">trailing_index</span><span class="token punctuation">:</span> <span class="token boolean important">true</span> <span class="token comment"># 设为 false 可移除 URL 末尾的 'index.html'  </span>
+  <span class="token key atrule">trailing_html</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>  <span class="token comment"># 设为 false 可移除 URL 末尾的 '.html'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>然而，默认的 <code>:year/:month/:day/:title/</code> 格式存在一个明显问题：当文章标题为中文时，生成的 URL 会包含中文，分享时会被转义为一串乱码，不仅影响用户体验，也不利于 SEO。</p>
+<p><strong>理想的 URL 应尽量简洁</strong>。百度建议 URL 长度不超过 255 字节（英文字符占 1 字节，中文字符占 2 字节）。下文将分析几种常见的优化方案及其优缺点。</p>
+<h2 id="使用-title-生成-URL"><a href="#使用-title-生成-URL" class="headerlink" title="使用 :title 生成 URL"></a>使用 <code>:title</code> 生成 URL</h2><p>将 <code>permalink</code> 设置为 <code>:title.html</code>，例如：</p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">permalink</span><span class="token punctuation">:</span> <span class="token punctuation">:</span>title.html<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>若文章文件名为 <code>hello-hexo.md</code>，生成的链接为：</p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml">https<span class="token punctuation">:</span>//gloamfox.github.io/hello<span class="token punctuation">-</span>hexo.html<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+<p><strong>优点</strong>：结构简单。</p>
+<p><strong>缺点</strong>：</p>
 <ul>
-<li><p>文章文件名必须为英文，否则中文会被转义；  </p>
-</li>
-<li><p>文件名一旦修改，URL 也会改变，导致链接失效；  </p>
-</li>
-<li><p>文件名过长会使 URL 冗长，影响美观与 SEO。  </p>
-<h2 id="使用-hexo-permalink-pinyin-插件"><a href="#使用-hexo-permalink-pinyin-插件" class="headerlink" title="使用 hexo-permalink-pinyin 插件"></a>使用 <code>hexo-permalink-pinyin</code> 插件</h2><p>该插件可将中文标题自动转换为拼音，解决中文 URL 乱码问题。  </p>
-<p>安装：  </p>
-<pre><code class="bash">npm hexo-permalink-pinyin --save  
-</code></pre>
-<p>配置<code>_config.yml</code>  </p>
-<pre><code class="yaml">permalink_pinyin:  
-enable: true  
-separator: &#39;-&#39; # 分隔符，默认为 &#39;-&#39;  
-</code></pre>
-<p>例如，文章《图片压缩与格式优化指南》生成的链接为：  </p>
-<pre><code>https://gloamfox.github.io/tu-pian-ya-suo-yu-ge-shi-you-hua-zhi-nan/  
-</code></pre>
-</li>
+<li>文章文件名必须为英文，否则中文会被转义；</li>
+<li>文件名一旦修改，URL 也会改变，导致链接失效；</li>
+<li>文件名过长会使 URL 冗长，影响美观与 SEO。</li>
 </ul>
-<p><strong>优点</strong>：解决中文乱码。<br><strong>缺点</strong>：文件名依然影响 URL 结构，修改文件名仍会导致链接变化。  </p>
-<h2 id="使用-hexo-abbrlink-插件"><a href="#使用-hexo-abbrlink-插件" class="headerlink" title="使用 hexo-abbrlink 插件"></a>使用 <code>hexo-abbrlink</code> 插件</h2><p>该插件通过文章标题生成固定哈希值作为链接标识，文章修改后链接保持不变。  </p>
-<p>安装：  </p>
-<pre><code class="bash">npm install hexo-abbrlink --save  
-</code></pre>
-<p>配置<code>_config.yml</code>  </p>
-<pre><code class="yaml">permalink: :abbrlink.html  
-abbrlink:  
-  alg: crc32   # 算法：crc16（默认）或 crc32  
-  rep: dec     # 格式：dec（十进制）或 hex（十六进制）  
-</code></pre>
-<p>生成链接示例：  </p>
+<h2 id="使用-hexo-permalink-pinyin-插件"><a href="#使用-hexo-permalink-pinyin-插件" class="headerlink" title="使用 hexo-permalink-pinyin 插件"></a>使用 <code>hexo-permalink-pinyin</code> 插件</h2><p>该插件可将中文标题自动转换为拼音，解决中文 URL 乱码问题。</p>
+<p>安装：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> hexo-permalink-pinyin <span class="token parameter variable">--save</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>配置<code>_config.yml</code></p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">permalink_pinyin</span><span class="token punctuation">:</span>
+  <span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+  <span class="token key atrule">separator</span><span class="token punctuation">:</span> <span class="token string">'-'</span> <span class="token comment"># 分隔符，默认为 '-'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>例如，文章《图片压缩与格式优化指南》生成的链接为：</p>
+<pre class="line-numbers language-none"><code class="language-none">https:&#x2F;&#x2F;gloamfox.github.io&#x2F;tu-pian-ya-suo-yu-ge-shi-you-hua-zhi-nan&#x2F;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><strong>优点</strong>：解决中文乱码。<br><strong>缺点</strong>：文件名依然影响 URL 结构，修改文件名仍会导致链接变化。</p>
+<h2 id="使用-hexo-abbrlink-插件"><a href="#使用-hexo-abbrlink-插件" class="headerlink" title="使用 hexo-abbrlink 插件"></a>使用 <code>hexo-abbrlink</code> 插件</h2><p>该插件通过文章标题生成固定哈希值作为链接标识，文章修改后链接保持不变。</p>
+<p>安装：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> hexo-abbrlink <span class="token parameter variable">--save</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>配置<code>_config.yml</code></p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">permalink</span><span class="token punctuation">:</span> <span class="token punctuation">:</span>abbrlink.html
+<span class="token key atrule">abbrlink</span><span class="token punctuation">:</span>
+  <span class="token key atrule">alg</span><span class="token punctuation">:</span> crc32   <span class="token comment"># 算法：crc16（默认）或 crc32</span>
+  <span class="token key atrule">rep</span><span class="token punctuation">:</span> dec     <span class="token comment"># 格式：dec（十进制）或 hex（十六进制）</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>生成链接示例：</p>
 <ul>
-<li><code>crc16 &amp; hex</code>：<code>https://gloamfox.github.io/posts/55c6.html</code>  </li>
-<li><code>crc32 &amp; dec</code>：<code>https://gloamfox.github.io/posts/1521457752.html</code>  </li>
+<li><code>crc16 &amp; hex</code>：<code>https://gloamfox.github.io/posts/55c6.html</code></li>
+<li><code>crc32 &amp; dec</code>：<code>https://gloamfox.github.io/posts/1521457752.html</code></li>
 </ul>
-<p><strong>优点</strong>：解决中文问题，链接短且稳定，修改文件名不影响 URL。<br><strong>缺点</strong>：哈希值依赖标题，若标题相同可能产生“碰撞”（虽然插件有处理机制），且链接随机，不易记忆。  </p>
-<h2 id="使用-hexo-abbrlink2-插件"><a href="#使用-hexo-abbrlink2-插件" class="headerlink" title="使用 hexo-abbrlink2 插件"></a>使用 <code>hexo-abbrlink2</code> 插件</h2><p>这是 <code>hexo-abbrlink</code> 的升级版，采用自增 ID 机制，而非哈希算法。  </p>
-<p>安装  </p>
-<pre><code class="bash">npm install hexo-abbrlink2 --save  
-</code></pre>
-<p>配置  </p>
-<pre><code class="yaml">permalink: posts/:abbrlink.html  
-  
-abbrlink:  
-  start: 100 # 启起始文章id，默认为0 ，可以自定义，比如100  
-</code></pre>
-<p>配置后生成的链接为：  </p>
-<pre><code>https://gloamfox.github.io/1.html  
-https://gloamfox.github.io/2.html  
-https://gloamfox.github.io/3.html  
-</code></pre>
-<p><strong>优点</strong>：极短且唯一，不受标题内容影响。<br><strong>缺点</strong>：  </p>
+<p><strong>优点</strong>：解决中文问题，链接短且稳定，修改文件名不影响 URL。<br><strong>缺点</strong>：哈希值依赖标题，若标题相同可能产生“碰撞”（虽然插件有处理机制），且链接随机，不易记忆。</p>
+<h2 id="使用-hexo-abbrlink2-插件"><a href="#使用-hexo-abbrlink2-插件" class="headerlink" title="使用 hexo-abbrlink2 插件"></a>使用 <code>hexo-abbrlink2</code> 插件</h2><p>这是 <code>hexo-abbrlink</code> 的升级版，采用自增 ID 机制，而非哈希算法。</p>
+<p>安装</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> hexo-abbrlink2 <span class="token parameter variable">--save</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>配置</p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">permalink</span><span class="token punctuation">:</span> posts/<span class="token punctuation">:</span>abbrlink.html
+
+<span class="token key atrule">abbrlink</span><span class="token punctuation">:</span>
+  <span class="token key atrule">start</span><span class="token punctuation">:</span> <span class="token number">100</span> <span class="token comment"># 启起始文章id，默认为0 ，可以自定义，比如100</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+<p>配置后生成的链接为：</p>
+<pre class="line-numbers language-none"><code class="language-none">https:&#x2F;&#x2F;gloamfox.github.io&#x2F;1.html
+https:&#x2F;&#x2F;gloamfox.github.io&#x2F;2.html
+https:&#x2F;&#x2F;gloamfox.github.io&#x2F;3.html<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+
+<p><strong>优点</strong>：极短且唯一，不受标题内容影响。<br><strong>缺点</strong>：</p>
 <ul>
-<li><p>ID 生成依赖文章生成顺序，部署顺序改变可能导致链接变化。  </p>
-</li>
-<li><p>实际使用过程中发现生成的ID有重复，应该是插件的bug，<strong>不可使用</strong>  </p>
-<h2 id="使用-hash-生成-URL"><a href="#使用-hash-生成-URL" class="headerlink" title="使用 :hash 生成 URL"></a>使用 <code>:hash</code> 生成 URL</h2><p>Hexo 原生支持通过 <code>:hash</code> 生成基于文件名和 <code>date</code> 字段的哈希值链接。  </p>
-<p>配置：  </p>
-<pre><code>permalink: :hash.html  
-</code></pre>
-<p>生成链接示例：  </p>
-<pre><code>https://gloamfox.github.io/3b48da9a3b8b.html  
-</code></pre>
-</li>
+<li>ID 生成依赖文章生成顺序，部署顺序改变可能导致链接变化。</li>
+<li>实际使用过程中发现生成的ID有重复，应该是插件的bug，<strong>不可使用</strong></li>
 </ul>
-<p><strong>优点</strong>：简短，<code>date</code> 字段在创建时就确定，链接稳定。<br><strong>缺点</strong>：若后续修改文件名，URL 也会变化，不够灵活。  </p>
-<h2 id="使用-year-month-day-hour-minute-second-生成-URL（推荐）"><a href="#使用-year-month-day-hour-minute-second-生成-URL（推荐）" class="headerlink" title="使用 :year:month:day:hour:minute:second 生成 URL（推荐）"></a>使用 <code>:year:month:day:hour:minute:second</code> 生成 URL（推荐）</h2><p>这是 Hexo 原生支持的方案，利用文章创建时间生成唯一链接。  </p>
-<p>配置：  </p>
-<pre><code>permalink: :year:month:day:hour:minute:second.html  
-</code></pre>
-<p>生成链接示例：  </p>
-<pre><code>https://gloamfox.github.io/20210412131554.html  
-</code></pre>
-<p>配合 <code>pretty_urls</code> 设置可进一步优化：  </p>
-<pre><code class="yaml">pretty_urls:  
-  trailing_index: true  
-  trailing_html: true   # 若设为 false，则 URL 末尾不显示 .html  
-</code></pre>
-<p><strong>优点</strong>：  </p>
+<h2 id="使用-hash-生成-URL"><a href="#使用-hash-生成-URL" class="headerlink" title="使用 :hash 生成 URL"></a>使用 <code>:hash</code> 生成 URL</h2><p>Hexo 原生支持通过 <code>:hash</code> 生成基于文件名和 <code>date</code> 字段的哈希值链接。</p>
+<p>配置：</p>
+<pre class="line-numbers language-none"><code class="language-none">permalink: :hash.html<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>生成链接示例：</p>
+<pre class="line-numbers language-none"><code class="language-none">https:&#x2F;&#x2F;gloamfox.github.io&#x2F;3b48da9a3b8b.html<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><strong>优点</strong>：简短，<code>date</code> 字段在创建时就确定，链接稳定。<br><strong>缺点</strong>：若后续修改文件名，URL 也会变化，不够灵活。</p>
+<h2 id="使用-year-month-day-hour-minute-second-生成-URL（推荐）"><a href="#使用-year-month-day-hour-minute-second-生成-URL（推荐）" class="headerlink" title="使用 :year:month:day:hour:minute:second 生成 URL（推荐）"></a>使用 <code>:year:month:day:hour:minute:second</code> 生成 URL（推荐）</h2><p>这是 Hexo 原生支持的方案，利用文章创建时间生成唯一链接。</p>
+<p>配置：</p>
+<pre class="line-numbers language-none"><code class="language-none">permalink: :year:month:day:hour:minute:second.html<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>生成链接示例：</p>
+<pre class="line-numbers language-none"><code class="language-none">https:&#x2F;&#x2F;gloamfox.github.io&#x2F;20210412131554.html<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>配合 <code>pretty_urls</code> 设置可进一步优化：</p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">pretty_urls</span><span class="token punctuation">:</span>
+  <span class="token key atrule">trailing_index</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+  <span class="token key atrule">trailing_html</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>   <span class="token comment"># 若设为 false，则 URL 末尾不显示 .html</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>优点</strong>：</p>
 <ul>
-<li>完全原生，无需插件；  </li>
-<li>链接基于文章的 <code>date</code> 字段（创建时已确定），永不改变；  </li>
-<li>结构清晰、长度固定、无乱码，SEO 友好；  </li>
-<li>不受文件名修改影响。  </li>
+<li>完全原生，无需插件；</li>
+<li>链接基于文章的 <code>date</code> 字段（创建时已确定），永不改变；</li>
+<li>结构清晰、长度固定、无乱码，SEO 友好；</li>
+<li>不受文件名修改影响。</li>
 </ul>
-<p><strong>注意事项</strong>：  </p>
+<p><strong>注意事项</strong>：</p>
 <ul>
-<li><p>若去掉 <code>.html</code>（<code>trailing_html: false</code>），某些平台发外链时可能自动追加 <code>/</code> 导致 404，建议保留 <code>.html</code>；  </p>
-</li>
-<li><p><code>date</code> 字段需在每篇文章的 Front-matter 中明确指定，避免使用文件创建时间作为替代，以确保跨环境一致性。  </p>
+<li>若去掉 <code>.html</code>（<code>trailing_html: false</code>），某些平台发外链时可能自动追加 <code>/</code> 导致 404，建议保留 <code>.html</code>；</li>
+<li><code>date</code> 字段需在每篇文章的 Front-matter 中明确指定，避免使用文件创建时间作为替代，以确保跨环境一致性。</li>
+</ul>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>对于绝大多数 Hexo 用户，<strong>采用日期生成永久链接是最稳妥、最简洁的终极方案</strong>。它不仅解决了中文乱码、文件名变动等核心痛点，还能保持 URL 的永久有效，是提升博客 SEO 与用户体验的最佳实践。</p>
-</li>
-</ul>
 
                 
             </div>
