@@ -1091,9 +1091,9 @@
       
         <tags>
             
-            <tag> 软件设计 </tag>
-            
             <tag> 代码重构 </tag>
+            
+            <tag> 软件设计 </tag>
             
             <tag> SOLID原则 </tag>
             
@@ -1236,9 +1236,9 @@
       
         <tags>
             
-            <tag> Zookeeper </tag>
-            
             <tag> 分布式 </tag>
+            
+            <tag> Zookeeper </tag>
             
             <tag> 集群管理 </tag>
             
