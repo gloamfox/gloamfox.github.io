@@ -1236,9 +1236,9 @@
       
         <tags>
             
-            <tag> 分布式 </tag>
-            
             <tag> Zookeeper </tag>
+            
+            <tag> 分布式 </tag>
             
             <tag> 集群管理 </tag>
             
