@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="事件驱动架构,接口解耦,异步消费,幂等性,失败补偿">
+    <meta name="keywords" content="事件驱动架构,生产者消费者,业务流程,异步处理,幂等性,失败补偿">
     <meta name="description" content="君子以顺德，积小以高大。">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -458,14 +458,6 @@
                                 <span class="chip bg-color">事件驱动</span>
                             </a>
                         
-                            <a href="/tags/%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/">
-                                <span class="chip bg-color">系统设计</span>
-                            </a>
-                        
-                            <a href="/tags/%E8%A7%A3%E8%80%A6/">
-                                <span class="chip bg-color">解耦</span>
-                            </a>
-                        
                     </div>
                     
                 </div>
@@ -474,8 +466,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84/" class="post-category">
-                                技术架构
+                            <a href="/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/" class="post-category">
+                                技术教程
                             </a>
                         
                     </div>
@@ -678,14 +670,6 @@
                                     <span class="chip bg-color">事件驱动</span>
                                 </a>
                             
-                                <a href="/tags/%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/">
-                                    <span class="chip bg-color">系统设计</span>
-                                </a>
-                            
-                                <a href="/tags/%E8%A7%A3%E8%80%A6/">
-                                    <span class="chip bg-color">解耦</span>
-                                </a>
-                            
                         </div>
                     
                 </div>
@@ -869,7 +853,7 @@
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            蒙提霍尔问题通过分析主持人行为对概率的影响，证明换门策略可将获胜概率从1/3提升至2/3，揭示了非随机事件对决策的关键作用。
+                            本文详细解析了著名的蒙提霍尔问题，通过概率分析展示了为什么换门策略能将获胜概率从1/3提升至2/3。文章解释了主持人行为对概率分布的影响，纠正了常见的误解，并通过扩展到100扇门的例子直观展示了这一反直觉的概率现象。
                         
                     </div>
                     <div class="publish-info">
@@ -880,8 +864,8 @@
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%95%B0%E5%AD%A6/" class="post-category">
-                                    数学
+                            <a href="/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/" class="post-category">
+                                    技术教程
                                 </a>
                             
                             
@@ -895,8 +879,8 @@
                         <span class="chip bg-color">概率论</span>
                     </a>
                     
-                    <a href="/tags/%E6%B8%B8%E6%88%8F%E7%AD%96%E7%95%A5/">
-                        <span class="chip bg-color">游戏策略</span>
+                    <a href="/tags/%E6%B8%B8%E6%88%8F%E7%90%86%E8%AE%BA/">
+                        <span class="chip bg-color">游戏理论</span>
                     </a>
                     
                     <a href="/tags/%E5%86%B3%E7%AD%96%E5%88%86%E6%9E%90/">
@@ -918,15 +902,15 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/22.jpg" class="responsive-img" >
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" >
                         
-                        <span class="card-title">Spring事件驱动优化与异步处理增强</span>
+                        <span class="card-title">Spring事件监听在业务使用中的优化</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            本文探讨了Spring事件驱动在业务系统中的应用，针对异步执行中的数据一致性、持久化、线程变量传递等问题提出优化方案。
+                            本文深入探讨了Spring框架中事件驱动机制的使用与优化，特别是在电商订单创建场景下的应用。文章详细分析了事件定义、发布和监听的实现方式，并针对异步执行中遇到的数据一致性、持久化和线程变量传递等问题提出了创新解决方案。通过自定义注解和切面增强，实现了对Spring事件监听功能的扩展，提供了更可靠的异步事件处理机制。
                         
                     </div>
                     <div class="publish-info">
@@ -937,8 +921,8 @@
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%8A%80%E6%9C%AF%E5%AE%9E%E7%8E%B0/" class="post-category">
-                                    技术实现
+                            <a href="/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/" class="post-category">
+                                    技术教程
                                 </a>
                             
                             
@@ -948,16 +932,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Spring%E4%BA%8B%E4%BB%B6%E9%A9%B1%E5%8A%A8/">
-                        <span class="chip bg-color">Spring事件驱动</span>
+                    <a href="/tags/Spring/">
+                        <span class="chip bg-color">Spring</span>
                     </a>
                     
-                    <a href="/tags/%E5%BC%82%E6%AD%A5%E5%A4%84%E7%90%86/">
-                        <span class="chip bg-color">异步处理</span>
-                    </a>
-                    
-                    <a href="/tags/%E4%B8%9A%E5%8A%A1%E7%B3%BB%E7%BB%9F%E4%BC%98%E5%8C%96/">
-                        <span class="chip bg-color">业务系统优化</span>
+                    <a href="/tags/%E4%BA%8B%E4%BB%B6%E9%A9%B1%E5%8A%A8/">
+                        <span class="chip bg-color">事件驱动</span>
                     </a>
                     
                 </div>
@@ -1107,7 +1087,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;&nbsp;<span
-                class="white-color">74.7k</span>&nbsp;字
+                class="white-color">80.7k</span>&nbsp;字
             
             
             

@@ -11,22 +11,6 @@
         <content type="html"><![CDATA[<h2 id="下载工具包"><a href="#下载工具包" class="headerlink" title="下载工具包"></a>下载工具包</h2><p><a href="https://wwnu.lanzouy.com/iLPK40uhhmgd">工具包下载地址</a></p><blockquote><p>重要说明：</p><p>1、工具包下载后，放到本地合适的位置，存放路径不要有汉字和空格，否则可能会导致激活失败</p><p>2、工具下载后是zip格式，需要解压，然后按照下面步骤进行</p><p>3、工具安装后，不要移动或者删除工具包，否则后续IDEA打开会出现闪退，或提示找不到Jar文件</p></blockquote><p>激活工具包解压后，目录结构：</p><p><img src="https://sh-prod-mall-bucket.oss-cn-shanghai.aliyuncs.com/imgupload/blog/image-20230502173337596.png" alt="image-20230502173337596|1045x239"></p><h2 id="破解激活"><a href="#破解激活" class="headerlink" title="破解激活"></a>破解激活</h2><h3 id="工具包安装"><a href="#工具包安装" class="headerlink" title="工具包安装"></a>工具包安装</h3><p>执行工具包解压后<code>scripts</code>目录下的脚本文件<code>install-all-users.vbs 或者 install-current-user.vbs 脚本</code>进行脚本文件的安装，脚本 <code>install-all-users.vbs</code> 和 <code>install-current-user.vbs</code> 的区别，只在于环境变量是为系统变量还是用户变量。</p><p>最好使用管理员权限执行，如果需要卸载只需要执行相应的卸载脚本即可</p><p><img src="https://sh-prod-mall-bucket.oss-cn-shanghai.aliyuncs.com/imgupload/blog/image-20230502173706678.png" alt="image-20230502173706678"></p><p>当看到如上图中提示 <strong>Done</strong> 时，表示工具安装配置完成。</p><p><strong>检查确认：执行命令 <code>echo %IDEA_VM_OPTIONS%</code>，若指向 <code>jetbra/jetbra/vmoptions/idea.vmoptions</code> 则表示工具包安装正确。若指向不是这个，则很可能是旧有的破解工具配置，请自行卸载旧有工具之后再安装此工具包。</strong></p><blockquote><p>说明：</p><ol><li>因为脚本会修改环境变量，所以在 Windows 系统中，可能会被安全软件拦截，允许执行即可。</li><li>激活完成后，绝不能移动或删除工具，否则会造成激活失效，甚至无法启动IDEA。若的确需要更换工具路径，路径更换完后，先执行对应的卸载脚本 uninstall，再重新按上面的步骤，执行安装脚本。</li><li>若没有以管理员方式执行脚本，后面提示 “key is invalid” 或 “激活码失效” 时，需要重启机器才行。</li></ol></blockquote><h3 id="使用激活码"><a href="#使用激活码" class="headerlink" title="使用激活码"></a>使用激活码</h3><p>启动IntelliJ IDEA2023.1，输入激活码</p><pre class="line-numbers language-none"><code class="language-none">6G5NXCPJZB-eyJsaWNlbnNlSWQiOiI2RzVOWENQSlpCIiwibGljZW5zZWVOYW1lIjoic2lnbnVwIHNjb290ZXIiLCJhc3NpZ25lZU5hbWUiOiIiLCJhc3NpZ25lZUVtYWlsIjoiIiwibGljZW5zZVJlc3RyaWN0aW9uIjoiIiwiY2hlY2tDb25jdXJyZW50VXNlIjpmYWxzZSwicHJvZHVjdHMiOlt7ImNvZGUiOiJQU0kiLCJmYWxsYmFja0RhdGUiOiIyMDI1LTA4LTAxIiwicGFpZFVwVG8iOiIyMDI1LTA4LTAxIiwiZXh0ZW5kZWQiOnRydWV9LHsiY29kZSI6IlBEQiIsImZhbGxiYWNrRGF0ZSI6IjIwMjUtMDgtMDEiLCJwYWlkVXBUbyI6IjIwMjUtMDgtMDEiLCJleHRlbmRlZCI6dHJ1ZX0seyJjb2RlIjoiSUkiLCJmYWxsYmFja0RhdGUiOiIyMDI1LTA4LTAxIiwicGFpZFVwVG8iOiIyMDI1LTA4LTAxIiwiZXh0ZW5kZWQiOmZhbHNlfSx7ImNvZGUiOiJQUEMiLCJmYWxsYmFja0RhdGUiOiIyMDI1LTA4LTAxIiwicGFpZFVwVG8iOiIyMDI1LTA4LTAxIiwiZXh0ZW5kZWQiOnRydWV9LHsiY29kZSI6IlBHTyIsImZhbGxiYWNrRGF0ZSI6IjIwMjUtMDgtMDEiLCJwYWlkVXBUbyI6IjIwMjUtMDgtMDEiLCJleHRlbmRlZCI6dHJ1ZX0seyJjb2RlIjoiUFNXIiwiZmFsbGJhY2tEYXRlIjoiMjAyNS0wOC0wMSIsInBhaWRVcFRvIjoiMjAyNS0wOC0wMSIsImV4dGVuZGVkIjp0cnVlfSx7ImNvZGUiOiJQV1MiLCJmYWxsYmFja0RhdGUiOiIyMDI1LTA4LTAxIiwicGFpZFVwVG8iOiIyMDI1LTA4LTAxIiwiZXh0ZW5kZWQiOnRydWV9LHsiY29kZSI6IlBQUyIsImZhbGxiYWNrRGF0ZSI6IjIwMjUtMDgtMDEiLCJwYWlkVXBUbyI6IjIwMjUtMDgtMDEiLCJleHRlbmRlZCI6dHJ1ZX0seyJjb2RlIjoiUFJCIiwiZmFsbGJhY2tEYXRlIjoiMjAyNS0wOC0wMSIsInBhaWRVcFRvIjoiMjAyNS0wOC0wMSIsImV4dGVuZGVkIjp0cnVlfSx7ImNvZGUiOiJQQ1dNUCIsImZhbGxiYWNrRGF0ZSI6IjIwMjUtMDgtMDEiLCJwYWlkVXBUbyI6IjIwMjUtMDgtMDEiLCJleHRlbmRlZCI6dHJ1ZX1dLCJtZXRhZGF0YSI6IjAxMjAyMjA5MDJQU0FOMDAwMDA1IiwiaGFzaCI6IlRSSUFMOi0xMDc4MzkwNTY4IiwiZ3JhY2VQZXJpb2REYXlzIjo3LCJhdXRvUHJvbG9uZ2F0ZWQiOmZhbHNlLCJpc0F1dG9Qcm9sb25nYXRlZCI6ZmFsc2V9-SnRVlQQR1&#x2F;9nxZ2AXsQ0seYwU5OjaiUMXrnQIIdNRvykzqQ0Q+vjXlmO7iAUwhwlsyfoMrLuvmLYwoD7fV8Mpz9Gs2gsTR8DfSHuAdvZlFENlIuFoIqyO8BneM9paD0yLxiqxy&#x2F;WWuOqW6c1v9ubbfdT6z9UnzSUjPKlsjXfq9J2gcDALrv9E0RPTOZqKfnsg7PF0wNQ0&#x2F;d00dy1k3zI+zJyTRpDxkCaGgijlY&#x2F;LZ&#x2F;wqd&#x2F;kRfcbQuRzdJ&#x2F;JXa3nj26rACqykKXaBH5thuvkTyySOpZwZMJVJyW7B7ro&#x2F;hkFCljZug3K+bTw5VwySzJtDcQ9tDYuu0zSAeXrcv2qrOg&#x3D;&#x3D;-MIIETDCCAjSgAwIBAgIBDTANBgkqhkiG9w0BAQsFADAYMRYwFAYDVQQDDA1KZXRQcm9maWxlIENBMB4XDTIwMTAxOTA5MDU1M1oXDTIyMTAyMTA5MDU1M1owHzEdMBsGA1UEAwwUcHJvZDJ5LWZyb20tMjAyMDEwMTkwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCUlaUFc1wf+CfY9wzFWEL2euKQ5nswqb57V8QZG7d7RoR6rwYUIXseTOAFq210oMEe++LCjzKDuqwDfsyhgDNTgZBPAaC4vUU2oy+XR+Fq8nBixWIsH668HeOnRK6RRhsr0rJzRB95aZ3EAPzBuQ2qPaNGm17pAX0Rd6MPRgjp75IWwI9eA6aMEdPQEVN7uyOtM5zSsjoj79Lbu1fjShOnQZuJcsV8tqnayeFkNzv2LTOlofU&#x2F;Tbx502Ro073gGjoeRzNvrynAP03pL486P3KCAyiNPhDs2z8&#x2F;COMrxRlZW5mfzo0xsK0dQGNH3UoG&#x2F;9RVwHG4eS8LFpMTR9oetHZBAgMBAAGjgZkwgZYwCQYDVR0TBAIwADAdBgNVHQ4EFgQUJNoRIpb1hUHAk0foMSNM9MCEAv8wSAYDVR0jBEEwP4AUo562SGdCEjZBvW3gubSgUouX8bOhHKQaMBgxFjAUBgNVBAMMDUpldFByb2ZpbGUgQ0GCCQDSbLGDsoN54TATBgNVHSUEDDAKBggrBgEFBQcDATALBgNVHQ8EBAMCBaAwDQYJKoZIhvcNAQELBQADggIBABqRoNGxAQct9dQUFK8xqhiZaYPd30TlmCmSAaGJ0eBpvkVeqA2jGYhAQRqFiAlFC63JKvWvRZO1iRuWCEfUMkdqQ9VQPXziE&#x2F;BlsOIgrL6RlJfuFcEZ8TK3syIfIGQZNCxYhLLUuet2HE6LJYPQ5c0jH4kDooRpcVZ4rBxNwddpctUO2te9UU5&#x2F;FjhioZQsPvd92qOTsV+8Cyl2fvNhNKD1Uu9ff5AkVIQn4JU23ozdB&#x2F;R5oUlebwaTE6WZNBs+TA&#x2F;qPj+5&#x2F;we9NH71WRB0hqUoLI2AKKyiPw++FtN4Su1vsdDlrAzDj9ILjpjJKA1ImuVcG329&#x2F;WTYIKysZ1CWK3zATg9BeCUPAV1pQy8ToXOq+RSYen6winZ2OO93eyHv2Iw5kbn1dqfBw1BuTE29V2FJKicJSu8iEOpfoafwJISXmz1wnnWL3V&#x2F;0NxTulfWsXugOoLfv0ZIBP1xH9kmf22jjQ2JiHhQZP7ZDsreRrOeIQ&#x2F;c4yR8IQvMLfC0WKQqrHu5ZzXTH4NO3CwGWSlTY74kE91zXB5mwWAx1jig+UXYc2w4RkVhy0&#x2F;&#x2F;lOmVya&#x2F;PEepuuTTI4+UJwC7qbVlh5zfhj8oTNUXgN0AOc+Q0&#x2F;WFPl1aw5VV&#x2F;VrO8FCoB15lFVlpKaQ1Yh+DVU8ke+rt9Th0BCHXe0uZOEmH0nOnH&#x2F;0onD<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>​</p><p><img src="https://sh-prod-mall-bucket.oss-cn-shanghai.aliyuncs.com/imgupload/blog/image-20230502173952067.png" alt="image-20230502173952067"></p><p><strong>若是这里显示 “Key is invalid”，请做如下排查和尝试</strong></p><blockquote><ol><li>确保工具包安装配置成功，检查环境变量是否正确配置，避免被安全软件拦截</li><li>尝试重启IDEA</li><li>尝试断网并重启IDEA</li></ol></blockquote><p><img src="https://sh-prod-mall-bucket.oss-cn-shanghai.aliyuncs.com/imgupload/blog/image-20230502174056564.png" alt="image-20230502174056564"></p><p>注意，这里显示只激活到2025年，但实际是永久激活的，即使过了这个时间，此激活也仍然有效，IDEA也可以继续使用。</p>]]></content>
       
       
-      <categories>
-          
-          <category> 技术方案 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 开发工具 </tag>
-            
-            <tag> 破解激活 </tag>
-            
-            <tag> IntelliJ IDEA </tag>
-            
-        </tags>
       
     </entry>
     
@@ -49,11 +33,11 @@
       
         <tags>
             
-            <tag> GitHub </tag>
+            <tag> Hexo </tag>
             
             <tag> uniCloud </tag>
             
-            <tag> 博客托管 </tag>
+            <tag> GitHub Pages </tag>
             
         </tags>
       
@@ -80,9 +64,7 @@
             
             <tag> Hexo </tag>
             
-            <tag> Markdown </tag>
-            
-            <tag> 永久链接 </tag>
+            <tag> 相对链接 </tag>
             
         </tags>
       
@@ -91,7 +73,7 @@
     
     
     <entry>
-      <title>Hexo博客搜索链接丢失域名问题修复</title>
+      <title>Hexo 搜索跳转失效？一招解决链接域名丢失问题</title>
       <link href="/20260324145235.html"/>
       <url>/20260324145235.html</url>
       
@@ -108,10 +90,6 @@
         <tags>
             
             <tag> Hexo </tag>
-            
-            <tag> 搜索功能 </tag>
-            
-            <tag> 域名修复 </tag>
             
         </tags>
       
@@ -138,9 +116,34 @@
             
             <tag> Hexo </tag>
             
-            <tag> 永久链接 </tag>
+            <tag> URL优化 </tag>
             
-            <tag> SEO优化 </tag>
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>项目依赖库的规范探索</title>
+      <link href="/20260323181754.html"/>
+      <url>/20260323181754.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="二方库"><a href="#二方库" class="headerlink" title="二方库"></a>二方库</h2><table><thead><tr><th>名称</th><th>说明</th></tr></thead><tbody><tr><td>一方库</td><td>指项目内的各个模块，一般不会被项目组外所使用，通常使用的是最新版本</td></tr><tr><td>二方库</td><td>指公司内部公共库，会被公司的各个项目组所使用，而且每个项目组所依赖的版本不一定一致，需要严格管理版本</td></tr><tr><td>三方库</td><td>一般代指公司外部的公共库，由公司外的开发团队进行版本维护，版本可控性难以控制，公司引入的时候要进行严格的版本验证</td></tr></tbody></table><p>在实际项目中一个订单系统最简单的分层通常会是下面的结构</p><p><img src="../Assets/20260321141254125.svg" alt="20260321141254125.excalidraw"></p><p>order-server中是订单系统的业务代码，而order-api中会定义一些接口和入参和返回值，order-api会被同项目的其他系统所依赖，也有可能会被其他项目组的系统所依赖，所以一方库和二方库的界限一般比较模糊，下面主要探索api项目的结构规范。</p><p>为避免二方库的依赖冲突问题，二方库的发布应该遵循以下原则</p><ul><li><strong>精简可控原则</strong>，移除一切不必要的API和依赖，只包含Service API，必要的领域模型对象，常量、枚举等，如果依赖其他的二方库或者三方库，尽量的使用<code>provided</code>引入，让使用者选择具体使用的版本号。</li><li><strong>稳定可追溯原则</strong>，每个版本的变化应该被记录，除非用户主动升级版本，否则二方库的行为不应该发生变化。二方库的新增或者升级需保持功能点之外的依赖不应该发生改变，如果需要发生改变，需要给出明确的评估和验证。</li></ul><p>除以上两个原则外，还总结了以下需要注意的关键点</p><ul><li><p>二方库中可以定义枚举类型，参数可以使用枚举类型，但接口的返回值禁止使用枚举类型或者包含枚举类型的对象。</p><p>说明：随着功能的迭代，枚举类型有可能发生变化，参数中使用枚举类型可以限制相关字段的合法性，但是返回值中则不同，如果后续版本中枚举增加，而其他系统依赖的是低版本的库，那么使用者在进行反序列化时会发生异常。</p></li><li><p>二方库的新增或升级，保持除功能点之外的其它 jar 包仲裁结果不变。如果有改变，必须明确评 估和验证。</p><p>说明：在升级时，进行 <code>dependency:resolve</code> 前后信息比对，如果仲裁结果完全不一致，那么通过 <code>dependency:tree</code> 命 令，找出差异点，进行排除 jar 包。</p></li><li><p>建议将依赖的放在父项目的<dependencies>中，所有版本仲裁放在<dependencyManagement>语句块中。</p><p>说明：<dependencyManagement>只声明版本，并不引入，因此子项目中需要显示的引入，version和scope都读取<dependencyManagement>中的声明。而<dependencies>所有声明里的依赖都会自动引入，并默认被所有的子项目继承。</p></li><li><p>二方库中尽量不要有配置项，配置项应该由使用者进行定义</p></li><li><p>二方库应该尽量的简洁，如果必须使用一些三方库，尽量的使用provided引入，例如需要使用lombok，那么使用provided由使用者去进行引入，否则可能会造成版本冲突。</p></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术教程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 版本管理 </tag>
+            
+            <tag> 依赖管理 </tag>
             
         </tags>
       
@@ -158,18 +161,16 @@
       
       <categories>
           
-          <category> 网站优化 </category>
+          <category> 技术教程 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> 图片压缩 </tag>
+            <tag> 图片优化 </tag>
             
-            <tag> WebP格式 </tag>
-            
-            <tag> AVIF格式 </tag>
+            <tag> 性能优化 </tag>
             
         </tags>
       
@@ -178,7 +179,7 @@
     
     
     <entry>
-      <title>Hexo 移除图片 alt 属性的方法</title>
+      <title>Hexo移除图片默认 alt 属性</title>
       <link href="/20260319105942.html"/>
       <url>/20260319105942.html</url>
       
@@ -187,7 +188,7 @@
       
       <categories>
           
-          <category> 前端开发 </category>
+          <category> 技术教程 </category>
           
       </categories>
       
@@ -196,9 +197,9 @@
             
             <tag> Hexo </tag>
             
-            <tag> 图片优化 </tag>
-            
             <tag> JavaScript </tag>
+            
+            <tag> 图片优化 </tag>
             
         </tags>
       
@@ -225,9 +226,9 @@
             
             <tag> CDN </tag>
             
-            <tag> 缓存刷新 </tag>
+            <tag> 缓存 </tag>
             
-            <tag> 版本控制 </tag>
+            <tag> jsDelivr </tag>
             
         </tags>
       
@@ -256,6 +257,8 @@
             
             <tag> Obsidian </tag>
             
+            <tag> GitHub Pages </tag>
+            
         </tags>
       
     </entry>
@@ -272,18 +275,18 @@
       
       <categories>
           
-          <category> 技术实践 </category>
+          <category> 技术教程 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> 代码重构 </tag>
+            <tag> 责任链 </tag>
             
-            <tag> 责任链模式 </tag>
+            <tag> 业务编排 </tag>
             
-            <tag> 领域驱动设计 </tag>
+            <tag> 设计模式 </tag>
             
         </tags>
       
@@ -301,18 +304,14 @@
       
       <categories>
           
-          <category> 软件开发 </category>
+          <category> 技术教程 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> 单元测试 </tag>
-            
-            <tag> 测试驱动开发 </tag>
-            
-            <tag> 软件质量 </tag>
+            <tag> JUnit </tag>
             
         </tags>
       
@@ -330,7 +329,7 @@
       
       <categories>
           
-          <category> 学习方法 </category>
+          <category> 技术教程 </category>
           
       </categories>
       
@@ -388,18 +387,18 @@
       
       <categories>
           
-          <category> 计算机科学 </category>
+          <category> 技术教程 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> 操作系统 </tag>
-            
             <tag> IO模型 </tag>
             
-            <tag> 系统调用 </tag>
+            <tag> epoll </tag>
+            
+            <tag> 多路复用 </tag>
             
         </tags>
       
@@ -408,7 +407,7 @@
     
     
     <entry>
-      <title>避免这些编程陷阱：七种让你代码失控的开发风格</title>
+      <title>编程风格批判</title>
       <link href="/20260302020833.html"/>
       <url>/20260302020833.html</url>
       
@@ -417,14 +416,14 @@
       
       <categories>
           
-          <category> 技术分享 </category>
+          <category> 技术教程 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> 编程风格 </tag>
+            <tag> 编程实践 </tag>
             
             <tag> 代码质量 </tag>
             
@@ -437,7 +436,7 @@
     
     
     <entry>
-      <title>技术面试经验与思考</title>
+      <title>如何做好技术面试？</title>
       <link href="/20260302020450.html"/>
       <url>/20260302020450.html</url>
       
@@ -446,7 +445,7 @@
       
       <categories>
           
-          <category> 职业发展 </category>
+          <category> 技术教程 </category>
           
       </categories>
       
@@ -455,9 +454,9 @@
             
             <tag> 技术面试 </tag>
             
-            <tag> 面试官 </tag>
+            <tag> 面试技巧 </tag>
             
-            <tag> 候选人评估 </tag>
+            <tag> 招聘 </tag>
             
         </tags>
       
@@ -475,7 +474,7 @@
       
       <categories>
           
-          <category> 工具教程 </category>
+          <category> 技术教程 </category>
           
       </categories>
       
@@ -484,9 +483,7 @@
             
             <tag> Obsidian </tag>
             
-            <tag> 笔记管理 </tag>
-            
-            <tag> GitHub同步 </tag>
+            <tag> GitHub </tag>
             
         </tags>
       
@@ -504,18 +501,22 @@
       
       <categories>
           
-          <category> 技术文档 </category>
+          <category> 技术教程 </category>
           
       </categories>
       
       
         <tags>
             
+            <tag> 数据库 </tag>
+            
+            <tag> 缓存 </tag>
+            
             <tag> 性能优化 </tag>
             
-            <tag> 技术调优 </tag>
+            <tag> JVM </tag>
             
-            <tag> 系统架构 </tag>
+            <tag> 多线程 </tag>
             
         </tags>
       
@@ -533,7 +534,7 @@
       
       <categories>
           
-          <category> 技术分享 </category>
+          <category> 技术教程 </category>
           
       </categories>
       
@@ -542,9 +543,7 @@
             
             <tag> 软件设计 </tag>
             
-            <tag> 代码优化 </tag>
-            
-            <tag> 问题复盘 </tag>
+            <tag> 业务逻辑 </tag>
             
         </tags>
       
@@ -582,7 +581,7 @@
     
     
     <entry>
-      <title>nvs 安装与使用指南</title>
+      <title>使用nvs工具切换node版本</title>
       <link href="/20260226043540.html"/>
       <url>/20260226043540.html</url>
       
@@ -598,11 +597,9 @@
       
         <tags>
             
-            <tag> Node版本管理 </tag>
+            <tag> Node.js </tag>
             
-            <tag> nvs工具 </tag>
-            
-            <tag> 跨平台 </tag>
+            <tag> 版本管理 </tag>
             
         </tags>
       
@@ -620,7 +617,7 @@
       
       <categories>
           
-          <category> 数学 </category>
+          <category> 技术教程 </category>
           
       </categories>
       
@@ -629,7 +626,7 @@
             
             <tag> 概率论 </tag>
             
-            <tag> 游戏策略 </tag>
+            <tag> 游戏理论 </tag>
             
             <tag> 决策分析 </tag>
             
@@ -649,7 +646,7 @@
       
       <categories>
           
-          <category> 技术架构 </category>
+          <category> 技术教程 </category>
           
       </categories>
       
@@ -658,10 +655,6 @@
             
             <tag> 事件驱动 </tag>
             
-            <tag> 系统设计 </tag>
-            
-            <tag> 解耦 </tag>
-            
         </tags>
       
     </entry>
@@ -669,7 +662,7 @@
     
     
     <entry>
-      <title>Spring事件驱动优化与异步处理增强</title>
+      <title>Spring事件监听在业务使用中的优化</title>
       <link href="/20251218103700.html"/>
       <url>/20251218103700.html</url>
       
@@ -678,18 +671,16 @@
       
       <categories>
           
-          <category> 技术实现 </category>
+          <category> 技术教程 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> Spring事件驱动 </tag>
+            <tag> Spring </tag>
             
-            <tag> 异步处理 </tag>
-            
-            <tag> 业务系统优化 </tag>
+            <tag> 事件驱动 </tag>
             
         </tags>
       
@@ -698,7 +689,7 @@
     
     
     <entry>
-      <title>Java布尔类型命名规范与序列化问题分析</title>
+      <title>知其然知其所以然：Boolean类型命名规范</title>
       <link href="/20251206112842.html"/>
       <url>/20251206112842.html</url>
       
@@ -707,18 +698,16 @@
       
       <categories>
           
-          <category> 技术文档 </category>
+          <category> 技术教程 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> Java命名规范 </tag>
+            <tag> Java </tag>
             
-            <tag> 序列化问题 </tag>
-            
-            <tag> Boolean类型 </tag>
+            <tag> 编码规范 </tag>
             
         </tags>
       
@@ -756,36 +745,7 @@
     
     
     <entry>
-      <title>项目依赖库的规范探索</title>
-      <link href="/20251129105624.html"/>
-      <url>/20251129105624.html</url>
-      
-        <content type="html"><![CDATA[<h2 id="二方库"><a href="#二方库" class="headerlink" title="二方库"></a>二方库</h2><table><thead><tr><th>名称</th><th>说明</th></tr></thead><tbody><tr><td>一方库</td><td>指项目内的各个模块，一般不会被项目组外所使用，通常使用的是最新版本</td></tr><tr><td>二方库</td><td>指公司内部公共库，会被公司的各个项目组所使用，而且每个项目组所依赖的版本不一定一致，需要严格管理版本</td></tr><tr><td>三方库</td><td>一般代指公司外部的公共库，由公司外的开发团队进行版本维护，版本可控性难以控制，公司引入的时候要进行严格的版本验证</td></tr></tbody></table><p>在实际项目中一个订单系统最简单的分层通常会是下面的结构</p><p><img src="../Assets/20260321141254125.svg" alt="20260321141254125.excalidraw"></p><p>order-server中是订单系统的业务代码，而order-api中会定义一些接口和入参和返回值，order-api会被同项目的其他系统所依赖，也有可能会被其他项目组的系统所依赖，所以一方库和二方库的界限一般比较模糊，下面主要探索api项目的结构规范。</p><p>为避免二方库的依赖冲突问题，二方库的发布应该遵循以下原则</p><ul><li><strong>精简可控原则</strong>，移除一切不必要的API和依赖，只包含Service API，必要的领域模型对象，常量、枚举等，如果依赖其他的二方库或者三方库，尽量的使用<code>provided</code>引入，让使用者选择具体使用的版本号。</li><li><strong>稳定可追溯原则</strong>，每个版本的变化应该被记录，除非用户主动升级版本，否则二方库的行为不应该发生变化。二方库的新增或者升级需保持功能点之外的依赖不应该发生改变，如果需要发生改变，需要给出明确的评估和验证。</li></ul><p>除以上两个原则外，还总结了以下需要注意的关键点</p><ul><li><p>二方库中可以定义枚举类型，参数可以使用枚举类型，但接口的返回值禁止使用枚举类型或者包含枚举类型的对象。</p><p>说明：随着功能的迭代，枚举类型有可能发生变化，参数中使用枚举类型可以限制相关字段的合法性，但是返回值中则不同，如果后续版本中枚举增加，而其他系统依赖的是低版本的库，那么使用者在进行反序列化时会发生异常。</p></li><li><p>二方库的新增或升级，保持除功能点之外的其它 jar 包仲裁结果不变。如果有改变，必须明确评 估和验证。</p><p>说明：在升级时，进行 <code>dependency:resolve</code> 前后信息比对，如果仲裁结果完全不一致，那么通过 <code>dependency:tree</code> 命 令，找出差异点，进行排除 jar 包。</p></li><li><p>建议将依赖的放在父项目的<dependencies>中，所有版本仲裁放在<dependencyManagement>语句块中。</p><p>说明：<dependencyManagement>只声明版本，并不引入，因此子项目中需要显示的引入，version和scope都读取<dependencyManagement>中的声明。而<dependencies>所有声明里的依赖都会自动引入，并默认被所有的子项目继承。</p></li><li><p>二方库中尽量不要有配置项，配置项应该由使用者进行定义</p></li><li><p>二方库应该尽量的简洁，如果必须使用一些三方库，尽量的使用provided引入，例如需要使用lombok，那么使用provided由使用者去进行引入，否则可能会造成版本冲突。</p></li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> 技术规范 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 二方库 </tag>
-            
-            <tag> 版本管理 </tag>
-            
-            <tag> 依赖冲突 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Ubuntu 更换国内源提升下载速度</title>
+      <title>Ubuntu修改国内源解决下载问题</title>
       <link href="/20251127044339.html"/>
       <url>/20251127044339.html</url>
       
@@ -794,7 +754,7 @@
       
       <categories>
           
-          <category> 系统运维 </category>
+          <category> 技术教程 </category>
           
       </categories>
       
@@ -803,9 +763,38 @@
             
             <tag> Ubuntu </tag>
             
-            <tag> 软件源 </tag>
+            <tag> 技术教程 </tag>
             
-            <tag> 下载加速 </tag>
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Tomcat进程残留问题</title>
+      <link href="/20251120062556.html"/>
+      <url>/20251120062556.html</url>
+      
+        <content type="html"><![CDATA[<p>运行shutdown.sh,tomcat停止, 但它的java进程还在, 不过状态为S(sleep), 不是运行时的R(Runnable), 如果不kill的话, 这种进程越来越多，导致JVM进程越来越多, 占据了大量的内存空间, 有可能使得新程序在启动JVM时由于内存不够用而无法启动。</p><h2 id="kill强制杀死进程"><a href="#kill强制杀死进程" class="headerlink" title="kill强制杀死进程"></a>kill强制杀死进程</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">ps</span> -ef<span class="token operator">|</span><span class="token function">grep</span> <span class="token function">java</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>若显示以下内容代表使用的java进程还存在，没有完全停止</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">root     <span class="token number">50530</span>     <span class="token number">1</span> <span class="token number">99</span> <span class="token number">10</span>:25 pts/0    00:00:45 /usr/local/java/jdk1.7.0_51/jre/bin/java <span class="token parameter variable">-Djava.util.logging.config.file</span><span class="token operator">=</span>/usr/local/tomcat/apache-tomcat-7.0.92/conf/logging.properties <span class="token parameter variable">-Djava.util.logging.manager</span><span class="token operator">=</span>org.apache.juli.ClassLoaderLogManager <span class="token parameter variable">-Djdk.tls.ephemeralDHKeySize</span><span class="token operator">=</span><span class="token number">2048</span> <span class="token parameter variable">-Dignore.endorsed.dirs</span><span class="token operator">=</span> <span class="token parameter variable">-classpath</span> /usr/local/tomcat/apache-tomcat-7.0.92/bin/bootstrap.jar:/usr/local/tomcat/apache-tomcat-7.0.92/bin/tomcat-juli.jar <span class="token parameter variable">-Dcatalina.base</span><span class="token operator">=</span>/usr/local/tomcat/apache-tomcat-7.0.92 <span class="token parameter variable">-Dcatalina.home</span><span class="token operator">=</span>/usr/local/tomcat/apache-tomcat-7.0.92 <span class="token parameter variable">-Djava.io.tmpdir</span><span class="token operator">=</span>/usr/local/tomcat/apache-tomcat-7.0.92/temp org.apache.catalina.startup.Bootstrap startroot     <span class="token number">50934</span> <span class="token number">48933</span>  <span class="token number">0</span> <span class="token number">10</span>:26 pts/0    00:00:00 <span class="token function">grep</span> <span class="token parameter variable">--color</span><span class="token operator">=</span>auto <span class="token function">java</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><p>使用kill命令，杀死进程</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">kill</span> <span class="token parameter variable">-9</span> <span class="token number">50530</span> <span class="token comment">#50530为进程id</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h2 id="tomcat-解决"><a href="#tomcat-解决" class="headerlink" title="tomcat 解决"></a>tomcat 解决</h2><p>在tomcat/bin/shutdown.sh文件中增加一个参数</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">exec</span> <span class="token string">"<span class="token variable">$PRGDIR</span>"</span>/<span class="token string">"<span class="token variable">$EXECUTABLE</span>"</span> stop <span class="token string">"<span class="token variable">$@</span>"</span>  <span class="token comment">#原来的</span><span class="token builtin class-name">exec</span> <span class="token string">"<span class="token variable">$PRGDIR</span>"</span>/<span class="token string">"<span class="token variable">$EXECUTABLE</span>"</span> stop <span class="token parameter variable">-force</span> <span class="token string">"<span class="token variable">$@</span>"</span> <span class="token comment">#增加参数后</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><p>在tomcat/bin/catalina.sh脚中，加入下面这三行</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token parameter variable">-z</span> <span class="token string">"<span class="token variable">$CATALINA_PID</span>"</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>    <span class="token assign-left variable">CATALINA_PID</span><span class="token operator">=</span><span class="token variable">$PRGDIR</span>/CATALINA_PID    <span class="token function">cat</span> <span class="token variable">$CATALINA_PID</span><span class="token keyword">fi</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术教程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+            <tag> Tomcat </tag>
+            
+            <tag> Java </tag>
+            
+            <tag> 进程管理 </tag>
             
         </tags>
       
@@ -832,9 +821,9 @@
             
             <tag> Tomcat </tag>
             
-            <tag> Java进程 </tag>
-            
             <tag> 进程管理 </tag>
+            
+            <tag> Java进程 </tag>
             
         </tags>
       
@@ -843,11 +832,11 @@
     
     
     <entry>
-      <title>华为云镜像下载与VMware虚拟机配置</title>
-      <link href="/20251120055251.html"/>
-      <url>/20251120055251.html</url>
+      <title>Oracle特殊字符处理</title>
+      <link href="/20251120054819.html"/>
+      <url>/20251120054819.html</url>
       
-        <content type="html"><![CDATA[<h2 id="镜像下载"><a href="#镜像下载" class="headerlink" title="镜像下载"></a>镜像下载</h2><p>华为云镜像下载CentOS镜像，镜像使用 CentOS-7-x86_64-Minimal-2207-02.iso<br><a href="https://repo.huaweicloud.com/centos/7/isos/x86_64/">镜像下载</a></p><h2 id="VMware创建虚拟机"><a href="#VMware创建虚拟机" class="headerlink" title="VMware创建虚拟机"></a>VMware创建虚拟机</h2><p>版本：VMware® Workstation 16 Pro</p><p>步骤忽略，选中镜像，一直点击下一步就可以</p><h2 id="设置固定IP"><a href="#设置固定IP" class="headerlink" title="设置固定IP"></a>设置固定IP</h2><h3 id="虚拟机网络连接方式"><a href="#虚拟机网络连接方式" class="headerlink" title="虚拟机网络连接方式"></a>虚拟机网络连接方式</h3><p><img src="../Assets/file-1763633908095.png" alt="file-1763633908095.png"></p><h3 id="配置虚拟机的NAT模式具体地址参数"><a href="#配置虚拟机的NAT模式具体地址参数" class="headerlink" title="配置虚拟机的NAT模式具体地址参数"></a><strong>配置虚拟机的NAT模式具体地址参数</strong></h3><p><img src="../Assets/file-1763633962024.png" alt="file-1763633962024.png"></p><p>选择VMnet8–取消勾选使用本地DHCP–设置子网IP–网关IP设置（记住此处设置，后面要用到），如下图</p><p><img src="../Assets/file-1763633986646.png" alt="file-1763633986646.png"></p><p>说明：修改子网IP设置，实现自由设置固定IP，IP网段最后一位0-255，子网IP占用一位，网关IP占用一位，剩余的都可以自由分配</p><p>若你想设置固定IP为192.168.2.2-255，比如192.168.2.2，则子网IP为192.168.2.0； </p><p>若你想设置固定IP为192.168.1.2-255，比如192.168.1.2，则子网IP为192.168.1.0； </p><p>也就是说，你想配置成哪个网段，IP地址最后那位为0即可。</p><p>记录一下上面的网关地址，虚拟机中设置固定IP时需要用到，这里的网关IP也可以自行设置，只要网段一致即可。</p><p><img src="../Assets/file-1763634031791.png" alt="file-1763634031791.png"></p><h3 id="配置电脑具体VMnet8本地地址参数"><a href="#配置电脑具体VMnet8本地地址参数" class="headerlink" title="配置电脑具体VMnet8本地地址参数"></a><strong>配置电脑具体VMnet8本地地址参数</strong></h3><p>会自动配置VMnet8的IP以及子网掩码，此处记录一下需要知晓本地电脑在局域网的IP</p><p><img src="../Assets/file-1763634057124.png" alt="file-1763634057124.png"></p><h3 id="虚拟机设置固定IP"><a href="#虚拟机设置固定IP" class="headerlink" title="虚拟机设置固定IP"></a>虚拟机设置固定IP</h3><h4 id="编辑网络"><a href="#编辑网络" class="headerlink" title="编辑网络"></a>编辑网络</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">cd</span> /etc/sysconfig/network-scripts<span class="token function">ls</span><span class="token function">vi</span> ifconfig-ens33<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><p><img src="../Assets/file-1763634076190.png" alt="file-1763634076190.png"></p><p><img src="../Assets/file-1763634100002.png" alt="file-1763634100002.png"></p><p>说明：</p><pre class="line-numbers language-text" data-language="text"><code class="language-text">BOOTPROTO=static        #网络配置，设置为静态IP，有dhcp及staticONBOOT=yes              #设置为开机启动DNS1=114.114.114.114    #这个是国内的DNS地址，是固定的IPADDR=192.168.2.3      #你想要设置的固定IP，除VMware配置的子网IP、网关IP以及VMnet8设置的3个IP外，同网段 0-255之间都可以，自行设置NETMASK=255.255.255.0   #子网掩码GATEWAY=192.168.2.2     #网关IPork restart<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>重启网络服务</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">service</span> network restart<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h4 id="验证"><a href="#验证" class="headerlink" title="验证"></a>验证</h4><p>查看linux中的ip地址</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">ip</span> addr<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p><img src="../Assets/file-1763634145216.png" alt="file-1763634145216.png"></p><p>访问互联网，是否能正常访问</p><pre class="line-numbers language-text" data-language="text"><code class="language-text">ping www.baidu.com<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>实体机访问虚拟机IP，是否能正常访问</p><pre class="line-numbers language-none"><code class="language-none">ping 192.168.2.2<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h2 id="设置yum源为阿里云"><a href="#设置yum源为阿里云" class="headerlink" title="设置yum源为阿里云"></a>设置yum源为阿里云</h2><p>下载阿里云CentOS 7的文件，替换虚拟机中的 /etc/yum.repos.d/CentOS-Base.repo 文件内容</p><p>或者直接使用wget下载文件直接进行替换</p><pre class="line-numbers language-text" data-language="text"><code class="language-text">[root@localhost ~]# cd /etc/yum.repos.d## 备份原文件[root@localhost ~]# mv CentOS-Base.repo CentOS-Base_bak.repo## 下载阿里云的镜像描述文件[root@localhost ~]# wget https://mirrors.aliyun.com/repo/Centos-7.repo -O CentOS-Base.repo<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>执行以下命令</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">yum clean all yum makecache yum update <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><h2 id="关闭防火墙"><a href="#关闭防火墙" class="headerlink" title="关闭防火墙"></a>关闭防火墙</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment">## 停止防火墙服务</span><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># systemctl stop firewalld.service</span><span class="token comment">## 查看防火墙服务状态</span><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># systemctl status firewalld.service</span><span class="token comment">## 永久关闭防火墙服务</span><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># systemctl disable firewalld.service</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+        <content type="html"><![CDATA[<p>在Oracle数据库中，有时字段中会存入一些特殊字符（设计不当或者程序BUG），例如制表符、换行符以及回车符等，如果包含特殊字符是看不出来的，但是在进行字段关联的时候就会查不出数据。</p><p>特殊字符ASCII码定义：</p><blockquote><p>制表符 chr(9)<br>换行符 chr(10)<br>回车符 chr(13)</p></blockquote><h2 id="去掉表中的特殊字符"><a href="#去掉表中的特殊字符" class="headerlink" title="去掉表中的特殊字符"></a>去掉表中的特殊字符</h2><pre class="line-numbers language-SQL" data-language="SQL"><code class="language-SQL">update table set field&#x3D;replace(field,chr(9), &#39;&#39;) where instr(field, chr(9)) &gt; 0<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h2 id="其他特殊字符也可以使用ascii函数查出ASCII码然后进行替换"><a href="#其他特殊字符也可以使用ascii函数查出ASCII码然后进行替换" class="headerlink" title="其他特殊字符也可以使用ascii函数查出ASCII码然后进行替换"></a>其他特殊字符也可以使用ascii函数查出ASCII码然后进行替换</h2><pre class="line-numbers language-SQL" data-language="SQL"><code class="language-SQL">select ascii(&#39;?&#39;) from dual;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>]]></content>
       
       
       <categories>
@@ -859,41 +848,14 @@
       
         <tags>
             
-            <tag> 镜像下载 </tag>
+            <tag> Oracle </tag>
             
-            <tag> 虚拟机配置 </tag>
-            
-            <tag> 固定IP设置 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Oracle数据库特殊字符处理</title>
-      <link href="/20251120054819.html"/>
-      <url>/20251120054819.html</url>
-      
-        <content type="html"><![CDATA[<p>在Oracle数据库中，有时字段中会存入一些特殊字符（设计不当或者程序BUG），例如制表符、换行符以及回车符等，如果包含特殊字符是看不出来的，但是在进行字段关联的时候就会查不出数据。</p><p>特殊字符ASCII码定义：</p><blockquote><p>制表符 chr(9)<br>换行符 chr(10)<br>回车符 chr(13)</p></blockquote><h2 id="去掉表中的特殊字符"><a href="#去掉表中的特殊字符" class="headerlink" title="去掉表中的特殊字符"></a>去掉表中的特殊字符</h2><pre class="line-numbers language-SQL" data-language="SQL"><code class="language-SQL">update table set field&#x3D;replace(field,chr(9), &#39;&#39;) where instr(field, chr(9)) &gt; 0<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h2 id="其他特殊字符也可以使用ascii函数查出ASCII码然后进行替换"><a href="#其他特殊字符也可以使用ascii函数查出ASCII码然后进行替换" class="headerlink" title="其他特殊字符也可以使用ascii函数查出ASCII码然后进行替换"></a>其他特殊字符也可以使用ascii函数查出ASCII码然后进行替换</h2><pre class="line-numbers language-SQL" data-language="SQL"><code class="language-SQL">select ascii(&#39;?&#39;) from dual;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>]]></content>
-      
-      
-      <categories>
-          
-          <category> 数据库管理 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Oracle数据库 </tag>
-            
-            <tag> 特殊字符 </tag>
+            <tag> 数据库 </tag>
             
             <tag> SQL </tag>
             
+            <tag> 特殊字符 </tag>
+            
         </tags>
       
     </entry>
@@ -901,7 +863,7 @@
     
     
     <entry>
-      <title>Linux系统防火墙常用命令</title>
+      <title>Linux防火墙命令</title>
       <link href="/20251120054736.html"/>
       <url>/20251120054736.html</url>
       
@@ -910,18 +872,22 @@
       
       <categories>
           
-          <category> 系统运维 </category>
+          <category> 技术教程 </category>
           
       </categories>
       
       
         <tags>
             
+            <tag> Linux </tag>
+            
+            <tag> 防火墙 </tag>
+            
             <tag> iptables </tag>
             
             <tag> firewall </tag>
             
-            <tag> Linux防火墙 </tag>
+            <tag> 系统管理 </tag>
             
         </tags>
       
@@ -930,7 +896,7 @@
     
     
     <entry>
-      <title>Windows系统安装SSH服务教程</title>
+      <title>Windows系统SSH服务安装指南</title>
       <link href="/20251120054403.html"/>
       <url>/20251120054403.html</url>
       
@@ -946,11 +912,11 @@
       
         <tags>
             
-            <tag> Jenkins </tag>
-            
-            <tag> OpenSSH </tag>
+            <tag> SSH </tag>
             
             <tag> Windows </tag>
+            
+            <tag> Jenkins </tag>
             
         </tags>
       
@@ -959,7 +925,7 @@
     
     
     <entry>
-      <title>Spring MVC路径模板获取与监控统计</title>
+      <title>Spring MVC接口监控必备：原始路径模板获取全解析</title>
       <link href="/20251120030846.html"/>
       <url>/20251120030846.html</url>
       
@@ -968,7 +934,7 @@
       
       <categories>
           
-          <category> 后端开发 </category>
+          <category> 技术教程 </category>
           
       </categories>
       
@@ -976,8 +942,6 @@
         <tags>
             
             <tag> Spring MVC </tag>
-            
-            <tag> 路径模板 </tag>
             
             <tag> 监控统计 </tag>
             
@@ -995,22 +959,6 @@
         <content type="html"><![CDATA[<h2 id="Typora安装注册"><a href="#Typora安装注册" class="headerlink" title="Typora安装注册"></a>Typora安装注册</h2><ol><li>先安装 typora-setup-x64-1.2.4.exe，并记录安装路径，<a href="https://wwnu.lanzouy.com/ieCCU0fqgzgj">下载地址</a></li><li>将 app.asar 替换到安装路径下的resources文件夹，替换掉app.asar文件</li><li>重启typora！！！！！！</li><li>输入邮箱、注册码，邮箱随便输入，注册码：E8Q9Y5-KXMTL5-7578SL-4S5XKS</li></ol><p>仅供学习，请在下载24小时之内删除，请支持正版</p><h2 id="图片上传"><a href="#图片上传" class="headerlink" title="图片上传"></a>图片上传</h2><p>文件 -&gt; 偏好设置中设置图像相关配置，上传服务我使用的是PicGo-Core（command line），其实和PicGo-Core(app)一样，主要是我不想托盘中多出一个程序放在那里，看着不舒服</p><p><img src="https://sh-prod-mall-bucket.oss-cn-shanghai.aliyuncs.com/imgupload/blog/image-20230502155900159.png" alt="image-20230502155900159|1178x904"></p><p><img src="https://sh-prod-mall-bucket.oss-cn-shanghai.aliyuncs.com/imgupload/blog/image-20230502160633862.png" alt="image-20230502160633862|1178x904"></p><p>点击下载或更新，下载更新完成后，点击打开配置文件，配置图床的地址，有些版本能直接打开，有些无反应，需要手动进到指定的目录进行修改<code>config.json</code>文件</p><p>picgo 的默认配置文件为<code>~/.picgo/config.json</code>。其中<code>~</code>为用户目录。不同系统的用户目录不太一样。</p><p>linux 和 macOS 均为<code>~/.picgo/config.json</code>。</p><p>windows 则为<code>C:\Users\你的用户名\.picgo\config.json</code></p><p>以下为修改图床使用阿里云OSS的配置</p><p><img src="https://sh-prod-mall-bucket.oss-cn-shanghai.aliyuncs.com/imgupload/blog/image-20230502161235469.png" alt="image-20230502161235469"></p><p>更多PicGo-Core配置文件参考：<a href="https://picgo.github.io/PicGo-Core-Doc/zh/guide/config.html">配置文件 | PicGo-Core</a></p><p>配置完成后，在Typora中进行验证</p><p><img src="https://sh-prod-mall-bucket.oss-cn-shanghai.aliyuncs.com/imgupload/blog/image-20230502161438558.png" alt="image-20230502161438558"></p><p><img src="https://sh-prod-mall-bucket.oss-cn-shanghai.aliyuncs.com/imgupload/blog/image-20230502161446114.png" alt="image-20230502161446114"></p><h2 id="主题优化"><a href="#主题优化" class="headerlink" title="主题优化"></a>主题优化</h2><p>推荐一款作者在用的主题<strong>Drake</strong>，该款主题字体略微有些小，因为在此基础上做了略微更改，把字体改大</p><p><a href="https://github.com/liangjingkanji/DrakeTyporaTheme">GitHub - liangjingkanji/DrakeTyporaTheme: 十二种主题风格 - Material Google JetBrains Vue Juejin Purple Ayu Dark</a></p><p>打开主题文件夹，并将下载的Drake主题文件解压后复制到该文件夹中，重启Typora</p><p><img src="https://sh-prod-mall-bucket.oss-cn-shanghai.aliyuncs.com/imgupload/blog/image-20230502163038894.png" alt="image-20230502163038894"></p><p>工具栏中，主题选择Drake主题</p><p><img src="https://sh-prod-mall-bucket.oss-cn-shanghai.aliyuncs.com/imgupload/blog/image-20230502163309817.png" alt="image-20230502163309817"></p><p>Drake主题默认文字太小，需要将文字大小调大一些</p><p><a href="https://github.com/liangjingkanji/DrakeTyporaTheme/issues/83">修改字体大小 · Issue #83 · liangjingkanji/DrakeTyporaTheme · GitHub</a></p>]]></content>
       
       
-      <categories>
-          
-          <category> 软件教程 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Typora </tag>
-            
-            <tag> 软件安装 </tag>
-            
-            <tag> 主题优化 </tag>
-            
-        </tags>
       
     </entry>
     
@@ -1024,22 +972,6 @@
         <content type="html"><![CDATA[<h2 id="Jupyter"><a href="#Jupyter" class="headerlink" title="Jupyter"></a>Jupyter</h2><ul><li>VSCode中安装jupter插件</li><li>使用<code>#%%</code>分割代码块</li><li><code>.ipynb</code>文件中使用jupyter</li></ul><p>vscode中运行jupter时提示需要安装ipykernel,安装报错可以执行以下脚本进行安装 打开工程：code + 路径</p><p>pip install -i <a href="https://pypi.tuna.tsinghua.edu.cn/simple">https://pypi.tuna.tsinghua.edu.cn/simple</a> ipykernel</p><h2 id="Pylance"><a href="#Pylance" class="headerlink" title="Pylance"></a>Pylance</h2><ul><li>Python › Analysis: auto format string</li><li>Python › Analysis › Inlay Hints: Call Argument Names<ul><li>选择partial</li></ul></li><li>Python › Analysis: Type Checking Mode<ul><li>选择standard</li></ul></li><li>Python › Analysis: inlay Hints:Function Return Types</li></ul><h2 id="IntelliCode-Completions"><a href="#IntelliCode-Completions" class="headerlink" title="IntelliCode Completions"></a>IntelliCode Completions</h2><p>AI自动补全功能</p><h2 id="Code-Spell-Checker"><a href="#Code-Spell-Checker" class="headerlink" title="Code Spell Checker"></a>Code Spell Checker</h2><p>单词拼写检查</p><h2 id="Error-lens"><a href="#Error-lens" class="headerlink" title="Error lens"></a>Error lens</h2><p>错误检查</p>]]></content>
       
       
-      <categories>
-          
-          <category> 开发工具 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Jupyter </tag>
-            
-            <tag> Pylance </tag>
-            
-            <tag> IntelliCode </tag>
-            
-        </tags>
       
     </entry>
     
@@ -1055,18 +987,16 @@
       
       <categories>
           
-          <category> 后端开发 </category>
+          <category> 技术教程 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> Spring事务 </tag>
+            <tag> Spring </tag>
             
-            <tag> 声明式事务 </tag>
-            
-            <tag> 事务优化 </tag>
+            <tag> 事务管理 </tag>
             
         </tags>
       
@@ -1075,7 +1005,7 @@
     
     
     <entry>
-      <title>Nginx配置HTTPS自签名证书教程</title>
+      <title>配置nginx实现https访问</title>
       <link href="/20251118103709.html"/>
       <url>/20251118103709.html</url>
       
@@ -1084,7 +1014,7 @@
       
       <categories>
           
-          <category> Web服务器 </category>
+          <category> 技术教程 </category>
           
       </categories>
       
@@ -1094,8 +1024,6 @@
             <tag> Nginx </tag>
             
             <tag> HTTPS </tag>
-            
-            <tag> OpenSSL </tag>
             
         </tags>
       
@@ -1113,18 +1041,14 @@
       
       <categories>
           
-          <category> 软件开发 </category>
+          <category> 技术教程 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> 软件设计 </tag>
-            
-            <tag> 代码重构 </tag>
-            
-            <tag> SOLID原则 </tag>
+            <tag> SOLID </tag>
             
         </tags>
       
@@ -1142,18 +1066,16 @@
       
       <categories>
           
-          <category> 编程技术 </category>
+          <category> 技术教程 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> Java </tag>
+            <tag> 递归 </tag>
             
             <tag> 栈溢出 </tag>
-            
-            <tag> 递归优化 </tag>
             
         </tags>
       
@@ -1162,7 +1084,7 @@
     
     
     <entry>
-      <title>技术学习与职业发展的困境与出路</title>
+      <title>技术成长困境与突破</title>
       <link href="/20251118103706.html"/>
       <url>/20251118103706.html</url>
       
@@ -1171,18 +1093,22 @@
       
       <categories>
           
-          <category> 职业规划 </category>
+          <category> 技术教程 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> 技术学习 </tag>
-            
             <tag> 职业发展 </tag>
             
-            <tag> 能力提升 </tag>
+            <tag> 技术学习 </tag>
+            
+            <tag> 自我提升 </tag>
+            
+            <tag> 面试准备 </tag>
+            
+            <tag> 思维拓展 </tag>
             
         </tags>
       
@@ -1191,7 +1117,7 @@
     
     
     <entry>
-      <title>Java单元测试框架：JUnit与Mockito详解</title>
+      <title>从JUnit到Mockito：构建可靠Java单元测试</title>
       <link href="/20251118103705.html"/>
       <url>/20251118103705.html</url>
       
@@ -1200,7 +1126,7 @@
       
       <categories>
           
-          <category> 软件开发 </category>
+          <category> 技术教程 </category>
           
       </categories>
       
@@ -1210,8 +1136,6 @@
             <tag> JUnit </tag>
             
             <tag> Mockito </tag>
-            
-            <tag> 单元测试 </tag>
             
         </tags>
       
@@ -1229,7 +1153,7 @@
       
       <categories>
           
-          <category> 技术故障分析 </category>
+          <category> 技术教程 </category>
           
       </categories>
       
@@ -1240,7 +1164,34 @@
             
             <tag> 死锁 </tag>
             
-            <tag> 异步编程 </tag>
+            <tag> 并发编程 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Zookeeper分布式服务框架</title>
+      <link href="/20251118103702.html"/>
+      <url>/20251118103702.html</url>
+      
+        <content type="html"><![CDATA[<p>Zookeeper是一个分布式服务框架，是Apache Hadoop的一个子项目，它主要用于解决分布式应用中经常遇到的一些数据管理问题，比如配置管理、命名服务、分布式锁、集群管理等。<br>刚接触zookeeper的时候有些云里雾里，不知从哪里入手好，其实简单的说zookeeper就是 <strong>文件系统 + 监听通知机制</strong>。</p><h2 id="系统原理"><a href="#系统原理" class="headerlink" title="系统原理"></a>系统原理</h2><h3 id="文件系统"><a href="#文件系统" class="headerlink" title="文件系统"></a>文件系统</h3><p>在zookeeper中维护了类似Unix系统的树形文件节点，可以往这个节点中存储或者获取数据，我们将这些节点称为znode，每个znode默认能够存储1Mb的数据，znode有四种不同的类型。</p><ul><li><strong>PERSISTENT 持久化目录节点</strong> 所谓持久节点就是指节点创建后，除非进行删除操作就一直存在，不会因创建该节点的客户端会话失效或者zookeeper服务停止而消失</li><li><strong>PERSISTENT_SEQUENTIAL 持久化顺序编号节点</strong>  和持久节点基本特性一致，额外的特点是，每个父节点会为他的第一级子节点维护一份时序，会记录每个子节点创建的先后顺序。在创建子节点的过程中，zookeeper会自动给子节点的名称后面增加一个数字后缀。例如创建名为”test”的子节点，zookeeper会给 “test_“ 后自动补充数字。</li><li><strong>EPHEMERAL 临时目录节点</strong> 和持久节点不同，临时节点的生命周期和客户端会话绑定，也就是说，如果客户端会话失效，那么这个节点会被自动清除掉。这里有几点需要注意，首先这里说的是会话失效而不是连接断开，其次临时节点下不能创建子节点，另外客户端会话失效后，所有的节点也不是瞬间消失，而是要过一段时间，大概10s以内。</li><li><strong>EPHEMERAL_SEQUENTIAL 临时顺序编号目录节点</strong> 节点属于临时节点，不过创建的子节点带有顺序，客户端会话结束节点会自动消失。</li></ul><p>通过上面的节点类型可以看出，znode的节点有临时/持久，顺序/无序两大类，组合成四种不同的节点类型。</p><h3 id="监听通知机制"><a href="#监听通知机制" class="headerlink" title="监听通知机制"></a>监听通知机制</h3><p>客户端注册到zookeeper上监听它所关心的目录节点，当目录节点发生变化（数据改变、节点被删除、子目录节点增加或删除）时，zookeeper会通知客户端该节点发生了变化。</p><h2 id="Zookeeper的作用"><a href="#Zookeeper的作用" class="headerlink" title="Zookeeper的作用"></a>Zookeeper的作用</h2><h3 id="配置管理"><a href="#配置管理" class="headerlink" title="配置管理"></a>配置管理</h3><p>在我们的应用程序肯定会有很多的配置，例如数据库连接、日志等。一般都是通过配置文件的方式引入系统，当我们只有少数几种配置或只有一台服务器，并且不经常修改的情况下，这是一种很好的做法，但是当我们的配置文件非常多，存在很多应用服务器，那么在修改配置文件的时候是一件很恐怖的事情。这个时候就需要一种集中管理配置的方法，在这个集中管理的地方修改了配置，所有关系这个配置的地方都能获取变更并进行修改。<br>那么zookeeper如何实现呢？我们将配置信息放到zookeeper的某个目录节点中，然后所有相关的应用程序对这个目录节点进行监听，一旦配置信息发生变化，每个应用程序都会收到zookeeper的通知，然后从zookeeper中获取最新的配置信息。</p><h3 id="命名服务"><a href="#命名服务" class="headerlink" title="命名服务"></a>命名服务</h3><p>命名服务就比较好理解了，以网络访问为例，通常我们如果要访问一个系统，需要知道这个系统服务的ip，但是ip对人来说是不友好的，那么我们可以通过域名来访问，但是计算机是无法直接识别出域名的。如果我们每台计算机上都存在一份域名到ip的映射，那么可以简单的解决这一问题。但是如果域名对应的ip发生了变化怎么办呢？于是我们有了DNS这个东西，我们只需要访问一个大家都熟知的点，它会告诉你这个域名对应的ip是什么。<br>而在我们的系统中存在类似的问题，当我们的服务特别多时，保存或者配置服务的地址就会变得非常不方便，同样的，如果我们访问一个大家都熟悉的点，这里提供统一的入口，在进行服务调用时不需要关心服务的具体地址,那么维护起来就方便的多了。<br>以两个服务调用为例,被调用的服务首先在zookeeper上创建以服务名命名的持久化顺序编号目录节点，然后创建临时子节点存储地址信息，为什么要创建一个父节点然后在子节点中存储地址信息呢？因为被调用方有可能是集群服务，那么就有多个地址可供访问。调用方根据服务名去zookeeper中获取创建的持久化顺序编号的目录节点，子节点若有多个的话随机获取一个得到子节点存储的地址信息。</p><h3 id="分布式锁"><a href="#分布式锁" class="headerlink" title="分布式锁"></a>分布式锁</h3><p>为保证系统的可靠性，一般是将系统进行集群部署，如果一个任务每个集群中的服务都要运行的话就要相互协调，防止数据的不一致性。通常的做法是使用分布式锁，当一个服务持有锁的时候，其他服务等待，一旦锁释放，其他服务竞争锁，然后得到锁的服务运行，其他服务继续等待锁（这里只是简单的原理，实际肯定更为复杂）。<br>zookeeper实现分布式锁是利用文件系统的顺序编号目录节点，首先创建一个持久化顺序节点，每个线程或者系统获取锁前先创建自己的子目录节点，释放锁时删除自己创建的节点。由于子节点存在顺序并且递增，可以规定最小的那个节点获得锁，每个线程或者系统创建完属于自己的子节点后判断该节点是否最小，最小则获得锁，否则等待通知，只需要等待前一个节点的通知即可。当锁释放即节点删除时，后一个接到通知占有锁。这样第一个通知第二个，第二个通知第三个，击鼓传花似的依次向后。</p><h3 id="集群管理"><a href="#集群管理" class="headerlink" title="集群管理"></a>集群管理</h3><p>在分布式集群服务中，经常由于各种原因，比如硬件故障、网络问题、软件故障等，某些节点会进进出出，既有新的节点加入进来也有老的节点退出，这个时候集群的其他机器需要感知到这种变化，然后根据这种变化制订响应的策略。比如在一个分布式架构的系统中，服务是一个集群提供的，当消费者访问某个服务时，就需要采取某些机制发现现在还有哪些节点可以提供该服务，这也称之为服务发现。这里可以和zookeeper的命名服务配合理解，被调用方创建临时目录存储调用地址，如若退出集群，临时节点删除，消费者自然无法发现该服务。</p><h2 id="设计目的"><a href="#设计目的" class="headerlink" title="设计目的"></a>设计目的</h2><ol><li>最终一致性：client 不论连接到哪个 Server，展示给它都是同一个视图，这是 zookeeper 最重要的性能。</li><li>可靠性：具有简单、健壮、良好的性能，如果消息 m 被到一台服务器接受，那么它 将被所有的服务器接受。</li><li>实时性：Zookeeper 保证客户端将在一个时间间隔范围内获得服务器的更新信息，或 者服务器失效的信息。但由于网络延时等原因，Zookeeper 不能保证两个客户端能同时得到 刚更新的数据，如果需要最新数据，应该在读数据之前调用 sync()接口。</li><li>等待无关（wait-free）：慢的或者失效的 client 不得干预快速的 client 的请求，使得每 个 client 都能有效的等待。</li><li>原子性：更新只能成功或者失败，没有中间状态。</li><li>顺序性：包括全局有序和偏序两种：全局有序是指如果在一台服务器上消息 a 在消息 b 前发布，则在所有 Server 上消息 a 都将在消息 b 前被发布；偏序是指如果一个消息 b 在消 息 a 后被同一个发送者发布，a 必将排在 b 前面。</li></ol><h2 id="Zookeeper集群中的角色"><a href="#Zookeeper集群中的角色" class="headerlink" title="Zookeeper集群中的角色"></a>Zookeeper集群中的角色</h2><p>zookeeper集群中的角色主要有以下三类：</p><ol><li>领导者 Leader： 领导者负责进行投票的发起和决议，更新系统状态</li><li>学习者 Learner</li></ol><ul><li>跟随者 Follower： 跟随者用于接收客户端请求并向客户端返回结果，在选主过程中参与投票</li><li>观察者 Observer：观察者可以接收客户端连接，将写请求转发给leader节点，但观察者不参与投票过程，只同步leader的状态，观察者的目的是为了扩展系统，提高读取速度</li></ul><ol start="3"><li>客户端 Client：请求发起方</li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术教程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Zookeeper </tag>
+            
+            <tag> 分布式 </tag>
             
         </tags>
       
@@ -1265,9 +1216,9 @@
       
         <tags>
             
-            <tag> 分布式 </tag>
-            
             <tag> Zookeeper </tag>
+            
+            <tag> 分布式 </tag>
             
             <tag> 集群管理 </tag>
             
@@ -1278,7 +1229,7 @@
     
     
     <entry>
-      <title>基于Zookeeper的服务注册与发现实现</title>
+      <title>ZooKeeper服务注册发现</title>
       <link href="/20251118103701.html"/>
       <url>/20251118103701.html</url>
       
@@ -1287,14 +1238,16 @@
       
       <categories>
           
-          <category> 分布式系统 </category>
+          <category> 技术教程 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> Zookeeper </tag>
+            <tag> 分布式 </tag>
+            
+            <tag> ZooKeeper </tag>
             
             <tag> 服务注册 </tag>
             
@@ -1307,7 +1260,7 @@
     
     
     <entry>
-      <title>基于Zookeeper的统一配置管理实现</title>
+      <title>Zookeeper统一配置管理</title>
       <link href="/20251118103700.html"/>
       <url>/20251118103700.html</url>
       
@@ -1325,9 +1278,9 @@
             
             <tag> Zookeeper </tag>
             
-            <tag> 配置管理 </tag>
+            <tag> 分布式 </tag>
             
-            <tag> 分布式系统 </tag>
+            <tag> 配置管理 </tag>
             
         </tags>
       
@@ -1345,18 +1298,18 @@
       
       <categories>
           
-          <category> 运维技术 </category>
+          <category> 技术教程 </category>
           
       </categories>
       
       
         <tags>
             
+            <tag> Windows </tag>
+            
             <tag> Jenkins </tag>
             
-            <tag> Windows部署 </tag>
-            
-            <tag> Tomcat服务 </tag>
+            <tag> 自动化部署 </tag>
             
         </tags>
       
@@ -1372,22 +1325,6 @@
         <content type="html"><![CDATA[<p>打开工程：code + 路径</p><p>打开指定文件：ctrl + p</p><p>打开/关闭终端：ctrl + ` (1左边的按键)</p><p>跳转到行：ctrl + g</p><p>按单词移动光标：ctrl + 左右</p><p>选中单词：ctrl + d （重复按可以多选）</p><p>选中行：ctrl + l （重复按会同时选择下一行）</p><p>移动行：alt + 上下</p><p>格式化代码：ctrl + shift + f</p><p>跳转到定义：f12</p><p>查看当前文件符号：ctrl + shift + o</p><p>剪切/复制当前行：ctrl + x / ctrl + c （什么都不选的时候）</p><p>切换tab：alt+数字</p><p>顺序切换tab：ctrl + pageup / pagedown</p><p>关闭文件：ctrl+w</p><p>关闭所有文件：ctrl + k w （ctrl不松手）</p><p>ctrl+b 打开主侧边栏</p><p>ctrl+shift+e 打开文件管理器</p><p>ctrl+0 焦点聚焦到主侧边栏</p><p>ctrl+1 焦点聚焦到代码编辑器</p><p>ctrl+shift+space 重新出现函数信息提示</p><p>ctrl+\ 添加分屏</p><p>ctrl + d 选中当前内容，连续快捷键会逐个选择下一个内容</p><p>ctrl + shift + L 选择所有找到的查找匹配项</p>]]></content>
       
       
-      <categories>
-          
-          <category> 技术教程 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> VSCode </tag>
-            
-            <tag> 快捷键 </tag>
-            
-            <tag> 代码编辑 </tag>
-            
-        </tags>
       
     </entry>
     
@@ -1417,6 +1354,48 @@
             <tag> 数学公式 </tag>
             
         </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Markdown LaTeX公式指南</title>
+      <link href="/20250919050557.html"/>
+      <url>/20250919050557.html</url>
+      
+        <content type="html"><![CDATA[<p>在MarkDown文件中上写公式是比较头疼的事情。好在Markdown支持LaTeX公式的输入，在一定程度上缓解了输入的麻烦。</p><h1 id="基础部分"><a href="#基础部分" class="headerlink" title="基础部分"></a>基础部分</h1><h2 id="公式标记"><a href="#公式标记" class="headerlink" title="公式标记"></a>公式标记</h2><p>在Markdown中，有两种输入公式的方法：一是行内公式（inline），用一对美元符号<code>$</code>包裹。二是整行公式（displayed），用一对紧挨的两个美元符号<code>$$</code>包裹。</p><p>这是一个行内公式 $E=mc^2$，写法是：<code>$E=mc^2$</code>。<br>这是一个整行公式：$$ \sum_{i=0}^n i^2 = \frac{(n^2+n)(2n+1)}{6} $$<br>写法是</p><pre class="line-numbers language-LaTeX" data-language="LaTeX"><code class="language-LaTeX">$$ \sum_&#123;i&#x3D;0&#125;^n i^2 &#x3D; \frac&#123;(n^2+n)(2n+1)&#125;&#123;6&#125; $$<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h2 id="希腊字母"><a href="#希腊字母" class="headerlink" title="希腊字母"></a>希腊字母</h2><table><thead><tr><th>名称</th><th>大写</th><th>Tex</th><th>小写</th><th>Tex</th></tr></thead><tbody><tr><td>alpha</td><td>$A$</td><td>A</td><td>$\alpha$</td><td>\alpha</td></tr><tr><td>beta</td><td>$B$</td><td>B</td><td>$\beta$</td><td>\beta</td></tr><tr><td>gamma</td><td>$\Gamma$</td><td>\Gamma</td><td>$\gamma$</td><td>\gamma</td></tr><tr><td>delta</td><td>$\Delta$</td><td>\Delta</td><td>$\delta$</td><td>\delta</td></tr><tr><td>epsilon</td><td>$E$</td><td>E</td><td>$\epsilon$</td><td>\epsilon</td></tr><tr><td>zeta</td><td>$Z$</td><td>Z</td><td>$\zeta$</td><td>\zeta</td></tr><tr><td>eta</td><td>$H$</td><td>H</td><td>$\eta$</td><td>\eta</td></tr><tr><td>theta</td><td>$\Theta$</td><td>\Theta</td><td>$\theta$</td><td>\theta</td></tr><tr><td>iota</td><td>$I$</td><td>I</td><td>$\iota$</td><td>\iota</td></tr><tr><td>kappa</td><td>$K$</td><td>K</td><td>$\kappa$</td><td>\kappa</td></tr><tr><td>lambda</td><td>$\Lambda$</td><td>\Lambda</td><td>$\lambda$</td><td>\lambda</td></tr><tr><td>mu</td><td>$M$</td><td>M</td><td>$\mu$</td><td>\mu</td></tr><tr><td>nu</td><td>$N$</td><td>N</td><td>$\nu$</td><td>\nu</td></tr><tr><td>xi</td><td>$\Xi$</td><td>\Xi</td><td>$\xi$</td><td>\xi</td></tr><tr><td>omicron</td><td>$O$</td><td>O</td><td>$\omicron$</td><td>\omicron</td></tr><tr><td>pi</td><td>$\Pi$</td><td>\Pi</td><td>$\pi$</td><td>\pi</td></tr><tr><td>rho</td><td>$P$</td><td>P</td><td>$\rho$</td><td>\rho</td></tr><tr><td>sigma</td><td>$\Sigma$</td><td>\Sigma</td><td>$\sigma$</td><td>\sigma</td></tr><tr><td>tau</td><td>$T$</td><td>T</td><td>$\tau$</td><td>\tau</td></tr><tr><td>upsilon</td><td>$\Upsilon$</td><td>\Upsilon</td><td>$\upsilon$</td><td>\upsilon</td></tr><tr><td>phi</td><td>$\Phi$</td><td>\Phi</td><td>$\phi$</td><td>\phi</td></tr><tr><td>chi</td><td>X</td><td>X</td><td>$\chi$</td><td>\chi</td></tr><tr><td>psi</td><td>$\Psi$</td><td>\Psi</td><td>$\psi$</td><td>\psi</td></tr><tr><td>omega</td><td>$\Omega$</td><td>\Omega</td><td>$\omega$</td><td>\omega</td></tr></tbody></table><h2 id="上标与下标"><a href="#上标与下标" class="headerlink" title="上标与下标"></a>上标与下标</h2><p>上标和下标分别使用<code>^</code>和<code>_</code>来表示。例如<code>x_i^2</code>： $x_i^2$，<code>\log_2 x</code>：$\log_2 x$</p><p>默认情况下，上下标符号仅仅对下一个组起作用。一个组即单个字符或者使用<code>&#123;&#125;</code>包裹起来的内容。<br>也就是说，如果使用<code>10^10</code>会得到$10^10$，而<code>10^&#123;10&#125;</code>才是$10^{10}$。同时，大括号还能消除二义性，如<code>x^5^6</code>会显示错误，必须使用大括号来界定<code>^</code>的结合性，如<code>&#123;x^5&#125;^6</code>：${x^5}^6$  或者<code>x^&#123;5^6&#125;</code>：。注意区分<code>x_i^2</code>： $x_i^2$  和<code>x_&#123;i_2&#125;</code>：$x_{i_2}$。</p><p>另外，如果要在左右两边都有上下标，可以用<code>\sideset</code>来表示，如<code>\sideset&#123;^1_2&#125;&#123;^3_4&#125;\bigotimes</code>：$\sideset{^1_2}{^3_4}\bigotimes$</p><h2 id="括号"><a href="#括号" class="headerlink" title="括号"></a>括号</h2><ul><li>小括号与方括号：使用原始的<code>()</code>和<code>[]</code>即可。如<code>(2+3) [4+4]</code>：$(2+3) [4+4]$</li><li>大括号：由于大括号<code>&#123;&#125;</code>被用来分组，因此需要使用<code>\&#123;</code>和<code>\&#125;</code>表示大括号，也可以使用<code>\lbrace</code>和<code>\rbrace</code>来表示。如<code>\&#123;a*b\&#125;</code>或者<code>\lbrace a*b \rbrace</code>，都会显示为 ${a*b}$ </li><li>尖括号： 使用<code>\langle</code>和<code>\rangle</code>分别表示左尖括号和右尖括号。如<code>\langle x \rangle</code>：$\langle x \rangle$</li><li>上取整：使用<code>\lceil</code>和<code>\rceil</code>表示。如<code>\lceil x \rceil</code>：$\lceil x \rceil$</li><li>下取整：使用<code>\lfloor</code>和<code>\rfloor</code>表示。如<code>\lfloor x \rfloor</code>：$\lfloor x \rfloor$</li></ul><p>需要注意的是，原始括号并不会随着公式大小缩放。如<code>(\frac12)</code>：$(\frac12)$  ，可以使用<code>\left( ...\right)</code>来自适应的调整括号。如<code>\left( \frac12 \right)</code>：$\left( \frac12 \right)$ 可以明显看出，后一组公式中的括号是经过缩放的。</p><h2 id="求和与积分"><a href="#求和与积分" class="headerlink" title="求和与积分"></a>求和与积分</h2><p><code>\sum</code>用来表示求和符号，其下标表示求和下限，上标表示上线。如<code>\sum_1^n</code>：<br>$$<br>\sum_1^n<br>$$<br><code>\int</code>用来表示积分符号，同样地，其上下标表示积分的上下限。如<code>\int_1^\infty</code>：<br>$$<br>\int_1^\infty<br>$$<br>与此类似的符号还有，<code>\prod</code>：$\prod$  <code>\bigcup</code>：$\bigcup$   <code>\bigcap</code>：$\bigcap$    <code>\iint</code>：$\iint$</p><h2 id="分式与根式"><a href="#分式与根式" class="headerlink" title="分式与根式"></a>分式与根式</h2><ul><li>分式有两种表示方法<ul><li>使用<code>\frac ab</code>，其中<code>\frac</code>作用于a和b，结果为$\frac ab$，如果分子或分母不是单个字符，需要使用<code>&#123;&#125;</code>来分组</li><li>使用<code>\over</code>来分隔一个组的前后两部分，如<code>&#123;a+1 \over b+1&#125;</code>：${a+1\over b+1}$</li></ul></li><li>根式使用<code>\sqrt[a]b</code>来表示，其中，方括号内的值用来表示开几次方，省略方括号则表示开方<ul><li><code>\sqrt[4]&#123;\frac xy&#125;</code>：$\sqrt[4]{\frac xy}$，<code>\sqrt&#123;x^3&#125;</code>：$\sqrt{x^3}$</li></ul></li></ul><h2 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h2><ul><li>使用<code>\it</code>显示意大利体（公式默认字体）：$\it A B C D E F nop$</li><li>使用<code>\mathbb</code>或<code>\Bbb</code>显示黑板粗体（黑板黑体），$\mathbb{CHNQRZ}$</li><li>使用<code>\mathbf</code>或<code>\bf</code>显示黑体，$\mathbf {A B C D E F nop}$</li><li>使用<code>\mathtt</code>或<code>\tt</code>显示打印机字体，$\mathtt {ABCDEFnop}$</li><li>使用<code>\mathrm</code>或<code>\rm</code>显示罗马体，$\mathrm {ABCDEFnop}$</li><li>使用<code>\mathsf</code>或<code>\sf</code>显示等线体（sans-serif体），$\mathsf {ABCDEFnop}$</li><li>使用<code>\mathcal</code>显示艺术字体，$\mathcal {ABCDEFnop}$</li><li>使用<code>\mathscr</code>或<code>\cal</code>显示手写字体（花体），$\cal ABCDEFnop$</li><li>使用<code>\mathfrak</code>显示Fraktur字体（老式德国字体），$\mathfrak {ABCDEFnop}$</li><li>使用<code>\mit</code>显示数学斜体，$\mit {1234567890}$</li></ul><h2 id="特殊函数与符号"><a href="#特殊函数与符号" class="headerlink" title="特殊函数与符号"></a>特殊函数与符号</h2><h3 id="关系运算符"><a href="#关系运算符" class="headerlink" title="关系运算符"></a>关系运算符</h3><table><thead><tr><th>输入</th><th>显示</th><th>输入</th><th>显示</th><th>输入</th><th>显示</th><th>输入</th><th>显示</th></tr></thead><tbody><tr><td>\pm</td><td>$\pm$</td><td>\mp</td><td>$\mp$</td><td>\times</td><td>$\times$</td><td>\div</td><td>$\div$</td></tr><tr><td>\mid</td><td>$\mid$</td><td>\nmid</td><td>$\nmid$</td><td>\circ</td><td>$\circ$</td><td>\bullet</td><td>$\bullet$</td></tr><tr><td>\cdot</td><td>$\cdot$</td><td>\ast</td><td>$\ast$</td><td>\odot</td><td>$\odot$</td><td>\bigodot</td><td>$\bigodot$</td></tr><tr><td>\otimes</td><td>$\otimes$</td><td>\bigotimes</td><td>$\bigotimes$</td><td>\oplus</td><td>$\oplus$</td><td>\bigoplus</td><td>$\bigoplus$</td></tr><tr><td>\lt</td><td>$\lt$</td><td>\gt</td><td>$\gt$</td><td>\leq</td><td>$\leq$</td><td>\geq</td><td>$\geq$</td></tr><tr><td>\neq</td><td>$\neq$</td><td>\approx</td><td>$\approx$</td><td>\equiv</td><td>$\equiv$</td><td>\sim</td><td>$\sim$</td></tr><tr><td>\simeq</td><td>$\simeq$</td><td>\cong</td><td>$\cong$</td><td>\prec</td><td>$\prec$</td><td>\lhd</td><td>$\lhd$</td></tr><tr><td>\sum</td><td>$\sum$</td><td>\prod</td><td>$\prod$</td><td>\coprod</td><td>$\coprod$</td><td></td><td></td></tr></tbody></table><h3 id="集合运算符"><a href="#集合运算符" class="headerlink" title="集合运算符"></a>集合运算符</h3><table><thead><tr><th>输入</th><th>显示</th><th>输入</th><th>显示</th><th>输入</th><th>显示</th><th>输入</th><th>显示</th></tr></thead><tbody><tr><td>\emptyset</td><td>$\emptyset$</td><td>\varnothing</td><td>$\varnothing$</td><td>\in</td><td>$\in$</td><td>\notin</td><td>$\notin$</td></tr><tr><td>\subset</td><td>$\subset$</td><td>\supset</td><td>$\supset$</td><td>\cup</td><td>$\cup$</td><td>\cap</td><td>$\cap$</td></tr><tr><td>\subseteq</td><td>$\subseteq$</td><td>\supseteq</td><td>$\supseteq$</td><td>\subsetneq</td><td>$\subsetneq$</td><td>\supsetneq</td><td>$\supsetneq$</td></tr><tr><td>\bigcup</td><td>$\bigcup$</td><td>\bigcap</td><td>$\bigcap$</td><td>\bigvee</td><td>$\bigvee$</td><td>\bigwedge</td><td>$\bigwedge$</td></tr><tr><td>\uplus</td><td>$\uplus$</td><td>\biguplus</td><td>$\biguplus$</td><td>\sqcup</td><td>$\sqcup$</td><td>\bigsqcup</td><td>$\bigsqcup$</td></tr></tbody></table><h3 id="对数运算符"><a href="#对数运算符" class="headerlink" title="对数运算符"></a>对数运算符</h3><table><thead><tr><th>输入</th><th>显示</th><th>输入</th><th>显示</th><th>输入</th><th>显示</th></tr></thead><tbody><tr><td>\log</td><td>$\log$</td><td>\lg</td><td>$\lg$</td><td>\ln</td><td>$\ln$</td></tr></tbody></table><h3 id="三角运算符"><a href="#三角运算符" class="headerlink" title="三角运算符"></a>三角运算符</h3><table><thead><tr><th>输入</th><th>显示</th><th>输入</th><th>显示</th><th>输入</th><th>显示</th></tr></thead><tbody><tr><td>\bog</td><td></td><td>\angle</td><td>$\angle$</td><td>30^\circ</td><td>$30^\circ$</td></tr><tr><td>\sin</td><td>$\sin$</td><td>\cos</td><td>$\cos$</td><td>\tan</td><td>$\tan$</td></tr><tr><td>\cot</td><td>$\cot$</td><td>\sec</td><td>$\sec$</td><td>\csc</td><td>$\csc$</td></tr></tbody></table><h3 id="微积分运算符"><a href="#微积分运算符" class="headerlink" title="微积分运算符"></a>微积分运算符</h3><table><thead><tr><th>输入</th><th>显示</th><th>输入</th><th>显示</th><th>输入</th><th>显示</th></tr></thead><tbody><tr><td>\prime</td><td>$\prime$</td><td>\int</td><td>$\int$</td><td>\iint</td><td>$\iint$</td></tr><tr><td>\iiint</td><td>$\iiint$</td><td>\iiiint</td><td>$\iiiint$</td><td>\oint</td><td>$\oint$</td></tr><tr><td>\lim</td><td>$\lim$</td><td>\infty</td><td>$\infty$</td><td>\nabla</td><td>$\nabla$</td></tr></tbody></table><h3 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h3><table><thead><tr><th>输入</th><th>显示</th><th>输入</th><th>显示</th><th>输入</th><th>显示</th><th>输入</th><th>显示</th></tr></thead><tbody><tr><td>\because</td><td>$\because$</td><td>\therefore</td><td>$\therefore$</td><td>\forall</td><td>$\forall$</td><td>\exists</td><td>$\exists$</td></tr><tr><td>\not=</td><td>$\not=$</td><td>\lnot</td><td>$\lnot$</td><td>\vdash</td><td>$\vdash$</td><td>\vDash</td><td>$\vDash$</td></tr><tr><td>\land</td><td>$\land$</td><td>\lor</td><td>$\lor$</td><td>\top</td><td>$\top$</td><td>\bot</td><td>$\bot$</td></tr></tbody></table><h3 id="箭头符号"><a href="#箭头符号" class="headerlink" title="箭头符号"></a>箭头符号</h3><table><thead><tr><th>输入</th><th>显示</th><th>输入</th><th>显示</th><th>输入</th><th>显示</th><th>输入</th><th>显示</th></tr></thead><tbody><tr><td>\uparrow</td><td>$\uparrow$</td><td>\downarrow</td><td>$\downarrow$</td><td>\rightarrow(\to)</td><td>$\rightarrow(\to)$</td><td>\leftarrow</td><td>$\leftarrow$</td></tr><tr><td>\Uparrow</td><td>$\Uparrow$</td><td>\Downarrow</td><td>$\Downarrow$</td><td>\Rightarrow</td><td>$\Rightarrow$</td><td>\Leftarrow</td><td>$\Leftarrow$</td></tr><tr><td>\longrightarrow</td><td>$\longrightarrow$</td><td>\longleftarrow</td><td>$\longleftarrow$</td><td>\Longrightarrow</td><td>$\Longrightarrow$</td><td>\mapsto</td><td>$\mapsto$</td></tr></tbody></table><h3 id="特殊符号"><a href="#特殊符号" class="headerlink" title="特殊符号"></a>特殊符号</h3><ul><li>表示排列使用<code>&#123;n+1 \choose 2k&#125;</code>或<code>\binom&#123;n+1&#125;&#123;2k&#125;</code>：${n+1 \choose 2k}$。</li><li>使用<code>\pmod</code>表示模运算，如<code>a\equiv b\pmod n</code>：$a\equiv b\pmod n$。</li><li>使用<code>\ldots</code>与<code>\cdots</code>表示省略号，二者的区别是dots的位置不同，ldots位置稍低$a_1 + a_2 + \ldots + a_n$，cdots位置居中$a_1 + a_2 + \cdots + a_n$。</li><li>使用<code>\overline</code>与<code>\underline</code>表示连线符号，如<code>\overline&#123;a+b+c+d&#125;</code>：$\overline{a+b+c+d}$，<code>\underline&#123;x+y+z&#125;</code>：$\underline{x+y+z}$。</li><li>其他特殊字符：<code>\star</code>：$\star$、<code>\aleph_0</code>：$\aleph_0$、<code>\partial</code>：$\partial$、<code>\Im</code>：$\Im$、<code>\Re</code>：$\Re$。</li><li>一些希腊字母具有变体形式，如<code>\epsilon \varepsilon</code>：$\epsilon \varepsilon$、<code>\phi \varphi</code>：$\phi \varphi$。</li><li>需要注意的是，一些特殊字符可以使用<code>\</code>转义为原来的含义，如<code>\$</code>表示$、<code>\_</code>表示下划线。</li></ul><h2 id="空间"><a href="#空间" class="headerlink" title="空间"></a>空间</h2><p>在书写公式的时候，a和b之间无论输入多少空格，最后都会显示为$ab$。可以通过在ab间加入<code>\,</code>增加些许间隙，如<code>a\,b</code>：$a,b$；<code>\;</code>增加较宽的间隙，如<code>a\;b</code>：$a;b$；<code>\quad</code>与<code>\qquad</code>会增加更大的间隙，如<code>a\quad b</code>：$a\quad b$，<code>a\qquad b</code>：$a\qquad b$</p><h2 id="顶部符号"><a href="#顶部符号" class="headerlink" title="顶部符号"></a>顶部符号</h2><table><thead><tr><th>输入</th><th>显示</th><th>输入</th><th>显示</th><th>输入</th><th>显示</th></tr></thead><tbody><tr><td>\hat x</td><td>$\hat x$</td><td>\check x</td><td>$\check x$</td><td>\bar x</td><td>$\bar x$</td></tr><tr><td>\widehat {xy}</td><td>$\widehat {xy}$</td><td>\breve x</td><td>$\breve x$</td><td>\overline {xyz}</td><td>$\overline {xyz}$</td></tr><tr><td>\vec x</td><td>$\vec x$</td><td>\overrightarrow x</td><td>$\overrightarrow x$</td><td>\overleftrightarrow {xyz}</td><td>$\overleftrightarrow {xyz}$</td></tr><tr><td>\dot x</td><td>$\dot x$</td><td>\ddot x</td><td>$\ddot x$</td><td></td><td></td></tr></tbody></table><h1 id="高级部分"><a href="#高级部分" class="headerlink" title="高级部分"></a>高级部分</h1><h2 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h2><p>使用<code>$$\begin&#123;array&#125;&#123;列样式&#125;...\end&#123;array&#125;$$</code>这样的形式来创建表格。<br>其中，列样式可以使用c、l、r分别表示居中、左、右对齐，还可以使用<code>|</code>表示一条竖线。<br>表格中各行使用<code>\\</code>分隔，各列使用<code>&amp;</code>分隔。<br>使用<code>\hline</code>可以在本行前加入一条直线。例如，</p><pre class="line-numbers language-LaTeX" data-language="LaTeX"><code class="language-LaTeX">$$\begin&#123;array&#125;&#123;c|lcr&#125;n &amp; \text&#123;Left&#125; &amp; \text&#123;Center&#125; &amp;\text&#123;Right&#125; \\\hline1 &amp; 0.24 &amp; 1 &amp; 125 \\2 &amp; -1 &amp; 189 &amp; -8 \\3 &amp; -20 &amp; 2000 &amp; 1+10i \\\end&#123;array&#125;$$<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>结果：<br>$$<br>\begin{array}{c|lcr}<br>n &amp; \text{Left} &amp; \text{Center} &amp;\text{Right} \<br>\hline<br>1 &amp; 0.24 &amp; 1 &amp; 125 \<br>2 &amp; -1 &amp; 189 &amp; -8 \<br>3 &amp; -20 &amp; 2000 &amp; 1+10i \<br>\end{array}<br>$$</p><h2 id="矩阵"><a href="#矩阵" class="headerlink" title="矩阵"></a>矩阵</h2><h3 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h3><p>使用<code>$$\begin&#123;matrix&#125;...\end&#123;matrix&#125;$$</code>这样的形式来表示矩阵，在<code>\begin</code>与<code>\end</code>之间加入矩阵中的元素即可。<br>矩阵的行之间使用<code>\\</code>分隔，列之间使用<code>&amp;</code>分隔。例如，</p><pre class="line-numbers language-LaTex" data-language="LaTex"><code class="language-LaTex">$$\begin&#123;matrix&#125;1 &amp; x &amp; x^2 \\1 &amp; y &amp; y^2 \\1 &amp; z &amp; z^2 \\\end&#123;matrix&#125;$$<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>结果：<br>$$<br>\begin{matrix}<br>1 &amp; x &amp; x^2 \<br>1 &amp; y &amp; y^2 \<br>1 &amp; z &amp; z^2 \<br>\end{matrix}<br>$$</p><h3 id="加括号"><a href="#加括号" class="headerlink" title="加括号"></a>加括号</h3><p>如果要对矩阵加括号，可以像上文中提到的，使用<code>\left</code>与<code>\right</code>配合表示括号符号。<br>也可以使用特殊的matrix，即替换<code>\begin&#123;matrix&#125;...\end&#123;matrix&#125;</code>中的matrix为<code>pmatrix</code>、<code>bmatrix</code>、<code>Bmatrix</code>、<code>vmatrix</code>、<code>Vmatrix</code>。<br>例如，</p><pre class="line-numbers language-LATEX" data-language="LATEX"><code class="language-LATEX">$$\begin&#123;pmatrix&#125;1 &amp; 2 \\3 &amp; 4 \\\end&#123;pmatrix&#125;$$<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>结果<br>$$<br>\begin{pmatrix}<br>1 &amp; 2 \<br>3 &amp; 4 \<br>\end{pmatrix}<br>$$</p><p>bmatrix：<br>$$<br>\begin{bmatrix}<br>1 &amp; 2 \<br>3 &amp; 4 \<br>\end{bmatrix}<br>$$<br>Bmatrix：<br>$$<br>\begin{Bmatrix}<br>1 &amp; 2 \<br>3 &amp; 4 \<br>\end{Bmatrix}<br>$$<br>vmatrix：<br>$$<br>\begin{vmatrix}<br>1 &amp; 2 \<br>3 &amp; 4 \<br>\end{vmatrix}<br>$$<br>Vmatrix：<br>$$<br>\begin{Vmatrix}<br>1 &amp; 2 \<br>3 &amp; 4 \<br>\end{Vmatrix}<br>$$</p><h3 id="省略元素"><a href="#省略元素" class="headerlink" title="省略元素"></a>省略元素</h3><p>可以使用<code>\cdots</code>：$\cdots$   <code>\ddots</code>：$\ddots$ <code>\vdots</code>：$\vdots$    来省略矩阵中的元素。例如，</p><pre class="line-numbers language-Latex" data-language="Latex"><code class="language-Latex">$$\begin&#123;pmatrix&#125;1 &amp; a_1 &amp; a_1^2 &amp; \cdots &amp; a_1^n \\1 &amp; a_2 &amp; a_2^2 &amp; \cdots &amp; a_2^n \\\vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\1 &amp; a_m &amp; a_m^2 &amp; \cdots &amp; a_m^n \\\end&#123;pmatrix&#125;$$<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>结果：<br>$$<br>\begin{pmatrix}<br>1 &amp; a_1 &amp; a_1^2 &amp; \cdots &amp; a_1^n \<br>1 &amp; a_2 &amp; a_2^2 &amp; \cdots &amp; a_2^n \<br>\vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots \<br>1 &amp; a_m &amp; a_m^2 &amp; \cdots &amp; a_m^n \<br>\end{pmatrix}<br>$$</p><h3 id="增广矩阵"><a href="#增广矩阵" class="headerlink" title="增广矩阵"></a>增广矩阵</h3><p>增广矩阵需要使用前面的array来实现。例如，</p><pre class="line-numbers language-LaTeX" data-language="LaTeX"><code class="language-LaTeX">$$\left[\begin&#123;array&#125;&#123;cc|c&#125;1 &amp; 2 &amp; 3 \\4 &amp; 5 &amp; 6 \\\end&#123;array&#125;\right]$$<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>结果：<br>$$<br>\left[<br>    \begin{array}{cc|c}<br>    1 &amp; 2 &amp; 3 \<br>    4 &amp; 5 &amp; 6 \<br>    \end{array}<br>\right]<br>$$</p><h2 id="对齐的公式"><a href="#对齐的公式" class="headerlink" title="对齐的公式"></a>对齐的公式</h2><p>有时候可能需要一系列的公式中等号对齐，这需要使用形如<code>\begin&#123;align&#125;...\end&#123;align&#125;</code>的格式，其中使用<code>&amp;</code>来指示需要对齐的位置。例如，</p><pre class="line-numbers language-LaTeX" data-language="LaTeX"><code class="language-LaTeX">$$\begin&#123;align&#125;\sqrt&#123;37&#125;&amp;&#x3D;\sqrt&#123;\frac&#123;73^2-1&#125;&#123;12^2&#125;&#125;\\&amp;&#x3D;\sqrt&#123;\frac&#123;73^2&#125;&#123;12^2&#125;\cdot\frac&#123;73^2-1&#125;&#123;73^2&#125;&#125;\\&amp;&#x3D;\sqrt&#123;\frac&#123;73^2&#125;&#123;12^2&#125;&#125;\sqrt&#123;\frac&#123;73^2-1&#125;&#123;73^2&#125;&#125;\\&amp;&#x3D;\frac&#123;73&#125;&#123;12&#125;\sqrt&#123;1-\frac&#123;1&#125;&#123;73^2&#125;&#125;\\&amp;\approx\frac&#123;73&#125;&#123;12&#125;\left(1-\frac&#123;1&#125;&#123;2\cdot73^2&#125;\right)\end&#123;align&#125;$$<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>结果：<br>$$<br>\begin{align}<br>\sqrt{37}&amp;=\sqrt{\frac{73^2-1}{12^2}}\<br>&amp;=\sqrt{\frac{73^2}{12^2}\cdot\frac{73^2-1}{73^2}}\<br>&amp;=\sqrt{\frac{73^2}{12^2}}\sqrt{\frac{73^2-1}{73^2}}\<br>&amp;=\frac{73}{12}\sqrt{1-\frac{1}{73^2}}\<br>&amp;\approx\frac{73}{12}\left(1-\frac{1}{2\cdot73^2}\right)<br>\end{align}<br>$$</p><h2 id="分类表达式"><a href="#分类表达式" class="headerlink" title="分类表达式"></a>分类表达式</h2><p>定义函数的时候经常需要分情况给出表达式，可使用<code>\begin&#123;cases&#125;...\end&#123;cases&#125;</code>。其中，使用<code>\</code>来分类，使用<code>&amp;</code>指示需要对齐的位置。例如，</p><pre class="line-numbers language-LaTeX" data-language="LaTeX"><code class="language-LaTeX">$$f(n)&#x3D;\begin&#123;cases&#125;n&#x2F;2,&amp;\text&#123;if $n$ is even&#125;\\3n+1,&amp;\text&#123;if $n$ is odd&#125;\end&#123;cases&#125;$$<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>结果：<br>$$<br>f(n)=<br>\begin{cases}<br>n/2,&amp;\text{if $n$ is even}\<br>3n+1,&amp;\text{if $n$ is odd}<br>\end{cases}<br>$$<br>上述公式的括号也可以移动到右侧，不过需要使用array来实现。如下，</p><pre class="line-numbers language-LaTeX" data-language="LaTeX"><code class="language-LaTeX">$$\left.\begin&#123;array&#125;&#123;1&#125;\text&#123;if $n$ is even:&#125;&amp;n&#x2F;2\\\text&#123;if $n$ is odd:&#125;&amp;3n+1\end&#123;array&#125;\right\&#125;&#x3D;f(n)$$<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>结果：<br>$$<br>\left.<br>\begin{array}{1}<br>\text{if $n$ is even:}&amp;n/2\<br>\text{if $n$ is odd:}&amp;3n+1<br>\end{array}<br>\right}<br>=f(n)<br>$$<br>如果想分类之间的垂直间隔变大，可以在行末使用<code>\\[2ex]</code>代替<code>\\</code>来分隔不同的情况（3ex，4ex也可以用，1ex相当于原始距离）。例如，</p><pre class="line-numbers language-LaTeX" data-language="LaTeX"><code class="language-LaTeX">$$f(n)&#x3D;\begin&#123;cases&#125;\frac&#123;n&#125;&#123;2&#125;,&amp;\text&#123;if $n$ is even&#125;\\[2ex]3n+1,&amp;\text&#123;if $n$ is odd&#125;\end&#123;cases&#125;$$<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>结果：<br>$$<br>f(n)=<br>\begin{cases}<br>\frac{n}{2},&amp;\text{if $n$ is even}\[2ex]<br>3n+1,&amp;\text{if $n$ is odd}<br>\end{cases}<br>$$</p><h2 id="方程组"><a href="#方程组" class="headerlink" title="方程组"></a>方程组</h2><p>使用<code>\begin&#123;array&#125;...\end&#123;array&#125;</code>与<code>\left\&#123;...\right.</code>配合，表示方程组，如：</p><pre class="line-numbers language-LaTeX" data-language="LaTeX"><code class="language-LaTeX">$$\left\&#123;\begin&#123;array&#125;&#123;c&#125;a_1x+b_1y+c_1z&#x3D;d_1\\a_2x+b_2y+c_2z&#x3D;d_3\\a_ex+b_3y+c_3z&#x3D;d_3\end&#123;array&#125;\right.$$<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>显示：<br>$$<br>\left{<br>\begin{array}{c}<br>a_1x+b_1y+c_1z=d_1\<br>a_2x+b_2y+c_2z=d_3\<br>a_ex+b_3y+c_3z=d_3<br>\end{array}<br>\right.<br>$$<br>还可以使用<code>\begin&#123;cases&#125;...\end&#123;cases&#125;</code>表达上面同样的方程组，如：</p><pre class="line-numbers language-LaTeX" data-language="LaTeX"><code class="language-LaTeX">$$\begin&#123;cases&#125;a_1x+b_1y+c_1z&#x3D;d_1\\a_2x+b_2y+c_2z&#x3D;d_3\\a_ex+b_3y+c_3z&#x3D;d_3\end&#123;cases&#125;$$<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>对齐方程组中的<code>=</code>号，可以使用<code>\begin&#123;aligned&#125;...\end&#123;aligned&#125;</code>，如：</p><pre class="line-numbers language-LaTeX" data-language="LaTeX"><code class="language-LaTeX">$$\left\&#123;\begin&#123;aligned&#125;a_1x+b_1y+c_1z&amp;&#x3D;d_1\\a_2x+b_2y&amp;&#x3D;d_2\\a_3x+b_3y+c_3z&amp;&#x3D;d_3\end&#123;aligned&#125;\right.$$<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>显示：<br>$$<br>\left{<br>\begin{aligned}<br>a_1x+b_1y+c_1z&amp;=d_1\<br>a_2x+b_2y&amp;=d_2\<br>a_3x+b_3y+c_3z&amp;=d_3<br>\end{aligned}<br>\right.<br>$$<br>如果要对齐<code>=</code>号和项，可以使用<code>\begin&#123;array&#125;&#123;列样式&#125;...\end&#123;array&#125;</code>，如：</p><pre class="line-numbers language-LaTeX" data-language="LaTeX"><code class="language-LaTeX">$$\left\&#123;\begin&#123;array&#125;&#123;ll&#125;a_1x+b_1y+c_1z&amp;&#x3D;d_1\\a_2x+b_2y&amp;&#x3D;d_2\\a_3x+b_3y+c_3z&amp;&#x3D;d_3\end&#123;array&#125;\right.$$<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>显示：<br>$$<br>\left{<br>\begin{array}{ll}<br>a_1x+b_1y+c_1z&amp;=d_1\<br>a_2x+b_2y&amp;=d_2\<br>a_3x+b_3y+c_3z&amp;=d_3<br>\end{array}<br>\right.<br>$$</p><h2 id="附加装饰"><a href="#附加装饰" class="headerlink" title="附加装饰"></a>附加装饰</h2><p><code>\overline</code>： $\overline A$  $\overline {AB}$  $\overline {ABC}$<br><code>\underline</code>：$\underline A$  $\underline {AB}$  $\underline {ABC}$<br><code>\widetilde</code>：$\widetilde A$  $\widetilde {AB}$  $\widetilde {ABC}$<br><code>\widehat</code>：$\widehat A$  $\widehat {AB}$  $\widehat {ABC}$<br><code>\fbox</code>：$\fbox A$  $\fbox {AB}$  $\fbox {ABC}$<br><code>\underleftarrow</code>：$\underleftarrow A$  $\underleftarrow {AB}$  $\underleftarrow {ABC}$<br><code>\underrightarrow</code>：$\underrightarrow A$  $\underrightarrow {AB}$  $\underrightarrow {ABC}$<br><code>\underleftrightarrow</code>：$\underleftrightarrow A$  $\underleftrightarrow {AB}$  $\underleftrightarrow {ABC}$</p><p><code>\overbrace</code>：$\overbrace{(n-2) + \overbrace{(n_1) + n + (n+1)} + (n+2)}$</p><p><code>\underbrace</code>：$\underbrace{(n-2) + \underbrace{(n_1) + n + (n+1)} + (n+2)}$</p><p><code>\overbrace</code>和<code>\underbrace</code>可以使用上下标进行注释，如：<code>\underbrace&#123;a\cdot a\cdots a&#125;_&#123;b_\text&#123; times&#125;&#125;</code>：$\underbrace{a\cdot a\cdots a}_{b_\text{ times}}$</p><h2 id="注释音标"><a href="#注释音标" class="headerlink" title="注释音标"></a>注释音标</h2><p><code>\overline</code>：$\overline I$<br><code>\acute</code>：$\acute I$<br><code>\check</code>：$\check I$<br><code>\grave</code>：$\grave I$</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术教程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Markdown </tag>
+            
+            <tag> LaTeX </tag>
+            
+            <tag> 数学公式 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>CentOS虚拟机配置指南</title>
+      <link href="/20250128114024.html"/>
+      <url>/20250128114024.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="镜像下载"><a href="#镜像下载" class="headerlink" title="镜像下载"></a>镜像下载</h2><p>华为云镜像下载CentOS镜像，镜像使用 CentOS-7-x86_64-Minimal-2207-02.iso<br><a href="https://repo.huaweicloud.com/centos/7/isos/x86_64/">镜像下载</a></p><h2 id="VMware创建虚拟机"><a href="#VMware创建虚拟机" class="headerlink" title="VMware创建虚拟机"></a>VMware创建虚拟机</h2><p>版本：VMware® Workstation 16 Pro</p><p>步骤忽略，选中镜像，一直点击下一步就可以</p><h2 id="设置固定IP"><a href="#设置固定IP" class="headerlink" title="设置固定IP"></a>设置固定IP</h2><h3 id="虚拟机网络连接方式"><a href="#虚拟机网络连接方式" class="headerlink" title="虚拟机网络连接方式"></a>虚拟机网络连接方式</h3><p><img src="../Assets/file-1763633908095.png" alt="file-1763633908095.png"></p><h3 id="配置虚拟机的NAT模式具体地址参数"><a href="#配置虚拟机的NAT模式具体地址参数" class="headerlink" title="配置虚拟机的NAT模式具体地址参数"></a><strong>配置虚拟机的NAT模式具体地址参数</strong></h3><p><img src="../Assets/file-1763633962024.png" alt="file-1763633962024.png"></p><p>选择VMnet8–取消勾选使用本地DHCP–设置子网IP–网关IP设置（记住此处设置，后面要用到），如下图</p><p><img src="../Assets/file-1763633986646.png" alt="file-1763633986646.png"></p><p>说明：修改子网IP设置，实现自由设置固定IP，IP网段最后一位0-255，子网IP占用一位，网关IP占用一位，剩余的都可以自由分配</p><p>若你想设置固定IP为192.168.2.2-255，比如192.168.2.2，则子网IP为192.168.2.0； </p><p>若你想设置固定IP为192.168.1.2-255，比如192.168.1.2，则子网IP为192.168.1.0； </p><p>也就是说，你想配置成哪个网段，IP地址最后那位为0即可。</p><p>记录一下上面的网关地址，虚拟机中设置固定IP时需要用到，这里的网关IP也可以自行设置，只要网段一致即可。</p><p><img src="../Assets/file-1763634031791.png" alt="file-1763634031791.png"></p><h3 id="配置电脑具体VMnet8本地地址参数"><a href="#配置电脑具体VMnet8本地地址参数" class="headerlink" title="配置电脑具体VMnet8本地地址参数"></a><strong>配置电脑具体VMnet8本地地址参数</strong></h3><p>会自动配置VMnet8的IP以及子网掩码，此处记录一下需要知晓本地电脑在局域网的IP</p><p><img src="../Assets/file-1763634057124.png" alt="file-1763634057124.png"></p><h3 id="虚拟机设置固定IP"><a href="#虚拟机设置固定IP" class="headerlink" title="虚拟机设置固定IP"></a>虚拟机设置固定IP</h3><h4 id="编辑网络"><a href="#编辑网络" class="headerlink" title="编辑网络"></a>编辑网络</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">cd</span> /etc/sysconfig/network-scripts<span class="token function">ls</span><span class="token function">vi</span> ifconfig-ens33<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><p><img src="../Assets/file-1763634076190.png" alt="file-1763634076190.png"></p><p><img src="../Assets/file-1763634100002.png" alt="file-1763634100002.png"></p><p>说明：</p><pre class="line-numbers language-text" data-language="text"><code class="language-text">BOOTPROTO=static        #网络配置，设置为静态IP，有dhcp及staticONBOOT=yes              #设置为开机启动DNS1=114.114.114.114    #这个是国内的DNS地址，是固定的IPADDR=192.168.2.3      #你想要设置的固定IP，除VMware配置的子网IP、网关IP以及VMnet8设置的3个IP外，同网段 0-255之间都可以，自行设置NETMASK=255.255.255.0   #子网掩码GATEWAY=192.168.2.2     #网关IPork restart<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>重启网络服务</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">service</span> network restart<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h4 id="验证"><a href="#验证" class="headerlink" title="验证"></a>验证</h4><p>查看linux中的ip地址</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">ip</span> addr<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p><img src="../Assets/file-1763634145216.png" alt="file-1763634145216.png"></p><p>访问互联网，是否能正常访问</p><pre class="line-numbers language-text" data-language="text"><code class="language-text">ping www.baidu.com<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>实体机访问虚拟机IP，是否能正常访问</p><pre class="line-numbers language-none"><code class="language-none">ping 192.168.2.2<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h2 id="设置yum源为阿里云"><a href="#设置yum源为阿里云" class="headerlink" title="设置yum源为阿里云"></a>设置yum源为阿里云</h2><p>下载阿里云CentOS 7的文件，替换虚拟机中的 /etc/yum.repos.d/CentOS-Base.repo 文件内容</p><p>或者直接使用wget下载文件直接进行替换</p><pre class="line-numbers language-text" data-language="text"><code class="language-text">[root@localhost ~]# cd /etc/yum.repos.d## 备份原文件[root@localhost ~]# mv CentOS-Base.repo CentOS-Base_bak.repo## 下载阿里云的镜像描述文件[root@localhost ~]# wget https://mirrors.aliyun.com/repo/Centos-7.repo -O CentOS-Base.repo<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>执行以下命令</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">yum clean all yum makecache yum update <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><h2 id="关闭防火墙"><a href="#关闭防火墙" class="headerlink" title="关闭防火墙"></a>关闭防火墙</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment">## 停止防火墙服务</span><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># systemctl stop firewalld.service</span><span class="token comment">## 查看防火墙服务状态</span><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># systemctl status firewalld.service</span><span class="token comment">## 永久关闭防火墙服务</span><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># systemctl disable firewalld.service</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
       
     </entry>
     

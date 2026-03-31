@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Hexo,Markdown,相对路径,永久链接,JavaScript">
+    <meta name="keywords" content="Hexo,相对路径,永久链接,after_post_render,markdown,静态网站生成,超链接修复,JavaScript过滤器">
     <meta name="description" content="君子以顺德，积小以高大。">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -458,12 +458,8 @@
                                 <span class="chip bg-color">Hexo</span>
                             </a>
                         
-                            <a href="/tags/Markdown/">
-                                <span class="chip bg-color">Markdown</span>
-                            </a>
-                        
-                            <a href="/tags/%E6%B0%B8%E4%B9%85%E9%93%BE%E6%8E%A5/">
-                                <span class="chip bg-color">永久链接</span>
+                            <a href="/tags/%E7%9B%B8%E5%AF%B9%E9%93%BE%E6%8E%A5/">
+                                <span class="chip bg-color">相对链接</span>
                             </a>
                         
                     </div>
@@ -663,12 +659,8 @@ hexo<span class="token punctuation">.</span>extend<span class="token punctuation
                                     <span class="chip bg-color">Hexo</span>
                                 </a>
                             
-                                <a href="/tags/Markdown/">
-                                    <span class="chip bg-color">Markdown</span>
-                                </a>
-                            
-                                <a href="/tags/%E6%B0%B8%E4%B9%85%E9%93%BE%E6%8E%A5/">
-                                    <span class="chip bg-color">永久链接</span>
+                                <a href="/tags/%E7%9B%B8%E5%AF%B9%E9%93%BE%E6%8E%A5/">
+                                    <span class="chip bg-color">相对链接</span>
                                 </a>
                             
                         </div>
@@ -854,7 +846,7 @@ hexo<span class="token punctuation">.</span>extend<span class="token punctuation
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            本文介绍如何将原本部署在GitHub Pages的博客迁移到uniCloud免费服务空间，解决国内访问速度慢的问题，并通过GitHub Actions实现自动部署。
+                            本文介绍了如何将Hexo博客从GitHub Pages迁移到uniCloud前端网页托管，以解决国内访问速度慢的问题。通过详细的步骤指导，包括创建uniCloud服务空间、配置GitHub仓库密钥、修改部署脚本以及验证访问，帮助读者实现博客的国内加速访问。同时，文章还提供了域名绑定的相关建议和备案码申请方法。
                         
                     </div>
                     <div class="publish-info">
@@ -876,16 +868,16 @@ hexo<span class="token punctuation">.</span>extend<span class="token punctuation
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/GitHub/">
-                        <span class="chip bg-color">GitHub</span>
+                    <a href="/tags/Hexo/">
+                        <span class="chip bg-color">Hexo</span>
                     </a>
                     
                     <a href="/tags/uniCloud/">
                         <span class="chip bg-color">uniCloud</span>
                     </a>
                     
-                    <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%89%98%E7%AE%A1/">
-                        <span class="chip bg-color">博客托管</span>
+                    <a href="/tags/GitHub-Pages/">
+                        <span class="chip bg-color">GitHub Pages</span>
                     </a>
                     
                 </div>
@@ -903,15 +895,15 @@ hexo<span class="token punctuation">.</span>extend<span class="token punctuation
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" >
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" >
                         
-                        <span class="card-title">Hexo博客搜索链接丢失域名问题修复</span>
+                        <span class="card-title">Hexo 搜索跳转失效？一招解决链接域名丢失问题</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Hexo博客搜索功能正常但点击结果链接丢失域名，原因是搜索插件只记录相对路径。通过修改主题JavaScript文件，将相对路径与站点根路径拼接生成绝对链接即可解决。
+                            本文详细介绍了Hexo博客搜索功能中出现的链接域名丢失问题，分析了根本原因是Hexo搜索插件只记录文章相对路径，提供了通过修改主题JavaScript文件，将相对路径拼接为绝对链接的解决方案，并给出了具体的代码修改步骤。
                         
                     </div>
                     <div class="publish-info">
@@ -935,14 +927,6 @@ hexo<span class="token punctuation">.</span>extend<span class="token punctuation
                     
                     <a href="/tags/Hexo/">
                         <span class="chip bg-color">Hexo</span>
-                    </a>
-                    
-                    <a href="/tags/%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD/">
-                        <span class="chip bg-color">搜索功能</span>
-                    </a>
-                    
-                    <a href="/tags/%E5%9F%9F%E5%90%8D%E4%BF%AE%E5%A4%8D/">
-                        <span class="chip bg-color">域名修复</span>
                     </a>
                     
                 </div>
@@ -1092,7 +1076,7 @@ hexo<span class="token punctuation">.</span>extend<span class="token punctuation
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;&nbsp;<span
-                class="white-color">74.7k</span>&nbsp;字
+                class="white-color">80.7k</span>&nbsp;字
             
             
             
