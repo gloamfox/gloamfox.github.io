@@ -4,6 +4,39 @@
   
     
     <entry>
+      <title>Obsidian博客搭建完整指南</title>
+      <link href="/20260331194609.html"/>
+      <url>/20260331194609.html</url>
+      
+        <content type="html"><![CDATA[<p>一直用<strong>Obsidian</strong>作为日常写作载体，直接把双链笔记一键转成独立博客，于是选择了 <strong>Obsidian + Hexo + GitHub Pages</strong> 这套组合。从从零搭建到最终稳定上线，中间踩了无数坑 —— 链接失效、图片异常、缓存不更新、访问速度慢、路径错乱等问题层出不穷。</p><p>这篇文章完整记录<strong>从搭建到极致优化</strong>的全过程，把所有遇到的问题、解决方案、优化技巧全部整理好，既是个人复盘，也给同样走这条路的朋友一份避坑指南。</p><h2 id="整体技术栈与搭建思路"><a href="#整体技术栈与搭建思路" class="headerlink" title="整体技术栈与搭建思路"></a>整体技术栈与搭建思路</h2><p>我的目标很简单：</p><ol><li><strong>在 Obsidian 里无感写作</strong>，支持双链、相对路径、本地图片；</li><li><strong>一键发布</strong>到线上博客，不用手动复制粘贴、改格式；</li><li>博客托管免费、稳定，即 <strong>GitHub Pages</strong>；</li><li>速度快、体验好、SEO 友好、无冗余 bug。</li></ol><p>最终定型方案：</p><p><strong>Obsidian（写作） → Hexo（生成静态站） → GitHub Pages（托管） → uniCloud/CDN（加速）</strong></p><h2 id="搭建阶段：核心问题与解决方案"><a href="#搭建阶段：核心问题与解决方案" class="headerlink" title="搭建阶段：核心问题与解决方案"></a>搭建阶段：核心问题与解决方案</h2><p>刚把框架搭起来时，博客根本没法直接用 ——<strong>Obsidian 原生格式和 Hexo 不兼容</strong>，各种链接、图片、路径全炸了。</p><h3 id="Obsidian-博客发布自动化"><a href="#Obsidian-博客发布自动化" class="headerlink" title="Obsidian 博客发布自动化"></a>Obsidian 博客发布自动化</h3><p>Obsidian笔记发布博客自动化：全程无需手动修改</p><p>解决方案：✅<a href="./%E4%BB%8E%E9%9B%B6%E5%88%B0%E4%B8%80%E9%94%AE%E5%8F%91%E5%B8%83%EF%BC%9AObsidian%20+%20Hexo%20+%20GitHub%20Pages%20%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97.md">从零到一键发布：Obsidian + Hexo + GitHub Pages 个人博客搭建指南</a></p><h3 id="双链-相对路径无法在-Hexo-识别"><a href="#双链-相对路径无法在-Hexo-识别" class="headerlink" title="双链 / 相对路径无法在 Hexo 识别"></a>双链 / 相对路径无法在 Hexo 识别</h3><p>Obsidian 习惯用 <code>[[文件名]]</code> 和相对路径图片，直接放到 Hexo 会全部 404。</p><p>解决方案：✅ <a href="https://gloamfox.github.io/20260325102944.html">Hexo 插件：自动转换 Markdown 相对路径链接</a></p><h3 id="链接不规范"><a href="#链接不规范" class="headerlink" title="链接不规范"></a>链接不规范</h3><p>默认链接带日期、中文、乱码，既不美观也不利于搜索引擎。</p><p>解决方案：✅<a href="./Hexo%E6%B0%B8%E4%B9%85%E9%93%BE%E6%8E%A5%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5%EF%BC%9A%E7%BB%88%E6%9E%81%E6%96%B9%E6%A1%88%E4%B8%8E%E4%BC%98%E5%8C%96%E6%8C%87%E5%8D%97.md">Hexo永久链接最佳实践：终极方案与优化指南</a></p><h3 id="永久链接导致搜索失效"><a href="#永久链接导致搜索失效" class="headerlink" title="永久链接导致搜索失效"></a>永久链接导致搜索失效</h3><p>url设置永久链接后导致搜索跳转失效 404<br>解决方案：✅<a href="./Hexo%20%E6%90%9C%E7%B4%A2%E8%B7%B3%E8%BD%AC%E5%A4%B1%E6%95%88%EF%BC%9F%E4%B8%80%E6%8B%9B%E8%A7%A3%E5%86%B3%E9%93%BE%E6%8E%A5%E5%9F%9F%E5%90%8D%E4%B8%A2%E5%A4%B1%E9%97%AE%E9%A2%98.md">Hexo 搜索跳转失效？一招解决链接域名丢失问题</a></p><h3 id="图片优化：从加载慢到极致轻量化"><a href="#图片优化：从加载慢到极致轻量化" class="headerlink" title="图片优化：从加载慢到极致轻量化"></a>图片优化：从加载慢到极致轻量化</h3><p>图片是博客最影响速度的部分，也是坑最多的环节。</p><h4 id="图片默认-alt-属性冗余、影响美观"><a href="#图片默认-alt-属性冗余、影响美观" class="headerlink" title="图片默认 alt 属性冗余、影响美观"></a>图片默认 alt 属性冗余、影响美观</h4><p>Hexo 会自动生成图片 alt 文本，样式突兀、影响阅读体验。</p><p>解决方案：✅<a href="./Hexo%E7%A7%BB%E9%99%A4%E5%9B%BE%E7%89%87%E9%BB%98%E8%AE%A4%20alt%20%E5%B1%9E%E6%80%A7.md">Hexo移除图片默认 alt 属性</a></p><p>一键去掉默认 alt，保持界面清爽。</p><h4 id="图片体积大、加载慢、耗流量"><a href="#图片体积大、加载慢、耗流量" class="headerlink" title="图片体积大、加载慢、耗流量"></a>图片体积大、加载慢、耗流量</h4><p>直接上传 Obsidian 原图，页面打开又卡又慢。</p><p>解决方案：✅<a href="./%E5%9B%BE%E7%89%87%E5%8E%8B%E7%BC%A9%E4%B8%8E%E6%A0%BC%E5%BC%8F%E4%BC%98%E5%8C%96%E6%8C%87%E5%8D%97.md">图片压缩与格式优化指南</a></p><p>批量压缩、WebP 格式替换、自适应图片，速度提升数倍。</p><h3 id="发布与加速"><a href="#发布与加速" class="headerlink" title="发布与加速"></a>发布与加速</h3><h4 id="CDN"><a href="#CDN" class="headerlink" title="CDN"></a>CDN</h4><p>CDN 缓存顽固，清缓存无效，更新博客样式看不到最新版。</p><p>解决方案：✅<a href="./jsDelivr%20%E7%BC%93%E5%AD%98%E5%88%B7%E6%96%B0%E4%B8%8E%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6.md">jsDelivr 缓存刷新与版本控制</a></p><p>掌握强制刷新策略，实现发布即生效。</p><h4 id="GitHub-Pages-在国内访问慢、不稳定"><a href="#GitHub-Pages-在国内访问慢、不稳定" class="headerlink" title="GitHub Pages 在国内访问慢、不稳定"></a>GitHub Pages 在国内访问慢、不稳定</h4><p>作为国外托管服务，大陆访问延迟高、偶尔打不开。</p><p>终极优化方案：✅<a href="./uniCloud%E5%8A%A0%E9%80%9FGitHub%20Pages%E5%8D%9A%E5%AE%A2%E8%AE%BF%E9%97%AE.md">uniCloud加速GitHub Pages博客访问</a></p><p>免费、高速、国内节点加速，访问速度直线飙升。</p><h2 id="最终成果"><a href="#最终成果" class="headerlink" title="最终成果"></a>最终成果</h2><p>现在我的博客实现了：</p><ol><li><strong>Obsidian 写完即发布</strong>，无需任何格式调整；</li><li>链接规范、图片轻量化、页面加载极快；</li><li>国内访问速度快、稳定不掉线；</li><li>无 bug、无失效链接、无冗余代码；</li><li>全自动工作流，真正意义上<strong>一键部署</strong>。</li></ol><h2 id="全流程文章索引（建议收藏）"><a href="#全流程文章索引（建议收藏）" class="headerlink" title="全流程文章索引（建议收藏）"></a>全流程文章索引（建议收藏）</h2><p><a href="./%E4%BB%8E%E9%9B%B6%E5%88%B0%E4%B8%80%E9%94%AE%E5%8F%91%E5%B8%83%EF%BC%9AObsidian%20+%20Hexo%20+%20GitHub%20Pages%20%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97.md">从零到一键发布：Obsidian + Hexo + GitHub Pages 个人博客搭建指南</a><br><a href="https://gloamfox.github.io/20260325102944.html">Hexo 插件：自动转换 Markdown 相对路径链接</a><br><a href="./Hexo%E6%B0%B8%E4%B9%85%E9%93%BE%E6%8E%A5%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5%EF%BC%9A%E7%BB%88%E6%9E%81%E6%96%B9%E6%A1%88%E4%B8%8E%E4%BC%98%E5%8C%96%E6%8C%87%E5%8D%97.md">Hexo永久链接最佳实践：终极方案与优化指南</a><br><a href="./Hexo%20%E6%90%9C%E7%B4%A2%E8%B7%B3%E8%BD%AC%E5%A4%B1%E6%95%88%EF%BC%9F%E4%B8%80%E6%8B%9B%E8%A7%A3%E5%86%B3%E9%93%BE%E6%8E%A5%E5%9F%9F%E5%90%8D%E4%B8%A2%E5%A4%B1%E9%97%AE%E9%A2%98.md">Hexo 搜索跳转失效？一招解决链接域名丢失问题</a><br><a href="./Hexo%E7%A7%BB%E9%99%A4%E5%9B%BE%E7%89%87%E9%BB%98%E8%AE%A4%20alt%20%E5%B1%9E%E6%80%A7.md">Hexo移除图片默认 alt 属性</a><br><a href="./%E5%9B%BE%E7%89%87%E5%8E%8B%E7%BC%A9%E4%B8%8E%E6%A0%BC%E5%BC%8F%E4%BC%98%E5%8C%96%E6%8C%87%E5%8D%97.md">图片压缩与格式优化指南</a><br><a href="./jsDelivr%20%E7%BC%93%E5%AD%98%E5%88%B7%E6%96%B0%E4%B8%8E%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6.md">jsDelivr 缓存刷新与版本控制</a><br><a href="./uniCloud%E5%8A%A0%E9%80%9FGitHub%20Pages%E5%8D%9A%E5%AE%A2%E8%AE%BF%E9%97%AE.md">uniCloud加速GitHub Pages博客访问</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术教程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+            <tag> Obsidian </tag>
+            
+            <tag> GitHub Pages </tag>
+            
+            <tag> 博客搭建 </tag>
+            
+            <tag> 自动化 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>DPI 封杀 SSH？一键搭建 HTTPS 伪装隧道，完美绕过 RST 阻断</title>
       <link href="/20260331181032.html"/>
       <url>/20260331181032.html</url>
@@ -1340,7 +1373,7 @@
     
     
     <entry>
-      <title>Markdown LaTeX公式指南</title>
+      <title>Markdown中的LaTeX公式指南</title>
       <link href="/20250919050557.html"/>
       <url>/20250919050557.html</url>
       
@@ -1369,7 +1402,7 @@
     
     
     <entry>
-      <title>Markdown中的LaTeX公式指南</title>
+      <title>Markdown LaTeX公式指南</title>
       <link href="/20250919050557.html"/>
       <url>/20250919050557.html</url>
       

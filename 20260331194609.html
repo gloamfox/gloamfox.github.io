@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="事件驱动架构,生产者消费者,业务流程,异步处理,幂等性,失败补偿">
+    <meta name="keywords" content="Obsidian,Hexo,GitHub Pages,博客自动化,双链笔记,静态网站,CDN加速,图片优化">
     <meta name="description" content="君子以顺德，积小以高大。">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>事件驱动架构：业务解耦与异步处理 | 暮色之狐</title>
+    <title>Obsidian博客搭建完整指南 | 暮色之狐</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -333,12 +333,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">事件驱动架构：业务解耦与异步处理</h1>
+                    <h1 class="description center-align post-title">Obsidian博客搭建完整指南</h1>
                 </div>
             </div>
         </div>
@@ -454,8 +454,24 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E4%BA%8B%E4%BB%B6%E9%A9%B1%E5%8A%A8/">
-                                <span class="chip bg-color">事件驱动</span>
+                            <a href="/tags/Hexo/">
+                                <span class="chip bg-color">Hexo</span>
+                            </a>
+                        
+                            <a href="/tags/Obsidian/">
+                                <span class="chip bg-color">Obsidian</span>
+                            </a>
+                        
+                            <a href="/tags/GitHub-Pages/">
+                                <span class="chip bg-color">GitHub Pages</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">
+                                <span class="chip bg-color">博客搭建</span>
+                            </a>
+                        
+                            <a href="/tags/%E8%87%AA%E5%8A%A8%E5%8C%96/">
+                                <span class="chip bg-color">自动化</span>
                             </a>
                         
                     </div>
@@ -479,7 +495,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2025-12-18
+                    2026-03-31
                 </div>
                 
 
@@ -488,14 +504,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.3k
+                    985
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    3 分
                 </div>
                 
 
@@ -518,90 +534,47 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="1-事件驱动架构概述"><a href="#1-事件驱动架构概述" class="headerlink" title="1. 事件驱动架构概述"></a>1. 事件驱动架构概述</h2><p>事件驱动是一种经典的编程和系统设计模式，其核心思想是系统的运作由事件来驱动。当事件发生时，系统的各个组件会对事件做出反应并执行相应的操作。这些事件可以是外部触发的（如用户点击、网络请求），也可以是系统内部产生的（如状态变更、定时调度）。</p>
-<p><img src="../Assets/file-20260321132101256.svg" ></p>
-<h2 id="2-事件驱动在业务系统中的价值"><a href="#2-事件驱动在业务系统中的价值" class="headerlink" title="2. 事件驱动在业务系统中的价值"></a>2. 事件驱动在业务系统中的价值</h2><h3 id="2-1-接口解耦"><a href="#2-1-接口解耦" class="headerlink" title="2.1 接口解耦"></a>2.1 接口解耦</h3><p>在业务系统中，事件驱动机制被广泛用于接口解耦。以电商系统为例：</p>
-<ul>
-<li><strong>商品发布</strong>、<strong>订单变更</strong>等都可以作为事件进行发布</li>
-<li><strong>商品信息同步</strong>、<strong>订单信息推送</strong>等操作可以作为事件监听器</li>
-<li>主业务流程只需关注核心业务逻辑，使功能更加内聚，耦合性更低</li>
-</ul>
-<h3 id="2-2-划分主业务流程与事件消费者的方法"><a href="#2-2-划分主业务流程与事件消费者的方法" class="headerlink" title="2.2 划分主业务流程与事件消费者的方法"></a>2.2 划分主业务流程与事件消费者的方法</h3><p>一个简单的判断标准是：如果某些操作不执行，仅从业务域本身考虑，系统是否仍能正常运行？如果答案是肯定的，那么这些操作就可以被定义为事件的消费者。</p>
-<p><strong>示例分析：</strong><br>在电商系统的商品发布流程中，将商品信息同步给下游系统如果失败或未执行，商品系统本身仍应能正常发布商品。同步问题可以通过定时推送、失败补偿等机制解决，因此商品信息同步操作适合作为事件消费者。</p>
-<h2 id="3-实践中的挑战与解决方案"><a href="#3-实践中的挑战与解决方案" class="headerlink" title="3. 实践中的挑战与解决方案"></a>3. 实践中的挑战与解决方案</h2><h3 id="3-1-下游系统约束的处理"><a href="#3-1-下游系统约束的处理" class="headerlink" title="3.1 下游系统约束的处理"></a>3.1 下游系统约束的处理</h3><p>当下游系统对业务有约束时（如特定商品供应商必须在白名单中），存在两种解决方案：</p>
-<p><strong>方案一：校验前置（推荐）</strong></p>
-<ul>
-<li>在下游约束涉及的业务域中进行控制</li>
-<li>保持系统边界的清晰</li>
-</ul>
-<p><strong>方案二：同步调用（简单但不推荐）</strong></p>
-<ul>
-<li>在下游接口异常时阻塞主业务流程</li>
-<li>容易导致系统间耦合，存在潜在问题 </li>
-</ul>
-<h3 id="3-2-异步消费的优势"><a href="#3-2-异步消费的优势" class="headerlink" title="3.2 异步消费的优势"></a>3.2 异步消费的优势</h3><p>对于业务系统，我们更希望所有消费者能够异步消费，这样可以：</p>
-<ul>
-<li>完全实现系统间解耦</li>
-<li>降低接口响应时间</li>
-<li>提高系统吞吐量</li>
-</ul>
-<h2 id="4-事件驱动的核心实现"><a href="#4-事件驱动的核心实现" class="headerlink" title="4. 事件驱动的核心实现"></a>4. 事件驱动的核心实现</h2><h3 id="4-1-基本概念"><a href="#4-1-基本概念" class="headerlink" title="4.1 基本概念"></a>4.1 基本概念</h3><p>事件驱动的核心是通过对业务操作的分析，定义事件，划分事件的生产者和消费者。这种方式有以下优点：</p>
-<ul>
-<li>系统组件职责更加单一</li>
-<li>系统间耦合度降低</li>
-<li>消费者异步执行提升系统性能</li>
-</ul>
-<h3 id="4-2-必须解决的挑战"><a href="#4-2-必须解决的挑战" class="headerlink" title="4.2 必须解决的挑战"></a>4.2 必须解决的挑战</h3><p>在实践过程中，为了保证业务正常，必须解决两个关键问题：</p>
-<p><strong>1. 执行失败补偿</strong></p>
-<ul>
-<li>网络问题等导致的执行失败需要补偿机制</li>
-<li>通常通过定时重试等方式处理</li>
-</ul>
-<p><strong>2. 下游系统幂等性</strong></p>
-<ul>
-<li>保证同一个消息只被成功消费一次</li>
-<li>通常通过业务唯一键进行控制</li>
-</ul>
-<h2 id="5-技术实现方案"><a href="#5-技术实现方案" class="headerlink" title="5. 技术实现方案"></a>5. 技术实现方案</h2><h3 id="5-1-生产者消费者模型"><a href="#5-1-生产者消费者模型" class="headerlink" title="5.1 生产者消费者模型"></a>5.1 生产者消费者模型</h3><p>事件驱动的业务流程本质上是一个经典的生产者消费者模型：</p>
-<ul>
-<li><strong>生产者</strong>：保证将事件保存到事件队列中</li>
-<li><strong>事件队列</strong>：保存事件消息，避免系统重启或宕机导致消息丢失（可选择MQ、数据库或Redis）</li>
-<li><strong>消费者</strong>：保证能够消费消息，并实现幂等处理</li>
-</ul>
-<p><img src="../Assets/file-20260321132206125.svg" ></p>
-<h3 id="5-2-具体实现思路"><a href="#5-2-具体实现思路" class="headerlink" title="5.2 具体实现思路"></a>5.2 具体实现思路</h3><ol>
-<li><p><strong>事件发布器封装</strong></p>
-<ul>
-<li>生产者通过统一的事件发布器发布事件</li>
-<li>发布器负责事件的统一管理和分发</li>
-</ul>
-</li>
-<li><p><strong>事件持久化</strong></p>
-<ul>
-<li>发布事件时同步保存到事件队列</li>
-<li>确保事件不因系统故障而丢失</li>
-</ul>
-</li>
-<li><p><strong>幂等控制</strong></p>
-<ul>
-<li>为每个事件的订阅者保存一条有唯一键的幂等数据，防止重复消费</li>
-</ul>
-</li>
-<li><p><strong>消费者处理</strong></p>
-<ul>
-<li>根据订阅的事件处理业务逻辑</li>
-<li>基于幂等数据确保同一事件只处理一次</li>
-<li>处理完成后更新幂等数据状态</li>
-</ul>
-</li>
-<li><p><strong>补偿机制</strong></p>
-<ul>
-<li>定时任务扫描未完成的幂等数据</li>
-<li>重新调用消费者进行消费，实现失败补偿</li>
-</ul>
-</li>
+                <p>一直用<strong>Obsidian</strong>作为日常写作载体，直接把双链笔记一键转成独立博客，于是选择了 <strong>Obsidian + Hexo + GitHub Pages</strong> 这套组合。从从零搭建到最终稳定上线，中间踩了无数坑 —— 链接失效、图片异常、缓存不更新、访问速度慢、路径错乱等问题层出不穷。</p>
+<p>这篇文章完整记录<strong>从搭建到极致优化</strong>的全过程，把所有遇到的问题、解决方案、优化技巧全部整理好，既是个人复盘，也给同样走这条路的朋友一份避坑指南。</p>
+<h2 id="整体技术栈与搭建思路"><a href="#整体技术栈与搭建思路" class="headerlink" title="整体技术栈与搭建思路"></a>整体技术栈与搭建思路</h2><p>我的目标很简单：</p>
+<ol>
+<li><strong>在 Obsidian 里无感写作</strong>，支持双链、相对路径、本地图片；</li>
+<li><strong>一键发布</strong>到线上博客，不用手动复制粘贴、改格式；</li>
+<li>博客托管免费、稳定，即 <strong>GitHub Pages</strong>；</li>
+<li>速度快、体验好、SEO 友好、无冗余 bug。</li>
 </ol>
-<h2 id="6-总结"><a href="#6-总结" class="headerlink" title="6. 总结"></a>6. 总结</h2><p>事件驱动架构通过将业务操作分解为事件的产生和消费，实现了系统组件的高度解耦和职责单一。虽然在实际落地过程中需要解决幂等性和失败补偿等挑战，但通过合理的技术架构设计，可以构建出高可用、高扩展的业务系统。关键在于建立完善的事件发布、持久化、消费和补偿机制，确保在享受异步处理带来的性能优势的同时，保证业务的正确性和一致性。</p>
+<p>最终定型方案：</p>
+<p><strong>Obsidian（写作） → Hexo（生成静态站） → GitHub Pages（托管） → uniCloud/CDN（加速）</strong></p>
+<h2 id="搭建阶段：核心问题与解决方案"><a href="#搭建阶段：核心问题与解决方案" class="headerlink" title="搭建阶段：核心问题与解决方案"></a>搭建阶段：核心问题与解决方案</h2><p>刚把框架搭起来时，博客根本没法直接用 ——<strong>Obsidian 原生格式和 Hexo 不兼容</strong>，各种链接、图片、路径全炸了。</p>
+<h3 id="Obsidian-博客发布自动化"><a href="#Obsidian-博客发布自动化" class="headerlink" title="Obsidian 博客发布自动化"></a>Obsidian 博客发布自动化</h3><p>Obsidian笔记发布博客自动化：全程无需手动修改</p>
+<p>解决方案：✅<a href="./%E4%BB%8E%E9%9B%B6%E5%88%B0%E4%B8%80%E9%94%AE%E5%8F%91%E5%B8%83%EF%BC%9AObsidian%20+%20Hexo%20+%20GitHub%20Pages%20%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97.md">从零到一键发布：Obsidian + Hexo + GitHub Pages 个人博客搭建指南</a></p>
+<h3 id="双链-相对路径无法在-Hexo-识别"><a href="#双链-相对路径无法在-Hexo-识别" class="headerlink" title="双链 / 相对路径无法在 Hexo 识别"></a>双链 / 相对路径无法在 Hexo 识别</h3><p>Obsidian 习惯用 <code>[[文件名]]</code> 和相对路径图片，直接放到 Hexo 会全部 404。</p>
+<p>解决方案：✅ <a href="https://gloamfox.github.io/20260325102944.html">Hexo 插件：自动转换 Markdown 相对路径链接</a></p>
+<h3 id="链接不规范"><a href="#链接不规范" class="headerlink" title="链接不规范"></a>链接不规范</h3><p>默认链接带日期、中文、乱码，既不美观也不利于搜索引擎。</p>
+<p>解决方案：✅<a href="./Hexo%E6%B0%B8%E4%B9%85%E9%93%BE%E6%8E%A5%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5%EF%BC%9A%E7%BB%88%E6%9E%81%E6%96%B9%E6%A1%88%E4%B8%8E%E4%BC%98%E5%8C%96%E6%8C%87%E5%8D%97.md">Hexo永久链接最佳实践：终极方案与优化指南</a></p>
+<h3 id="永久链接导致搜索失效"><a href="#永久链接导致搜索失效" class="headerlink" title="永久链接导致搜索失效"></a>永久链接导致搜索失效</h3><p>url设置永久链接后导致搜索跳转失效 404<br>解决方案：✅<a href="./Hexo%20%E6%90%9C%E7%B4%A2%E8%B7%B3%E8%BD%AC%E5%A4%B1%E6%95%88%EF%BC%9F%E4%B8%80%E6%8B%9B%E8%A7%A3%E5%86%B3%E9%93%BE%E6%8E%A5%E5%9F%9F%E5%90%8D%E4%B8%A2%E5%A4%B1%E9%97%AE%E9%A2%98.md">Hexo 搜索跳转失效？一招解决链接域名丢失问题</a></p>
+<h3 id="图片优化：从加载慢到极致轻量化"><a href="#图片优化：从加载慢到极致轻量化" class="headerlink" title="图片优化：从加载慢到极致轻量化"></a>图片优化：从加载慢到极致轻量化</h3><p>图片是博客最影响速度的部分，也是坑最多的环节。</p>
+<h4 id="图片默认-alt-属性冗余、影响美观"><a href="#图片默认-alt-属性冗余、影响美观" class="headerlink" title="图片默认 alt 属性冗余、影响美观"></a>图片默认 alt 属性冗余、影响美观</h4><p>Hexo 会自动生成图片 alt 文本，样式突兀、影响阅读体验。</p>
+<p>解决方案：✅<a href="./Hexo%E7%A7%BB%E9%99%A4%E5%9B%BE%E7%89%87%E9%BB%98%E8%AE%A4%20alt%20%E5%B1%9E%E6%80%A7.md">Hexo移除图片默认 alt 属性</a></p>
+<p>一键去掉默认 alt，保持界面清爽。</p>
+<h4 id="图片体积大、加载慢、耗流量"><a href="#图片体积大、加载慢、耗流量" class="headerlink" title="图片体积大、加载慢、耗流量"></a>图片体积大、加载慢、耗流量</h4><p>直接上传 Obsidian 原图，页面打开又卡又慢。</p>
+<p>解决方案：✅<a href="./%E5%9B%BE%E7%89%87%E5%8E%8B%E7%BC%A9%E4%B8%8E%E6%A0%BC%E5%BC%8F%E4%BC%98%E5%8C%96%E6%8C%87%E5%8D%97.md">图片压缩与格式优化指南</a></p>
+<p>批量压缩、WebP 格式替换、自适应图片，速度提升数倍。</p>
+<h3 id="发布与加速"><a href="#发布与加速" class="headerlink" title="发布与加速"></a>发布与加速</h3><h4 id="CDN"><a href="#CDN" class="headerlink" title="CDN"></a>CDN</h4><p>CDN 缓存顽固，清缓存无效，更新博客样式看不到最新版。</p>
+<p>解决方案：✅<a href="./jsDelivr%20%E7%BC%93%E5%AD%98%E5%88%B7%E6%96%B0%E4%B8%8E%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6.md">jsDelivr 缓存刷新与版本控制</a></p>
+<p>掌握强制刷新策略，实现发布即生效。</p>
+<h4 id="GitHub-Pages-在国内访问慢、不稳定"><a href="#GitHub-Pages-在国内访问慢、不稳定" class="headerlink" title="GitHub Pages 在国内访问慢、不稳定"></a>GitHub Pages 在国内访问慢、不稳定</h4><p>作为国外托管服务，大陆访问延迟高、偶尔打不开。</p>
+<p>终极优化方案：✅<a href="./uniCloud%E5%8A%A0%E9%80%9FGitHub%20Pages%E5%8D%9A%E5%AE%A2%E8%AE%BF%E9%97%AE.md">uniCloud加速GitHub Pages博客访问</a></p>
+<p>免费、高速、国内节点加速，访问速度直线飙升。</p>
+<h2 id="最终成果"><a href="#最终成果" class="headerlink" title="最终成果"></a>最终成果</h2><p>现在我的博客实现了：</p>
+<ol>
+<li><strong>Obsidian 写完即发布</strong>，无需任何格式调整；</li>
+<li>链接规范、图片轻量化、页面加载极快；</li>
+<li>国内访问速度快、稳定不掉线；</li>
+<li>无 bug、无失效链接、无冗余代码；</li>
+<li>全自动工作流，真正意义上<strong>一键部署</strong>。</li>
+</ol>
+<h2 id="全流程文章索引（建议收藏）"><a href="#全流程文章索引（建议收藏）" class="headerlink" title="全流程文章索引（建议收藏）"></a>全流程文章索引（建议收藏）</h2><p><a href="./%E4%BB%8E%E9%9B%B6%E5%88%B0%E4%B8%80%E9%94%AE%E5%8F%91%E5%B8%83%EF%BC%9AObsidian%20+%20Hexo%20+%20GitHub%20Pages%20%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97.md">从零到一键发布：Obsidian + Hexo + GitHub Pages 个人博客搭建指南</a><br><a href="https://gloamfox.github.io/20260325102944.html">Hexo 插件：自动转换 Markdown 相对路径链接</a><br><a href="./Hexo%E6%B0%B8%E4%B9%85%E9%93%BE%E6%8E%A5%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5%EF%BC%9A%E7%BB%88%E6%9E%81%E6%96%B9%E6%A1%88%E4%B8%8E%E4%BC%98%E5%8C%96%E6%8C%87%E5%8D%97.md">Hexo永久链接最佳实践：终极方案与优化指南</a><br><a href="./Hexo%20%E6%90%9C%E7%B4%A2%E8%B7%B3%E8%BD%AC%E5%A4%B1%E6%95%88%EF%BC%9F%E4%B8%80%E6%8B%9B%E8%A7%A3%E5%86%B3%E9%93%BE%E6%8E%A5%E5%9F%9F%E5%90%8D%E4%B8%A2%E5%A4%B1%E9%97%AE%E9%A2%98.md">Hexo 搜索跳转失效？一招解决链接域名丢失问题</a><br><a href="./Hexo%E7%A7%BB%E9%99%A4%E5%9B%BE%E7%89%87%E9%BB%98%E8%AE%A4%20alt%20%E5%B1%9E%E6%80%A7.md">Hexo移除图片默认 alt 属性</a><br><a href="./%E5%9B%BE%E7%89%87%E5%8E%8B%E7%BC%A9%E4%B8%8E%E6%A0%BC%E5%BC%8F%E4%BC%98%E5%8C%96%E6%8C%87%E5%8D%97.md">图片压缩与格式优化指南</a><br><a href="./jsDelivr%20%E7%BC%93%E5%AD%98%E5%88%B7%E6%96%B0%E4%B8%8E%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6.md">jsDelivr 缓存刷新与版本控制</a><br><a href="./uniCloud%E5%8A%A0%E9%80%9FGitHub%20Pages%E5%8D%9A%E5%AE%A2%E8%AE%BF%E9%97%AE.md">uniCloud加速GitHub Pages博客访问</a></p>
 
                 
             </div>
@@ -628,7 +601,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://gloamfox.github.io/20251218123750.html">https://gloamfox.github.io/20251218123750.html</a>
+                    <a href="https://gloamfox.github.io/20260331194609.html">https://gloamfox.github.io/20260331194609.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -666,8 +639,24 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E4%BA%8B%E4%BB%B6%E9%A9%B1%E5%8A%A8/">
-                                    <span class="chip bg-color">事件驱动</span>
+                                <a href="/tags/Hexo/">
+                                    <span class="chip bg-color">Hexo</span>
+                                </a>
+                            
+                                <a href="/tags/Obsidian/">
+                                    <span class="chip bg-color">Obsidian</span>
+                                </a>
+                            
+                                <a href="/tags/GitHub-Pages/">
+                                    <span class="chip bg-color">GitHub Pages</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">
+                                    <span class="chip bg-color">博客搭建</span>
+                                </a>
+                            
+                                <a href="/tags/%E8%87%AA%E5%8A%A8%E5%8C%96/">
+                                    <span class="chip bg-color">自动化</span>
                                 </a>
                             
                         </div>
@@ -837,29 +826,30 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/20260130032221.html">
+                <a href="/20260331194609.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" >
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" >
                         
-                        <span class="card-title">蒙提霍尔问题-经典的三扇门问题</span>
+                        <span class="card-title">Obsidian博客搭建完整指南</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            本文详细解析了著名的蒙提霍尔问题，通过概率分析展示了为什么换门策略能将获胜概率从1/3提升至2/3。文章解释了主持人行为对概率分布的影响，纠正了常见的误解，并通过扩展到100扇门的例子直观展示了这一反直觉的概率现象。
+                            本文详细记录了从零搭建到极致优化Obsidian+Hexo+GitHub Pages个人博客的全过程，解决了链接失效、图片异常、缓存不更新、访问速度慢、路径错乱等问题。文章提供了完整的解决方案和优化技巧，包括双链转换、相对路径处理、永久链接设置、图片优化和CDN加速等内容，实现了一键发布的自动化博客工作流。
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2026-01-30
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2026-03-31
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -872,19 +862,28 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%A6%82%E7%8E%87%E8%AE%BA/">
-                        <span class="chip bg-color">概率论</span>
+                    <a href="/tags/Hexo/">
+                        <span class="chip bg-color">Hexo</span>
                     </a>
                     
-                    <a href="/tags/%E6%B8%B8%E6%88%8F%E7%90%86%E8%AE%BA/">
-                        <span class="chip bg-color">游戏理论</span>
+                    <a href="/tags/Obsidian/">
+                        <span class="chip bg-color">Obsidian</span>
                     </a>
                     
-                    <a href="/tags/%E5%86%B3%E7%AD%96%E5%88%86%E6%9E%90/">
-                        <span class="chip bg-color">决策分析</span>
+                    <a href="/tags/GitHub-Pages/">
+                        <span class="chip bg-color">GitHub Pages</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">
+                        <span class="chip bg-color">博客搭建</span>
+                    </a>
+                    
+                    <a href="/tags/%E8%87%AA%E5%8A%A8%E5%8C%96/">
+                        <span class="chip bg-color">自动化</span>
                     </a>
                     
                 </div>
@@ -898,24 +897,24 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/20251218103700.html">
+                <a href="/20260331181032.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" >
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" >
                         
-                        <span class="card-title">Spring事件监听在业务使用中的优化</span>
+                        <span class="card-title">DPI 封杀 SSH？一键搭建 HTTPS 伪装隧道，完美绕过 RST 阻断</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            本文深入探讨了Spring框架中事件驱动机制的使用与优化，特别是在电商订单创建场景下的应用。文章详细分析了事件定义、发布和监听的实现方式，并针对异步执行中遇到的数据一致性、持久化和线程变量传递等问题提出了创新解决方案。通过自定义注解和切面增强，实现了对Spring事件监听功能的扩展，提供了更可靠的异步事件处理机制。
+                            本文介绍如何使用stunnel工具将SSH流量伪装成HTTPS加密流量，绕过网络环境中对SSH默认22端口的封锁。通过在Ubuntu服务器端和Windows客户端配置stunnel，实现SSH流量通过443端口传输，解决DPI深度包检测和RST包阻断问题，提供安全、合法的远程服务器访问方案。
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2025-12-18
+                                <i class="far fa-clock fa-fw icon-date"></i>2026-03-31
                             </span>
                         <span class="publish-author">
                             
@@ -932,12 +931,20 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Spring/">
-                        <span class="chip bg-color">Spring</span>
+                    <a href="/tags/Ubuntu/">
+                        <span class="chip bg-color">Ubuntu</span>
                     </a>
                     
-                    <a href="/tags/%E4%BA%8B%E4%BB%B6%E9%A9%B1%E5%8A%A8/">
-                        <span class="chip bg-color">事件驱动</span>
+                    <a href="/tags/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/">
+                        <span class="chip bg-color">网络安全</span>
+                    </a>
+                    
+                    <a href="/tags/SSH/">
+                        <span class="chip bg-color">SSH</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%90%E7%BB%B4/">
+                        <span class="chip bg-color">服务器运维</span>
                     </a>
                     
                 </div>
