@@ -4,6 +4,39 @@
   
     
     <entry>
+      <title>DPI 封杀 SSH？一键搭建 HTTPS 伪装隧道，完美绕过 RST 阻断</title>
+      <link href="/20260331181032.html"/>
+      <url>/20260331181032.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在公司、校园网络环境中，管理员常通过<strong>DPI 深度包检测、IPS 入侵防御</strong>封锁 SSH 默认 22 端口，一旦识别 SSH 协议就会发送 RST 包强制中断连接，导致无法远程管理自己的云服务器。</p><p>本文分享一套<strong>合法、安全、无侵入</strong>的解决方案：基于<code>stunnel</code>将 SSH 流量伪装成 HTTPS 加密流量，走 443 通用端口，绕过绝大多数网络封锁，适配<strong>Ubuntu 服务器 + Windows 客户端</strong>，全程复制粘贴即可完成。</p><h2 id="核心原理"><a href="#核心原理" class="headerlink" title="核心原理"></a>核心原理</h2><ul><li>网络封锁逻辑：DPI 识别 22 端口 + SSH 明文特征，主动阻断；</li><li>绕过思路：用 TLS 加密包裹 SSH 流量，<strong>伪装成 HTTPS 网站流量</strong>；</li><li>方案优势：端口 443（全网通行）、无 SSH 特征、全程加密，抗 RST 阻断。</li></ul><h2 id="服务端配置（Ubuntu-一键部署）"><a href="#服务端配置（Ubuntu-一键部署）" class="headerlink" title="服务端配置（Ubuntu 一键部署）"></a>服务端配置（Ubuntu 一键部署）</h2><h3 id="安装依赖"><a href="#安装依赖" class="headerlink" title="安装依赖"></a>安装依赖</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">apt</span> update <span class="token operator">&amp;&amp;</span> <span class="token function">apt</span> <span class="token function">install</span> stunnel4 <span class="token parameter variable">-y</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="生成-TLS-证书（自用无需申请）"><a href="#生成-TLS-证书（自用无需申请）" class="headerlink" title="生成 TLS 证书（自用无需申请）"></a>生成 TLS 证书（自用无需申请）</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">openssl req <span class="token parameter variable">-new</span> <span class="token parameter variable">-days</span> <span class="token number">3650</span> <span class="token parameter variable">-nodes</span> <span class="token parameter variable">-x509</span> <span class="token parameter variable">-sha256</span> <span class="token punctuation">\</span> <span class="token parameter variable">-keyout</span> /etc/stunnel/stunnel.key <span class="token punctuation">\</span> <span class="token parameter variable">-out</span> /etc/stunnel/stunnel.crt <span class="token punctuation">\</span> <span class="token parameter variable">-subj</span> <span class="token string">"/CN=myself"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="写入核心配置"><a href="#写入核心配置" class="headerlink" title="写入核心配置"></a>写入核心配置</h3><p>监听 443 端口，转发流量至本地 22 端口（SSH 服务）：</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">cat</span> <span class="token operator">></span> /etc/stunnel/stunnel.conf <span class="token operator">&lt;&lt;</span>EOF sslVersion <span class="token operator">=</span> TLSv1.2 ciphers <span class="token operator">=</span> HIGH:<span class="token operator">!</span>aNULL:<span class="token operator">!</span>MD5 socket <span class="token operator">=</span> l:TCP_NODELAY<span class="token operator">=</span><span class="token number">1</span> socket <span class="token operator">=</span> r:TCP_NODELAY<span class="token operator">=</span><span class="token number">1</span> <span class="token punctuation">[</span>ssh<span class="token punctuation">]</span> accept <span class="token operator">=</span> <span class="token number">0.0</span>.0.0:443 connect <span class="token operator">=</span> <span class="token number">127.0</span>.0.1:22 cert <span class="token operator">=</span> /etc/stunnel/stunnel.crt key <span class="token operator">=</span> /etc/stunnel/stunnel.key EOF<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="启动并设置开机自启"><a href="#启动并设置开机自启" class="headerlink" title="启动并设置开机自启"></a>启动并设置开机自启</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 开机自启 </span>systemctl <span class="token builtin class-name">enable</span> stunnel4 <span class="token comment"># 启动服务 </span>systemctl restart stunnel4 <span class="token comment"># 查看运行状态（出现active (running)即为成功） </span>systemctl status stunnel4<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h3 id="放行防火墙-云服务器安全组"><a href="#放行防火墙-云服务器安全组" class="headerlink" title="放行防火墙 + 云服务器安全组"></a>放行防火墙 + 云服务器安全组</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 如果使用了防火墙的话  放行443端口 </span>ufw allow <span class="token number">443</span>/tcp<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><p>⚠️ 云服务器必须在控制台<strong>安全组开放 443 端口</strong>，否则无法连接。</p><h2 id="客户端配置（Windows-极简设置）"><a href="#客户端配置（Windows-极简设置）" class="headerlink" title="客户端配置（Windows 极简设置）"></a>客户端配置（Windows 极简设置）</h2><h3 id="安装-stunnel"><a href="#安装-stunnel" class="headerlink" title="安装 stunnel"></a>安装 stunnel</h3><p>下载地址：<a href="https://www.stunnel.org/downloads.html">https://www.stunnel.org/downloads.html</a></p><p>一路默认安装即可。</p><h3 id="修复端口占用报错（关键）"><a href="#修复端口占用报错（关键）" class="headerlink" title="修复端口占用报错（关键）"></a>修复端口占用报错（关键）</h3><p>Windows 本地 22 端口易被占用，会导致启动失败，<strong>务必使用自定义端口</strong>。</p><p>打开<code>C:\Program Files (x86)\stunnel\config\stunnel.conf</code>，<strong>清空原有内容</strong>，粘贴配置：</p><pre class="line-numbers language-ini" data-language="ini"><code class="language-ini"><span class="token key attr-name">client</span> <span class="token punctuation">=</span> <span class="token value attr-value">yes</span> <span class="token section"><span class="token punctuation">[</span><span class="token section-name selector">ssh</span><span class="token punctuation">]</span></span> <span class="token key attr-name">accept</span> <span class="token punctuation">=</span> <span class="token value attr-value">127.0.0.1:12345</span> <span class="token key attr-name">connect</span> <span class="token punctuation">=</span> <span class="token value attr-value">你的服务器公网IP:443</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><h3 id="启动客户端"><a href="#启动客户端" class="headerlink" title="启动客户端"></a>启动客户端</h3><p>双击桌面<code>stunnel GUI</code>，托盘出现小锁图标即为运行成功。</p><h3 id="远程连接使用"><a href="#远程连接使用" class="headerlink" title="远程连接使用"></a>远程连接使用</h3><p>打开 Windows CMD/PowerShell，执行命令连接服务器：</p><pre class="line-numbers language-none"><code class="language-none">ssh 服务器用户名@127.0.0.1 -p 12345 # 示例：ssh root@127.0.0.1 -p 12345<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>面对公司 / 校园的 SSH 封锁，无需复杂操作，<code>stunnel</code>就能轻松将 SSH 伪装成 HTTPS 流量，443 端口全网通行，完美解决 RST 阻断问题。这套方案是个人远程管理服务器的最优解，安全稳定且零门槛上手。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术教程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Ubuntu </tag>
+            
+            <tag> 网络安全 </tag>
+            
+            <tag> SSH </tag>
+            
+            <tag> stunnel </tag>
+            
+            <tag> 端口转发 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>IDEA激活教程</title>
       <link href="/20260328161637.html"/>
       <url>/20260328161637.html</url>
@@ -1189,9 +1222,9 @@
       
         <tags>
             
-            <tag> Zookeeper </tag>
-            
             <tag> 分布式 </tag>
+            
+            <tag> Zookeeper </tag>
             
         </tags>
       
@@ -1216,9 +1249,9 @@
       
         <tags>
             
-            <tag> Zookeeper </tag>
-            
             <tag> 分布式 </tag>
+            
+            <tag> Zookeeper </tag>
             
             <tag> 集群管理 </tag>
             
@@ -1245,13 +1278,13 @@
       
         <tags>
             
-            <tag> 分布式 </tag>
-            
             <tag> ZooKeeper </tag>
             
             <tag> 服务注册 </tag>
             
             <tag> 服务发现 </tag>
+            
+            <tag> 分布式 </tag>
             
         </tags>
       
@@ -1276,9 +1309,9 @@
       
         <tags>
             
-            <tag> Zookeeper </tag>
-            
             <tag> 分布式 </tag>
+            
+            <tag> Zookeeper </tag>
             
             <tag> 配置管理 </tag>
             
