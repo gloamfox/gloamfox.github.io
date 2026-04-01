@@ -621,9 +621,9 @@
       
         <tags>
             
-            <tag> 版本管理 </tag>
-            
             <tag> Node.js </tag>
+            
+            <tag> 版本管理 </tag>
             
         </tags>
       
@@ -1373,7 +1373,7 @@
     
     
     <entry>
-      <title>Markdown LaTeX公式指南</title>
+      <title>Markdown中的LaTeX公式指南</title>
       <link href="/20250919050557.html"/>
       <url>/20250919050557.html</url>
       
@@ -1402,7 +1402,7 @@
     
     
     <entry>
-      <title>Markdown中的LaTeX公式指南</title>
+      <title>Markdown LaTeX公式指南</title>
       <link href="/20250919050557.html"/>
       <url>/20250919050557.html</url>
       
