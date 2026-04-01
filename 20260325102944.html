@@ -492,14 +492,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.2k
+                    1.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    5 分
+                    6 分
                 </div>
                 
 
@@ -719,13 +719,29 @@ hexo<span class="token punctuation">.</span>extend<span class="token punctuation
 
 
 <p>在hexo根据markdown文章生成网页之后，匹配<code>&lt;a&gt;</code>标签中<code>href</code>是以 <em>.md</em>  结尾的文件，将原本的href属性替换为对应文件真正的跳转路径。</p>
-<h2 id="工作原理"><a href="#工作原理" class="headerlink" title="工作原理"></a>工作原理</h2><ol>
-<li>在 Hexo 完成文章渲染后，通过 <code>after_post_render</code> 过滤器处理每篇文章的 HTML 内容。</li>
-<li>使用正则表达式匹配所有 <code>href</code> 以 <code>.md</code> 结尾的 <code>&lt;a&gt;</code> 标签。</li>
-<li>解析相对路径，定位到源文件夹中对应的 Markdown 文件。</li>
-<li>从文章列表中查找该文件对应的目标文章，并获取其永久链接（<code>permalink</code>）。</li>
-<li>将原链接替换为目标文章的永久链接，确保生成的超链接可正常跳转。</li>
+<h2 id="核心功能"><a href="#核心功能" class="headerlink" title="核心功能"></a>核心功能</h2><p>  将 HTML 中以 .md 结尾的相对链接（如 ./article.md）替换为对应文章的绝对 URL</p>
+<ol>
+<li>after_post_render - 实时处理 + 收集信息</li>
 </ol>
+<ul>
+<li>每篇文章渲染完成后触发</li>
+<li>收集文章信息：将 source, path, permalink 存入 postsCache</li>
+<li>实时处理：尝试直接替换当前文章的 .md 链接（适用于 hexo server）</li>
+<li>更新 allPostsCache</li>
+</ul>
+<ol start="2">
+<li>before_exit - 批量处理文件（关键）</li>
+</ol>
+<ul>
+<li>在 hexo generate 完成且文件写入磁盘后触发</li>
+<li>获取完整文章列表：<ul>
+<li>优先从 hexo.locals.get(‘posts’) 获取</li>
+<li>备选使用 postsCache 中收集的文章</li>
+</ul>
+</li>
+<li>扫描所有 HTML 文件，替换其中的 .md 链接</li>
+<li>清空 postsCache</li>
+</ul>
 
                 
             </div>
