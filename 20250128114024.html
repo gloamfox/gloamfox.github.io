@@ -508,24 +508,24 @@
                 <h2 id="镜像下载"><a href="#镜像下载" class="headerlink" title="镜像下载"></a>镜像下载</h2><p>华为云镜像下载CentOS镜像，镜像使用 CentOS-7-x86_64-Minimal-2207-02.iso<br><a target="_blank" rel="noopener" href="https://repo.huaweicloud.com/centos/7/isos/x86_64/">镜像下载</a></p>
 <h2 id="VMware创建虚拟机"><a href="#VMware创建虚拟机" class="headerlink" title="VMware创建虚拟机"></a>VMware创建虚拟机</h2><p>版本：VMware® Workstation 16 Pro</p>
 <p>步骤忽略，选中镜像，一直点击下一步就可以</p>
-<h2 id="设置固定IP"><a href="#设置固定IP" class="headerlink" title="设置固定IP"></a>设置固定IP</h2><h3 id="虚拟机网络连接方式"><a href="#虚拟机网络连接方式" class="headerlink" title="虚拟机网络连接方式"></a>虚拟机网络连接方式</h3><p><img src="../Assets/file-1763633908095.png" ></p>
-<h3 id="配置虚拟机的NAT模式具体地址参数"><a href="#配置虚拟机的NAT模式具体地址参数" class="headerlink" title="配置虚拟机的NAT模式具体地址参数"></a><strong>配置虚拟机的NAT模式具体地址参数</strong></h3><p><img src="../Assets/file-1763633962024.png" ></p>
+<h2 id="设置固定IP"><a href="#设置固定IP" class="headerlink" title="设置固定IP"></a>设置固定IP</h2><h3 id="虚拟机网络连接方式"><a href="#虚拟机网络连接方式" class="headerlink" title="虚拟机网络连接方式"></a>虚拟机网络连接方式</h3><p><img src="../Assets/file-20260331194413687.png" ></p>
+<h3 id="配置虚拟机的NAT模式具体地址参数"><a href="#配置虚拟机的NAT模式具体地址参数" class="headerlink" title="配置虚拟机的NAT模式具体地址参数"></a><strong>配置虚拟机的NAT模式具体地址参数</strong></h3><p><img src="../Assets/file-20260331194413687%201.png" ></p>
 <p>选择VMnet8–取消勾选使用本地DHCP–设置子网IP–网关IP设置（记住此处设置，后面要用到），如下图</p>
-<p><img src="../Assets/file-1763633986646.png" ></p>
+<p><img src="../Assets/file-20260331194413688.png" ></p>
 <p>说明：修改子网IP设置，实现自由设置固定IP，IP网段最后一位0-255，子网IP占用一位，网关IP占用一位，剩余的都可以自由分配</p>
 <p>若你想设置固定IP为192.168.2.2-255，比如192.168.2.2，则子网IP为192.168.2.0； </p>
 <p>若你想设置固定IP为192.168.1.2-255，比如192.168.1.2，则子网IP为192.168.1.0； </p>
 <p>也就是说，你想配置成哪个网段，IP地址最后那位为0即可。</p>
 <p>记录一下上面的网关地址，虚拟机中设置固定IP时需要用到，这里的网关IP也可以自行设置，只要网段一致即可。</p>
-<p><img src="../Assets/file-1763634031791.png" ></p>
+<p><img src="../Assets/file-20260331194413689.png" ></p>
 <h3 id="配置电脑具体VMnet8本地地址参数"><a href="#配置电脑具体VMnet8本地地址参数" class="headerlink" title="配置电脑具体VMnet8本地地址参数"></a><strong>配置电脑具体VMnet8本地地址参数</strong></h3><p>会自动配置VMnet8的IP以及子网掩码，此处记录一下需要知晓本地电脑在局域网的IP</p>
-<p><img src="../Assets/file-1763634057124.png" ></p>
+<p><img src="../Assets/file-20260331194413690.png" ></p>
 <h3 id="虚拟机设置固定IP"><a href="#虚拟机设置固定IP" class="headerlink" title="虚拟机设置固定IP"></a>虚拟机设置固定IP</h3><h4 id="编辑网络"><a href="#编辑网络" class="headerlink" title="编辑网络"></a>编辑网络</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">cd</span> /etc/sysconfig/network-scripts
 <span class="token function">ls</span>
 <span class="token function">vi</span> ifconfig-ens33<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
-<p><img src="../Assets/file-1763634076190.png" ></p>
-<p><img src="../Assets/file-1763634100002.png" ></p>
+<p><img src="../Assets/file-20260331194413690%201.png" ></p>
+<p><img src="../Assets/file-20260331194413691.png" ></p>
 <p>说明：</p>
 <pre class="line-numbers language-text" data-language="text"><code class="language-text">BOOTPROTO=static        #网络配置，设置为静态IP，有dhcp及static
 ONBOOT=yes              #设置为开机启动
@@ -541,7 +541,7 @@ GATEWAY=192.168.2.2     #网关IPork restart<span aria-hidden="true" class="line
 <h4 id="验证"><a href="#验证" class="headerlink" title="验证"></a>验证</h4><p>查看linux中的ip地址</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">ip</span> addr<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p><img src="../Assets/file-1763634145216.png" ></p>
+<p><img src="../Assets/file-20260331194413692.png" ></p>
 <p>访问互联网，是否能正常访问</p>
 <pre class="line-numbers language-text" data-language="text"><code class="language-text">ping www.baidu.com<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
@@ -1033,7 +1033,7 @@ yum update <span aria-hidden="true" class="line-numbers-rows"><span></span><span
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;&nbsp;<span
-                class="white-color">83k</span>&nbsp;字
+                class="white-color">83.1k</span>&nbsp;字
             
             
             
