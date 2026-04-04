@@ -496,7 +496,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    212
+                    262
                 </div>
                 
 
@@ -545,6 +545,13 @@
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> config get registry
 
 http://mirrors.cloud.tencent.com/npm/<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+
+<h2 id="使用nrm工具管理镜像源"><a href="#使用nrm工具管理镜像源" class="headerlink" title="使用nrm工具管理镜像源"></a>使用nrm工具管理镜像源</h2><p>使用 nrm 工具可以方便地在多个 npm 源之间切换：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> <span class="token parameter variable">-g</span> nrm 
+nrm <span class="token function">ls</span> <span class="token comment"># 查看可用源 </span>
+nrm use taobao <span class="token comment"># 切换到淘宝镜像</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
                 
             </div>
             <hr/>
