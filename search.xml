@@ -37,7 +37,7 @@
       <link href="/20260402190152.html"/>
       <url>/20260402190152.html</url>
       
-        <content type="html"><![CDATA[<ol><li><p>打开vscode</p></li><li><p>文件-&gt;首选项-&gt;设置，打开设置（快捷键：<code>ctrl + ,</code>）</p></li><li><p>搜索<code>shell windows</code><br><img src="../Assets/file-1775127851816.png" alt="file-1775127851816.png"></p></li><li><p>选择默认的终端为Git Bash</p></li><li><p>重启VSCode后，新建的终端将默认使用Git Bash。</p></li></ol>]]></content>
+        <content type="html"><![CDATA[<ol><li>打开vscode</li><li>文件-&gt;首选项-&gt;设置，打开设置（快捷键：<code>ctrl + ,</code>）</li><li>搜索<code>shell windows</code> </li></ol><p><img src="file-1775127851816.png" alt=" 1000"></p><ol start="4"><li>选择默认的终端为Git Bash</li><li>重启VSCode后，新建的终端将默认使用Git Bash。</li></ol>]]></content>
       
       
       <categories>
@@ -64,7 +64,7 @@
       <link href="/20260331194609.html"/>
       <url>/20260331194609.html</url>
       
-        <content type="html"><![CDATA[<p>我一直将<strong>Obsidian</strong>作为日常写作的主要工具，并想要能够将双链笔记一键转换为独立博客，因此采用了 <strong>Obsidian + Hexo + GitHub Pages</strong> 的组合方案。从零开始搭建到最终稳定上线，过程中遇到了诸多挑战——链接失效、图片异常、缓存不更新、访问速度慢、路径错乱等问题层出不穷。</p><p>这篇文章完整记录<strong>从搭建到极致优化</strong>的全过程，把所有遇到的问题、解决方案、优化技巧全部整理好，既是个人复盘，也给同样走这条路的朋友一份避坑指南。</p><h2 id="整体技术栈与搭建思路"><a href="#整体技术栈与搭建思路" class="headerlink" title="整体技术栈与搭建思路"></a>整体技术栈与搭建思路</h2><p>我的目标很简单：</p><ol><li><strong>在 Obsidian 里无感写作</strong>，支持双链、相对路径、本地图片；</li><li><strong>一键发布</strong>到线上博客，不用手动复制粘贴、改格式；</li><li>博客托管免费、稳定，即 <strong>GitHub Pages</strong>；</li><li>速度快、体验好、SEO 友好、无冗余 bug。</li></ol><p>最终定型方案：</p><p><strong>Obsidian（写作） → Hexo（生成静态站） → GitHub Pages（托管） → uniCloud/CDN（加速）</strong></p><h2 id="搭建阶段：核心问题与解决方案"><a href="#搭建阶段：核心问题与解决方案" class="headerlink" title="搭建阶段：核心问题与解决方案"></a>搭建阶段：核心问题与解决方案</h2><p>刚把框架搭起来时，博客根本没法直接用 ——<strong>Obsidian 原生格式和 Hexo 不兼容</strong>，各种链接、图片、路径全炸了。</p><h3 id="Obsidian-博客发布自动化"><a href="#Obsidian-博客发布自动化" class="headerlink" title="Obsidian 博客发布自动化"></a>Obsidian 博客发布自动化</h3><p>Obsidian笔记发布博客自动化：全程无需手动修改</p><p>解决方案：✅<a href="./%E4%BB%8E%E9%9B%B6%E5%88%B0%E4%B8%80%E9%94%AE%E5%8F%91%E5%B8%83%EF%BC%9AObsidian%20+%20Hexo%20+%20GitHub%20Pages%20%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97.md">从零到一键发布：Obsidian + Hexo + GitHub Pages 个人博客搭建指南</a></p><h3 id="双链-相对路径无法在-Hexo-识别"><a href="#双链-相对路径无法在-Hexo-识别" class="headerlink" title="双链 / 相对路径无法在 Hexo 识别"></a>双链 / 相对路径无法在 Hexo 识别</h3><p>Obsidian 习惯用 <code>[[文件名]]</code> 和相对路径图片，直接放到 Hexo 会全部 404。</p><p>解决方案：✅ <a href="https://gloamfox.github.io/20260325102944.html">Hexo 插件：自动转换 Markdown 相对路径链接</a></p><h3 id="链接不规范"><a href="#链接不规范" class="headerlink" title="链接不规范"></a>链接不规范</h3><p>默认链接带日期、中文、乱码，既不美观也不利于搜索引擎。</p><p>解决方案：✅<a href="./Hexo%E6%B0%B8%E4%B9%85%E9%93%BE%E6%8E%A5%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5%EF%BC%9A%E7%BB%88%E6%9E%81%E6%96%B9%E6%A1%88%E4%B8%8E%E4%BC%98%E5%8C%96%E6%8C%87%E5%8D%97.md">Hexo永久链接最佳实践：终极方案与优化指南</a></p><h3 id="永久链接导致搜索失效"><a href="#永久链接导致搜索失效" class="headerlink" title="永久链接导致搜索失效"></a>永久链接导致搜索失效</h3><p>url设置永久链接后导致搜索跳转失效 404<br>解决方案：✅<a href="./Hexo%20%E6%90%9C%E7%B4%A2%E8%B7%B3%E8%BD%AC%E5%A4%B1%E6%95%88%EF%BC%9F%E4%B8%80%E6%8B%9B%E8%A7%A3%E5%86%B3%E9%93%BE%E6%8E%A5%E5%9F%9F%E5%90%8D%E4%B8%A2%E5%A4%B1%E9%97%AE%E9%A2%98.md">Hexo 搜索跳转失效？一招解决链接域名丢失问题</a></p><h3 id="图片优化：从加载慢到极致轻量化"><a href="#图片优化：从加载慢到极致轻量化" class="headerlink" title="图片优化：从加载慢到极致轻量化"></a>图片优化：从加载慢到极致轻量化</h3><p>图片是博客最影响速度的部分，也是坑最多的环节。</p><h4 id="图片默认-alt-属性冗余、影响美观"><a href="#图片默认-alt-属性冗余、影响美观" class="headerlink" title="图片默认 alt 属性冗余、影响美观"></a>图片默认 alt 属性冗余、影响美观</h4><p>Hexo 会自动生成图片 alt 文本，样式突兀、影响阅读体验。</p><p>解决方案：✅<a href="./Hexo%E7%A7%BB%E9%99%A4%E5%9B%BE%E7%89%87%E9%BB%98%E8%AE%A4%20alt%20%E5%B1%9E%E6%80%A7.md">Hexo移除图片默认 alt 属性</a></p><p>一键去掉默认 alt，保持界面清爽。</p><h4 id="图片体积大、加载慢、耗流量"><a href="#图片体积大、加载慢、耗流量" class="headerlink" title="图片体积大、加载慢、耗流量"></a>图片体积大、加载慢、耗流量</h4><p>直接上传 Obsidian 原图，页面打开又卡又慢。</p><p>解决方案：✅<a href="./%E5%9B%BE%E7%89%87%E5%8E%8B%E7%BC%A9%E4%B8%8E%E6%A0%BC%E5%BC%8F%E4%BC%98%E5%8C%96%E6%8C%87%E5%8D%97.md">图片压缩与格式优化指南</a></p><p>批量压缩、WebP 格式替换、自适应图片，速度提升数倍。</p><h3 id="发布与加速"><a href="#发布与加速" class="headerlink" title="发布与加速"></a>发布与加速</h3><h4 id="CDN"><a href="#CDN" class="headerlink" title="CDN"></a>CDN</h4><p>CDN 缓存顽固，清缓存无效，更新博客样式看不到最新版。</p><p>解决方案：✅<a href="./jsDelivr%20%E7%BC%93%E5%AD%98%E5%88%B7%E6%96%B0%E4%B8%8E%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6.md">jsDelivr 缓存刷新与版本控制</a></p><p>掌握强制刷新策略，实现发布即生效。</p><h4 id="GitHub-Pages-在国内访问慢、不稳定"><a href="#GitHub-Pages-在国内访问慢、不稳定" class="headerlink" title="GitHub Pages 在国内访问慢、不稳定"></a>GitHub Pages 在国内访问慢、不稳定</h4><p>作为国外托管服务，大陆访问延迟高、偶尔打不开。</p><p>终极优化方案：✅<a href="./uniCloud%E5%8A%A0%E9%80%9FGitHub%20Pages%E5%8D%9A%E5%AE%A2%E8%AE%BF%E9%97%AE.md">uniCloud加速GitHub Pages博客访问</a></p><p>免费、高速、国内节点加速，访问速度直线飙升。</p><h2 id="最终成果"><a href="#最终成果" class="headerlink" title="最终成果"></a>最终成果</h2><p>现在我的博客实现了：</p><ol><li><strong>Obsidian 写完即发布</strong>，无需任何格式调整；</li><li>链接规范、图片轻量化、页面加载极快；</li><li>国内访问速度快、稳定不掉线；</li><li>无 bug、无失效链接、无冗余代码；</li><li>全自动工作流，真正意义上<strong>一键部署</strong>。</li></ol><h2 id="全流程文章索引（建议收藏）"><a href="#全流程文章索引（建议收藏）" class="headerlink" title="全流程文章索引（建议收藏）"></a>全流程文章索引（建议收藏）</h2><p><a href="./%E4%BB%8E%E9%9B%B6%E5%88%B0%E4%B8%80%E9%94%AE%E5%8F%91%E5%B8%83%EF%BC%9AObsidian%20+%20Hexo%20+%20GitHub%20Pages%20%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97.md">从零到一键发布：Obsidian + Hexo + GitHub Pages 个人博客搭建指南</a><br><a href="https://gloamfox.github.io/20260325102944.html">Hexo 插件：自动转换 Markdown 相对路径链接</a><br><a href="./Hexo%E6%B0%B8%E4%B9%85%E9%93%BE%E6%8E%A5%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5%EF%BC%9A%E7%BB%88%E6%9E%81%E6%96%B9%E6%A1%88%E4%B8%8E%E4%BC%98%E5%8C%96%E6%8C%87%E5%8D%97.md">Hexo永久链接最佳实践：终极方案与优化指南</a><br><a href="./Hexo%20%E6%90%9C%E7%B4%A2%E8%B7%B3%E8%BD%AC%E5%A4%B1%E6%95%88%EF%BC%9F%E4%B8%80%E6%8B%9B%E8%A7%A3%E5%86%B3%E9%93%BE%E6%8E%A5%E5%9F%9F%E5%90%8D%E4%B8%A2%E5%A4%B1%E9%97%AE%E9%A2%98.md">Hexo 搜索跳转失效？一招解决链接域名丢失问题</a><br><a href="./Hexo%E7%A7%BB%E9%99%A4%E5%9B%BE%E7%89%87%E9%BB%98%E8%AE%A4%20alt%20%E5%B1%9E%E6%80%A7.md">Hexo移除图片默认 alt 属性</a><br><a href="./%E5%9B%BE%E7%89%87%E5%8E%8B%E7%BC%A9%E4%B8%8E%E6%A0%BC%E5%BC%8F%E4%BC%98%E5%8C%96%E6%8C%87%E5%8D%97.md">图片压缩与格式优化指南</a><br><a href="./jsDelivr%20%E7%BC%93%E5%AD%98%E5%88%B7%E6%96%B0%E4%B8%8E%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6.md">jsDelivr 缓存刷新与版本控制</a><br><a href="./uniCloud%E5%8A%A0%E9%80%9FGitHub%20Pages%E5%8D%9A%E5%AE%A2%E8%AE%BF%E9%97%AE.md">uniCloud加速GitHub Pages博客访问</a></p>]]></content>
+        <content type="html"><![CDATA[<p>我一直将<strong>Obsidian</strong>作为日常写作的主要工具，并想要能够将双链笔记一键转换为独立博客，因此采用了 <strong>Obsidian + Hexo + GitHub Pages</strong> 的组合方案。从零开始搭建到最终稳定上线，过程中遇到了诸多挑战——链接失效、图片异常、缓存不更新、访问速度慢、路径错乱等问题层出不穷。</p><p>这篇文章完整记录<strong>从搭建到极致优化</strong>的全过程，把所有遇到的问题、解决方案、优化技巧全部整理好，既是个人复盘，也给同样走这条路的朋友一份避坑指南。</p><h2 id="整体技术栈与搭建思路"><a href="#整体技术栈与搭建思路" class="headerlink" title="整体技术栈与搭建思路"></a>整体技术栈与搭建思路</h2><p>我的目标很简单：</p><ol><li><strong>在 Obsidian 里无感写作</strong>，支持双链、相对路径、本地图片；</li><li><strong>一键发布</strong>到线上博客，不用手动复制粘贴、改格式；</li><li>博客托管免费、稳定，即 <strong>GitHub Pages</strong>；</li><li>速度快、体验好、SEO 友好、无冗余 bug。</li></ol><p>最终定型方案：</p><p><strong>Obsidian（写作） → Hexo（生成静态站） → GitHub Pages（托管） → uniCloud/CDN（加速）</strong></p><h2 id="搭建阶段：核心问题与解决方案"><a href="#搭建阶段：核心问题与解决方案" class="headerlink" title="搭建阶段：核心问题与解决方案"></a>搭建阶段：核心问题与解决方案</h2><p>刚把框架搭起来时，博客根本没法直接用 ——<strong>Obsidian 原生格式和 Hexo 不兼容</strong>，各种链接、图片、路径全炸了。</p><h3 id="Obsidian-博客发布自动化"><a href="#Obsidian-博客发布自动化" class="headerlink" title="Obsidian 博客发布自动化"></a>Obsidian 博客发布自动化</h3><p>Obsidian笔记发布博客自动化：全程无需手动修改</p><p>解决方案：✅<a href="./%E4%BB%8E%E9%9B%B6%E5%88%B0%E4%B8%80%E9%94%AE%E5%8F%91%E5%B8%83%EF%BC%9AObsidian%20+%20Hexo%20+%20GitHub%20Pages%20%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97.md">从零到一键发布：Obsidian + Hexo + GitHub Pages 个人博客搭建指南</a></p><h3 id="双链-相对路径无法在-Hexo-识别"><a href="#双链-相对路径无法在-Hexo-识别" class="headerlink" title="双链 / 相对路径无法在 Hexo 识别"></a>双链 / 相对路径无法在 Hexo 识别</h3><p>Obsidian 习惯用 <code>[[文件名]]</code> 和相对路径图片，直接放到 Hexo 会全部 404。</p><p>解决方案：✅ <a href="./Hexo%20%E6%8F%92%E4%BB%B6%EF%BC%9A%E8%87%AA%E5%8A%A8%E8%BD%AC%E6%8D%A2%20Markdown%20%E7%9B%B8%E5%AF%B9%E8%B7%AF%E5%BE%84%E9%93%BE%E6%8E%A5.md">Hexo 插件：自动转换 Markdown 相对路径链接</a></p><h3 id="链接不规范"><a href="#链接不规范" class="headerlink" title="链接不规范"></a>链接不规范</h3><p>默认链接带日期、中文、乱码，既不美观也不利于搜索引擎。</p><p>解决方案：✅<a href="./Hexo%E6%B0%B8%E4%B9%85%E9%93%BE%E6%8E%A5%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5%EF%BC%9A%E7%BB%88%E6%9E%81%E6%96%B9%E6%A1%88%E4%B8%8E%E4%BC%98%E5%8C%96%E6%8C%87%E5%8D%97.md">Hexo永久链接最佳实践：终极方案与优化指南</a></p><h3 id="永久链接导致搜索失效"><a href="#永久链接导致搜索失效" class="headerlink" title="永久链接导致搜索失效"></a>永久链接导致搜索失效</h3><p>url设置永久链接后导致搜索跳转失效 404<br>解决方案：✅<a href="https://gloamfox.github.io/20260324145235.html">Hexo 搜索跳转失效？一招解决链接域名丢失问题</a></p><h3 id="图片优化：从加载慢到极致轻量化"><a href="#图片优化：从加载慢到极致轻量化" class="headerlink" title="图片优化：从加载慢到极致轻量化"></a>图片优化：从加载慢到极致轻量化</h3><p>图片是博客最影响速度的部分，也是坑最多的环节。</p><h4 id="图片默认-alt-属性冗余、影响美观"><a href="#图片默认-alt-属性冗余、影响美观" class="headerlink" title="图片默认 alt 属性冗余、影响美观"></a>图片默认 alt 属性冗余、影响美观</h4><p>Hexo 会自动生成图片 alt 文本，样式突兀、影响阅读体验。</p><p>解决方案：✅<a href="./Hexo%E7%A7%BB%E9%99%A4%E5%9B%BE%E7%89%87%E9%BB%98%E8%AE%A4%20alt%20%E5%B1%9E%E6%80%A7.md">Hexo移除图片默认 alt 属性</a></p><p>一键去掉默认 alt，保持界面清爽。</p><h4 id="图片体积大、加载慢、耗流量"><a href="#图片体积大、加载慢、耗流量" class="headerlink" title="图片体积大、加载慢、耗流量"></a>图片体积大、加载慢、耗流量</h4><p>直接上传 Obsidian 原图，页面打开又卡又慢。</p><p>解决方案：✅<a href="./%E5%9B%BE%E7%89%87%E5%8E%8B%E7%BC%A9%E4%B8%8E%E6%A0%BC%E5%BC%8F%E4%BC%98%E5%8C%96%E6%8C%87%E5%8D%97.md">图片压缩与格式优化指南</a></p><p>批量压缩、WebP 格式替换、自适应图片，速度提升数倍。</p><h3 id="发布与加速"><a href="#发布与加速" class="headerlink" title="发布与加速"></a>发布与加速</h3><h4 id="CDN"><a href="#CDN" class="headerlink" title="CDN"></a>CDN</h4><p>CDN 缓存顽固，清缓存无效，更新博客样式看不到最新版。</p><p>解决方案：✅<a href="./jsDelivr%20%E7%BC%93%E5%AD%98%E5%88%B7%E6%96%B0%E4%B8%8E%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6.md">jsDelivr 缓存刷新与版本控制</a></p><p>掌握强制刷新策略，实现发布即生效。</p><h4 id="GitHub-Pages-在国内访问慢、不稳定"><a href="#GitHub-Pages-在国内访问慢、不稳定" class="headerlink" title="GitHub Pages 在国内访问慢、不稳定"></a>GitHub Pages 在国内访问慢、不稳定</h4><p>作为国外托管服务，大陆访问延迟高、偶尔打不开。</p><p>终极优化方案：✅<a href="./uniCloud%E5%8A%A0%E9%80%9FGitHub%20Pages%E5%8D%9A%E5%AE%A2%E8%AE%BF%E9%97%AE.md">uniCloud加速GitHub Pages博客访问</a></p><p>免费、高速、国内节点加速，访问速度直线飙升。</p><h2 id="最终成果"><a href="#最终成果" class="headerlink" title="最终成果"></a>最终成果</h2><p>现在我的博客实现了：</p><ol><li><strong>Obsidian 写完即发布</strong>，无需任何格式调整；</li><li>链接规范、图片轻量化、页面加载极快；</li><li>国内访问速度快、稳定不掉线；</li><li>无 bug、无失效链接、无冗余代码；</li><li>全自动工作流，真正意义上<strong>一键部署</strong>。</li></ol><h2 id="全流程文章索引（建议收藏）"><a href="#全流程文章索引（建议收藏）" class="headerlink" title="全流程文章索引（建议收藏）"></a>全流程文章索引（建议收藏）</h2><p><a href="./%E4%BB%8E%E9%9B%B6%E5%88%B0%E4%B8%80%E9%94%AE%E5%8F%91%E5%B8%83%EF%BC%9AObsidian%20+%20Hexo%20+%20GitHub%20Pages%20%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97.md">从零到一键发布：Obsidian + Hexo + GitHub Pages 个人博客搭建指南</a><br><a href="./Hexo%20%E6%8F%92%E4%BB%B6%EF%BC%9A%E8%87%AA%E5%8A%A8%E8%BD%AC%E6%8D%A2%20Markdown%20%E7%9B%B8%E5%AF%B9%E8%B7%AF%E5%BE%84%E9%93%BE%E6%8E%A5.md">Hexo 插件：自动转换 Markdown 相对路径链接</a><br><a href="./Hexo%E6%B0%B8%E4%B9%85%E9%93%BE%E6%8E%A5%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5%EF%BC%9A%E7%BB%88%E6%9E%81%E6%96%B9%E6%A1%88%E4%B8%8E%E4%BC%98%E5%8C%96%E6%8C%87%E5%8D%97.md">Hexo永久链接最佳实践：终极方案与优化指南</a><br><a href="https://gloamfox.github.io/20260324145235.html">Hexo 搜索跳转失效？一招解决链接域名丢失问题</a><br><a href="./Hexo%E7%A7%BB%E9%99%A4%E5%9B%BE%E7%89%87%E9%BB%98%E8%AE%A4%20alt%20%E5%B1%9E%E6%80%A7.md">Hexo移除图片默认 alt 属性</a><br><a href="./%E5%9B%BE%E7%89%87%E5%8E%8B%E7%BC%A9%E4%B8%8E%E6%A0%BC%E5%BC%8F%E4%BC%98%E5%8C%96%E6%8C%87%E5%8D%97.md">图片压缩与格式优化指南</a><br><a href="./jsDelivr%20%E7%BC%93%E5%AD%98%E5%88%B7%E6%96%B0%E4%B8%8E%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6.md">jsDelivr 缓存刷新与版本控制</a><br><a href="./uniCloud%E5%8A%A0%E9%80%9FGitHub%20Pages%E5%8D%9A%E5%AE%A2%E8%AE%BF%E9%97%AE.md">uniCloud加速GitHub Pages博客访问</a></p>]]></content>
       
       
       <categories>
@@ -80,11 +80,7 @@
             
             <tag> Obsidian </tag>
             
-            <tag> GitHub Pages </tag>
-            
             <tag> 博客搭建 </tag>
-            
-            <tag> 自动化 </tag>
             
         </tags>
       
@@ -108,8 +104,6 @@
       
       
         <tags>
-            
-            <tag> Ubuntu </tag>
             
             <tag> 网络安全 </tag>
             
@@ -142,9 +136,9 @@
             
             <tag> Hexo </tag>
             
-            <tag> GitHub Pages </tag>
-            
             <tag> uniCloud </tag>
+            
+            <tag> GitHub Pages </tag>
             
         </tags>
       
@@ -588,15 +582,7 @@
       
         <tags>
             
-            <tag> 数据库 </tag>
-            
-            <tag> 缓存 </tag>
-            
             <tag> 性能优化 </tag>
-            
-            <tag> JVM </tag>
-            
-            <tag> 多线程 </tag>
             
         </tags>
       
@@ -665,7 +651,7 @@
       <link href="/20260226043540.html"/>
       <url>/20260226043540.html</url>
       
-        <content type="html"><![CDATA[<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p><a href="https://github.com/jasongin/nvs">nvs官方仓库</a></p><p>nvs 有跨平台的特性，支持 Windows 、 macOS和 Linux 系统，下面分别介绍两种安装方法。</p><h2 id="windows"><a href="#windows" class="headerlink" title="windows"></a>windows</h2><p>推荐通过 msi 的方式安装，就跟正常安装软件一下，双击下一步即可：</p><p><a href="https://github.com/jasongin/nvs/releases">https://github.com/jasongin/nvs/releases</a></p><h2 id="mac"><a href="#mac" class="headerlink" title="mac"></a>mac</h2><p>用下面三行命令即可：</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">export</span> <span class="token assign-left variable">NVS_HOME</span><span class="token operator">=</span><span class="token string">"<span class="token environment constant">$HOME</span>/.nvs"</span> <span class="token function">git</span> clone https://github.com/jasongin/nvs <span class="token string">"<span class="token variable">$NVS_HOME</span>"</span> <span class="token builtin class-name">.</span> <span class="token string">"<span class="token variable">$NVS_HOME</span>/nvs.sh"</span> <span class="token function">install</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h1 id="常见命令"><a href="#常见命令" class="headerlink" title="常见命令"></a>常见命令</h1><h2 id="添加Node版本"><a href="#添加Node版本" class="headerlink" title="添加Node版本"></a>添加Node版本</h2><p>如果你想安装最新的 LTS 版本，可以用命令：</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">nvs <span class="token function">add</span> lts<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>如果你需要新增一个 Node.js 16的版本，可以用以下命令：</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">nvs <span class="token function">add</span> <span class="token number">16</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h2 id="更新当前的-Node-小版本"><a href="#更新当前的-Node-小版本" class="headerlink" title="更新当前的 Node 小版本"></a>更新当前的 Node 小版本</h2><p>如果你想要升级 Node 小版本，比方说从 20.13.1升级到20.14.0（当前大版本的最新版），可以使用如下命令：</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">nvs upgrade<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h2 id="配置默认-Node-版本"><a href="#配置默认-Node-版本" class="headerlink" title="配置默认 Node 版本"></a>配置默认 Node 版本</h2><h3 id="全局指定"><a href="#全局指定" class="headerlink" title="全局指定"></a>全局指定</h3><p>这个适用于绝大部分情况，指定默认的 node 版本。</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">nvs <span class="token function">link</span> lts <span class="token comment"># 使用最新的 lts 版本，在所有的终端都生效</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="局部指定"><a href="#局部指定" class="headerlink" title="局部指定"></a>局部指定</h3><p>这个适用于偶尔用一次指定版本的情况，当你的终端关闭后，下次启动默认还是之前 nvs link 过的版本。</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">nvs use <span class="token number">16</span> <span class="token comment"># 在当前的终端使用 16 版本，关闭后失效</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h2 id="查看所有安装的-Node-版本"><a href="#查看所有安装的-Node-版本" class="headerlink" title="查看所有安装的 Node 版本"></a>查看所有安装的 Node 版本</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">nvs <span class="token function">ls</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h2 id="其他命令"><a href="#其他命令" class="headerlink" title="其他命令"></a>其他命令</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">nvs <span class="token parameter variable">--help</span> // 查看其他命令的帮助<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h2 id="命令手册"><a href="#命令手册" class="headerlink" title="命令手册"></a>命令手册</h2><p><img src="../Assets/file-20260319161332136.png" alt="file-20260319161332136.png"></p><p>一个具体版本或者版本过滤词由一个完整的或者部分的语义版本号或者版本标签（”lts”, “latest”, “Argon”等）组成，也可以是远端的版本名称，或者使用斜杠分隔来指定架构版本。例如：”lts”, “4.6.0”, “6/x86”, “node/6.7/x64”等。</p><h1 id="实用技巧"><a href="#实用技巧" class="headerlink" title="实用技巧"></a>实用技巧</h1><p>如果你不想每次都手动切换 node 版本，希望根据项目配置来，那么你可以把 <code>nvs use 16</code>这样的命令，写到项目的 pre 中。<code>package.json</code>示例如下：</p><pre class="line-numbers language-none"><code class="language-none">&#123;  &quot;scripts&quot;: &#123;    &quot;predev&quot;: &quot;nvs use 16&quot;,    &quot;dev&quot;: &quot;vue-cli-service serve&quot;    &quot;prebuild&quot;: &quot;nvs use 16&quot;,    &quot;dev&quot;: &quot;vue-cli-service build&quot;  &#125;&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>这样你每次启动或者打包项目的之前，都会先执行 pre 开头的 script，然后在执行你当前执行的命令。</p>]]></content>
+        <content type="html"><![CDATA[<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p><a href="https://github.com/jasongin/nvs">nvs官方仓库</a></p><p>nvs 有跨平台的特性，支持 Windows 、 macOS和 Linux 系统，下面分别介绍两种安装方法。</p><h2 id="windows"><a href="#windows" class="headerlink" title="windows"></a>windows</h2><p>推荐通过 msi 的方式安装，就跟正常安装软件一下，双击下一步即可：</p><p><a href="https://github.com/jasongin/nvs/releases">https://github.com/jasongin/nvs/releases</a></p><h2 id="mac"><a href="#mac" class="headerlink" title="mac"></a>mac</h2><p>用下面三行命令即可：</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">export</span> <span class="token assign-left variable">NVS_HOME</span><span class="token operator">=</span><span class="token string">"<span class="token environment constant">$HOME</span>/.nvs"</span> <span class="token function">git</span> clone https://github.com/jasongin/nvs <span class="token string">"<span class="token variable">$NVS_HOME</span>"</span> <span class="token builtin class-name">.</span> <span class="token string">"<span class="token variable">$NVS_HOME</span>/nvs.sh"</span> <span class="token function">install</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h1 id="常见命令"><a href="#常见命令" class="headerlink" title="常见命令"></a>常见命令</h1><h2 id="添加Node版本"><a href="#添加Node版本" class="headerlink" title="添加Node版本"></a>添加Node版本</h2><p>如果你想安装最新的 LTS 版本，可以用命令：</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">nvs <span class="token function">add</span> lts<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>如果你需要新增一个 Node.js 16的版本，可以用以下命令：</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">nvs <span class="token function">add</span> <span class="token number">16</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h2 id="更新当前的-Node-小版本"><a href="#更新当前的-Node-小版本" class="headerlink" title="更新当前的 Node 小版本"></a>更新当前的 Node 小版本</h2><p>如果你想要升级 Node 小版本，比方说从 20.13.1升级到20.14.0（当前大版本的最新版），可以使用如下命令：</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">nvs upgrade<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h2 id="配置默认-Node-版本"><a href="#配置默认-Node-版本" class="headerlink" title="配置默认 Node 版本"></a>配置默认 Node 版本</h2><h3 id="全局指定"><a href="#全局指定" class="headerlink" title="全局指定"></a>全局指定</h3><p>这个适用于绝大部分情况，指定默认的 node 版本。</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">nvs <span class="token function">link</span> lts <span class="token comment"># 使用最新的 lts 版本，在所有的终端都生效</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="局部指定"><a href="#局部指定" class="headerlink" title="局部指定"></a>局部指定</h3><p>这个适用于偶尔用一次指定版本的情况，当你的终端关闭后，下次启动默认还是之前 nvs link 过的版本。</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">nvs use <span class="token number">16</span> <span class="token comment"># 在当前的终端使用 16 版本，关闭后失效</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h2 id="查看所有安装的-Node-版本"><a href="#查看所有安装的-Node-版本" class="headerlink" title="查看所有安装的 Node 版本"></a>查看所有安装的 Node 版本</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">nvs <span class="token function">ls</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h2 id="其他命令"><a href="#其他命令" class="headerlink" title="其他命令"></a>其他命令</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">nvs <span class="token parameter variable">--help</span> // 查看其他命令的帮助<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h2 id="命令手册"><a href="#命令手册" class="headerlink" title="命令手册"></a>命令手册</h2><p><img src="../Assets/file-20260404130919072.png" alt="file-20260404130919072.png"></p><p>一个具体版本或者版本过滤词由一个完整的或者部分的语义版本号或者版本标签（”lts”, “latest”, “Argon”等）组成，也可以是远端的版本名称，或者使用斜杠分隔来指定架构版本。例如：”lts”, “4.6.0”, “6/x86”, “node/6.7/x64”等。</p><h1 id="实用技巧"><a href="#实用技巧" class="headerlink" title="实用技巧"></a>实用技巧</h1><p>如果你不想每次都手动切换 node 版本，希望根据项目配置来，那么你可以把 <code>nvs use 16</code>这样的命令，写到项目的 pre 中。<code>package.json</code>示例如下：</p><pre class="line-numbers language-none"><code class="language-none">&#123;  &quot;scripts&quot;: &#123;    &quot;predev&quot;: &quot;nvs use 16&quot;,    &quot;dev&quot;: &quot;vue-cli-service serve&quot;    &quot;prebuild&quot;: &quot;nvs use 16&quot;,    &quot;dev&quot;: &quot;vue-cli-service build&quot;  &#125;&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>这样你每次启动或者打包项目的之前，都会先执行 pre 开头的 script，然后在执行你当前执行的命令。</p>]]></content>
       
       
       <categories>
@@ -963,12 +949,6 @@
             
             <tag> 防火墙 </tag>
             
-            <tag> iptables </tag>
-            
-            <tag> firewall </tag>
-            
-            <tag> 系统管理 </tag>
-            
         </tags>
       
     </entry>
@@ -1048,8 +1028,6 @@
       
         <tags>
             
-            <tag> Markdown </tag>
-            
             <tag> Typora </tag>
             
             <tag> 图片上传 </tag>
@@ -1080,14 +1058,6 @@
         <tags>
             
             <tag> VSCode </tag>
-            
-            <tag> Python </tag>
-            
-            <tag> Jupyter </tag>
-            
-            <tag> Pylance </tag>
-            
-            <tag> IntelliCode </tag>
             
         </tags>
       
@@ -1224,10 +1194,6 @@
             
             <tag> 自我提升 </tag>
             
-            <tag> 面试准备 </tag>
-            
-            <tag> 思维拓展 </tag>
-            
         </tags>
       
     </entry>
@@ -1363,8 +1329,6 @@
       
         <tags>
             
-            <tag> 分布式 </tag>
-            
             <tag> ZooKeeper </tag>
             
             <tag> 服务注册 </tag>
@@ -1395,8 +1359,6 @@
         <tags>
             
             <tag> Zookeeper </tag>
-            
-            <tag> 分布式 </tag>
             
             <tag> 配置管理 </tag>
             
@@ -1465,7 +1427,7 @@
     
     
     <entry>
-      <title>Markdown中的LaTeX公式指南</title>
+      <title>Markdown LaTeX公式指南</title>
       <link href="/20250919050557.html"/>
       <url>/20250919050557.html</url>
       
@@ -1485,8 +1447,6 @@
             
             <tag> LaTeX </tag>
             
-            <tag> 数学公式 </tag>
-            
         </tags>
       
     </entry>
@@ -1494,7 +1454,7 @@
     
     
     <entry>
-      <title>Markdown LaTeX公式指南</title>
+      <title>Markdown中的LaTeX公式指南</title>
       <link href="/20250919050557.html"/>
       <url>/20250919050557.html</url>
       
@@ -1577,13 +1537,29 @@
     
     
     <entry>
-      <title>CentOS虚拟机配置指南</title>
+      <title>VMware 虚拟机设置</title>
       <link href="/20250128114024.html"/>
       <url>/20250128114024.html</url>
       
         <content type="html"><![CDATA[<h2 id="镜像下载"><a href="#镜像下载" class="headerlink" title="镜像下载"></a>镜像下载</h2><p>华为云镜像下载CentOS镜像，镜像使用 CentOS-7-x86_64-Minimal-2207-02.iso<br><a href="https://repo.huaweicloud.com/centos/7/isos/x86_64/">镜像下载</a></p><h2 id="VMware创建虚拟机"><a href="#VMware创建虚拟机" class="headerlink" title="VMware创建虚拟机"></a>VMware创建虚拟机</h2><p>版本：VMware® Workstation 16 Pro</p><p>步骤忽略，选中镜像，一直点击下一步就可以</p><h2 id="设置固定IP"><a href="#设置固定IP" class="headerlink" title="设置固定IP"></a>设置固定IP</h2><h3 id="虚拟机网络连接方式"><a href="#虚拟机网络连接方式" class="headerlink" title="虚拟机网络连接方式"></a>虚拟机网络连接方式</h3><p><img src="../Assets/file-20260331194413687.png" alt="file-20260331194413687.png"></p><h3 id="配置虚拟机的NAT模式具体地址参数"><a href="#配置虚拟机的NAT模式具体地址参数" class="headerlink" title="配置虚拟机的NAT模式具体地址参数"></a><strong>配置虚拟机的NAT模式具体地址参数</strong></h3><p><img src="../Assets/file-20260331194413687%201.png" alt="file-20260331194413687 1.png"></p><p>选择VMnet8–取消勾选使用本地DHCP–设置子网IP–网关IP设置（记住此处设置，后面要用到），如下图</p><p><img src="../Assets/file-20260331194413688.png" alt="file-20260331194413688.png"></p><p>说明：修改子网IP设置，实现自由设置固定IP，IP网段最后一位0-255，子网IP占用一位，网关IP占用一位，剩余的都可以自由分配</p><p>若你想设置固定IP为192.168.2.2-255，比如192.168.2.2，则子网IP为192.168.2.0； </p><p>若你想设置固定IP为192.168.1.2-255，比如192.168.1.2，则子网IP为192.168.1.0； </p><p>也就是说，你想配置成哪个网段，IP地址最后那位为0即可。</p><p>记录一下上面的网关地址，虚拟机中设置固定IP时需要用到，这里的网关IP也可以自行设置，只要网段一致即可。</p><p><img src="../Assets/file-20260331194413689.png" alt="file-20260331194413689.png"></p><h3 id="配置电脑具体VMnet8本地地址参数"><a href="#配置电脑具体VMnet8本地地址参数" class="headerlink" title="配置电脑具体VMnet8本地地址参数"></a><strong>配置电脑具体VMnet8本地地址参数</strong></h3><p>会自动配置VMnet8的IP以及子网掩码，此处记录一下需要知晓本地电脑在局域网的IP</p><p><img src="../Assets/file-20260331194413690.png" alt="file-20260331194413690.png"></p><h3 id="虚拟机设置固定IP"><a href="#虚拟机设置固定IP" class="headerlink" title="虚拟机设置固定IP"></a>虚拟机设置固定IP</h3><h4 id="编辑网络"><a href="#编辑网络" class="headerlink" title="编辑网络"></a>编辑网络</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">cd</span> /etc/sysconfig/network-scripts<span class="token function">ls</span><span class="token function">vi</span> ifconfig-ens33<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><p><img src="../Assets/file-20260331194413690%201.png" alt="file-20260331194413690 1.png"></p><p><img src="../Assets/file-20260331194413691.png" alt="file-20260331194413691.png"></p><p>说明：</p><pre class="line-numbers language-text" data-language="text"><code class="language-text">BOOTPROTO=static        #网络配置，设置为静态IP，有dhcp及staticONBOOT=yes              #设置为开机启动DNS1=114.114.114.114    #这个是国内的DNS地址，是固定的IPADDR=192.168.2.3      #你想要设置的固定IP，除VMware配置的子网IP、网关IP以及VMnet8设置的3个IP外，同网段 0-255之间都可以，自行设置NETMASK=255.255.255.0   #子网掩码GATEWAY=192.168.2.2     #网关IPork restart<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>重启网络服务</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">service</span> network restart<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h4 id="验证"><a href="#验证" class="headerlink" title="验证"></a>验证</h4><p>查看linux中的ip地址</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">ip</span> addr<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p><img src="../Assets/file-20260331194413692.png" alt="file-20260331194413692.png"></p><p>访问互联网，是否能正常访问</p><pre class="line-numbers language-text" data-language="text"><code class="language-text">ping www.baidu.com<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>实体机访问虚拟机IP，是否能正常访问</p><pre class="line-numbers language-none"><code class="language-none">ping 192.168.2.2<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h2 id="设置yum源为阿里云"><a href="#设置yum源为阿里云" class="headerlink" title="设置yum源为阿里云"></a>设置yum源为阿里云</h2><p>下载阿里云CentOS 7的文件，替换虚拟机中的 /etc/yum.repos.d/CentOS-Base.repo 文件内容</p><p>或者直接使用wget下载文件直接进行替换</p><pre class="line-numbers language-text" data-language="text"><code class="language-text">[root@localhost ~]# cd /etc/yum.repos.d## 备份原文件[root@localhost ~]# mv CentOS-Base.repo CentOS-Base_bak.repo## 下载阿里云的镜像描述文件[root@localhost ~]# wget https://mirrors.aliyun.com/repo/Centos-7.repo -O CentOS-Base.repo<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>执行以下命令</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">yum clean all yum makecache yum update <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><h2 id="关闭防火墙"><a href="#关闭防火墙" class="headerlink" title="关闭防火墙"></a>关闭防火墙</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment">## 停止防火墙服务</span><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># systemctl stop firewalld.service</span><span class="token comment">## 查看防火墙服务状态</span><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># systemctl status firewalld.service</span><span class="token comment">## 永久关闭防火墙服务</span><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># systemctl disable firewalld.service</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
       
       
+      <categories>
+          
+          <category> 技术教程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 虚拟机 </tag>
+            
+            <tag> CentOS </tag>
+            
+            <tag> 网络配置 </tag>
+            
+        </tags>
       
     </entry>
     
