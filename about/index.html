@@ -29,7 +29,136 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<!-- hexo injector head_end start --><link rel="stylesheet" href="/css/obsidian-callout.css"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="暮色之狐" type="application/atom+xml">
+<!-- hexo injector head_end start -->
+<style>
+.obsidian-tabs {
+  margin: 1.5em 0;
+  border: 1px solid var(--tab-border-color, #e0e0e0);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--tab-bg, #fafafa);
+}
+
+.obsidian-tabs-nav {
+  display: flex;
+  background: var(--tab-nav-bg, #f0f0f0);
+  border-bottom: 1px solid var(--tab-border-color, #e0e0e0);
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.obsidian-tabs-nav::-webkit-scrollbar {
+  display: none;
+}
+
+.obsidian-tab-btn {
+  padding: 12px 20px;
+  border: none;
+  background: transparent;
+  color: var(--tab-text-color, #666);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+}
+
+.obsidian-tab-btn:hover {
+  color: var(--tab-hover-color, #333);
+  background: var(--tab-hover-bg, rgba(0,0,0,0.03));
+}
+
+.obsidian-tab-btn.active {
+  color: var(--tab-active-color, #448aff);
+  border-bottom-color: var(--tab-active-color, #448aff);
+  background: var(--tab-bg, #fafafa);
+}
+
+.obsidian-tabs-content {
+  padding: 20px;
+  background: var(--tab-bg, #fafafa);
+}
+
+.obsidian-tab-panel {
+  display: none;
+  animation: fadeIn 0.3s ease;
+}
+
+.obsidian-tab-panel.active {
+  display: block;
+}
+
+.obsidian-tab-panel > *:first-child {
+  margin-top: 0;
+}
+
+.obsidian-tab-panel > *:last-child {
+  margin-bottom: 0;
+}
+
+.obsidian-tab-panel pre {
+  margin: 1em 0;
+  border-radius: 6px;
+}
+
+.obsidian-tab-panel code {
+  font-family: 'SF Mono', Monaco, 'Cascadia Code', monospace;
+}
+
+/* Fix code block background color inside tabs */
+.obsidian-tab-panel pre code {
+  background: transparent !important;
+}
+
+.obsidian-tab-panel .highlight {
+  background: transparent !important;
+}
+
+.obsidian-tab-panel .highlight pre {
+  background: var(--code-bg, #f5f5f5) !important;
+}
+
+.obsidian-tab-panel figure.highlight {
+  background: var(--code-bg, #f5f5f5) !important;
+}
+
+.obsidian-tab-panel td.gutter {
+  background: var(--code-gutter-bg, #f0f0f0) !important;
+}
+
+.obsidian-tab-panel td.code {
+  background: var(--code-bg, #f5f5f5) !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  .obsidian-tab-panel .highlight pre,
+  .obsidian-tab-panel figure.highlight {
+    --code-bg: #2d2d2d;
+    --code-gutter-bg: #252525;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .obsidian-tabs {
+    --tab-bg: #1e1e1e;
+    --tab-nav-bg: #252526;
+    --tab-border-color: #333;
+    --tab-text-color: #999;
+    --tab-hover-color: #ccc;
+    --tab-hover-bg: rgba(255,255,255,0.05);
+    --tab-active-color: #58a6ff;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+</style>
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="暮色之狐" type="application/atom+xml">
 </head>
 
 
@@ -891,18 +1020,6 @@
             
             
             
-            <a href="/tags/Linux/">
-                <span class="chip center-align waves-effect waves-light chip-default">Linux</span>
-            </a>
-            
-            
-            
-            <a href="/tags/%E9%98%B2%E7%81%AB%E5%A2%99/">
-                <span class="chip center-align waves-effect waves-light chip-default">防火墙</span>
-            </a>
-            
-            
-            
             <a href="/tags/%E6%BF%80%E6%B4%BB/">
                 <span class="chip center-align waves-effect waves-light chip-default">激活</span>
             </a>
@@ -911,6 +1028,18 @@
             
             <a href="/tags/IDEA/">
                 <span class="chip center-align waves-effect waves-light chip-default">IDEA</span>
+            </a>
+            
+            
+            
+            <a href="/tags/Linux/">
+                <span class="chip center-align waves-effect waves-light chip-default">Linux</span>
+            </a>
+            
+            
+            
+            <a href="/tags/%E9%98%B2%E7%81%AB%E5%A2%99/">
+                <span class="chip center-align waves-effect waves-light chip-default">防火墙</span>
             </a>
             
             
@@ -941,6 +1070,12 @@
             
             <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">
                 <span class="chip center-align waves-effect waves-light chip-default">博客搭建</span>
+            </a>
+            
+            
+            
+            <a href="/tags/GitHub/">
+                <span class="chip center-align waves-effect waves-light chip-default">GitHub</span>
             </a>
             
             
@@ -1027,8 +1162,14 @@
             
             
             
-            <a href="/tags/GitHub/">
-                <span class="chip center-align waves-effect waves-light chip-default">GitHub</span>
+            <a href="/tags/Ubuntu/">
+                <span class="chip center-align waves-effect waves-light chip-default">Ubuntu</span>
+            </a>
+            
+            
+            
+            <a href="/tags/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/">
+                <span class="chip center-align waves-effect waves-light chip-default">技术教程</span>
             </a>
             
             
@@ -1039,20 +1180,26 @@
             
             
             
-            <a href="/tags/Ubuntu/">
-                <span class="chip center-align waves-effect waves-light chip-default">Ubuntu</span>
-            </a>
-            
-            
-            
             <a href="/tags/%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/">
                 <span class="chip center-align waves-effect waves-light chip-default">安装教程</span>
             </a>
             
             
             
-            <a href="/tags/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/">
-                <span class="chip center-align waves-effect waves-light chip-default">技术教程</span>
+            <a href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/">
+                <span class="chip center-align waves-effect waves-light chip-default">虚拟机</span>
+            </a>
+            
+            
+            
+            <a href="/tags/CentOS/">
+                <span class="chip center-align waves-effect waves-light chip-default">CentOS</span>
+            </a>
+            
+            
+            
+            <a href="/tags/%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/">
+                <span class="chip center-align waves-effect waves-light chip-default">网络配置</span>
             </a>
             
             
@@ -1093,14 +1240,14 @@
             
             
             
-            <a href="/tags/%E5%88%86%E5%B8%83%E5%BC%8F/">
-                <span class="chip center-align waves-effect waves-light chip-default">分布式</span>
+            <a href="/tags/Zookeeper/">
+                <span class="chip center-align waves-effect waves-light chip-default">Zookeeper</span>
             </a>
             
             
             
-            <a href="/tags/Zookeeper/">
-                <span class="chip center-align waves-effect waves-light chip-default">Zookeeper</span>
+            <a href="/tags/%E5%88%86%E5%B8%83%E5%BC%8F/">
+                <span class="chip center-align waves-effect waves-light chip-default">分布式</span>
             </a>
             
             
@@ -1159,12 +1306,6 @@
             
             
             
-            <a href="/tags/Java%E8%BF%9B%E7%A8%8B/">
-                <span class="chip center-align waves-effect waves-light chip-default">Java进程</span>
-            </a>
-            
-            
-            
             <a href="/tags/npm/">
                 <span class="chip center-align waves-effect waves-light chip-default">npm</span>
             </a>
@@ -1179,6 +1320,12 @@
             
             <a href="/tags/Node-js/">
                 <span class="chip center-align waves-effect waves-light chip-default">Node.js</span>
+            </a>
+            
+            
+            
+            <a href="/tags/Java%E8%BF%9B%E7%A8%8B/">
+                <span class="chip center-align waves-effect waves-light chip-default">Java进程</span>
             </a>
             
             
@@ -1261,6 +1408,24 @@
             
             
             
+            <a href="/tags/%E8%81%8C%E4%B8%9A%E5%8F%91%E5%B1%95/">
+                <span class="chip center-align waves-effect waves-light chip-default">职业发展</span>
+            </a>
+            
+            
+            
+            <a href="/tags/%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0/">
+                <span class="chip center-align waves-effect waves-light chip-default">技术学习</span>
+            </a>
+            
+            
+            
+            <a href="/tags/%E8%87%AA%E6%88%91%E6%8F%90%E5%8D%87/">
+                <span class="chip center-align waves-effect waves-light chip-default">自我提升</span>
+            </a>
+            
+            
+            
             <a href="/tags/%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2/">
                 <span class="chip center-align waves-effect waves-light chip-default">进制转换</span>
             </a>
@@ -1293,24 +1458,6 @@
             
             <a href="/tags/%E7%BC%96%E7%A0%81%E8%A7%84%E8%8C%83/">
                 <span class="chip center-align waves-effect waves-light chip-default">编码规范</span>
-            </a>
-            
-            
-            
-            <a href="/tags/%E8%81%8C%E4%B8%9A%E5%8F%91%E5%B1%95/">
-                <span class="chip center-align waves-effect waves-light chip-default">职业发展</span>
-            </a>
-            
-            
-            
-            <a href="/tags/%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0/">
-                <span class="chip center-align waves-effect waves-light chip-default">技术学习</span>
-            </a>
-            
-            
-            
-            <a href="/tags/%E8%87%AA%E6%88%91%E6%8F%90%E5%8D%87/">
-                <span class="chip center-align waves-effect waves-light chip-default">自我提升</span>
             </a>
             
             
@@ -1417,8 +1564,26 @@
             
             
             
+            <a href="/tags/Nginx/">
+                <span class="chip center-align waves-effect waves-light chip-default">Nginx</span>
+            </a>
+            
+            
+            
+            <a href="/tags/HTTPS/">
+                <span class="chip center-align waves-effect waves-light chip-default">HTTPS</span>
+            </a>
+            
+            
+            
             <a href="/tags/%E4%BE%9D%E8%B5%96%E7%AE%A1%E7%90%86/">
                 <span class="chip center-align waves-effect waves-light chip-default">依赖管理</span>
+            </a>
+            
+            
+            
+            <a href="/tags/SOLID/">
+                <span class="chip center-align waves-effect waves-light chip-default">SOLID</span>
             </a>
             
             
@@ -1437,42 +1602,6 @@
             
             <a href="/tags/%E5%A4%9A%E8%B7%AF%E5%A4%8D%E7%94%A8/">
                 <span class="chip center-align waves-effect waves-light chip-default">多路复用</span>
-            </a>
-            
-            
-            
-            <a href="/tags/SOLID/">
-                <span class="chip center-align waves-effect waves-light chip-default">SOLID</span>
-            </a>
-            
-            
-            
-            <a href="/tags/Nginx/">
-                <span class="chip center-align waves-effect waves-light chip-default">Nginx</span>
-            </a>
-            
-            
-            
-            <a href="/tags/HTTPS/">
-                <span class="chip center-align waves-effect waves-light chip-default">HTTPS</span>
-            </a>
-            
-            
-            
-            <a href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/">
-                <span class="chip center-align waves-effect waves-light chip-default">虚拟机</span>
-            </a>
-            
-            
-            
-            <a href="/tags/CentOS/">
-                <span class="chip center-align waves-effect waves-light chip-default">CentOS</span>
-            </a>
-            
-            
-            
-            <a href="/tags/%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/">
-                <span class="chip center-align waves-effect waves-light chip-default">网络配置</span>
             </a>
             
             
@@ -1508,7 +1637,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;&nbsp;<span
-                class="white-color">86.1k</span>&nbsp;字
+                class="white-color">86k</span>&nbsp;字
             
             
             
@@ -1775,6 +1904,27 @@ $(function () {
     <script src="/libs/instantpage/instantpage.js" type="module"></script>
     
 
-<!-- hexo injector body_end start --><script src="/js/obsidian-callout.js"></script><!-- hexo injector body_end end --></body>
+<!-- hexo injector body_end start -->
+<script>
+(function() {
+  document.querySelectorAll('.obsidian-tab-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var tabsContainer = this.closest('.obsidian-tabs');
+      var tabId = this.getAttribute('data-tab');
+
+      tabsContainer.querySelectorAll('.obsidian-tab-btn').forEach(function(b) {
+        b.classList.remove('active');
+      });
+      tabsContainer.querySelectorAll('.obsidian-tab-panel').forEach(function(p) {
+        p.classList.remove('active');
+      });
+
+      this.classList.add('active');
+      document.getElementById(tabId).classList.add('active');
+    });
+  });
+})();
+</script>
+<!-- hexo injector body_end end --></body>
 
 </html>
