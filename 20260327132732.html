@@ -29,7 +29,7 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="暮色之狐" type="application/atom+xml">
+<!-- hexo injector head_end start --><link rel="stylesheet" href="/css/obsidian-callout.css"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="暮色之狐" type="application/atom+xml">
 </head>
 
 
@@ -522,9 +522,17 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <blockquote>
-<p>[!tip]<br>这是Claude Code通关手册的第一篇。本系列将带你从零开始，系统掌握Claude Code的完整知识体系，从CLI命令到自动化工作流，从个人使用到团队协作。</p>
-</blockquote>
+                <div class="callout" data-callout="tip">
+<div class="callout-title">
+<div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-2.072-2.143-3-5-1.5 2.5-2 4-2 6.5a5.5 5.5 0 0 0 2.5 4.5Z"/><path d="M12.5 17.5a2.5 2.5 0 0 0 2.5-2.5c0-1.38-.5-2-1-3-1.072-2.143-2.072-2.143-3-5-1.5 2.5-2 4-2 6.5a5.5 5.5 0 0 0 2.5 4.5Z"/></svg></div>
+<div class="callout-title-inner">Tip</div>
+
+</div>
+<div class="callout-content">
+这是Claude Code通关手册的第一篇。本系列将带你从零开始，系统掌握Claude Code的完整知识体系，从CLI命令到自动化工作流，从个人使用到团队协作。
+</div>
+</div>
+
 <p>AI发展如火如荼，你可能已经在使用各种AI编程工具。每天打开编辑器，自动补全代码、生成测试用例，或协助编写需求代码。在编辑器中与AI交互，通过不断修改完善，工作效率得到显著提升。</p>
 <p>然而，大名鼎鼎的Claude Code安装完成后，仅呈现为一个简单的命令终端。这个看似简陋的终端工具中，却蕴藏着一套与其他工具截然不同的AI编程哲学。</p>
 <p>今天这篇文章，我不会铺天盖地讲解其功能列表，而是带你搞清楚三件事：Claude Code的具体价值、快速安装并运行Claude Code，以及它为何能火遍全网，让人爱不释手？</p>
@@ -547,9 +555,17 @@
 <li>可集成：将其放入GitHub Actions、Jenkins、CI/CD流水线，PR一提交就自动触发AI审查。</li>
 <li>可拓展：通过子代理、MCP协议、Hooks、Plugins，让它连接Jira、数据库、Slack——从一个工具长成一个平台。</li>
 </ul>
-<h2 id="使用Claude-Code"><a href="#使用Claude-Code" class="headerlink" title="使用Claude Code"></a>使用Claude Code</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><blockquote>
-<p>[!warning]<br><strong>2026年2月</strong> Anthropic官方已经将npm安装标记为<strong>废弃（deprecated）</strong>，推荐使用原生安装器。原生安装器不依赖Node.js，启动更快，自动更新。</p>
-</blockquote>
+<h2 id="使用Claude-Code"><a href="#使用Claude-Code" class="headerlink" title="使用Claude Code"></a>使用Claude Code</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><div class="callout" data-callout="warning">
+<div class="callout-title">
+<div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg></div>
+<div class="callout-title-inner">Warning</div>
+
+</div>
+<div class="callout-content">
+**2026年2月** Anthropic官方已经将npm安装标记为**废弃（deprecated）**，推荐使用原生安装器。原生安装器不依赖Node.js，启动更快，自动更新。
+</div>
+</div>
+
 <p>要安装Claude Code，请使用以下方法之一：</p>
 <pre class="line-numbers language-tabs" data-language="tabs"><code class="language-tabs">
 tab: 原生安装（推荐）
@@ -1429,6 +1445,6 @@ $(function () {
     <script src="/libs/instantpage/instantpage.js" type="module"></script>
     
 
-</body>
+<!-- hexo injector body_end start --><script src="/js/obsidian-callout.js"></script><!-- hexo injector body_end end --></body>
 
 </html>

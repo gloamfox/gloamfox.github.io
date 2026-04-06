@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="文件系统,监听通知机制,分布式锁,配置管理,命名服务">
+    <meta name="keywords" content="Zookeeper,分布式系统,znode,监听机制,分布式锁,集群管理,服务发现,配置管理,命名服务">
     <meta name="description" content="君子以顺德，积小以高大。">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Zookeeper 分布式服务框架详解 | 暮色之狐</title>
+    <title>Zookeeper分布式服务框架 | 暮色之狐</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -29,7 +29,7 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="暮色之狐" type="application/atom+xml">
+<!-- hexo injector head_end start --><link rel="stylesheet" href="/css/obsidian-callout.css"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="暮色之狐" type="application/atom+xml">
 </head>
 
 
@@ -333,12 +333,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Zookeeper 分布式服务框架详解</h1>
+                    <h1 class="description center-align post-title">Zookeeper分布式服务框架</h1>
                 </div>
             </div>
         </div>
@@ -454,16 +454,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Zookeeper/">
-                                <span class="chip bg-color">Zookeeper</span>
-                            </a>
-                        
                             <a href="/tags/%E5%88%86%E5%B8%83%E5%BC%8F/">
                                 <span class="chip bg-color">分布式</span>
                             </a>
                         
-                            <a href="/tags/%E9%9B%86%E7%BE%A4%E7%AE%A1%E7%90%86/">
-                                <span class="chip bg-color">集群管理</span>
+                            <a href="/tags/Zookeeper/">
+                                <span class="chip bg-color">Zookeeper</span>
                             </a>
                         
                     </div>
@@ -474,8 +470,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84/" class="post-category">
-                                技术架构
+                            <a href="/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/" class="post-category">
+                                技术教程
                             </a>
                         
                     </div>
@@ -624,16 +620,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Zookeeper/">
-                                    <span class="chip bg-color">Zookeeper</span>
-                                </a>
-                            
                                 <a href="/tags/%E5%88%86%E5%B8%83%E5%BC%8F/">
                                     <span class="chip bg-color">分布式</span>
                                 </a>
                             
-                                <a href="/tags/%E9%9B%86%E7%BE%A4%E7%AE%A1%E7%90%86/">
-                                    <span class="chip bg-color">集群管理</span>
+                                <a href="/tags/Zookeeper/">
+                                    <span class="chip bg-color">Zookeeper</span>
                                 </a>
                             
                         </div>
@@ -811,15 +803,15 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" >
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" >
                         
-                        <span class="card-title">Zookeeper分布式服务框架</span>
+                        <span class="card-title">Zookeeper 分布式服务框架详解</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Zookeeper是Apache Hadoop的子项目，主要用于解决分布式应用中的数据管理问题。本文详细介绍了Zookeeper的系统原理，包括文件系统(四种znode类型)和监听通知机制，并阐述了其在配置管理、命名服务、分布式锁和集群管理等方面的应用。此外，还探讨了Zookeeper的设计目的和集群中的三种角色：领导者、跟随者和观察者。
+                            通过文件系统和监听通知机制解决分布式应用中的数据管理问题。
                         
                     </div>
                     <div class="publish-info">
@@ -830,8 +822,8 @@
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/" class="post-category">
-                                    技术教程
+                            <a href="/categories/%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84/" class="post-category">
+                                    技术架构
                                 </a>
                             
                             
@@ -841,12 +833,16 @@
                 
                 <div class="card-action article-tags">
                     
+                    <a href="/tags/%E5%88%86%E5%B8%83%E5%BC%8F/">
+                        <span class="chip bg-color">分布式</span>
+                    </a>
+                    
                     <a href="/tags/Zookeeper/">
                         <span class="chip bg-color">Zookeeper</span>
                     </a>
                     
-                    <a href="/tags/%E5%88%86%E5%B8%83%E5%BC%8F/">
-                        <span class="chip bg-color">分布式</span>
+                    <a href="/tags/%E9%9B%86%E7%BE%A4%E7%AE%A1%E7%90%86/">
+                        <span class="chip bg-color">集群管理</span>
                     </a>
                     
                 </div>
@@ -1320,6 +1316,6 @@ $(function () {
     <script src="/libs/instantpage/instantpage.js" type="module"></script>
     
 
-</body>
+<!-- hexo injector body_end start --><script src="/js/obsidian-callout.js"></script><!-- hexo injector body_end end --></body>
 
 </html>
