@@ -31,6 +31,135 @@
 
 <!-- hexo injector head_end start -->
 <style>
+.obsidian-tabs {
+  margin: 1.5em 0;
+  border: 1px solid var(--tab-border-color, #e0e0e0);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--tab-bg, #fafafa);
+}
+
+.obsidian-tabs-nav {
+  display: flex;
+  background: var(--tab-nav-bg, #f0f0f0);
+  border-bottom: 1px solid var(--tab-border-color, #e0e0e0);
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.obsidian-tabs-nav::-webkit-scrollbar {
+  display: none;
+}
+
+.obsidian-tab-btn {
+  padding: 12px 20px;
+  border: none;
+  background: transparent;
+  color: var(--tab-text-color, #666);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+}
+
+.obsidian-tab-btn:hover {
+  color: var(--tab-hover-color, #333);
+  background: var(--tab-hover-bg, rgba(0,0,0,0.03));
+}
+
+.obsidian-tab-btn.active {
+  color: var(--tab-active-color, #448aff);
+  border-bottom-color: var(--tab-active-color, #448aff);
+  background: var(--tab-bg, #fafafa);
+}
+
+.obsidian-tabs-content {
+  padding: 20px;
+  background: var(--tab-bg, #fafafa);
+}
+
+.obsidian-tab-panel {
+  display: none;
+  animation: fadeIn 0.3s ease;
+}
+
+.obsidian-tab-panel.active {
+  display: block;
+}
+
+.obsidian-tab-panel > *:first-child {
+  margin-top: 0;
+}
+
+.obsidian-tab-panel > *:last-child {
+  margin-bottom: 0;
+}
+
+.obsidian-tab-panel pre {
+  margin: 1em 0;
+  border-radius: 6px;
+}
+
+.obsidian-tab-panel code {
+  font-family: 'SF Mono', Monaco, 'Cascadia Code', monospace;
+}
+
+/* Fix code block background color inside tabs */
+.obsidian-tab-panel pre code {
+  background: transparent !important;
+}
+
+.obsidian-tab-panel .highlight {
+  background: transparent !important;
+}
+
+.obsidian-tab-panel .highlight pre {
+  background: var(--code-bg, #f5f5f5) !important;
+}
+
+.obsidian-tab-panel figure.highlight {
+  background: var(--code-bg, #f5f5f5) !important;
+}
+
+.obsidian-tab-panel td.gutter {
+  background: var(--code-gutter-bg, #f0f0f0) !important;
+}
+
+.obsidian-tab-panel td.code {
+  background: var(--code-bg, #f5f5f5) !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  .obsidian-tab-panel .highlight pre,
+  .obsidian-tab-panel figure.highlight {
+    --code-bg: #2d2d2d;
+    --code-gutter-bg: #252525;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .obsidian-tabs {
+    --tab-bg: #1e1e1e;
+    --tab-nav-bg: #252526;
+    --tab-border-color: #333;
+    --tab-text-color: #999;
+    --tab-hover-color: #ccc;
+    --tab-hover-bg: rgba(255,255,255,0.05);
+    --tab-active-color: #58a6ff;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+</style>
+
+<style>
 .obsidian-callout {
   margin: 1.5em 0;
   border-radius: 8px;
@@ -235,135 +364,6 @@
   .obsidian-callout-content code {
     background: rgba(255,255,255,0.1);
   }
-}
-</style>
-
-<style>
-.obsidian-tabs {
-  margin: 1.5em 0;
-  border: 1px solid var(--tab-border-color, #e0e0e0);
-  border-radius: 8px;
-  overflow: hidden;
-  background: var(--tab-bg, #fafafa);
-}
-
-.obsidian-tabs-nav {
-  display: flex;
-  background: var(--tab-nav-bg, #f0f0f0);
-  border-bottom: 1px solid var(--tab-border-color, #e0e0e0);
-  overflow-x: auto;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-
-.obsidian-tabs-nav::-webkit-scrollbar {
-  display: none;
-}
-
-.obsidian-tab-btn {
-  padding: 12px 20px;
-  border: none;
-  background: transparent;
-  color: var(--tab-text-color, #666);
-  font-size: 14px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  white-space: nowrap;
-  border-bottom: 2px solid transparent;
-  margin-bottom: -1px;
-}
-
-.obsidian-tab-btn:hover {
-  color: var(--tab-hover-color, #333);
-  background: var(--tab-hover-bg, rgba(0,0,0,0.03));
-}
-
-.obsidian-tab-btn.active {
-  color: var(--tab-active-color, #448aff);
-  border-bottom-color: var(--tab-active-color, #448aff);
-  background: var(--tab-bg, #fafafa);
-}
-
-.obsidian-tabs-content {
-  padding: 20px;
-  background: var(--tab-bg, #fafafa);
-}
-
-.obsidian-tab-panel {
-  display: none;
-  animation: fadeIn 0.3s ease;
-}
-
-.obsidian-tab-panel.active {
-  display: block;
-}
-
-.obsidian-tab-panel > *:first-child {
-  margin-top: 0;
-}
-
-.obsidian-tab-panel > *:last-child {
-  margin-bottom: 0;
-}
-
-.obsidian-tab-panel pre {
-  margin: 1em 0;
-  border-radius: 6px;
-}
-
-.obsidian-tab-panel code {
-  font-family: 'SF Mono', Monaco, 'Cascadia Code', monospace;
-}
-
-/* Fix code block background color inside tabs */
-.obsidian-tab-panel pre code {
-  background: transparent !important;
-}
-
-.obsidian-tab-panel .highlight {
-  background: transparent !important;
-}
-
-.obsidian-tab-panel .highlight pre {
-  background: var(--code-bg, #f5f5f5) !important;
-}
-
-.obsidian-tab-panel figure.highlight {
-  background: var(--code-bg, #f5f5f5) !important;
-}
-
-.obsidian-tab-panel td.gutter {
-  background: var(--code-gutter-bg, #f0f0f0) !important;
-}
-
-.obsidian-tab-panel td.code {
-  background: var(--code-bg, #f5f5f5) !important;
-}
-
-@media (prefers-color-scheme: dark) {
-  .obsidian-tab-panel .highlight pre,
-  .obsidian-tab-panel figure.highlight {
-    --code-bg: #2d2d2d;
-    --code-gutter-bg: #252525;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  .obsidian-tabs {
-    --tab-bg: #1e1e1e;
-    --tab-nav-bg: #252526;
-    --tab-border-color: #333;
-    --tab-text-color: #999;
-    --tab-hover-color: #ccc;
-    --tab-hover-bg: rgba(255,255,255,0.05);
-    --tab-active-color: #58a6ff;
-  }
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(5px); }
-  to { opacity: 1; transform: translateY(0); }
 }
 </style>
 <!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="暮色之狐" type="application/atom+xml">
@@ -829,7 +829,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    998
+                    1k
                 </div>
                 
 
@@ -878,11 +878,12 @@
 <h3 id="链接不规范"><a href="#链接不规范" class="headerlink" title="链接不规范"></a>链接不规范</h3><p>默认链接带日期、中文、乱码，既不美观也不利于搜索引擎。</p>
 <p>解决方案：✅<a href="https://gloamfox.github.io/20260324094537.html">Hexo永久链接最佳实践：终极方案与优化指南</a></p>
 <h3 id="永久链接导致搜索失效"><a href="#永久链接导致搜索失效" class="headerlink" title="永久链接导致搜索失效"></a>永久链接导致搜索失效</h3><p>url设置永久链接后导致搜索跳转失效 404<br>解决方案：✅<a href="https://gloamfox.github.io/20260324145235.html">Hexo 搜索跳转失效？一招解决链接域名丢失问题</a></p>
-<h3 id="图片优化：从加载慢到极致轻量化"><a href="#图片优化：从加载慢到极致轻量化" class="headerlink" title="图片优化：从加载慢到极致轻量化"></a>图片优化：从加载慢到极致轻量化</h3><p>图片是博客最影响速度的部分，也是坑最多的环节。</p>
-<h4 id="图片默认-alt-属性冗余、影响美观"><a href="#图片默认-alt-属性冗余、影响美观" class="headerlink" title="图片默认 alt 属性冗余、影响美观"></a>图片默认 alt 属性冗余、影响美观</h4><p>Hexo 会自动生成图片 alt 文本，样式突兀、影响阅读体验。</p>
+<h3 id="标注语法失效"><a href="#标注语法失效" class="headerlink" title="标注语法失效"></a>标注语法失效</h3><p>Obsidian中的标注语法，无法正常展示<br>解决方案：✅<a href="./Hexo%E6%8F%92%E4%BB%B6%EF%BC%9AObsidian%E6%A0%87%E6%B3%A8%E8%AF%AD%E6%B3%95%E5%85%BC%E5%AE%B9.md">Hexo插件：Obsidian标注语法兼容</a></p>
+<h3 id="tabs语法失效"><a href="#tabs语法失效" class="headerlink" title="tabs语法失效"></a>tabs语法失效</h3><p>Obsidian中的<code>tabs</code>语法失效，无法正常展示<br>解决方案：✅<a href="https://gloamfox.github.io/20260407134731.html">Obsidian Tabs Hexo插件</a></p>
+<h3 id="图片默认-alt-属性冗余、影响美观"><a href="#图片默认-alt-属性冗余、影响美观" class="headerlink" title="图片默认 alt 属性冗余、影响美观"></a>图片默认 alt 属性冗余、影响美观</h3><p>Hexo 会自动生成图片 alt 文本，样式突兀、影响阅读体验。</p>
 <p>解决方案：✅<a href="https://gloamfox.github.io/20260319105942.html">Hexo移除图片默认 alt 属性</a></p>
 <p>一键去掉默认 alt，保持界面清爽。</p>
-<h4 id="图片体积大、加载慢、耗流量"><a href="#图片体积大、加载慢、耗流量" class="headerlink" title="图片体积大、加载慢、耗流量"></a>图片体积大、加载慢、耗流量</h4><p>直接上传 Obsidian 原图，页面打开又卡又慢。</p>
+<h3 id="图片体积大、加载慢、耗流量"><a href="#图片体积大、加载慢、耗流量" class="headerlink" title="图片体积大、加载慢、耗流量"></a>图片体积大、加载慢、耗流量</h3><p>直接上传 Obsidian 原图，页面打开又卡又慢。</p>
 <p>解决方案：✅<a href="https://gloamfox.github.io/20260323060238.html">图片压缩与格式优化指南</a></p>
 <p>批量压缩、WebP 格式替换、自适应图片，速度提升数倍。</p>
 <h3 id="发布与加速"><a href="#发布与加速" class="headerlink" title="发布与加速"></a>发布与加速</h3><h4 id="CDN"><a href="#CDN" class="headerlink" title="CDN"></a>CDN</h4><p>CDN 缓存顽固，清缓存无效，更新博客样式看不到最新版。</p>
@@ -899,7 +900,7 @@
 <li>无 bug、无失效链接、无冗余代码；</li>
 <li>全自动工作流，真正意义上<strong>一键部署</strong>。</li>
 </ol>
-<h2 id="全流程文章索引（建议收藏）"><a href="#全流程文章索引（建议收藏）" class="headerlink" title="全流程文章索引（建议收藏）"></a>全流程文章索引（建议收藏）</h2><p><a href="https://gloamfox.github.io/20260318103427.html">从零到一键发布：Obsidian + Hexo + GitHub Pages 个人博客搭建指南</a><br><a href="https://gloamfox.github.io/20260325102944.html">Hexo 插件：自动转换 Markdown 相对路径链接</a><br><a href="https://gloamfox.github.io/20260324094537.html">Hexo永久链接最佳实践：终极方案与优化指南</a><br><a href="https://gloamfox.github.io/20260324145235.html">Hexo 搜索跳转失效？一招解决链接域名丢失问题</a><br><a href="https://gloamfox.github.io/20260319105942.html">Hexo移除图片默认 alt 属性</a><br><a href="https://gloamfox.github.io/20260323060238.html">图片压缩与格式优化指南</a><br><a href="https://gloamfox.github.io/20260319034656.html">jsDelivr 缓存刷新与版本控制</a><br><a href="https://gloamfox.github.io/20260325161216.html">uniCloud加速GitHub Pages博客访问</a></p>
+<h2 id="全流程文章索引（建议收藏）"><a href="#全流程文章索引（建议收藏）" class="headerlink" title="全流程文章索引（建议收藏）"></a>全流程文章索引（建议收藏）</h2><p><a href="https://gloamfox.github.io/20260318103427.html">从零到一键发布：Obsidian + Hexo + GitHub Pages 个人博客搭建指南</a><br><a href="https://gloamfox.github.io/20260325102944.html">Hexo 插件：自动转换 Markdown 相对路径链接</a><br><a href="https://gloamfox.github.io/20260324094537.html">Hexo永久链接最佳实践：终极方案与优化指南</a><br><a href="https://gloamfox.github.io/20260324145235.html">Hexo 搜索跳转失效？一招解决链接域名丢失问题</a><br><a href="https://gloamfox.github.io/20260319105942.html">Hexo移除图片默认 alt 属性</a><br><a href="./Hexo%E6%8F%92%E4%BB%B6%EF%BC%9AObsidian%E6%A0%87%E6%B3%A8%E8%AF%AD%E6%B3%95%E5%85%BC%E5%AE%B9.md">Hexo插件：Obsidian标注语法兼容</a><br><a href="https://gloamfox.github.io/20260407134731.html">Obsidian Tabs Hexo插件</a><br><a href="https://gloamfox.github.io/20260323060238.html">图片压缩与格式优化指南</a><br><a href="https://gloamfox.github.io/20260319034656.html">jsDelivr 缓存刷新与版本控制</a><br><a href="https://gloamfox.github.io/20260325161216.html">uniCloud加速GitHub Pages博客访问</a></p>
 
                 
             </div>
@@ -1389,7 +1390,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;&nbsp;<span
-                class="white-color">87.3k</span>&nbsp;字
+                class="white-color">88.5k</span>&nbsp;字
             
             
             
