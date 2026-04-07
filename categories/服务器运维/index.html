@@ -31,135 +31,6 @@
 
 <!-- hexo injector head_end start -->
 <style>
-.obsidian-tabs {
-  margin: 1.5em 0;
-  border: 1px solid var(--tab-border-color, #e0e0e0);
-  border-radius: 8px;
-  overflow: hidden;
-  background: var(--tab-bg, #fafafa);
-}
-
-.obsidian-tabs-nav {
-  display: flex;
-  background: var(--tab-nav-bg, #f0f0f0);
-  border-bottom: 1px solid var(--tab-border-color, #e0e0e0);
-  overflow-x: auto;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-
-.obsidian-tabs-nav::-webkit-scrollbar {
-  display: none;
-}
-
-.obsidian-tab-btn {
-  padding: 12px 20px;
-  border: none;
-  background: transparent;
-  color: var(--tab-text-color, #666);
-  font-size: 14px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  white-space: nowrap;
-  border-bottom: 2px solid transparent;
-  margin-bottom: -1px;
-}
-
-.obsidian-tab-btn:hover {
-  color: var(--tab-hover-color, #333);
-  background: var(--tab-hover-bg, rgba(0,0,0,0.03));
-}
-
-.obsidian-tab-btn.active {
-  color: var(--tab-active-color, #448aff);
-  border-bottom-color: var(--tab-active-color, #448aff);
-  background: var(--tab-bg, #fafafa);
-}
-
-.obsidian-tabs-content {
-  padding: 20px;
-  background: var(--tab-bg, #fafafa);
-}
-
-.obsidian-tab-panel {
-  display: none;
-  animation: fadeIn 0.3s ease;
-}
-
-.obsidian-tab-panel.active {
-  display: block;
-}
-
-.obsidian-tab-panel > *:first-child {
-  margin-top: 0;
-}
-
-.obsidian-tab-panel > *:last-child {
-  margin-bottom: 0;
-}
-
-.obsidian-tab-panel pre {
-  margin: 1em 0;
-  border-radius: 6px;
-}
-
-.obsidian-tab-panel code {
-  font-family: 'SF Mono', Monaco, 'Cascadia Code', monospace;
-}
-
-/* Fix code block background color inside tabs */
-.obsidian-tab-panel pre code {
-  background: transparent !important;
-}
-
-.obsidian-tab-panel .highlight {
-  background: transparent !important;
-}
-
-.obsidian-tab-panel .highlight pre {
-  background: var(--code-bg, #f5f5f5) !important;
-}
-
-.obsidian-tab-panel figure.highlight {
-  background: var(--code-bg, #f5f5f5) !important;
-}
-
-.obsidian-tab-panel td.gutter {
-  background: var(--code-gutter-bg, #f0f0f0) !important;
-}
-
-.obsidian-tab-panel td.code {
-  background: var(--code-bg, #f5f5f5) !important;
-}
-
-@media (prefers-color-scheme: dark) {
-  .obsidian-tab-panel .highlight pre,
-  .obsidian-tab-panel figure.highlight {
-    --code-bg: #2d2d2d;
-    --code-gutter-bg: #252525;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  .obsidian-tabs {
-    --tab-bg: #1e1e1e;
-    --tab-nav-bg: #252526;
-    --tab-border-color: #333;
-    --tab-text-color: #999;
-    --tab-hover-color: #ccc;
-    --tab-hover-bg: rgba(255,255,255,0.05);
-    --tab-active-color: #58a6ff;
-  }
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(5px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-</style>
-
-<style>
 .obsidian-callout {
   margin: 1.5em 0;
   border-radius: 8px;
@@ -364,6 +235,135 @@
   .obsidian-callout-content code {
     background: rgba(255,255,255,0.1);
   }
+}
+</style>
+
+<style>
+.obsidian-tabs {
+  margin: 1.5em 0;
+  border: 1px solid var(--tab-border-color, #e0e0e0);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--tab-bg, #fafafa);
+}
+
+.obsidian-tabs-nav {
+  display: flex;
+  background: var(--tab-nav-bg, #f0f0f0);
+  border-bottom: 1px solid var(--tab-border-color, #e0e0e0);
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.obsidian-tabs-nav::-webkit-scrollbar {
+  display: none;
+}
+
+.obsidian-tab-btn {
+  padding: 12px 20px;
+  border: none;
+  background: transparent;
+  color: var(--tab-text-color, #666);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+}
+
+.obsidian-tab-btn:hover {
+  color: var(--tab-hover-color, #333);
+  background: var(--tab-hover-bg, rgba(0,0,0,0.03));
+}
+
+.obsidian-tab-btn.active {
+  color: var(--tab-active-color, #448aff);
+  border-bottom-color: var(--tab-active-color, #448aff);
+  background: var(--tab-bg, #fafafa);
+}
+
+.obsidian-tabs-content {
+  padding: 20px;
+  background: var(--tab-bg, #fafafa);
+}
+
+.obsidian-tab-panel {
+  display: none;
+  animation: fadeIn 0.3s ease;
+}
+
+.obsidian-tab-panel.active {
+  display: block;
+}
+
+.obsidian-tab-panel > *:first-child {
+  margin-top: 0;
+}
+
+.obsidian-tab-panel > *:last-child {
+  margin-bottom: 0;
+}
+
+.obsidian-tab-panel pre {
+  margin: 1em 0;
+  border-radius: 6px;
+}
+
+.obsidian-tab-panel code {
+  font-family: 'SF Mono', Monaco, 'Cascadia Code', monospace;
+}
+
+/* Fix code block background color inside tabs */
+.obsidian-tab-panel pre code {
+  background: transparent !important;
+}
+
+.obsidian-tab-panel .highlight {
+  background: transparent !important;
+}
+
+.obsidian-tab-panel .highlight pre {
+  background: var(--code-bg, #f5f5f5) !important;
+}
+
+.obsidian-tab-panel figure.highlight {
+  background: var(--code-bg, #f5f5f5) !important;
+}
+
+.obsidian-tab-panel td.gutter {
+  background: var(--code-gutter-bg, #f0f0f0) !important;
+}
+
+.obsidian-tab-panel td.code {
+  background: var(--code-bg, #f5f5f5) !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  .obsidian-tab-panel .highlight pre,
+  .obsidian-tab-panel figure.highlight {
+    --code-bg: #2d2d2d;
+    --code-gutter-bg: #252525;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .obsidian-tabs {
+    --tab-bg: #1e1e1e;
+    --tab-nav-bg: #252526;
+    --tab-border-color: #333;
+    --tab-text-color: #999;
+    --tab-hover-color: #ccc;
+    --tab-hover-bg: rgba(255,255,255,0.05);
+    --tab-active-color: #58a6ff;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 </style>
 <!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="暮色之狐" type="application/atom+xml">
@@ -778,19 +778,10 @@
                 </a>
                 
                 
-                <a href="/categories/%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84/" title="技术架构: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            style="background-color: #F8F9F9;">技术架构
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
                 <a href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%90%E7%BB%B4/" title="服务器运维: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-active "
-                            style="background-color: #82E0AA;">服务器运维
+                            style="background-color: #F8F9F9;">服务器运维
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -799,8 +790,17 @@
                 <a href="/categories/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/" title="软件设计: 5">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #D7BDE2;">软件设计
+                            style="background-color: #82E0AA;">软件设计
                         <span class="tag-length">5</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/%E6%80%9D%E7%BB%B4%E6%A8%A1%E5%9E%8B/" title="思维模型: 3">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #D7BDE2;">思维模型
+                        <span class="tag-length">3</span>
                     </span>
                 </a>
                 
@@ -809,15 +809,6 @@
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
                             style="background-color: #A3E4D7;">计算机基础
-                        <span class="tag-length">3</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/categories/%E6%80%9D%E7%BB%B4%E6%A8%A1%E5%9E%8B/" title="思维模型: 3">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            style="background-color: #85C1E9;">思维模型
                         <span class="tag-length">3</span>
                     </span>
                 </a>
@@ -911,7 +902,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;&nbsp;<span
-                class="white-color">88.6k</span>&nbsp;字
+                class="white-color">86.2k</span>&nbsp;字
             
             
             
