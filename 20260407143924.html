@@ -859,7 +859,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <div class="obsidian-callout obsidian-callout-tip" id="obsidian-callout-zqhxq57aq"><div class="obsidian-callout-header"><span class="obsidian-callout-icon">&#128161;</span><span class="obsidian-callout-title">TIP</span></div><div class="obsidian-callout-content"><p>这是Claude Code通关手册的第二篇，上一篇我们初步了解了Claude Code，这一篇要解决新手最头疼的问题——权限系统，搞清Claude Code的权限分配，让Claude Code真正能为我们提效</p>
+                <div class="obsidian-callout obsidian-callout-tip" id="obsidian-callout-ogu0pe4mg"><div class="obsidian-callout-header"><span class="obsidian-callout-icon">&#128161;</span><span class="obsidian-callout-title">TIP</span></div><div class="obsidian-callout-content"><p>这是Claude Code通关手册的第二篇，上一篇我们初步了解了Claude Code，这一篇要解决新手最头疼的问题——权限系统，搞清Claude Code的权限分配，让Claude Code真正能为我们提效</p>
 </div></div>
 <p>使用Claude Code的开发者，想必都经历过这样的崩溃场景：</p>
 <p>“我要读取pom.xml文件，可以吗？”——同意<br>“我要将依赖写入pom.xml文件，可以吗？”——同意</p>
@@ -912,7 +912,7 @@
 <span class="token operator">></span><span class="token comment"># 开启 bypass 模式</span>
 <span class="token operator">></span>claude --dangerously-skip-permissions<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 </blockquote>
-<p>日常开发推荐使用<code>acceptEdit</code>模式，因为在写代码这件事上，大概率是希望 Claude 直接改的——毕竟你都让它写代码了，肯定是希望它直接写入文件。但执行 shell 命令（比如 <code>npm install</code>、<code>git push</code>）的时候，你还是想看一眼再确认。</p>
+<p>日常开发推荐使用<code>acceptEdit</code>模式，因为在写代码这件事上，大概率是希望 Claude 直接改的——毕竟你都让它写代码了，肯定是希望它直接写入文件。但执行 shell 命令（比如 <code>mvn depoly</code>、<code>git push</code>）的时候，你还是想看一眼再确认。</p>
 <p>你也可以直接在配置文件中灵活配置可执行的操作，这正是接下来将要讲述的内容。</p>
 <h2 id="项目自定义权限：从统一守则到私人保镖"><a href="#项目自定义权限：从统一守则到私人保镖" class="headerlink" title="项目自定义权限：从统一守则到私人保镖"></a>项目自定义权限：从统一守则到私人保镖</h2><p>通用权限规则能解决 80% 的日常场景，但每个项目都有自己的脾气。这时候，就需要你亲自给 Claude Code 下达“私人保镖”级别的专属指令——让它知道：在这个项目里，哪些命令可以闭眼通过，哪些操作必须反复确认。</p>
 <h3 id="配置文件在哪里？"><a href="#配置文件在哪里？" class="headerlink" title="配置文件在哪里？"></a>配置文件在哪里？</h3><table>
