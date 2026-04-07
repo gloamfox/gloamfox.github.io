@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="笔记管理,知识组织,双链笔记,分类系统,标签系统,学习效率,知识连接,心智负担">
+    <meta name="keywords" content="Claude Code,权限系统,配置文件,权限模式,安全最佳实践,开发效率,权限管理,settings.json">
     <meta name="description" content="君子以顺德，积小以高大。">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>告别分类焦虑：让笔记自然生长流动 | 暮色之狐</title>
+    <title>Claude Code通关手册（二）：搞清权限，效率翻倍 | 暮色之狐</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -670,12 +670,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">告别分类焦虑：让笔记自然生长流动</h1>
+                    <h1 class="description center-align post-title">Claude Code通关手册（二）：搞清权限，效率翻倍</h1>
                 </div>
             </div>
         </div>
@@ -791,12 +791,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E7%AC%94%E8%AE%B0%E7%AE%A1%E7%90%86/">
-                                <span class="chip bg-color">笔记管理</span>
+                            <a href="/tags/Claude-Code/">
+                                <span class="chip bg-color">Claude Code</span>
                             </a>
                         
-                            <a href="/tags/%E7%9F%A5%E8%AF%86%E7%BB%84%E7%BB%87/">
-                                <span class="chip bg-color">知识组织</span>
+                            <a href="/tags/%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86/">
+                                <span class="chip bg-color">权限管理</span>
                             </a>
                         
                     </div>
@@ -820,7 +820,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2026-03-03
+                    2026-04-07
                 </div>
                 
 
@@ -829,14 +829,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.1k
+                    2.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    8 分
                 </div>
                 
 
@@ -859,70 +859,197 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="起点：被分类束缚的笔记时光"><a href="#起点：被分类束缚的笔记时光" class="headerlink" title="起点：被分类束缚的笔记时光"></a>起点：被分类束缚的笔记时光</h2><p>在学生时代，我养成了体系化学习的习惯，这种习惯延伸到笔记管理上，就表现为严格的分类存储——每次创建笔记时，首先思考的是“这个文件应该放在哪个文件夹”。这种基于文件夹分类的组织方式，在整理时确实直观清晰，让我能够快速定位到需要的资料。</p>
-<h2 id="困境：当分类遇到复杂知识"><a href="#困境：当分类遇到复杂知识" class="headerlink" title="困境：当分类遇到复杂知识"></a>困境：当分类遇到复杂知识</h2><p>然而，随着接触的知识领域越来越广，我逐渐发现一个棘手的问题：现实世界中的知识往往是多维交叉的，一份笔记很难被简单地归入单一分类。</p>
-<p><strong>遇到的挑战：</strong></p>
-<ul>
-<li>同一份笔记既属于A类别，也属于B类别</li>
-<li>记录灵感闪念时，难以立即找到合适的分类</li>
-<li>创建笔记前的分类思考成了额外的心智负担</li>
-<li>知识之间的关联被文件夹结构人为割裂</li>
-</ul>
-<h2 id="尝试：标签系统的希望与失望"><a href="#尝试：标签系统的希望与失望" class="headerlink" title="尝试：标签系统的希望与失望"></a>尝试：标签系统的希望与失望</h2><p>为了解决多分类问题，我开始尝试使用标签系统。理论上，标签能够为笔记提供多维度的分类方式，打破文件夹的线性束缚。</p>
-<p><strong>实践结果：</strong></p>
-<ul>
-<li>✅ 确实解决了笔记的多分类问题</li>
-<li>❌ 标签数量失控增长</li>
-<li>❌ 部分标签下只有1-2个文件，失去分类意义</li>
-<li>❌ 大量标签反而增加了管理复杂度</li>
-<li>❌ 最终还是陷入了“如何打标签”的新一轮思考负担</li>
-</ul>
-<p>标签系统在理论上很美好，但在实践中，我发现自己陷入了新的管理困境。</p>
-<h2 id="突破：双链笔记带来的思维解放"><a href="#突破：双链笔记带来的思维解放" class="headerlink" title="突破：双链笔记带来的思维解放"></a>突破：双链笔记带来的思维解放</h2><p>接触到双链笔记后，我的笔记管理方式发生了革命性的变化。</p>
-<p><strong>核心改变：</strong></p>
-<ul>
-<li>创建笔记时不再思考存储位置</li>
-<li>直接开始记录内容，专注于思考本身</li>
-<li>通过双向链接建立笔记间的关联</li>
-<li>形成类似搜索引擎或知网的知识网络</li>
-</ul>
-<p><strong>双链优势：</strong></p>
-<ul>
-<li>🚀 极大降低了记录时的心智负担</li>
-<li>🔗 自然地呈现知识间的内在联系</li>
-<li>💡 记录过程流畅，不再被管理细节打断</li>
-</ul>
-<p>这种方式的体验确实很“爽”——我终于可以专注于知识本身，而不是知识的管理。</p>
-<h2 id="反思：双链模式的局限"><a href="#反思：双链模式的局限" class="headerlink" title="反思：双链模式的局限"></a>反思：双链模式的局限</h2><p>然而，任何方法都有其局限性。经过一段时间的使用，我发现双链笔记在复习和整体把控方面存在不足：</p>
-<p><strong>遇到的问题：</strong></p>
-<ul>
-<li>需要复习特定主题时，难以快速找到相关笔记</li>
-<li>知识网络虽然丰富，但缺乏系统性视图</li>
-<li>对于需要体系化学习的领域，显得不够结构化</li>
-<li>依赖链接跳转，缺乏全局的知识地图</li>
-</ul>
-<h2 id="平衡：找到适合自己的混合模式"><a href="#平衡：找到适合自己的混合模式" class="headerlink" title="平衡：找到适合自己的混合模式"></a>平衡：找到适合自己的混合模式</h2><p>经过不断的实践和调整，我逐渐找到了适合自己的平衡点：</p>
-<p><strong>现行工作流：</strong></p>
-<ol>
-<li><strong>记录阶段</strong>：完全拥抱双链思维，不考虑分类，专注于内容记录和链接建立</li>
-<li><strong>整理阶段</strong>：定期（如每周或每月）对笔记进行整理和分类</li>
-<li><strong>复习阶段</strong>：利用整理后的结构进行系统性复习</li>
-</ol>
-<p><strong>这种模式的优点：</strong></p>
-<ul>
-<li>✍️ 写作时：无负担，流畅自然</li>
-<li>📚 复习时：有结构，高效系统</li>
-<li>🔄 整理时：既是管理，也是二次学习</li>
-</ul>
-<h2 id="启示：笔记管理的本质思考"><a href="#启示：笔记管理的本质思考" class="headerlink" title="启示：笔记管理的本质思考"></a>启示：笔记管理的本质思考</h2><p>通过这段演进历程，我深刻认识到：</p>
-<p><strong>核心认知：</strong></p>
-<ul>
-<li>笔记管理的目标是服务学习和思考，而非管理本身</li>
-<li>没有绝对的最佳实践，只有最适合自己的方式</li>
-<li>减少心智负担比追求完美组织更重要</li>
-<li>知识的价值在于连接和应用，而非整齐存放</li>
-</ul>
-<p><strong>个人心得：</strong><br>笔记方式本身没有好坏之分，关键在于是否能够帮助我们更好地积累和运用知识。现在的我，既享受双链带来的记录自由，也通过定期整理保持知识的可用性。这种平衡让我能够在减少心智负担的同时，确保知识需要时能够被有效唤醒和利用。</p>
+                <div class="obsidian-callout obsidian-callout-tip" id="obsidian-callout-zqhxq57aq"><div class="obsidian-callout-header"><span class="obsidian-callout-icon">&#128161;</span><span class="obsidian-callout-title">TIP</span></div><div class="obsidian-callout-content"><p>这是Claude Code通关手册的第二篇，上一篇我们初步了解了Claude Code，这一篇要解决新手最头疼的问题——权限系统，搞清Claude Code的权限分配，让Claude Code真正能为我们提效</p>
+</div></div>
+<p>使用Claude Code的开发者，想必都经历过这样的崩溃场景：</p>
+<p>“我要读取pom.xml文件，可以吗？”——同意<br>“我要将依赖写入pom.xml文件，可以吗？”——同意</p>
+<p>当第10次弹出权限请求时，大多数人早已忍无可忍，只想大喊：”我全都同意了，你自己去运行吧！”</p>
+<p>然而，当我们真正去查找解决方案时，才发现Claude Code有一个<code>--dangerously-skip-permissions</code>参数可以跳过权限确认。从名称就能看出，这是一个”危险”的选项。</p>
+<p>我们并不需要采取如此极端的方式。权限系统实际上是我们的安全屏障，无需给予Claude Code全部权限。合理分配权限，能够在效率与安全之间取得完美平衡。</p>
+<p>本文将教你如何善用权限系统，将那些烦人的权限提示转化为得心应手的工具，让它们从拦路虎变成遥控器。</p>
+<h2 id="五种权限模式：从保姆级守护到全自动飙车"><a href="#五种权限模式：从保姆级守护到全自动飙车" class="headerlink" title="五种权限模式：从保姆级守护到全自动飙车"></a>五种权限模式：从保姆级守护到全自动飙车</h2><p>Claude Code内置了五种权限模式，覆盖从最保守到最激进的所有场景，可以在会话中按<code>shift + tab</code>快速进行切换。</p>
+<table>
+<thead>
+<tr>
+<th>模式</th>
+<th>行为</th>
+<th>适用场景</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>default（默认）</td>
+<td>读文件自动通过<br>写文件需要确认<br>命令需要确认</td>
+<td>新手优化</td>
+</tr>
+<tr>
+<td>accept edits on</td>
+<td>读文件自动通过<br>写文件自动通过<br>命令需要确认</td>
+<td>日常开发模式</td>
+</tr>
+<tr>
+<td>plan mode on</td>
+<td>只能读和分析<br>不能写和执行命令</td>
+<td>探索不熟悉的代码库<br>代码审查、分析</td>
+</tr>
+<tr>
+<td>dontAsk</td>
+<td>读写命令全自动<br>但是不跳过安全检查</td>
+<td>严格锁定、高度安全的环境<br>需要注意的是<strong>所有未经明确授权的操作都会被静默拒绝</strong><br>可能会导致执行任务时由于权限受阻，影响任务完成</td>
+</tr>
+<tr>
+<td>bypass ⚠️</td>
+<td>完全跳过所有检查<br>目前权限级别最高的模式</td>
+<td>完全自动化的 CI/CD 或容器环境</td>
+</tr>
+</tbody></table>
+<p>在交互模式中按 <strong>Shift+Tab</strong>，你会看到状态栏在三种模式间循环：</p>
+<pre class="line-numbers language-none"><code class="language-none">normal-mode → ⏵⏵ accept edits on → ⏸ plan mode on → normal-mode<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<blockquote>
+<p>[!NOTE]<br>dontAsk和bypass模式由于权限较高，无法在会话中进行选择，需要在开启会话时指定</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token operator">></span><span class="token comment"># 开启dontAsk模式,通过 `--permission-mode` 参数直接指定</span>
+<span class="token operator">></span>claude --permission-mode dontAsk
+<span class="token operator">></span><span class="token comment"># 开启 bypass 模式</span>
+<span class="token operator">></span>claude --dangerously-skip-permissions<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+</blockquote>
+<p>日常开发推荐使用<code>acceptEdit</code>模式，因为在写代码这件事上，大概率是希望 Claude 直接改的——毕竟你都让它写代码了，肯定是希望它直接写入文件。但执行 shell 命令（比如 <code>npm install</code>、<code>git push</code>）的时候，你还是想看一眼再确认。</p>
+<p>你也可以直接在配置文件中灵活配置可执行的操作，这正是接下来将要讲述的内容。</p>
+<h2 id="项目自定义权限：从统一守则到私人保镖"><a href="#项目自定义权限：从统一守则到私人保镖" class="headerlink" title="项目自定义权限：从统一守则到私人保镖"></a>项目自定义权限：从统一守则到私人保镖</h2><p>通用权限规则能解决 80% 的日常场景，但每个项目都有自己的脾气。这时候，就需要你亲自给 Claude Code 下达“私人保镖”级别的专属指令——让它知道：在这个项目里，哪些命令可以闭眼通过，哪些操作必须反复确认。</p>
+<h3 id="配置文件在哪里？"><a href="#配置文件在哪里？" class="headerlink" title="配置文件在哪里？"></a>配置文件在哪里？</h3><table>
+<thead>
+<tr>
+<th>配置文件位置</th>
+<th>适用场景</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>~/.claude/settings.json</td>
+<td>全局配置，所有项目通用<br>对 Claude Code 的<strong>底线要求</strong></td>
+</tr>
+<tr>
+<td>项目根目录/.claude/settings.json</td>
+<td>项目级配置，提交到 Git 跟团队共享<br>这个项目专属的权限规则</td>
+</tr>
+<tr>
+<td>项目根目录/.claude/settings.local.json</td>
+<td>个人本地配置，不提交到 Git<br>你自己的偏好，不影响队友</td>
+</tr>
+</tbody></table>
+<p><strong>优先级</strong>：local &gt; project &gt; global</p>
+<h3 id="配置文件实操"><a href="#配置文件实操" class="headerlink" title="配置文件实操"></a>配置文件实操</h3><p>还需要手动维护项目的配置文件吗？那也太落后了。在Claude Code的会话中，直接让它帮你生成一份项目维度的配置文件吧。</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">请在当前项目根目录下创建 .claude/settings.json 配置文件，采用 allow/ask/deny 的权限配置模式
+具体要求：  
+<span class="token number">1</span>.先扫描分析项目的技术栈（如 Node.js、Python、Java、Go 等）和常用命令（构建、测试、lint、启动等）。
+<span class="token number">2</span>.根据项目实际命令（如 <span class="token function">npm</span> <span class="token builtin class-name">test</span> → Bash<span class="token punctuation">(</span>npm <span class="token builtin class-name">test</span> *<span class="token punctuation">)</span>，python manage.py runserver → Bash<span class="token punctuation">(</span>python manage.py runserver<span class="token punctuation">)</span>）动态填充 allow 列表。
+<span class="token number">3</span>.增加常见安全规则（如rm -rf、.env 读取等）。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>Claude Code会在<code>项目根目录/.claude/settings.json</code>中生成一份配置文件，我们可以修改这个配置文件来控制我们的权限。</p>
+<p>一个最简单的权限配置文件如下:</p>
+<pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token punctuation">&#123;</span>  
+  <span class="token property">"permissions"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>  
+    <span class="token property">"defaultMode"</span><span class="token operator">:</span> <span class="token string">"acceptEdits"</span><span class="token punctuation">,</span>  
+  
+    <span class="token property">"allow"</span><span class="token operator">:</span> <span class="token punctuation">[</span>  
+      <span class="token string">"Read"</span><span class="token punctuation">,</span>  
+      <span class="token string">"Edit(./src/**)"</span><span class="token punctuation">,</span>  
+      <span class="token string">"Write(./src/**)"</span><span class="token punctuation">,</span>  
+      <span class="token string">"MultiEdit(./src/**)"</span><span class="token punctuation">,</span>  
+      <span class="token string">"Bash(mvn clean)"</span><span class="token punctuation">,</span>  
+      <span class="token string">"Bash(mvn compile)"</span><span class="token punctuation">,</span>  
+      <span class="token string">"Bash(mvn package)"</span><span class="token punctuation">,</span>  
+      <span class="token string">"Bash(mvn install)"</span><span class="token punctuation">,</span>  
+      <span class="token string">"Bash(npx tsc --noEmit)"</span><span class="token punctuation">,</span>  
+      <span class="token string">"Bash(git status)"</span><span class="token punctuation">,</span>  
+      <span class="token string">"Bash(git diff *)"</span><span class="token punctuation">,</span>  
+      <span class="token string">"Bash(git add *)"</span><span class="token punctuation">,</span>  
+      <span class="token string">"Bash(git commit *)"</span><span class="token punctuation">,</span>  
+      <span class="token string">"Bash(git log *)"</span><span class="token punctuation">,</span>  
+      <span class="token string">"Bash(ls *)"</span><span class="token punctuation">,</span>  
+      <span class="token string">"Bash(cat *)"</span><span class="token punctuation">,</span>  
+      <span class="token string">"Bash(mkdir *)"</span>  
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>  
+  
+    <span class="token property">"ask"</span><span class="token operator">:</span> <span class="token punctuation">[</span>  
+      <span class="token string">"Bash(git push *)"</span><span class="token punctuation">,</span>  
+      <span class="token string">"Bash(npm deploy)"</span><span class="token punctuation">,</span>  
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>  
+  
+    <span class="token property">"deny"</span><span class="token operator">:</span> <span class="token punctuation">[</span>  
+      <span class="token string">"Bash(rm -rf *)"</span><span class="token punctuation">,</span>  
+      <span class="token string">"Bash(sudo *)"</span><span class="token punctuation">,</span>  
+      <span class="token string">"Bash(curl *)"</span><span class="token punctuation">,</span>  
+      <span class="token string">"Read(./.env*)"</span><span class="token punctuation">,</span>  
+      <span class="token string">"Read(./secrets/**)"</span><span class="token punctuation">,</span>  
+      <span class="token string">"Edit(./.env*)"</span><span class="token punctuation">,</span>  
+      <span class="token string">"WebFetch"</span>  
+    <span class="token punctuation">]</span>  
+  <span class="token punctuation">&#125;</span>  
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>这份配置翻译成人话就是：</p>
+<p><strong>allow（自动通过）</strong>：读任何文件、编辑 src 目录下的代码、跑开发/构建/测试命令、常规 Git 操作——这些都是日常高频操作，不用每次都问我。</p>
+<p><strong>ask（问我一声）</strong>：推代码到远程、安装新依赖、执行数据库迁移——这几个操作有一定风险，让我确认一下。</p>
+<p><strong>deny（绝对禁止）</strong>：删除操作、sudo 提权、读取环境变量文件——不管什么情况，这些操作一律拦截。</p>
+<p>==deny 永远优先级最高==。就算你在 allow 里写了允许读 <code>.env</code> 文件，只要 deny 里也有这条规则，Claude 就死也读不了。这是安全底线，不可妥协。<br>Claude Code所有的配置就都是在这三层里做文章。</p>
+<h3 id="permissions-命令：不用手写-JSON"><a href="#permissions-命令：不用手写-JSON" class="headerlink" title="/permissions 命令：不用手写 JSON"></a>/permissions 命令：不用手写 JSON</h3><p>如果你不想手动编辑 JSON 文件，Claude Code 提供了交互式配置界面。在会话中输入：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">/permissions<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>它会弹出一个交互式菜单，供你添加或移除权限规则。此外，当 Claude 询问你是否允许某个操作时，选择”Always allow”选项会自动将该规则添加到你的允许列表中。</p>
+<p>这种”在使用过程中逐步配置”的方式非常符合用户习惯——系统首次询问时，用户同意并勾选”以后都允许”，后续便不再重复询问。</p>
+<h2 id="安全最佳实践"><a href="#安全最佳实践" class="headerlink" title="安全最佳实践"></a>安全最佳实践</h2><p>权限配得再宽松，这三条红线不能碰：</p>
+<p><strong>红线一：永远不要允许看不懂的 Bash 命令</strong></p>
+<p>Claude 有时会生成复杂的 shell 命令。如果你不理解其用途，切勿直接执行。应先要求 Claude 解释命令的具体功能和目的，确认安全无误后再决定是否执行。</p>
+<p><strong>红线二：.env 文件必须列入拒绝访问名单</strong></p>
+<p>你的 <code>.env</code> 文件包含数据库密码、API Key 等敏感信息。请务必将 <code>Read(./.env*)</code> 和 <code>Edit(./.env*)</code> 权限加入拒绝列表，彻底封堵这一安全隐患。</p>
+<p><strong>红线三：生产环境操作需使用 plan 模式</strong></p>
+<p>在生产代码库中工作时，首先切换至 <code>plan</code> 模式。让 Claude 仅进行分析和方案制定，不直接执行任何修改。确认方案安全可行后，再切换回 <code>acceptEdits</code> 模式执行具体操作。这如同手术前先进行影像检查明确情况——切勿盲目动手操作。</p>
+<h2 id="一份你能直接复制的全局配置"><a href="#一份你能直接复制的全局配置" class="headerlink" title="一份你能直接复制的全局配置"></a>一份你能直接复制的全局配置</h2><p>最后，送你一份经过实战验证的全局配置模板。把它放到 <code>~/.claude/settings.json</code>，作为你所有项目的基础配置。</p>
+<pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token punctuation">&#123;</span>  
+  <span class="token property">"permissions"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>  
+    <span class="token property">"defaultMode"</span><span class="token operator">:</span> <span class="token string">"acceptEdits"</span><span class="token punctuation">,</span>  
+  
+    <span class="token property">"allow"</span><span class="token operator">:</span> <span class="token punctuation">[</span>  
+      <span class="token string">"Read"</span><span class="token punctuation">,</span>  
+      <span class="token string">"Bash(ls *)"</span><span class="token punctuation">,</span>  
+      <span class="token string">"Bash(cat *)"</span><span class="token punctuation">,</span>  
+      <span class="token string">"Bash(head *)"</span><span class="token punctuation">,</span>  
+      <span class="token string">"Bash(tail *)"</span><span class="token punctuation">,</span>  
+      <span class="token string">"Bash(wc *)"</span><span class="token punctuation">,</span>  
+      <span class="token string">"Bash(find *)"</span><span class="token punctuation">,</span>  
+      <span class="token string">"Bash(grep *)"</span><span class="token punctuation">,</span>  
+      <span class="token string">"Bash(echo *)"</span><span class="token punctuation">,</span>  
+      <span class="token string">"Bash(mkdir *)"</span><span class="token punctuation">,</span>  
+      <span class="token string">"Bash(git status)"</span><span class="token punctuation">,</span>  
+      <span class="token string">"Bash(git log *)"</span><span class="token punctuation">,</span>  
+      <span class="token string">"Bash(git diff *)"</span><span class="token punctuation">,</span>  
+      <span class="token string">"Bash(git branch *)"</span><span class="token punctuation">,</span>  
+      <span class="token string">"Bash(git show *)"</span><span class="token punctuation">,</span>  
+      <span class="token string">"Bash(node --version)"</span><span class="token punctuation">,</span>  
+      <span class="token string">"Bash(npm --version)"</span><span class="token punctuation">,</span>  
+      <span class="token string">"Bash(npx tsc --noEmit)"</span>  
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>  
+  
+    <span class="token property">"deny"</span><span class="token operator">:</span> <span class="token punctuation">[</span>  
+      <span class="token string">"Bash(rm -rf *)"</span><span class="token punctuation">,</span>  
+      <span class="token string">"Bash(sudo *)"</span><span class="token punctuation">,</span>  
+      <span class="token string">"Bash(curl *)"</span><span class="token punctuation">,</span>  
+      <span class="token string">"Bash(wget *)"</span><span class="token punctuation">,</span>  
+      <span class="token string">"Read(./.env*)"</span><span class="token punctuation">,</span>  
+      <span class="token string">"Read(./secrets/**)"</span><span class="token punctuation">,</span>  
+      <span class="token string">"Read(./**/credentials*)"</span><span class="token punctuation">,</span>  
+      <span class="token string">"Edit(./.env*)"</span><span class="token punctuation">,</span>  
+      <span class="token string">"Edit(./secrets/**)"</span><span class="token punctuation">,</span>  
+      <span class="token string">"WebFetch"</span>
+    <span class="token punctuation">]</span>  
+  <span class="token punctuation">&#125;</span>  
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>这是全局的”安全底线”。在具体项目中，你再通过项目级的 <code>.claude/settings.json</code> 添加项目特有的 allow 规则（比如 <code>mvn clean</code>、<code>mvn install</code> 之类的命令）。</p>
+<p><strong>采用全局与项目两层协作机制</strong>：全局配置作为安全基线及通用便利性设置，项目配置则专注于特定项目需求，仅对当前项目生效。通过这套配置体系，权限提示可减少80%以上，同时确保安全基线保持不变。</p>
+<h2 id="本篇小结"><a href="#本篇小结" class="headerlink" title="本篇小结"></a>本篇小结</h2><p>三个核心收获：</p>
+<p><strong>第一</strong>：权限系统的本质是三层过滤器——deny（拒绝）&gt; ask（询问）&gt; allow（通过），优先级从高到低。理解这一模型后，所有配置都将变得水到渠成。</p>
+<p><strong>第二</strong>：在五种权限模式中，<code>acceptEdits</code> 是日常开发的首选——代码编辑自动通过，命令执行需要确认。按 Shift+Tab 可随时切换。</p>
+<p><strong>第三</strong>：全局与项目两层协作机制配合使用，既便捷又安全。</p>
 
                 
             </div>
@@ -949,7 +1076,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://gloamfox.github.io/20260303020433.html">https://gloamfox.github.io/20260303020433.html</a>
+                    <a href="https://gloamfox.github.io/20260407143924.html">https://gloamfox.github.io/20260407143924.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -987,12 +1114,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E7%AC%94%E8%AE%B0%E7%AE%A1%E7%90%86/">
-                                    <span class="chip bg-color">笔记管理</span>
+                                <a href="/tags/Claude-Code/">
+                                    <span class="chip bg-color">Claude Code</span>
                                 </a>
                             
-                                <a href="/tags/%E7%9F%A5%E8%AF%86%E7%BB%84%E7%BB%87/">
-                                    <span class="chip bg-color">知识组织</span>
+                                <a href="/tags/%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86/">
+                                    <span class="chip bg-color">权限管理</span>
                                 </a>
                             
                         </div>
@@ -1162,46 +1289,52 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/20260314085149.html">
+                <a href="/20260407143924.html">
                     <div class="card-image">
                         
                         
                         <img src="/medias/featureimages/11.jpg" class="responsive-img" >
                         
-                        <span class="card-title">单元测试的困境与破局：为何我们不愿写，以及如何高效地写</span>
+                        <span class="card-title">Claude Code通关手册（二）：搞清权限，效率翻倍</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            本文深入探讨了单元测试的重要性，分析了开发人员不愿编写单元测试的原因，并介绍了测试驱动开发(TDD)的应用。文章强调了有效的单元测试应避免过度依赖Spring框架，专注于业务逻辑验证，同时提出了在团队协作中使用单元测试和Mock技术的优势，以提高代码质量和开发效率。
+                            本文详细介绍了Claude Code的权限系统配置方法，包括五种内置权限模式、项目自定义权限配置、安全最佳实践以及全局配置模板。通过合理设置权限，开发者可以在保障安全的同时减少烦人的权限提示，提升工作效率。
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2026-03-14
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2026-04-07
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%90%8E%E7%AB%AF/" class="post-category">
-                                    后端
+                            <a href="/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/" class="post-category">
+                                    软件工具
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/JUnit/">
-                        <span class="chip bg-color">JUnit</span>
+                    <a href="/tags/Claude-Code/">
+                        <span class="chip bg-color">Claude Code</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86/">
+                        <span class="chip bg-color">权限管理</span>
                     </a>
                     
                 </div>
@@ -1215,31 +1348,31 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/20260302122243.html">
+                <a href="/20260407134731.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/22.jpg" class="responsive-img" >
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" >
                         
-                        <span class="card-title">进制转换与数据编码</span>
+                        <span class="card-title">Hexo插件：Obsidian tabs语法兼容</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            本文详细介绍了不同进制之间的转换方法，包括R进制与十进制的互转、二进制与八进制/十六进制的转换，以及原码、反码、补码和移码等数据编码方式，并探讨了浮点数的表示与运算过程。
+                            本文介绍了如何创建一个Hexo插件，解决Obsidian中的tabs语法在Hexo平台上无法正常显示的问题。作者详细提供了完整的插件代码，包括HTML解析、CSS样式和JavaScript交互功能，使Obsidian的tabs组件能够在Hexo博客中正确渲染和展示。
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2026-03-02
+                                <i class="far fa-clock fa-fw icon-date"></i>2026-04-07
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/" class="post-category">
-                                    计算机基础
+                            <a href="/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/" class="post-category">
+                                    软件工具
                                 </a>
                             
                             
@@ -1249,16 +1382,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2/">
-                        <span class="chip bg-color">进制转换</span>
+                    <a href="/tags/Hexo/">
+                        <span class="chip bg-color">Hexo</span>
                     </a>
                     
-                    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BC%96%E7%A0%81/">
-                        <span class="chip bg-color">数据编码</span>
-                    </a>
-                    
-                    <a href="/tags/%E6%B5%AE%E7%82%B9%E6%95%B0%E8%BF%90%E7%AE%97/">
-                        <span class="chip bg-color">浮点数运算</span>
+                    <a href="/tags/Obsidian/">
+                        <span class="chip bg-color">Obsidian</span>
                     </a>
                     
                 </div>
