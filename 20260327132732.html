@@ -31,135 +31,6 @@
 
 <!-- hexo injector head_end start -->
 <style>
-.obsidian-tabs {
-  margin: 1.5em 0;
-  border: 1px solid var(--tab-border-color, #e0e0e0);
-  border-radius: 8px;
-  overflow: hidden;
-  background: var(--tab-bg, #fafafa);
-}
-
-.obsidian-tabs-nav {
-  display: flex;
-  background: var(--tab-nav-bg, #f0f0f0);
-  border-bottom: 1px solid var(--tab-border-color, #e0e0e0);
-  overflow-x: auto;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-
-.obsidian-tabs-nav::-webkit-scrollbar {
-  display: none;
-}
-
-.obsidian-tab-btn {
-  padding: 12px 20px;
-  border: none;
-  background: transparent;
-  color: var(--tab-text-color, #666);
-  font-size: 14px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  white-space: nowrap;
-  border-bottom: 2px solid transparent;
-  margin-bottom: -1px;
-}
-
-.obsidian-tab-btn:hover {
-  color: var(--tab-hover-color, #333);
-  background: var(--tab-hover-bg, rgba(0,0,0,0.03));
-}
-
-.obsidian-tab-btn.active {
-  color: var(--tab-active-color, #448aff);
-  border-bottom-color: var(--tab-active-color, #448aff);
-  background: var(--tab-bg, #fafafa);
-}
-
-.obsidian-tabs-content {
-  padding: 20px;
-  background: var(--tab-bg, #fafafa);
-}
-
-.obsidian-tab-panel {
-  display: none;
-  animation: fadeIn 0.3s ease;
-}
-
-.obsidian-tab-panel.active {
-  display: block;
-}
-
-.obsidian-tab-panel > *:first-child {
-  margin-top: 0;
-}
-
-.obsidian-tab-panel > *:last-child {
-  margin-bottom: 0;
-}
-
-.obsidian-tab-panel pre {
-  margin: 1em 0;
-  border-radius: 6px;
-}
-
-.obsidian-tab-panel code {
-  font-family: 'SF Mono', Monaco, 'Cascadia Code', monospace;
-}
-
-/* Fix code block background color inside tabs */
-.obsidian-tab-panel pre code {
-  background: transparent !important;
-}
-
-.obsidian-tab-panel .highlight {
-  background: transparent !important;
-}
-
-.obsidian-tab-panel .highlight pre {
-  background: var(--code-bg, #f5f5f5) !important;
-}
-
-.obsidian-tab-panel figure.highlight {
-  background: var(--code-bg, #f5f5f5) !important;
-}
-
-.obsidian-tab-panel td.gutter {
-  background: var(--code-gutter-bg, #f0f0f0) !important;
-}
-
-.obsidian-tab-panel td.code {
-  background: var(--code-bg, #f5f5f5) !important;
-}
-
-@media (prefers-color-scheme: dark) {
-  .obsidian-tab-panel .highlight pre,
-  .obsidian-tab-panel figure.highlight {
-    --code-bg: #2d2d2d;
-    --code-gutter-bg: #252525;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  .obsidian-tabs {
-    --tab-bg: #1e1e1e;
-    --tab-nav-bg: #252526;
-    --tab-border-color: #333;
-    --tab-text-color: #999;
-    --tab-hover-color: #ccc;
-    --tab-hover-bg: rgba(255,255,255,0.05);
-    --tab-active-color: #58a6ff;
-  }
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(5px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-</style>
-
-<style>
 .obsidian-callout {
   margin: 1.5em 0;
   border-radius: 8px;
@@ -364,6 +235,135 @@
   .obsidian-callout-content code {
     background: rgba(255,255,255,0.1);
   }
+}
+</style>
+
+<style>
+.obsidian-tabs {
+  margin: 1.5em 0;
+  border: 1px solid var(--tab-border-color, #e0e0e0);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--tab-bg, #fafafa);
+}
+
+.obsidian-tabs-nav {
+  display: flex;
+  background: var(--tab-nav-bg, #f0f0f0);
+  border-bottom: 1px solid var(--tab-border-color, #e0e0e0);
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.obsidian-tabs-nav::-webkit-scrollbar {
+  display: none;
+}
+
+.obsidian-tab-btn {
+  padding: 12px 20px;
+  border: none;
+  background: transparent;
+  color: var(--tab-text-color, #666);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+}
+
+.obsidian-tab-btn:hover {
+  color: var(--tab-hover-color, #333);
+  background: var(--tab-hover-bg, rgba(0,0,0,0.03));
+}
+
+.obsidian-tab-btn.active {
+  color: var(--tab-active-color, #448aff);
+  border-bottom-color: var(--tab-active-color, #448aff);
+  background: var(--tab-bg, #fafafa);
+}
+
+.obsidian-tabs-content {
+  padding: 20px;
+  background: var(--tab-bg, #fafafa);
+}
+
+.obsidian-tab-panel {
+  display: none;
+  animation: fadeIn 0.3s ease;
+}
+
+.obsidian-tab-panel.active {
+  display: block;
+}
+
+.obsidian-tab-panel > *:first-child {
+  margin-top: 0;
+}
+
+.obsidian-tab-panel > *:last-child {
+  margin-bottom: 0;
+}
+
+.obsidian-tab-panel pre {
+  margin: 1em 0;
+  border-radius: 6px;
+}
+
+.obsidian-tab-panel code {
+  font-family: 'SF Mono', Monaco, 'Cascadia Code', monospace;
+}
+
+/* Fix code block background color inside tabs */
+.obsidian-tab-panel pre code {
+  background: transparent !important;
+}
+
+.obsidian-tab-panel .highlight {
+  background: transparent !important;
+}
+
+.obsidian-tab-panel .highlight pre {
+  background: var(--code-bg, #f5f5f5) !important;
+}
+
+.obsidian-tab-panel figure.highlight {
+  background: var(--code-bg, #f5f5f5) !important;
+}
+
+.obsidian-tab-panel td.gutter {
+  background: var(--code-gutter-bg, #f0f0f0) !important;
+}
+
+.obsidian-tab-panel td.code {
+  background: var(--code-bg, #f5f5f5) !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  .obsidian-tab-panel .highlight pre,
+  .obsidian-tab-panel figure.highlight {
+    --code-bg: #2d2d2d;
+    --code-gutter-bg: #252525;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .obsidian-tabs {
+    --tab-bg: #1e1e1e;
+    --tab-nav-bg: #252526;
+    --tab-border-color: #333;
+    --tab-text-color: #999;
+    --tab-hover-color: #ccc;
+    --tab-hover-bg: rgba(255,255,255,0.05);
+    --tab-active-color: #58a6ff;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 </style>
 <!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="暮色之狐" type="application/atom+xml">
@@ -859,7 +859,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <div class="obsidian-callout obsidian-callout-tip" id="obsidian-callout-86coendmd"><div class="obsidian-callout-header"><span class="obsidian-callout-icon">&#128161;</span><span class="obsidian-callout-title">Tip</span></div><div class="obsidian-callout-content"><p>这是Claude Code通关手册的第一篇。本系列将带你从零开始，系统掌握Claude Code的完整知识体系，从CLI命令到自动化工作流，从个人使用到团队协作。</p>
+                <div class="obsidian-callout obsidian-callout-tip" id="obsidian-callout-upbe98hvq"><div class="obsidian-callout-header"><span class="obsidian-callout-icon">&#128161;</span><span class="obsidian-callout-title">Tip</span></div><div class="obsidian-callout-content"><p>这是Claude Code通关手册的第一篇。本系列将带你从零开始，系统掌握Claude Code的完整知识体系，从CLI命令到自动化工作流，从个人使用到团队协作。</p>
 </div></div>
 <p>AI发展如火如荼，你可能已经在使用各种AI编程工具。每天打开编辑器，自动补全代码、生成测试用例，或协助编写需求代码。在编辑器中与AI交互，通过不断修改完善，工作效率得到显著提升。</p>
 <p>然而，大名鼎鼎的Claude Code安装完成后，仅呈现为一个简单的命令终端。这个看似简陋的终端工具中，却蕴藏着一套与其他工具截然不同的AI编程哲学。</p>
@@ -884,7 +884,7 @@
 <li>可拓展：通过子代理、MCP协议、Hooks、Plugins，让它连接Jira、数据库、Slack——从一个工具长成一个平台。</li>
 </ul>
 <h2 id="使用Claude-Code"><a href="#使用Claude-Code" class="headerlink" title="使用Claude Code"></a>使用Claude Code</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>要安装Claude Code，请使用以下方法之一：</p>
-<div class="obsidian-tabs" id="obsidian-tabs-c9ojitzec"><div class="obsidian-tabs-nav"><button class="obsidian-tab-btn active" data-tab="obsidian-tabs-c9ojitzec-tab-0">原生安装（推荐）</button><button class="obsidian-tab-btn" data-tab="obsidian-tabs-c9ojitzec-tab-1">Homebrew</button><button class="obsidian-tab-btn" data-tab="obsidian-tabs-c9ojitzec-tab-2">WinGet</button><button class="obsidian-tab-btn" data-tab="obsidian-tabs-c9ojitzec-tab-3">npm(废弃)</button></div><div class="obsidian-tabs-content"><div class="obsidian-tab-panel active" id="obsidian-tabs-c9ojitzec-tab-0"><p><strong>macOS, Linux, WSL:</strong></p>
+<div class="obsidian-tabs" id="obsidian-tabs-dtibubxyj"><div class="obsidian-tabs-nav"><button class="obsidian-tab-btn active" data-tab="obsidian-tabs-dtibubxyj-tab-0">原生安装（推荐）</button><button class="obsidian-tab-btn" data-tab="obsidian-tabs-dtibubxyj-tab-1">Homebrew</button><button class="obsidian-tab-btn" data-tab="obsidian-tabs-dtibubxyj-tab-2">WinGet</button><button class="obsidian-tab-btn" data-tab="obsidian-tabs-dtibubxyj-tab-3">npm(废弃)</button></div><div class="obsidian-tabs-content"><div class="obsidian-tab-panel active" id="obsidian-tabs-dtibubxyj-tab-0"><p><strong>macOS, Linux, WSL:</strong></p>
 <pre><code class="bash">curl -fsSL https://claude.ai/install.sh | bash
 </code></pre>
 <br/>
@@ -897,24 +897,24 @@
 <p><strong>Windows CMD:</strong></p>
 <pre><code>curl -fsSL https://claude.ai/install.cmd -o install.cmd &amp;&amp; install.cmd &amp;&amp; del install.cmd
 </code></pre>
-</div><div class="obsidian-tab-panel" id="obsidian-tabs-c9ojitzec-tab-1"><pre><code>brew install --cask claude-code
+</div><div class="obsidian-tab-panel" id="obsidian-tabs-dtibubxyj-tab-1"><pre><code>brew install --cask claude-code
 </code></pre>
 <br/>
 
 <p>安装后不会自动更新。请<code>brew upgrade claude-code</code>定期运行更新程序以获取最新功能和安全修复。</p>
-</div><div class="obsidian-tab-panel" id="obsidian-tabs-c9ojitzec-tab-2"><pre><code>winget install Anthropic.ClaudeCode
+</div><div class="obsidian-tab-panel" id="obsidian-tabs-dtibubxyj-tab-2"><pre><code>winget install Anthropic.ClaudeCode
 </code></pre>
 <br/>
 
 <p>WinGet安装程序不会自动更新。请<code>winget upgrade Anthropic.ClaudeCode</code>定期运行以获取最新功能和安全修复程序。</p>
-</div><div class="obsidian-tab-panel" id="obsidian-tabs-c9ojitzec-tab-3"><pre><code>npm install -g @anthropic-ai/claude-code
+</div><div class="obsidian-tab-panel" id="obsidian-tabs-dtibubxyj-tab-3"><pre><code>npm install -g @anthropic-ai/claude-code
 </code></pre>
 <br/>
 
 <p>如果你之前通过npm安装过，建议迁移到原生安装器。你的配置文件（<code>~/.claude/settings.json</code>和项目里的<code>.claude/</code>目录）在迁移过程中会被保留，不用担心丢失。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></p>
 </div></div></div>
 
-<div class="obsidian-callout obsidian-callout-warning" id="obsidian-callout-sejoc614k"><div class="obsidian-callout-header"><span class="obsidian-callout-icon">&#9888;</span><span class="obsidian-callout-title">废弃</span></div><div class="obsidian-callout-content"><p><strong>2026年2月</strong> Anthropic官方已经将npm安装标记为<strong>废弃（deprecated）</strong>，推荐使用原生安装器。原生安装器不依赖Node.js，启动更快，自动更新。</p>
+<div class="obsidian-callout obsidian-callout-warning" id="obsidian-callout-mlcc9zflo"><div class="obsidian-callout-header"><span class="obsidian-callout-icon">&#9888;</span><span class="obsidian-callout-title">废弃</span></div><div class="obsidian-callout-content"><p><strong>2026年2月</strong> Anthropic官方已经将npm安装标记为<strong>废弃（deprecated）</strong>，推荐使用原生安装器。原生安装器不依赖Node.js，启动更快，自动更新。</p>
 </div></div>
 <h3 id="登录认证"><a href="#登录认证" class="headerlink" title="登录认证"></a>登录认证</h3><p>Claude Code需要账户才能使用。当你使用<code>claude</code>命令启动会话时，需要登录：</p>
 <pre class="line-numbers language-none"><code class="language-none">claude
@@ -924,8 +924,8 @@
 <span class="token comment"># 按照提示使用你的账户登录</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <p>你可以使用以下任何账户类型登录：</p>
-<div class="obsidian-tabs" id="obsidian-tabs-756cygbhy"><div class="obsidian-tabs-nav"><button class="obsidian-tab-btn active" data-tab="obsidian-tabs-756cygbhy-tab-0">Claude Pro / Max订阅</button><button class="obsidian-tab-btn" data-tab="obsidian-tabs-756cygbhy-tab-1">API key(按量付费)</button></div><div class="obsidian-tabs-content"><div class="obsidian-tab-panel active" id="obsidian-tabs-756cygbhy-tab-0"><p>规定月费，适合高频使用者<br>首次启动时浏览器弹窗登录<br>推荐给日常开发使用的用户</p>
-</div><div class="obsidian-tab-panel" id="obsidian-tabs-756cygbhy-tab-1"><p>用多少付多少<br>在Anthropic Console获取Key<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></p>
+<div class="obsidian-tabs" id="obsidian-tabs-f8fcdx55s"><div class="obsidian-tabs-nav"><button class="obsidian-tab-btn active" data-tab="obsidian-tabs-f8fcdx55s-tab-0">Claude Pro / Max订阅</button><button class="obsidian-tab-btn" data-tab="obsidian-tabs-f8fcdx55s-tab-1">API key(按量付费)</button></div><div class="obsidian-tabs-content"><div class="obsidian-tab-panel active" id="obsidian-tabs-f8fcdx55s-tab-0"><p>规定月费，适合高频使用者<br>首次启动时浏览器弹窗登录<br>推荐给日常开发使用的用户</p>
+</div><div class="obsidian-tab-panel" id="obsidian-tabs-f8fcdx55s-tab-1"><p>用多少付多少<br>在Anthropic Console获取Key<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></p>
 </div></div></div>
 <p>如果每天都频繁使用，订阅更划算；如果仅仅是运行脚本，API key更划算。</p>
 <h3 id="四个命令打天下：90-的工作靠它们"><a href="#四个命令打天下：90-的工作靠它们" class="headerlink" title="四个命令打天下：90%的工作靠它们"></a>四个命令打天下：90%的工作靠它们</h3><p>Claude Code的命令其实非常多，但刚开始只需要记住四个。就像学开车——你不需要一上来就研究发动机原理，先学会启动、刹车、转向、倒车，就能上路了。</p>
@@ -1477,7 +1477,7 @@ claude <span class="token parameter variable">-p</span> <span class="token strin
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;&nbsp;<span
-                class="white-color">88.5k</span>&nbsp;字
+                class="white-color">91k</span>&nbsp;字
             
             
             

@@ -31,135 +31,6 @@
 
 <!-- hexo injector head_end start -->
 <style>
-.obsidian-tabs {
-  margin: 1.5em 0;
-  border: 1px solid var(--tab-border-color, #e0e0e0);
-  border-radius: 8px;
-  overflow: hidden;
-  background: var(--tab-bg, #fafafa);
-}
-
-.obsidian-tabs-nav {
-  display: flex;
-  background: var(--tab-nav-bg, #f0f0f0);
-  border-bottom: 1px solid var(--tab-border-color, #e0e0e0);
-  overflow-x: auto;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-
-.obsidian-tabs-nav::-webkit-scrollbar {
-  display: none;
-}
-
-.obsidian-tab-btn {
-  padding: 12px 20px;
-  border: none;
-  background: transparent;
-  color: var(--tab-text-color, #666);
-  font-size: 14px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  white-space: nowrap;
-  border-bottom: 2px solid transparent;
-  margin-bottom: -1px;
-}
-
-.obsidian-tab-btn:hover {
-  color: var(--tab-hover-color, #333);
-  background: var(--tab-hover-bg, rgba(0,0,0,0.03));
-}
-
-.obsidian-tab-btn.active {
-  color: var(--tab-active-color, #448aff);
-  border-bottom-color: var(--tab-active-color, #448aff);
-  background: var(--tab-bg, #fafafa);
-}
-
-.obsidian-tabs-content {
-  padding: 20px;
-  background: var(--tab-bg, #fafafa);
-}
-
-.obsidian-tab-panel {
-  display: none;
-  animation: fadeIn 0.3s ease;
-}
-
-.obsidian-tab-panel.active {
-  display: block;
-}
-
-.obsidian-tab-panel > *:first-child {
-  margin-top: 0;
-}
-
-.obsidian-tab-panel > *:last-child {
-  margin-bottom: 0;
-}
-
-.obsidian-tab-panel pre {
-  margin: 1em 0;
-  border-radius: 6px;
-}
-
-.obsidian-tab-panel code {
-  font-family: 'SF Mono', Monaco, 'Cascadia Code', monospace;
-}
-
-/* Fix code block background color inside tabs */
-.obsidian-tab-panel pre code {
-  background: transparent !important;
-}
-
-.obsidian-tab-panel .highlight {
-  background: transparent !important;
-}
-
-.obsidian-tab-panel .highlight pre {
-  background: var(--code-bg, #f5f5f5) !important;
-}
-
-.obsidian-tab-panel figure.highlight {
-  background: var(--code-bg, #f5f5f5) !important;
-}
-
-.obsidian-tab-panel td.gutter {
-  background: var(--code-gutter-bg, #f0f0f0) !important;
-}
-
-.obsidian-tab-panel td.code {
-  background: var(--code-bg, #f5f5f5) !important;
-}
-
-@media (prefers-color-scheme: dark) {
-  .obsidian-tab-panel .highlight pre,
-  .obsidian-tab-panel figure.highlight {
-    --code-bg: #2d2d2d;
-    --code-gutter-bg: #252525;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  .obsidian-tabs {
-    --tab-bg: #1e1e1e;
-    --tab-nav-bg: #252526;
-    --tab-border-color: #333;
-    --tab-text-color: #999;
-    --tab-hover-color: #ccc;
-    --tab-hover-bg: rgba(255,255,255,0.05);
-    --tab-active-color: #58a6ff;
-  }
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(5px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-</style>
-
-<style>
 .obsidian-callout {
   margin: 1.5em 0;
   border-radius: 8px;
@@ -364,6 +235,135 @@
   .obsidian-callout-content code {
     background: rgba(255,255,255,0.1);
   }
+}
+</style>
+
+<style>
+.obsidian-tabs {
+  margin: 1.5em 0;
+  border: 1px solid var(--tab-border-color, #e0e0e0);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--tab-bg, #fafafa);
+}
+
+.obsidian-tabs-nav {
+  display: flex;
+  background: var(--tab-nav-bg, #f0f0f0);
+  border-bottom: 1px solid var(--tab-border-color, #e0e0e0);
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.obsidian-tabs-nav::-webkit-scrollbar {
+  display: none;
+}
+
+.obsidian-tab-btn {
+  padding: 12px 20px;
+  border: none;
+  background: transparent;
+  color: var(--tab-text-color, #666);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+}
+
+.obsidian-tab-btn:hover {
+  color: var(--tab-hover-color, #333);
+  background: var(--tab-hover-bg, rgba(0,0,0,0.03));
+}
+
+.obsidian-tab-btn.active {
+  color: var(--tab-active-color, #448aff);
+  border-bottom-color: var(--tab-active-color, #448aff);
+  background: var(--tab-bg, #fafafa);
+}
+
+.obsidian-tabs-content {
+  padding: 20px;
+  background: var(--tab-bg, #fafafa);
+}
+
+.obsidian-tab-panel {
+  display: none;
+  animation: fadeIn 0.3s ease;
+}
+
+.obsidian-tab-panel.active {
+  display: block;
+}
+
+.obsidian-tab-panel > *:first-child {
+  margin-top: 0;
+}
+
+.obsidian-tab-panel > *:last-child {
+  margin-bottom: 0;
+}
+
+.obsidian-tab-panel pre {
+  margin: 1em 0;
+  border-radius: 6px;
+}
+
+.obsidian-tab-panel code {
+  font-family: 'SF Mono', Monaco, 'Cascadia Code', monospace;
+}
+
+/* Fix code block background color inside tabs */
+.obsidian-tab-panel pre code {
+  background: transparent !important;
+}
+
+.obsidian-tab-panel .highlight {
+  background: transparent !important;
+}
+
+.obsidian-tab-panel .highlight pre {
+  background: var(--code-bg, #f5f5f5) !important;
+}
+
+.obsidian-tab-panel figure.highlight {
+  background: var(--code-bg, #f5f5f5) !important;
+}
+
+.obsidian-tab-panel td.gutter {
+  background: var(--code-gutter-bg, #f0f0f0) !important;
+}
+
+.obsidian-tab-panel td.code {
+  background: var(--code-bg, #f5f5f5) !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  .obsidian-tab-panel .highlight pre,
+  .obsidian-tab-panel figure.highlight {
+    --code-bg: #2d2d2d;
+    --code-gutter-bg: #252525;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .obsidian-tabs {
+    --tab-bg: #1e1e1e;
+    --tab-nav-bg: #252526;
+    --tab-border-color: #333;
+    --tab-text-color: #999;
+    --tab-hover-color: #ccc;
+    --tab-hover-bg: rgba(255,255,255,0.05);
+    --tab-active-color: #58a6ff;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 </style>
 <!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="暮色之狐" type="application/atom+xml">
@@ -777,11 +777,38 @@
                 </a>
                 
                 
-                <a href="/tags/Hexo/" title="Hexo: 9">
+                <a href="/tags/Hexo/" title="Hexo: 12">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
                             data-tagname="Hexo" style="background-color: #F8F9F9;">Hexo
-                        <span class="tag-length">9</span>
+                        <span class="tag-length">12</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/Obsidian/" title="Obsidian: 7">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="Obsidian" style="background-color: #82E0AA;">Obsidian
+                        <span class="tag-length">7</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/JavaScript/" title="JavaScript: 2">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="JavaScript" style="background-color: #D7BDE2;">JavaScript
+                        <span class="tag-length">2</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E5%9B%BE%E7%89%87%E4%BC%98%E5%8C%96/" title="图片优化: 3">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="图片优化" style="background-color: #A3E4D7;">图片优化
+                        <span class="tag-length">3</span>
                     </span>
                 </a>
                 
@@ -789,26 +816,8 @@
                 <a href="/tags/URL%E4%BC%98%E5%8C%96/" title="URL优化: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-active "
-                            data-tagname="URL优化" style="background-color: #82E0AA;">URL优化
+                            data-tagname="URL优化" style="background-color: #85C1E9;">URL优化
                         <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/JavaScript/" title="JavaScript: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="JavaScript" style="background-color: #D7BDE2;">JavaScript
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/%E5%9B%BE%E7%89%87%E4%BC%98%E5%8C%96/" title="图片优化: 2">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="图片优化" style="background-color: #A3E4D7;">图片优化
-                        <span class="tag-length">2</span>
                     </span>
                 </a>
                 
@@ -816,7 +825,7 @@
                 <a href="/tags/%E6%BF%80%E6%B4%BB/" title="激活: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="激活" style="background-color: #85C1E9;">激活
+                            data-tagname="激活" style="background-color: #F8C471;">激活
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -825,7 +834,7 @@
                 <a href="/tags/IDEA/" title="IDEA: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="IDEA" style="background-color: #F8C471;">IDEA
+                            data-tagname="IDEA" style="background-color: #F9E79F;">IDEA
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -834,7 +843,7 @@
                 <a href="/tags/Linux/" title="Linux: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="Linux" style="background-color: #F9E79F;">Linux
+                            data-tagname="Linux" style="background-color: #E8F8F5;">Linux
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -872,15 +881,6 @@
                              chip-default "
                             data-tagname="数学公式" style="background-color: #FEF9E7;">数学公式
                         <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/Obsidian/" title="Obsidian: 5">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="Obsidian" style="background-color: #F8C471;">Obsidian
-                        <span class="tag-length">5</span>
                     </span>
                 </a>
                 
@@ -975,11 +975,29 @@
                 </a>
                 
                 
+                <a href="/tags/Docker/" title="Docker: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="Docker" style="background-color: #F9EBEA;">Docker
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
                 <a href="/tags/Ubuntu/" title="Ubuntu: 2">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
                             data-tagname="Ubuntu" style="background-color: #FEF9E7;">Ubuntu
                         <span class="tag-length">2</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/" title="安装教程: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="安装教程" style="background-color: #D5F5E3;">安装教程
+                        <span class="tag-length">1</span>
                     </span>
                 </a>
                 
@@ -997,24 +1015,6 @@
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
                             data-tagname="网络配置" style="background-color: #F9EBEA;">网络配置
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/Docker/" title="Docker: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="Docker" style="background-color: #F9EBEA;">Docker
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/" title="安装教程: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="安装教程" style="background-color: #D5F5E3;">安装教程
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -1083,6 +1083,33 @@
                 </a>
                 
                 
+                <a href="/tags/CDN/" title="CDN: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="CDN" style="background-color: #F9EBEA;">CDN
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E7%BC%93%E5%AD%98/" title="缓存: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="缓存" style="background-color: #85C1E9;">缓存
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/jsDelivr/" title="jsDelivr: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="jsDelivr" style="background-color: #D5F5E3;">jsDelivr
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
                 <a href="/tags/ZooKeeper/" title="ZooKeeper: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
@@ -1119,33 +1146,6 @@
                 </a>
                 
                 
-                <a href="/tags/CDN/" title="CDN: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="CDN" style="background-color: #F9EBEA;">CDN
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/%E7%BC%93%E5%AD%98/" title="缓存: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="缓存" style="background-color: #85C1E9;">缓存
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/jsDelivr/" title="jsDelivr: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="jsDelivr" style="background-color: #D5F5E3;">jsDelivr
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
                 <a href="/tags/Node-js/" title="Node.js: 2">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
@@ -1168,15 +1168,6 @@
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
                             data-tagname="进程管理" style="background-color: #FFF;">进程管理
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/uniCloud/" title="uniCloud: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="uniCloud" style="background-color: #82E0AA;">uniCloud
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -1209,11 +1200,83 @@
                 </a>
                 
                 
+                <a href="/tags/uniCloud/" title="uniCloud: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="uniCloud" style="background-color: #82E0AA;">uniCloud
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E7%AC%94%E8%AE%B0%E7%AE%A1%E7%90%86/" title="笔记管理: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="笔记管理" style="background-color: #E8F8F5;">笔记管理
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E7%9F%A5%E8%AF%86%E7%BB%84%E7%BB%87/" title="知识组织: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="知识组织" style="background-color: #A3E4D7;">知识组织
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
                 <a href="/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" title="性能优化: 2">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
                             data-tagname="性能优化" style="background-color: #82E0AA;">性能优化
                         <span class="tag-length">2</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E6%8A%80%E6%9C%AF%E9%9D%A2%E8%AF%95/" title="技术面试: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="技术面试" style="background-color: #A3E4D7;">技术面试
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E9%9D%A2%E8%AF%95%E6%8A%80%E5%B7%A7/" title="面试技巧: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="面试技巧" style="background-color: #A3E4D7;">面试技巧
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E8%81%8C%E4%B8%9A%E5%8F%91%E5%B1%95/" title="职业发展: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="职业发展" style="background-color: #A3E4D7;">职业发展
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0/" title="技术学习: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="技术学习" style="background-color: #E8F8F5;">技术学习
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E8%87%AA%E6%88%91%E6%8F%90%E5%8D%87/" title="自我提升: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="自我提升" style="background-color: #FFF;">自我提升
+                        <span class="tag-length">1</span>
                     </span>
                 </a>
                 
@@ -1240,24 +1303,6 @@
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
                             data-tagname="浮点数运算" style="background-color: #D5F5E3;">浮点数运算
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/%E7%AC%94%E8%AE%B0%E7%AE%A1%E7%90%86/" title="笔记管理: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="笔记管理" style="background-color: #E8F8F5;">笔记管理
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/%E7%9F%A5%E8%AF%86%E7%BB%84%E7%BB%87/" title="知识组织: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="知识组织" style="background-color: #A3E4D7;">知识组织
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -1344,51 +1389,6 @@
                 </a>
                 
                 
-                <a href="/tags/%E8%B4%A3%E4%BB%BB%E9%93%BE/" title="责任链: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="责任链" style="background-color: #E8F8F5;">责任链
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" title="设计模式: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="设计模式" style="background-color: #85C1E9;">设计模式
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/Nginx/" title="Nginx: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="Nginx" style="background-color: #F9E79F;">Nginx
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/HTTPS/" title="HTTPS: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="HTTPS" style="background-color: #FFF;">HTTPS
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/%E7%BC%96%E7%A8%8B%E9%A3%8E%E6%A0%BC/" title="编程风格: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="编程风格" style="background-color: #A3E4D7;">编程风格
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
                 <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%93%E6%9E%84/" title="计算机结构: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
@@ -1416,19 +1416,46 @@
                 </a>
                 
                 
-                <a href="/tags/%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/" title="版本管理: 1">
+                <a href="/tags/%E7%BC%96%E7%A8%8B%E9%A3%8E%E6%A0%BC/" title="编程风格: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="版本管理" style="background-color: #82E0AA;">版本管理
+                            data-tagname="编程风格" style="background-color: #A3E4D7;">编程风格
                         <span class="tag-length">1</span>
                     </span>
                 </a>
                 
                 
-                <a href="/tags/%E4%BE%9D%E8%B5%96%E7%AE%A1%E7%90%86/" title="依赖管理: 1">
+                <a href="/tags/Nginx/" title="Nginx: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="依赖管理" style="background-color: #F8F9F9;">依赖管理
+                            data-tagname="Nginx" style="background-color: #F9E79F;">Nginx
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/HTTPS/" title="HTTPS: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="HTTPS" style="background-color: #FFF;">HTTPS
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E8%B4%A3%E4%BB%BB%E9%93%BE/" title="责任链: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="责任链" style="background-color: #E8F8F5;">责任链
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" title="设计模式: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="设计模式" style="background-color: #85C1E9;">设计模式
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -1461,46 +1488,19 @@
                 </a>
                 
                 
-                <a href="/tags/%E8%81%8C%E4%B8%9A%E5%8F%91%E5%B1%95/" title="职业发展: 1">
+                <a href="/tags/%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/" title="版本管理: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="职业发展" style="background-color: #A3E4D7;">职业发展
+                            data-tagname="版本管理" style="background-color: #82E0AA;">版本管理
                         <span class="tag-length">1</span>
                     </span>
                 </a>
                 
                 
-                <a href="/tags/%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0/" title="技术学习: 1">
+                <a href="/tags/%E4%BE%9D%E8%B5%96%E7%AE%A1%E7%90%86/" title="依赖管理: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="技术学习" style="background-color: #E8F8F5;">技术学习
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/%E8%87%AA%E6%88%91%E6%8F%90%E5%8D%87/" title="自我提升: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="自我提升" style="background-color: #FFF;">自我提升
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/%E6%8A%80%E6%9C%AF%E9%9D%A2%E8%AF%95/" title="技术面试: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="技术面试" style="background-color: #A3E4D7;">技术面试
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/%E9%9D%A2%E8%AF%95%E6%8A%80%E5%B7%A7/" title="面试技巧: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="面试技巧" style="background-color: #A3E4D7;">面试技巧
+                            data-tagname="依赖管理" style="background-color: #F8F9F9;">依赖管理
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -1570,7 +1570,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;&nbsp;<span
-                class="white-color">88.5k</span>&nbsp;字
+                class="white-color">91k</span>&nbsp;字
             
             
             
