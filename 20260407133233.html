@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="nvs,Node.js,版本管理,Node版本,开发工具,跨平台,LTS,package.json">
+    <meta name="keywords" content="Obsidian,Hexo,callout,标注语法,插件开发,markdown,博客集成">
     <meta name="description" content="君子以顺德，积小以高大。">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>使用nvs工具切换node版本 | 暮色之狐</title>
+    <title>Obsidian和Hexo中实现标注语法兼容 | 暮色之狐</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -670,12 +670,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">使用nvs工具切换node版本</h1>
+                    <h1 class="description center-align post-title">Obsidian和Hexo中实现标注语法兼容</h1>
                 </div>
             </div>
         </div>
@@ -791,8 +791,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Node-js/">
-                                <span class="chip bg-color">Node.js</span>
+                            <a href="/tags/Hexo/">
+                                <span class="chip bg-color">Hexo</span>
+                            </a>
+                        
+                            <a href="/tags/Obsidian/">
+                                <span class="chip bg-color">Obsidian</span>
                             </a>
                         
                     </div>
@@ -816,7 +820,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2026-02-26
+                    2026-04-07
                 </div>
                 
 
@@ -825,14 +829,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    560
+                    1.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    7 分
                 </div>
                 
 
@@ -855,46 +859,300 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p><a target="_blank" rel="noopener" href="https://github.com/jasongin/nvs">nvs官方仓库</a></p>
-<p>nvs 有跨平台的特性，支持 Windows 、 macOS和 Linux 系统，下面分别介绍两种安装方法。</p>
-<h2 id="windows"><a href="#windows" class="headerlink" title="windows"></a>windows</h2><p>推荐通过 msi 的方式安装，就跟正常安装软件一下，双击下一步即可：</p>
-<p><a target="_blank" rel="noopener" href="https://github.com/jasongin/nvs/releases">https://github.com/jasongin/nvs/releases</a></p>
-<h2 id="mac"><a href="#mac" class="headerlink" title="mac"></a>mac</h2><p>用下面三行命令即可：</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">export</span> <span class="token assign-left variable">NVS_HOME</span><span class="token operator">=</span><span class="token string">"<span class="token environment constant">$HOME</span>/.nvs"</span> <span class="token function">git</span> clone https://github.com/jasongin/nvs <span class="token string">"<span class="token variable">$NVS_HOME</span>"</span> <span class="token builtin class-name">.</span> <span class="token string">"<span class="token variable">$NVS_HOME</span>/nvs.sh"</span> <span class="token function">install</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+                <p>Obsidian支持标注(callout)语法，允许在不打断笔记正文流的情况下添加补充内容。以下是一个标注语法的示例：</p>
+<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown"><span class="token blockquote punctuation">></span> [!info] 这是标注的标题
+<span class="token blockquote punctuation">></span> 这是一个标注块。
+<span class="token blockquote punctuation">></span> 它支持 <span class="token bold"><span class="token punctuation">**</span><span class="token content">Markdown</span><span class="token punctuation">**</span></span>、[[内部链接|内部链接]] 和 [[插入文件|嵌入]]！
+<span class="token blockquote punctuation">></span> ![[Engelbart.jpg]]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h1 id="常见命令"><a href="#常见命令" class="headerlink" title="常见命令"></a>常见命令</h1><h2 id="添加Node版本"><a href="#添加Node版本" class="headerlink" title="添加Node版本"></a>添加Node版本</h2><p>如果你想安装最新的 LTS 版本，可以用命令：</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">nvs <span class="token function">add</span> lts<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>然而，当这些标注内容发布到Hexo博客时，无法正常显示。虽然Hexo本身支持类似的标注语法：</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token punctuation">&#123;</span><span class="token operator">%</span> note class_name <span class="token operator">%</span><span class="token punctuation">&#125;</span> <span class="token function">Content</span> <span class="token punctuation">(</span><span class="token parameter">md partial supported</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token operator">%</span> endnote <span class="token operator">%</span><span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p>如果你需要新增一个 Node.js 16的版本，可以用以下命令：</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">nvs <span class="token function">add</span> <span class="token number">16</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>但为了保持Obsidian的编辑体验，我们需要一个插件来解决这个问题。</p>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>在Hexo博客的<code>scripts</code>目录下创建<code>hexo-obsidian-tabs.js</code>文件，并将以下内容复制到文件中：</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token string">'use strict'</span><span class="token punctuation">;</span>
 
-<h2 id="更新当前的-Node-小版本"><a href="#更新当前的-Node-小版本" class="headerlink" title="更新当前的 Node 小版本"></a>更新当前的 Node 小版本</h2><p>如果你想要升级 Node 小版本，比方说从 20.13.1升级到20.14.0（当前大版本的最新版），可以使用如下命令：</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">nvs upgrade<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<span class="token comment">/**
+ * Hexo Obsidian Tabs Plugin
+ * Support Obsidian Tabs plugin syntax rendering
+ */</span>
 
-<h2 id="配置默认-Node-版本"><a href="#配置默认-Node-版本" class="headerlink" title="配置默认 Node 版本"></a>配置默认 Node 版本</h2><h3 id="全局指定"><a href="#全局指定" class="headerlink" title="全局指定"></a>全局指定</h3><p>这个适用于绝大部分情况，指定默认的 node 版本。</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">nvs <span class="token function">link</span> lts <span class="token comment"># 使用最新的 lts 版本，在所有的终端都生效</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<span class="token keyword">const</span> <span class="token punctuation">&#123;</span> marked <span class="token punctuation">&#125;</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'marked'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-<h3 id="局部指定"><a href="#局部指定" class="headerlink" title="局部指定"></a>局部指定</h3><p>这个适用于偶尔用一次指定版本的情况，当你的终端关闭后，下次启动默认还是之前 nvs link 过的版本。</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">nvs use <span class="token number">16</span> <span class="token comment"># 在当前的终端使用 16 版本，关闭后失效</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<span class="token comment">// Match the HTML output of tabs code blocks after markdown rendering</span>
+<span class="token comment">// Hexo converts ```tabs to &lt;pre>&lt;code class="language-tabs">...&lt;/code>&lt;/pre></span>
+<span class="token keyword">const</span> <span class="token constant">TABS_HTML_REGEX</span> <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">&lt;pre[^>]*>\s*&lt;code[^>]*class="[^"]*language-tabs[^"]*"[^>]*>([\s\S]*?)&lt;\/code>\s*&lt;\/pre></span><span class="token regex-delimiter">/</span><span class="token regex-flags">g</span></span><span class="token punctuation">;</span>
 
-<h2 id="查看所有安装的-Node-版本"><a href="#查看所有安装的-Node-版本" class="headerlink" title="查看所有安装的 Node 版本"></a>查看所有安装的 Node 版本</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">nvs <span class="token function">ls</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<span class="token comment">// Match tab header in HTML content</span>
+<span class="token keyword">const</span> <span class="token constant">TAB_HEADER_REGEX</span> <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">tab:\s*([^\n]+)</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">;</span>
 
-<h2 id="其他命令"><a href="#其他命令" class="headerlink" title="其他命令"></a>其他命令</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">nvs <span class="token parameter variable">--help</span> // 查看其他命令的帮助<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<span class="token comment">// Match code blocks within tab content</span>
+<span class="token keyword">const</span> <span class="token constant">CODE_BLOCK_REGEX</span> <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">&amp;#96;&amp;#96;&amp;#96;(\w*)\n([\s\S]*?)&amp;#96;&amp;#96;&amp;#96;</span><span class="token regex-delimiter">/</span><span class="token regex-flags">g</span></span><span class="token punctuation">;</span>
 
+<span class="token keyword">function</span> <span class="token function">parseTabsHtml</span><span class="token punctuation">(</span><span class="token parameter">content</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">return</span> content<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token constant">TABS_HTML_REGEX</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">match<span class="token punctuation">,</span> codeContent</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+    <span class="token comment">// Decode HTML entities</span>
+    <span class="token keyword">let</span> decodedContent <span class="token operator">=</span> codeContent
+      <span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">&amp;#x2F;</span><span class="token regex-delimiter">/</span><span class="token regex-flags">g</span></span><span class="token punctuation">,</span> <span class="token string">'/'</span><span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">&amp;#x27;</span><span class="token regex-delimiter">/</span><span class="token regex-flags">g</span></span><span class="token punctuation">,</span> <span class="token string">"'"</span><span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">&amp;lt;</span><span class="token regex-delimiter">/</span><span class="token regex-flags">g</span></span><span class="token punctuation">,</span> <span class="token string">'&lt;'</span><span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">&amp;gt;</span><span class="token regex-delimiter">/</span><span class="token regex-flags">g</span></span><span class="token punctuation">,</span> <span class="token string">'>'</span><span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">&amp;quot;</span><span class="token regex-delimiter">/</span><span class="token regex-flags">g</span></span><span class="token punctuation">,</span> <span class="token string">'"'</span><span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">&amp;amp;</span><span class="token regex-delimiter">/</span><span class="token regex-flags">g</span></span><span class="token punctuation">,</span> <span class="token string">'&amp;'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-<h2 id="命令手册"><a href="#命令手册" class="headerlink" title="命令手册"></a>命令手册</h2><p><img src="../Assets/file-20260404130919072.png" ></p>
-<p>一个具体版本或者版本过滤词由一个完整的或者部分的语义版本号或者版本标签（”lts”, “latest”, “Argon”等）组成，也可以是远端的版本名称，或者使用斜杠分隔来指定架构版本。例如：”lts”, “4.6.0”, “6/x86”, “node/6.7/x64”等。</p>
-<h1 id="实用技巧"><a href="#实用技巧" class="headerlink" title="实用技巧"></a>实用技巧</h1><p>如果你不想每次都手动切换 node 版本，希望根据项目配置来，那么你可以把 <code>nvs use 16</code>这样的命令，写到项目的 pre 中。<code>package.json</code>示例如下：</p>
-<pre class="line-numbers language-none"><code class="language-none">&#123;
-  &quot;scripts&quot;: &#123;
-    &quot;predev&quot;: &quot;nvs use 16&quot;,
-    &quot;dev&quot;: &quot;vue-cli-service serve&quot;
-    &quot;prebuild&quot;: &quot;nvs use 16&quot;,
-    &quot;dev&quot;: &quot;vue-cli-service build&quot;
+    <span class="token comment">// First, restore code blocks that were encoded</span>
+    <span class="token comment">// Convert &amp;#96; back to ` for code blocks</span>
+    decodedContent <span class="token operator">=</span> decodedContent<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">&amp;#96;</span><span class="token regex-delimiter">/</span><span class="token regex-flags">g</span></span><span class="token punctuation">,</span> <span class="token string">'`'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// Split by tab headers</span>
+    <span class="token keyword">const</span> lines <span class="token operator">=</span> decodedContent<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">'\n'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">const</span> tabs <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">let</span> currentTab <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+    <span class="token keyword">let</span> currentContent <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">const</span> line <span class="token keyword">of</span> lines<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">const</span> tabMatch <span class="token operator">=</span> line<span class="token punctuation">.</span><span class="token function">match</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">^tab:\s*(.+)$</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>tabMatch<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token comment">// Save previous tab</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>currentTab<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+          tabs<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+            <span class="token literal-property property">title</span><span class="token operator">:</span> currentTab<span class="token punctuation">,</span>
+            <span class="token literal-property property">content</span><span class="token operator">:</span> currentContent<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">'\n'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">trim</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+          <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token comment">// Start new tab</span>
+        currentTab <span class="token operator">=</span> tabMatch<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">trim</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        currentContent <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+      <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>currentTab<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token comment">// Collect current tab content</span>
+        currentContent<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>line<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token comment">// Save last tab</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>currentTab<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      tabs<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+        <span class="token literal-property property">title</span><span class="token operator">:</span> currentTab<span class="token punctuation">,</span>
+        <span class="token literal-property property">content</span><span class="token operator">:</span> currentContent<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">'\n'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">trim</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>tabs<span class="token punctuation">.</span>length <span class="token operator">===</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">return</span> match<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token comment">// Generate unique ID</span>
+    <span class="token keyword">const</span> tabsId <span class="token operator">=</span> <span class="token string">'obsidian-tabs-'</span> <span class="token operator">+</span> Math<span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token number">36</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">substr</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// Build HTML</span>
+    <span class="token keyword">let</span> html <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">&lt;div class="obsidian-tabs" id="</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span>tabsId<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token string">"></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
+
+    <span class="token comment">// Tab buttons</span>
+    html <span class="token operator">+=</span> <span class="token string">'&lt;div class="obsidian-tabs-nav">'</span><span class="token punctuation">;</span>
+    tabs<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">tab<span class="token punctuation">,</span> index</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">const</span> activeClass <span class="token operator">=</span> index <span class="token operator">===</span> <span class="token number">0</span> <span class="token operator">?</span> <span class="token string">' active'</span> <span class="token operator">:</span> <span class="token string">''</span><span class="token punctuation">;</span>
+      html <span class="token operator">+=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">&lt;button class="obsidian-tab-btn</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span>activeClass<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token string">" data-tab="</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span>tabsId<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token string">-tab-</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span>index<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token string">"></span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span><span class="token function">escapeHtml</span><span class="token punctuation">(</span>tab<span class="token punctuation">.</span>title<span class="token punctuation">)</span><span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token string">&lt;/button></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    html <span class="token operator">+=</span> <span class="token string">'&lt;/div>'</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// Tab content - render markdown for each tab</span>
+    html <span class="token operator">+=</span> <span class="token string">'&lt;div class="obsidian-tabs-content">'</span><span class="token punctuation">;</span>
+    tabs<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">tab<span class="token punctuation">,</span> index</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">const</span> activeClass <span class="token operator">=</span> index <span class="token operator">===</span> <span class="token number">0</span> <span class="token operator">?</span> <span class="token string">' active'</span> <span class="token operator">:</span> <span class="token string">''</span><span class="token punctuation">;</span>
+      <span class="token comment">// Use hexo's markdown renderer</span>
+      <span class="token keyword">const</span> renderedContent <span class="token operator">=</span> hexo<span class="token punctuation">.</span>render<span class="token punctuation">.</span><span class="token function">renderSync</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span> <span class="token literal-property property">text</span><span class="token operator">:</span> tab<span class="token punctuation">.</span>content<span class="token punctuation">,</span> <span class="token literal-property property">engine</span><span class="token operator">:</span> <span class="token string">'markdown'</span> <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      html <span class="token operator">+=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">&lt;div class="obsidian-tab-panel</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span>activeClass<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token string">" id="</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span>tabsId<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token string">-tab-</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span>index<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token string">"></span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span>renderedContent<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token string">&lt;/div></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    html <span class="token operator">+=</span> <span class="token string">'&lt;/div>'</span><span class="token punctuation">;</span>
+
+    html <span class="token operator">+=</span> <span class="token string">'&lt;/div>'</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">return</span> html<span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">function</span> <span class="token function">escapeHtml</span><span class="token punctuation">(</span><span class="token parameter">text</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">return</span> text
+    <span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">&amp;</span><span class="token regex-delimiter">/</span><span class="token regex-flags">g</span></span><span class="token punctuation">,</span> <span class="token string">'&amp;amp;'</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">&lt;</span><span class="token regex-delimiter">/</span><span class="token regex-flags">g</span></span><span class="token punctuation">,</span> <span class="token string">'&amp;lt;'</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">></span><span class="token regex-delimiter">/</span><span class="token regex-flags">g</span></span><span class="token punctuation">,</span> <span class="token string">'&amp;gt;'</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">"</span><span class="token regex-delimiter">/</span><span class="token regex-flags">g</span></span><span class="token punctuation">,</span> <span class="token string">'&amp;quot;'</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">'</span><span class="token regex-delimiter">/</span><span class="token regex-flags">g</span></span><span class="token punctuation">,</span> <span class="token string">'&amp;#039;'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token comment">// Register filter - process after markdown rendering</span>
+hexo<span class="token punctuation">.</span>extend<span class="token punctuation">.</span>filter<span class="token punctuation">.</span><span class="token function">register</span><span class="token punctuation">(</span><span class="token string">'after_post_render'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">data</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>data<span class="token punctuation">.</span>content<span class="token punctuation">)</span> <span class="token keyword">return</span> data<span class="token punctuation">;</span>
+  data<span class="token punctuation">.</span>content <span class="token operator">=</span> <span class="token function">parseTabsHtml</span><span class="token punctuation">(</span>data<span class="token punctuation">.</span>content<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> data<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Lower priority to run after markdown rendering</span>
+
+<span class="token comment">// Inject CSS</span>
+hexo<span class="token punctuation">.</span>extend<span class="token punctuation">.</span>injector<span class="token punctuation">.</span><span class="token function">register</span><span class="token punctuation">(</span><span class="token string">'head_end'</span><span class="token punctuation">,</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+&lt;style>
+.obsidian-tabs &#123;
+  margin: 1.5em 0;
+  border: 1px solid var(--tab-border-color, #e0e0e0);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--tab-bg, #fafafa);
+&#125;
+
+.obsidian-tabs-nav &#123;
+  display: flex;
+  background: var(--tab-nav-bg, #f0f0f0);
+  border-bottom: 1px solid var(--tab-border-color, #e0e0e0);
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+&#125;
+
+.obsidian-tabs-nav::-webkit-scrollbar &#123;
+  display: none;
+&#125;
+
+.obsidian-tab-btn &#123;
+  padding: 12px 20px;
+  border: none;
+  background: transparent;
+  color: var(--tab-text-color, #666);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+&#125;
+
+.obsidian-tab-btn:hover &#123;
+  color: var(--tab-hover-color, #333);
+  background: var(--tab-hover-bg, rgba(0,0,0,0.03));
+&#125;
+
+.obsidian-tab-btn.active &#123;
+  color: var(--tab-active-color, #448aff);
+  border-bottom-color: var(--tab-active-color, #448aff);
+  background: var(--tab-bg, #fafafa);
+&#125;
+
+.obsidian-tabs-content &#123;
+  padding: 20px;
+  background: var(--tab-bg, #fafafa);
+&#125;
+
+.obsidian-tab-panel &#123;
+  display: none;
+  animation: fadeIn 0.3s ease;
+&#125;
+
+.obsidian-tab-panel.active &#123;
+  display: block;
+&#125;
+
+.obsidian-tab-panel > *:first-child &#123;
+  margin-top: 0;
+&#125;
+
+.obsidian-tab-panel > *:last-child &#123;
+  margin-bottom: 0;
+&#125;
+
+.obsidian-tab-panel pre &#123;
+  margin: 1em 0;
+  border-radius: 6px;
+&#125;
+
+.obsidian-tab-panel code &#123;
+  font-family: 'SF Mono', Monaco, 'Cascadia Code', monospace;
+&#125;
+
+/* Fix code block background color inside tabs */
+.obsidian-tab-panel pre code &#123;
+  background: transparent !important;
+&#125;
+
+.obsidian-tab-panel .highlight &#123;
+  background: transparent !important;
+&#125;
+
+.obsidian-tab-panel .highlight pre &#123;
+  background: var(--code-bg, #f5f5f5) !important;
+&#125;
+
+.obsidian-tab-panel figure.highlight &#123;
+  background: var(--code-bg, #f5f5f5) !important;
+&#125;
+
+.obsidian-tab-panel td.gutter &#123;
+  background: var(--code-gutter-bg, #f0f0f0) !important;
+&#125;
+
+.obsidian-tab-panel td.code &#123;
+  background: var(--code-bg, #f5f5f5) !important;
+&#125;
+
+@media (prefers-color-scheme: dark) &#123;
+  .obsidian-tab-panel .highlight pre,
+  .obsidian-tab-panel figure.highlight &#123;
+    --code-bg: #2d2d2d;
+    --code-gutter-bg: #252525;
   &#125;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+&#125;
 
-<p>这样你每次启动或者打包项目的之前，都会先执行 pre 开头的 script，然后在执行你当前执行的命令。</p>
+@media (prefers-color-scheme: dark) &#123;
+  .obsidian-tabs &#123;
+    --tab-bg: #1e1e1e;
+    --tab-nav-bg: #252526;
+    --tab-border-color: #333;
+    --tab-text-color: #999;
+    --tab-hover-color: #ccc;
+    --tab-hover-bg: rgba(255,255,255,0.05);
+    --tab-active-color: #58a6ff;
+  &#125;
+&#125;
+
+@keyframes fadeIn &#123;
+  from &#123; opacity: 0; transform: translateY(5px); &#125;
+  to &#123; opacity: 1; transform: translateY(0); &#125;
+&#125;
+&lt;/style>
+</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Inject JavaScript</span>
+hexo<span class="token punctuation">.</span>extend<span class="token punctuation">.</span>injector<span class="token punctuation">.</span><span class="token function">register</span><span class="token punctuation">(</span><span class="token string">'body_end'</span><span class="token punctuation">,</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+&lt;script>
+(function() &#123;
+  document.querySelectorAll('.obsidian-tab-btn').forEach(function(btn) &#123;
+    btn.addEventListener('click', function() &#123;
+      var tabsContainer = this.closest('.obsidian-tabs');
+      var tabId = this.getAttribute('data-tab');
+
+      tabsContainer.querySelectorAll('.obsidian-tab-btn').forEach(function(b) &#123;
+        b.classList.remove('active');
+      &#125;);
+      tabsContainer.querySelectorAll('.obsidian-tab-panel').forEach(function(p) &#123;
+        p.classList.remove('active');
+      &#125;);
+
+      this.classList.add('active');
+      document.getElementById(tabId).classList.add('active');
+    &#125;);
+  &#125;);
+&#125;)();
+&lt;/script>
+</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'[hexo-obsidian-tabs] Plugin loaded successfully!'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="使用说明"><a href="#使用说明" class="headerlink" title="使用说明"></a>使用说明</h2><ol>
+<li>将上述代码保存为<code>hexo-obsidian-tabs.js</code>文件</li>
+<li>将该文件放置在Hexo博客的<code>scripts</code>目录下</li>
+<li>重启Hexo服务器，插件将自动加载</li>
+</ol>
+<p>该插件会自动处理Obsidian标注语法，并将其转换为Hexo可识别的格式，确保内容在博客上正确显示。</p>
 
                 
             </div>
@@ -921,7 +1179,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://gloamfox.github.io/20260226043540.html">https://gloamfox.github.io/20260226043540.html</a>
+                    <a href="https://gloamfox.github.io/20260407133233.html">https://gloamfox.github.io/20260407133233.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -959,8 +1217,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Node-js/">
-                                    <span class="chip bg-color">Node.js</span>
+                                <a href="/tags/Hexo/">
+                                    <span class="chip bg-color">Hexo</span>
+                                </a>
+                            
+                                <a href="/tags/Obsidian/">
+                                    <span class="chip bg-color">Obsidian</span>
                                 </a>
                             
                         </div>
@@ -1130,54 +1392,52 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/20260301122243.html">
+                <a href="/20260407133233.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" >
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" >
                         
-                        <span class="card-title">计算机组成原理</span>
+                        <span class="card-title">Obsidian和Hexo中实现标注语法兼容</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            本文详细介绍了计算机的经典结构、运算器与控制器、Flynn分类法、指令格式、寻址方式、CISC与RISC、层次化存储结构、总线系统、可靠性计算以及校验码等核心概念，是计算机组成原理的全面概述。
+                            文章介绍了如何解决Obsidian标注(callout)语法在Hexo博客上无法正常显示的问题。作者创建了一个名为'Hexo Obsidian Tabs'的插件，该插件能将Obsidian的标注语法转换为Hexo可识别的格式。文章详细提供了插件的完整代码、安装步骤和使用说明，确保内容在博客上正确显示，同时保持Obsidian的编辑体验。
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2026-03-01
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2026-04-07
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/" class="post-category">
-                                    计算机基础
+                            <a href="/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/" class="post-category">
+                                    软件工具
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%93%E6%9E%84/">
-                        <span class="chip bg-color">计算机结构</span>
+                    <a href="/tags/Hexo/">
+                        <span class="chip bg-color">Hexo</span>
                     </a>
                     
-                    <a href="/tags/%E5%86%AF%C2%B7%E8%AF%BA%E4%BE%9D%E6%9B%BC/">
-                        <span class="chip bg-color">冯·诺依曼</span>
-                    </a>
-                    
-                    <a href="/tags/Flynn%E5%88%86%E7%B1%BB/">
-                        <span class="chip bg-color">Flynn分类</span>
+                    <a href="/tags/Obsidian/">
+                        <span class="chip bg-color">Obsidian</span>
                     </a>
                     
                 </div>
@@ -1191,31 +1451,31 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/20260130032221.html">
+                <a href="/20260404130924.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" >
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" >
                         
-                        <span class="card-title">蒙提霍尔问题-经典的三扇门问题</span>
+                        <span class="card-title">npm国内镜像源配置</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            本文详细解析了著名的蒙提霍尔问题，通过概率分析展示了为什么换门策略能将获胜概率从1/3提升至2/3。文章解释了主持人行为对概率分布的影响，纠正了常见的误解，并通过扩展到100扇门的例子直观展示了这一反直觉的概率现象。
+                            本文介绍了npm在国内下载速度慢的问题，并提供了解决方案。
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2026-01-30
+                                <i class="far fa-clock fa-fw icon-date"></i>2026-04-04
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%80%9D%E7%BB%B4%E6%A8%A1%E5%9E%8B/" class="post-category">
-                                    思维模型
+                            <a href="/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/" class="post-category">
+                                    软件工具
                                 </a>
                             
                             
@@ -1225,12 +1485,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%A6%82%E7%8E%87%E8%AE%BA/">
-                        <span class="chip bg-color">概率论</span>
-                    </a>
-                    
-                    <a href="/tags/%E5%86%B3%E7%AD%96%E5%88%86%E6%9E%90/">
-                        <span class="chip bg-color">决策分析</span>
+                    <a href="/tags/Node-js/">
+                        <span class="chip bg-color">Node.js</span>
                     </a>
                     
                 </div>
