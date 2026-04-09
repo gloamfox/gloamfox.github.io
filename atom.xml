@@ -6,7 +6,7 @@
   <link href="https://gloamfox.github.io/atom.xml" rel="self"/>
   
   <link href="https://gloamfox.github.io/"/>
-  <updated>2026-04-07T11:32:03.514Z</updated>
+  <updated>2026-04-09T09:12:39.950Z</updated>
   <id>https://gloamfox.github.io/</id>
   
   <author>
@@ -17,18 +17,72 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Claude Code通关手册（四）：自定义命令，告别手敲重复指令</title>
+    <link href="https://gloamfox.github.io/20260409094226.html"/>
+    <id>https://gloamfox.github.io/20260409094226.html</id>
+    <published>2026-04-09T09:42:26.000Z</published>
+    <updated>2026-04-09T09:12:39.950Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;div class=&quot;obsidian-callout obsidian-callout-tip&quot; id=&quot;obsidian-callout-3exqb5es8&quot;&gt;&lt;div class=&quot;obsidian-callout-header&quot;&gt;&lt;span</summary>
+        
+      
+    
+    
+    
+    <category term="软件工具" scheme="https://gloamfox.github.io/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/"/>
+    
+    
+    <category term="AI编程" scheme="https://gloamfox.github.io/tags/AI%E7%BC%96%E7%A8%8B/"/>
+    
+    <category term="Claude Code" scheme="https://gloamfox.github.io/tags/Claude-Code/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Claude Code通关手册（三）：CLAUDE.md深度实战</title>
+    <link href="https://gloamfox.github.io/20260408205456.html"/>
+    <id>https://gloamfox.github.io/20260408205456.html</id>
+    <published>2026-04-08T20:54:56.000Z</published>
+    <updated>2026-04-09T09:12:39.950Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;div class=&quot;obsidian-callout obsidian-callout-tip&quot; id=&quot;obsidian-callout-c9o8wp4mx&quot;&gt;&lt;div class=&quot;obsidian-callout-header&quot;&gt;&lt;span</summary>
+        
+      
+    
+    
+    
+    <category term="软件工具" scheme="https://gloamfox.github.io/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/"/>
+    
+    
+    <category term="AI编程" scheme="https://gloamfox.github.io/tags/AI%E7%BC%96%E7%A8%8B/"/>
+    
+    <category term="Claude Code" scheme="https://gloamfox.github.io/tags/Claude-Code/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Claude Code通关手册（二）：搞清权限，效率翻倍</title>
     <link href="https://gloamfox.github.io/20260407143924.html"/>
     <id>https://gloamfox.github.io/20260407143924.html</id>
     <published>2026-04-07T14:39:24.000Z</published>
-    <updated>2026-04-07T11:32:03.514Z</updated>
+    <updated>2026-04-09T09:12:39.950Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;div class=&quot;obsidian-callout obsidian-callout-tip&quot; id=&quot;obsidian-callout-ogu0pe4mg&quot;&gt;&lt;div class=&quot;obsidian-callout-header&quot;&gt;&lt;span</summary>
+    <summary type="html">&lt;div class=&quot;obsidian-callout obsidian-callout-tip&quot; id=&quot;obsidian-callout-9nlff2gef&quot;&gt;&lt;div class=&quot;obsidian-callout-header&quot;&gt;&lt;span</summary>
         
       
     
@@ -48,7 +102,7 @@
     <link href="https://gloamfox.github.io/20260407134731.html"/>
     <id>https://gloamfox.github.io/20260407134731.html</id>
     <published>2026-04-07T13:47:31.000Z</published>
-    <updated>2026-04-07T11:32:03.514Z</updated>
+    <updated>2026-04-09T09:12:39.950Z</updated>
     
     
       
@@ -77,7 +131,7 @@
     <link href="https://gloamfox.github.io/20260407133233.html"/>
     <id>https://gloamfox.github.io/20260407133233.html</id>
     <published>2026-04-07T13:32:33.000Z</published>
-    <updated>2026-04-07T11:32:03.514Z</updated>
+    <updated>2026-04-09T09:12:39.950Z</updated>
     
     
       
@@ -104,7 +158,7 @@
     <link href="https://gloamfox.github.io/20260404130924.html"/>
     <id>https://gloamfox.github.io/20260404130924.html</id>
     <published>2026-04-04T13:09:24.000Z</published>
-    <updated>2026-04-07T11:32:03.515Z</updated>
+    <updated>2026-04-09T09:12:39.952Z</updated>
     
     
       
@@ -130,7 +184,7 @@
     <link href="https://gloamfox.github.io/20260402190152.html"/>
     <id>https://gloamfox.github.io/20260402190152.html</id>
     <published>2026-04-02T19:01:52.000Z</published>
-    <updated>2026-04-07T11:32:03.515Z</updated>
+    <updated>2026-04-09T09:12:39.952Z</updated>
     
     
       
@@ -162,7 +216,7 @@
     <link href="https://gloamfox.github.io/20260331194609.html"/>
     <id>https://gloamfox.github.io/20260331194609.html</id>
     <published>2026-03-31T19:46:09.000Z</published>
-    <updated>2026-04-07T11:32:03.514Z</updated>
+    <updated>2026-04-09T09:12:39.950Z</updated>
     
     
       
@@ -189,7 +243,7 @@
     <link href="https://gloamfox.github.io/20260331181032.html"/>
     <id>https://gloamfox.github.io/20260331181032.html</id>
     <published>2026-03-31T18:10:32.000Z</published>
-    <updated>2026-04-07T11:32:03.514Z</updated>
+    <updated>2026-04-09T09:12:39.950Z</updated>
     
     
       
@@ -218,14 +272,14 @@
     <link href="https://gloamfox.github.io/20260327132732.html"/>
     <id>https://gloamfox.github.io/20260327132732.html</id>
     <published>2026-03-27T13:27:32.000Z</published>
-    <updated>2026-04-07T11:32:03.513Z</updated>
+    <updated>2026-04-09T09:12:39.949Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;div class=&quot;obsidian-callout obsidian-callout-tip&quot; id=&quot;obsidian-callout-y4wleo0ly&quot;&gt;&lt;div class=&quot;obsidian-callout-header&quot;&gt;&lt;span</summary>
+    <summary type="html">&lt;div class=&quot;obsidian-callout obsidian-callout-tip&quot; id=&quot;obsidian-callout-dpxa1szgq&quot;&gt;&lt;div class=&quot;obsidian-callout-header&quot;&gt;&lt;span</summary>
         
       
     
@@ -245,7 +299,7 @@
     <link href="https://gloamfox.github.io/20260325161216.html"/>
     <id>https://gloamfox.github.io/20260325161216.html</id>
     <published>2026-03-25T16:12:16.000Z</published>
-    <updated>2026-04-07T11:32:03.515Z</updated>
+    <updated>2026-04-09T09:12:39.952Z</updated>
     
     
       
@@ -272,7 +326,7 @@
     <link href="https://gloamfox.github.io/20260325102944.html"/>
     <id>https://gloamfox.github.io/20260325102944.html</id>
     <published>2026-03-25T10:29:44.000Z</published>
-    <updated>2026-04-07T11:32:03.514Z</updated>
+    <updated>2026-04-09T09:12:39.950Z</updated>
     
     
       
@@ -298,7 +352,7 @@
     <link href="https://gloamfox.github.io/20260324145235.html"/>
     <id>https://gloamfox.github.io/20260324145235.html</id>
     <published>2026-03-24T14:52:35.000Z</published>
-    <updated>2026-04-07T11:32:03.514Z</updated>
+    <updated>2026-04-09T09:12:39.950Z</updated>
     
     
       
@@ -323,7 +377,7 @@
     <link href="https://gloamfox.github.io/20260324094537.html"/>
     <id>https://gloamfox.github.io/20260324094537.html</id>
     <published>2026-03-24T09:45:37.000Z</published>
-    <updated>2026-04-07T11:32:03.514Z</updated>
+    <updated>2026-04-09T09:12:39.950Z</updated>
     
     
       
@@ -350,7 +404,7 @@
     <link href="https://gloamfox.github.io/20260323060238.html"/>
     <id>https://gloamfox.github.io/20260323060238.html</id>
     <published>2026-03-23T06:02:38.000Z</published>
-    <updated>2026-04-07T11:32:03.516Z</updated>
+    <updated>2026-04-09T09:12:39.953Z</updated>
     
     
       
@@ -378,7 +432,7 @@
     <link href="https://gloamfox.github.io/20260319105942.html"/>
     <id>https://gloamfox.github.io/20260319105942.html</id>
     <published>2026-03-19T10:59:42.000Z</published>
-    <updated>2026-04-07T11:32:03.514Z</updated>
+    <updated>2026-04-09T09:12:39.950Z</updated>
     
     
       
@@ -407,7 +461,7 @@
     <link href="https://gloamfox.github.io/20260319105942.html"/>
     <id>https://gloamfox.github.io/20260319105942.html</id>
     <published>2026-03-19T10:59:42.000Z</published>
-    <updated>2026-04-07T11:32:03.514Z</updated>
+    <updated>2026-04-09T09:12:39.950Z</updated>
     
     
       
@@ -436,7 +490,7 @@
     <link href="https://gloamfox.github.io/20260319034656.html"/>
     <id>https://gloamfox.github.io/20260319034656.html</id>
     <published>2026-03-19T03:46:56.000Z</published>
-    <updated>2026-04-07T11:32:03.515Z</updated>
+    <updated>2026-04-09T09:12:39.952Z</updated>
     
     
       
@@ -467,7 +521,7 @@
     <link href="https://gloamfox.github.io/20260318103427.html"/>
     <id>https://gloamfox.github.io/20260318103427.html</id>
     <published>2026-03-18T10:34:27.000Z</published>
-    <updated>2026-04-07T11:32:03.516Z</updated>
+    <updated>2026-04-09T09:12:39.952Z</updated>
     
     
       
@@ -494,7 +548,7 @@
     <link href="https://gloamfox.github.io/20260316090820.html"/>
     <id>https://gloamfox.github.io/20260316090820.html</id>
     <published>2026-03-16T09:08:20.000Z</published>
-    <updated>2026-04-07T11:32:03.517Z</updated>
+    <updated>2026-04-09T09:12:39.954Z</updated>
     
     
       
@@ -513,61 +567,6 @@
     <category term="责任链" scheme="https://gloamfox.github.io/tags/%E8%B4%A3%E4%BB%BB%E9%93%BE/"/>
     
     <category term="设计模式" scheme="https://gloamfox.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>单元测试的困境与破局：为何我们不愿写，以及如何高效地写</title>
-    <link href="https://gloamfox.github.io/20260314085149.html"/>
-    <id>https://gloamfox.github.io/20260314085149.html</id>
-    <published>2026-03-14T08:51:49.000Z</published>
-    <updated>2026-04-07T11:32:03.516Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;单元测试作为软件质量的重要一环，往往在整个开发流程中被大多数开发人员所忽略，本文旨在分析如何写好单元测试并探索一些测试驱动开发的应用。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;单元测试原则&quot;&gt;&lt;a href=&quot;#单元测试原则&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="后端" scheme="https://gloamfox.github.io/categories/%E5%90%8E%E7%AB%AF/"/>
-    
-    
-    <category term="JUnit" scheme="https://gloamfox.github.io/tags/JUnit/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>告别分类焦虑：让笔记自然生长流动</title>
-    <link href="https://gloamfox.github.io/20260303020433.html"/>
-    <id>https://gloamfox.github.io/20260303020433.html</id>
-    <published>2026-03-03T02:04:33.000Z</published>
-    <updated>2026-04-07T11:32:03.516Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;起点：被分类束缚的笔记时光&quot;&gt;&lt;a href=&quot;#起点：被分类束缚的笔记时光&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="软件工具" scheme="https://gloamfox.github.io/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/"/>
-    
-    
-    <category term="笔记管理" scheme="https://gloamfox.github.io/tags/%E7%AC%94%E8%AE%B0%E7%AE%A1%E7%90%86/"/>
-    
-    <category term="知识组织" scheme="https://gloamfox.github.io/tags/%E7%9F%A5%E8%AF%86%E7%BB%84%E7%BB%87/"/>
     
   </entry>
   

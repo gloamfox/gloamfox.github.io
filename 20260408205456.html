@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="笔记管理,知识组织,双链笔记,分类系统,标签系统,学习效率,知识连接,心智负担">
+    <meta name="keywords" content="CLAUDE.md,Claude Code,AI编程助手,项目配置,模块化规则">
     <meta name="description" content="君子以顺德，积小以高大。">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>告别分类焦虑：让笔记自然生长流动 | 暮色之狐</title>
+    <title>Claude Code通关手册（三）：CLAUDE.md深度实战 | 暮色之狐</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -670,12 +670,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">告别分类焦虑：让笔记自然生长流动</h1>
+                    <h1 class="description center-align post-title">Claude Code通关手册（三）：CLAUDE.md深度实战</h1>
                 </div>
             </div>
         </div>
@@ -791,12 +791,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E7%AC%94%E8%AE%B0%E7%AE%A1%E7%90%86/">
-                                <span class="chip bg-color">笔记管理</span>
+                            <a href="/tags/AI%E7%BC%96%E7%A8%8B/">
+                                <span class="chip bg-color">AI编程</span>
                             </a>
                         
-                            <a href="/tags/%E7%9F%A5%E8%AF%86%E7%BB%84%E7%BB%87/">
-                                <span class="chip bg-color">知识组织</span>
+                            <a href="/tags/Claude-Code/">
+                                <span class="chip bg-color">Claude Code</span>
                             </a>
                         
                     </div>
@@ -820,7 +820,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2026-03-03
+                    2026-04-08
                 </div>
                 
 
@@ -829,14 +829,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.1k
+                    3.8k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    13 分
                 </div>
                 
 
@@ -859,70 +859,179 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="起点：被分类束缚的笔记时光"><a href="#起点：被分类束缚的笔记时光" class="headerlink" title="起点：被分类束缚的笔记时光"></a>起点：被分类束缚的笔记时光</h2><p>在学生时代，我养成了体系化学习的习惯，这种习惯延伸到笔记管理上，就表现为严格的分类存储——每次创建笔记时，首先思考的是“这个文件应该放在哪个文件夹”。这种基于文件夹分类的组织方式，在整理时确实直观清晰，让我能够快速定位到需要的资料。</p>
-<h2 id="困境：当分类遇到复杂知识"><a href="#困境：当分类遇到复杂知识" class="headerlink" title="困境：当分类遇到复杂知识"></a>困境：当分类遇到复杂知识</h2><p>然而，随着接触的知识领域越来越广，我逐渐发现一个棘手的问题：现实世界中的知识往往是多维交叉的，一份笔记很难被简单地归入单一分类。</p>
-<p><strong>遇到的挑战：</strong></p>
+                <div class="obsidian-callout obsidian-callout-tip" id="obsidian-callout-c9o8wp4mx"><div class="obsidian-callout-header"><span class="obsidian-callout-icon">&#128161;</span><span class="obsidian-callout-title">TIP</span></div><div class="obsidian-callout-content"><p>这是Claude Code通关手册的第三篇，在上一篇中，我们搞定了权限设置，让Claude Code安全可控地访问你的文件。今天，我们将更进一步——用CLAUDE.md赋予它长期记忆，彻底告别每次对话都要重复交代技术栈的烦恼。</p>
+</div></div>
+<p>我来描述一个场景，你看有没有中过招——  </p>
+<p>周一早上，你打开终端，启动 Claude Code，想赶紧收尾上周遗留的功能，你输入：为 <code>OrderService</code> 增加一个批量查询订单的方法，根据订单 ID 列表批量返回订单详情。</p>
+<p>Claude 很快给出了一段代码。你扫了一眼，眉头就皱起来了——它用了 <code>ArrayList</code> 的 <code>for</code> 循环 + 单条 SQL，一条一条查。而你们项目里明明已经封装好了 <code>batchQuery()</code>。</p>
+<p>你打字纠正：用 <code>batchQuery()</code>，不要手写循环查数据库。</p>
+<p>Claude 回复：好的，我改用 <code>batchQuery()</code>。 然后重新生成代码——这次又忘了你们约定的异常处理规范：不要吞掉异常，也不要直接 <code>e.printStackTrace()</code>，而是要用 <code>log.error</code> 并抛出业务异常。</p>
+<p>你补充：异常用 <code>BusinessException</code> 包装，日志用 <code>@Slf4j</code> 的 <code>log</code>，别用 <code>System.out</code>。</p>
+<p>来回四五个回合，十分钟过去了。代码终于勉强能跑了。你长舒一口气，总算完成了。</p>
+<p>周二，你打开一个新的终端窗口，启动 Claude Code，输入几乎相同的需求：给 <code>UserService</code> 加一个批量查询用户的方法。</p>
+<p>Claude 再次给出了那个“标准答案”——手写 <code>for</code> 循环 + 单条 SQL，没有批量工具，没有异常包装，没有日志规范。</p>
+<p>你深吸一口气，又开始敲：用 <code>batchQuery</code>，异常用 <code>BusinessException</code>，日志用 <code>log</code>……</p>
+<p>周三，你开始怀疑自己是不是陷入了一个时间循环。明明昨天才教过它，今天又忘了。</p>
+<p>周四，你甚至还没等 Claude 把代码生成完，就直接打断它：使用Spring Boot 3.2，Java 21，MyBatis-Plus，批量操作用 <code>batchQuery</code>，异常用 <code>BusinessException</code>，日志用 Lombok 的 <code>@Slf4j</code>，禁止 <code>e.printStackTrace()</code>，禁止 <code>System.out</code>……</p>
+<p>Claude 说：好的，我使用以上规范完成功能。</p>
+<p><strong>但你知道，下一次启动，它什么都不会记得。</strong></p>
+<p>问题出在哪里？Claude Code 每次启动都是一个全新的会话，它看不到你上个会话里敲过的约定，也读不懂你的 <code>pom.xml</code>、<code>application.yml</code> 和代码里的 <code>@Service</code> 注解。它就像一个每天第一次来上班的新人，你必须从零开始教它：我们的项目叫 xxx，用的是 Java 21，Spring Boot 版本是……</p>
+<p>直到有一天，你发现了 <strong>CLAUDE.md</strong>。</p>
+<p>你只需在项目根目录创建一个 <code>CLAUDE.md</code> 文件，把那些每周重复了无数遍的话写进去，从此，Claude 每次启动都会自动读取这个文件。它打开你的项目，就像翻开一本写满习惯的笔记本——框架版本、工具类、异常处理、日志规范，全在里面。</p>
+<p>今天这篇文章，我彻底将它讲透。</p>
+<h2 id="一句话讲明白：CLAUDE-md是什么？"><a href="#一句话讲明白：CLAUDE-md是什么？" class="headerlink" title="一句话讲明白：CLAUDE.md是什么？"></a>一句话讲明白：CLAUDE.md是什么？</h2><p><strong>CLAUDE.md 是写给 Claude Code 的”项目交接文档”。</strong></p>
+<p>打个比方：新同事入职，你会给他一份入职文档——项目目标、技术栈、代码结构、日常命令、编码规范，全写清楚。</p>
+<p><strong>CLAUDE.md 就是这份文档。</strong> 只不过这位“同事”是 Claude Code，能力出众但经常失忆。所以每次任务前，都需要它先把文档读一遍。</p>
+<p>把它放在项目根目录，Claude Code 每次启动会话时都会自动读取。技术栈、规范、命令、约定，一次性写进去——从此再也不用每次对话都从头教一遍。</p>
+<h2 id="CLAUDE-md-放在哪里，区别很大。"><a href="#CLAUDE-md-放在哪里，区别很大。" class="headerlink" title="CLAUDE.md 放在哪里，区别很大。"></a>CLAUDE.md 放在哪里，区别很大。</h2><p>Anthropic 设计了四层配置，从个人习惯到项目规范，层层递进：</p>
+<p><strong>1. 用户根目录：<code>~/.claude/CLAUDE.md</code></strong><br>存放你的个人偏好——比如用中文回复，代码注释用英文，commit 信息遵循 Conventional Commits。所有项目都会继承这些设定，相当于 Claude 对你的基本认知。</p>
+<p><strong>2. 项目根目录：<code>/your-project/CLAUDE.md</code></strong><br>存放当前项目的技术栈、编码规范、常用命令。比如Java 21 + Spring Boot 3.2，日志使用 <code>lombok</code>，异常用 <code>BusinessException</code>。Claude 在这个项目里干活时会自动遵守。</p>
+<p><strong>3. 项目根目录：<code>/your-project/CLAUDE.local.md</code></strong><br><strong>项目级的个人偏好，不提交 Git</strong>（记得加 <code>.gitignore</code>）。比如你在某个项目里有自己的调试习惯、本地特殊配置。Claude 会把它和 <code>CLAUDE.md</code> 合并，且优先级更高——适合放“只有你需要、不想影响同事”的内容。</p>
+<p><strong>4. 子目录：<code>/your-project/src/legacy/CLAUDE.md</code></strong><br>用于局部例外，渐进式披露，需要时才加载。比如老模块不想按新规范重构，就在这个文件夹里放一份补充指令，告诉 Claude “这里只修 bug，不要动结构”。</p>
+<p><strong>加载顺序</strong>：用户级 → 项目级（<code>CLAUDE.md</code>）→ 项目级本地（<code>CLAUDE.local.md</code>）→ 子目录级。后面的覆盖前面的冲突项。</p>
+<p>你只需要花十分钟把这几层写清楚，之后 Claude 无论在你哪个项目的哪个角落干活，都不会再问那些让你血压升高的问题。</p>
+<h2 id="该写什么？不该写什么？"><a href="#该写什么？不该写什么？" class="headerlink" title="该写什么？不该写什么？"></a>该写什么？不该写什么？</h2><p><strong>CLAUDE.md 不是项目说明书，是给 AI 的“行动准则”</strong>，写多了浪费token，写少了相当于没写。</p>
+<h3 id="该写什么-✅"><a href="#该写什么-✅" class="headerlink" title="该写什么 ✅"></a>该写什么 ✅</h3><p><strong>1. 技术栈和版本号</strong>  </p>
+<p>“Java 21、Spring Boot 3.2、MyBatis-Plus 3.1.0”就够了，不用把 Spring 文档抄一遍。Claude 知道这些框架怎么用，它只需要知道“你要我用哪个版本”。</p>
+<p><strong>2. 编码规范的“关键差异点”</strong></p>
+<p>不用把Java风格指南或阿里巴巴 Java 手册抄进去——Claude 已经背过了。你只需要写那些<strong>和通用规范不一样的地方</strong>：比如“禁止 <code>e.printStackTrace()</code>，统一抛 <code>BusinessException</code>”，“返回值用 <code>Result&lt;T&gt;</code> 包装”，“字段命名禁用下划线”。</p>
+<p><strong>3. 封装好的工具类和常用方法</strong></p>
+<p>“批量查询用 <code>JDBCTemplate.batchQuery()</code>、缓存用 <code>CacheService.getOrLoad()</code>、日志用 <code>@Slf4j</code> 的 <code>log</code>”。<br>这些是你们项目独有的东西，Claude 默认不知道，但一旦告诉它，它就会乖乖用。</p>
+<p><strong>4. 常用命令</strong></p>
+<p>“编译：<code>mvn clean compile</code>”“运行测试：<code>mvn test</code>”“本地启动：<code>mvn spring-boot:run</code>”。Claude 可以在执行任务时主动运行这些命令，提前知道它们能省很多解释时间。</p>
+<p><strong>5. 项目特有的坑</strong></p>
+<p>比如“订单状态流转不要直接改状态字段，要调用 <code>OrderService.transferStatus()</code>，用户 ID 从 <code>UserContextHolder</code> 获取，不要从参数传”。<br>这些历史的教训写进去，Claude 会帮你避坑。</p>
+<h3 id="不该写什么？❌"><a href="#不该写什么？❌" class="headerlink" title="不该写什么？❌"></a>不该写什么？❌</h3><p><strong>1. 通用知识</strong>  </p>
+<p>“Spring Boot 怎么配置数据源，Java 的 <code>Optional</code> 怎么用”<br>这些 Claude 比你熟。写进去就是浪费 token，还会让真正重要的指令被淹没。</p>
+<p><strong>2. 频繁变动的内容</strong>  </p>
+<p>比如“当前迭代的需求文档，临时测试环境的 IP 地址”。<br>这些东西今天写了明天就得改，而 CLAUDE.md 不是给你天天改的。变动的信息应该放在每次对话里直接告诉 Claude。</p>
+<p><strong>3. 冲突的指令</strong>  </p>
+<p>“用 <code>BatchUtils</code> 做批量查询” 和 “优先使用 MyBatis-Plus 的 <code>selectBatchIds</code>” 不要同时出现。Claude 会困惑，然后随机选一个——你又要回来改。</p>
+<p><strong>4. 语气模糊的要求</strong>  </p>
+<p>“代码尽量写得优雅一点”“性能要足够好”<br>这种话对 AI 没用。换成具体的：“批量操作超过 1000 条要分页处理，单个方法行数不超过 80 行”。</p>
+<p><strong>核心思路</strong>：想象你给一个高级工程师写一份项目的交接文档，他什么都会，只是还不了解这个项目的情况，你只需要写特殊情况，不需要教他基础知识。</p>
+<p><strong>经验法则：控制在 100-200 行以内。</strong> 研究表明，AI模型能够稳定遵循约150-200条指令。一旦超出这一范围，指令的遵循率便会显著下降。因此，与其撰写一篇面面俱到的万字长文，不如创作一份精炼而每条都颇具分量的指南。</p>
+<h2 id="完整实操，为项目编写CLAUDE-md"><a href="#完整实操，为项目编写CLAUDE-md" class="headerlink" title="完整实操，为项目编写CLAUDE.md"></a>完整实操，为项目编写CLAUDE.md</h2><h3 id="分析项目，生成初稿"><a href="#分析项目，生成初稿" class="headerlink" title="分析项目，生成初稿"></a>分析项目，生成初稿</h3><p>进入项目目录下启动Claude Code并输入</p>
+<pre class="line-numbers language-none"><code class="language-none">分析这个项目的完整结构，帮我生成一份 CLAUDE.md 初稿，  
+包括项目概述、技术栈、目录结构、编码规范和常用命令<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>或者有个更简单的操作，Claude Code 内置了一个命令：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">/init<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>这个命令会扫描你的项目，并生成一份CLAUDE.md初稿。</p>
+<h3 id="手动补充，形成终稿"><a href="#手动补充，形成终稿" class="headerlink" title="手动补充，形成终稿"></a>手动补充，形成终稿</h3><p>Claude Code生成的CLAUDE.md仅作为初稿参考，项目中特定的编码规范、技术约束、团队约定以及已发现的技术难点，都需要我们手动补充并持续完善。</p>
+<h3 id="效果测试"><a href="#效果测试" class="headerlink" title="效果测试"></a>效果测试</h3><p>完成 CLAUDE.md 文件编写后，请<strong>开启一个全新的会话</strong>进行测试。现在请输入以下内容：为 <code>OrderService</code> 添加一个根据订单ID查询订单详情的方法，并实现缓存功能。</p>
+<p>此时你无需额外说明，Claude Code 将自动识别项目使用 MyBatis-Plus 框架，并采用 Redis 进行缓存处理。</p>
+<p><strong>这就是 CLAUDE.md 的魔力——一次编写，每次会话自动生效。</strong></p>
+<h2 id="进阶一：全局配置，个人偏好"><a href="#进阶一：全局配置，个人偏好" class="headerlink" title="进阶一：全局配置，个人偏好"></a>进阶一：全局配置，个人偏好</h2><p>除了项目级别的CALUDE.md外，你还应该有一份全局的<code>~/.claude/CLAUDE.md</code>,他定义你在所有项目中通用的偏好。</p>
+<p>下面是一个全局的CLAUDE.md，可以参考使用</p>
+<pre class="line-numbers language-none"><code class="language-none">## 语言和沟通  
+- 用中文回答问题和写注释  
+- 代码中的变量名、函数名、commit message 用中文
+- 解释技术概念时优先用类比和例子  
+  
+## 代码风格  
+- 缩进：2 个空格  
+- 引号：单引号（字符串）  
+- 命名导入优先于默认导入  
+  
+## Git 习惯  
+- commit message 格式：type(scope): description  
+- 不要自动 push，commit 后等我确认  
+  
+## 回答偏好  
+- 直接给解决方案，减少铺垫  
+- 代码修改时说明&quot;为什么&quot;改，不只是&quot;改成什么&quot;  
+- 有多种方案时列出优劣对比，让我选择<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+<h2 id="进阶二：Auto-Memory，Claude-Code自己的笔记"><a href="#进阶二：Auto-Memory，Claude-Code自己的笔记" class="headerlink" title="进阶二：Auto Memory，Claude Code自己的笔记"></a>进阶二：Auto Memory，Claude Code自己的笔记</h2><p>Claude Code 存在一个功能叫 <strong>Auto Memory（自动记忆）</strong> 的功能。它跟 CLAUDE.md 互补：</p>
 <ul>
-<li>同一份笔记既属于A类别，也属于B类别</li>
-<li>记录灵感闪念时，难以立即找到合适的分类</li>
-<li>创建笔记前的分类思考成了额外的心智负担</li>
-<li>知识之间的关联被文件夹结构人为割裂</li>
+<li><strong>CLAUDE.md</strong>：你写给 Claude 的指令（”你必须遵守这些规范”）</li>
+<li><strong>Auto Memory</strong>：Claude 自己记的笔记（”我发现这个项目有个坑……”）</li>
 </ul>
-<h2 id="尝试：标签系统的希望与失望"><a href="#尝试：标签系统的希望与失望" class="headerlink" title="尝试：标签系统的希望与失望"></a>尝试：标签系统的希望与失望</h2><p>为了解决多分类问题，我开始尝试使用标签系统。理论上，标签能够为笔记提供多维度的分类方式，打破文件夹的线性束缚。</p>
-<p><strong>实践结果：</strong></p>
-<ul>
-<li>✅ 确实解决了笔记的多分类问题</li>
-<li>❌ 标签数量失控增长</li>
-<li>❌ 部分标签下只有1-2个文件，失去分类意义</li>
-<li>❌ 大量标签反而增加了管理复杂度</li>
-<li>❌ 最终还是陷入了“如何打标签”的新一轮思考负担</li>
+<p>存储位置：<code>~/.claude/projects/&lt;项目名&gt;/memory/</code></p>
+<p>你可以通过<code>/memory</code>命令直接编辑MEMORY.md文件，也可以通过交互式命令让Claude Code记住某些事情</p>
+<pre class="line-numbers language-none"><code class="language-none">记住这个项目的测试数据库连接串是 &#96;jdbc:mysql:&#x2F;&#x2F;test-db:3306&#x2F;order&#96;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><strong>那 CLAUDE.md 和 MEMORY.md 有什么区别？</strong></p>
+<table>
+<thead>
+<tr>
+<th>CLAUDE.md</th>
+<th>MEMORY.md</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>技术栈、编码规范、常用命令</td>
+<td>零散偏好、调试经验、日常发现</td>
+</tr>
+<tr>
+<td>手动编辑</td>
+<td>自动捕捉</td>
+</tr>
+<tr>
+<td>团队共享</td>
+<td>个人专属</td>
+</tr>
+</tbody></table>
+<p>Auto Memory 不会让 Claude 一夜之间变成项目专家，但它解决了一个很细碎但很烦人的痛点——重复解释。<strong>你用得越久，它记住的越多，你每次启动需要交代的就越少。</strong></p>
+<h2 id="进阶三：-claude-rules-模块化规则"><a href="#进阶三：-claude-rules-模块化规则" class="headerlink" title="进阶三：.claude/rules/模块化规则"></a>进阶三：.claude/rules/模块化规则</h2><p>聊完了 CLAUDE.md 和 Auto Memory，今天来聊聊 Claude Code 记忆体系里<strong>最灵活、最适合团队协作</strong>的一环——<code>.claude/rules/</code> 模块化规则。</p>
+<p>如果你在团队里用过 CLAUDE.md，可能已经碰到过这个问题：<strong>文件越来越长，越来越难维护。</strong> 技术规范、测试约定、安全要求、API 设计准则……全都挤在一个文件里，改一行要找半天，还经常误伤其他内容</p>
+<p>简单说，就是<strong>把 CLAUDE.md 拆成多个小文件，按主题分开管理</strong>。</p>
+<p>你只需要在项目根目录下创建 <code>.claude/rules/</code>文件夹，然后把规则文件放进去。Claude 会自动读取里面所有的 <code>.md</code> 文件。</p>
+<p>目录结构：</p>
+<pre class="line-numbers language-none"><code class="language-none">your-project&#x2F;
+├── .claude&#x2F;
+│   ├── CLAUDE.md          # 总纲（可选）
+│   └── rules&#x2F;
+│       ├── code-style.md    # 代码风格规范
+|	    ├── database.md      # 数据库操作规范
+|	    ├── exception.md     # 异常处理与日志
+|	    ├── transaction.md   # 事务管理规范
+|	    ├── legacy.md        # 老模块特别规则（限定路径）
+│       ├── testing.md       # 测试规范
+│       ├── security.md      # 安全要求
+│       ├── api-design.md    # API 设计准则
+│       └── git-workflow.md  # Git 工作流规范<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>每个文件就是一个<strong>独立关注点</strong>。需要改代码风格？直接改 <code>code-style.md</code>，不影响其他规则。团队协作时，不同成员可以分别维护自己擅长的规则文件，互不冲突。</p>
+<h3 id="内容说明"><a href="#内容说明" class="headerlink" title="内容说明"></a>内容说明</h3><p>你只需要把它们放进 <code>.claude/rules/</code>，Claude Code 启动时会自动加载。如果需要<strong>只对特定文件生效</strong>，就在文件顶部加上 <code>paths:</code> 的 YAML frontmatter。</p>
+<p><strong>注意</strong>：<code>paths</code> 支持 glob 模式，也支持 <code>!</code> 排除。例如：</p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token punctuation">---</span>
+<span class="token key atrule">paths</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token string">"src/main/java/**/*.java"</span>
+  <span class="token punctuation">-</span> <span class="token string">"!src/main/java/**/legacy/**/*.java"</span>
+<span class="token punctuation">---</span>
+
+<span class="token comment"># Java 代码风格规范</span>
+1. <span class="token important">**类命名**：大驼峰，Service/Controller/DAO</span> 后缀明确
+2. <span class="token important">**方法长度**：单个方法不超过</span> 50 行，超过必须拆分
+3. <span class="token important">**依赖注入**：使用构造器注入，禁止</span> `@Autowired` 字段注入
+4. <span class="token important">**注释**：所有</span> public 方法必须有 JavaDoc，描述参数、返回值和异常
+5. <span class="token important">**IDE</span> 格式化<span class="token important">**：使用</span> Google Java Format 插件，提交前格式化<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>这个意思是对所有 Java 文件生效，但排除 legacy 包下的文件。</p>
+<h3 id="加载顺序"><a href="#加载顺序" class="headerlink" title="加载顺序"></a>加载顺序</h3><p>没有 <code>paths</code> 限定的规则文件，会在 Claude Code 启动时无条件加载进系统提示词。</p>
+<p>凡是声明了 <code>paths</code> 字段的规则文件，都属于按需加载。 当且仅当 Claude 读取或处理匹配该路径的文件时，相关规则才会被动态加载进上下文。</p>
+<p>这是平衡上下文使用、精准控制规则生效范围的关键机制。</p>
+<h3 id="团队协作怎么办？"><a href="#团队协作怎么办？" class="headerlink" title="团队协作怎么办？"></a>团队协作怎么办？</h3><p><code>.claude/rules/</code> 文件夹<strong>可以提交到 Git</strong>，整个团队共用。每个人 <code>git pull</code> 后，Claude Code 自动获得最新规则。</p>
+<p>如果你有自己的本地偏好（比如测试时连本地数据库），可以创建 <code>.claude/rules.local/</code>（不提交 Git），作用和 <code>.claude/rules/</code> 一样，但只在你本地生效。</p>
+<h3 id="用-rules-命令查看当前加载的规则"><a href="#用-rules-命令查看当前加载的规则" class="headerlink" title="用 /rules 命令查看当前加载的规则"></a>用 <code>/rules</code> 命令查看当前加载的规则</h3><p>在 Claude Code 会话中，输入 <code>/rules</code>，它会列出当前所有生效的规则文件及其路径限定。这是一个快速检查“Claude 到底听了哪些话”的好方法。</p>
+<h2 id="进阶四：维护策略"><a href="#进阶四：维护策略" class="headerlink" title="进阶四：维护策略"></a>进阶四：维护策略</h2><ol>
+<li><strong>最小集起步</strong>：只写技术栈、项目特有工具、最常踩的坑。痛点驱动，别预想完美。</li>
+<li><strong>定期审计</strong>：每月检查过时/无用/冗余规则。用 <code>/init</code> 对比生成草稿。</li>
+<li><strong>当索引，不当百科</strong>：放指向详细文档的引用（如 <code>@docs/api.md</code>），具体规范拆到 <code>.claude/rules/</code>。</li>
+<li><strong>防止膨胀三招</strong>：<ul>
+<li>超过 200 行就拆分到 <code>rules/</code></li>
+<li>用 <code>paths</code> 限定规则生效范围</li>
+<li>零散偏好交给 Auto Memory（<code>/memory</code>）</li>
 </ul>
-<p>标签系统在理论上很美好，但在实践中，我发现自己陷入了新的管理困境。</p>
-<h2 id="突破：双链笔记带来的思维解放"><a href="#突破：双链笔记带来的思维解放" class="headerlink" title="突破：双链笔记带来的思维解放"></a>突破：双链笔记带来的思维解放</h2><p>接触到双链笔记后，我的笔记管理方式发生了革命性的变化。</p>
-<p><strong>核心改变：</strong></p>
-<ul>
-<li>创建笔记时不再思考存储位置</li>
-<li>直接开始记录内容，专注于思考本身</li>
-<li>通过双向链接建立笔记间的关联</li>
-<li>形成类似搜索引擎或知网的知识网络</li>
-</ul>
-<p><strong>双链优势：</strong></p>
-<ul>
-<li>🚀 极大降低了记录时的心智负担</li>
-<li>🔗 自然地呈现知识间的内在联系</li>
-<li>💡 记录过程流畅，不再被管理细节打断</li>
-</ul>
-<p>这种方式的体验确实很“爽”——我终于可以专注于知识本身，而不是知识的管理。</p>
-<h2 id="反思：双链模式的局限"><a href="#反思：双链模式的局限" class="headerlink" title="反思：双链模式的局限"></a>反思：双链模式的局限</h2><p>然而，任何方法都有其局限性。经过一段时间的使用，我发现双链笔记在复习和整体把控方面存在不足：</p>
-<p><strong>遇到的问题：</strong></p>
-<ul>
-<li>需要复习特定主题时，难以快速找到相关笔记</li>
-<li>知识网络虽然丰富，但缺乏系统性视图</li>
-<li>对于需要体系化学习的领域，显得不够结构化</li>
-<li>依赖链接跳转，缺乏全局的知识地图</li>
-</ul>
-<h2 id="平衡：找到适合自己的混合模式"><a href="#平衡：找到适合自己的混合模式" class="headerlink" title="平衡：找到适合自己的混合模式"></a>平衡：找到适合自己的混合模式</h2><p>经过不断的实践和调整，我逐渐找到了适合自己的平衡点：</p>
-<p><strong>现行工作流：</strong></p>
-<ol>
-<li><strong>记录阶段</strong>：完全拥抱双链思维，不考虑分类，专注于内容记录和链接建立</li>
-<li><strong>整理阶段</strong>：定期（如每周或每月）对笔记进行整理和分类</li>
-<li><strong>复习阶段</strong>：利用整理后的结构进行系统性复习</li>
+</li>
+<li><strong><code>include</code> 复用</strong>：用 <code>@path/to/file</code> 引入外部文档，避免重复。</li>
+<li><strong>改后必测</strong>：每条新规则用一个真实任务验证 Claude 是否理解正确。</li>
 </ol>
-<p><strong>这种模式的优点：</strong></p>
-<ul>
-<li>✍️ 写作时：无负担，流畅自然</li>
-<li>📚 复习时：有结构，高效系统</li>
-<li>🔄 整理时：既是管理，也是二次学习</li>
-</ul>
-<h2 id="启示：笔记管理的本质思考"><a href="#启示：笔记管理的本质思考" class="headerlink" title="启示：笔记管理的本质思考"></a>启示：笔记管理的本质思考</h2><p>通过这段演进历程，我深刻认识到：</p>
-<p><strong>核心认知：</strong></p>
-<ul>
-<li>笔记管理的目标是服务学习和思考，而非管理本身</li>
-<li>没有绝对的最佳实践，只有最适合自己的方式</li>
-<li>减少心智负担比追求完美组织更重要</li>
-<li>知识的价值在于连接和应用，而非整齐存放</li>
-</ul>
-<p><strong>个人心得：</strong><br>笔记方式本身没有好坏之分，关键在于是否能够帮助我们更好地积累和运用知识。现在的我，既享受双链带来的记录自由，也通过定期整理保持知识的可用性。这种平衡让我能够在减少心智负担的同时，确保知识需要时能够被有效唤醒和利用。</p>
+<p>核心思想：<strong>CLAUDE.md 是长出来的，不是写出来的</strong>——自然演进，定期修剪。</p>
 
                 
             </div>
@@ -949,7 +1058,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://gloamfox.github.io/20260303020433.html">https://gloamfox.github.io/20260303020433.html</a>
+                    <a href="https://gloamfox.github.io/20260408205456.html">https://gloamfox.github.io/20260408205456.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -987,12 +1096,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E7%AC%94%E8%AE%B0%E7%AE%A1%E7%90%86/">
-                                    <span class="chip bg-color">笔记管理</span>
+                                <a href="/tags/AI%E7%BC%96%E7%A8%8B/">
+                                    <span class="chip bg-color">AI编程</span>
                                 </a>
                             
-                                <a href="/tags/%E7%9F%A5%E8%AF%86%E7%BB%84%E7%BB%87/">
-                                    <span class="chip bg-color">知识组织</span>
+                                <a href="/tags/Claude-Code/">
+                                    <span class="chip bg-color">Claude Code</span>
                                 </a>
                             
                         </div>
@@ -1166,31 +1275,31 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/20260314085149.html">
+                <a href="/20260409094226.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" >
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" >
                         
-                        <span class="card-title">单元测试的困境与破局：为何我们不愿写，以及如何高效地写</span>
+                        <span class="card-title">Claude Code通关手册（四）：自定义命令，告别手敲重复指令</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            本文深入探讨了单元测试的重要性，分析了开发人员不愿编写单元测试的原因，并介绍了测试驱动开发(TDD)的应用。文章强调了有效的单元测试应避免过度依赖Spring框架，专注于业务逻辑验证，同时提出了在团队协作中使用单元测试和Mock技术的优势，以提高代码质量和开发效率。
+                            文章详细讲解了如何创建自定义命令、使用参数占位符、添加YAML头部配置、执行本地脚本，并介绍了内置的/simplify和/review命令，最后提供了多个实战例子如/build、/checkstyle等，帮助开发者掌握这一提高效率的功能。
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2026-03-14
+                            <i class="far fa-clock fa-fw icon-date"></i>2026-04-09
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%90%8E%E7%AB%AF/" class="post-category">
-                                    后端
+                            <a href="/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/" class="post-category">
+                                    软件工具
                                 </a>
                             
                             
@@ -1200,8 +1309,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/JUnit/">
-                        <span class="chip bg-color">JUnit</span>
+                    <a href="/tags/AI%E7%BC%96%E7%A8%8B/">
+                        <span class="chip bg-color">AI编程</span>
+                    </a>
+                    
+                    <a href="/tags/Claude-Code/">
+                        <span class="chip bg-color">Claude Code</span>
                     </a>
                     
                 </div>
@@ -1215,31 +1328,31 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/20260302122243.html">
+                <a href="/20260407143924.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/22.jpg" class="responsive-img" >
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" >
                         
-                        <span class="card-title">进制转换与数据编码</span>
+                        <span class="card-title">Claude Code通关手册（二）：搞清权限，效率翻倍</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            本文详细介绍了不同进制之间的转换方法，包括R进制与十进制的互转、二进制与八进制/十六进制的转换，以及原码、反码、补码和移码等数据编码方式，并探讨了浮点数的表示与运算过程。
+                            本文详细介绍了Claude Code的权限系统配置方法，包括五种内置权限模式、项目自定义权限配置、安全最佳实践以及全局配置模板。通过合理设置权限，开发者可以在保障安全的同时减少烦人的权限提示，提升工作效率。
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2026-03-02
+                                <i class="far fa-clock fa-fw icon-date"></i>2026-04-07
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/" class="post-category">
-                                    计算机基础
+                            <a href="/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/" class="post-category">
+                                    软件工具
                                 </a>
                             
                             
@@ -1249,16 +1362,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2/">
-                        <span class="chip bg-color">进制转换</span>
+                    <a href="/tags/Claude-Code/">
+                        <span class="chip bg-color">Claude Code</span>
                     </a>
                     
-                    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BC%96%E7%A0%81/">
-                        <span class="chip bg-color">数据编码</span>
-                    </a>
-                    
-                    <a href="/tags/%E6%B5%AE%E7%82%B9%E6%95%B0%E8%BF%90%E7%AE%97/">
-                        <span class="chip bg-color">浮点数运算</span>
+                    <a href="/tags/%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86/">
+                        <span class="chip bg-color">权限管理</span>
                     </a>
                     
                 </div>

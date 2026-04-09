@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="笔记管理,知识组织,双链笔记,分类系统,标签系统,学习效率,知识连接,心智负担">
+    <meta name="keywords" content="Claude Code,自定义命令,效率工具,开发效率,YAML配置">
     <meta name="description" content="君子以顺德，积小以高大。">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>告别分类焦虑：让笔记自然生长流动 | 暮色之狐</title>
+    <title>Claude Code通关手册（四）：自定义命令，告别手敲重复指令 | 暮色之狐</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -670,12 +670,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">告别分类焦虑：让笔记自然生长流动</h1>
+                    <h1 class="description center-align post-title">Claude Code通关手册（四）：自定义命令，告别手敲重复指令</h1>
                 </div>
             </div>
         </div>
@@ -791,12 +791,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E7%AC%94%E8%AE%B0%E7%AE%A1%E7%90%86/">
-                                <span class="chip bg-color">笔记管理</span>
+                            <a href="/tags/AI%E7%BC%96%E7%A8%8B/">
+                                <span class="chip bg-color">AI编程</span>
                             </a>
                         
-                            <a href="/tags/%E7%9F%A5%E8%AF%86%E7%BB%84%E7%BB%87/">
-                                <span class="chip bg-color">知识组织</span>
+                            <a href="/tags/Claude-Code/">
+                                <span class="chip bg-color">Claude Code</span>
                             </a>
                         
                     </div>
@@ -820,7 +820,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2026-03-03
+                    2026-04-09
                 </div>
                 
 
@@ -829,14 +829,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.1k
+                    2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    7 分
                 </div>
                 
 
@@ -859,71 +859,157 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="起点：被分类束缚的笔记时光"><a href="#起点：被分类束缚的笔记时光" class="headerlink" title="起点：被分类束缚的笔记时光"></a>起点：被分类束缚的笔记时光</h2><p>在学生时代，我养成了体系化学习的习惯，这种习惯延伸到笔记管理上，就表现为严格的分类存储——每次创建笔记时，首先思考的是“这个文件应该放在哪个文件夹”。这种基于文件夹分类的组织方式，在整理时确实直观清晰，让我能够快速定位到需要的资料。</p>
-<h2 id="困境：当分类遇到复杂知识"><a href="#困境：当分类遇到复杂知识" class="headerlink" title="困境：当分类遇到复杂知识"></a>困境：当分类遇到复杂知识</h2><p>然而，随着接触的知识领域越来越广，我逐渐发现一个棘手的问题：现实世界中的知识往往是多维交叉的，一份笔记很难被简单地归入单一分类。</p>
-<p><strong>遇到的挑战：</strong></p>
+                <div class="obsidian-callout obsidian-callout-tip" id="obsidian-callout-3exqb5es8"><div class="obsidian-callout-header"><span class="obsidian-callout-icon">&#128161;</span><span class="obsidian-callout-title">Tip</span></div><div class="obsidian-callout-content"><p>这是Claude Code通关手册的第四篇，这一篇我们要解锁一个让你效率再翻倍的功能——<strong>自定义命令</strong>。把那些每天都在敲的重复指令、复杂流程，变成一条简单的斜杠命令，从此告别手打。</p>
+</div></div>
+<p>你有没有这样的经历：</p>
 <ul>
-<li>同一份笔记既属于A类别，也属于B类别</li>
-<li>记录灵感闪念时，难以立即找到合适的分类</li>
-<li>创建笔记前的分类思考成了额外的心智负担</li>
-<li>知识之间的关联被文件夹结构人为割裂</li>
+<li>帮我检查一下代码风格，用 Google Java Format</li>
+<li>帮我生成一下测试用例，用 JUnit 5，Mockito ，覆盖分支，测试类命名要 <code>xxxTest</code></li>
+<li>帮我review一下修改的代码，生成报告</li>
+<li>……</li>
 </ul>
-<h2 id="尝试：标签系统的希望与失望"><a href="#尝试：标签系统的希望与失望" class="headerlink" title="尝试：标签系统的希望与失望"></a>尝试：标签系统的希望与失望</h2><p>为了解决多分类问题，我开始尝试使用标签系统。理论上，标签能够为笔记提供多维度的分类方式，打破文件夹的线性束缚。</p>
-<p><strong>实践结果：</strong></p>
-<ul>
-<li>✅ 确实解决了笔记的多分类问题</li>
-<li>❌ 标签数量失控增长</li>
-<li>❌ 部分标签下只有1-2个文件，失去分类意义</li>
-<li>❌ 大量标签反而增加了管理复杂度</li>
-<li>❌ 最终还是陷入了“如何打标签”的新一轮思考负担</li>
-</ul>
-<p>标签系统在理论上很美好，但在实践中，我发现自己陷入了新的管理困境。</p>
-<h2 id="突破：双链笔记带来的思维解放"><a href="#突破：双链笔记带来的思维解放" class="headerlink" title="突破：双链笔记带来的思维解放"></a>突破：双链笔记带来的思维解放</h2><p>接触到双链笔记后，我的笔记管理方式发生了革命性的变化。</p>
-<p><strong>核心改变：</strong></p>
-<ul>
-<li>创建笔记时不再思考存储位置</li>
-<li>直接开始记录内容，专注于思考本身</li>
-<li>通过双向链接建立笔记间的关联</li>
-<li>形成类似搜索引擎或知网的知识网络</li>
-</ul>
-<p><strong>双链优势：</strong></p>
-<ul>
-<li>🚀 极大降低了记录时的心智负担</li>
-<li>🔗 自然地呈现知识间的内在联系</li>
-<li>💡 记录过程流畅，不再被管理细节打断</li>
-</ul>
-<p>这种方式的体验确实很“爽”——我终于可以专注于知识本身，而不是知识的管理。</p>
-<h2 id="反思：双链模式的局限"><a href="#反思：双链模式的局限" class="headerlink" title="反思：双链模式的局限"></a>反思：双链模式的局限</h2><p>然而，任何方法都有其局限性。经过一段时间的使用，我发现双链笔记在复习和整体把控方面存在不足：</p>
-<p><strong>遇到的问题：</strong></p>
-<ul>
-<li>需要复习特定主题时，难以快速找到相关笔记</li>
-<li>知识网络虽然丰富，但缺乏系统性视图</li>
-<li>对于需要体系化学习的领域，显得不够结构化</li>
-<li>依赖链接跳转，缺乏全局的知识地图</li>
-</ul>
-<h2 id="平衡：找到适合自己的混合模式"><a href="#平衡：找到适合自己的混合模式" class="headerlink" title="平衡：找到适合自己的混合模式"></a>平衡：找到适合自己的混合模式</h2><p>经过不断的实践和调整，我逐渐找到了适合自己的平衡点：</p>
-<p><strong>现行工作流：</strong></p>
-<ol>
-<li><strong>记录阶段</strong>：完全拥抱双链思维，不考虑分类，专注于内容记录和链接建立</li>
-<li><strong>整理阶段</strong>：定期（如每周或每月）对笔记进行整理和分类</li>
-<li><strong>复习阶段</strong>：利用整理后的结构进行系统性复习</li>
-</ol>
-<p><strong>这种模式的优点：</strong></p>
-<ul>
-<li>✍️ 写作时：无负担，流畅自然</li>
-<li>📚 复习时：有结构，高效系统</li>
-<li>🔄 整理时：既是管理，也是二次学习</li>
-</ul>
-<h2 id="启示：笔记管理的本质思考"><a href="#启示：笔记管理的本质思考" class="headerlink" title="启示：笔记管理的本质思考"></a>启示：笔记管理的本质思考</h2><p>通过这段演进历程，我深刻认识到：</p>
-<p><strong>核心认知：</strong></p>
-<ul>
-<li>笔记管理的目标是服务学习和思考，而非管理本身</li>
-<li>没有绝对的最佳实践，只有最适合自己的方式</li>
-<li>减少心智负担比追求完美组织更重要</li>
-<li>知识的价值在于连接和应用，而非整齐存放</li>
-</ul>
-<p><strong>个人心得：</strong><br>笔记方式本身没有好坏之分，关键在于是否能够帮助我们更好地积累和运用知识。现在的我，既享受双链带来的记录自由，也通过定期整理保持知识的可用性。这种平衡让我能够在减少心智负担的同时，确保知识需要时能够被有效唤醒和利用。</p>
+<p>一两次倒还好，每天重复的输入实在是太累了，如果这些操作能变成一个斜杠命令，比如 <code>/test</code> 就自动生成单元测试，或者 <code>/build</code> 就运行编译 + 测试，那该多爽？</p>
+<p>Claude Code 的自定义命令（Commands）就是干这个的。</p>
+<h2 id="自定义命令是什么？"><a href="#自定义命令是什么？" class="headerlink" title="自定义命令是什么？"></a>自定义命令是什么？</h2><p>简单说，就是 <strong>把一段你经常用到的提示词、指令甚至脚本，打包成一个以 <code>/</code> 开头的快捷命令</strong>。</p>
+<p>比如你创建一个 <code>/test</code> 命令，里面写：</p>
+<pre class="line-numbers language-none"><code class="language-none">请为当前打开的 Java 类生成 JUnit 5 单元测试，覆盖主要分支，使用 Mockito mock 依赖。测试类放到 &#96;src&#x2F;test&#x2F;java&#96; 下，类名加上 &#96;Test&#96; 后缀。<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
+<p>之后，你只要在 Claude Code 里敲 <code>/test</code>，它就会自动按这个套路生成测试。不用每次再啰嗦一遍。</p>
+<h2 id="如何创建自定义命令？"><a href="#如何创建自定义命令？" class="headerlink" title="如何创建自定义命令？"></a>如何创建自定义命令？</h2><p>在项目根目录或者全局<code>~/.claude/</code>下，创建<code>commands</code>文件夹，并在这个文件夹下创建一个名为<code>test.md</code>的文件，文件内输入以下内容</p>
+<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">请当前打开的文件编写 JUnit 5 单元测试。
+要求：
+<span class="token list punctuation">-</span> 使用 JUnit 5 和 Mockito
+<span class="token list punctuation">-</span> 覆盖主要业务分支
+<span class="token list punctuation">-</span> 测试类名 = 原类名 + "Test"
+<span class="token list punctuation">-</span> 放到 src/test/java 对应的包路径下
+<span class="token list punctuation">-</span> Mock 外部依赖，不要发真实网络请求<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>在 Claude Code 会话中，直接输入 <code>/test</code>，Claude 就会读取这个文件的内容，并按照你的要求执行。</p>
+<p><strong>就这么简单。没有复杂的配置，不需要写代码。</strong></p>
+<h2 id="进阶玩法一：接收命令参数"><a href="#进阶玩法一：接收命令参数" class="headerlink" title="进阶玩法一：接收命令参数"></a>进阶玩法一：接收命令参数</h2><p>文档中可以使用<code>$ARGUMENTS</code>占位符接收命令参数</p>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">为以下代码生成完整的单元测试。  
+要求：
+- 使用 JUnit 5 和 Mockito
+- 覆盖主要业务分支
+- 测试类名 = 原类名 + "Test"
+- 放到 src/test/java 对应的包路径下
+- Mock 外部依赖，不要发真实网络请求
+
+$ARGUMENTS<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>直接输入 <code>/test 具体的文件/目录</code>，Claude Code就会根据命令中的文件或者目录执行对应的指令。</p>
+<p>除了使用 <code>$ARGUMENTS</code>参数占位符，Claude Code CLI中也支持通过 $1、$2等位置参数。</p>
+<ul>
+<li><code>$1</code>：第一个参数</li>
+<li><code>$2</code>：第二个参数</li>
+<li><code>$ARGUMENTS</code>：整段参数<h2 id="进阶玩法二：加上-YAML-头部"><a href="#进阶玩法二：加上-YAML-头部" class="headerlink" title="进阶玩法二：加上 YAML 头部"></a>进阶玩法二：加上 YAML 头部</h2></li>
+</ul>
+<p>你可以在 <code>.md</code> 文件顶部加一段 YAML frontmatter，用来控制命令的行为（比如描述、参数、执行脚本等）。</p>
+<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown"><span class="token front-matter-block"><span class="token punctuation">---</span>
+<span class="token front-matter yaml language-yaml"><span class="token key atrule">description</span><span class="token punctuation">:</span> <span class="token string">"生成单元测试"</span>
+<span class="token key atrule">argument-hint</span><span class="token punctuation">:</span> &lt;文件或目录路径<span class="token punctuation">></span></span>
+<span class="token punctuation">---</span></span>
+
+为以下代码生成完整的单元测试。  
+要求：  
+<span class="token list punctuation">-</span> 使用 JUnit 5 和 Mockito
+<span class="token list punctuation">-</span> 覆盖主要业务分支
+<span class="token list punctuation">-</span> 测试类名 = 原类名 + "Test"
+<span class="token list punctuation">-</span> 放到 src/test/java 对应的包路径下
+<span class="token list punctuation">-</span> Mock 外部依赖，不要发真实网络请求
+  
+$ARGUMENTS<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>然后在对话中输入 <code>/test OrderService</code>，就会自动为<code>OrderService</code>生成单元测试。</p>
+<p><strong>注意</strong>：这个命令头部的 YAML frontmatter 部分——<code>description</code> 和 <code>argument-hint</code> 不是必须的，但加上它们之后，你输入<code>/test</code>时会显示这个命令的作用以及参数的提示，非常方便。</p>
+<p>除了 <code>description</code> 和 <code>argument-hint</code>，它还支持更多配置：</p>
+<ul>
+<li><strong>allowed-tools</strong>：这个命令可以用的工具白名单</li>
+<li><strong>model</strong>：强制用指定模型执行这个命令</li>
+<li><strong>context: fork</strong>：在独立子代理中执行，不污染主对话</li>
+<li><strong>agent</strong>：指定用哪个子代理执行</li>
+</ul>
+<p><strong>特别说一下 <code>model</code> 字段</strong>——这个非常实用。比如 <code>/commit</code> 这种简单的命令（生成 commit message），没必要用最强的 Opus，指定用 Haiku 就够了，又快又省钱。</p>
+<h2 id="进阶玩法三：执行本地脚本"><a href="#进阶玩法三：执行本地脚本" class="headerlink" title="进阶玩法三：执行本地脚本"></a>进阶玩法三：执行本地脚本</h2><p>自定义命令不光能发提示词，还能直接执行你电脑上的脚本。</p>
+<p>在 YAML 中指定 <code>execute</code> 字段：</p>
+<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown"><span class="token front-matter-block"><span class="token punctuation">---</span>
+<span class="token front-matter yaml language-yaml"><span class="token key atrule">execute</span><span class="token punctuation">:</span> <span class="token string">"scripts/run-tests.sh"</span></span>
+<span class="token punctuation">---</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>Claude Code 会运行这个脚本，并把输出结果给你看。比如你可以写一个 <code>deploy.sh</code>，然后敲 <code>/deploy</code> 就能一键部署到测试环境。</p>
+<h2 id="进阶玩法四：-simplify"><a href="#进阶玩法四：-simplify" class="headerlink" title="进阶玩法四：/simplify"></a>进阶玩法四：<code>/simplify</code></h2><p><code>/simplify</code>是 Claude Code 内置的一个命令，其核心目的是对代码进行诊断和手术，主动发现问题并<strong>直接动手优化</strong>代码。该命令启动<strong>3个并行Agent</strong>，从<strong>复用性、质量、效率</strong>三个维度分析，直接应用优化。</p>
+<p>它的强大之处在于并行性：它不是一个一个地解决问题，而是同时启动三个Agent，从三个角度一起下手，效率自然翻倍。</p>
+<p>不过需要注意的是，这个命令会<strong>直接修改你的文件</strong>。在执行 <code>/simplify</code> 后，建议先用 <code>git diff</code> 检查一下它的修改，确保一切符合你的预期。  </p>
+<p>对于开发人员来说，这个命令是必须牢记于心且经常使用的。</p>
+<h2 id="进阶玩法五：-review"><a href="#进阶玩法五：-review" class="headerlink" title="进阶玩法五：/review"></a>进阶玩法五：<code>/review</code></h2><p><code>/review</code> 是 Claude Code 内置的一个命令，其核心目的在于对现有代码变更进行分析和报告，指出潜在风险，但通常不直接修改代码。该命令通过分析代码或 Git Diff，提供全面的代码审查报告，涵盖风险、问题和改进建议。</p>
+<p><code>/review</code> <strong>负责“事后审查”</strong>：在创建了PR之后，针对你的PR的变更内容运行 <code>/review</code>。把它当作一位同事帮你做审查，确保没有遗漏任何潜在的逻辑错误或架构问题，然后再将PR发送给团队的其他人。</p>
+<h2 id="实战例子"><a href="#实战例子" class="headerlink" title="实战例子"></a>实战例子</h2><h3 id="build：一键编译-测试"><a href="#build：一键编译-测试" class="headerlink" title="/build：一键编译+测试"></a><code>/build</code>：一键编译+测试</h3><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown"><span class="token front-matter-block"><span class="token punctuation">---</span>
+<span class="token front-matter yaml language-yaml"><span class="token key atrule">description</span><span class="token punctuation">:</span> <span class="token string">"编译并运行所有单元测试"</span></span>
+<span class="token punctuation">---</span></span>
+
+请执行以下命令：
+<span class="token list punctuation">1.</span> <span class="token code-snippet code keyword">`mvn clean compile`</span> — 编译项目
+<span class="token list punctuation">2.</span> <span class="token code-snippet code keyword">`mvn test`</span> — 运行所有单元测试
+如果编译或测试失败，请分析错误原因并给出修复建议。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="checkstyle：代码规范检查"><a href="#checkstyle：代码规范检查" class="headerlink" title="/checkstyle：代码规范检查"></a><code>/checkstyle</code>：代码规范检查</h3><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown"><span class="token front-matter-block"><span class="token punctuation">---</span>
+<span class="token front-matter yaml language-yaml"><span class="token key atrule">description</span><span class="token punctuation">:</span> <span class="token string">"检查代码风格是否符合团队规范"</span></span>
+<span class="token punctuation">---</span></span>
+
+请检查当前打开的 Java 文件是否符合以下规范：
+<span class="token list punctuation">-</span> 类名使用大驼峰
+<span class="token list punctuation">-</span> 方法长度不超过 50 行
+<span class="token list punctuation">-</span> 所有 public 方法有 JavaDoc
+<span class="token list punctuation">-</span> 禁止 <span class="token code-snippet code keyword">`System.out.println`</span>，必须用 log
+<span class="token list punctuation">-</span> 如有违规，请给出具体位置和修改建议。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="doc：组件文档生成"><a href="#doc：组件文档生成" class="headerlink" title="/doc：组件文档生成"></a><code>/doc</code>：组件文档生成</h3><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown"><span class="token front-matter-block"><span class="token punctuation">---</span>
+<span class="token front-matter yaml language-yaml"><span class="token key atrule">description</span><span class="token punctuation">:</span> <span class="token string">"为当前选中的组件/类生成标准技术文档"</span>
+<span class="token key atrule">argument-hint</span><span class="token punctuation">:</span> &lt;文件或目录路径<span class="token punctuation">></span></span>
+<span class="token punctuation">---</span></span>
+
+请为 $ARGUMENTS 生成一份完整的技术文档。
+
+<span class="token title important"><span class="token punctuation">##</span> 文档结构要求</span>
+
+<span class="token list punctuation">1.</span> <span class="token bold"><span class="token punctuation">**</span><span class="token content">概述</span><span class="token punctuation">**</span></span>：一句话说明该组件/类的功能。
+<span class="token list punctuation">2.</span> <span class="token bold"><span class="token punctuation">**</span><span class="token content">API 列表</span><span class="token punctuation">**</span></span>：
+   <span class="token list punctuation">-</span> 对于前端组件：列出 Props / Slots / Events / Methods
+   <span class="token list punctuation">-</span> 对于后端 Java 类：列出 public 方法、参数、返回值、异常
+<span class="token list punctuation">3.</span> <span class="token bold"><span class="token punctuation">**</span><span class="token content">使用示例</span><span class="token punctuation">**</span></span>：至少一个完整的最小示例代码。
+<span class="token list punctuation">4.</span> <span class="token bold"><span class="token punctuation">**</span><span class="token content">注意事项</span><span class="token punctuation">**</span></span>：性能、兼容性、依赖或常见错误。
+
+<span class="token title important"><span class="token punctuation">##</span> 输出格式</span>
+
+使用 Markdown，包含标题、表格（用于 API）、代码块（示例）。
+
+<span class="token title important"><span class="token punctuation">##</span> 额外规则</span>
+
+<span class="token list punctuation">-</span> 从当前打开的文件或传入的参数 $ARGUMENTS 中读取实际代码。
+<span class="token list punctuation">-</span> 如果无法获取代码，提示用户提供文件路径或粘贴代码。
+<span class="token list punctuation">-</span> 对于 TypeScript 组件，优先从类型定义推断 Props 类型。
+<span class="token list punctuation">-</span> 对于 Java 类，使用 JavaDoc 注释作为文档基础，自动补充未注释的方法。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="commit：生成提交"><a href="#commit：生成提交" class="headerlink" title="/commit：生成提交"></a><code>/commit</code>：生成提交</h3><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown"><span class="token hr punctuation">---</span>  
+description: 自动 commit 当前改动  
+allowed-tools: Bash(git status:<span class="token italic"><span class="token punctuation">*</span><span class="token content">), Bash(git diff:</span><span class="token punctuation">*</span></span>), Bash(git add:<span class="token italic"><span class="token punctuation">*</span><span class="token content">), Bash(git commit:</span><span class="token punctuation">*</span></span>)  
+<span class="token title important">model: claude-3-5-haiku-20241022  
+<span class="token punctuation">---</span></span>  
+  
+<span class="token title important"><span class="token punctuation">##</span> 上下文  </span>
+- 当前 git 状态：!<span class="token code-snippet code keyword">`git status`</span>  
+- 当前改动详情：!<span class="token code-snippet code keyword">`git diff HEAD`</span>  
+  
+<span class="token title important"><span class="token punctuation">##</span> 任务  </span>
+  
+基于以上改动，生成一个规范的 commit message 并提交。  
+  
+格式要求：type(scope): description  
+- type: feat / fix / docs / refactor / test / chore  
+- scope: 改动涉及的模块（如 blog、auth、api）  
+- description: 简短的英文描述  
+  
+$ARGUMENTS<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
                 
             </div>
             <hr/>
@@ -949,7 +1035,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://gloamfox.github.io/20260303020433.html">https://gloamfox.github.io/20260303020433.html</a>
+                    <a href="https://gloamfox.github.io/20260409094226.html">https://gloamfox.github.io/20260409094226.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -987,12 +1073,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E7%AC%94%E8%AE%B0%E7%AE%A1%E7%90%86/">
-                                    <span class="chip bg-color">笔记管理</span>
+                                <a href="/tags/AI%E7%BC%96%E7%A8%8B/">
+                                    <span class="chip bg-color">AI编程</span>
                                 </a>
                             
-                                <a href="/tags/%E7%9F%A5%E8%AF%86%E7%BB%84%E7%BB%87/">
-                                    <span class="chip bg-color">知识组织</span>
+                                <a href="/tags/Claude-Code/">
+                                    <span class="chip bg-color">Claude Code</span>
                                 </a>
                             
                         </div>
@@ -1162,46 +1248,52 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/20260314085149.html">
+                <a href="/20260409094226.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" >
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" >
                         
-                        <span class="card-title">单元测试的困境与破局：为何我们不愿写，以及如何高效地写</span>
+                        <span class="card-title">Claude Code通关手册（四）：自定义命令，告别手敲重复指令</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            本文深入探讨了单元测试的重要性，分析了开发人员不愿编写单元测试的原因，并介绍了测试驱动开发(TDD)的应用。文章强调了有效的单元测试应避免过度依赖Spring框架，专注于业务逻辑验证，同时提出了在团队协作中使用单元测试和Mock技术的优势，以提高代码质量和开发效率。
+                            文章详细讲解了如何创建自定义命令、使用参数占位符、添加YAML头部配置、执行本地脚本，并介绍了内置的/simplify和/review命令，最后提供了多个实战例子如/build、/checkstyle等，帮助开发者掌握这一提高效率的功能。
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2026-03-14
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2026-04-09
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%90%8E%E7%AB%AF/" class="post-category">
-                                    后端
+                            <a href="/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/" class="post-category">
+                                    软件工具
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/JUnit/">
-                        <span class="chip bg-color">JUnit</span>
+                    <a href="/tags/AI%E7%BC%96%E7%A8%8B/">
+                        <span class="chip bg-color">AI编程</span>
+                    </a>
+                    
+                    <a href="/tags/Claude-Code/">
+                        <span class="chip bg-color">Claude Code</span>
                     </a>
                     
                 </div>
@@ -1215,31 +1307,31 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/20260302122243.html">
+                <a href="/20260408205456.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/22.jpg" class="responsive-img" >
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" >
                         
-                        <span class="card-title">进制转换与数据编码</span>
+                        <span class="card-title">Claude Code通关手册（三）：CLAUDE.md深度实战</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            本文详细介绍了不同进制之间的转换方法，包括R进制与十进制的互转、二进制与八进制/十六进制的转换，以及原码、反码、补码和移码等数据编码方式，并探讨了浮点数的表示与运算过程。
+                            本文详细介绍了如何使用CLAUDE.md文件为Claude Code提供项目长期记忆，解决每次对话重复交代技术栈的问题。文章涵盖了CLAUDE.md的定义、放置位置、内容编写原则、实际操作步骤，以及进阶配置如全局设置、Auto Memory功能和模块化规则系统，帮助开发者高效配置Claude Code，提升开发效率。
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2026-03-02
+                                <i class="far fa-clock fa-fw icon-date"></i>2026-04-08
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/" class="post-category">
-                                    计算机基础
+                            <a href="/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/" class="post-category">
+                                    软件工具
                                 </a>
                             
                             
@@ -1249,16 +1341,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2/">
-                        <span class="chip bg-color">进制转换</span>
+                    <a href="/tags/AI%E7%BC%96%E7%A8%8B/">
+                        <span class="chip bg-color">AI编程</span>
                     </a>
                     
-                    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BC%96%E7%A0%81/">
-                        <span class="chip bg-color">数据编码</span>
-                    </a>
-                    
-                    <a href="/tags/%E6%B5%AE%E7%82%B9%E6%95%B0%E8%BF%90%E7%AE%97/">
-                        <span class="chip bg-color">浮点数运算</span>
+                    <a href="/tags/Claude-Code/">
+                        <span class="chip bg-color">Claude Code</span>
                     </a>
                     
                 </div>
