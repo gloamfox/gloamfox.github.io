@@ -859,7 +859,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <div class="obsidian-callout obsidian-callout-tip" id="obsidian-callout-os02jwffs"><div class="obsidian-callout-header"><span class="obsidian-callout-icon">&#128161;</span><span class="obsidian-callout-title">Tip</span></div><div class="obsidian-callout-content"><p>这是Claude Code通关手册的第五篇，这一篇将把“万能助手”变成一支专业队伍，各司其职、并行作战，这才是 Claude Code 的正确打开方式</p>
+                <div class="obsidian-callout obsidian-callout-tip" id="obsidian-callout-1fiqcsj9j"><div class="obsidian-callout-header"><span class="obsidian-callout-icon">&#128161;</span><span class="obsidian-callout-title">Tip</span></div><div class="obsidian-callout-content"><p>这是Claude Code通关手册的第五篇，这一篇将把“万能助手”变成一支专业队伍，各司其职、并行作战，这才是 Claude Code 的正确打开方式</p>
 </div></div>
 <h2 id="先来看一个熟悉的场景"><a href="#先来看一个熟悉的场景" class="headerlink" title="先来看一个熟悉的场景"></a>先来看一个熟悉的场景</h2><p>你面对一个复杂的任务，突然萌生了这样的想法：</p>
 <p>“要是能有个专门负责探索代码库的助手，再有个专门审查代码的专家，还有个专注写测试的工程师，大家各司其职、同时开工，那该多爽？”</p>
@@ -895,26 +895,22 @@
 <th>子代理</th>
 <th>使用模型</th>
 <th>专长</th>
-<th>什么时候启动</th>
 </tr>
 </thead>
 <tbody><tr>
 <td><strong>Plan</strong></td>
 <td>继承主对话</td>
 <td>Plan mode 下的代码库研究和上下文收集（只读）</td>
-<td>进入 plan mode 时</td>
 </tr>
 <tr>
 <td><strong>Explore</strong></td>
 <td>Haiku（快速）</td>
 <td>搜索和分析代码库（只读）</td>
-<td>需要定位代码时</td>
 </tr>
 <tr>
 <td><strong>General-purpose</strong></td>
 <td>继承主对话</td>
 <td>复杂多步任务（全工具权限）</td>
-<td>需要独立调研时</td>
 </tr>
 </tbody></table>
 <p>也就是说，当你需要 Claude 在 Plan Mode 下做研究时，它会自动调用 <code>Plan</code> 子代理；当需要快速扫遍整个代码库搜索某个模式时，<code>Explore</code> 子代理会出马；当遇到一个需要独立调查的复杂任务时，<code>General-purpose</code> 子代理会被激活。</p>
