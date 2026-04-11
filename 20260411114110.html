@@ -859,7 +859,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <div class="obsidian-callout obsidian-callout-tip" id="obsidian-callout-b4s9of9jr"><div class="obsidian-callout-header"><span class="obsidian-callout-icon">&#128161;</span><span class="obsidian-callout-title">TIP</span></div><div class="obsidian-callout-content"><p>这是Claude Code通关手册的第六篇，上一篇我们为Claude Code配置了专家团队，这一篇我们为他装上外部设备，让他从本地助手转变成互联网平台。</p>
+                <div class="obsidian-callout obsidian-callout-tip" id="obsidian-callout-ju6lc7r5i"><div class="obsidian-callout-header"><span class="obsidian-callout-icon">&#128161;</span><span class="obsidian-callout-title">TIP</span></div><div class="obsidian-callout-content"><p>这是Claude Code通关手册的第六篇，上一篇我们为Claude Code配置了专家团队，这一篇我们为他装上外部设备，让他从本地助手转变成互联网平台。</p>
 </div></div>
 <p>一个很形象的比喻：<strong>没有配置MCP的Claude Code就像是一个被关在房间里的天才。</strong></p>
 <p>它聪明、高效——能处理你扔给它的所有文件，却够不着外面世界的任何东西。你没法让它“去 GitHub 捞一下那个 Issue 的详情”，没法让它“看一眼最新的 API 文档长什么样”，更别提“进数据库里查一条记录”。它只能靠几个月前训练好的知识来猜，而软件世界每天都在变。</p>
@@ -920,7 +920,7 @@ Claude：[查询表结构] product 表有 id、name、price、stock 等字段，
 你：哪些客户订单金额超过 1000？
 Claude：[执行 SQL] 共有 47 位客户，列表如下：...<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h1 id="实战三：安装-Context7-MCP-Server"><a href="#实战三：安装-Context7-MCP-Server" class="headerlink" title="实战三：安装 Context7 MCP Server"></a>实战三：安装 Context7 MCP Server</h1><p>AI工具最尴尬的一个问题就是——<strong>训练数据是有截止日期</strong>。</p>
+<h2 id="实战三：安装-Context7-MCP-Server"><a href="#实战三：安装-Context7-MCP-Server" class="headerlink" title="实战三：安装 Context7 MCP Server"></a>实战三：安装 Context7 MCP Server</h2><p>AI工具最尴尬的一个问题就是——<strong>训练数据是有截止日期</strong>。</p>
 <p>Claude Code 的知识截止到训练时，你用着 Spring Boot 3.2，它心里装的可能还是 Spring Boot 2.x 的老语法；你问它 MyBatis-Plus 最新版的批量插入怎么写，它给你翻出 2022 年的旧用法，编译直接报错。</p>
 <p><strong>Context7 就是来堵这个窟窿的。</strong> 它是一个文档平台，提供<strong>实时、带版本号的</strong>库文档和代码示例，直接注入 AI 的上下文。装上它，Claude 回答库相关问题时会主动去翻最新官方文档，不再凭记忆瞎猜。</p>
 <p><strong>配置步骤（一行命令搞定）：</strong></p>
