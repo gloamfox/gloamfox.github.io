@@ -31,6 +31,135 @@
 
 <!-- hexo injector head_end start -->
 <style>
+.obsidian-tabs {
+  margin: 1.5em 0;
+  border: 1px solid var(--tab-border-color, #e0e0e0);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--tab-bg, #fafafa);
+}
+
+.obsidian-tabs-nav {
+  display: flex;
+  background: var(--tab-nav-bg, #f0f0f0);
+  border-bottom: 1px solid var(--tab-border-color, #e0e0e0);
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.obsidian-tabs-nav::-webkit-scrollbar {
+  display: none;
+}
+
+.obsidian-tab-btn {
+  padding: 12px 20px;
+  border: none;
+  background: transparent;
+  color: var(--tab-text-color, #666);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+}
+
+.obsidian-tab-btn:hover {
+  color: var(--tab-hover-color, #333);
+  background: var(--tab-hover-bg, rgba(0,0,0,0.03));
+}
+
+.obsidian-tab-btn.active {
+  color: var(--tab-active-color, #448aff);
+  border-bottom-color: var(--tab-active-color, #448aff);
+  background: var(--tab-bg, #fafafa);
+}
+
+.obsidian-tabs-content {
+  padding: 20px;
+  background: var(--tab-bg, #fafafa);
+}
+
+.obsidian-tab-panel {
+  display: none;
+  animation: fadeIn 0.3s ease;
+}
+
+.obsidian-tab-panel.active {
+  display: block;
+}
+
+.obsidian-tab-panel > *:first-child {
+  margin-top: 0;
+}
+
+.obsidian-tab-panel > *:last-child {
+  margin-bottom: 0;
+}
+
+.obsidian-tab-panel pre {
+  margin: 1em 0;
+  border-radius: 6px;
+}
+
+.obsidian-tab-panel code {
+  font-family: 'SF Mono', Monaco, 'Cascadia Code', monospace;
+}
+
+/* Fix code block background color inside tabs */
+.obsidian-tab-panel pre code {
+  background: transparent !important;
+}
+
+.obsidian-tab-panel .highlight {
+  background: transparent !important;
+}
+
+.obsidian-tab-panel .highlight pre {
+  background: var(--code-bg, #f5f5f5) !important;
+}
+
+.obsidian-tab-panel figure.highlight {
+  background: var(--code-bg, #f5f5f5) !important;
+}
+
+.obsidian-tab-panel td.gutter {
+  background: var(--code-gutter-bg, #f0f0f0) !important;
+}
+
+.obsidian-tab-panel td.code {
+  background: var(--code-bg, #f5f5f5) !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  .obsidian-tab-panel .highlight pre,
+  .obsidian-tab-panel figure.highlight {
+    --code-bg: #2d2d2d;
+    --code-gutter-bg: #252525;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .obsidian-tabs {
+    --tab-bg: #1e1e1e;
+    --tab-nav-bg: #252526;
+    --tab-border-color: #333;
+    --tab-text-color: #999;
+    --tab-hover-color: #ccc;
+    --tab-hover-bg: rgba(255,255,255,0.05);
+    --tab-active-color: #58a6ff;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+</style>
+
+<style>
 .obsidian-callout {
   margin: 1.5em 0;
   border-radius: 8px;
@@ -235,135 +364,6 @@
   .obsidian-callout-content code {
     background: rgba(255,255,255,0.1);
   }
-}
-</style>
-
-<style>
-.obsidian-tabs {
-  margin: 1.5em 0;
-  border: 1px solid var(--tab-border-color, #e0e0e0);
-  border-radius: 8px;
-  overflow: hidden;
-  background: var(--tab-bg, #fafafa);
-}
-
-.obsidian-tabs-nav {
-  display: flex;
-  background: var(--tab-nav-bg, #f0f0f0);
-  border-bottom: 1px solid var(--tab-border-color, #e0e0e0);
-  overflow-x: auto;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-
-.obsidian-tabs-nav::-webkit-scrollbar {
-  display: none;
-}
-
-.obsidian-tab-btn {
-  padding: 12px 20px;
-  border: none;
-  background: transparent;
-  color: var(--tab-text-color, #666);
-  font-size: 14px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  white-space: nowrap;
-  border-bottom: 2px solid transparent;
-  margin-bottom: -1px;
-}
-
-.obsidian-tab-btn:hover {
-  color: var(--tab-hover-color, #333);
-  background: var(--tab-hover-bg, rgba(0,0,0,0.03));
-}
-
-.obsidian-tab-btn.active {
-  color: var(--tab-active-color, #448aff);
-  border-bottom-color: var(--tab-active-color, #448aff);
-  background: var(--tab-bg, #fafafa);
-}
-
-.obsidian-tabs-content {
-  padding: 20px;
-  background: var(--tab-bg, #fafafa);
-}
-
-.obsidian-tab-panel {
-  display: none;
-  animation: fadeIn 0.3s ease;
-}
-
-.obsidian-tab-panel.active {
-  display: block;
-}
-
-.obsidian-tab-panel > *:first-child {
-  margin-top: 0;
-}
-
-.obsidian-tab-panel > *:last-child {
-  margin-bottom: 0;
-}
-
-.obsidian-tab-panel pre {
-  margin: 1em 0;
-  border-radius: 6px;
-}
-
-.obsidian-tab-panel code {
-  font-family: 'SF Mono', Monaco, 'Cascadia Code', monospace;
-}
-
-/* Fix code block background color inside tabs */
-.obsidian-tab-panel pre code {
-  background: transparent !important;
-}
-
-.obsidian-tab-panel .highlight {
-  background: transparent !important;
-}
-
-.obsidian-tab-panel .highlight pre {
-  background: var(--code-bg, #f5f5f5) !important;
-}
-
-.obsidian-tab-panel figure.highlight {
-  background: var(--code-bg, #f5f5f5) !important;
-}
-
-.obsidian-tab-panel td.gutter {
-  background: var(--code-gutter-bg, #f0f0f0) !important;
-}
-
-.obsidian-tab-panel td.code {
-  background: var(--code-bg, #f5f5f5) !important;
-}
-
-@media (prefers-color-scheme: dark) {
-  .obsidian-tab-panel .highlight pre,
-  .obsidian-tab-panel figure.highlight {
-    --code-bg: #2d2d2d;
-    --code-gutter-bg: #252525;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  .obsidian-tabs {
-    --tab-bg: #1e1e1e;
-    --tab-nav-bg: #252526;
-    --tab-border-color: #333;
-    --tab-text-color: #999;
-    --tab-hover-color: #ccc;
-    --tab-hover-bg: rgba(255,255,255,0.05);
-    --tab-active-color: #58a6ff;
-  }
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(5px); }
-  to { opacity: 1; transform: translateY(0); }
 }
 </style>
 <!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="暮色之狐" type="application/atom+xml">
@@ -965,7 +965,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://gloamfox.github.io/20251218123750.html">https://gloamfox.github.io/20251218123750.html</a>
+                    <a href="https://gloamfox.cc/20251218123750.html">https://gloamfox.cc/20251218123750.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -1483,6 +1483,10 @@
             </script>
             
             <br>
+            
+            <span id="icp"><img src="/medias/icp.png" style="vertical-align: text-bottom;" />
+                <a href="https://beian.miit.gov.cn/" target="_blank">鲁ICP备2026017338号-1</a>
+            </span>
             
         </div>
         <div class="col s12 m4 l4 social-link social-statis">

@@ -3,11 +3,11 @@
   <title>暮色之狐</title>
   
   <subtitle>暮色之狐</subtitle>
-  <link href="https://gloamfox.github.io/atom.xml" rel="self"/>
+  <link href="https://gloamfox.cc/atom.xml" rel="self"/>
   
-  <link href="https://gloamfox.github.io/"/>
-  <updated>2026-04-11T04:30:01.822Z</updated>
-  <id>https://gloamfox.github.io/</id>
+  <link href="https://gloamfox.cc/"/>
+  <updated>2026-04-13T07:01:37.052Z</updated>
+  <id>https://gloamfox.cc/</id>
   
   <author>
     <name>gloamfox</name>
@@ -18,145 +18,145 @@
   
   <entry>
     <title>Claude Code通关手册（六）：MCP协议完全指南</title>
-    <link href="https://gloamfox.github.io/20260411114110.html"/>
-    <id>https://gloamfox.github.io/20260411114110.html</id>
+    <link href="https://gloamfox.cc/20260411114110.html"/>
+    <id>https://gloamfox.cc/20260411114110.html</id>
     <published>2026-04-11T11:41:10.000Z</published>
-    <updated>2026-04-11T04:30:01.822Z</updated>
+    <updated>2026-04-13T07:01:37.052Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;div class=&quot;obsidian-callout obsidian-callout-tip&quot; id=&quot;obsidian-callout-ju6lc7r5i&quot;&gt;&lt;div class=&quot;obsidian-callout-header&quot;&gt;&lt;span</summary>
+    <summary type="html">&lt;div class=&quot;obsidian-callout obsidian-callout-tip&quot; id=&quot;obsidian-callout-5jfa23xa4&quot;&gt;&lt;div class=&quot;obsidian-callout-header&quot;&gt;&lt;span</summary>
         
       
     
     
     
-    <category term="软件工具" scheme="https://gloamfox.github.io/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/"/>
+    <category term="软件工具" scheme="https://gloamfox.cc/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/"/>
     
     
-    <category term="AI编程" scheme="https://gloamfox.github.io/tags/AI%E7%BC%96%E7%A8%8B/"/>
+    <category term="AI编程" scheme="https://gloamfox.cc/tags/AI%E7%BC%96%E7%A8%8B/"/>
     
-    <category term="Claude Code" scheme="https://gloamfox.github.io/tags/Claude-Code/"/>
+    <category term="Claude Code" scheme="https://gloamfox.cc/tags/Claude-Code/"/>
     
   </entry>
   
   <entry>
     <title>Claude Code通关手册（五）：组建你的AI专家团队，子代理系统</title>
-    <link href="https://gloamfox.github.io/20260410163535.html"/>
-    <id>https://gloamfox.github.io/20260410163535.html</id>
+    <link href="https://gloamfox.cc/20260410163535.html"/>
+    <id>https://gloamfox.cc/20260410163535.html</id>
     <published>2026-04-10T16:35:35.000Z</published>
-    <updated>2026-04-11T04:30:01.822Z</updated>
+    <updated>2026-04-13T07:01:37.052Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;div class=&quot;obsidian-callout obsidian-callout-tip&quot; id=&quot;obsidian-callout-na63otlhu&quot;&gt;&lt;div class=&quot;obsidian-callout-header&quot;&gt;&lt;span</summary>
+    <summary type="html">&lt;div class=&quot;obsidian-callout obsidian-callout-tip&quot; id=&quot;obsidian-callout-wgth81383&quot;&gt;&lt;div class=&quot;obsidian-callout-header&quot;&gt;&lt;span</summary>
         
       
     
     
     
-    <category term="软件工具" scheme="https://gloamfox.github.io/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/"/>
+    <category term="软件工具" scheme="https://gloamfox.cc/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/"/>
     
     
-    <category term="AI编程" scheme="https://gloamfox.github.io/tags/AI%E7%BC%96%E7%A8%8B/"/>
+    <category term="AI编程" scheme="https://gloamfox.cc/tags/AI%E7%BC%96%E7%A8%8B/"/>
     
-    <category term="Claude Code" scheme="https://gloamfox.github.io/tags/Claude-Code/"/>
+    <category term="Claude Code" scheme="https://gloamfox.cc/tags/Claude-Code/"/>
     
   </entry>
   
   <entry>
     <title>Claude Code通关手册（四）：自定义命令，告别手敲重复指令</title>
-    <link href="https://gloamfox.github.io/20260409094226.html"/>
-    <id>https://gloamfox.github.io/20260409094226.html</id>
+    <link href="https://gloamfox.cc/20260409094226.html"/>
+    <id>https://gloamfox.cc/20260409094226.html</id>
     <published>2026-04-09T09:42:26.000Z</published>
-    <updated>2026-04-11T04:30:01.822Z</updated>
+    <updated>2026-04-13T07:01:37.052Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;div class=&quot;obsidian-callout obsidian-callout-tip&quot; id=&quot;obsidian-callout-5wq158eo8&quot;&gt;&lt;div class=&quot;obsidian-callout-header&quot;&gt;&lt;span</summary>
+    <summary type="html">&lt;div class=&quot;obsidian-callout obsidian-callout-tip&quot; id=&quot;obsidian-callout-9ntsbzwvu&quot;&gt;&lt;div class=&quot;obsidian-callout-header&quot;&gt;&lt;span</summary>
         
       
     
     
     
-    <category term="软件工具" scheme="https://gloamfox.github.io/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/"/>
+    <category term="软件工具" scheme="https://gloamfox.cc/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/"/>
     
     
-    <category term="AI编程" scheme="https://gloamfox.github.io/tags/AI%E7%BC%96%E7%A8%8B/"/>
+    <category term="AI编程" scheme="https://gloamfox.cc/tags/AI%E7%BC%96%E7%A8%8B/"/>
     
-    <category term="Claude Code" scheme="https://gloamfox.github.io/tags/Claude-Code/"/>
+    <category term="Claude Code" scheme="https://gloamfox.cc/tags/Claude-Code/"/>
     
   </entry>
   
   <entry>
     <title>Claude Code通关手册（三）：CLAUDE.md深度实战</title>
-    <link href="https://gloamfox.github.io/20260408205456.html"/>
-    <id>https://gloamfox.github.io/20260408205456.html</id>
+    <link href="https://gloamfox.cc/20260408205456.html"/>
+    <id>https://gloamfox.cc/20260408205456.html</id>
     <published>2026-04-08T20:54:56.000Z</published>
-    <updated>2026-04-11T04:30:01.822Z</updated>
+    <updated>2026-04-13T07:01:37.052Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;div class=&quot;obsidian-callout obsidian-callout-tip&quot; id=&quot;obsidian-callout-vlu40wi4y&quot;&gt;&lt;div class=&quot;obsidian-callout-header&quot;&gt;&lt;span</summary>
+    <summary type="html">&lt;div class=&quot;obsidian-callout obsidian-callout-tip&quot; id=&quot;obsidian-callout-957psgn5g&quot;&gt;&lt;div class=&quot;obsidian-callout-header&quot;&gt;&lt;span</summary>
         
       
     
     
     
-    <category term="软件工具" scheme="https://gloamfox.github.io/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/"/>
+    <category term="软件工具" scheme="https://gloamfox.cc/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/"/>
     
     
-    <category term="AI编程" scheme="https://gloamfox.github.io/tags/AI%E7%BC%96%E7%A8%8B/"/>
+    <category term="AI编程" scheme="https://gloamfox.cc/tags/AI%E7%BC%96%E7%A8%8B/"/>
     
-    <category term="Claude Code" scheme="https://gloamfox.github.io/tags/Claude-Code/"/>
+    <category term="Claude Code" scheme="https://gloamfox.cc/tags/Claude-Code/"/>
     
   </entry>
   
   <entry>
     <title>Claude Code通关手册（二）：搞清权限，效率翻倍</title>
-    <link href="https://gloamfox.github.io/20260407143924.html"/>
-    <id>https://gloamfox.github.io/20260407143924.html</id>
+    <link href="https://gloamfox.cc/20260407143924.html"/>
+    <id>https://gloamfox.cc/20260407143924.html</id>
     <published>2026-04-07T14:39:24.000Z</published>
-    <updated>2026-04-11T04:30:01.822Z</updated>
+    <updated>2026-04-13T07:01:37.052Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;div class=&quot;obsidian-callout obsidian-callout-tip&quot; id=&quot;obsidian-callout-tv33tunx6&quot;&gt;&lt;div class=&quot;obsidian-callout-header&quot;&gt;&lt;span</summary>
+    <summary type="html">&lt;div class=&quot;obsidian-callout obsidian-callout-tip&quot; id=&quot;obsidian-callout-0oz81h54e&quot;&gt;&lt;div class=&quot;obsidian-callout-header&quot;&gt;&lt;span</summary>
         
       
     
     
     
-    <category term="软件工具" scheme="https://gloamfox.github.io/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/"/>
+    <category term="软件工具" scheme="https://gloamfox.cc/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/"/>
     
     
-    <category term="Claude Code" scheme="https://gloamfox.github.io/tags/Claude-Code/"/>
+    <category term="Claude Code" scheme="https://gloamfox.cc/tags/Claude-Code/"/>
     
-    <category term="权限管理" scheme="https://gloamfox.github.io/tags/%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86/"/>
+    <category term="权限管理" scheme="https://gloamfox.cc/tags/%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86/"/>
     
   </entry>
   
   <entry>
     <title>Hexo插件：Obsidian tabs语法兼容</title>
-    <link href="https://gloamfox.github.io/20260407134731.html"/>
-    <id>https://gloamfox.github.io/20260407134731.html</id>
+    <link href="https://gloamfox.cc/20260407134731.html"/>
+    <id>https://gloamfox.cc/20260407134731.html</id>
     <published>2026-04-07T13:47:31.000Z</published>
-    <updated>2026-04-11T04:30:01.822Z</updated>
+    <updated>2026-04-13T07:01:37.052Z</updated>
     
     
       
@@ -171,21 +171,21 @@
     
     
     
-    <category term="软件工具" scheme="https://gloamfox.github.io/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/"/>
+    <category term="软件工具" scheme="https://gloamfox.cc/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/"/>
     
     
-    <category term="Hexo" scheme="https://gloamfox.github.io/tags/Hexo/"/>
+    <category term="Hexo" scheme="https://gloamfox.cc/tags/Hexo/"/>
     
-    <category term="Obsidian" scheme="https://gloamfox.github.io/tags/Obsidian/"/>
+    <category term="Obsidian" scheme="https://gloamfox.cc/tags/Obsidian/"/>
     
   </entry>
   
   <entry>
     <title>Hexo插件：Obsidian标注语法兼容</title>
-    <link href="https://gloamfox.github.io/20260407133233.html"/>
-    <id>https://gloamfox.github.io/20260407133233.html</id>
+    <link href="https://gloamfox.cc/20260407133233.html"/>
+    <id>https://gloamfox.cc/20260407133233.html</id>
     <published>2026-04-07T13:32:33.000Z</published>
-    <updated>2026-04-11T04:30:01.822Z</updated>
+    <updated>2026-04-13T07:01:37.052Z</updated>
     
     
       
@@ -198,21 +198,21 @@
     
     
     
-    <category term="软件工具" scheme="https://gloamfox.github.io/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/"/>
+    <category term="软件工具" scheme="https://gloamfox.cc/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/"/>
     
     
-    <category term="Hexo" scheme="https://gloamfox.github.io/tags/Hexo/"/>
+    <category term="Hexo" scheme="https://gloamfox.cc/tags/Hexo/"/>
     
-    <category term="Obsidian" scheme="https://gloamfox.github.io/tags/Obsidian/"/>
+    <category term="Obsidian" scheme="https://gloamfox.cc/tags/Obsidian/"/>
     
   </entry>
   
   <entry>
     <title>npm国内镜像源配置</title>
-    <link href="https://gloamfox.github.io/20260404130924.html"/>
-    <id>https://gloamfox.github.io/20260404130924.html</id>
+    <link href="https://gloamfox.cc/20260404130924.html"/>
+    <id>https://gloamfox.cc/20260404130924.html</id>
     <published>2026-04-04T13:09:24.000Z</published>
-    <updated>2026-04-11T04:30:01.825Z</updated>
+    <updated>2026-04-13T07:01:37.054Z</updated>
     
     
       
@@ -226,19 +226,19 @@
     
     
     
-    <category term="软件工具" scheme="https://gloamfox.github.io/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/"/>
+    <category term="软件工具" scheme="https://gloamfox.cc/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/"/>
     
     
-    <category term="Node.js" scheme="https://gloamfox.github.io/tags/Node-js/"/>
+    <category term="Node.js" scheme="https://gloamfox.cc/tags/Node-js/"/>
     
   </entry>
   
   <entry>
     <title>VSCode设置Git Bash终端</title>
-    <link href="https://gloamfox.github.io/20260402190152.html"/>
-    <id>https://gloamfox.github.io/20260402190152.html</id>
+    <link href="https://gloamfox.cc/20260402190152.html"/>
+    <id>https://gloamfox.cc/20260402190152.html</id>
     <published>2026-04-02T19:01:52.000Z</published>
-    <updated>2026-04-11T04:30:01.825Z</updated>
+    <updated>2026-04-13T07:01:37.054Z</updated>
     
     
       
@@ -256,21 +256,21 @@
     
     
     
-    <category term="软件工具" scheme="https://gloamfox.github.io/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/"/>
+    <category term="软件工具" scheme="https://gloamfox.cc/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/"/>
     
     
-    <category term="VSCode" scheme="https://gloamfox.github.io/tags/VSCode/"/>
+    <category term="VSCode" scheme="https://gloamfox.cc/tags/VSCode/"/>
     
-    <category term="终端配置" scheme="https://gloamfox.github.io/tags/%E7%BB%88%E7%AB%AF%E9%85%8D%E7%BD%AE/"/>
+    <category term="终端配置" scheme="https://gloamfox.cc/tags/%E7%BB%88%E7%AB%AF%E9%85%8D%E7%BD%AE/"/>
     
   </entry>
   
   <entry>
     <title>Obsidian博客搭建完整指南</title>
-    <link href="https://gloamfox.github.io/20260331194609.html"/>
-    <id>https://gloamfox.github.io/20260331194609.html</id>
+    <link href="https://gloamfox.cc/20260331194609.html"/>
+    <id>https://gloamfox.cc/20260331194609.html</id>
     <published>2026-03-31T19:46:09.000Z</published>
-    <updated>2026-04-11T04:30:01.823Z</updated>
+    <updated>2026-04-13T07:01:37.053Z</updated>
     
     
       
@@ -283,21 +283,21 @@
     
     
     
-    <category term="软件工具" scheme="https://gloamfox.github.io/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/"/>
+    <category term="软件工具" scheme="https://gloamfox.cc/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/"/>
     
     
-    <category term="Hexo" scheme="https://gloamfox.github.io/tags/Hexo/"/>
+    <category term="Hexo" scheme="https://gloamfox.cc/tags/Hexo/"/>
     
-    <category term="Obsidian" scheme="https://gloamfox.github.io/tags/Obsidian/"/>
+    <category term="Obsidian" scheme="https://gloamfox.cc/tags/Obsidian/"/>
     
   </entry>
   
   <entry>
     <title>DPI 封杀 SSH？一键搭建 HTTPS 伪装隧道，完美绕过 RST 阻断</title>
-    <link href="https://gloamfox.github.io/20260331181032.html"/>
-    <id>https://gloamfox.github.io/20260331181032.html</id>
+    <link href="https://gloamfox.cc/20260331181032.html"/>
+    <id>https://gloamfox.cc/20260331181032.html</id>
     <published>2026-03-31T18:10:32.000Z</published>
-    <updated>2026-04-11T04:30:01.822Z</updated>
+    <updated>2026-04-13T07:01:37.052Z</updated>
     
     
       
@@ -310,50 +310,50 @@
     
     
     
-    <category term="系统运维" scheme="https://gloamfox.github.io/categories/%E7%B3%BB%E7%BB%9F%E8%BF%90%E7%BB%B4/"/>
+    <category term="系统运维" scheme="https://gloamfox.cc/categories/%E7%B3%BB%E7%BB%9F%E8%BF%90%E7%BB%B4/"/>
     
     
-    <category term="网络安全" scheme="https://gloamfox.github.io/tags/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/"/>
+    <category term="网络安全" scheme="https://gloamfox.cc/tags/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/"/>
     
-    <category term="SSH" scheme="https://gloamfox.github.io/tags/SSH/"/>
+    <category term="SSH" scheme="https://gloamfox.cc/tags/SSH/"/>
     
-    <category term="服务器运维" scheme="https://gloamfox.github.io/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%90%E7%BB%B4/"/>
+    <category term="服务器运维" scheme="https://gloamfox.cc/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%90%E7%BB%B4/"/>
     
   </entry>
   
   <entry>
     <title>Claude Code通关手册（一）：转角遇到爱，真香体验</title>
-    <link href="https://gloamfox.github.io/20260327132732.html"/>
-    <id>https://gloamfox.github.io/20260327132732.html</id>
+    <link href="https://gloamfox.cc/20260327132732.html"/>
+    <id>https://gloamfox.cc/20260327132732.html</id>
     <published>2026-03-27T13:27:32.000Z</published>
-    <updated>2026-04-11T04:30:01.821Z</updated>
+    <updated>2026-04-13T07:01:37.052Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;div class=&quot;obsidian-callout obsidian-callout-tip&quot; id=&quot;obsidian-callout-hf661bte8&quot;&gt;&lt;div class=&quot;obsidian-callout-header&quot;&gt;&lt;span</summary>
+    <summary type="html">&lt;div class=&quot;obsidian-callout obsidian-callout-tip&quot; id=&quot;obsidian-callout-go136dnlw&quot;&gt;&lt;div class=&quot;obsidian-callout-header&quot;&gt;&lt;span</summary>
         
       
     
     
     
-    <category term="软件工具" scheme="https://gloamfox.github.io/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/"/>
+    <category term="软件工具" scheme="https://gloamfox.cc/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/"/>
     
     
-    <category term="AI编程" scheme="https://gloamfox.github.io/tags/AI%E7%BC%96%E7%A8%8B/"/>
+    <category term="AI编程" scheme="https://gloamfox.cc/tags/AI%E7%BC%96%E7%A8%8B/"/>
     
-    <category term="Claude Code" scheme="https://gloamfox.github.io/tags/Claude-Code/"/>
+    <category term="Claude Code" scheme="https://gloamfox.cc/tags/Claude-Code/"/>
     
   </entry>
   
   <entry>
     <title>uniCloud加速GitHub Pages博客访问</title>
-    <link href="https://gloamfox.github.io/20260325161216.html"/>
-    <id>https://gloamfox.github.io/20260325161216.html</id>
+    <link href="https://gloamfox.cc/20260325161216.html"/>
+    <id>https://gloamfox.cc/20260325161216.html</id>
     <published>2026-03-25T16:12:16.000Z</published>
-    <updated>2026-04-11T04:30:01.825Z</updated>
+    <updated>2026-04-13T07:01:37.054Z</updated>
     
     
       
@@ -366,21 +366,21 @@
     
     
     
-    <category term="前端" scheme="https://gloamfox.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    <category term="前端" scheme="https://gloamfox.cc/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-    <category term="Hexo" scheme="https://gloamfox.github.io/tags/Hexo/"/>
+    <category term="Hexo" scheme="https://gloamfox.cc/tags/Hexo/"/>
     
-    <category term="uniCloud" scheme="https://gloamfox.github.io/tags/uniCloud/"/>
+    <category term="uniCloud" scheme="https://gloamfox.cc/tags/uniCloud/"/>
     
   </entry>
   
   <entry>
     <title>Hexo 插件：自动转换 Markdown 相对路径链接</title>
-    <link href="https://gloamfox.github.io/20260325102944.html"/>
-    <id>https://gloamfox.github.io/20260325102944.html</id>
+    <link href="https://gloamfox.cc/20260325102944.html"/>
+    <id>https://gloamfox.cc/20260325102944.html</id>
     <published>2026-03-25T10:29:44.000Z</published>
-    <updated>2026-04-11T04:30:01.822Z</updated>
+    <updated>2026-04-13T07:01:37.052Z</updated>
     
     
       
@@ -394,19 +394,19 @@
     
     
     
-    <category term="前端" scheme="https://gloamfox.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    <category term="前端" scheme="https://gloamfox.cc/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-    <category term="Hexo" scheme="https://gloamfox.github.io/tags/Hexo/"/>
+    <category term="Hexo" scheme="https://gloamfox.cc/tags/Hexo/"/>
     
   </entry>
   
   <entry>
     <title>Hexo 搜索跳转失效？一招解决链接域名丢失问题</title>
-    <link href="https://gloamfox.github.io/20260324145235.html"/>
-    <id>https://gloamfox.github.io/20260324145235.html</id>
+    <link href="https://gloamfox.cc/20260324145235.html"/>
+    <id>https://gloamfox.cc/20260324145235.html</id>
     <published>2026-03-24T14:52:35.000Z</published>
-    <updated>2026-04-11T04:30:01.822Z</updated>
+    <updated>2026-04-13T07:01:37.052Z</updated>
     
     
       
@@ -419,19 +419,19 @@
     
     
     
-    <category term="前端" scheme="https://gloamfox.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    <category term="前端" scheme="https://gloamfox.cc/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-    <category term="Hexo" scheme="https://gloamfox.github.io/tags/Hexo/"/>
+    <category term="Hexo" scheme="https://gloamfox.cc/tags/Hexo/"/>
     
   </entry>
   
   <entry>
     <title>Hexo永久链接最佳实践：终极方案与优化指南</title>
-    <link href="https://gloamfox.github.io/20260324094537.html"/>
-    <id>https://gloamfox.github.io/20260324094537.html</id>
+    <link href="https://gloamfox.cc/20260324094537.html"/>
+    <id>https://gloamfox.cc/20260324094537.html</id>
     <published>2026-03-24T09:45:37.000Z</published>
-    <updated>2026-04-11T04:30:01.822Z</updated>
+    <updated>2026-04-13T07:01:37.052Z</updated>
     
     
       
@@ -444,21 +444,21 @@
     
     
     
-    <category term="前端" scheme="https://gloamfox.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    <category term="前端" scheme="https://gloamfox.cc/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-    <category term="Hexo" scheme="https://gloamfox.github.io/tags/Hexo/"/>
+    <category term="Hexo" scheme="https://gloamfox.cc/tags/Hexo/"/>
     
-    <category term="URL优化" scheme="https://gloamfox.github.io/tags/URL%E4%BC%98%E5%8C%96/"/>
+    <category term="URL优化" scheme="https://gloamfox.cc/tags/URL%E4%BC%98%E5%8C%96/"/>
     
   </entry>
   
   <entry>
     <title>图片压缩与格式优化指南</title>
-    <link href="https://gloamfox.github.io/20260323060238.html"/>
-    <id>https://gloamfox.github.io/20260323060238.html</id>
+    <link href="https://gloamfox.cc/20260323060238.html"/>
+    <id>https://gloamfox.cc/20260323060238.html</id>
     <published>2026-03-23T06:02:38.000Z</published>
-    <updated>2026-04-11T04:30:01.826Z</updated>
+    <updated>2026-04-13T07:01:37.054Z</updated>
     
     
       
@@ -472,21 +472,21 @@
     
     
     
-    <category term="系统运维" scheme="https://gloamfox.github.io/categories/%E7%B3%BB%E7%BB%9F%E8%BF%90%E7%BB%B4/"/>
+    <category term="系统运维" scheme="https://gloamfox.cc/categories/%E7%B3%BB%E7%BB%9F%E8%BF%90%E7%BB%B4/"/>
     
     
-    <category term="图片优化" scheme="https://gloamfox.github.io/tags/%E5%9B%BE%E7%89%87%E4%BC%98%E5%8C%96/"/>
+    <category term="图片优化" scheme="https://gloamfox.cc/tags/%E5%9B%BE%E7%89%87%E4%BC%98%E5%8C%96/"/>
     
-    <category term="性能优化" scheme="https://gloamfox.github.io/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
+    <category term="性能优化" scheme="https://gloamfox.cc/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
     
   </entry>
   
   <entry>
     <title>Hexo插件：移除图片默认 alt 属性</title>
-    <link href="https://gloamfox.github.io/20260319105942.html"/>
-    <id>https://gloamfox.github.io/20260319105942.html</id>
+    <link href="https://gloamfox.cc/20260319105942.html"/>
+    <id>https://gloamfox.cc/20260319105942.html</id>
     <published>2026-03-19T10:59:42.000Z</published>
-    <updated>2026-04-11T04:30:01.822Z</updated>
+    <updated>2026-04-13T07:01:37.052Z</updated>
     
     
       
@@ -499,23 +499,23 @@
     
     
     
-    <category term="前端" scheme="https://gloamfox.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    <category term="前端" scheme="https://gloamfox.cc/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-    <category term="Hexo" scheme="https://gloamfox.github.io/tags/Hexo/"/>
+    <category term="Hexo" scheme="https://gloamfox.cc/tags/Hexo/"/>
     
-    <category term="JavaScript" scheme="https://gloamfox.github.io/tags/JavaScript/"/>
+    <category term="JavaScript" scheme="https://gloamfox.cc/tags/JavaScript/"/>
     
-    <category term="图片优化" scheme="https://gloamfox.github.io/tags/%E5%9B%BE%E7%89%87%E4%BC%98%E5%8C%96/"/>
+    <category term="图片优化" scheme="https://gloamfox.cc/tags/%E5%9B%BE%E7%89%87%E4%BC%98%E5%8C%96/"/>
     
   </entry>
   
   <entry>
     <title>Hexo移除图片默认 alt 属性</title>
-    <link href="https://gloamfox.github.io/20260319105942.html"/>
-    <id>https://gloamfox.github.io/20260319105942.html</id>
+    <link href="https://gloamfox.cc/20260319105942.html"/>
+    <id>https://gloamfox.cc/20260319105942.html</id>
     <published>2026-03-19T10:59:42.000Z</published>
-    <updated>2026-04-11T04:30:01.822Z</updated>
+    <updated>2026-04-13T07:01:37.052Z</updated>
     
     
       
@@ -528,23 +528,23 @@
     
     
     
-    <category term="前端" scheme="https://gloamfox.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    <category term="前端" scheme="https://gloamfox.cc/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-    <category term="Hexo" scheme="https://gloamfox.github.io/tags/Hexo/"/>
+    <category term="Hexo" scheme="https://gloamfox.cc/tags/Hexo/"/>
     
-    <category term="JavaScript" scheme="https://gloamfox.github.io/tags/JavaScript/"/>
+    <category term="JavaScript" scheme="https://gloamfox.cc/tags/JavaScript/"/>
     
-    <category term="图片优化" scheme="https://gloamfox.github.io/tags/%E5%9B%BE%E7%89%87%E4%BC%98%E5%8C%96/"/>
+    <category term="图片优化" scheme="https://gloamfox.cc/tags/%E5%9B%BE%E7%89%87%E4%BC%98%E5%8C%96/"/>
     
   </entry>
   
   <entry>
     <title>jsDelivr 缓存刷新与版本控制</title>
-    <link href="https://gloamfox.github.io/20260319034656.html"/>
-    <id>https://gloamfox.github.io/20260319034656.html</id>
+    <link href="https://gloamfox.cc/20260319034656.html"/>
+    <id>https://gloamfox.cc/20260319034656.html</id>
     <published>2026-03-19T03:46:56.000Z</published>
-    <updated>2026-04-11T04:30:01.825Z</updated>
+    <updated>2026-04-13T07:01:37.054Z</updated>
     
     
       
@@ -559,14 +559,14 @@
     
     
     
-    <category term="前端" scheme="https://gloamfox.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    <category term="前端" scheme="https://gloamfox.cc/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-    <category term="CDN" scheme="https://gloamfox.github.io/tags/CDN/"/>
+    <category term="CDN" scheme="https://gloamfox.cc/tags/CDN/"/>
     
-    <category term="缓存" scheme="https://gloamfox.github.io/tags/%E7%BC%93%E5%AD%98/"/>
+    <category term="缓存" scheme="https://gloamfox.cc/tags/%E7%BC%93%E5%AD%98/"/>
     
-    <category term="jsDelivr" scheme="https://gloamfox.github.io/tags/jsDelivr/"/>
+    <category term="jsDelivr" scheme="https://gloamfox.cc/tags/jsDelivr/"/>
     
   </entry>
   
