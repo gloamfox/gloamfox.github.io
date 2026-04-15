@@ -31,135 +31,6 @@
 
 <!-- hexo injector head_end start -->
 <style>
-.obsidian-tabs {
-  margin: 1.5em 0;
-  border: 1px solid var(--tab-border-color, #e0e0e0);
-  border-radius: 8px;
-  overflow: hidden;
-  background: var(--tab-bg, #fafafa);
-}
-
-.obsidian-tabs-nav {
-  display: flex;
-  background: var(--tab-nav-bg, #f0f0f0);
-  border-bottom: 1px solid var(--tab-border-color, #e0e0e0);
-  overflow-x: auto;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-
-.obsidian-tabs-nav::-webkit-scrollbar {
-  display: none;
-}
-
-.obsidian-tab-btn {
-  padding: 12px 20px;
-  border: none;
-  background: transparent;
-  color: var(--tab-text-color, #666);
-  font-size: 14px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  white-space: nowrap;
-  border-bottom: 2px solid transparent;
-  margin-bottom: -1px;
-}
-
-.obsidian-tab-btn:hover {
-  color: var(--tab-hover-color, #333);
-  background: var(--tab-hover-bg, rgba(0,0,0,0.03));
-}
-
-.obsidian-tab-btn.active {
-  color: var(--tab-active-color, #448aff);
-  border-bottom-color: var(--tab-active-color, #448aff);
-  background: var(--tab-bg, #fafafa);
-}
-
-.obsidian-tabs-content {
-  padding: 20px;
-  background: var(--tab-bg, #fafafa);
-}
-
-.obsidian-tab-panel {
-  display: none;
-  animation: fadeIn 0.3s ease;
-}
-
-.obsidian-tab-panel.active {
-  display: block;
-}
-
-.obsidian-tab-panel > *:first-child {
-  margin-top: 0;
-}
-
-.obsidian-tab-panel > *:last-child {
-  margin-bottom: 0;
-}
-
-.obsidian-tab-panel pre {
-  margin: 1em 0;
-  border-radius: 6px;
-}
-
-.obsidian-tab-panel code {
-  font-family: 'SF Mono', Monaco, 'Cascadia Code', monospace;
-}
-
-/* Fix code block background color inside tabs */
-.obsidian-tab-panel pre code {
-  background: transparent !important;
-}
-
-.obsidian-tab-panel .highlight {
-  background: transparent !important;
-}
-
-.obsidian-tab-panel .highlight pre {
-  background: var(--code-bg, #f5f5f5) !important;
-}
-
-.obsidian-tab-panel figure.highlight {
-  background: var(--code-bg, #f5f5f5) !important;
-}
-
-.obsidian-tab-panel td.gutter {
-  background: var(--code-gutter-bg, #f0f0f0) !important;
-}
-
-.obsidian-tab-panel td.code {
-  background: var(--code-bg, #f5f5f5) !important;
-}
-
-@media (prefers-color-scheme: dark) {
-  .obsidian-tab-panel .highlight pre,
-  .obsidian-tab-panel figure.highlight {
-    --code-bg: #2d2d2d;
-    --code-gutter-bg: #252525;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  .obsidian-tabs {
-    --tab-bg: #1e1e1e;
-    --tab-nav-bg: #252526;
-    --tab-border-color: #333;
-    --tab-text-color: #999;
-    --tab-hover-color: #ccc;
-    --tab-hover-bg: rgba(255,255,255,0.05);
-    --tab-active-color: #58a6ff;
-  }
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(5px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-</style>
-
-<style>
 .obsidian-callout {
   margin: 1.5em 0;
   border-radius: 8px;
@@ -364,6 +235,135 @@
   .obsidian-callout-content code {
     background: rgba(255,255,255,0.1);
   }
+}
+</style>
+
+<style>
+.obsidian-tabs {
+  margin: 1.5em 0;
+  border: 1px solid var(--tab-border-color, #e0e0e0);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--tab-bg, #fafafa);
+}
+
+.obsidian-tabs-nav {
+  display: flex;
+  background: var(--tab-nav-bg, #f0f0f0);
+  border-bottom: 1px solid var(--tab-border-color, #e0e0e0);
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.obsidian-tabs-nav::-webkit-scrollbar {
+  display: none;
+}
+
+.obsidian-tab-btn {
+  padding: 12px 20px;
+  border: none;
+  background: transparent;
+  color: var(--tab-text-color, #666);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+}
+
+.obsidian-tab-btn:hover {
+  color: var(--tab-hover-color, #333);
+  background: var(--tab-hover-bg, rgba(0,0,0,0.03));
+}
+
+.obsidian-tab-btn.active {
+  color: var(--tab-active-color, #448aff);
+  border-bottom-color: var(--tab-active-color, #448aff);
+  background: var(--tab-bg, #fafafa);
+}
+
+.obsidian-tabs-content {
+  padding: 20px;
+  background: var(--tab-bg, #fafafa);
+}
+
+.obsidian-tab-panel {
+  display: none;
+  animation: fadeIn 0.3s ease;
+}
+
+.obsidian-tab-panel.active {
+  display: block;
+}
+
+.obsidian-tab-panel > *:first-child {
+  margin-top: 0;
+}
+
+.obsidian-tab-panel > *:last-child {
+  margin-bottom: 0;
+}
+
+.obsidian-tab-panel pre {
+  margin: 1em 0;
+  border-radius: 6px;
+}
+
+.obsidian-tab-panel code {
+  font-family: 'SF Mono', Monaco, 'Cascadia Code', monospace;
+}
+
+/* Fix code block background color inside tabs */
+.obsidian-tab-panel pre code {
+  background: transparent !important;
+}
+
+.obsidian-tab-panel .highlight {
+  background: transparent !important;
+}
+
+.obsidian-tab-panel .highlight pre {
+  background: var(--code-bg, #f5f5f5) !important;
+}
+
+.obsidian-tab-panel figure.highlight {
+  background: var(--code-bg, #f5f5f5) !important;
+}
+
+.obsidian-tab-panel td.gutter {
+  background: var(--code-gutter-bg, #f0f0f0) !important;
+}
+
+.obsidian-tab-panel td.code {
+  background: var(--code-bg, #f5f5f5) !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  .obsidian-tab-panel .highlight pre,
+  .obsidian-tab-panel figure.highlight {
+    --code-bg: #2d2d2d;
+    --code-gutter-bg: #252525;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .obsidian-tabs {
+    --tab-bg: #1e1e1e;
+    --tab-nav-bg: #252526;
+    --tab-border-color: #333;
+    --tab-text-color: #999;
+    --tab-hover-color: #ccc;
+    --tab-hover-bg: rgba(255,255,255,0.05);
+    --tab-active-color: #58a6ff;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 </style>
 <!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="暮色之狐" type="application/atom+xml">
@@ -791,12 +791,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/AI%E7%BC%96%E7%A8%8B/">
-                                <span class="chip bg-color">AI编程</span>
-                            </a>
-                        
                             <a href="/tags/Claude-Code/">
                                 <span class="chip bg-color">Claude Code</span>
+                            </a>
+                        
+                            <a href="/tags/AI%E7%BC%96%E7%A8%8B/">
+                                <span class="chip bg-color">AI编程</span>
                             </a>
                         
                     </div>
@@ -859,7 +859,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <div class="obsidian-callout obsidian-callout-tip" id="obsidian-callout-5jfa23xa4"><div class="obsidian-callout-header"><span class="obsidian-callout-icon">&#128161;</span><span class="obsidian-callout-title">TIP</span></div><div class="obsidian-callout-content"><p>这是Claude Code通关手册的第六篇，上一篇我们为Claude Code配置了专家团队，这一篇我们为他装上外部设备，让他从本地助手转变成互联网平台。</p>
+                <div class="obsidian-callout obsidian-callout-tip" id="obsidian-callout-facdm598k"><div class="obsidian-callout-header"><span class="obsidian-callout-icon">&#128161;</span><span class="obsidian-callout-title">TIP</span></div><div class="obsidian-callout-content"><p>这是Claude Code通关手册的第六篇，上一篇我们为Claude Code配置了专家团队，这一篇我们为他装上外部设备，让他从本地助手转变成互联网平台。</p>
 </div></div>
 <p>一个很形象的比喻：<strong>没有配置MCP的Claude Code就像是一个被关在房间里的天才。</strong></p>
 <p>它聪明、高效——能处理你扔给它的所有文件，却够不着外面世界的任何东西。你没法让它“去 GitHub 捞一下那个 Issue 的详情”，没法让它“看一眼最新的 API 文档长什么样”，更别提“进数据库里查一条记录”。它只能靠几个月前训练好的知识来猜，而软件世界每天都在变。</p>
@@ -1132,12 +1132,12 @@ claude mcp add github --scope user ...<span aria-hidden="true" class="line-numbe
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/AI%E7%BC%96%E7%A8%8B/">
-                                    <span class="chip bg-color">AI编程</span>
-                                </a>
-                            
                                 <a href="/tags/Claude-Code/">
                                     <span class="chip bg-color">Claude Code</span>
+                                </a>
+                            
+                                <a href="/tags/AI%E7%BC%96%E7%A8%8B/">
+                                    <span class="chip bg-color">AI编程</span>
                                 </a>
                             
                         </div>
@@ -1307,30 +1307,29 @@ claude mcp add github --scope user ...<span aria-hidden="true" class="line-numbe
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/20260411114110.html">
+                <a href="/20260413104209.html">
                     <div class="card-image">
                         
                         
                         <img src="/medias/featureimages/22.jpg" class="responsive-img" >
                         
-                        <span class="card-title">Claude Code通关手册（六）：MCP协议完全指南</span>
+                        <span class="card-title">Claude Code 通关手册（七）：推荐 5 个 Hooks，代码质量提升 3 倍</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            本文详细介绍了如何为Claude Code配置MCP(Model Context Protocol)服务器，将其从本地助手转变为能够连接外部工具的互联网平台。文章解释了MCP的核心概念、三种连接方式，并提供了GitHub、MySQL、Context7等常用MCP服务器的具体配置步骤和使用方法。同时强调了安全配置原则，并推荐了Java后端开发者的MCP安装清单，帮助开发者提升工作效率。
+                            本文介绍了5个实用的Claude Code Hook，用于提升AI编程的安全性和效率。通过设置SessionStart、PreToolUse、PostToolUse和Stop等Hook，可以自动提供上下文、拦截危险命令、格式化代码、运行测试和发送通知，有效防止AI误操作并提高代码质量。作者强调应将AI视为基础设施而非魔法，通过适当的护栏确保安全使用。
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2026-04-11
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2026-04-13
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1343,16 +1342,15 @@ claude mcp add github --scope user ...<span aria-hidden="true" class="line-numbe
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/AI%E7%BC%96%E7%A8%8B/">
-                        <span class="chip bg-color">AI编程</span>
-                    </a>
-                    
                     <a href="/tags/Claude-Code/">
                         <span class="chip bg-color">Claude Code</span>
+                    </a>
+                    
+                    <a href="/tags/AI%E7%BC%96%E7%A8%8B/">
+                        <span class="chip bg-color">AI编程</span>
                     </a>
                     
                 </div>
@@ -1400,12 +1398,12 @@ claude mcp add github --scope user ...<span aria-hidden="true" class="line-numbe
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/AI%E7%BC%96%E7%A8%8B/">
-                        <span class="chip bg-color">AI编程</span>
-                    </a>
-                    
                     <a href="/tags/Claude-Code/">
                         <span class="chip bg-color">Claude Code</span>
+                    </a>
+                    
+                    <a href="/tags/AI%E7%BC%96%E7%A8%8B/">
+                        <span class="chip bg-color">AI编程</span>
                     </a>
                     
                 </div>
@@ -1555,7 +1553,7 @@ claude mcp add github --scope user ...<span aria-hidden="true" class="line-numbe
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;&nbsp;<span
-                class="white-color">97k</span>&nbsp;字
+                class="white-color">101.4k</span>&nbsp;字
             
             
             

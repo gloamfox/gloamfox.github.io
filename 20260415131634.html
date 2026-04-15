@@ -1,0 +1,1717 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="Harness Engineering,AI工程,大语言模型,上下文工程,提示词工程,Agent系统">
+    <meta name="description" content="君子以顺德，积小以高大。">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>Harness Engineering 究竟是什么 | 暮色之狐</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<!-- hexo injector head_end start -->
+<style>
+.obsidian-callout {
+  margin: 1.5em 0;
+  border-radius: 8px;
+  border-left: 4px solid var(--callout-color, #448aff);
+  background: var(--callout-bg, #e3f2fd);
+  overflow: hidden;
+}
+
+.obsidian-callout-header {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--callout-color, #448aff);
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.obsidian-callout-icon {
+  margin-right: 8px;
+  font-size: 16px;
+  line-height: 1;
+}
+
+.obsidian-callout-title {
+  text-transform: capitalize;
+}
+
+.obsidian-callout-content {
+  padding: 16px;
+  color: var(--text-color, #333);
+}
+
+.obsidian-callout-content > *:first-child {
+  margin-top: 0;
+}
+
+.obsidian-callout-content > *:last-child {
+  margin-bottom: 0;
+}
+
+.obsidian-callout-content p {
+  margin: 0.5em 0;
+}
+
+.obsidian-callout-content ul,
+.obsidian-callout-content ol {
+  margin: 0.5em 0;
+  padding-left: 1.5em;
+}
+
+.obsidian-callout-content pre {
+  margin: 1em 0;
+  border-radius: 6px;
+}
+
+.obsidian-callout-content code {
+  font-family: 'SF Mono', Monaco, 'Cascadia Code', monospace;
+  background: rgba(0,0,0,0.05);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+/* Callout type styles */
+.obsidian-callout-note {
+  --callout-color: #448aff;
+  --callout-bg: #e3f2fd;
+}
+
+.obsidian-callout-tip {
+  --callout-color: #00c853;
+  --callout-bg: #e8f5e9;
+}
+
+.obsidian-callout-warning {
+  --callout-color: #ff9100;
+  --callout-bg: #fff3e0;
+}
+
+.obsidian-callout-danger {
+  --callout-color: #ff1744;
+  --callout-bg: #ffebee;
+}
+
+.obsidian-callout-info {
+  --callout-color: #00b0ff;
+  --callout-bg: #e1f5fe;
+}
+
+.obsidian-callout-success {
+  --callout-color: #00c853;
+  --callout-bg: #e8f5e9;
+}
+
+.obsidian-callout-example {
+  --callout-color: #7c4dff;
+  --callout-bg: #ede7f6;
+}
+
+.obsidian-callout-quote {
+  --callout-color: #9e9e9e;
+  --callout-bg: #f5f5f5;
+}
+
+.obsidian-callout-bug {
+  --callout-color: #f50057;
+  --callout-bg: #fce4ec;
+}
+
+.obsidian-callout-abstract {
+  --callout-color: #00bfa5;
+  --callout-bg: #e0f2f1;
+}
+
+.obsidian-callout-question {
+  --callout-color: #64dd17;
+  --callout-bg: #f1f8e9;
+}
+
+.obsidian-callout-failure {
+  --callout-color: #ff5252;
+  --callout-bg: #ffebee;
+}
+
+.obsidian-callout-important {
+  --callout-color: #ffd600;
+  --callout-bg: #fffde7;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .obsidian-callout {
+    --text-color: #e0e0e0;
+  }
+
+  .obsidian-callout-note {
+    --callout-color: #448aff;
+    --callout-bg: #1a237e;
+  }
+
+  .obsidian-callout-tip {
+    --callout-color: #00c853;
+    --callout-bg: #1b5e20;
+  }
+
+  .obsidian-callout-warning {
+    --callout-color: #ff9100;
+    --callout-bg: #e65100;
+  }
+
+  .obsidian-callout-danger {
+    --callout-color: #ff1744;
+    --callout-bg: #b71c1c;
+  }
+
+  .obsidian-callout-info {
+    --callout-color: #00b0ff;
+    --callout-bg: #01579b;
+  }
+
+  .obsidian-callout-success {
+    --callout-color: #00c853;
+    --callout-bg: #1b5e20;
+  }
+
+  .obsidian-callout-example {
+    --callout-color: #7c4dff;
+    --callout-bg: #311b92;
+  }
+
+  .obsidian-callout-quote {
+    --callout-color: #9e9e9e;
+    --callout-bg: #424242;
+  }
+
+  .obsidian-callout-bug {
+    --callout-color: #f50057;
+    --callout-bg: #880e4f;
+  }
+
+  .obsidian-callout-abstract {
+    --callout-color: #00bfa5;
+    --callout-bg: #004d40;
+  }
+
+  .obsidian-callout-question {
+    --callout-color: #64dd17;
+    --callout-bg: #33691e;
+  }
+
+  .obsidian-callout-failure {
+    --callout-color: #ff5252;
+    --callout-bg: #b71c1c;
+  }
+
+  .obsidian-callout-important {
+    --callout-color: #ffd600;
+    --callout-bg: #f57f17;
+  }
+
+  .obsidian-callout-content code {
+    background: rgba(255,255,255,0.1);
+  }
+}
+</style>
+
+<style>
+.obsidian-tabs {
+  margin: 1.5em 0;
+  border: 1px solid var(--tab-border-color, #e0e0e0);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--tab-bg, #fafafa);
+}
+
+.obsidian-tabs-nav {
+  display: flex;
+  background: var(--tab-nav-bg, #f0f0f0);
+  border-bottom: 1px solid var(--tab-border-color, #e0e0e0);
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.obsidian-tabs-nav::-webkit-scrollbar {
+  display: none;
+}
+
+.obsidian-tab-btn {
+  padding: 12px 20px;
+  border: none;
+  background: transparent;
+  color: var(--tab-text-color, #666);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+}
+
+.obsidian-tab-btn:hover {
+  color: var(--tab-hover-color, #333);
+  background: var(--tab-hover-bg, rgba(0,0,0,0.03));
+}
+
+.obsidian-tab-btn.active {
+  color: var(--tab-active-color, #448aff);
+  border-bottom-color: var(--tab-active-color, #448aff);
+  background: var(--tab-bg, #fafafa);
+}
+
+.obsidian-tabs-content {
+  padding: 20px;
+  background: var(--tab-bg, #fafafa);
+}
+
+.obsidian-tab-panel {
+  display: none;
+  animation: fadeIn 0.3s ease;
+}
+
+.obsidian-tab-panel.active {
+  display: block;
+}
+
+.obsidian-tab-panel > *:first-child {
+  margin-top: 0;
+}
+
+.obsidian-tab-panel > *:last-child {
+  margin-bottom: 0;
+}
+
+.obsidian-tab-panel pre {
+  margin: 1em 0;
+  border-radius: 6px;
+}
+
+.obsidian-tab-panel code {
+  font-family: 'SF Mono', Monaco, 'Cascadia Code', monospace;
+}
+
+/* Fix code block background color inside tabs */
+.obsidian-tab-panel pre code {
+  background: transparent !important;
+}
+
+.obsidian-tab-panel .highlight {
+  background: transparent !important;
+}
+
+.obsidian-tab-panel .highlight pre {
+  background: var(--code-bg, #f5f5f5) !important;
+}
+
+.obsidian-tab-panel figure.highlight {
+  background: var(--code-bg, #f5f5f5) !important;
+}
+
+.obsidian-tab-panel td.gutter {
+  background: var(--code-gutter-bg, #f0f0f0) !important;
+}
+
+.obsidian-tab-panel td.code {
+  background: var(--code-bg, #f5f5f5) !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  .obsidian-tab-panel .highlight pre,
+  .obsidian-tab-panel figure.highlight {
+    --code-bg: #2d2d2d;
+    --code-gutter-bg: #252525;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .obsidian-tabs {
+    --tab-bg: #1e1e1e;
+    --tab-nav-bg: #252526;
+    --tab-border-color: #333;
+    --tab-text-color: #999;
+    --tab-hover-color: #ccc;
+    --tab-hover-bg: rgba(255,255,255,0.05);
+    --tab-active-color: #58a6ff;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+</style>
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="暮色之狐" type="application/atom+xml">
+</head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" >
+                    
+                    <span class="logo-span">暮色之狐</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="" class="waves-effect waves-light">
+
+      
+      <i class="fas fa-list" style="zoom: 0.6;"></i>
+      
+      <span>统计</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="/tags">
+          
+          <i class="fas fa-tags" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>标签</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/categories">
+          
+          <i class="fas fa-bookmark" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>分类</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/archives">
+          
+          <i class="fas fa-archive" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>归档</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">暮色之狐</div>
+        <div class="logo-desc">
+            
+            君子以顺德，积小以高大。
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fa-fw fas fa-list"></i>
+			
+			统计
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul  style="background:  ;" >
+              
+                <li>
+
+                  <a href="/tags " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-tags" style="position: absolute;left:50px" ></i>
+			      
+		          <span>标签</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/categories " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-bookmark" style="position: absolute;left:50px" ></i>
+			      
+		          <span>分类</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/archives " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-archive" style="position: absolute;left:50px" ></i>
+			      
+		          <span>归档</span>
+                  </a>
+                </li>
+              
+            </ul>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/gloamfox" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/gloamfox" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">Harness Engineering 究竟是什么</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/AI%E5%B7%A5%E7%A8%8B/">
+                                <span class="chip bg-color">AI工程</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%A4%A7%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/">
+                                <span class="chip bg-color">大语言模型</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/" class="post-category">
+                                软件设计
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2026-04-15
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    2.9k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    9 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <div class="obsidian-callout obsidian-callout-tip" id="obsidian-callout-wedephgva"><div class="obsidian-callout-header"><span class="obsidian-callout-icon">&#128161;</span><span class="obsidian-callout-title">TIP</span></div><div class="obsidian-callout-content"><p>Harness Engineering 究竟是什么？不是又一个AI营销概念，而是AI从<strong>能说会道</strong>迈向<strong>能干成事</strong>的关键分水岭！本期深度拆解AI工程演进的三层核心：Prompt Engineering（让模型听懂你）、Context Engineering（让模型看到该看的信息）、Harness Engineering（让模型按目标完成任务）。为什么调用同样的模型，不同的AI Agent表现却天差地别？答案不在模型参数中，而在包裹模型的那套工程框架，这就是Harness Engineering ，它不是锦上添花的优化，而是决定AI能否落地生产的基础设施。</p>
+</div></div>
+<p>AI系统落地过程中，一个日益凸显的核心问题是：<strong>Agent的稳定性不仅取决于模型本身</strong>。真正决定AI Agent能否稳定工作的因素，往往不是模型，而是包裹模型的工程系统。</p>
+<h2 id="大语言模型的本质是什么？——高维概率预测"><a href="#大语言模型的本质是什么？——高维概率预测" class="headerlink" title="大语言模型的本质是什么？——高维概率预测"></a>大语言模型的本质是什么？——高维概率预测</h2><p>说白了，大语言模型就是一个巨大的参数文件，平时它静静的躺在硬盘中，只有你将它加载到显存里，套上一层API再加一个聊天界面，它才会变成ChatGPT、Claude或者某种AI编程助手，无论它被包装成什么产品，它最核心的行为始终没有变：<strong>根据当前输入内容，预测下一个最可能出现的词。</strong> </p>
+<p>也就是说它不是在理解世界，更不是在自主思考，本质上是在做高维概率预测，它一直在猜，猜你想要什么，猜哪种输出更符合你的期待。正因为它是在猜，所以你给它的输入方式，直接决定了它猜的准不准。因此，<strong>输入方式直接决定了预测的准确性</strong>。</p>
+<ul>
+<li>你只说一句“帮我优化这段代码”——模型可能改一行，也可能整个函数重写，甚至变量命名也一起改掉</li>
+<li>但如果你补充一句“保留原有结构，只优化性能、不要修改变量命名、不要修改返回值格式”——模型的输出通常就会稳定的多。</li>
+</ul>
+<p>这种通过设计输入语言来引导模型输出的做法，就是 <strong>Prompt Engineering（提示词工程）</strong>。它要解决的首要问题是：<strong>模型能否听懂你</strong>。</p>
+<h2 id="听懂还不够，信息要到位"><a href="#听懂还不够，信息要到位" class="headerlink" title="听懂还不够，信息要到位"></a>听懂还不够，信息要到位</h2><p>很快我们就发现，光把话说清楚还不够，模型要想答得准，不止要听得懂你在说什么，还得知道足够多的信息，</p>
+<ul>
+<li>让AI帮你修一个bug，它至少得看到报错信息，相关代码、项目结构、依赖版本，甚至还要知道你之前改过什么。</li>
+<li>让AI Agent去处理客服投诉，它至少得知道用户身份、订单信息、库存状态、补偿政策和回复模板。</li>
+</ul>
+<p>这些都不是提示词本身，却都会影响模型当前的判断，这就引出了更大的概念——<strong>Context（上下文）</strong>。</p>
+<p>上下文不仅包括对话历史，还涵盖：项目文档、检索结果、工具调用、任务状态、安全规则、其他 Agent 传来的数据……<strong>提示词只是上下文的一小部分</strong>。</p>
+<p>于是第二层挑战浮现：<strong>模型是否获得了完成任务所需的信息？</strong> 这就是 <strong>Context Engineering（上下文工程）</strong>。</p>
+<p>上下文工程的核心不是简单的多给信息，而是在正确的时机给正确的信息。因为模型的上下文窗口时有限的，一旦内容太多它就会失忆。前面刚说过的约束后面就忘了，前面讨论的函数后面突然对不上，目标、风格、规则，会被越来越多的新信息冲淡。</p>
+<p>成熟的上下文工程，通常会做三件事：</p>
+<ul>
+<li><strong>召回</strong>：从大量信息中召回与当前任务最相关的内容。</li>
+<li><strong>压缩</strong>：把过长的文档日志或历史对话压缩成摘要和关键点。</li>
+<li><strong>组装</strong>：按照特定的顺序组装进上下文里，把最关键的规则和指令，放在模型最容易注意的位置。</li>
+</ul>
+<p>这解释了为什么两个产品用同一个模型，效果却天差地别——<strong>你以为在比模型，其实在比上下文工程</strong>。</p>
+<h2 id="信息到位了，执行却会跑偏"><a href="#信息到位了，执行却会跑偏" class="headerlink" title="信息到位了，执行却会跑偏"></a>信息到位了，执行却会跑偏</h2><p>然而问题还没结束。即使指令清晰、信息充分，模型在执行复杂任务时仍可能出现：</p>
+<ul>
+<li>它会写代码但不会自己运行测试。</li>
+<li>它会规划步骤但执行时跳过了关键环节。</li>
+<li>它在多轮任务中逐渐偏离目标开始无限调试反复重试。</li>
+<li>甚至一本正经的胡说八道。</li>
+</ul>
+<p>这时需要第三层能力：<strong>当模型在真实环境中连续运行时，如何确保它不偏离方向、不崩溃、出错后还能恢复？</strong></p>
+<p>这就是 <strong>Harness Engineering（缰绳工程）</strong> 的舞台。</p>
+<p><strong>Harness</strong> 的本意是“缰绳”——不是让马更聪明，而是让马跑得更稳。在 AI 语境中，它指围绕大模型构建的一整套<strong>执行与控制系统</strong>：赋予模型“手脚”、规则、记忆、反馈和约束，使其不仅能说会道，还能持续可靠地做事。</p>
+<p>一个典型例子：让 AI 写一个排序函数。模型生成代码 → 系统在沙箱中自动运行测试 → 测试失败则把错误日志送回模型 → 模型修改代码 → 再次测试。</p>
+<p>这个“思考→执行→反馈→再思考”的闭环，就是 Agent 的工作方式。支撑这个闭环稳定运行的，不是模型本身，而是外部的 <strong>Harness</strong>。</p>
+<h2 id="三层关系：层层嵌套，而非替代"><a href="#三层关系：层层嵌套，而非替代" class="headerlink" title="三层关系：层层嵌套，而非替代"></a>三层关系：层层嵌套，而非替代</h2><ul>
+<li><strong>Prompt Engineering</strong>：解决<strong>指令表达</strong>问题</li>
+<li><strong>Context Engineering</strong>：解决<strong>信息供给</strong>问题</li>
+<li><strong>Harness Engineering</strong>：解决<strong>执行可靠性</strong>问题</li>
+</ul>
+<p>它们不是替代关系，而是层层嵌套的关系，prompt是context的一部分，context又是harness的一部分。</p>
+<p>一个直观的公式：</p>
+<blockquote>
+<p><strong>AI Agent = 大模型 + Harness</strong></p>
+</blockquote>
+<p>也就是说，在 Agent 系统中，<strong>除了模型本身，几乎所有能决定其能否稳定交付的元素，都属于 Harness Engineering</strong>。</p>
+<h2 id="成熟的-Harness-包含什么？"><a href="#成熟的-Harness-包含什么？" class="headerlink" title="成熟的 Harness 包含什么？"></a>成熟的 Harness 包含什么？</h2><p>那一个成熟的Harness到底包含什么？</p>
+<ul>
+<li>结构化上下文管理<br>  不是把所有资料一股脑塞给模型，而是明确角色、目标、成功标准，过滤无关信息并把不同类型的信息按照层级组织好。<br>  混乱的上下文会让模型忘记约束、搞错重点，甚至自相矛盾。</li>
+<li>工具系统设计<br>  设计模型只有文字能力时只是个高级文本生成器，接上工具后它才具备行动力。<br>  工具不是越多越好，而是给什么工具、何时调用、调用结果如何反馈。<br>  搜索工具返回50条网页原文，直接灌到模型，只会让模型被噪音淹没，成熟的Harness会先做提取过滤和摘要。</li>
+<li>执行编排引擎<br>  复杂任务不能靠模型想到哪做到哪，Harness需要提供一条明确的轨道：先理解任务，再找信息缺口，再调用工具，再产出结果，再检查是否达标，不达标就返回上一步。<br>  任务的编排能力决定了agent是像一个有条理的工程师，还是像一个东一榔头西一棒槌的实习生。</li>
+<li>状态与记忆管理<br>  如果agent每一轮都像失忆，它就没法做长任务。<br>  Harness要区分当前任务进度、中间产物和长期记忆，哪些是当前会话状态，哪些是持久偏好，哪些是阶段输出，都必须分清楚，否则越跑越乱。</li>
+<li>独立评估与观测<br>  很多agent系统最致命的问题是它们会生成结果，却不会判断结果好坏<br>  Harness需要内置评估机制，检查输出是否符合规则，记录执行日志，统计错误类型，量化任务成功率<br>  没有评估系统只能自我感觉良好</li>
+<li>约束校验与恢复机制<br>  真实世界中，API会超时、文件会损坏、模型会误解、工具会报错。<br>  成熟的Harness必须提前定义边界条件、关键节点校验和失败恢复策略。<br>  哪些是是绝对不能做，哪一步必须验收，失败后是回滚重试还是换方案，这些都必须提前设计。</li>
+</ul>
+<p>Prompt Engineering就像给实习生布置任务时力求清晰明确的指示，Context Engineering则相当于提供相关资料、项目背景和会议记录等完整信息，而Harness Engineering则是为实习生配备检查清单、汇报机制、阶段验收、错误回滚和会后复盘等保障措施，确保他不仅听懂了任务，更能准确无误地完成工作。</p>
+<h2 id="实战经验：顶尖团队在做什么？"><a href="#实战经验：顶尖团队在做什么？" class="headerlink" title="实战经验：顶尖团队在做什么？"></a>实战经验：顶尖团队在做什么？</h2><p>越来越多的顶尖团队开始把重点从调Prompt、换模型，转向了Harness，很多案例都证明同样的模型同样的提示词，只要Harness<br>设计不同，最终表现就会完全不一样。有团队几乎不动模型，只通过改造任务、状态管理和反馈闭环，就把agent成功率从60多提升到90多。</p>
+<h3 id="不要让Agent自己给自己打分"><a href="#不要让Agent自己给自己打分" class="headerlink" title="不要让Agent自己给自己打分"></a>不要让Agent自己给自己打分</h3><p>有团队发现，让agent自己给自己打分，几乎总是过于乐观，于是将生产和验收彻底分离，一个agent负责生产实现，另一个独立的agent负责检查，像QA一样真正的跑界面、看日志、验逻辑，独立判断是否达标。</p>
+<h3 id="长任务失败的根源——没有及时重重"><a href="#长任务失败的根源——没有及时重重" class="headerlink" title="长任务失败的根源——没有及时重重"></a>长任务失败的根源——没有及时重重</h3><p>当上下文越来约长、越来越复杂时，问题往往不是模型不够强，而是系统没有及时重置和清场，很多长任务失败并不是模型不会，而是因为它在过长的上下文里开始焦虑、遗忘、偷懒、急着结尾。</p>
+<h3 id="更激进的策略"><a href="#更激进的策略" class="headerlink" title="更激进的策略"></a>更激进的策略</h3><p>一些团队采用的做法是：任务过载时直接<strong>重启一个新的 Agent 实例</strong>，只移交关键状态。就像进程出问题时，与其拼命清理缓存，不如直接重启，让状态回到干净可控的基础。</p>
+<h2 id="未来程序员的真正工作"><a href="#未来程序员的真正工作" class="headerlink" title="未来程序员的真正工作"></a>未来程序员的真正工作</h2><p>为什么很多人认为，未来程序员最重要的工作可能不再是写业务代码，而是<strong>设计让 AI 稳定工作的系统</strong>？</p>
+<p>类比一下：</p>
+<ul>
+<li><strong>模型</strong> ≈ CPU（负责计算）</li>
+<li><strong>Harness</strong> ≈ 操作系统（负责调度、内存、IO、约束、恢复）</li>
+</ul>
+<p>没有操作系统，再强的 CPU 也只是裸奔。没有 Harness，再强的大模型也难以在生产环境中持续交付结果。</p>
+<p><strong>别再只盯着模型参数和排行榜了。</strong> 真正的生产力革命，正从模型内部转向模型外部。拉开差距的不只是“用哪个模型”，而是<strong>能否构建足够稳定、智能、可控的 Harness</strong>。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p><strong>Prompt Engineering</strong>： 让模型听懂你<br><strong>Context Engineering</strong> 让模型看到该看的信息<br><strong>Harness Engineering</strong>： 让模型在现实世界中持续、可靠、按目标完成任务。</p>
+<p>这三者层层递进，共同构成下一代 AI 应用的基础设施。而其中最容易被忽视、却决定成败的，恰恰是最后一层。</p>
+<p>未来 AI 工程的核心，不再只是让模型看起来聪明——<strong>而是让模型真正稳定地工作</strong>。</p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">gloamfox</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://gloamfox.cc/20260415131634.html">https://gloamfox.cc/20260415131634.html</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">gloamfox</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/AI%E5%B7%A5%E7%A8%8B/">
+                                    <span class="chip bg-color">AI工程</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%A4%A7%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/">
+                                    <span class="chip bg-color">大语言模型</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" >
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" >
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/20260415131634.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" >
+                        
+                        <span class="card-title">Harness Engineering 究竟是什么</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            文章深入探讨了AI工程演进的三个核心层次：Prompt Engineering（让模型听懂）、Context Engineering（提供必要信息）和Harness Engineering（确保稳定执行）。
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2026-04-15
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/" class="post-category">
+                                    软件设计
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/AI%E5%B7%A5%E7%A8%8B/">
+                        <span class="chip bg-color">AI工程</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%A4%A7%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/">
+                        <span class="chip bg-color">大语言模型</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/20260413104209.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" >
+                        
+                        <span class="card-title">Claude Code 通关手册（七）：推荐 5 个 Hooks，代码质量提升 3 倍</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            本文介绍了5个实用的Claude Code Hook，用于提升AI编程的安全性和效率。通过设置SessionStart、PreToolUse、PostToolUse和Stop等Hook，可以自动提供上下文、拦截危险命令、格式化代码、运行测试和发送通知，有效防止AI误操作并提高代码质量。作者强调应将AI视为基础设施而非魔法，通过适当的护栏确保安全使用。
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2026-04-13
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/" class="post-category">
+                                    软件工具
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Claude-Code/">
+                        <span class="chip bg-color">Claude Code</span>
+                    </a>
+                    
+                    <a href="/tags/AI%E7%BC%96%E7%A8%8B/">
+                        <span class="chip bg-color">AI编程</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+    <div class="container row center-align" style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            
+            <a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            &nbsp;&copy;
+            
+                <span id="year">2025-2026</span>
+            
+            <!-- <span id="year">2025</span> -->
+            <a href="/about" target="_blank">gloamfox</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;&nbsp;<span
+                class="white-color">101.4k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <span id="sitetime">载入运行时间...</span>
+            <script>
+                function siteTime() {
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2025";
+                    var startMonth = "09";
+                    var startDate = "13";
+                    var startHour = "0";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已运行 " + diffDays + " 天 ";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已运行 " + diffYears + " 年 " + diffDays + " 天 ";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
+            
+            <br>
+            
+            <span id="icp"><img src="/medias/icp.png" style="vertical-align: text-bottom;" />
+                <a href="https://beian.miit.gov.cn/" target="_blank">鲁ICP备2026017338号-1</a>
+            </span>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/gloamfox" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:rxhome@163.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=527884920" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 527884920" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var siteOrigin = location.origin;  
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + siteOrigin + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+	
+    
+
+    
+    
+    <script type="text/javascript" size="150" alpha='0.6'
+        zIndex="-1" src="/libs/background/ribbon-refresh.min.js" async="async"></script>
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+<!-- hexo injector body_end start -->
+<script>
+(function() {
+  document.querySelectorAll('.obsidian-tab-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var tabsContainer = this.closest('.obsidian-tabs');
+      var tabId = this.getAttribute('data-tab');
+
+      tabsContainer.querySelectorAll('.obsidian-tab-btn').forEach(function(b) {
+        b.classList.remove('active');
+      });
+      tabsContainer.querySelectorAll('.obsidian-tab-panel').forEach(function(p) {
+        p.classList.remove('active');
+      });
+
+      this.classList.add('active');
+      document.getElementById(tabId).classList.add('active');
+    });
+  });
+})();
+</script>
+<!-- hexo injector body_end end --></body>
+
+</html>
