@@ -859,7 +859,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <div class="obsidian-callout obsidian-callout-tip" id="obsidian-callout-ox5rn5sga"><div class="obsidian-callout-header"><span class="obsidian-callout-icon">&#128161;</span><span class="obsidian-callout-title">Tip</span></div><div class="obsidian-callout-content"><p>服务在虚拟机上跑得好好的，容器化上 K8s 后却频繁触发内存超限告警，甚至 OOM Kill？<br>堆内存才用了不到 10%，Pod 内存却飙到 80% 以上，到底是什么情况？<br>本文将带你层层拆解，揭开容器内存暴涨的真相。</p>
+                <div class="obsidian-callout obsidian-callout-tip" id="obsidian-callout-f60rk0rhk"><div class="obsidian-callout-header"><span class="obsidian-callout-icon">&#128161;</span><span class="obsidian-callout-title">Tip</span></div><div class="obsidian-callout-content"><p>服务在虚拟机上跑得好好的，容器化上 K8s 后却频繁触发内存超限告警，甚至 OOM Kill？<br>堆内存才用了不到 10%，Pod 内存却飙到 80% 以上，到底是什么情况？<br>本文将带你层层拆解，揭开容器内存暴涨的真相。</p>
 </div></div>
 <h2 id="诡异的现象：JVM-很健康，Pod-却要“撑爆”了"><a href="#诡异的现象：JVM-很健康，Pod-却要“撑爆”了" class="headerlink" title="诡异的现象：JVM 很健康，Pod 却要“撑爆”了"></a>诡异的现象：JVM 很健康，Pod 却要“撑爆”了</h2><p>某个 Java 服务容器化部署到 Kubernetes 后，Pod 内存使用率持续缓慢上升，频繁超过 80%，甚至触发 OOM 导致 Pod 重启。</p>
 <p><strong>资源配置如下：</strong></p>
