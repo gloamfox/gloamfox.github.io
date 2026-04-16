@@ -31,135 +31,6 @@
 
 <!-- hexo injector head_end start -->
 <style>
-.obsidian-tabs {
-  margin: 1.5em 0;
-  border: 1px solid var(--tab-border-color, #e0e0e0);
-  border-radius: 8px;
-  overflow: hidden;
-  background: var(--tab-bg, #fafafa);
-}
-
-.obsidian-tabs-nav {
-  display: flex;
-  background: var(--tab-nav-bg, #f0f0f0);
-  border-bottom: 1px solid var(--tab-border-color, #e0e0e0);
-  overflow-x: auto;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-
-.obsidian-tabs-nav::-webkit-scrollbar {
-  display: none;
-}
-
-.obsidian-tab-btn {
-  padding: 12px 20px;
-  border: none;
-  background: transparent;
-  color: var(--tab-text-color, #666);
-  font-size: 14px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  white-space: nowrap;
-  border-bottom: 2px solid transparent;
-  margin-bottom: -1px;
-}
-
-.obsidian-tab-btn:hover {
-  color: var(--tab-hover-color, #333);
-  background: var(--tab-hover-bg, rgba(0,0,0,0.03));
-}
-
-.obsidian-tab-btn.active {
-  color: var(--tab-active-color, #448aff);
-  border-bottom-color: var(--tab-active-color, #448aff);
-  background: var(--tab-bg, #fafafa);
-}
-
-.obsidian-tabs-content {
-  padding: 20px;
-  background: var(--tab-bg, #fafafa);
-}
-
-.obsidian-tab-panel {
-  display: none;
-  animation: fadeIn 0.3s ease;
-}
-
-.obsidian-tab-panel.active {
-  display: block;
-}
-
-.obsidian-tab-panel > *:first-child {
-  margin-top: 0;
-}
-
-.obsidian-tab-panel > *:last-child {
-  margin-bottom: 0;
-}
-
-.obsidian-tab-panel pre {
-  margin: 1em 0;
-  border-radius: 6px;
-}
-
-.obsidian-tab-panel code {
-  font-family: 'SF Mono', Monaco, 'Cascadia Code', monospace;
-}
-
-/* Fix code block background color inside tabs */
-.obsidian-tab-panel pre code {
-  background: transparent !important;
-}
-
-.obsidian-tab-panel .highlight {
-  background: transparent !important;
-}
-
-.obsidian-tab-panel .highlight pre {
-  background: var(--code-bg, #f5f5f5) !important;
-}
-
-.obsidian-tab-panel figure.highlight {
-  background: var(--code-bg, #f5f5f5) !important;
-}
-
-.obsidian-tab-panel td.gutter {
-  background: var(--code-gutter-bg, #f0f0f0) !important;
-}
-
-.obsidian-tab-panel td.code {
-  background: var(--code-bg, #f5f5f5) !important;
-}
-
-@media (prefers-color-scheme: dark) {
-  .obsidian-tab-panel .highlight pre,
-  .obsidian-tab-panel figure.highlight {
-    --code-bg: #2d2d2d;
-    --code-gutter-bg: #252525;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  .obsidian-tabs {
-    --tab-bg: #1e1e1e;
-    --tab-nav-bg: #252526;
-    --tab-border-color: #333;
-    --tab-text-color: #999;
-    --tab-hover-color: #ccc;
-    --tab-hover-bg: rgba(255,255,255,0.05);
-    --tab-active-color: #58a6ff;
-  }
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(5px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-</style>
-
-<style>
 .obsidian-callout {
   margin: 1.5em 0;
   border-radius: 8px;
@@ -364,6 +235,135 @@
   .obsidian-callout-content code {
     background: rgba(255,255,255,0.1);
   }
+}
+</style>
+
+<style>
+.obsidian-tabs {
+  margin: 1.5em 0;
+  border: 1px solid var(--tab-border-color, #e0e0e0);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--tab-bg, #fafafa);
+}
+
+.obsidian-tabs-nav {
+  display: flex;
+  background: var(--tab-nav-bg, #f0f0f0);
+  border-bottom: 1px solid var(--tab-border-color, #e0e0e0);
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.obsidian-tabs-nav::-webkit-scrollbar {
+  display: none;
+}
+
+.obsidian-tab-btn {
+  padding: 12px 20px;
+  border: none;
+  background: transparent;
+  color: var(--tab-text-color, #666);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+}
+
+.obsidian-tab-btn:hover {
+  color: var(--tab-hover-color, #333);
+  background: var(--tab-hover-bg, rgba(0,0,0,0.03));
+}
+
+.obsidian-tab-btn.active {
+  color: var(--tab-active-color, #448aff);
+  border-bottom-color: var(--tab-active-color, #448aff);
+  background: var(--tab-bg, #fafafa);
+}
+
+.obsidian-tabs-content {
+  padding: 20px;
+  background: var(--tab-bg, #fafafa);
+}
+
+.obsidian-tab-panel {
+  display: none;
+  animation: fadeIn 0.3s ease;
+}
+
+.obsidian-tab-panel.active {
+  display: block;
+}
+
+.obsidian-tab-panel > *:first-child {
+  margin-top: 0;
+}
+
+.obsidian-tab-panel > *:last-child {
+  margin-bottom: 0;
+}
+
+.obsidian-tab-panel pre {
+  margin: 1em 0;
+  border-radius: 6px;
+}
+
+.obsidian-tab-panel code {
+  font-family: 'SF Mono', Monaco, 'Cascadia Code', monospace;
+}
+
+/* Fix code block background color inside tabs */
+.obsidian-tab-panel pre code {
+  background: transparent !important;
+}
+
+.obsidian-tab-panel .highlight {
+  background: transparent !important;
+}
+
+.obsidian-tab-panel .highlight pre {
+  background: var(--code-bg, #f5f5f5) !important;
+}
+
+.obsidian-tab-panel figure.highlight {
+  background: var(--code-bg, #f5f5f5) !important;
+}
+
+.obsidian-tab-panel td.gutter {
+  background: var(--code-gutter-bg, #f0f0f0) !important;
+}
+
+.obsidian-tab-panel td.code {
+  background: var(--code-bg, #f5f5f5) !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  .obsidian-tab-panel .highlight pre,
+  .obsidian-tab-panel figure.highlight {
+    --code-bg: #2d2d2d;
+    --code-gutter-bg: #252525;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .obsidian-tabs {
+    --tab-bg: #1e1e1e;
+    --tab-nav-bg: #252526;
+    --tab-border-color: #333;
+    --tab-text-color: #999;
+    --tab-hover-color: #ccc;
+    --tab-hover-bg: rgba(255,255,255,0.05);
+    --tab-active-color: #58a6ff;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 </style>
 <!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="暮色之狐" type="application/atom+xml">
@@ -829,7 +829,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    950
+                    948
                 </div>
                 
 
@@ -859,7 +859,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <div class="obsidian-callout obsidian-callout-tip" id="obsidian-callout-hiye3mkcy"><div class="obsidian-callout-header"><span class="obsidian-callout-icon">&#128161;</span><span class="obsidian-callout-title">Tip</span></div><div class="obsidian-callout-content"><p>服务在虚拟机上跑得好好的，容器化上 K8s 后却频繁触发内存超限告警，甚至 OOM Kill？<br>堆内存才用了不到 10%，Pod 内存却飙到 80% 以上，到底是什么情况？<br>本文将带你层层拆解，揭开容器内存暴涨的真相。</p>
+                <div class="obsidian-callout obsidian-callout-tip" id="obsidian-callout-mcy3hef16"><div class="obsidian-callout-header"><span class="obsidian-callout-icon">&#128161;</span><span class="obsidian-callout-title">Tip</span></div><div class="obsidian-callout-content"><p>服务在虚拟机上跑得好好的，容器化上 K8s 后却频繁触发内存超限告警，甚至 OOM Kill？<br>堆内存才用了不到 10%，Pod 内存却飙到 80% 以上，到底是什么情况？<br>本文将层层拆解，揭开容器内存暴涨的真相。</p>
 </div></div>
 <h2 id="诡异的现象：JVM-很健康，Pod-却要“撑爆”了"><a href="#诡异的现象：JVM-很健康，Pod-却要“撑爆”了" class="headerlink" title="诡异的现象：JVM 很健康，Pod 却要“撑爆”了"></a>诡异的现象：JVM 很健康，Pod 却要“撑爆”了</h2><p>Java 服务容器化部署到 Kubernetes 后，Pod 内存使用率持续缓慢上升，频繁超过 80%，甚至触发 OOM 导致 Pod 重启。</p>
 <p><strong>资源配置如下：</strong></p>
