@@ -829,7 +829,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    952
+                    950
                 </div>
                 
 
@@ -859,9 +859,9 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <div class="obsidian-callout obsidian-callout-tip" id="obsidian-callout-f60rk0rhk"><div class="obsidian-callout-header"><span class="obsidian-callout-icon">&#128161;</span><span class="obsidian-callout-title">Tip</span></div><div class="obsidian-callout-content"><p>服务在虚拟机上跑得好好的，容器化上 K8s 后却频繁触发内存超限告警，甚至 OOM Kill？<br>堆内存才用了不到 10%，Pod 内存却飙到 80% 以上，到底是什么情况？<br>本文将带你层层拆解，揭开容器内存暴涨的真相。</p>
+                <div class="obsidian-callout obsidian-callout-tip" id="obsidian-callout-xycr55p87"><div class="obsidian-callout-header"><span class="obsidian-callout-icon">&#128161;</span><span class="obsidian-callout-title">Tip</span></div><div class="obsidian-callout-content"><p>服务在虚拟机上跑得好好的，容器化上 K8s 后却频繁触发内存超限告警，甚至 OOM Kill？<br>堆内存才用了不到 10%，Pod 内存却飙到 80% 以上，到底是什么情况？<br>本文将带你层层拆解，揭开容器内存暴涨的真相。</p>
 </div></div>
-<h2 id="诡异的现象：JVM-很健康，Pod-却要“撑爆”了"><a href="#诡异的现象：JVM-很健康，Pod-却要“撑爆”了" class="headerlink" title="诡异的现象：JVM 很健康，Pod 却要“撑爆”了"></a>诡异的现象：JVM 很健康，Pod 却要“撑爆”了</h2><p>某个 Java 服务容器化部署到 Kubernetes 后，Pod 内存使用率持续缓慢上升，频繁超过 80%，甚至触发 OOM 导致 Pod 重启。</p>
+<h2 id="诡异的现象：JVM-很健康，Pod-却要“撑爆”了"><a href="#诡异的现象：JVM-很健康，Pod-却要“撑爆”了" class="headerlink" title="诡异的现象：JVM 很健康，Pod 却要“撑爆”了"></a>诡异的现象：JVM 很健康，Pod 却要“撑爆”了</h2><p>Java 服务容器化部署到 Kubernetes 后，Pod 内存使用率持续缓慢上升，频繁超过 80%，甚至触发 OOM 导致 Pod 重启。</p>
 <p><strong>资源配置如下：</strong></p>
 <pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">resources</span><span class="token punctuation">:</span>
   <span class="token key atrule">requests</span><span class="token punctuation">:</span>
@@ -909,7 +909,7 @@ rss 2392379392       # 2281 MB<span aria-hidden="true" class="line-numbers-rows"
 </ul>
 <h3 id="保留本地日志时的缓解措施"><a href="#保留本地日志时的缓解措施" class="headerlink" title="保留本地日志时的缓解措施"></a>保留本地日志时的缓解措施</h3><p>如果因合规要求必须保留日志文件，可采用以下方法：</p>
 <ol>
-<li><strong>优化日志策略</strong>：异步写入、调高日志级别、限制日志量。</li>
+<li><strong>优化日志策略</strong>：异步写入、调高日志级别、<strong>限制日志量。</strong></li>
 <li><strong>调整内核参数</strong>（宿主机操作，会影响所有POD慎重操作，<strong>不建议</strong>）：<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sysctl</span> <span class="token parameter variable">-w</span> <span class="token assign-left variable">vm.vfs_cache_pressure</span><span class="token operator">=</span><span class="token number">200</span>   <span class="token comment"># 积极回收 cache</span>
 <span class="token function">sysctl</span> <span class="token parameter variable">-w</span> <span class="token assign-left variable">vm.dirty_ratio</span><span class="token operator">=</span><span class="token number">10</span>           <span class="token comment"># 降低脏页比例</span>
 <span class="token function">sysctl</span> <span class="token parameter variable">-w</span> <span class="token assign-left variable">vm.dirty_background_ratio</span><span class="token operator">=</span><span class="token number">5</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
