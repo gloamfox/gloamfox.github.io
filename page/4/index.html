@@ -1,35 +1,148 @@
-<!DOCTYPE HTML>
-<html lang="zh-CN">
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>暮色之狐 - 暮色之狐</title><meta name="author" content="gloamfox"><meta name="copyright" content="gloamfox"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="君子以顺德，积小以高大。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="暮色之狐">
+<meta property="og:url" content="https://gloamfox.cc/page/4/index.html">
+<meta property="og:site_name" content="暮色之狐">
+<meta property="og:description" content="君子以顺德，积小以高大。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://gloamfox.cc/img/avatar.jpg">
+<meta property="article:author" content="gloamfox">
+<meta property="article:tag" content="暮色之狐, gloamfox">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gloamfox.cc/img/avatar.jpg"><script type="application/ld+json"></script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://gloamfox.cc/page/4/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.5.4"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
 
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
 
-<head>
-    <meta charset="utf-8">
-    <meta name="keywords" content="暮色之狐, gloamfox">
-    <meta name="description" content="君子以顺德，积小以高大。">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <meta name="renderer" content="webkit|ie-stand|ie-comp">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="format-detection" content="telephone=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <!-- Global site tag (gtag.js) - Google Analytics -->
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
 
-
-    <title>暮色之狐</title>
-    <link rel="icon" type="image/png" href="/favicon.png">
-
-    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
-    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
-    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
-    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
-    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
-    <link rel="stylesheet" type="text/css" href="/css/matery.css">
-    <link rel="stylesheet" type="text/css" href="/css/my.css">
-
-    <script src="/libs/jquery/jquery.min.js"></script>
-
-<!-- hexo injector head_end start -->
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"pagination":{"enable":false,"hitsPerPage":8},"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":150,"languages":{"author":"作者: gloamfox","link":"链接: ","source":"来源: 暮色之狐","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.13.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '暮色之狐',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'home'
+}</script><!-- hexo injector head_end start -->
 <style>
 .obsidian-callout {
   margin: 1.5em 0;
@@ -366,1304 +479,146 @@
   to { opacity: 1; transform: translateY(0); }
 }
 </style>
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="暮色之狐" type="application/atom+xml">
-</head>
-
-
-
-
-<body>
-    <header class="navbar-fixed">
-    <nav id="headNav" class="bg-color nav-transparent">
-        <div id="navContainer" class="nav-wrapper container">
-            <div class="brand-logo">
-                <a href="/" class="waves-effect waves-light">
-                    
-                    <img src="/medias/logo.png" class="logo-img" >
-                    
-                    <span class="logo-span">暮色之狐</span>
-                </a>
-            </div>
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="暮色之狐" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" /></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">65</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">85</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 统计</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/tags"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories"><i class="fa-fw fas fa-bookmark"></i><span> 分类</span></a></li><li><a class="site-page child" href="/archives"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa-user-circle"></i><span> 关于</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url(https://oss.012700.xyz/butterfly/2024/10/index.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><img class="site-icon" src="/img/logo.png" ><span class="site-name">暮色之狐</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 统计</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/tags"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories"><i class="fa-fw fas fa-bookmark"></i><span> 分类</span></a></li><li><a class="site-page child" href="/archives"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa-user-circle"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="site-info"><h1 id="site-title">暮色之狐</h1><div id="site-subtitle"><span id="subtitle"></span></div><div id="site_social_icons"><a class="social-icon" href="https://github.com/gloamfox" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:rxhome@163.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts nc" id="recent-posts"><div class="recent-post-items"><div class="recent-post-item"><div class="post_cover left"><a href="/20260130032221.html" title="蒙提霍尔问题-经典的三扇门问题"><img class="post-bg" src="https://oss.012700.xyz/butterfly/2024/11/butterfly-docs-changelog-cover-4.png" onerror="this.onerror=null;this.src='/img/404.jpg'" ></a></div><div class="recent-post-info"><a class="article-title" href="/20260130032221.html" title="蒙提霍尔问题-经典的三扇门问题">蒙提霍尔问题-经典的三扇门问题</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2026-01-30T03:22:21.000Z" title="发表于 2026-01-30 03:22:21">2026-01-30</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%80%9D%E7%BB%B4%E6%A8%A1%E5%9E%8B/">思维模型</a></span></div><div class="content">问题设定 三扇门：一扇后面有汽车（奖品），两扇后面有山羊。  你随机选择一扇门（比如 1 号门）。  主持人（知道汽车在哪里）打开另一扇门，露出一只山羊（比如 3 号门）。  主持人问你：是否换到剩下的那扇门（2 号门）？   关键点 主持人 总是 会打开一扇有山羊的门，且不会打开你选的门。  主持人的行动不是随机的，而是根据你的选择和门后的情况刻意为之，这提供了额外信息。   概率分析初始概率 你第一次选择时，选中汽车的概率是 1&#x2F;3，选中山羊的概率是 2&#x2F;3。  两种情形 你第一次选中了汽车（概率 1&#x2F;3）  剩下的两扇门都是山羊。  主持人打开其中一扇山羊门。  如果你 换门，会换到另一扇山羊门 → 失败。  如果你 不换，保留原来的门 → 获胜。    你第一次选中山羊（概率 2&#x2F;3）  剩下的两扇门中，一扇是汽车，一扇是山羊。  主持人 只能 打开剩下的那扇山羊门（因为不能打开你的门，也不能直接打开汽车门）。  如果你 换门，一定会换到剩下的那扇汽车门 → 获胜。  如果你 不换，保留原来的山羊门 → 失败。     总结策略结果...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/20251218123750.html" title="事件驱动架构：业务解耦与异步处理"><img class="post-bg" src="https://oss.012700.xyz/butterfly/2024/11/butterfly-docs-changelog-cover-3.png" onerror="this.onerror=null;this.src='/img/404.jpg'" ></a></div><div class="recent-post-info"><a class="article-title" href="/20251218123750.html" title="事件驱动架构：业务解耦与异步处理">事件驱动架构：业务解耦与异步处理</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2025-12-18T12:37:50.000Z" title="发表于 2025-12-18 12:37:50">2025-12-18</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/">软件设计</a></span></div><div class="content">1. 事件驱动架构概述事件驱动是一种经典的编程和系统设计模式，其核心思想是系统的运作由事件来驱动。当事件发生时，系统的各个组件会对事件做出反应并执行相应的操作。这些事件可以是外部触发的（如用户点击、网络请求），也可以是系统内部产生的（如状态变更、定时调度）。  2. 事件驱动在业务系统中的价值2.1 接口解耦在业务系统中，事件驱动机制被广泛用于接口解耦。以电商系统为例：  商品发布、订单变更等都可以作为事件进行发布 商品信息同步、订单信息推送等操作可以作为事件监听器 主业务流程只需关注核心业务逻辑，使功能更加内聚，耦合性更低  2.2 划分主业务流程与事件消费者的方法一个简单的判断标准是：如果某些操作不执行，仅从业务域本身考虑，系统是否仍能正常运行？如果答案是肯定的，那么这些操作就可以被定义为事件的消费者。 示例分析：在电商系统的商品发布流程中，将商品信息同步给下游系统如果失败或未执行，商品系统本身仍应能正常发布商品。同步问题可以通过定时推送、失败补偿等机制解决，因此商品信息同步操作适合作为事件消费者。 3. 实践中的挑战与解决方案3.1 下游系统约束的处理当下游系统对业务有约束...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/20251218103700.html" title="Spring事件监听在业务使用中的优化"><img class="post-bg" src="https://oss.012700.xyz/butterfly/2024/11/butterfly-docs-changelog-cover-1.png" onerror="this.onerror=null;this.src='/img/404.jpg'" ></a></div><div class="recent-post-info"><a class="article-title" href="/20251218103700.html" title="Spring事件监听在业务使用中的优化">Spring事件监听在业务使用中的优化</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2025-12-18T10:37:00.000Z" title="发表于 2025-12-18 10:37:00">2025-12-18</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%90%8E%E7%AB%AF/">后端</a></span></div><div class="content"> 事件驱动的开发方式在业务系统开发中扮演着关键角色，若能妥善运用，将对系统的拓展性产生至关重要的影响。Spring框架对事件驱动进行了出色的封装，然而在实际业务应用中，我们发现了一些可优化的领域，因此针对这些问题进行了封装和优化工作。  Spring事件驱动的使用在电商订单创建的场景中，一旦订单成功创建，必须执行一系列附加的业务操作。这些操作包括向用户发送相关信息，并将订单信息同步到相关系统中。考虑到此场景的特点，事件驱动的开发方式被广泛认为是最合适的选择，因其能够在不对业务系统造成负面影响的前提下进行处理。 事件定义在订单创建事件中，可以定义包含订单对象以及与订单相关的属性，例如订单ID等。通过此事件，能够有效地传递订单信息，并为其他业务操作提供必要的数据依据。 12345678@Data@AllArgsConstructorpublic class CreateTradeEvent&#123;        // 可以在此定义订单创建事件中的相关属性    private Trade trade;    &#125;  事件发布在订单成功创建之后，我们可以获取到订单实体或其他...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/20251206112842.html" title="知其然知其所以然：Boolean类型命名规范"><img class="post-bg" src="https://oss.012700.xyz/butterfly/2024/11/butterfly-docs-changelog-cover-2.png" onerror="this.onerror=null;this.src='/img/404.jpg'" ></a></div><div class="recent-post-info"><a class="article-title" href="/20251206112842.html" title="知其然知其所以然：Boolean类型命名规范">知其然知其所以然：Boolean类型命名规范</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2025-12-06T11:28:42.000Z" title="发表于 2025-12-06 11:28:42">2025-12-06</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%90%8E%E7%AB%AF/">后端</a></span></div><div class="content"> 对应阿里巴巴开发手册-编码规约-命名风格第9条，规约中写的比较模糊，之前只知道这样命名可能会存在问题，这里探索一下具体什么场景会存在问题。 对上面举的反例感觉有些怪，**基本数据类型Boolean isDeleted属性的Getter方法是isDeleted()**，手册应该写的有问题，印象中基本数据类型boolean是这样的，但是Boolean包装类型并不是如此，后面会对这里进行探索，坑很大。 实例深究JavaBean规范首先了解下JavaBean的规范，属性应该由一组读写方法(Getter&#x2F;Setter)来访问，如果操作的字段为boolean类型，此时Getter不应命名为getXXX方法，而应该是isXXX，如果boolean类型的属性名以is开头，则将属性名中的is自动去除，例如boolean isSuccess的Getter是isSuccess()，但是对于Boolean类型的属性并没有明确的规范进行约定。 以下示例基于IDEA 2023.1 JDK11 布尔类型存在基本数据类型和包装类型，所以存在四种情况 1234private boolean succe...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/20251206105008.html" title="Ubuntu 安装 Docker 操作手册"><img class="post-bg" src="https://oss.012700.xyz/butterfly/2024/11/butterfly-docs-changelog-cover-8.png" onerror="this.onerror=null;this.src='/img/404.jpg'" ></a></div><div class="recent-post-info"><a class="article-title" href="/20251206105008.html" title="Ubuntu 安装 Docker 操作手册">Ubuntu 安装 Docker 操作手册</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2025-12-06T10:50:08.000Z" title="发表于 2025-12-06 10:50:08">2025-12-06</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E7%B3%BB%E7%BB%9F%E8%BF%90%E7%BB%B4/">系统运维</a></span></div><div class="content">官方操作手册 操作系统要求要安装 Docker 引擎，您需要以下 Ubuntu 版本的 64 位版本之一：  Ubuntu Questing 25.10  Ubuntu 探索版 25.10 Ubuntu Plucky 25.04  Ubuntu 勇敢版 25.04 Ubuntu Noble 24.04 (LTS)  Ubuntu 贵族版 24.04 (LTS) Ubuntu Jammy 22.04 (LTS)  Ubuntu 甜蜜版 22.04 (LTS)  Ubuntu 的 Docker Engine 与 x86_64（或 amd64）、armhf、arm64、s390x 和 ppc64le（ppc64el）架构兼容。 查看系统版本 1234567891011121314sharkidon@ubuntu:~$ cat /etc/os-releasePRETTY_NAME=&quot;Ubuntu 25.10&quot;NAME=&quot;Ubuntu&quot;VERSION_ID=&quot;25.10&quot;VERSION=&quot;25.10 (Questing ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/20251127044339.html" title="Ubuntu修改国内源解决下载问题"><img class="post-bg" src="https://oss.012700.xyz/butterfly/2024/11/butterfly-docs-changelog-cover-6.png" onerror="this.onerror=null;this.src='/img/404.jpg'" ></a></div><div class="recent-post-info"><a class="article-title" href="/20251127044339.html" title="Ubuntu修改国内源解决下载问题">Ubuntu修改国内源解决下载问题</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2025-11-27T04:43:39.000Z" title="发表于 2025-11-27 04:43:39">2025-11-27</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E7%B3%BB%E7%BB%9F%E8%BF%90%E7%BB%B4/">系统运维</a></span></div><div class="content">经常使用Ubuntu的同学都会遇到软件安装下载速度慢的情况，究其原因，是因为Ubuntu默认源的地址都在国外所导致，其实国内也有很多优秀的源，比如阿里源、中科大源、清华源、163源等，只需要简单的更换一下源，下载度立刻就上来了。 以下操作都必须在管理员模式下（使用su命令进入）进行，否则会执行失败 备份官方源 1mv /etc/apt/sources.list /etc/apt/sources.list.bk   下载第三方源文件更换 具体使用哪一个，可以自行测试按照效果选用 1234567891011#163源wget &#x27;https://gitee.com/zaozuotime/ubuntu-update-source-file/raw/master/163.sources.list&#x27; -O /etc/apt/sources.list#阿里源wget &#x27;https://gitee.com/zaozuotime/ubuntu-update-source-file/raw/master/aliyun.sources.list&#x27; -O /etc...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/20251120062556.html" title="Tomcat进程残留问题"><img class="post-bg" src="https://oss.012700.xyz/butterfly/2024/11/butterfly-docs-changelog-cover-9.png" onerror="this.onerror=null;this.src='/img/404.jpg'" ></a></div><div class="recent-post-info"><a class="article-title" href="/20251120062556.html" title="Tomcat进程残留问题">Tomcat进程残留问题</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2025-11-20T06:25:56.000Z" title="发表于 2025-11-20 06:25:56">2025-11-20</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E7%B3%BB%E7%BB%9F%E8%BF%90%E7%BB%B4/">系统运维</a></span></div><div class="content">运行shutdown.sh,tomcat停止, 但它的java进程还在, 不过状态为S(sleep), 不是运行时的R(Runnable), 如果不kill的话, 这种进程越来越多，导致JVM进程越来越多, 占据了大量的内存空间, 有可能使得新程序在启动JVM时由于内存不够用而无法启动。 kill强制杀死进程1ps -ef|grep java  若显示以下内容代表使用的java进程还存在，没有完全停止 12345root     50530     1 99 10:25 pts/0    00:00:45 /usr/local/java/jdk1.7.0_51/jre/bin/java -Djava.util.logging.config.file=/usr/local/tomcat/apache-tomcat-7.0.92/conf/logging.properties -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager -Djdk.tls.ephemeralDHKeySize=2048 -Dign...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/20251120054819.html" title="Oracle特殊字符处理"><img class="post-bg" src="https://oss.012700.xyz/butterfly/2024/11/butterfly-docs-changelog-cover-5.png" onerror="this.onerror=null;this.src='/img/404.jpg'" ></a></div><div class="recent-post-info"><a class="article-title" href="/20251120054819.html" title="Oracle特殊字符处理">Oracle特殊字符处理</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2025-11-20T05:48:19.000Z" title="发表于 2025-11-20 05:48:19">2025-11-20</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%90%8E%E7%AB%AF/">后端</a></span></div><div class="content">在Oracle数据库中，有时字段中会存入一些特殊字符（设计不当或者程序BUG），例如制表符、换行符以及回车符等，如果包含特殊字符是看不出来的，但是在进行字段关联的时候就会查不出数据。 特殊字符ASCII码定义：  制表符 chr(9)换行符 chr(10)回车符 chr(13)  去掉表中的特殊字符1update table set field=replace(field,chr(9), &#x27;&#x27;) where instr(field, chr(9)) &gt; 0  其他特殊字符也可以使用ascii函数查出ASCII码然后进行替换1select ascii(&#x27;?&#x27;) from dual;</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/20251120054736.html" title="Linux防火墙命令"><img class="post-bg" src="https://oss.012700.xyz/butterfly/2024/11/butterfly-docs-changelog-cover-2.png" onerror="this.onerror=null;this.src='/img/404.jpg'" ></a></div><div class="recent-post-info"><a class="article-title" href="/20251120054736.html" title="Linux防火墙命令">Linux防火墙命令</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2025-11-20T05:47:36.000Z" title="发表于 2025-11-20 05:47:36">2025-11-20</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E7%B3%BB%E7%BB%9F%E8%BF%90%E7%BB%B4/">系统运维</a></span></div><div class="content">linux系统常用的防火墙分别是iptables和firewall防火墙，记录一下常用的命令 firewall防火墙12345678910111213141516171819202122232425#查看firewall服务状态systemctl status firewalld#查看firewall的状态firewall-cmd --state# 开启service firewalld start# 重启service firewalld restart# 关闭service firewalld stop#查看防火墙规则firewall-cmd --list-all # 查询端口是否开放firewall-cmd --query-port=8080/tcp# 开放80端口firewall-cmd --permanent --add-port=80/tcp# 移除端口firewall-cmd --permanent --remove-port=8080/tcp#重启防火墙(修改配置后要重启防火墙)firewall-cmd --reload  参数解释firwall-cmd：是Lin...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/20251120054403.html" title="Windows系统SSH服务安装指南"><img class="post-bg" src="https://oss.012700.xyz/butterfly/2024/11/butterfly-docs-changelog-cover-6.png" onerror="this.onerror=null;this.src='/img/404.jpg'" ></a></div><div class="recent-post-info"><a class="article-title" href="/20251120054403.html" title="Windows系统SSH服务安装指南">Windows系统SSH服务安装指南</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2025-11-20T05:44:03.000Z" title="发表于 2025-11-20 05:44:03">2025-11-20</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E7%B3%BB%E7%BB%9F%E8%BF%90%E7%BB%B4/">系统运维</a></span></div><div class="content">最近在做Jenkins的持续集成，公司的应用服务器大多是Windows系统，平时的运维主要是靠远程桌面的方式，为了使用Jenkins自动部署，需要在windows系统上安装SSH的服务，这里介绍微软官方的解决方案，详细介绍可以参考官网wiki。基于PowerShell的OpenSSH: https://github.com/PowerShell/Win32-OpenSSH/releases  安装步骤 进入链接下载最新的OpenSSH-Win64.zip，解压至 C:\Program Files\OpenSSH  打开cmd，进入 C:\Program Files\OpenSSH安装目录，执行以下命令 1powershell.exe -ExecutionPolicy Bypass -File install-sshd.ps1  设置服务自动启动并启动服务 12sc config sshd start= autonet start sshd  修复主机端的文件权限,进入 C:\Program Files\OpenSSH，右键 FixHostFilePermissions.ps1【使...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/20251120030846.html" title="Spring MVC接口监控必备：原始路径模板获取全解析"><img class="post-bg" src="https://oss.012700.xyz/butterfly/2024/11/butterfly-docs-changelog-cover-9.png" onerror="this.onerror=null;this.src='/img/404.jpg'" ></a></div><div class="recent-post-info"><a class="article-title" href="/20251120030846.html" title="Spring MVC接口监控必备：原始路径模板获取全解析">Spring MVC接口监控必备：原始路径模板获取全解析</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2025-11-20T03:08:46.000Z" title="发表于 2025-11-20 03:08:46">2025-11-20</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%90%8E%E7%AB%AF/">后端</a></span></div><div class="content">问题场景原始路径模板：/users/&#123;id&#125;实际获取路径：/users/40000478 在监控和统计场景中，带具体参数值的路径会导致：  相同的接口被统计为多个不同的路径 难以进行有效的聚合分析 通知信息不够清晰直观  解决方案：Spring MVC路径模板获取Spring MVC在处理请求时，会在请求属性中存储丰富的映射信息。通过以下方式可以获取原始路径模板： 12345678910111213import org.springframework.web.servlet.HandlerMapping;import javax.servlet.http.HttpServletRequest;public class MonitoringUtils &#123;        public static String getOriginalPathPattern(HttpServletRequest request) &#123;        // 获取最佳匹配的路径模式，如 /ad/launch/task/sendConfirmEmail/&#123;id...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/20251118153750.html" title="Typora安装与配置"><img class="post-bg" src="https://oss.012700.xyz/butterfly/2024/11/butterfly-docs-changelog-cover-1.png" onerror="this.onerror=null;this.src='/img/404.jpg'" ></a></div><div class="recent-post-info"><a class="article-title" href="/20251118153750.html" title="Typora安装与配置">Typora安装与配置</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2025-11-18T15:37:50.000Z" title="发表于 2025-11-18 15:37:50">2025-11-18</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/">软件工具</a></span></div><div class="content">Typora安装注册 先安装 typora-setup-x64-1.2.4.exe，并记录安装路径，下载地址 将 app.asar 替换到安装路径下的resources文件夹，替换掉app.asar文件 重启typora！！！！！！ 输入邮箱、注册码，邮箱随便输入，注册码：E8Q9Y5-KXMTL5-7578SL-4S5XKS  仅供学习，请在下载24小时之内删除，请支持正版 图片上传文件 -&gt; 偏好设置中设置图像相关配置，上传服务我使用的是PicGo-Core（command line），其实和PicGo-Core(app)一样，主要是我不想托盘中多出一个程序放在那里，看着不舒服   点击下载或更新，下载更新完成后，点击打开配置文件，配置图床的地址，有些版本能直接打开，有些无反应，需要手动进到指定的目录进行修改config.json文件 picgo 的默认配置文件为~/.picgo/config.json。其中~为用户目录。不同系统的用户目录不太一样。 linux 和 macOS 均为~/.picgo/config.json。 windows 则为C:\Users\你的用...</div></div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/page/3/#content-inner"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/#content-inner">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/#content-inner">5</a><a class="page-number" href="/page/6/#content-inner">6</a><a class="extend next" rel="next" href="/page/5/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" /></div><div class="author-info-name">gloamfox</div><div class="author-info-description">君子以顺德，积小以高大。</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">65</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">85</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/gloamfox"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/gloamfox" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:rxhome@163.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">此博客为记录工作学习总结所用，供网友阅读参考，如有侵权，请通知我，我会核实后进行处理。</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/20260416093521.html" title="容器化后内存告警不断？日志“写爆”了Page Cache！"><img src="https://oss.012700.xyz/butterfly/2024/11/butterfly-docs-changelog-cover-3.png" onerror="this.onerror=null;this.src='/img/404.jpg'" /></a><div class="content"><a class="title" href="/20260416093521.html" title="容器化后内存告警不断？日志“写爆”了Page Cache！">容器化后内存告警不断？日志“写爆”了Page Cache！</a><time datetime="2026-04-16T09:35:21.000Z" title="发表于 2026-04-16 09:35:21">2026-04-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/20260415131634.html" title="Harness Engineering 究竟是什么"><img src="https://oss.012700.xyz/butterfly/2024/11/butterfly-docs-changelog-cover-9.png" onerror="this.onerror=null;this.src='/img/404.jpg'" /></a><div class="content"><a class="title" href="/20260415131634.html" title="Harness Engineering 究竟是什么">Harness Engineering 究竟是什么</a><time datetime="2026-04-15T13:16:34.000Z" title="发表于 2026-04-15 13:16:34">2026-04-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/20260413104209.html" title="Claude Code 通关手册（七）：推荐 5 个 Hooks，代码质量提升 3 倍"><img src="https://oss.012700.xyz/butterfly/2024/11/butterfly-docs-changelog-cover-2.png" onerror="this.onerror=null;this.src='/img/404.jpg'" /></a><div class="content"><a class="title" href="/20260413104209.html" title="Claude Code 通关手册（七）：推荐 5 个 Hooks，代码质量提升 3 倍">Claude Code 通关手册（七）：推荐 5 个 Hooks，代码质量提升 3 倍</a><time datetime="2026-04-13T10:42:09.000Z" title="发表于 2026-04-13 10:42:09">2026-04-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/20260411114110.html" title="Claude Code通关手册（六）：MCP协议完全指南"><img src="https://oss.012700.xyz/butterfly/2024/11/butterfly-docs-changelog-cover-8.png" onerror="this.onerror=null;this.src='/img/404.jpg'" /></a><div class="content"><a class="title" href="/20260411114110.html" title="Claude Code通关手册（六）：MCP协议完全指南">Claude Code通关手册（六）：MCP协议完全指南</a><time datetime="2026-04-11T11:41:10.000Z" title="发表于 2026-04-11 11:41:10">2026-04-11</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/20260410163535.html" title="Claude Code通关手册（五）：组建你的AI专家团队，子代理系统"><img src="https://oss.012700.xyz/butterfly/2024/11/butterfly-docs-changelog-cover-1.png" onerror="this.onerror=null;this.src='/img/404.jpg'" /></a><div class="content"><a class="title" href="/20260410163535.html" title="Claude Code通关手册（五）：组建你的AI专家团队，子代理系统">Claude Code通关手册（五）：组建你的AI专家团队，子代理系统</a><time datetime="2026-04-10T16:35:35.000Z" title="发表于 2026-04-10 16:35:35">2026-04-10</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分类</span>
             
-
-<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
-<ul class="right nav-menu">
+          </div>
+          <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%89%8D%E7%AB%AF/"><span class="card-category-list-name">前端</span><span class="card-category-list-count">7</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%90%8E%E7%AB%AF/"><span class="card-category-list-name">后端</span><span class="card-category-list-count">14</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%80%9D%E7%BB%B4%E6%A8%A1%E5%9E%8B/"><span class="card-category-list-name">思维模型</span><span class="card-category-list-count">3</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E7%B3%BB%E7%BB%9F%E8%BF%90%E7%BB%B4/"><span class="card-category-list-name">系统运维</span><span class="card-category-list-count">11</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"><span class="card-category-list-name">计算机基础</span><span class="card-category-list-count">3</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/"><span class="card-category-list-name">软件工具</span><span class="card-category-list-count">21</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/"><span class="card-category-list-name">软件设计</span><span class="card-category-list-count">6</span></a></li>
+          </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/%E5%86%B3%E7%AD%96%E5%88%86%E6%9E%90/" style="font-size: 1.1em; color: #999">决策分析</a> <a href="/tags/IO%E6%A8%A1%E5%9E%8B/" style="font-size: 1.1em; color: #999">IO模型</a> <a href="/tags/%E5%86%AF%C2%B7%E8%AF%BA%E4%BE%9D%E6%9B%BC/" style="font-size: 1.1em; color: #999">冯·诺依曼</a> <a href="/tags/Kubernetes/" style="font-size: 1.1em; color: #999">Kubernetes</a> <a href="/tags/Claude-Code/" style="font-size: 1.5em; color: #99a9bf">Claude Code</a> <a href="/tags/%E6%A6%82%E7%8E%87%E8%AE%BA/" style="font-size: 1.1em; color: #999">概率论</a> <a href="/tags/%E5%A4%9A%E8%B7%AF%E5%A4%8D%E7%94%A8/" style="font-size: 1.1em; color: #999">多路复用</a> <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%90%E7%BB%B4/" style="font-size: 1.1em; color: #999">服务器运维</a> <a href="/tags/%E9%80%92%E5%BD%92/" style="font-size: 1.1em; color: #999">递归</a> <a href="/tags/URL%E4%BC%98%E5%8C%96/" style="font-size: 1.1em; color: #999">URL优化</a> <a href="/tags/Ubuntu/" style="font-size: 1.2em; color: #999da3">Ubuntu</a> <a href="/tags/%E9%9D%A2%E8%AF%95%E6%8A%80%E5%B7%A7/" style="font-size: 1.1em; color: #999">面试技巧</a> <a href="/tags/%E7%9F%A5%E8%AF%86%E7%BB%84%E7%BB%87/" style="font-size: 1.1em; color: #999">知识组织</a> <a href="/tags/%E6%A0%88%E6%BA%A2%E5%87%BA/" style="font-size: 1.1em; color: #999">栈溢出</a> <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%8F%91%E7%8E%B0/" style="font-size: 1.1em; color: #999">服务发现</a> <a href="/tags/%E7%AC%94%E8%AE%B0%E7%AE%A1%E7%90%86/" style="font-size: 1.1em; color: #999">笔记管理</a> <a href="/tags/%E6%AD%BB%E9%94%81/" style="font-size: 1.1em; color: #999">死锁</a> <a href="/tags/Obsidian/" style="font-size: 1.4em; color: #99a5b6">Obsidian</a> <a href="/tags/Java/" style="font-size: 1.2em; color: #999da3">Java</a> <a href="/tags/Oracle/" style="font-size: 1.1em; color: #999">Oracle</a> <a href="/tags/CDN/" style="font-size: 1.1em; color: #999">CDN</a> <a href="/tags/Docker/" style="font-size: 1.1em; color: #999">Docker</a> <a href="/tags/%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/" style="font-size: 1.1em; color: #999">安装教程</a> <a href="/tags/%E6%BF%80%E6%B4%BB/" style="font-size: 1.1em; color: #999">激活</a> <a href="/tags/%E8%87%AA%E6%88%91%E6%8F%90%E5%8D%87/" style="font-size: 1.1em; color: #999">自我提升</a> <a href="/tags/uniCloud/" style="font-size: 1.1em; color: #999">uniCloud</a> <a href="/tags/Markdown/" style="font-size: 1.1em; color: #999">Markdown</a> <a href="/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" style="font-size: 1.2em; color: #999da3">性能优化</a> <a href="/tags/AI%E5%B7%A5%E7%A8%8B/" style="font-size: 1.1em; color: #999">AI工程</a> <a href="/tags/%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86/" style="font-size: 1.1em; color: #999">权限管理</a> <a href="/tags/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/" style="font-size: 1.1em; color: #999">网络安全</a> <a href="/tags/Typora/" style="font-size: 1.1em; color: #999">Typora</a> <a href="/tags/SOLID/" style="font-size: 1.1em; color: #999">SOLID</a> <a href="/tags/%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 1.1em; color: #999">技术学习</a> <a href="/tags/%E4%BA%8B%E5%8A%A1%E7%AE%A1%E7%90%86/" style="font-size: 1.1em; color: #999">事务管理</a> <a href="/tags/%E7%BC%96%E7%A0%81%E8%A7%84%E8%8C%83/" style="font-size: 1.1em; color: #999">编码规范</a> <a href="/tags/%E5%9B%BE%E7%89%87%E4%BC%98%E5%8C%96/" style="font-size: 1.3em; color: #99a1ac">图片优化</a> <a href="/tags/%E4%BE%9D%E8%B5%96%E7%AE%A1%E7%90%86/" style="font-size: 1.1em; color: #999">依赖管理</a> <a href="/tags/%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0/" style="font-size: 1.1em; color: #999">图片上传</a> <a href="/tags/%E6%8A%80%E6%9C%AF%E9%9D%A2%E8%AF%95/" style="font-size: 1.1em; color: #999">技术面试</a></div></div><div class="card-widget card-archives">
+    <div class="item-headline">
+      <i class="fas fa-archive"></i>
+      <span>归档</span>
+      <a class="card-more-btn" href="/archives/"
+            title="查看更多">
+            <i class="fas fa-angle-right"></i>
+          </a>
+    </div>
   
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="/" class="waves-effect waves-light">
+    <ul class="card-archive-list">
       
-      <i class="fas fa-home" style="zoom: 0.6;"></i>
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2026/04/">
+            <span class="card-archive-list-date">
+              四月 2026
+            </span>
+            <span class="card-archive-list-count">12</span>
+          </a>
+        </li>
       
-      <span>首页</span>
-    </a>
-    
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="" class="waves-effect waves-light">
-
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2026/03/">
+            <span class="card-archive-list-date">
+              三月 2026
+            </span>
+            <span class="card-archive-list-count">23</span>
+          </a>
+        </li>
       
-      <i class="fas fa-list" style="zoom: 0.6;"></i>
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2026/02/">
+            <span class="card-archive-list-date">
+              二月 2026
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
       
-      <span>统计</span>
-      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
-    </a>
-    <ul class="sub-nav menus_item_child ">
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2026/01/">
+            <span class="card-archive-list-date">
+              一月 2026
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
       
-      <li>
-        <a href="/tags">
-          
-          <i class="fas fa-tags" style="margin-top: -20px; zoom: 0.6;"></i>
-          
-          <span>标签</span>
-        </a>
-      </li>
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2025/12/">
+            <span class="card-archive-list-date">
+              十二月 2025
+            </span>
+            <span class="card-archive-list-count">4</span>
+          </a>
+        </li>
       
-      <li>
-        <a href="/categories">
-          
-          <i class="fas fa-bookmark" style="margin-top: -20px; zoom: 0.6;"></i>
-          
-          <span>分类</span>
-        </a>
-      </li>
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2025/11/">
+            <span class="card-archive-list-date">
+              十一月 2025
+            </span>
+            <span class="card-archive-list-count">20</span>
+          </a>
+        </li>
       
-      <li>
-        <a href="/archives">
-          
-          <i class="fas fa-archive" style="margin-top: -20px; zoom: 0.6;"></i>
-          
-          <span>归档</span>
-        </a>
-      </li>
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2025/09/">
+            <span class="card-archive-list-date">
+              九月 2025
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2025/04/">
+            <span class="card-archive-list-date">
+              四月 2025
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
       
     </ul>
-    
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="/about" class="waves-effect waves-light">
-      
-      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
-      
-      <span>关于</span>
-    </a>
-    
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="/contact" class="waves-effect waves-light">
-      
-      <i class="fas fa-comments" style="zoom: 0.6;"></i>
-      
-      <span>留言板</span>
-    </a>
-    
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="/friends" class="waves-effect waves-light">
-      
-      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
-      
-      <span>友情链接</span>
-    </a>
-    
-  </li>
-  
-  <li>
-    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
-      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
-    </a>
-  </li>
-</ul>
-
-
-<div id="mobile-nav" class="side-nav sidenav">
-
-    <div class="mobile-head bg-color">
-        
-        <img src="/medias/logo.png" class="logo-img circle responsive-img">
-        
-        <div class="logo-name">暮色之狐</div>
-        <div class="logo-desc">
-            
-            君子以顺德，积小以高大。
-            
-        </div>
-    </div>
-
-    
-
-    <ul class="menu-list mobile-menu-list">
-        
-        <li class="m-nav-item">
-	  
-		<a href="/" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-home"></i>
-			
-			首页
-		</a>
-          
-        </li>
-        
-        <li class="m-nav-item">
-	  
-		<a href="javascript:;">
-			
-				<i class="fa-fw fas fa-list"></i>
-			
-			统计
-			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
-		</a>
-            <ul  style="background:  ;" >
-              
-                <li>
-
-                  <a href="/tags " style="margin-left:75px">
-				  
-				   <i class="fa fas fa-tags" style="position: absolute;left:50px" ></i>
-			      
-		          <span>标签</span>
-                  </a>
-                </li>
-              
-                <li>
-
-                  <a href="/categories " style="margin-left:75px">
-				  
-				   <i class="fa fas fa-bookmark" style="position: absolute;left:50px" ></i>
-			      
-		          <span>分类</span>
-                  </a>
-                </li>
-              
-                <li>
-
-                  <a href="/archives " style="margin-left:75px">
-				  
-				   <i class="fa fas fa-archive" style="position: absolute;left:50px" ></i>
-			      
-		          <span>归档</span>
-                  </a>
-                </li>
-              
-            </ul>
-          
-        </li>
-        
-        <li class="m-nav-item">
-	  
-		<a href="/about" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-user-circle"></i>
-			
-			关于
-		</a>
-          
-        </li>
-        
-        <li class="m-nav-item">
-	  
-		<a href="/contact" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-comments"></i>
-			
-			留言板
-		</a>
-          
-        </li>
-        
-        <li class="m-nav-item">
-	  
-		<a href="/friends" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-address-book"></i>
-			
-			友情链接
-		</a>
-          
-        </li>
-        
-        
-        <li><div class="divider"></div></li>
-        <li>
-            <a href="https://github.com/gloamfox" class="waves-effect waves-light" target="_blank">
-                <i class="fab fa-github-square fa-fw"></i>Fork Me
-            </a>
-        </li>
-        
-    </ul>
-</div>
-
-
-        </div>
-
-        
-            <style>
-    .nav-transparent .github-corner {
-        display: none !important;
+  </div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">65</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总浏览量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2026-04-17T09:48:42.540Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By gloamfox</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.4</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.4"></script><script src="/js/main.js?v=5.5.4"></script><div class="js-pjax"><script>window.typedJSFn = {
+  init: str => {
+    window.typed = new Typed('#subtitle', Object.assign({
+      strings: str,
+      startDelay: 300,
+      typeSpeed: 150,
+      loop: true,
+      backSpeed: 50,
+    }, null))
+  },
+  run: subtitleType => {
+    if (true) {
+      if (typeof Typed === 'function') {
+        subtitleType()
+      } else {
+        btf.getScript('https://cdn.jsdelivr.net/npm/typed.js@3.0.0/dist/typed.umd.min.js').then(subtitleType)
+      }
+    } else {
+      subtitleType()
     }
+  },
+  processSubtitle: (content, extraContents = []) => {
+    if (true) {
+      const sub = ["君子以顺德，积小以高大。","种一棵树最好的时间是十年前，其次是现在。"].slice()
 
-    .github-corner {
-        position: absolute;
-        z-index: 10;
-        top: 0;
-        right: 0;
-        border: 0;
-        transform: scale(1.1);
+      if (extraContents.length > 0) {
+        sub.unshift(...extraContents)
+      }
+
+      if (typeof content === 'string') {
+        sub.unshift(content)
+      } else if (Array.isArray(content)) {
+        sub.unshift(...content)
+      }
+
+      sub.length > 0 && typedJSFn.init(sub)
+    } else {
+      document.getElementById('subtitle').textContent = typeof content === 'string' ? content :
+        (Array.isArray(content) && content.length > 0 ? content[0] : '')
     }
-
-    .github-corner svg {
-        color: #0f9d58;
-        fill: #fff;
-        height: 64px;
-        width: 64px;
-    }
-
-    .github-corner:hover .octo-arm {
-        animation: a 0.56s ease-in-out;
-    }
-
-    .github-corner .octo-arm {
-        animation: none;
-    }
-
-    @keyframes a {
-        0%,
-        to {
-            transform: rotate(0);
-        }
-        20%,
-        60% {
-            transform: rotate(-25deg);
-        }
-        40%,
-        80% {
-            transform: rotate(10deg);
-        }
-    }
-</style>
-
-<a href="https://github.com/gloamfox" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
-   data-tooltip="Fork Me" data-position="left" data-delay="50">
-    <svg viewBox="0 0 250 250" aria-hidden="true">
-        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
-        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
-              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
-        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
-              fill="currentColor" class="octo-body"></path>
-    </svg>
-</a>
-        
-    </nav>
-
-</header>
-
-    
-    <div class="bg-cover pd-header about-cover">
-    <div class="container">
-    <div class="row">
-    <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
-        <div class="brand">
-            <div class="title center-align">
-                
-                暮色之狐
-                
-            </div>
-
-            <div class="description center-align">
-                
-                <span id="subtitle"></span>
-                <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
-                <script>
-                    var typed = new Typed("#subtitle", {
-                        strings: ['君子以顺德，积小以高大。','种一棵树最好的时间是十年前，其次是现在。'],
-                        startDelay: 300,
-                        typeSpeed: 100,
-                        loop: true,
-                        backSpeed: 50,
-                        showCursor: true
-                    });
-                </script>
-                
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
-
-
-<script>
-    // // 每天切换 banner 图.  Switch banner image every day.
-    // var bannerUrl = "/medias/banner/" + new Date().getDay() + '.jpg';
-    // $('.bg-cover').css('background-image', 'url(' + bannerUrl + ')');
-
-    
-
-        // 每天切换 banner 图.  Switch banner image every day.
-        var bannerUrl = "/medias/banner/" + new Date().getDay() + '.jpg';
-         $('.bg-cover').css('background-image', 'url(' + bannerUrl + ')');
-    
-    
-</script>
-
-
-    </div>
-</div>
-
-
-<main class="content">
-
-    
-
-    
-
-    <!-- 所有文章卡片 -->
-    <article id="articles" class="container articles">
-        <div class="row article-row">
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/20260130032221.html">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/6.jpg" class="responsive-img" >
-                            
-                            <span class="card-title">蒙提霍尔问题-经典的三扇门问题</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                本文详细解析了著名的蒙提霍尔问题，通过概率分析展示了为什么换门策略能将获胜概率从1/3提升至2/3。文章解释了主持人行为对概率分布的影响，纠正了常见的误解，并通过扩展到100扇门的例子直观展示了这一反直觉的概率现象。
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2026-01-30
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/%E6%80%9D%E7%BB%B4%E6%A8%A1%E5%9E%8B/" class="post-category">
-                                    思维模型
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/%E6%A6%82%E7%8E%87%E8%AE%BA/">
-                            <span class="chip bg-color">概率论</span>
-                        </a>
-                        
-                        <a href="/tags/%E5%86%B3%E7%AD%96%E5%88%86%E6%9E%90/">
-                            <span class="chip bg-color">决策分析</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/20251218123750.html">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/15.jpg" class="responsive-img" >
-                            
-                            <span class="card-title">事件驱动架构：业务解耦与异步处理</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                本文详细介绍了事件驱动架构的核心概念、业务价值及实践方法。通过分析电商系统等实际案例，阐述了事件驱动如何实现接口解耦、划分主业务流程与事件消费者，并探讨了处理下游系统约束、异步消费等实践挑战。文章进一步提供了事件驱动的技术实现方案，包括生产者消费者模型、事件持久化、幂等控制和补偿机制等关键要素，为构建高可用、高扩展的业务系统提供了实用指导。
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2025-12-18
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/" class="post-category">
-                                    软件设计
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/%E4%BA%8B%E4%BB%B6%E9%A9%B1%E5%8A%A8/">
-                            <span class="chip bg-color">事件驱动</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/20251218103700.html">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/2.jpg" class="responsive-img" >
-                            
-                            <span class="card-title">Spring事件监听在业务使用中的优化</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                本文深入探讨了Spring框架中事件驱动机制的使用与优化，特别是在电商订单创建场景下的应用。文章详细分析了事件定义、发布和监听的实现方式，并针对异步执行中遇到的数据一致性、持久化和线程变量传递等问题提出了创新解决方案。通过自定义注解和切面增强，实现了对Spring事件监听功能的扩展，提供了更可靠的异步事件处理机制。
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2025-12-18
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/%E5%90%8E%E7%AB%AF/" class="post-category">
-                                    后端
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/Spring/">
-                            <span class="chip bg-color">Spring</span>
-                        </a>
-                        
-                        <a href="/tags/%E4%BA%8B%E4%BB%B6%E9%A9%B1%E5%8A%A8/">
-                            <span class="chip bg-color">事件驱动</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/20251206112842.html">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/8.jpg" class="responsive-img" >
-                            
-                            <span class="card-title">知其然知其所以然：Boolean类型命名规范</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                本文深入探讨了Java中布尔类型属性命名的规范问题，分析了基本数据类型boolean和包装类型Boolean在不同开发工具和序列化框架下的行为差异。文章通过IDEA、Eclipse和Lombok的对比测试，展示了is开头的布尔属性在不同序列化工具(Jackson、Gson、FastJson)中可能导致的序列化和反序列化问题，解释了阿里巴巴开发手册中相关规约背后的原因。
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2025-12-06
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/%E5%90%8E%E7%AB%AF/" class="post-category">
-                                    后端
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/Java/">
-                            <span class="chip bg-color">Java</span>
-                        </a>
-                        
-                        <a href="/tags/%E7%BC%96%E7%A0%81%E8%A7%84%E8%8C%83/">
-                            <span class="chip bg-color">编码规范</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/20251206105008.html">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/5.jpg" class="responsive-img" >
-                            
-                            <span class="card-title">Ubuntu 安装 Docker 操作手册</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                本文档详细介绍了在 Ubuntu 系统上安装 Docker 引擎的步骤，包括系统要求、卸载旧版本、使用 apt 仓库安装、配置国内镜像源、验证安装以及后续配置等。
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2025-12-06
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/%E7%B3%BB%E7%BB%9F%E8%BF%90%E7%BB%B4/" class="post-category">
-                                    系统运维
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/Ubuntu/">
-                            <span class="chip bg-color">Ubuntu</span>
-                        </a>
-                        
-                        <a href="/tags/Docker/">
-                            <span class="chip bg-color">Docker</span>
-                        </a>
-                        
-                        <a href="/tags/%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/">
-                            <span class="chip bg-color">安装教程</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/20251127044339.html">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/6.jpg" class="responsive-img" >
-                            
-                            <span class="card-title">Ubuntu修改国内源解决下载问题</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                本文介绍了如何解决Ubuntu系统软件下载速度慢的问题，通过更换国内镜像源(如163源、阿里源、清华源、中科大源)来提高下载速度。文章详细说明了备份官方源、下载第三方源文件以及更新资源的具体操作步骤，所有操作都需要在管理员模式下进行。
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2025-11-27
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/%E7%B3%BB%E7%BB%9F%E8%BF%90%E7%BB%B4/" class="post-category">
-                                    系统运维
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/Ubuntu/">
-                            <span class="chip bg-color">Ubuntu</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/20251120062556.html">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/4.jpg" class="responsive-img" >
-                            
-                            <span class="card-title">Tomcat进程残留问题</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                文章介绍了Tomcat停止后Java进程残留的问题，详细描述了如何通过kill命令强制终止进程，以及在tomcat脚本中添加参数和配置来解决此问题的方法。提供了具体的命令和代码示例，帮助用户彻底解决Tomcat进程残留导致的内存占用问题。
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2025-11-20
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/%E7%B3%BB%E7%BB%9F%E8%BF%90%E7%BB%B4/" class="post-category">
-                                    系统运维
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/Tomcat/">
-                            <span class="chip bg-color">Tomcat</span>
-                        </a>
-                        
-                        <a href="/tags/Java/">
-                            <span class="chip bg-color">Java</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/20251120054819.html">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/8.jpg" class="responsive-img" >
-                            
-                            <span class="card-title">Oracle特殊字符处理</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                本文介绍了Oracle数据库中处理特殊字符的方法，特别是制表符、换行符和回行符等不可见字符。文章提供了使用replace函数和ascii函数查找并替换这些特殊字符的SQL代码示例，帮助解决因特殊字符导致的数据关联问题。
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2025-11-20
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/%E5%90%8E%E7%AB%AF/" class="post-category">
-                                    后端
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/Oracle/">
-                            <span class="chip bg-color">Oracle</span>
-                        </a>
-                        
-                        <a href="/tags/SQL/">
-                            <span class="chip bg-color">SQL</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/20251120054736.html">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/11.jpg" class="responsive-img" >
-                            
-                            <span class="card-title">Linux防火墙命令</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                本文记录了Linux系统常用的两种防火墙工具iptables和firewall的常用命令操作。详细介绍了如何查看防火墙状态、开启/关闭防火墙、管理端口规则以及重启防火墙等操作。对于firewall防火墙，还解释了常用参数的含义，如--permanent表示持久设置，--add-port用于添加端口规则。这些命令对于Linux系统管理员进行网络安全配置非常有用。
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2025-11-20
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/%E7%B3%BB%E7%BB%9F%E8%BF%90%E7%BB%B4/" class="post-category">
-                                    系统运维
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/Linux/">
-                            <span class="chip bg-color">Linux</span>
-                        </a>
-                        
-                        <a href="/tags/%E9%98%B2%E7%81%AB%E5%A2%99/">
-                            <span class="chip bg-color">防火墙</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/20251120054403.html">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/17.jpg" class="responsive-img" >
-                            
-                            <span class="card-title">Windows系统SSH服务安装指南</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                本文详细介绍在Windows系统上安装SSH服务的完整步骤，包括微软官方OpenSSH的部署方法、配置文件修改以及常见问题解决方案。文章涵盖了从下载安装包到设置密钥认证的全过程，特别解决了Windows Server 2012R2等版本的权限问题，为Jenkins持续集成环境提供Windows服务器的SSH连接支持。
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2025-11-20
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/%E7%B3%BB%E7%BB%9F%E8%BF%90%E7%BB%B4/" class="post-category">
-                                    系统运维
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/SSH/">
-                            <span class="chip bg-color">SSH</span>
-                        </a>
-                        
-                        <a href="/tags/Windows/">
-                            <span class="chip bg-color">Windows</span>
-                        </a>
-                        
-                        <a href="/tags/Jenkins/">
-                            <span class="chip bg-color">Jenkins</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/20251120030846.html">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/2.jpg" class="responsive-img" >
-                            
-                            <span class="card-title">Spring MVC接口监控必备：原始路径模板获取全解析</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                本文介绍了如何利用Spring MVC的HandlerMapping请求属性获取原始路径模板，解决监控统计中因具体参数值导致路径聚合困难的问题。通过BEST_MATCHING_PATTERN_ATTRIBUTE等关键属性，开发者可以获取路径模板而非具体参数值，使监控数据更加清晰，提高系统可观测性。
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2025-11-20
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/%E5%90%8E%E7%AB%AF/" class="post-category">
-                                    后端
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/Spring/">
-                            <span class="chip bg-color">Spring</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/20251118153750.html">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/16.jpg" class="responsive-img" >
-                            
-                            <span class="card-title">Typora安装与配置</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                本文详细介绍了Typora编辑器的安装注册流程、图片上传配置方法以及主题优化技巧。包括使用PicGo-Core配置阿里云OSS图床、安装Drake主题并调整字体大小等实用操作，帮助用户高效使用Typora进行Markdown文档编辑。
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2025-11-18
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/" class="post-category">
-                                    软件工具
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/Typora/">
-                            <span class="chip bg-color">Typora</span>
-                        </a>
-                        
-                        <a href="/tags/%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0/">
-                            <span class="chip bg-color">图片上传</span>
-                        </a>
-                        
-                        <a href="/tags/%E4%B8%BB%E9%A2%98%E4%BC%98%E5%8C%96/">
-                            <span class="chip bg-color">主题优化</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-        </div>
-    </article>
-
-</main>
-
-
-<div class="container paging">
-    <div class="row">
-        <div class="col s6 m4 l4">
-            
-            <a href="/page/3/"
-               class="left btn-floating btn-large waves-effect waves-light bg-color">
-                <i class="fas fa-angle-left"></i>
-            </a>
-            
-        </div>
-        <div class="page-info col m4 l4 hide-on-small-only">
-            <div class="center-align b-text-gray">4 / 6</div>
-        </div>
-        <div class="col s6 m4 l4">
-            
-            <a href="/page/5/"
-               class="right btn-floating btn-large waves-effect waves-light bg-color">
-                <i class="fas fa-angle-right"></i>
-            </a>
-            
-        </div>
-    </div>
-</div>
-
-
-
-
-    <footer class="page-footer bg-color">
-    
-    <div class="container row center-align" style="margin-bottom: 15px !important;">
-        <div class="col s12 m8 l8 copy-right">
-            
-            <a href="https://hexo.io/" target="_blank">Hexo</a>
-            |&nbsp;&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
-            &nbsp;&copy;
-            
-                <span id="year">2025-2026</span>
-            
-            <!-- <span id="year">2025</span> -->
-            <a href="/about" target="_blank">gloamfox</a>
-            <br>
-            
-            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;&nbsp;<span
-                class="white-color">102.4k</span>&nbsp;字
-            
-            
-            
-            
-            
-            
-            <span id="busuanzi_container_site_pv">
-                |&nbsp;<i class="far fa-eye"></i>&nbsp;&nbsp;<span id="busuanzi_value_site_pv"
-                    class="white-color"></span>&nbsp;次
-            </span>
-            
-            
-            <span id="busuanzi_container_site_uv">
-                |&nbsp;<i class="fas fa-users"></i>&nbsp;&nbsp;<span id="busuanzi_value_site_uv"
-                    class="white-color"></span>&nbsp;人
-            </span>
-            
-            <br>
-            
-            <span id="sitetime">载入运行时间...</span>
-            <script>
-                function siteTime() {
-                    var seconds = 1000;
-                    var minutes = seconds * 60;
-                    var hours = minutes * 60;
-                    var days = hours * 24;
-                    var years = days * 365;
-                    var today = new Date();
-                    var startYear = "2025";
-                    var startMonth = "09";
-                    var startDate = "13";
-                    var startHour = "0";
-                    var startMinute = "0";
-                    var startSecond = "0";
-                    var todayYear = today.getFullYear();
-                    var todayMonth = today.getMonth() + 1;
-                    var todayDate = today.getDate();
-                    var todayHour = today.getHours();
-                    var todayMinute = today.getMinutes();
-                    var todaySecond = today.getSeconds();
-                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
-                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
-                    var diff = t2 - t1;
-                    var diffYears = Math.floor(diff / years);
-                    var diffDays = Math.floor((diff / days) - diffYears * 365);
-                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
-                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
-                        minutes);
-                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
-                        diffMinutes * minutes) / seconds);
-                    if (startYear == todayYear) {
-                        document.getElementById("year").innerHTML = todayYear;
-                        document.getElementById("sitetime").innerHTML = "本站已运行 " + diffDays + " 天 ";
-                    } else {
-                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
-                        document.getElementById("sitetime").innerHTML = "本站已运行 " + diffYears + " 年 " + diffDays + " 天 ";
-                    }
-                }
-                setInterval(siteTime, 1000);
-            </script>
-            
-            <br>
-            
-            <span id="icp"><img src="/medias/icp.png" style="vertical-align: text-bottom;" />
-                <a href="https://beian.miit.gov.cn/" target="_blank">鲁ICP备2026017338号-1</a>
-            </span>
-            
-        </div>
-        <div class="col s12 m4 l4 social-link social-statis">
-    <a href="https://github.com/gloamfox" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
-        <i class="fab fa-github"></i>
-    </a>
-
-
-
-    <a href="mailto:rxhome@163.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
-        <i class="fas fa-envelope-open"></i>
-    </a>
-
-
-
-
-
-
-
-    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=527884920" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 527884920" data-position="top" data-delay="50">
-        <i class="fab fa-qq"></i>
-    </a>
-
-
-
-
-
-
-
-    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
-        <i class="fas fa-rss"></i>
-    </a>
-
-</div>
-    </div>
-</footer>
-
-<div class="progress-bar"></div>
-
-
-    <!-- 搜索遮罩框 -->
-<div id="searchModal" class="modal">
-    <div class="modal-content">
-        <div class="search-header">
-            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
-            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
-                   class="search-input">
-        </div>
-        <div id="searchResult"></div>
-    </div>
-</div>
-
-<script type="text/javascript">
-$(function () {
-    var searchFunc = function (path, search_id, content_id) {
-        'use strict';
-        $.ajax({
-            url: path,
-            dataType: "xml",
-            success: function (xmlResponse) {
-                // get the contents from search data
-                var datas = $("entry", xmlResponse).map(function () {
-                    return {
-                        title: $("title", this).text(),
-                        content: $("content", this).text(),
-                        url: $("url", this).text()
-                    };
-                }).get();
-                var $input = document.getElementById(search_id);
-                var $resultContent = document.getElementById(content_id);
-                $input.addEventListener('input', function () {
-                    var str = '<ul class=\"search-result-list\">';
-                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
-                    $resultContent.innerHTML = "";
-                    if (this.value.trim().length <= 0) {
-                        return;
-                    }
-                    // perform local searching
-                    datas.forEach(function (data) {
-                        var isMatch = true;
-                        var data_title = data.title.trim().toLowerCase();
-                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
-                        var data_url = data.url;
-                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
-                        var siteOrigin = location.origin;  
-                        var index_title = -1;
-                        var index_content = -1;
-                        var first_occur = -1;
-                        // only match artiles with not empty titles and contents
-                        if (data_title !== '' && data_content !== '') {
-                            keywords.forEach(function (keyword, i) {
-                                index_title = data_title.indexOf(keyword);
-                                index_content = data_content.indexOf(keyword);
-                                if (index_title < 0 && index_content < 0) {
-                                    isMatch = false;
-                                } else {
-                                    if (index_content < 0) {
-                                        index_content = 0;
-                                    }
-                                    if (i === 0) {
-                                        first_occur = index_content;
-                                    }
-                                }
-                            });
-                        }
-                        // show search results
-                        if (isMatch) {
-                            str += "<li><a href='" + siteOrigin + data_url + "' class='search-result-title'>" + data_title + "</a>";
-                            var content = data.content.trim().replace(/<[^>]+>/g, "");
-                            if (first_occur >= 0) {
-                                // cut out 100 characters
-                                var start = first_occur - 20;
-                                var end = first_occur + 80;
-                                if (start < 0) {
-                                    start = 0;
-                                }
-                                if (start === 0) {
-                                    end = 100;
-                                }
-                                if (end > content.length) {
-                                    end = content.length;
-                                }
-                                var match_content = content.substr(start, end);
-                                // highlight all keywords
-                                keywords.forEach(function (keyword) {
-                                    var regS = new RegExp(keyword, "gi");
-                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
-                                });
-
-                                str += "<p class=\"search-result\">" + match_content + "...</p>"
-                            }
-                            str += "</li>";
-                        }
-                    });
-                    str += "</ul>";
-                    $resultContent.innerHTML = str;
-                });
-            }
-        });
-    };
-
-    searchFunc('/search.xml', 'searchInput', 'searchResult');
-});
-</script>
-
-    <!-- 回到顶部按钮 -->
-<div id="backTop" class="top-scroll">
-    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
-        <i class="fas fa-arrow-up"></i>
-    </a>
-</div>
-
-
-    <script src="/libs/materialize/materialize.min.js"></script>
-    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
-    <script src="/libs/aos/aos.js"></script>
-    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
-    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
-    <script src="/js/matery.js"></script>
-
-    <!-- Baidu Analytics -->
-
-    <!-- Baidu Push -->
-
-<script>
-    (function () {
-        var bp = document.createElement('script');
-        var curProtocol = window.location.protocol.split(':')[0];
-        if (curProtocol === 'https') {
-            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
-        } else {
-            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-        }
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(bp, s);
-    })();
-</script>
-
-    
-    <script src="/libs/others/clicklove.js" async="async"></script>
-    
-    
-    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
-    
-
-    
-
-    
-
-	
-    
-
-    
-    
-    <script type="text/javascript" size="150" alpha='0.6'
-        zIndex="-1" src="/libs/background/ribbon-refresh.min.js" async="async"></script>
-    
-
-    
-
-    
-    <script src="/libs/instantpage/instantpage.js" type="module"></script>
-    
-
-<!-- hexo injector body_end start -->
+  }
+}
+btf.addGlobalFn('pjaxSendOnce', () => { typed.destroy() }, 'typedDestroy')
+</script><script>function subtitleType () {
+  typedJSFn.processSubtitle(["君子以顺德，积小以高大。","种一棵树最好的时间是十年前，其次是现在。"])
+}
+typedJSFn.run(subtitleType)</script></div><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="false"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="local-search-input"><input placeholder="搜索文章" type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.5.4"></script></div></div><!-- hexo injector body_end start -->
 <script>
 (function() {
   document.querySelectorAll('.obsidian-tab-btn').forEach(function(btn) {
@@ -1684,6 +639,4 @@ $(function () {
   });
 })();
 </script>
-<!-- hexo injector body_end end --></body>
-
-</html>
+<!-- hexo injector body_end end --></body></html>
