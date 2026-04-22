@@ -1,0 +1,738 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>零代码经验，我用Claude Code搓出的生产力工具 | 暮色之狐</title><meta name="author" content="gloamfox"><meta name="copyright" content="gloamfox"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="SmartScribe：一个让AI自动帮你整理笔记的Obsidian插件。支持6大AI平台，一键生成标题、标签、分类、摘要，还能智能优化写作。 这个项目的特殊之处不在于功能——在于它的代码100%由Claude Code生成。开发者没有写过一行代码。 GitHub地址：https:&#x2F;&#x2F;github.com&#x2F;gloamfox&#x2F;obsidian-smart-scribe 核心成果   指标 数据 说明">
+<meta property="og:type" content="article">
+<meta property="og:title" content="零代码经验，我用Claude Code搓出的生产力工具">
+<meta property="og:url" content="https://gloamfox.cc/20260422154218.html">
+<meta property="og:site_name" content="暮色之狐">
+<meta property="og:description" content="SmartScribe：一个让AI自动帮你整理笔记的Obsidian插件。支持6大AI平台，一键生成标题、标签、分类、摘要，还能智能优化写作。 这个项目的特殊之处不在于功能——在于它的代码100%由Claude Code生成。开发者没有写过一行代码。 GitHub地址：https:&#x2F;&#x2F;github.com&#x2F;gloamfox&#x2F;obsidian-smart-scribe 核心成果   指标 数据 说明">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://oss.012700.xyz/butterfly/2024/11/butterfly-docs-changelog-cover-9.png">
+<meta property="article:published_time" content="2026-04-22T15:42:18.000Z">
+<meta property="article:modified_time" content="2026-04-22T08:07:07.479Z">
+<meta property="article:author" content="gloamfox">
+<meta property="article:tag" content="AI编程">
+<meta property="article:tag" content="Obsidian">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://oss.012700.xyz/butterfly/2024/11/butterfly-docs-changelog-cover-9.png"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "零代码经验，我用Claude Code搓出的生产力工具",
+  "url": "https://gloamfox.cc/20260422154218.html",
+  "image": "https://oss.012700.xyz/butterfly/2024/11/butterfly-docs-changelog-cover-9.png",
+  "datePublished": "2026-04-22T15:42:18.000Z",
+  "dateModified": "2026-04-22T08:07:07.479Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "gloamfox",
+      "url": "https://gloamfox.cc"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://gloamfox.cc/20260422154218.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.5.4"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"pagination":{"enable":false,"hitsPerPage":8},"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":150,"languages":{"author":"作者: gloamfox","link":"链接: ","source":"来源: 暮色之狐","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.13.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '零代码经验，我用Claude Code搓出的生产力工具',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><!-- hexo injector head_end start -->
+<style>
+.obsidian-callout {
+  margin: 1.5em 0;
+  border-radius: 8px;
+  border-left: 4px solid var(--callout-color, #448aff);
+  background: var(--callout-bg, #e3f2fd);
+  overflow: hidden;
+}
+
+.obsidian-callout-header {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--callout-color, #448aff);
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.obsidian-callout-icon {
+  margin-right: 8px;
+  font-size: 16px;
+  line-height: 1;
+}
+
+.obsidian-callout-title {
+  text-transform: capitalize;
+}
+
+.obsidian-callout-content {
+  padding: 16px;
+  color: var(--text-color, #333);
+}
+
+.obsidian-callout-content > *:first-child {
+  margin-top: 0;
+}
+
+.obsidian-callout-content > *:last-child {
+  margin-bottom: 0;
+}
+
+.obsidian-callout-content p {
+  margin: 0.5em 0;
+}
+
+.obsidian-callout-content ul,
+.obsidian-callout-content ol {
+  margin: 0.5em 0;
+  padding-left: 1.5em;
+}
+
+.obsidian-callout-content pre {
+  margin: 1em 0;
+  border-radius: 6px;
+}
+
+.obsidian-callout-content code {
+  font-family: 'SF Mono', Monaco, 'Cascadia Code', monospace;
+  background: rgba(0,0,0,0.05);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+/* Callout type styles */
+.obsidian-callout-note {
+  --callout-color: #448aff;
+  --callout-bg: #e3f2fd;
+}
+
+.obsidian-callout-tip {
+  --callout-color: #00c853;
+  --callout-bg: #e8f5e9;
+}
+
+.obsidian-callout-warning {
+  --callout-color: #ff9100;
+  --callout-bg: #fff3e0;
+}
+
+.obsidian-callout-danger {
+  --callout-color: #ff1744;
+  --callout-bg: #ffebee;
+}
+
+.obsidian-callout-info {
+  --callout-color: #00b0ff;
+  --callout-bg: #e1f5fe;
+}
+
+.obsidian-callout-success {
+  --callout-color: #00c853;
+  --callout-bg: #e8f5e9;
+}
+
+.obsidian-callout-example {
+  --callout-color: #7c4dff;
+  --callout-bg: #ede7f6;
+}
+
+.obsidian-callout-quote {
+  --callout-color: #9e9e9e;
+  --callout-bg: #f5f5f5;
+}
+
+.obsidian-callout-bug {
+  --callout-color: #f50057;
+  --callout-bg: #fce4ec;
+}
+
+.obsidian-callout-abstract {
+  --callout-color: #00bfa5;
+  --callout-bg: #e0f2f1;
+}
+
+.obsidian-callout-question {
+  --callout-color: #64dd17;
+  --callout-bg: #f1f8e9;
+}
+
+.obsidian-callout-failure {
+  --callout-color: #ff5252;
+  --callout-bg: #ffebee;
+}
+
+.obsidian-callout-important {
+  --callout-color: #ffd600;
+  --callout-bg: #fffde7;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .obsidian-callout {
+    --text-color: #e0e0e0;
+  }
+
+  .obsidian-callout-note {
+    --callout-color: #448aff;
+    --callout-bg: #1a237e;
+  }
+
+  .obsidian-callout-tip {
+    --callout-color: #00c853;
+    --callout-bg: #1b5e20;
+  }
+
+  .obsidian-callout-warning {
+    --callout-color: #ff9100;
+    --callout-bg: #e65100;
+  }
+
+  .obsidian-callout-danger {
+    --callout-color: #ff1744;
+    --callout-bg: #b71c1c;
+  }
+
+  .obsidian-callout-info {
+    --callout-color: #00b0ff;
+    --callout-bg: #01579b;
+  }
+
+  .obsidian-callout-success {
+    --callout-color: #00c853;
+    --callout-bg: #1b5e20;
+  }
+
+  .obsidian-callout-example {
+    --callout-color: #7c4dff;
+    --callout-bg: #311b92;
+  }
+
+  .obsidian-callout-quote {
+    --callout-color: #9e9e9e;
+    --callout-bg: #424242;
+  }
+
+  .obsidian-callout-bug {
+    --callout-color: #f50057;
+    --callout-bg: #880e4f;
+  }
+
+  .obsidian-callout-abstract {
+    --callout-color: #00bfa5;
+    --callout-bg: #004d40;
+  }
+
+  .obsidian-callout-question {
+    --callout-color: #64dd17;
+    --callout-bg: #33691e;
+  }
+
+  .obsidian-callout-failure {
+    --callout-color: #ff5252;
+    --callout-bg: #b71c1c;
+  }
+
+  .obsidian-callout-important {
+    --callout-color: #ffd600;
+    --callout-bg: #f57f17;
+  }
+
+  .obsidian-callout-content code {
+    background: rgba(255,255,255,0.1);
+  }
+}
+</style>
+
+<style>
+.obsidian-tabs {
+  margin: 1.5em 0;
+  border: 1px solid var(--tab-border-color, #e0e0e0);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--tab-bg, #fafafa);
+}
+
+.obsidian-tabs-nav {
+  display: flex;
+  background: var(--tab-nav-bg, #f0f0f0);
+  border-bottom: 1px solid var(--tab-border-color, #e0e0e0);
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.obsidian-tabs-nav::-webkit-scrollbar {
+  display: none;
+}
+
+.obsidian-tab-btn {
+  padding: 12px 20px;
+  border: none;
+  background: transparent;
+  color: var(--tab-text-color, #666);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+}
+
+.obsidian-tab-btn:hover {
+  color: var(--tab-hover-color, #333);
+  background: var(--tab-hover-bg, rgba(0,0,0,0.03));
+}
+
+.obsidian-tab-btn.active {
+  color: var(--tab-active-color, #448aff);
+  border-bottom-color: var(--tab-active-color, #448aff);
+  background: var(--tab-bg, #fafafa);
+}
+
+.obsidian-tabs-content {
+  padding: 20px;
+  background: var(--tab-bg, #fafafa);
+}
+
+.obsidian-tab-panel {
+  display: none;
+  animation: fadeIn 0.3s ease;
+}
+
+.obsidian-tab-panel.active {
+  display: block;
+}
+
+.obsidian-tab-panel > *:first-child {
+  margin-top: 0;
+}
+
+.obsidian-tab-panel > *:last-child {
+  margin-bottom: 0;
+}
+
+.obsidian-tab-panel pre {
+  margin: 1em 0;
+  border-radius: 6px;
+}
+
+.obsidian-tab-panel code {
+  font-family: 'SF Mono', Monaco, 'Cascadia Code', monospace;
+}
+
+/* Fix code block background color inside tabs */
+.obsidian-tab-panel pre code {
+  background: transparent !important;
+}
+
+.obsidian-tab-panel .highlight {
+  background: transparent !important;
+}
+
+.obsidian-tab-panel .highlight pre {
+  background: var(--code-bg, #f5f5f5) !important;
+}
+
+.obsidian-tab-panel figure.highlight {
+  background: var(--code-bg, #f5f5f5) !important;
+}
+
+.obsidian-tab-panel td.gutter {
+  background: var(--code-gutter-bg, #f0f0f0) !important;
+}
+
+.obsidian-tab-panel td.code {
+  background: var(--code-bg, #f5f5f5) !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  .obsidian-tab-panel .highlight pre,
+  .obsidian-tab-panel figure.highlight {
+    --code-bg: #2d2d2d;
+    --code-gutter-bg: #252525;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .obsidian-tabs {
+    --tab-bg: #1e1e1e;
+    --tab-nav-bg: #252526;
+    --tab-border-color: #333;
+    --tab-text-color: #999;
+    --tab-hover-color: #ccc;
+    --tab-hover-bg: rgba(255,255,255,0.05);
+    --tab-active-color: #58a6ff;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+</style>
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="暮色之狐" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" /></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">66</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">85</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 统计</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/tags"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories"><i class="fa-fw fas fa-bookmark"></i><span> 分类</span></a></li><li><a class="site-page child" href="/archives"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa-user-circle"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://oss.012700.xyz/butterfly/2024/11/butterfly-docs-changelog-cover-9.png);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><img class="site-icon" src="/img/logo.png" ><span class="site-name">暮色之狐</span></a><a class="nav-page-title" href="/"><span class="site-name">零代码经验，我用Claude Code搓出的生产力工具</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 统计</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/tags"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories"><i class="fa-fw fas fa-bookmark"></i><span> 分类</span></a></li><li><a class="site-page child" href="/archives"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa-user-circle"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">零代码经验，我用Claude Code搓出的生产力工具</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2026-04-22T15:42:18.000Z" title="发表于 2026-04-22 15:42:18">2026-04-22</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-04-22T08:07:07.479Z" title="更新于 2026-04-22 08:07:07">2026-04-22</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/">软件工具</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><p><strong>SmartScribe</strong>：一个让AI自动帮你整理笔记的Obsidian插件。支持6大AI平台，一键生成标题、标签、分类、摘要，还能智能优化写作。</p>
+<p>这个项目的特殊之处不在于功能——<strong>在于它的代码100%由Claude Code生成</strong>。开发者没有写过一行代码。</p>
+<p><strong>GitHub地址</strong>：<a target="_blank" rel="noopener" href="https://github.com/gloamfox/obsidian-smart-scribe">https://github.com/gloamfox/obsidian-smart-scribe</a></p>
+<h2 id="核心成果"><a href="#核心成果" class="headerlink" title="核心成果"></a>核心成果</h2><table>
+<thead>
+<tr>
+<th>指标</th>
+<th>数据</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>代码行数</td>
+<td>约3000行</td>
+<td>TypeScript，零人工编写</td>
+</tr>
+<tr>
+<td>开发时间</td>
+<td>3个晚上</td>
+<td>每天1-2小时，总计约8小时</td>
+</tr>
+<tr>
+<td>功能模块</td>
+<td>2大核心</td>
+<td>AI元数据生成 + AI文本优化</td>
+</tr>
+<tr>
+<td>支持平台</td>
+<td>6个</td>
+<td>Claude、OpenAI、DeepSeek、通义千问、智谱、讯飞星火</td>
+</tr>
+<tr>
+<td>交互入口</td>
+<td>4处</td>
+<td>命令面板、文件右键、编辑器右键、设置面板</td>
+</tr>
+</tbody></table>
+<p><strong>这不是概念验证，这是一个可上架Obsidian官方插件市场的完整产品。</strong></p>
+<h2 id="功能特性"><a href="#功能特性" class="headerlink" title="功能特性"></a>功能特性</h2><h3 id="AI元数据生成：让笔记自己长出手脚"><a href="#AI元数据生成：让笔记自己长出手脚" class="headerlink" title="AI元数据生成：让笔记自己长出手脚"></a>AI元数据生成：让笔记自己长出手脚</h3><p>传统整理笔记的流程：写完后手动想标题、翻标签库找合适的、决定放哪个文件夹、写摘要。</p>
+<p>SmartScribe把这个流程压缩到一次右键点击。</p>
+<p><strong>它会做什么：</strong></p>
+<ul>
+<li>读取你Vault里已有的标签，优先复用——保持标签体系的一致性</li>
+<li>分析文件夹结构，给出分类建议</li>
+<li>生成标题、标签、分类、关键词、摘要、分享标记</li>
+<li>预览后再应用，避免AI”自作主张”</li>
+</ul>
+<p><strong>关键设计：Tag Reuse</strong></p>
+<p>不是每次都生成全新标签，而是先扫描你的Vault里已有标签，让AI从中挑选+少量补充。<br>这样用久了，标签体系会越来越统一，而不是越来越乱。</p>
+<h3 id="AI文本优化：双面板预览，改哪看哪"><a href="#AI文本优化：双面板预览，改哪看哪" class="headerlink" title="AI文本优化：双面板预览，改哪看哪"></a>AI文本优化：双面板预览，改哪看哪</h3><p>选中一段文字（或不选，默认优化全文），触发优化。</p>
+<p><strong>双面板设计：</strong></p>
+<ul>
+<li><p><strong>左面板</strong>：优化后的文本，可直接编辑</p>
+</li>
+<li><p><strong>右面板</strong>：AI给出的改进建议（告诉你改了什么、为什么）</p>
+</li>
+</ul>
+<p>你可以直接应用，也可以先预览再决定。支持设置里关闭预览，直接替换。</p>
+<h3 id="六平台支持：不被任何一家AI绑架"><a href="#六平台支持：不被任何一家AI绑架" class="headerlink" title="六平台支持：不被任何一家AI绑架"></a>六平台支持：不被任何一家AI绑架</h3><table>
+<thead>
+<tr>
+<th>平台</th>
+<th>默认模型</th>
+<th>特点</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Claude</td>
+<td>claude-sonnet-4-6</td>
+<td>长上下文理解与安全对齐能力突出</td>
+</tr>
+<tr>
+<td>OpenAI</td>
+<td>gpt-4o</td>
+<td>综合性能均衡且多模态能力强</td>
+</tr>
+<tr>
+<td>DeepSeek</td>
+<td>deepseek-chat</td>
+<td>高性价比开源模型</td>
+</tr>
+<tr>
+<td>通义千问</td>
+<td>qwen-plus</td>
+<td>擅长中文商业应用、多模态交互</td>
+</tr>
+<tr>
+<td>智谱AI</td>
+<td>glm-4</td>
+<td>擅长知识问答、文本理解</td>
+</tr>
+<tr>
+<td>讯飞星火</td>
+<td>pro</td>
+<td>语音出身，文本也不错</td>
+</tr>
+</tbody></table>
+<p>每个平台独立配置API Key、模型、Temperature、Max Tokens。想用哪家切哪家。</p>
+<h2 id="怎么用"><a href="#怎么用" class="headerlink" title="怎么用"></a>怎么用</h2><h3 id="直接用（零门槛）"><a href="#直接用（零门槛）" class="headerlink" title="直接用（零门槛）"></a>直接用（零门槛）</h3><ol>
+<li>从GitHub Release下载最新版本</li>
+<li>解压到Vault的 <code>.obsidian/plugins/smartscribe/</code> 文件夹</li>
+<li>Obsidian设置里启用插件</li>
+</ol>
+<p><strong>推荐体验路线：</strong></p>
+<table>
+<thead>
+<tr>
+<th>顺序</th>
+<th>操作</th>
+<th>效果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>打开任意笔记，右键选择”AI生成元数据”</td>
+<td>弹出预览窗口，显示生成的标题、标签、分类、摘要</td>
+</tr>
+<tr>
+<td>2</td>
+<td>点击”应用”</td>
+<td>元数据写入笔记frontmatter</td>
+</tr>
+<tr>
+<td>3</td>
+<td>选中一段文字，右键”AI优化文本”</td>
+<td>双面板弹出，左侧可编辑优化结果，右侧看改进建议</td>
+</tr>
+<tr>
+<td>4</td>
+<td>去设置里切换AI平台</td>
+<td>对比不同模型的生成风格</td>
+</tr>
+</tbody></table>
+<h3 id="进阶配置"><a href="#进阶配置" class="headerlink" title="进阶配置"></a>进阶配置</h3><p><strong>Temperature调参指南：</strong></p>
+<table>
+<thead>
+<tr>
+<th>场景</th>
+<th>推荐Temperature</th>
+<th>效果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>元数据生成</td>
+<td>0.3-0.5</td>
+<td>稳定、可预期，标签复用率高</td>
+</tr>
+<tr>
+<td>文本优化</td>
+<td>0.5-0.7</td>
+<td>有一定创造性，但不离谱</td>
+</tr>
+<tr>
+<td>头脑风暴</td>
+<td>0.8-1.0</td>
+<td>发散性强，适合探索新角度</td>
+</tr>
+</tbody></table>
+<p><strong>Max Tokens设置：</strong></p>
+<ul>
+<li>元数据生成：1024足够</li>
+<li>文本优化：根据原文长度，建议原文长度的1.5倍</li>
+</ul>
+<h2 id="这背后的意义：AI生成代码的临界点"><a href="#这背后的意义：AI生成代码的临界点" class="headerlink" title="这背后的意义：AI生成代码的临界点"></a>这背后的意义：AI生成代码的临界点</h2><p>这个项目的价值不只是”又一个Obsidian插件”。<br><strong>它是一个信号：AI生成代码已经跨过了”能用”的门槛，到达了”能卖”的门槛。</strong></p>
+<p>让我列几个事实：</p>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>传统开发</th>
+<th>这次开发</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>代码经验</td>
+<td>需要多年积累</td>
+<td>零经验</td>
+</tr>
+<tr>
+<td>开发时间</td>
+<td>数周</td>
+<td>3个晚上</td>
+</tr>
+<tr>
+<td>代码质量</td>
+<td>依赖个人水平</td>
+<td>一致、规范、可维护</td>
+</tr>
+<tr>
+<td>架构设计</td>
+<td>需要预先规划</td>
+<td>AI自动建议最佳实践</td>
+</tr>
+<tr>
+<td>Bug修复</td>
+<td>逐行调试</td>
+<td>描述问题，AI直接改</td>
+</tr>
+</tbody></table>
+<p><strong>不是”AI辅助编程”，是”AI主导编程”。</strong><br>人类角色从”写代码的人”变成了”描述需求的人”和”验收结果的人”。</p>
+<h3 id="开发过程的真实记录"><a href="#开发过程的真实记录" class="headerlink" title="开发过程的真实记录"></a>开发过程的真实记录</h3><p>整个开发流程是这样的：</p>
+<ol>
+<li><strong>需求描述</strong>：”我要一个Obsidian插件，能自动生成笔记的元数据”</li>
+<li><strong>架构设计</strong>：Claude Code生成Obsidian的项目结构</li>
+<li><strong>逐功能实现</strong>：每个功能用自然语言描述，AI生成代码</li>
+<li><strong>调试</strong>：不是看报错逐行修，而是体验功能，将不符合要求的描述给ClaudeCode，它定位并修复</li>
+<li><strong>优化</strong>：”这个弹窗太丑了，改成左右分栏”——AI直接重写UI组件</li>
+</ol>
+<p><strong>关键转折点</strong>：当发现AI生成的代码结构比我自己设计的更合理时，我彻底放弃了<strong>先想明白再让AI写</strong>的模式，改为<strong>直接描述要什么，让AI决定怎么实现</strong>。</p>
+<h3 id="对开发者的启示"><a href="#对开发者的启示" class="headerlink" title="对开发者的启示"></a>对开发者的启示</h3><p><strong>如果你是有经验的开发者：</strong><br>AI不是来抢你饭碗的，是来把你从重复劳动里解放出来的。你可以把精力放在架构设计、产品决策、复杂逻辑上，把代码、UI组件、测试用例交给AI。</p>
+<p><strong>如果你是非技术背景的产品&#x2F;运营&#x2F;创作者：</strong><br>门槛已经消失了。你不需要学编程，只需要学”怎么跟AI描述清楚你要什么”。这个插件的存在证明：一个完全不懂代码的人，用3个晚上就能做出一个能上架的工具产品。</p>
+<h2 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h2><p>这个项目的核心价值不是”自动生成笔记元数据”——<strong>是证明了AI生成代码已经到达了可用的水准</strong>。<br>零代码经验，8小时，3000行TypeScript，一个功能完整的Obsidian插件。</p>
+<p><strong>不是未来已来。是临界点已过。</strong></p>
+<div class="obsidian-callout obsidian-callout-info" id="obsidian-callout-casyezlab"><div class="obsidian-callout-header"><span class="obsidian-callout-icon">&#8505;</span><span class="obsidian-callout-title">INFO</span></div><div class="obsidian-callout-content"><p>“当工具的生产成本趋近于零，真正的竞争力回到了’要解决什么问题’和’怎么描述清楚这个问题’。”</p>
+</div></div>
+<p>如果你也在用Claude Code做类似尝试，欢迎交流。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://gloamfox.cc">gloamfox</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://gloamfox.cc/20260422154218.html">https://gloamfox.cc/20260422154218.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://gloamfox.cc" target="_blank">暮色之狐</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/AI%E7%BC%96%E7%A8%8B/">AI编程</a><a class="post-meta__tags" href="/tags/Obsidian/">Obsidian</a></div><div class="post-share"><div class="social-share" data-image="https://oss.012700.xyz/butterfly/2024/11/butterfly-docs-changelog-cover-9.png" data-sites="facebook,x,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i>赞助</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/wechat.png" target="_blank"><img class="post-qr-code-img" src="/img/wechat.png" /></a><div class="post-qr-code-desc">wechat</div></li><li class="reward-item"><a href="/img/alipay.jpg" target="_blank"><img class="post-qr-code-img" src="/img/alipay.jpg" /></a><div class="post-qr-code-desc">alipay</div></li></ul></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related full-width" href="/20260416093521.html" title="容器化后内存告警不断？日志“写爆”了Page Cache！"><img class="cover" src="https://oss.012700.xyz/butterfly/2024/11/butterfly-docs-changelog-cover-6.png" onerror="onerror=null;src='/img/404.jpg'" ><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">容器化后内存告警不断？日志“写爆”了Page Cache！</div></div><div class="info-2"><div class="info-item-1">&#128161;Tip服务在虚拟机上跑得好好的，容器化上 K8s 后却频繁触发内存超限告警，甚至 OOM Kill？堆内存才用了不到 10%，Pod 内存却飙到 80% 以上，到底是什么情况？本文将层层拆解，揭开容器内存暴涨的真相。  诡异的现象：JVM 很健康，Pod 却要“撑爆”了Java 服务容器化部署到 Kubernetes 后，Pod 内存使用率持续缓慢上升，频繁超过 80%，甚至触发 OOM 导致 Pod 重启。 资源配置如下： 123456789resources:  requests:    memory: 2200Mi    cpu: 1000m  limits:    memory: 3000Mi    cpu: 3000m    JAVA_OPTS=&#x27;-Xmx2000m&#x27;  按理说，JVM 堆内存只占 2000Mi，Pod limit 给了 3000Mi，还有近 1G 的空间给堆外、Metaspace 等，应该足够富裕。可为什么内存会超限呢？ 排查过程：堆内存正常，堆外也正常，那内存去哪了？首先排查 JVM 堆内存进入容器，用 jhsd...</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/20260410163535.html" title="Claude Code通关手册（五）：组建你的AI专家团队，子代理系统"><img class="cover" src="https://oss.012700.xyz/butterfly/2024/11/butterfly-docs-changelog-cover-7.png" ><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-04-10</div><div class="info-item-2">Claude Code通关手册（五）：组建你的AI专家团队，子代理系统</div></div><div class="info-2"><div class="info-item-1">&#128161;Tip这是Claude Code通关手册的第五篇，这一篇将把“万能助手”变成一支专业队伍，各司其职、并行作战，这才是 Claude Code 的正确打开方式  先来看一个熟悉的场景你面对一个复杂的任务，突然萌生了这样的想法： “要是能有个专门负责探索代码库的助手，再有个专门审查代码的专家，还有个专注写测试的工程师，大家各司其职、同时开工，那该多爽？” ——这不是天方夜谭，这正是 Claude Code 子代理（Subagent）的核心价值。 什么是子代理？简单说，子代理就是给 AI 指定一个专门的角色。不再说“帮我搞定所有事”，而是明确告诉它：“你现在是测试员”、“你负责安全审查”、“你是重构专家”。 在技术层面上，每个子代理都是一个拥有独立上下文窗口的专用 AI 实例。当你在 Claude Code 主对话中下达任务时，Claude 可以判断该任务是否适合委派给某个子代理，由子代理独立完成后将结果摘要返回主对话。 为什么需要子代理？Claude Code功能确认很强大，但是在实际使用的过程中就会发现当我们让Cladue Code执行一些复杂的任务时并没有得到很...</div></div></div></a><a class="pagination-related" href="/20260318103427.html" title="从零到一键发布：Obsidian + Hexo + GitHub Pages 个人博客搭建指南"><img class="cover" src="https://oss.012700.xyz/butterfly/2024/11/butterfly-docs-changelog-cover-8.png" ><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-03-18</div><div class="info-item-2">从零到一键发布：Obsidian + Hexo + GitHub Pages 个人博客搭建指南</div></div><div class="info-2"><div class="info-item-1">前言我一直使用 Obsidian 管理笔记，它很好地满足了我的写作需求。但我始终渴望拥有一个属于自己的博客——一方面希望将积累的知识分享出去，获得反馈；另一方面，通过维护博客倒逼自己持续写作和总结，提升表达能力。 本文将完整记录我搭建博客的过程，并重点解决从 Obsidian 写作到博客发布的自动化流程。如果你也想打造一个“赛博小窝”，希望我的经验能给你带来一些参考。 搭建方案我的博客基于以下工具组合实现：  写作端： Obsidian，笔记的写作组织工具。 同步插件：Enveloppe：将本地文章同步到GitHub的Obsidian插件。 博客框架： Hexo：博客站点使用的框架。 主题：hexo-theme-matery：简洁美观的响应式主题。 托管平台：GitHub Pages：免费静态网页托管。  由于我不希望公开所有文章的源文件，我创建了两个 GitHub 仓库：  私有仓库 hexo-project – 存放 Hexo 博客配置、主题和文章源文件。  公共仓库 &lt;用户名&gt;.github.io – 存放 Hexo 生成的静态文件，供 GitHub Pages...</div></div></div></a><a class="pagination-related" href="/20260413104209.html" title="Claude Code 通关手册（七）：推荐 5 个 Hooks，代码质量提升 3 倍"><img class="cover" src="https://oss.012700.xyz/butterfly/2024/11/butterfly-docs-changelog-cover-3.png" ><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-04-13</div><div class="info-item-2">Claude Code 通关手册（七）：推荐 5 个 Hooks，代码质量提升 3 倍</div></div><div class="info-2"><div class="info-item-1">&#128161;TIP这是Claude Code通关手册的第八篇，推荐5个实用的Hook，代码质量提升 3 倍  上周三下午，我让 Claude Code 帮我重构一个老模块。 它干得挺快，噼里啪啦一顿输出。我切出去喝了口水，回来一看——它正准备把我一个还没有提交git的源文件直接覆盖掉。 手抖着点了“拒绝”，后背全是冷汗。 那一刻我突然意识到：不是 Claude 坏，是我太信任它了。 每次它问“我可以执行这个命令吗？”我都点“允许”，点多了就麻了。它要 rm -rf 我也点，它要改 .env 我也点——我把 AI 当成了不会犯错的神，但它只是个能力很强的实习生。 我翻了一遍 Claude Code 的文档，又刷了创始人 Boris 的 X。他分享了自己在用的几个 hooks，我全抄下来，砍掉一半，最后剩下 5 个。装上之后，Claude 还是那个 Claude，但我再也没怕过它。 Hook 到底是什么？3 秒钟理解你每次让 Claude 跑命令、改文件，它都会弹窗问你“行不行？”——这就是最后一道防线。 Hook 就是在弹窗之前或之后，自动跑一段你写好的脚本。  你想让它自动...</div></div></div></a><a class="pagination-related" href="/20260327132732.html" title="Claude Code通关手册（一）：转角遇到爱，真香体验"><img class="cover" src="https://oss.012700.xyz/butterfly/2024/11/butterfly-docs-changelog-cover-1.png" ><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-03-27</div><div class="info-item-2">Claude Code通关手册（一）：转角遇到爱，真香体验</div></div><div class="info-2"><div class="info-item-1">&#128161;Tip这是Claude Code通关手册的第一篇。本系列将带你从零开始，系统掌握Claude Code的完整知识体系，从CLI命令到自动化工作流，从个人使用到团队协作。  AI发展如火如荼，你可能已经在使用各种AI编程工具。每天打开编辑器，自动补全代码、生成测试用例，或协助编写需求代码。在编辑器中与AI交互，通过不断修改完善，工作效率得到显著提升。 然而，大名鼎鼎的Claude Code安装完成后，仅呈现为一个简单的命令终端。这个看似简陋的终端工具中，却蕴藏着一套与其他工具截然不同的AI编程哲学。 今天这篇文章，我不会铺天盖地讲解其功能列表，而是带你搞清楚三件事：Claude Code的具体价值、快速安装并运行Claude Code，以及它为何能火遍全网，让人爱不释手？ Claude Code的价值Claude Code与其他AI工具不同，它开启了一个新的竞争赛道。打个比方你就会明白： 去厨房做一顿饭：  Copilot 是菜谱App。搜索”番茄炒蛋”，它告诉你：番茄切块、鸡蛋打散、热油下锅、先炒蛋再炒番茄……步骤写得清清楚楚，但切菜、开火、翻炒、调味，全是自己...</div></div></div></a><a class="pagination-related" href="/20260302020435.html" title="Obsidian打造个人知识库"><img class="cover" src="https://oss.012700.xyz/butterfly/2024/11/butterfly-docs-changelog-cover-9.png" ><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-03-02</div><div class="info-item-2">Obsidian打造个人知识库</div></div><div class="info-2"><div class="info-item-1">之前都是使用Typora编辑笔记和文档，Markdown写笔记或者文档简直不要太方便，熟练语法后，双手可以不离开键盘，目光始终聚焦再文字上面，写作体验非常流畅。 随着文档的增多，发现文档越来越不好管理，尝试语雀、印象笔记、腾讯文档、飞书文档等软件，功能虽然很多但是总感觉和自己不太搭，而且软件商业化的原因开始绑架免费用户，虽然能够理解但还是很不爽。尝试了Obsidian觉得眼前一亮，颜值是第一吸引力，可以自由搭配的插件以及主题可以解决我的需求。 数据同步身为一名资深的白嫖党，果断拒绝了Obsidian自带的同步功能，可以使用GitHub进行替代，无限容量，私人仓库也是完全免费，用来管理笔记文档简直是降维打击。总的来说就是建立一个git仓库，把笔记都丢进去，将一些文件和目录都忽略掉，然后使用Obsidian打开这个git仓库作为Obsidian的仓库使用。由于Obsidian使用过程中有些自带的文件一直变化，直接忽略掉。  由于国内网络的问题，我使用的是阿里云效的代码仓库进行托管  .gitignore 文件内容 123456789101112## obsidian的工作区配置.ob...</div></div></div></a><a class="pagination-related" href="/20260408205456.html" title="Claude Code通关手册（三）：CLAUDE.md深度实战"><img class="cover" src="https://oss.012700.xyz/butterfly/2024/11/butterfly-docs-changelog-cover-8.png" ><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-04-08</div><div class="info-item-2">Claude Code通关手册（三）：CLAUDE.md深度实战</div></div><div class="info-2"><div class="info-item-1">&#128161;TIP这是Claude Code通关手册的第三篇，在上一篇中，我们搞定了权限设置，让Claude Code安全可控地访问你的文件。今天，我们将更进一步——用CLAUDE.md赋予它长期记忆，彻底告别每次对话都要重复交代技术栈的烦恼。  我来描述一个场景，你看有没有中过招——   周一早上，你打开终端，启动 Claude Code，想赶紧收尾上周遗留的功能，你输入：为 OrderService 增加一个批量查询订单的方法，根据订单 ID 列表批量返回订单详情。 Claude 很快给出了一段代码。你扫了一眼，眉头就皱起来了——它用了 ArrayList 的 for 循环 + 单条 SQL，一条一条查。而你们项目里明明已经封装好了 batchQuery()。 你打字纠正：用 batchQuery()，不要手写循环查数据库。 Claude 回复：好的，我改用 batchQuery()。 然后重新生成代码——这次又忘了你们约定的异常处理规范：不要吞掉异常，也不要直接 e.printStackTrace()，而是要用 log.error 并抛出业务异常。 你补充：异常用 B...</div></div></div></a></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" /></div><div class="author-info-name">gloamfox</div><div class="author-info-description">君子以顺德，积小以高大。</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">66</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">85</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/gloamfox"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/gloamfox" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:rxhome@163.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">此博客为记录工作学习总结所用，供网友阅读参考，如有侵权，请通知我，我会核实后进行处理。</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83%E6%88%90%E6%9E%9C"><span class="toc-number">1.</span> <span class="toc-text">核心成果</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8A%9F%E8%83%BD%E7%89%B9%E6%80%A7"><span class="toc-number">2.</span> <span class="toc-text">功能特性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#AI%E5%85%83%E6%95%B0%E6%8D%AE%E7%94%9F%E6%88%90%EF%BC%9A%E8%AE%A9%E7%AC%94%E8%AE%B0%E8%87%AA%E5%B7%B1%E9%95%BF%E5%87%BA%E6%89%8B%E8%84%9A"><span class="toc-number">2.1.</span> <span class="toc-text">AI元数据生成：让笔记自己长出手脚</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#AI%E6%96%87%E6%9C%AC%E4%BC%98%E5%8C%96%EF%BC%9A%E5%8F%8C%E9%9D%A2%E6%9D%BF%E9%A2%84%E8%A7%88%EF%BC%8C%E6%94%B9%E5%93%AA%E7%9C%8B%E5%93%AA"><span class="toc-number">2.2.</span> <span class="toc-text">AI文本优化：双面板预览，改哪看哪</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%AD%E5%B9%B3%E5%8F%B0%E6%94%AF%E6%8C%81%EF%BC%9A%E4%B8%8D%E8%A2%AB%E4%BB%BB%E4%BD%95%E4%B8%80%E5%AE%B6AI%E7%BB%91%E6%9E%B6"><span class="toc-number">2.3.</span> <span class="toc-text">六平台支持：不被任何一家AI绑架</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%8E%E4%B9%88%E7%94%A8"><span class="toc-number">3.</span> <span class="toc-text">怎么用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%B4%E6%8E%A5%E7%94%A8%EF%BC%88%E9%9B%B6%E9%97%A8%E6%A7%9B%EF%BC%89"><span class="toc-number">3.1.</span> <span class="toc-text">直接用（零门槛）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%9B%E9%98%B6%E9%85%8D%E7%BD%AE"><span class="toc-number">3.2.</span> <span class="toc-text">进阶配置</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%99%E8%83%8C%E5%90%8E%E7%9A%84%E6%84%8F%E4%B9%89%EF%BC%9AAI%E7%94%9F%E6%88%90%E4%BB%A3%E7%A0%81%E7%9A%84%E4%B8%B4%E7%95%8C%E7%82%B9"><span class="toc-number">4.</span> <span class="toc-text">这背后的意义：AI生成代码的临界点</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%80%E5%8F%91%E8%BF%87%E7%A8%8B%E7%9A%84%E7%9C%9F%E5%AE%9E%E8%AE%B0%E5%BD%95"><span class="toc-number">4.1.</span> <span class="toc-text">开发过程的真实记录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%B9%E5%BC%80%E5%8F%91%E8%80%85%E7%9A%84%E5%90%AF%E7%A4%BA"><span class="toc-number">4.2.</span> <span class="toc-text">对开发者的启示</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%99%E5%9C%A8%E6%9C%80%E5%90%8E"><span class="toc-number">5.</span> <span class="toc-text">写在最后</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/20260422154218.html" title="零代码经验，我用Claude Code搓出的生产力工具"><img src="https://oss.012700.xyz/butterfly/2024/11/butterfly-docs-changelog-cover-9.png" onerror="this.onerror=null;this.src='/img/404.jpg'" /></a><div class="content"><a class="title" href="/20260422154218.html" title="零代码经验，我用Claude Code搓出的生产力工具">零代码经验，我用Claude Code搓出的生产力工具</a><time datetime="2026-04-22T15:42:18.000Z" title="发表于 2026-04-22 15:42:18">2026-04-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/20260416093521.html" title="容器化后内存告警不断？日志“写爆”了Page Cache！"><img src="https://oss.012700.xyz/butterfly/2024/11/butterfly-docs-changelog-cover-6.png" onerror="this.onerror=null;this.src='/img/404.jpg'" /></a><div class="content"><a class="title" href="/20260416093521.html" title="容器化后内存告警不断？日志“写爆”了Page Cache！">容器化后内存告警不断？日志“写爆”了Page Cache！</a><time datetime="2026-04-16T09:35:21.000Z" title="发表于 2026-04-16 09:35:21">2026-04-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/20260415131634.html" title="Harness Engineering 究竟是什么"><img src="https://oss.012700.xyz/butterfly/2024/11/butterfly-docs-changelog-cover-1.png" onerror="this.onerror=null;this.src='/img/404.jpg'" /></a><div class="content"><a class="title" href="/20260415131634.html" title="Harness Engineering 究竟是什么">Harness Engineering 究竟是什么</a><time datetime="2026-04-15T13:16:34.000Z" title="发表于 2026-04-15 13:16:34">2026-04-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/20260413104209.html" title="Claude Code 通关手册（七）：推荐 5 个 Hooks，代码质量提升 3 倍"><img src="https://oss.012700.xyz/butterfly/2024/11/butterfly-docs-changelog-cover-3.png" onerror="this.onerror=null;this.src='/img/404.jpg'" /></a><div class="content"><a class="title" href="/20260413104209.html" title="Claude Code 通关手册（七）：推荐 5 个 Hooks，代码质量提升 3 倍">Claude Code 通关手册（七）：推荐 5 个 Hooks，代码质量提升 3 倍</a><time datetime="2026-04-13T10:42:09.000Z" title="发表于 2026-04-13 10:42:09">2026-04-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/20260411114110.html" title="Claude Code通关手册（六）：MCP协议完全指南"><img src="https://oss.012700.xyz/butterfly/2024/11/butterfly-docs-changelog-cover-4.png" onerror="this.onerror=null;this.src='/img/404.jpg'" /></a><div class="content"><a class="title" href="/20260411114110.html" title="Claude Code通关手册（六）：MCP协议完全指南">Claude Code通关手册（六）：MCP协议完全指南</a><time datetime="2026-04-11T11:41:10.000Z" title="发表于 2026-04-11 11:41:10">2026-04-11</time></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By gloamfox</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.4</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.4"></script><script src="/js/main.js?v=5.5.4"></script><div class="js-pjax"></div><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="false"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="local-search-input"><input placeholder="搜索文章" type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.5.4"></script></div></div><!-- hexo injector body_end start -->
+<script>
+(function() {
+  document.querySelectorAll('.obsidian-tab-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var tabsContainer = this.closest('.obsidian-tabs');
+      var tabId = this.getAttribute('data-tab');
+
+      tabsContainer.querySelectorAll('.obsidian-tab-btn').forEach(function(b) {
+        b.classList.remove('active');
+      });
+      tabsContainer.querySelectorAll('.obsidian-tab-panel').forEach(function(p) {
+        p.classList.remove('active');
+      });
+
+      this.classList.add('active');
+      document.getElementById(tabId).classList.add('active');
+    });
+  });
+})();
+</script>
+<!-- hexo injector body_end end --></body></html>
