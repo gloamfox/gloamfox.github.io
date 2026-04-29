@@ -6,7 +6,7 @@
   <link href="https://gloamfox.cc/atom.xml" rel="self"/>
   
   <link href="https://gloamfox.cc/"/>
-  <updated>2026-04-23T08:58:05.816Z</updated>
+  <updated>2026-04-29T02:21:01.755Z</updated>
   <id>https://gloamfox.cc/</id>
   
   <author>
@@ -17,11 +17,44 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Java应用启动慢、接口超时、频繁Full GC？别再把锅甩给“流量突增”了！</title>
+    <link href="https://gloamfox.cc/20260429094544.html"/>
+    <id>https://gloamfox.cc/20260429094544.html</id>
+    <published>2026-04-29T09:45:44.000Z</published>
+    <updated>2026-04-29T02:21:01.755Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;div class=&quot;obsidian-callout obsidian-callout-tip&quot; id=&quot;obsidian-callout-6jk9htbe1&quot;&gt;&lt;div class=&quot;obsidian-callout-header&quot;&gt;&lt;span</summary>
+        
+      
+    
+    
+    
+    <category term="后端" scheme="https://gloamfox.cc/categories/%E5%90%8E%E7%AB%AF/"/>
+    
+    
+    <category term="Spring" scheme="https://gloamfox.cc/tags/Spring/"/>
+    
+    <category term="Spring Cloud" scheme="https://gloamfox.cc/tags/Spring-Cloud/"/>
+    
+    <category term="性能优化" scheme="https://gloamfox.cc/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
+    
+    <category term="系统运维" scheme="https://gloamfox.cc/tags/%E7%B3%BB%E7%BB%9F%E8%BF%90%E7%BB%B4/"/>
+    
+    <category term="Nacos" scheme="https://gloamfox.cc/tags/Nacos/"/>
+    
+  </entry>
+  
+  <entry>
     <title>零代码经验，我用Claude Code搓出的生产力工具</title>
     <link href="https://gloamfox.cc/20260422154218.html"/>
     <id>https://gloamfox.cc/20260422154218.html</id>
     <published>2026-04-22T15:42:18.000Z</published>
-    <updated>2026-04-23T08:58:05.816Z</updated>
+    <updated>2026-04-29T02:21:01.760Z</updated>
     
     
       
@@ -49,14 +82,14 @@
     <link href="https://gloamfox.cc/20260416093521.html"/>
     <id>https://gloamfox.cc/20260416093521.html</id>
     <published>2026-04-16T09:35:21.000Z</published>
-    <updated>2026-04-23T08:58:05.816Z</updated>
+    <updated>2026-04-29T02:21:01.758Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;div class=&quot;obsidian-callout obsidian-callout-tip&quot; id=&quot;obsidian-callout-ubvgt0r55&quot;&gt;&lt;div class=&quot;obsidian-callout-header&quot;&gt;&lt;span</summary>
+    <summary type="html">&lt;div class=&quot;obsidian-callout obsidian-callout-tip&quot; id=&quot;obsidian-callout-tpauxy1nh&quot;&gt;&lt;div class=&quot;obsidian-callout-header&quot;&gt;&lt;span</summary>
         
       
     
@@ -76,14 +109,14 @@
     <link href="https://gloamfox.cc/20260415131634.html"/>
     <id>https://gloamfox.cc/20260415131634.html</id>
     <published>2026-04-15T13:16:34.000Z</published>
-    <updated>2026-04-23T08:58:05.813Z</updated>
+    <updated>2026-04-29T02:21:01.755Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;div class=&quot;obsidian-callout obsidian-callout-tip&quot; id=&quot;obsidian-callout-1nr351d3w&quot;&gt;&lt;div class=&quot;obsidian-callout-header&quot;&gt;&lt;span</summary>
+    <summary type="html">&lt;div class=&quot;obsidian-callout obsidian-callout-tip&quot; id=&quot;obsidian-callout-fqf4rr8xn&quot;&gt;&lt;div class=&quot;obsidian-callout-header&quot;&gt;&lt;span</summary>
         
       
     
@@ -103,14 +136,14 @@
     <link href="https://gloamfox.cc/20260413104209.html"/>
     <id>https://gloamfox.cc/20260413104209.html</id>
     <published>2026-04-13T10:42:09.000Z</published>
-    <updated>2026-04-23T08:58:05.812Z</updated>
+    <updated>2026-04-29T02:21:01.754Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;div class=&quot;obsidian-callout obsidian-callout-tip&quot; id=&quot;obsidian-callout-cqdh88lja&quot;&gt;&lt;div class=&quot;obsidian-callout-header&quot;&gt;&lt;span</summary>
+    <summary type="html">&lt;div class=&quot;obsidian-callout obsidian-callout-tip&quot; id=&quot;obsidian-callout-i1y031cii&quot;&gt;&lt;div class=&quot;obsidian-callout-header&quot;&gt;&lt;span</summary>
         
       
     
@@ -119,9 +152,9 @@
     <category term="软件工具" scheme="https://gloamfox.cc/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/"/>
     
     
-    <category term="Claude Code" scheme="https://gloamfox.cc/tags/Claude-Code/"/>
-    
     <category term="AI编程" scheme="https://gloamfox.cc/tags/AI%E7%BC%96%E7%A8%8B/"/>
+    
+    <category term="Claude Code" scheme="https://gloamfox.cc/tags/Claude-Code/"/>
     
   </entry>
   
@@ -130,14 +163,14 @@
     <link href="https://gloamfox.cc/20260411114110.html"/>
     <id>https://gloamfox.cc/20260411114110.html</id>
     <published>2026-04-11T11:41:10.000Z</published>
-    <updated>2026-04-23T08:58:05.813Z</updated>
+    <updated>2026-04-29T02:21:01.755Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;div class=&quot;obsidian-callout obsidian-callout-tip&quot; id=&quot;obsidian-callout-t5orksubb&quot;&gt;&lt;div class=&quot;obsidian-callout-header&quot;&gt;&lt;span</summary>
+    <summary type="html">&lt;div class=&quot;obsidian-callout obsidian-callout-tip&quot; id=&quot;obsidian-callout-xf1sjcacr&quot;&gt;&lt;div class=&quot;obsidian-callout-header&quot;&gt;&lt;span</summary>
         
       
     
@@ -146,9 +179,9 @@
     <category term="软件工具" scheme="https://gloamfox.cc/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/"/>
     
     
-    <category term="Claude Code" scheme="https://gloamfox.cc/tags/Claude-Code/"/>
-    
     <category term="AI编程" scheme="https://gloamfox.cc/tags/AI%E7%BC%96%E7%A8%8B/"/>
+    
+    <category term="Claude Code" scheme="https://gloamfox.cc/tags/Claude-Code/"/>
     
   </entry>
   
@@ -157,14 +190,14 @@
     <link href="https://gloamfox.cc/20260410163535.html"/>
     <id>https://gloamfox.cc/20260410163535.html</id>
     <published>2026-04-10T16:35:35.000Z</published>
-    <updated>2026-04-23T08:58:05.813Z</updated>
+    <updated>2026-04-29T02:21:01.755Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;div class=&quot;obsidian-callout obsidian-callout-tip&quot; id=&quot;obsidian-callout-0t6sayxd5&quot;&gt;&lt;div class=&quot;obsidian-callout-header&quot;&gt;&lt;span</summary>
+    <summary type="html">&lt;div class=&quot;obsidian-callout obsidian-callout-tip&quot; id=&quot;obsidian-callout-oft1it12v&quot;&gt;&lt;div class=&quot;obsidian-callout-header&quot;&gt;&lt;span</summary>
         
       
     
@@ -173,9 +206,9 @@
     <category term="软件工具" scheme="https://gloamfox.cc/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/"/>
     
     
-    <category term="Claude Code" scheme="https://gloamfox.cc/tags/Claude-Code/"/>
-    
     <category term="AI编程" scheme="https://gloamfox.cc/tags/AI%E7%BC%96%E7%A8%8B/"/>
+    
+    <category term="Claude Code" scheme="https://gloamfox.cc/tags/Claude-Code/"/>
     
   </entry>
   
@@ -184,14 +217,14 @@
     <link href="https://gloamfox.cc/20260409094226.html"/>
     <id>https://gloamfox.cc/20260409094226.html</id>
     <published>2026-04-09T09:42:26.000Z</published>
-    <updated>2026-04-23T08:58:05.813Z</updated>
+    <updated>2026-04-29T02:21:01.755Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;div class=&quot;obsidian-callout obsidian-callout-tip&quot; id=&quot;obsidian-callout-7jca5hlie&quot;&gt;&lt;div class=&quot;obsidian-callout-header&quot;&gt;&lt;span</summary>
+    <summary type="html">&lt;div class=&quot;obsidian-callout obsidian-callout-tip&quot; id=&quot;obsidian-callout-kzbznpdvx&quot;&gt;&lt;div class=&quot;obsidian-callout-header&quot;&gt;&lt;span</summary>
         
       
     
@@ -200,9 +233,9 @@
     <category term="软件工具" scheme="https://gloamfox.cc/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/"/>
     
     
-    <category term="Claude Code" scheme="https://gloamfox.cc/tags/Claude-Code/"/>
-    
     <category term="AI编程" scheme="https://gloamfox.cc/tags/AI%E7%BC%96%E7%A8%8B/"/>
+    
+    <category term="Claude Code" scheme="https://gloamfox.cc/tags/Claude-Code/"/>
     
   </entry>
   
@@ -211,14 +244,14 @@
     <link href="https://gloamfox.cc/20260408205456.html"/>
     <id>https://gloamfox.cc/20260408205456.html</id>
     <published>2026-04-08T20:54:56.000Z</published>
-    <updated>2026-04-23T08:58:05.813Z</updated>
+    <updated>2026-04-29T02:21:01.755Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;div class=&quot;obsidian-callout obsidian-callout-tip&quot; id=&quot;obsidian-callout-c486rny61&quot;&gt;&lt;div class=&quot;obsidian-callout-header&quot;&gt;&lt;span</summary>
+    <summary type="html">&lt;div class=&quot;obsidian-callout obsidian-callout-tip&quot; id=&quot;obsidian-callout-vh5s1ls92&quot;&gt;&lt;div class=&quot;obsidian-callout-header&quot;&gt;&lt;span</summary>
         
       
     
@@ -227,9 +260,9 @@
     <category term="软件工具" scheme="https://gloamfox.cc/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/"/>
     
     
-    <category term="Claude Code" scheme="https://gloamfox.cc/tags/Claude-Code/"/>
-    
     <category term="AI编程" scheme="https://gloamfox.cc/tags/AI%E7%BC%96%E7%A8%8B/"/>
+    
+    <category term="Claude Code" scheme="https://gloamfox.cc/tags/Claude-Code/"/>
     
   </entry>
   
@@ -238,14 +271,14 @@
     <link href="https://gloamfox.cc/20260407143924.html"/>
     <id>https://gloamfox.cc/20260407143924.html</id>
     <published>2026-04-07T14:39:24.000Z</published>
-    <updated>2026-04-23T08:58:05.813Z</updated>
+    <updated>2026-04-29T02:21:01.755Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;div class=&quot;obsidian-callout obsidian-callout-tip&quot; id=&quot;obsidian-callout-rj9omxhk9&quot;&gt;&lt;div class=&quot;obsidian-callout-header&quot;&gt;&lt;span</summary>
+    <summary type="html">&lt;div class=&quot;obsidian-callout obsidian-callout-tip&quot; id=&quot;obsidian-callout-9y70sxpo4&quot;&gt;&lt;div class=&quot;obsidian-callout-header&quot;&gt;&lt;span</summary>
         
       
     
@@ -265,7 +298,7 @@
     <link href="https://gloamfox.cc/20260407134731.html"/>
     <id>https://gloamfox.cc/20260407134731.html</id>
     <published>2026-04-07T13:47:31.000Z</published>
-    <updated>2026-04-23T08:58:05.813Z</updated>
+    <updated>2026-04-29T02:21:01.755Z</updated>
     
     
       
@@ -294,7 +327,7 @@
     <link href="https://gloamfox.cc/20260407133233.html"/>
     <id>https://gloamfox.cc/20260407133233.html</id>
     <published>2026-04-07T13:32:33.000Z</published>
-    <updated>2026-04-23T08:58:05.813Z</updated>
+    <updated>2026-04-29T02:21:01.755Z</updated>
     
     
       
@@ -321,7 +354,7 @@
     <link href="https://gloamfox.cc/20260404130924.html"/>
     <id>https://gloamfox.cc/20260404130924.html</id>
     <published>2026-04-04T13:09:24.000Z</published>
-    <updated>2026-04-23T08:58:05.815Z</updated>
+    <updated>2026-04-29T02:21:01.757Z</updated>
     
     
       
@@ -347,7 +380,7 @@
     <link href="https://gloamfox.cc/20260402190152.html"/>
     <id>https://gloamfox.cc/20260402190152.html</id>
     <published>2026-04-02T19:01:52.000Z</published>
-    <updated>2026-04-23T08:58:05.815Z</updated>
+    <updated>2026-04-29T02:21:01.757Z</updated>
     
     
       
@@ -379,7 +412,7 @@
     <link href="https://gloamfox.cc/20260331194609.html"/>
     <id>https://gloamfox.cc/20260331194609.html</id>
     <published>2026-03-31T19:46:09.000Z</published>
-    <updated>2026-04-23T08:58:05.814Z</updated>
+    <updated>2026-04-29T02:21:01.756Z</updated>
     
     
       
@@ -406,7 +439,7 @@
     <link href="https://gloamfox.cc/20260331181032.html"/>
     <id>https://gloamfox.cc/20260331181032.html</id>
     <published>2026-03-31T18:10:32.000Z</published>
-    <updated>2026-04-23T08:58:05.813Z</updated>
+    <updated>2026-04-29T02:21:01.755Z</updated>
     
     
       
@@ -435,14 +468,14 @@
     <link href="https://gloamfox.cc/20260327132732.html"/>
     <id>https://gloamfox.cc/20260327132732.html</id>
     <published>2026-03-27T13:27:32.000Z</published>
-    <updated>2026-04-23T08:58:05.813Z</updated>
+    <updated>2026-04-29T02:21:01.755Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;div class=&quot;obsidian-callout obsidian-callout-tip&quot; id=&quot;obsidian-callout-wgptm7w6v&quot;&gt;&lt;div class=&quot;obsidian-callout-header&quot;&gt;&lt;span</summary>
+    <summary type="html">&lt;div class=&quot;obsidian-callout obsidian-callout-tip&quot; id=&quot;obsidian-callout-xh8jtu6z4&quot;&gt;&lt;div class=&quot;obsidian-callout-header&quot;&gt;&lt;span</summary>
         
       
     
@@ -451,9 +484,9 @@
     <category term="软件工具" scheme="https://gloamfox.cc/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/"/>
     
     
-    <category term="Claude Code" scheme="https://gloamfox.cc/tags/Claude-Code/"/>
-    
     <category term="AI编程" scheme="https://gloamfox.cc/tags/AI%E7%BC%96%E7%A8%8B/"/>
+    
+    <category term="Claude Code" scheme="https://gloamfox.cc/tags/Claude-Code/"/>
     
   </entry>
   
@@ -462,7 +495,7 @@
     <link href="https://gloamfox.cc/20260325161216.html"/>
     <id>https://gloamfox.cc/20260325161216.html</id>
     <published>2026-03-25T16:12:16.000Z</published>
-    <updated>2026-04-23T08:58:05.815Z</updated>
+    <updated>2026-04-29T02:21:01.757Z</updated>
     
     
       
@@ -489,7 +522,7 @@
     <link href="https://gloamfox.cc/20260325102944.html"/>
     <id>https://gloamfox.cc/20260325102944.html</id>
     <published>2026-03-25T10:29:44.000Z</published>
-    <updated>2026-04-23T08:58:05.813Z</updated>
+    <updated>2026-04-29T02:21:01.755Z</updated>
     
     
       
@@ -515,7 +548,7 @@
     <link href="https://gloamfox.cc/20260324145235.html"/>
     <id>https://gloamfox.cc/20260324145235.html</id>
     <published>2026-03-24T14:52:35.000Z</published>
-    <updated>2026-04-23T08:58:05.813Z</updated>
+    <updated>2026-04-29T02:21:01.755Z</updated>
     
     
       
@@ -532,33 +565,6 @@
     
     
     <category term="Hexo" scheme="https://gloamfox.cc/tags/Hexo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hexo永久链接最佳实践：终极方案与优化指南</title>
-    <link href="https://gloamfox.cc/20260324094537.html"/>
-    <id>https://gloamfox.cc/20260324094537.html</id>
-    <published>2026-03-24T09:45:37.000Z</published>
-    <updated>2026-04-23T08:58:05.813Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;结论先行：日期方案是最佳选择&quot;&gt;&lt;a href=&quot;#结论先行：日期方案是最佳选择&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="前端" scheme="https://gloamfox.cc/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-    <category term="Hexo" scheme="https://gloamfox.cc/tags/Hexo/"/>
-    
-    <category term="URL优化" scheme="https://gloamfox.cc/tags/URL%E4%BC%98%E5%8C%96/"/>
     
   </entry>
   

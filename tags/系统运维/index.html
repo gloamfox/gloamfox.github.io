@@ -1,0 +1,606 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>标签: 系统运维 | 暮色之狐</title><meta name="author" content="gloamfox"><meta name="copyright" content="gloamfox"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="君子以顺德，积小以高大。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="暮色之狐">
+<meta property="og:url" content="https://gloamfox.cc/tags/%E7%B3%BB%E7%BB%9F%E8%BF%90%E7%BB%B4/index.html">
+<meta property="og:site_name" content="暮色之狐">
+<meta property="og:description" content="君子以顺德，积小以高大。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://gloamfox.cc/img/avatar.jpg">
+<meta property="article:author" content="gloamfox">
+<meta property="article:tag" content="暮色之狐, gloamfox">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gloamfox.cc/img/avatar.jpg"><script type="application/ld+json"></script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://gloamfox.cc/tags/%E7%B3%BB%E7%BB%9F%E8%BF%90%E7%BB%B4/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.5.4"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?2e7179f3af23b3800199c585e00cfe24";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+btf.addGlobalFn('pjaxComplete', () => {
+  _hmt.push(['_trackPageview',window.location.pathname])
+}, 'baidu_analytics')
+</script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"pagination":{"enable":false,"hitsPerPage":8},"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":150,"languages":{"author":"作者: gloamfox","link":"链接: ","source":"来源: 暮色之狐","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.13.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '标签: 系统运维',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'tag'
+}</script><!-- hexo injector head_end start -->
+<style>
+.obsidian-callout {
+  margin: 1.5em 0;
+  border-radius: 8px;
+  border-left: 4px solid var(--callout-color, #448aff);
+  background: var(--callout-bg, #e3f2fd);
+  overflow: hidden;
+}
+
+.obsidian-callout-header {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--callout-color, #448aff);
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.obsidian-callout-icon {
+  margin-right: 8px;
+  font-size: 16px;
+  line-height: 1;
+}
+
+.obsidian-callout-title {
+  text-transform: capitalize;
+}
+
+.obsidian-callout-content {
+  padding: 16px;
+  color: var(--text-color, #333);
+}
+
+.obsidian-callout-content > *:first-child {
+  margin-top: 0;
+}
+
+.obsidian-callout-content > *:last-child {
+  margin-bottom: 0;
+}
+
+.obsidian-callout-content p {
+  margin: 0.5em 0;
+}
+
+.obsidian-callout-content ul,
+.obsidian-callout-content ol {
+  margin: 0.5em 0;
+  padding-left: 1.5em;
+}
+
+.obsidian-callout-content pre {
+  margin: 1em 0;
+  border-radius: 6px;
+}
+
+.obsidian-callout-content code {
+  font-family: 'SF Mono', Monaco, 'Cascadia Code', monospace;
+  background: rgba(0,0,0,0.05);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+/* Callout type styles */
+.obsidian-callout-note {
+  --callout-color: #448aff;
+  --callout-bg: #e3f2fd;
+}
+
+.obsidian-callout-tip {
+  --callout-color: #00c853;
+  --callout-bg: #e8f5e9;
+}
+
+.obsidian-callout-warning {
+  --callout-color: #ff9100;
+  --callout-bg: #fff3e0;
+}
+
+.obsidian-callout-danger {
+  --callout-color: #ff1744;
+  --callout-bg: #ffebee;
+}
+
+.obsidian-callout-info {
+  --callout-color: #00b0ff;
+  --callout-bg: #e1f5fe;
+}
+
+.obsidian-callout-success {
+  --callout-color: #00c853;
+  --callout-bg: #e8f5e9;
+}
+
+.obsidian-callout-example {
+  --callout-color: #7c4dff;
+  --callout-bg: #ede7f6;
+}
+
+.obsidian-callout-quote {
+  --callout-color: #9e9e9e;
+  --callout-bg: #f5f5f5;
+}
+
+.obsidian-callout-bug {
+  --callout-color: #f50057;
+  --callout-bg: #fce4ec;
+}
+
+.obsidian-callout-abstract {
+  --callout-color: #00bfa5;
+  --callout-bg: #e0f2f1;
+}
+
+.obsidian-callout-question {
+  --callout-color: #64dd17;
+  --callout-bg: #f1f8e9;
+}
+
+.obsidian-callout-failure {
+  --callout-color: #ff5252;
+  --callout-bg: #ffebee;
+}
+
+.obsidian-callout-important {
+  --callout-color: #ffd600;
+  --callout-bg: #fffde7;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .obsidian-callout {
+    --text-color: #e0e0e0;
+  }
+
+  .obsidian-callout-note {
+    --callout-color: #448aff;
+    --callout-bg: #1a237e;
+  }
+
+  .obsidian-callout-tip {
+    --callout-color: #00c853;
+    --callout-bg: #1b5e20;
+  }
+
+  .obsidian-callout-warning {
+    --callout-color: #ff9100;
+    --callout-bg: #e65100;
+  }
+
+  .obsidian-callout-danger {
+    --callout-color: #ff1744;
+    --callout-bg: #b71c1c;
+  }
+
+  .obsidian-callout-info {
+    --callout-color: #00b0ff;
+    --callout-bg: #01579b;
+  }
+
+  .obsidian-callout-success {
+    --callout-color: #00c853;
+    --callout-bg: #1b5e20;
+  }
+
+  .obsidian-callout-example {
+    --callout-color: #7c4dff;
+    --callout-bg: #311b92;
+  }
+
+  .obsidian-callout-quote {
+    --callout-color: #9e9e9e;
+    --callout-bg: #424242;
+  }
+
+  .obsidian-callout-bug {
+    --callout-color: #f50057;
+    --callout-bg: #880e4f;
+  }
+
+  .obsidian-callout-abstract {
+    --callout-color: #00bfa5;
+    --callout-bg: #004d40;
+  }
+
+  .obsidian-callout-question {
+    --callout-color: #64dd17;
+    --callout-bg: #33691e;
+  }
+
+  .obsidian-callout-failure {
+    --callout-color: #ff5252;
+    --callout-bg: #b71c1c;
+  }
+
+  .obsidian-callout-important {
+    --callout-color: #ffd600;
+    --callout-bg: #f57f17;
+  }
+
+  .obsidian-callout-content code {
+    background: rgba(255,255,255,0.1);
+  }
+}
+</style>
+
+<style>
+.obsidian-tabs {
+  margin: 1.5em 0;
+  border: 1px solid var(--tab-border-color, #e0e0e0);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--tab-bg, #fafafa);
+}
+
+.obsidian-tabs-nav {
+  display: flex;
+  background: var(--tab-nav-bg, #f0f0f0);
+  border-bottom: 1px solid var(--tab-border-color, #e0e0e0);
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.obsidian-tabs-nav::-webkit-scrollbar {
+  display: none;
+}
+
+.obsidian-tab-btn {
+  padding: 12px 20px;
+  border: none;
+  background: transparent;
+  color: var(--tab-text-color, #666);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+}
+
+.obsidian-tab-btn:hover {
+  color: var(--tab-hover-color, #333);
+  background: var(--tab-hover-bg, rgba(0,0,0,0.03));
+}
+
+.obsidian-tab-btn.active {
+  color: var(--tab-active-color, #448aff);
+  border-bottom-color: var(--tab-active-color, #448aff);
+  background: var(--tab-bg, #fafafa);
+}
+
+.obsidian-tabs-content {
+  padding: 20px;
+  background: var(--tab-bg, #fafafa);
+}
+
+.obsidian-tab-panel {
+  display: none;
+  animation: fadeIn 0.3s ease;
+}
+
+.obsidian-tab-panel.active {
+  display: block;
+}
+
+.obsidian-tab-panel > *:first-child {
+  margin-top: 0;
+}
+
+.obsidian-tab-panel > *:last-child {
+  margin-bottom: 0;
+}
+
+.obsidian-tab-panel pre {
+  margin: 1em 0;
+  border-radius: 6px;
+}
+
+.obsidian-tab-panel code {
+  font-family: 'SF Mono', Monaco, 'Cascadia Code', monospace;
+}
+
+/* Fix code block background color inside tabs */
+.obsidian-tab-panel pre code {
+  background: transparent !important;
+}
+
+.obsidian-tab-panel .highlight {
+  background: transparent !important;
+}
+
+.obsidian-tab-panel .highlight pre {
+  background: var(--code-bg, #f5f5f5) !important;
+}
+
+.obsidian-tab-panel figure.highlight {
+  background: var(--code-bg, #f5f5f5) !important;
+}
+
+.obsidian-tab-panel td.gutter {
+  background: var(--code-gutter-bg, #f0f0f0) !important;
+}
+
+.obsidian-tab-panel td.code {
+  background: var(--code-bg, #f5f5f5) !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  .obsidian-tab-panel .highlight pre,
+  .obsidian-tab-panel figure.highlight {
+    --code-bg: #2d2d2d;
+    --code-gutter-bg: #252525;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .obsidian-tabs {
+    --tab-bg: #1e1e1e;
+    --tab-nav-bg: #252526;
+    --tab-border-color: #333;
+    --tab-text-color: #999;
+    --tab-hover-color: #ccc;
+    --tab-hover-bg: rgba(255,255,255,0.05);
+    --tab-active-color: #58a6ff;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+</style>
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="暮色之狐" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" /></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">67</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">88</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 统计</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/tags"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories"><i class="fa-fw fas fa-bookmark"></i><span> 分类</span></a></li><li><a class="site-page child" href="/archives"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa-user-circle"></i><span> 关于</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="not-home-page" id="page-header" style="background-image: url(https://oss.012700.xyz/butterfly/2024/10/tag.png);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><img class="site-icon" src="/img/logo.png" ><span class="site-name">暮色之狐</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 统计</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/tags"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories"><i class="fa-fw fas fa-bookmark"></i><span> 分类</span></a></li><li><a class="site-page child" href="/archives"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa-user-circle"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="page-site-info"><h1 id="site-title">系统运维</h1></div></header><main class="layout" id="content-inner"><div id="tag"><div class="article-sort-title">标签 - 系统运维</div><div class="article-sort"><div class="article-sort-item year">2026</div><div class="article-sort-item"><a class="article-sort-item-img" href="/20260429094544.html" title="Java应用启动慢、接口超时、频繁Full GC？别再把锅甩给“流量突增”了！"><img src="https://oss.012700.xyz/butterfly/2024/11/butterfly-docs-changelog-cover-2.png"  onerror="this.onerror=null;this.src='/img/404.jpg'"></a><div class="article-sort-item-info"><div class="article-sort-item-time"><i class="far fa-calendar-alt"></i><time class="post-meta-date-created" datetime="2026-04-29T09:45:44.000Z" title="发表于 2026-04-29 09:45:44">2026-04-29</time></div><a class="article-sort-item-title" href="/20260429094544.html" title="Java应用启动慢、接口超时、频繁Full GC？别再把锅甩给“流量突增”了！">Java应用启动慢、接口超时、频繁Full GC？别再把锅甩给“流量突增”了！</a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" /></div><div class="author-info-name">gloamfox</div><div class="author-info-description">君子以顺德，积小以高大。</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">67</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">88</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/gloamfox"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/gloamfox" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:rxhome@163.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">此博客为记录工作学习总结所用，供网友阅读参考，如有侵权，请通知我，我会核实后进行处理。</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/20260429094544.html" title="Java应用启动慢、接口超时、频繁Full GC？别再把锅甩给“流量突增”了！"><img src="https://oss.012700.xyz/butterfly/2024/11/butterfly-docs-changelog-cover-2.png" onerror="this.onerror=null;this.src='/img/404.jpg'" /></a><div class="content"><a class="title" href="/20260429094544.html" title="Java应用启动慢、接口超时、频繁Full GC？别再把锅甩给“流量突增”了！">Java应用启动慢、接口超时、频繁Full GC？别再把锅甩给“流量突增”了！</a><time datetime="2026-04-29T09:45:44.000Z" title="发表于 2026-04-29 09:45:44">2026-04-29</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/20260422154218.html" title="零代码经验，我用Claude Code搓出的生产力工具"><img src="https://oss.012700.xyz/butterfly/2024/11/butterfly-docs-changelog-cover-5.png" onerror="this.onerror=null;this.src='/img/404.jpg'" /></a><div class="content"><a class="title" href="/20260422154218.html" title="零代码经验，我用Claude Code搓出的生产力工具">零代码经验，我用Claude Code搓出的生产力工具</a><time datetime="2026-04-22T15:42:18.000Z" title="发表于 2026-04-22 15:42:18">2026-04-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/20260416093521.html" title="容器化后内存告警不断？日志“写爆”了Page Cache！"><img src="https://oss.012700.xyz/butterfly/2024/11/butterfly-docs-changelog-cover-7.png" onerror="this.onerror=null;this.src='/img/404.jpg'" /></a><div class="content"><a class="title" href="/20260416093521.html" title="容器化后内存告警不断？日志“写爆”了Page Cache！">容器化后内存告警不断？日志“写爆”了Page Cache！</a><time datetime="2026-04-16T09:35:21.000Z" title="发表于 2026-04-16 09:35:21">2026-04-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/20260415131634.html" title="Harness Engineering 究竟是什么"><img src="https://oss.012700.xyz/butterfly/2024/11/butterfly-docs-changelog-cover-3.png" onerror="this.onerror=null;this.src='/img/404.jpg'" /></a><div class="content"><a class="title" href="/20260415131634.html" title="Harness Engineering 究竟是什么">Harness Engineering 究竟是什么</a><time datetime="2026-04-15T13:16:34.000Z" title="发表于 2026-04-15 13:16:34">2026-04-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/20260413104209.html" title="Claude Code 通关手册（七）：推荐 5 个 Hooks，代码质量提升 3 倍"><img src="https://oss.012700.xyz/butterfly/2024/11/butterfly-docs-changelog-cover-9.png" onerror="this.onerror=null;this.src='/img/404.jpg'" /></a><div class="content"><a class="title" href="/20260413104209.html" title="Claude Code 通关手册（七）：推荐 5 个 Hooks，代码质量提升 3 倍">Claude Code 通关手册（七）：推荐 5 个 Hooks，代码质量提升 3 倍</a><time datetime="2026-04-13T10:42:09.000Z" title="发表于 2026-04-13 10:42:09">2026-04-13</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分类</span>
+            
+          </div>
+          <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%89%8D%E7%AB%AF/"><span class="card-category-list-name">前端</span><span class="card-category-list-count">7</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%90%8E%E7%AB%AF/"><span class="card-category-list-name">后端</span><span class="card-category-list-count">15</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%80%9D%E7%BB%B4%E6%A8%A1%E5%9E%8B/"><span class="card-category-list-name">思维模型</span><span class="card-category-list-count">3</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E7%B3%BB%E7%BB%9F%E8%BF%90%E7%BB%B4/"><span class="card-category-list-name">系统运维</span><span class="card-category-list-count">11</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"><span class="card-category-list-name">计算机基础</span><span class="card-category-list-count">3</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/"><span class="card-category-list-name">软件工具</span><span class="card-category-list-count">22</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/"><span class="card-category-list-name">软件设计</span><span class="card-category-list-count">6</span></a></li>
+          </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/Spring/" style="font-size: 1.34em; color: #99a3b0">Spring</a> <a href="/tags/IO%E6%A8%A1%E5%9E%8B/" style="font-size: 1.1em; color: #999">IO模型</a> <a href="/tags/%E5%A4%A7%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/" style="font-size: 1.1em; color: #999">大语言模型</a> <a href="/tags/SSH/" style="font-size: 1.18em; color: #999ca1">SSH</a> <a href="/tags/%E4%BE%9D%E8%B5%96%E7%AE%A1%E7%90%86/" style="font-size: 1.1em; color: #999">依赖管理</a> <a href="/tags/Claude-Code/" style="font-size: 1.42em; color: #99a6b7">Claude Code</a> <a href="/tags/Markdown/" style="font-size: 1.1em; color: #999">Markdown</a> <a href="/tags/%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86/" style="font-size: 1.1em; color: #999">权限管理</a> <a href="/tags/%E6%8A%80%E6%9C%AF%E9%9D%A2%E8%AF%95/" style="font-size: 1.1em; color: #999">技术面试</a> <a href="/tags/%E4%B8%BB%E9%A2%98%E4%BC%98%E5%8C%96/" style="font-size: 1.1em; color: #999">主题优化</a> <a href="/tags/Zookeeper/" style="font-size: 1.26em; color: #999fa8">Zookeeper</a> <a href="/tags/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/" style="font-size: 1.1em; color: #999">内存管理</a> <a href="/tags/CDN/" style="font-size: 1.1em; color: #999">CDN</a> <a href="/tags/%E8%87%AA%E6%88%91%E6%8F%90%E5%8D%87/" style="font-size: 1.1em; color: #999">自我提升</a> <a href="/tags/%E8%81%8C%E4%B8%9A%E5%8F%91%E5%B1%95/" style="font-size: 1.1em; color: #999">职业发展</a> <a href="/tags/%E7%BC%93%E5%AD%98/" style="font-size: 1.1em; color: #999">缓存</a> <a href="/tags/Nacos/" style="font-size: 1.1em; color: #999">Nacos</a> <a href="/tags/AI%E7%BC%96%E7%A8%8B/" style="font-size: 1.42em; color: #99a6b7">AI编程</a> <a href="/tags/%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/" style="font-size: 1.1em; color: #999">安装教程</a> <a href="/tags/%E7%BC%96%E7%A0%81%E8%A7%84%E8%8C%83/" style="font-size: 1.1em; color: #999">编码规范</a> <a href="/tags/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/" style="font-size: 1.1em; color: #999">网络安全</a> <a href="/tags/%E7%9F%A5%E8%AF%86%E7%BB%84%E7%BB%87/" style="font-size: 1.1em; color: #999">知识组织</a> <a href="/tags/Nginx/" style="font-size: 1.1em; color: #999">Nginx</a> <a href="/tags/Oracle/" style="font-size: 1.1em; color: #999">Oracle</a> <a href="/tags/IDEA/" style="font-size: 1.1em; color: #999">IDEA</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 1.1em; color: #999">设计模式</a> <a href="/tags/jsDelivr/" style="font-size: 1.1em; color: #999">jsDelivr</a> <a href="/tags/%E9%9D%A2%E8%AF%95%E6%8A%80%E5%B7%A7/" style="font-size: 1.1em; color: #999">面试技巧</a> <a href="/tags/LaTeX/" style="font-size: 1.1em; color: #999">LaTeX</a> <a href="/tags/SOLID/" style="font-size: 1.1em; color: #999">SOLID</a> <a href="/tags/SQL/" style="font-size: 1.1em; color: #999">SQL</a> <a href="/tags/%E6%B5%AE%E7%82%B9%E6%95%B0%E8%BF%90%E7%AE%97/" style="font-size: 1.1em; color: #999">浮点数运算</a> <a href="/tags/%E6%BF%80%E6%B4%BB/" style="font-size: 1.1em; color: #999">激活</a> <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%8F%91%E7%8E%B0/" style="font-size: 1.1em; color: #999">服务发现</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%93%E6%9E%84/" style="font-size: 1.1em; color: #999">计算机结构</a> <a href="/tags/%E5%9B%BE%E7%89%87%E4%BC%98%E5%8C%96/" style="font-size: 1.26em; color: #999fa8">图片优化</a> <a href="/tags/%E9%80%92%E5%BD%92/" style="font-size: 1.1em; color: #999">递归</a> <a href="/tags/uniCloud/" style="font-size: 1.1em; color: #999">uniCloud</a> <a href="/tags/%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/" style="font-size: 1.1em; color: #999">网络配置</a> <a href="/tags/Hexo/" style="font-size: 1.5em; color: #99a9bf">Hexo</a></div></div><div class="card-widget card-archives">
+    <div class="item-headline">
+      <i class="fas fa-archive"></i>
+      <span>归档</span>
+      <a class="card-more-btn" href="/archives/"
+            title="查看更多">
+            <i class="fas fa-angle-right"></i>
+          </a>
+    </div>
+  
+    <ul class="card-archive-list">
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2026/04/">
+            <span class="card-archive-list-date">
+              四月 2026
+            </span>
+            <span class="card-archive-list-count">14</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2026/03/">
+            <span class="card-archive-list-date">
+              三月 2026
+            </span>
+            <span class="card-archive-list-count">23</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2026/02/">
+            <span class="card-archive-list-date">
+              二月 2026
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2026/01/">
+            <span class="card-archive-list-date">
+              一月 2026
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2025/12/">
+            <span class="card-archive-list-date">
+              十二月 2025
+            </span>
+            <span class="card-archive-list-count">4</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2025/11/">
+            <span class="card-archive-list-date">
+              十一月 2025
+            </span>
+            <span class="card-archive-list-count">20</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2025/09/">
+            <span class="card-archive-list-date">
+              九月 2025
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2025/04/">
+            <span class="card-archive-list-date">
+              四月 2025
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
+      
+    </ul>
+  </div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">67</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总浏览量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2026-04-29T02:21:24.946Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By gloamfox</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.4</a></span></div><div class="footer_custom_text"><a href="https://beian.miit.gov.cn/" rel="external nofollow noreferrer" target="_blank">鲁ICP备2026017338号-1</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.4"></script><script src="/js/main.js?v=5.5.4"></script><div class="js-pjax"></div><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="false"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="local-search-input"><input placeholder="搜索文章" type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.5.4"></script></div></div><!-- hexo injector body_end start -->
+<script>
+(function() {
+  document.querySelectorAll('.obsidian-tab-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var tabsContainer = this.closest('.obsidian-tabs');
+      var tabId = this.getAttribute('data-tab');
+
+      tabsContainer.querySelectorAll('.obsidian-tab-btn').forEach(function(b) {
+        b.classList.remove('active');
+      });
+      tabsContainer.querySelectorAll('.obsidian-tab-panel').forEach(function(p) {
+        p.classList.remove('active');
+      });
+
+      this.classList.add('active');
+      document.getElementById(tabId).classList.add('active');
+    });
+  });
+})();
+</script>
+<!-- hexo injector body_end end --></body></html>
