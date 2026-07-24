@@ -6,7 +6,7 @@
   <link href="https://gloamfox.cc/atom.xml" rel="self"/>
   
   <link href="https://gloamfox.cc/"/>
-  <updated>2026-07-23T11:35:14.032Z</updated>
+  <updated>2026-07-24T02:03:26.097Z</updated>
   <id>https://gloamfox.cc/</id>
   
   <author>
@@ -21,14 +21,14 @@
     <link href="https://gloamfox.cc/20260723173559.html"/>
     <id>https://gloamfox.cc/20260723173559.html</id>
     <published>2026-07-23T17:35:59.000Z</published>
-    <updated>2026-07-23T11:35:14.032Z</updated>
+    <updated>2026-07-24T02:03:26.097Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;提到 Redis，大多数开发者的第一反应是缓存、分布式锁、或者消息队列。但你可能不知道是，这个陪伴了我们十多年的老朋友，如今已经在向量数据库的赛道上一路狂奔——不仅跑得快，还跑得相当稳。&lt;/p&gt;
+    <summary type="html">&lt;p&gt;提到 Redis，大多数开发者的第一反应是缓存、分布式锁、或者消息队列。但你可能不知道是，这个陪伴了我们很多年的老朋友，如今已经在向量数据库的赛道上一路狂奔——不仅跑得快，还跑得相当稳。&lt;/p&gt;
 &lt;h2 id=&quot;什么是向量检索？&quot;&gt;&lt;a href=&quot;#什么是向量检索？&quot;</summary>
         
       
@@ -49,7 +49,7 @@
     <link href="https://gloamfox.cc/20260723153156.html"/>
     <id>https://gloamfox.cc/20260723153156.html</id>
     <published>2026-07-23T15:31:56.000Z</published>
-    <updated>2026-07-23T11:35:14.031Z</updated>
+    <updated>2026-07-24T02:03:26.096Z</updated>
     
     
       
@@ -74,7 +74,7 @@
     <link href="https://gloamfox.cc/20260721133341.html"/>
     <id>https://gloamfox.cc/20260721133341.html</id>
     <published>2026-07-21T13:33:41.000Z</published>
-    <updated>2026-07-23T11:35:14.032Z</updated>
+    <updated>2026-07-24T02:03:26.096Z</updated>
     
     
       
@@ -102,7 +102,7 @@
     <link href="https://gloamfox.cc/20260717163356.html"/>
     <id>https://gloamfox.cc/20260717163356.html</id>
     <published>2026-07-17T16:33:56.000Z</published>
-    <updated>2026-07-23T11:35:14.033Z</updated>
+    <updated>2026-07-24T02:03:26.097Z</updated>
     
     
       
@@ -128,7 +128,7 @@
     <link href="https://gloamfox.cc/20260715164504.html"/>
     <id>https://gloamfox.cc/20260715164504.html</id>
     <published>2026-07-15T16:45:04.000Z</published>
-    <updated>2026-07-23T11:35:14.033Z</updated>
+    <updated>2026-07-24T02:03:26.097Z</updated>
     
     
       
@@ -154,7 +154,7 @@
     <link href="https://gloamfox.cc/20260714103200.html"/>
     <id>https://gloamfox.cc/20260714103200.html</id>
     <published>2026-07-14T10:32:00.000Z</published>
-    <updated>2026-07-23T11:35:14.033Z</updated>
+    <updated>2026-07-24T02:03:26.097Z</updated>
     
     
       
@@ -180,7 +180,7 @@
     <link href="https://gloamfox.cc/20260713154719.html"/>
     <id>https://gloamfox.cc/20260713154719.html</id>
     <published>2026-07-13T15:47:19.000Z</published>
-    <updated>2026-07-23T11:35:14.032Z</updated>
+    <updated>2026-07-24T02:03:26.097Z</updated>
     
     
       
@@ -206,7 +206,7 @@
     <link href="https://gloamfox.cc/20260526095614.html"/>
     <id>https://gloamfox.cc/20260526095614.html</id>
     <published>2026-05-26T09:56:14.000Z</published>
-    <updated>2026-07-23T11:35:14.037Z</updated>
+    <updated>2026-07-24T02:03:26.100Z</updated>
     
     
       
@@ -239,7 +239,7 @@
     <link href="https://gloamfox.cc/20260516121317.html"/>
     <id>https://gloamfox.cc/20260516121317.html</id>
     <published>2026-05-16T12:13:17.000Z</published>
-    <updated>2026-07-23T11:35:14.037Z</updated>
+    <updated>2026-07-24T02:03:26.100Z</updated>
     
     
       
@@ -267,14 +267,14 @@
     <link href="https://gloamfox.cc/20260429094544.html"/>
     <id>https://gloamfox.cc/20260429094544.html</id>
     <published>2026-04-29T09:45:44.000Z</published>
-    <updated>2026-07-23T11:35:14.031Z</updated>
+    <updated>2026-07-24T02:03:26.096Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;div class=&quot;obsidian-callout obsidian-callout-tip&quot; id=&quot;obsidian-callout-8x3uk5hcg&quot;&gt;&lt;div class=&quot;obsidian-callout-header&quot;&gt;&lt;span</summary>
+    <summary type="html">&lt;div class=&quot;obsidian-callout obsidian-callout-tip&quot; id=&quot;obsidian-callout-cvxzsue3h&quot;&gt;&lt;div class=&quot;obsidian-callout-header&quot;&gt;&lt;span</summary>
         
       
     
@@ -300,7 +300,7 @@
     <link href="https://gloamfox.cc/20260422154218.html"/>
     <id>https://gloamfox.cc/20260422154218.html</id>
     <published>2026-04-22T15:42:18.000Z</published>
-    <updated>2026-07-23T11:35:14.037Z</updated>
+    <updated>2026-07-24T02:03:26.100Z</updated>
     
     
       
@@ -328,14 +328,14 @@
     <link href="https://gloamfox.cc/20260416093521.html"/>
     <id>https://gloamfox.cc/20260416093521.html</id>
     <published>2026-04-16T09:35:21.000Z</published>
-    <updated>2026-07-23T11:35:14.035Z</updated>
+    <updated>2026-07-24T02:03:26.099Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;div class=&quot;obsidian-callout obsidian-callout-tip&quot; id=&quot;obsidian-callout-sm6jg75if&quot;&gt;&lt;div class=&quot;obsidian-callout-header&quot;&gt;&lt;span</summary>
+    <summary type="html">&lt;div class=&quot;obsidian-callout obsidian-callout-tip&quot; id=&quot;obsidian-callout-nzvdgg9ky&quot;&gt;&lt;div class=&quot;obsidian-callout-header&quot;&gt;&lt;span</summary>
         
       
     
@@ -355,14 +355,14 @@
     <link href="https://gloamfox.cc/20260415131634.html"/>
     <id>https://gloamfox.cc/20260415131634.html</id>
     <published>2026-04-15T13:16:34.000Z</published>
-    <updated>2026-07-23T11:35:14.031Z</updated>
+    <updated>2026-07-24T02:03:26.096Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;div class=&quot;obsidian-callout obsidian-callout-tip&quot; id=&quot;obsidian-callout-nng540l4g&quot;&gt;&lt;div class=&quot;obsidian-callout-header&quot;&gt;&lt;span</summary>
+    <summary type="html">&lt;div class=&quot;obsidian-callout obsidian-callout-tip&quot; id=&quot;obsidian-callout-hb3juhiqa&quot;&gt;&lt;div class=&quot;obsidian-callout-header&quot;&gt;&lt;span</summary>
         
       
     
@@ -382,14 +382,14 @@
     <link href="https://gloamfox.cc/20260413104209.html"/>
     <id>https://gloamfox.cc/20260413104209.html</id>
     <published>2026-04-13T10:42:09.000Z</published>
-    <updated>2026-07-23T11:35:14.031Z</updated>
+    <updated>2026-07-24T02:03:26.096Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;div class=&quot;obsidian-callout obsidian-callout-tip&quot; id=&quot;obsidian-callout-r21jyetxg&quot;&gt;&lt;div class=&quot;obsidian-callout-header&quot;&gt;&lt;span</summary>
+    <summary type="html">&lt;div class=&quot;obsidian-callout obsidian-callout-tip&quot; id=&quot;obsidian-callout-fx7juxev3&quot;&gt;&lt;div class=&quot;obsidian-callout-header&quot;&gt;&lt;span</summary>
         
       
     
@@ -409,14 +409,14 @@
     <link href="https://gloamfox.cc/20260412110517.html"/>
     <id>https://gloamfox.cc/20260412110517.html</id>
     <published>2026-04-12T11:05:17.000Z</published>
-    <updated>2026-07-23T11:35:14.029Z</updated>
+    <updated>2026-07-24T02:03:26.095Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;div class=&quot;obsidian-callout obsidian-callout-tip&quot; id=&quot;obsidian-callout-lq96182tl&quot;&gt;&lt;div class=&quot;obsidian-callout-header&quot;&gt;&lt;span</summary>
+    <summary type="html">&lt;div class=&quot;obsidian-callout obsidian-callout-tip&quot; id=&quot;obsidian-callout-mdqvnuib6&quot;&gt;&lt;div class=&quot;obsidian-callout-header&quot;&gt;&lt;span</summary>
         
       
     
@@ -436,14 +436,14 @@
     <link href="https://gloamfox.cc/20260411114110.html"/>
     <id>https://gloamfox.cc/20260411114110.html</id>
     <published>2026-04-11T11:41:10.000Z</published>
-    <updated>2026-07-23T11:35:14.031Z</updated>
+    <updated>2026-07-24T02:03:26.096Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;div class=&quot;obsidian-callout obsidian-callout-tip&quot; id=&quot;obsidian-callout-fkdx0f1wz&quot;&gt;&lt;div class=&quot;obsidian-callout-header&quot;&gt;&lt;span</summary>
+    <summary type="html">&lt;div class=&quot;obsidian-callout obsidian-callout-tip&quot; id=&quot;obsidian-callout-byd0bj766&quot;&gt;&lt;div class=&quot;obsidian-callout-header&quot;&gt;&lt;span</summary>
         
       
     
@@ -463,14 +463,14 @@
     <link href="https://gloamfox.cc/20260410163535.html"/>
     <id>https://gloamfox.cc/20260410163535.html</id>
     <published>2026-04-10T16:35:35.000Z</published>
-    <updated>2026-07-23T11:35:14.031Z</updated>
+    <updated>2026-07-24T02:03:26.096Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;div class=&quot;obsidian-callout obsidian-callout-tip&quot; id=&quot;obsidian-callout-670c23yru&quot;&gt;&lt;div class=&quot;obsidian-callout-header&quot;&gt;&lt;span</summary>
+    <summary type="html">&lt;div class=&quot;obsidian-callout obsidian-callout-tip&quot; id=&quot;obsidian-callout-9abnq9esk&quot;&gt;&lt;div class=&quot;obsidian-callout-header&quot;&gt;&lt;span</summary>
         
       
     
@@ -490,14 +490,14 @@
     <link href="https://gloamfox.cc/20260409094226.html"/>
     <id>https://gloamfox.cc/20260409094226.html</id>
     <published>2026-04-09T09:42:26.000Z</published>
-    <updated>2026-07-23T11:35:14.031Z</updated>
+    <updated>2026-07-24T02:03:26.096Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;div class=&quot;obsidian-callout obsidian-callout-tip&quot; id=&quot;obsidian-callout-eg9epj856&quot;&gt;&lt;div class=&quot;obsidian-callout-header&quot;&gt;&lt;span</summary>
+    <summary type="html">&lt;div class=&quot;obsidian-callout obsidian-callout-tip&quot; id=&quot;obsidian-callout-2wh3ptbra&quot;&gt;&lt;div class=&quot;obsidian-callout-header&quot;&gt;&lt;span</summary>
         
       
     
@@ -517,14 +517,14 @@
     <link href="https://gloamfox.cc/20260408205456.html"/>
     <id>https://gloamfox.cc/20260408205456.html</id>
     <published>2026-04-08T20:54:56.000Z</published>
-    <updated>2026-07-23T11:35:14.031Z</updated>
+    <updated>2026-07-24T02:03:26.096Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;div class=&quot;obsidian-callout obsidian-callout-tip&quot; id=&quot;obsidian-callout-fpy91hl8j&quot;&gt;&lt;div class=&quot;obsidian-callout-header&quot;&gt;&lt;span</summary>
+    <summary type="html">&lt;div class=&quot;obsidian-callout obsidian-callout-tip&quot; id=&quot;obsidian-callout-cno2dxdvf&quot;&gt;&lt;div class=&quot;obsidian-callout-header&quot;&gt;&lt;span</summary>
         
       
     
@@ -544,14 +544,14 @@
     <link href="https://gloamfox.cc/20260407143924.html"/>
     <id>https://gloamfox.cc/20260407143924.html</id>
     <published>2026-04-07T14:39:24.000Z</published>
-    <updated>2026-07-23T11:35:14.031Z</updated>
+    <updated>2026-07-24T02:03:26.096Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;div class=&quot;obsidian-callout obsidian-callout-tip&quot; id=&quot;obsidian-callout-5cwd4a5ru&quot;&gt;&lt;div class=&quot;obsidian-callout-header&quot;&gt;&lt;span</summary>
+    <summary type="html">&lt;div class=&quot;obsidian-callout obsidian-callout-tip&quot; id=&quot;obsidian-callout-5uqsm8ziv&quot;&gt;&lt;div class=&quot;obsidian-callout-header&quot;&gt;&lt;span</summary>
         
       
     
