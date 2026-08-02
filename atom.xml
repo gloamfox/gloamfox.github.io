@@ -6,7 +6,7 @@
   <link href="https://gloamfox.cc/atom.xml" rel="self"/>
   
   <link href="https://gloamfox.cc/"/>
-  <updated>2026-07-31T10:50:20.200Z</updated>
+  <updated>2026-08-02T10:01:26.632Z</updated>
   <id>https://gloamfox.cc/</id>
   
   <author>
@@ -17,11 +17,72 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>OpenVPN Docker 容器多站点互联与宿主机访问问题排查实录</title>
+    <link href="https://gloamfox.cc/20260801102416.html"/>
+    <id>https://gloamfox.cc/20260801102416.html</id>
+    <published>2026-08-01T10:24:16.000Z</published>
+    <updated>2026-08-02T10:01:26.632Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;用Docker部署OpenVPN服务端，让几台机器之间能够互相访问，结果在“宿主机访问VPN客户端”这一步卡住了整整一个下午。&lt;/p&gt;
+&lt;p&gt;容器内能ping通，宿主机却死活不通。&lt;code&gt;traceroute&lt;/code&gt;显示数据包到了容器门口就消失了……&lt;/p&gt;
+&lt;p</summary>
+        
+      
+    
+    
+    
+    <category term="系统运维" scheme="https://gloamfox.cc/categories/%E7%B3%BB%E7%BB%9F%E8%BF%90%E7%BB%B4/"/>
+    
+    
+    <category term="OpenVPN" scheme="https://gloamfox.cc/tags/OpenVPN/"/>
+    
+    <category term="Docker" scheme="https://gloamfox.cc/tags/Docker/"/>
+    
+    <category term="网络配置" scheme="https://gloamfox.cc/tags/%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/"/>
+    
+    <category term="iptables" scheme="https://gloamfox.cc/tags/iptables/"/>
+    
+    <category term="SNAT" scheme="https://gloamfox.cc/tags/SNAT/"/>
+    
+  </entry>
+  
+  <entry>
     <title>只有1个公网IP怎么玩？OpenVPN跨网络组网实战指南</title>
     <link href="https://gloamfox.cc/20260731164720.html"/>
     <id>https://gloamfox.cc/20260731164720.html</id>
     <published>2026-07-31T16:47:20.000Z</published>
-    <updated>2026-07-31T10:50:20.200Z</updated>
+    <updated>2026-08-02T10:01:26.634Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;很多朋友会遇到这样的情况：手上有三台机器——机器A、机器B、机器C，它们各自处于不同的网络中，只有机器A拥有公网IP，机器B和机器C要么在NAT后面，要么在完全隔离的内网里，外面根本访问不到。&lt;/p&gt;
+&lt;p&gt;这时候问题来了：怎么让这三台机器像在同一个局域网里一样互相通信？&lt;</summary>
+        
+      
+    
+    
+    
+    <category term="系统运维" scheme="https://gloamfox.cc/categories/%E7%B3%BB%E7%BB%9F%E8%BF%90%E7%BB%B4/"/>
+    
+    
+    <category term="系统运维" scheme="https://gloamfox.cc/tags/%E7%B3%BB%E7%BB%9F%E8%BF%90%E7%BB%B4/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>只有1个公网IP怎么玩？OpenVPN跨网络组网实战指南</title>
+    <link href="https://gloamfox.cc/20260731164720.html"/>
+    <id>https://gloamfox.cc/20260731164720.html</id>
+    <published>2026-07-31T16:47:20.000Z</published>
+    <updated>2026-08-02T10:01:26.634Z</updated>
     
     
       
@@ -47,7 +108,7 @@
     <link href="https://gloamfox.cc/20260728142700.html"/>
     <id>https://gloamfox.cc/20260728142700.html</id>
     <published>2026-07-28T14:27:00.000Z</published>
-    <updated>2026-07-31T10:50:20.197Z</updated>
+    <updated>2026-08-02T10:01:26.632Z</updated>
     
     
       
@@ -74,7 +135,7 @@
     <link href="https://gloamfox.cc/20260728103508.html"/>
     <id>https://gloamfox.cc/20260728103508.html</id>
     <published>2026-07-28T10:35:08.000Z</published>
-    <updated>2026-07-31T10:50:20.200Z</updated>
+    <updated>2026-08-02T10:01:26.634Z</updated>
     
     
       
@@ -102,7 +163,7 @@
     <link href="https://gloamfox.cc/20260725115109.html"/>
     <id>https://gloamfox.cc/20260725115109.html</id>
     <published>2026-07-25T11:51:09.000Z</published>
-    <updated>2026-07-31T10:50:20.198Z</updated>
+    <updated>2026-08-02T10:01:26.632Z</updated>
     
     
       
@@ -132,7 +193,7 @@
     <link href="https://gloamfox.cc/20260724170923.html"/>
     <id>https://gloamfox.cc/20260724170923.html</id>
     <published>2026-07-24T17:09:23.000Z</published>
-    <updated>2026-07-31T10:50:20.201Z</updated>
+    <updated>2026-08-02T10:01:26.636Z</updated>
     
     
       
@@ -162,7 +223,7 @@
     <link href="https://gloamfox.cc/20260723173559.html"/>
     <id>https://gloamfox.cc/20260723173559.html</id>
     <published>2026-07-23T17:35:59.000Z</published>
-    <updated>2026-07-31T10:50:20.198Z</updated>
+    <updated>2026-08-02T10:01:26.632Z</updated>
     
     
       
@@ -190,7 +251,7 @@
     <link href="https://gloamfox.cc/20260723153156.html"/>
     <id>https://gloamfox.cc/20260723153156.html</id>
     <published>2026-07-23T15:31:56.000Z</published>
-    <updated>2026-07-31T10:50:20.197Z</updated>
+    <updated>2026-08-02T10:01:26.632Z</updated>
     
     
       
@@ -215,7 +276,7 @@
     <link href="https://gloamfox.cc/20260721133341.html"/>
     <id>https://gloamfox.cc/20260721133341.html</id>
     <published>2026-07-21T13:33:41.000Z</published>
-    <updated>2026-07-31T10:50:20.198Z</updated>
+    <updated>2026-08-02T10:01:26.632Z</updated>
     
     
       
@@ -243,7 +304,7 @@
     <link href="https://gloamfox.cc/20260717163356.html"/>
     <id>https://gloamfox.cc/20260717163356.html</id>
     <published>2026-07-17T16:33:56.000Z</published>
-    <updated>2026-07-31T10:50:20.199Z</updated>
+    <updated>2026-08-02T10:01:26.633Z</updated>
     
     
       
@@ -269,7 +330,7 @@
     <link href="https://gloamfox.cc/20260715164504.html"/>
     <id>https://gloamfox.cc/20260715164504.html</id>
     <published>2026-07-15T16:45:04.000Z</published>
-    <updated>2026-07-31T10:50:20.198Z</updated>
+    <updated>2026-08-02T10:01:26.632Z</updated>
     
     
       
@@ -295,7 +356,7 @@
     <link href="https://gloamfox.cc/20260714103200.html"/>
     <id>https://gloamfox.cc/20260714103200.html</id>
     <published>2026-07-14T10:32:00.000Z</published>
-    <updated>2026-07-31T10:50:20.198Z</updated>
+    <updated>2026-08-02T10:01:26.632Z</updated>
     
     
       
@@ -321,7 +382,7 @@
     <link href="https://gloamfox.cc/20260713154719.html"/>
     <id>https://gloamfox.cc/20260713154719.html</id>
     <published>2026-07-13T15:47:19.000Z</published>
-    <updated>2026-07-31T10:50:20.198Z</updated>
+    <updated>2026-08-02T10:01:26.632Z</updated>
     
     
       
@@ -347,7 +408,7 @@
     <link href="https://gloamfox.cc/20260526095614.html"/>
     <id>https://gloamfox.cc/20260526095614.html</id>
     <published>2026-05-26T09:56:14.000Z</published>
-    <updated>2026-07-31T10:50:20.201Z</updated>
+    <updated>2026-08-02T10:01:26.635Z</updated>
     
     
       
@@ -380,7 +441,7 @@
     <link href="https://gloamfox.cc/20260516121317.html"/>
     <id>https://gloamfox.cc/20260516121317.html</id>
     <published>2026-05-16T12:13:17.000Z</published>
-    <updated>2026-07-31T10:50:20.201Z</updated>
+    <updated>2026-08-02T10:01:26.635Z</updated>
     
     
       
@@ -408,14 +469,14 @@
     <link href="https://gloamfox.cc/20260429094544.html"/>
     <id>https://gloamfox.cc/20260429094544.html</id>
     <published>2026-04-29T09:45:44.000Z</published>
-    <updated>2026-07-31T10:50:20.197Z</updated>
+    <updated>2026-08-02T10:01:26.632Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;div class=&quot;obsidian-callout obsidian-callout-tip&quot; id=&quot;obsidian-callout-rchca8s8t&quot;&gt;&lt;div class=&quot;obsidian-callout-header&quot;&gt;&lt;span</summary>
+    <summary type="html">&lt;div class=&quot;obsidian-callout obsidian-callout-tip&quot; id=&quot;obsidian-callout-l1aha5yw8&quot;&gt;&lt;div class=&quot;obsidian-callout-header&quot;&gt;&lt;span</summary>
         
       
     
@@ -441,7 +502,7 @@
     <link href="https://gloamfox.cc/20260422154218.html"/>
     <id>https://gloamfox.cc/20260422154218.html</id>
     <published>2026-04-22T15:42:18.000Z</published>
-    <updated>2026-07-31T10:50:20.201Z</updated>
+    <updated>2026-08-02T10:01:26.635Z</updated>
     
     
       
@@ -469,14 +530,14 @@
     <link href="https://gloamfox.cc/20260416093521.html"/>
     <id>https://gloamfox.cc/20260416093521.html</id>
     <published>2026-04-16T09:35:21.000Z</published>
-    <updated>2026-07-31T10:50:20.200Z</updated>
+    <updated>2026-08-02T10:01:26.634Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;div class=&quot;obsidian-callout obsidian-callout-tip&quot; id=&quot;obsidian-callout-7sy9brfbr&quot;&gt;&lt;div class=&quot;obsidian-callout-header&quot;&gt;&lt;span</summary>
+    <summary type="html">&lt;div class=&quot;obsidian-callout obsidian-callout-tip&quot; id=&quot;obsidian-callout-x341k8mtg&quot;&gt;&lt;div class=&quot;obsidian-callout-header&quot;&gt;&lt;span</summary>
         
       
     
@@ -496,14 +557,14 @@
     <link href="https://gloamfox.cc/20260415131634.html"/>
     <id>https://gloamfox.cc/20260415131634.html</id>
     <published>2026-04-15T13:16:34.000Z</published>
-    <updated>2026-07-31T10:50:20.197Z</updated>
+    <updated>2026-08-02T10:01:26.632Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;div class=&quot;obsidian-callout obsidian-callout-tip&quot; id=&quot;obsidian-callout-bvmarqf5a&quot;&gt;&lt;div class=&quot;obsidian-callout-header&quot;&gt;&lt;span</summary>
+    <summary type="html">&lt;div class=&quot;obsidian-callout obsidian-callout-tip&quot; id=&quot;obsidian-callout-9heqpfqt2&quot;&gt;&lt;div class=&quot;obsidian-callout-header&quot;&gt;&lt;span</summary>
         
       
     
@@ -515,60 +576,6 @@
     <category term="AI工程" scheme="https://gloamfox.cc/tags/AI%E5%B7%A5%E7%A8%8B/"/>
     
     <category term="大语言模型" scheme="https://gloamfox.cc/tags/%E5%A4%A7%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Claude Code 通关手册（七）：推荐 5 个 Hooks，代码质量提升 3 倍</title>
-    <link href="https://gloamfox.cc/20260413104209.html"/>
-    <id>https://gloamfox.cc/20260413104209.html</id>
-    <published>2026-04-13T10:42:09.000Z</published>
-    <updated>2026-07-31T10:50:20.197Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;div class=&quot;obsidian-callout obsidian-callout-tip&quot; id=&quot;obsidian-callout-dz3hf8s6i&quot;&gt;&lt;div class=&quot;obsidian-callout-header&quot;&gt;&lt;span</summary>
-        
-      
-    
-    
-    
-    <category term="软件工具" scheme="https://gloamfox.cc/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/"/>
-    
-    
-    <category term="Claude Code" scheme="https://gloamfox.cc/tags/Claude-Code/"/>
-    
-    <category term="AI编程" scheme="https://gloamfox.cc/tags/AI%E7%BC%96%E7%A8%8B/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Claude Code 通关手册（七）：给 AI 装上技能包——Skills 完全指南</title>
-    <link href="https://gloamfox.cc/20260412110517.html"/>
-    <id>https://gloamfox.cc/20260412110517.html</id>
-    <published>2026-04-12T11:05:17.000Z</published>
-    <updated>2026-07-31T10:50:20.196Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;div class=&quot;obsidian-callout obsidian-callout-tip&quot; id=&quot;obsidian-callout-znjbutpnz&quot;&gt;&lt;div class=&quot;obsidian-callout-header&quot;&gt;&lt;span</summary>
-        
-      
-    
-    
-    
-    <category term="软件工具" scheme="https://gloamfox.cc/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/"/>
-    
-    
-    <category term="Claude Code" scheme="https://gloamfox.cc/tags/Claude-Code/"/>
-    
-    <category term="AI编码" scheme="https://gloamfox.cc/tags/AI%E7%BC%96%E7%A0%81/"/>
     
   </entry>
   
