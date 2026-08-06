@@ -1,0 +1,603 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>把生产环境当玩具，客户投诉让人头都麻了 | 暮色之狐</title><meta name="author" content="gloamfox"><meta name="copyright" content="gloamfox"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="见过整个运维部同时沉默的样子吗？ 一封客户的投诉邮件，措辞客气，但句句见血。看完两段，头都麻了。 不是什么业务故障、代码死锁，就两件“部署小事”。但恰恰是这两件小事，让我觉得有必要写篇文章，提醒一下同行。 信里有两点特别扎眼，今天拆开来聊一聊。 第一件：Nginx 跑在 Windows 上 平台上线前部署代理操作系统为什么是 windows？我工作这么多年，多多少少接触了上百家公司，用 Linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="把生产环境当玩具，客户投诉让人头都麻了">
+<meta property="og:url" content="https://gloamfox.cc/20260806105303.html">
+<meta property="og:site_name" content="暮色之狐">
+<meta property="og:description" content="见过整个运维部同时沉默的样子吗？ 一封客户的投诉邮件，措辞客气，但句句见血。看完两段，头都麻了。 不是什么业务故障、代码死锁，就两件“部署小事”。但恰恰是这两件小事，让我觉得有必要写篇文章，提醒一下同行。 信里有两点特别扎眼，今天拆开来聊一聊。 第一件：Nginx 跑在 Windows 上 平台上线前部署代理操作系统为什么是 windows？我工作这么多年，多多少少接触了上百家公司，用 Linux">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://oss.012700.xyz/butterfly/2024/11/butterfly-docs-changelog-cover-9.png">
+<meta property="article:published_time" content="2026-08-06T10:53:03.000Z">
+<meta property="article:modified_time" content="2026-08-06T06:02:25.172Z">
+<meta property="article:author" content="gloamfox">
+<meta property="article:tag" content="系统运维">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="Nginx">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://oss.012700.xyz/butterfly/2024/11/butterfly-docs-changelog-cover-9.png"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "把生产环境当玩具，客户投诉让人头都麻了",
+  "url": "https://gloamfox.cc/20260806105303.html",
+  "image": "https://oss.012700.xyz/butterfly/2024/11/butterfly-docs-changelog-cover-9.png",
+  "datePublished": "2026-08-06T10:53:03.000Z",
+  "dateModified": "2026-08-06T06:02:25.172Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "gloamfox",
+      "url": "https://gloamfox.cc"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://gloamfox.cc/20260806105303.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.5.4"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?2e7179f3af23b3800199c585e00cfe24";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+btf.addGlobalFn('pjaxComplete', () => {
+  _hmt.push(['_trackPageview',window.location.pathname])
+}, 'baidu_analytics')
+</script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"pagination":{"enable":false,"hitsPerPage":8},"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":150,"languages":{"author":"作者: gloamfox","link":"链接: ","source":"来源: 暮色之狐","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.13.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '把生产环境当玩具，客户投诉让人头都麻了',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><!-- hexo injector head_end start -->
+<style>
+.obsidian-callout {
+  margin: 1.5em 0;
+  border-radius: 8px;
+  border-left: 4px solid var(--callout-color, #448aff);
+  background: var(--callout-bg, #e3f2fd);
+  overflow: hidden;
+}
+
+.obsidian-callout-header {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--callout-color, #448aff);
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.obsidian-callout-icon {
+  margin-right: 8px;
+  font-size: 16px;
+  line-height: 1;
+}
+
+.obsidian-callout-title {
+  text-transform: capitalize;
+}
+
+.obsidian-callout-content {
+  padding: 16px;
+  color: var(--text-color, #333);
+}
+
+.obsidian-callout-content > *:first-child {
+  margin-top: 0;
+}
+
+.obsidian-callout-content > *:last-child {
+  margin-bottom: 0;
+}
+
+.obsidian-callout-content p {
+  margin: 0.5em 0;
+}
+
+.obsidian-callout-content ul,
+.obsidian-callout-content ol {
+  margin: 0.5em 0;
+  padding-left: 1.5em;
+}
+
+.obsidian-callout-content pre {
+  margin: 1em 0;
+  border-radius: 6px;
+}
+
+.obsidian-callout-content code {
+  font-family: 'SF Mono', Monaco, 'Cascadia Code', monospace;
+  background: rgba(0,0,0,0.05);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+/* Callout type styles */
+.obsidian-callout-note {
+  --callout-color: #448aff;
+  --callout-bg: #e3f2fd;
+}
+
+.obsidian-callout-tip {
+  --callout-color: #00c853;
+  --callout-bg: #e8f5e9;
+}
+
+.obsidian-callout-warning {
+  --callout-color: #ff9100;
+  --callout-bg: #fff3e0;
+}
+
+.obsidian-callout-danger {
+  --callout-color: #ff1744;
+  --callout-bg: #ffebee;
+}
+
+.obsidian-callout-info {
+  --callout-color: #00b0ff;
+  --callout-bg: #e1f5fe;
+}
+
+.obsidian-callout-success {
+  --callout-color: #00c853;
+  --callout-bg: #e8f5e9;
+}
+
+.obsidian-callout-example {
+  --callout-color: #7c4dff;
+  --callout-bg: #ede7f6;
+}
+
+.obsidian-callout-quote {
+  --callout-color: #9e9e9e;
+  --callout-bg: #f5f5f5;
+}
+
+.obsidian-callout-bug {
+  --callout-color: #f50057;
+  --callout-bg: #fce4ec;
+}
+
+.obsidian-callout-abstract {
+  --callout-color: #00bfa5;
+  --callout-bg: #e0f2f1;
+}
+
+.obsidian-callout-question {
+  --callout-color: #64dd17;
+  --callout-bg: #f1f8e9;
+}
+
+.obsidian-callout-failure {
+  --callout-color: #ff5252;
+  --callout-bg: #ffebee;
+}
+
+.obsidian-callout-important {
+  --callout-color: #ffd600;
+  --callout-bg: #fffde7;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .obsidian-callout {
+    --text-color: #e0e0e0;
+  }
+
+  .obsidian-callout-note {
+    --callout-color: #448aff;
+    --callout-bg: #1a237e;
+  }
+
+  .obsidian-callout-tip {
+    --callout-color: #00c853;
+    --callout-bg: #1b5e20;
+  }
+
+  .obsidian-callout-warning {
+    --callout-color: #ff9100;
+    --callout-bg: #e65100;
+  }
+
+  .obsidian-callout-danger {
+    --callout-color: #ff1744;
+    --callout-bg: #b71c1c;
+  }
+
+  .obsidian-callout-info {
+    --callout-color: #00b0ff;
+    --callout-bg: #01579b;
+  }
+
+  .obsidian-callout-success {
+    --callout-color: #00c853;
+    --callout-bg: #1b5e20;
+  }
+
+  .obsidian-callout-example {
+    --callout-color: #7c4dff;
+    --callout-bg: #311b92;
+  }
+
+  .obsidian-callout-quote {
+    --callout-color: #9e9e9e;
+    --callout-bg: #424242;
+  }
+
+  .obsidian-callout-bug {
+    --callout-color: #f50057;
+    --callout-bg: #880e4f;
+  }
+
+  .obsidian-callout-abstract {
+    --callout-color: #00bfa5;
+    --callout-bg: #004d40;
+  }
+
+  .obsidian-callout-question {
+    --callout-color: #64dd17;
+    --callout-bg: #33691e;
+  }
+
+  .obsidian-callout-failure {
+    --callout-color: #ff5252;
+    --callout-bg: #b71c1c;
+  }
+
+  .obsidian-callout-important {
+    --callout-color: #ffd600;
+    --callout-bg: #f57f17;
+  }
+
+  .obsidian-callout-content code {
+    background: rgba(255,255,255,0.1);
+  }
+}
+</style>
+
+<style>
+.obsidian-tabs {
+  margin: 1.5em 0;
+  border: 1px solid var(--tab-border-color, #e0e0e0);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--tab-bg, #fafafa);
+}
+
+.obsidian-tabs-nav {
+  display: flex;
+  background: var(--tab-nav-bg, #f0f0f0);
+  border-bottom: 1px solid var(--tab-border-color, #e0e0e0);
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.obsidian-tabs-nav::-webkit-scrollbar {
+  display: none;
+}
+
+.obsidian-tab-btn {
+  padding: 12px 20px;
+  border: none;
+  background: transparent;
+  color: var(--tab-text-color, #666);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+}
+
+.obsidian-tab-btn:hover {
+  color: var(--tab-hover-color, #333);
+  background: var(--tab-hover-bg, rgba(0,0,0,0.03));
+}
+
+.obsidian-tab-btn.active {
+  color: var(--tab-active-color, #448aff);
+  border-bottom-color: var(--tab-active-color, #448aff);
+  background: var(--tab-bg, #fafafa);
+}
+
+.obsidian-tabs-content {
+  padding: 20px;
+  background: var(--tab-bg, #fafafa);
+}
+
+.obsidian-tab-panel {
+  display: none;
+  animation: fadeIn 0.3s ease;
+}
+
+.obsidian-tab-panel.active {
+  display: block;
+}
+
+.obsidian-tab-panel > *:first-child {
+  margin-top: 0;
+}
+
+.obsidian-tab-panel > *:last-child {
+  margin-bottom: 0;
+}
+
+.obsidian-tab-panel pre {
+  margin: 1em 0;
+  border-radius: 6px;
+}
+
+.obsidian-tab-panel code {
+  font-family: 'SF Mono', Monaco, 'Cascadia Code', monospace;
+}
+
+/* Fix code block background color inside tabs */
+.obsidian-tab-panel pre code {
+  background: transparent !important;
+}
+
+.obsidian-tab-panel .highlight {
+  background: transparent !important;
+}
+
+.obsidian-tab-panel .highlight pre {
+  background: var(--code-bg, #f5f5f5) !important;
+}
+
+.obsidian-tab-panel figure.highlight {
+  background: var(--code-bg, #f5f5f5) !important;
+}
+
+.obsidian-tab-panel td.gutter {
+  background: var(--code-gutter-bg, #f0f0f0) !important;
+}
+
+.obsidian-tab-panel td.code {
+  background: var(--code-bg, #f5f5f5) !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  .obsidian-tab-panel .highlight pre,
+  .obsidian-tab-panel figure.highlight {
+    --code-bg: #2d2d2d;
+    --code-gutter-bg: #252525;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .obsidian-tabs {
+    --tab-bg: #1e1e1e;
+    --tab-nav-bg: #252526;
+    --tab-border-color: #333;
+    --tab-text-color: #999;
+    --tab-hover-color: #ccc;
+    --tab-hover-bg: rgba(255,255,255,0.05);
+    --tab-active-color: #58a6ff;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+</style>
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="暮色之狐" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" /></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">88</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">106</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 统计</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/tags"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories"><i class="fa-fw fas fa-bookmark"></i><span> 分类</span></a></li><li><a class="site-page child" href="/archives"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa-user-circle"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://oss.012700.xyz/butterfly/2024/11/butterfly-docs-changelog-cover-9.png);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><img class="site-icon" src="/img/logo.png" ><span class="site-name">暮色之狐</span></a><a class="nav-page-title" href="/"><span class="site-name">把生产环境当玩具，客户投诉让人头都麻了</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 统计</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/tags"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories"><i class="fa-fw fas fa-bookmark"></i><span> 分类</span></a></li><li><a class="site-page child" href="/archives"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa-user-circle"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">把生产环境当玩具，客户投诉让人头都麻了</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2026-08-06T10:53:03.000Z" title="发表于 2026-08-06 10:53:03">2026-08-06</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-08-06T06:02:25.172Z" title="更新于 2026-08-06 06:02:25">2026-08-06</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%B3%BB%E7%BB%9F%E8%BF%90%E7%BB%B4/">系统运维</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><p>见过整个运维部同时沉默的样子吗？ 一封客户的投诉邮件，措辞客气，但句句见血。看完两段，头都麻了。</p>
+<p>不是什么业务故障、代码死锁，就两件“部署小事”。但恰恰是这两件小事，让我觉得有必要写篇文章，提醒一下同行。</p>
+<p>信里有两点特别扎眼，今天拆开来聊一聊。</p>
+<h2 id="第一件：Nginx-跑在-Windows-上"><a href="#第一件：Nginx-跑在-Windows-上" class="headerlink" title="第一件：Nginx 跑在 Windows 上"></a>第一件：Nginx 跑在 Windows 上</h2><blockquote>
+<p><em>平台上线前部署代理操作系统为什么是 windows？我工作这么多年，多多少少接触了上百家公司，用 Linux 的至少 50 家，50 家里面你们是我见过第一家在 windows 上部署 nginx 的……</em></p>
+</blockquote>
+<p>说实话，读到这句的时候，我愣了一下，然后笑了，苦笑。</p>
+<p>Nginx 这玩意儿，生下来就是为 Linux 活的。它的灵魂是 epoll——Linux 内核里那个处理高并发的神器。Windows 上虽然也有 IOCP，但 Nginx 官方对 Windows 的支持，定位从来都是 “开发测试” ，官网上白纸黑字，生产环境强烈推荐 Linux。</p>
+<p>为什么还会有人把 Nginx 装给 Windows？</p>
+<p>无非三种情况：</p>
+<ul>
+<li>历史包袱太重，早期业务是 .NET&#x2F;IIS，懒得迁，也不敢迁；</li>
+<li>团队里没人熟 Linux，招不到人，也舍不得花钱招；</li>
+<li>装上去能启动，没报错，就以为没事了。</li>
+</ul>
+<p>但代价呢？</p>
+<p><strong>性能打折。</strong> Windows 上的 Nginx 被迫退回到 select &#x2F; poll 模型。虽然从 1.15.9 版本开始支持 poll 模型，可以绕过 select 的1024硬限制，但这只是“能跑”，远没到“跑得好”的程度。poll 在 Windows 上的实现本身就有缺陷，比如可能无法及时报告连接错误。你装了一台法拉利的引擎，结果跑起来跟三轮车似的。</p>
+<p><strong>玄学稳定性。</strong> Nginx on Windows 的官方文档里至今仍列着“已知问题”——平时没事，流量一上来，什么诡异的超时都能遇到。根据社区讨论和实际测试，Windows 版 Nginx 的真实并发上限大约在 500 到 1500 连接，超过这个范围性能就会急剧下降。</p>
+<p>那位前辈说“第一次见”，不是他见识少，是太离谱。世界还真是个草台班子。</p>
+<h2 id="第二件：connections-设了-20W，file-max-还是-1024"><a href="#第二件：connections-设了-20W，file-max-还是-1024" class="headerlink" title="第二件：connections 设了 20W，file-max 还是 1024"></a>第二件：connections 设了 20W，file-max 还是 1024</h2><blockquote>
+<p><em>“贵司是否有专门的运维对 Linux 内核配置进行优化？我查看了部分机器的配置，nginx connections 设为 20W，但 Linux 的 file-max 还是默认值 1024。”</em></p>
+</blockquote>
+<p>这条更狠，直接打在“根本没人管”的痛点上。</p>
+<p>翻译一下就是：工程师在 Nginx 里写了 <code>worker_connections 200000</code>，觉得自己能扛 20 万并发。结果 Linux 系统冷冷地回了一句：“不，你最多开 1024 个文件。”</p>
+<p>系统默认的 <code>fs.file-max</code> 通常是 1024（旧版）或者按内存自动算（新版），但无论如何，裸机默认值绝对到不了 20W。</p>
+<p>Nginx 启动的时候一声不吭，你以为万事大吉。等流量一上来，日志里静悄悄出现 <code>Too many open files</code>，然后用户 502，老板拍桌子。</p>
+<p>那位前辈说“查看了部分机器”——这个词最扎心。说明他随手查了几台，台台都是这样。</p>
+<p>这不是某一个人的失误，是整个流程在裸奔。</p>
+<h2 id="一份只读脚本，帮你检查生产环境有没有裸奔"><a href="#一份只读脚本，帮你检查生产环境有没有裸奔" class="headerlink" title="一份只读脚本，帮你检查生产环境有没有裸奔"></a>一份只读脚本，帮你检查生产环境有没有裸奔</h2><p>下面这份脚本是纯只读的，不会修改系统任何配置，放心在生产环境执行。它会扫描关键内核参数、<code>limits.conf</code>、常见服务进程的实际文件描述符限制，给出红黄绿状态。</p>
+<p>将以下内容保存为 <code>check_prod.sh</code>，执行 <code>sudo bash check_prod.sh</code>：</p>
+<blockquote>
+<p>[!quote]- 一键检测生产环境内核配置</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="comment"># ============================================================</span></span><br><span class="line"><span class="comment"># 文件名: check_production_sysctl.sh</span></span><br><span class="line"><span class="comment"># 用途: 检查生产环境内核参数是否符合推荐值（只读）</span></span><br><span class="line"><span class="comment"># 适用: Debian/Ubuntu/CentOS/RHEL</span></span><br><span class="line"><span class="comment"># ============================================================</span></span><br><span class="line"></span><br><span class="line">RED=<span class="string">&#x27;\033[0;31m&#x27;</span></span><br><span class="line">GREEN=<span class="string">&#x27;\033[0;32m&#x27;</span></span><br><span class="line">YELLOW=<span class="string">&#x27;\033[0;33m&#x27;</span></span><br><span class="line">BLUE=<span class="string">&#x27;\033[0;34m&#x27;</span></span><br><span class="line">NC=<span class="string">&#x27;\033[0m&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># ---------- 推荐值定义（可根据实际内存调整） ----------</span></span><br><span class="line"><span class="built_in">declare</span> -A RECOMMENDED=(</span><br><span class="line">    [<span class="string">&quot;fs.file-max&quot;</span>]=<span class="string">&quot;2097152&quot;</span></span><br><span class="line">    [<span class="string">&quot;fs.nr_open&quot;</span>]=<span class="string">&quot;1048576&quot;</span></span><br><span class="line">    [<span class="string">&quot;kernel.pid_max&quot;</span>]=<span class="string">&quot;65536&quot;</span></span><br><span class="line">    [<span class="string">&quot;net.core.somaxconn&quot;</span>]=<span class="string">&quot;65535&quot;</span></span><br><span class="line">    [<span class="string">&quot;net.ipv4.tcp_max_syn_backlog&quot;</span>]=<span class="string">&quot;65535&quot;</span></span><br><span class="line">    [<span class="string">&quot;net.core.netdev_max_backlog&quot;</span>]=<span class="string">&quot;65535&quot;</span></span><br><span class="line">    [<span class="string">&quot;net.ipv4.tcp_syncookies&quot;</span>]=<span class="string">&quot;1&quot;</span></span><br><span class="line">    [<span class="string">&quot;net.ipv4.tcp_tw_reuse&quot;</span>]=<span class="string">&quot;1&quot;</span></span><br><span class="line">    [<span class="string">&quot;net.ipv4.tcp_fin_timeout&quot;</span>]=<span class="string">&quot;30&quot;</span></span><br><span class="line">    [<span class="string">&quot;net.ipv4.ip_local_port_range&quot;</span>]=<span class="string">&quot;1024 65535&quot;</span></span><br><span class="line">    [<span class="string">&quot;net.ipv4.tcp_max_tw_buckets&quot;</span>]=<span class="string">&quot;2000000&quot;</span></span><br><span class="line">    [<span class="string">&quot;net.core.rmem_max&quot;</span>]=<span class="string">&quot;16777216&quot;</span></span><br><span class="line">    [<span class="string">&quot;net.core.wmem_max&quot;</span>]=<span class="string">&quot;16777216&quot;</span></span><br><span class="line">    [<span class="string">&quot;net.ipv4.tcp_rmem&quot;</span>]=<span class="string">&quot;4096 87380 16777216&quot;</span></span><br><span class="line">    [<span class="string">&quot;net.ipv4.tcp_wmem&quot;</span>]=<span class="string">&quot;4096 65536 16777216&quot;</span></span><br><span class="line">    [<span class="string">&quot;vm.swappiness&quot;</span>]=<span class="string">&quot;10&quot;</span></span><br><span class="line">    [<span class="string">&quot;vm.overcommit_memory&quot;</span>]=<span class="string">&quot;1&quot;</span></span><br><span class="line">    [<span class="string">&quot;net.netfilter.nf_conntrack_max&quot;</span>]=<span class="string">&quot;2097152&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> -e <span class="string">&quot;<span class="variable">$&#123;BLUE&#125;</span>=============================================<span class="variable">$&#123;NC&#125;</span>&quot;</span></span><br><span class="line"><span class="built_in">echo</span> -e <span class="string">&quot;<span class="variable">$&#123;BLUE&#125;</span>  生产环境内核参数检查报告 (只读)<span class="variable">$&#123;NC&#125;</span>&quot;</span></span><br><span class="line"><span class="built_in">echo</span> -e <span class="string">&quot;<span class="variable">$&#123;BLUE&#125;</span>  时间: <span class="subst">$(date)</span><span class="variable">$&#123;NC&#125;</span>&quot;</span></span><br><span class="line"><span class="built_in">echo</span> -e <span class="string">&quot;<span class="variable">$&#123;BLUE&#125;</span>  主机: <span class="subst">$(hostname)</span><span class="variable">$&#123;NC&#125;</span>&quot;</span></span><br><span class="line"><span class="built_in">echo</span> -e <span class="string">&quot;<span class="variable">$&#123;BLUE&#125;</span>=============================================<span class="variable">$&#123;NC&#125;</span>&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># ---------- 1. 内核参数检查 ----------</span></span><br><span class="line"><span class="built_in">echo</span> -e <span class="string">&quot;\n<span class="variable">$&#123;BLUE&#125;</span>&gt;&gt;&gt; 1. 内核参数检查 (sysctl)<span class="variable">$&#123;NC&#125;</span>&quot;</span></span><br><span class="line"><span class="built_in">echo</span> -e <span class="string">&quot;参数名 | 当前值 | 推荐值 | 状态&quot;</span></span><br><span class="line"><span class="built_in">echo</span> -e <span class="string">&quot;-------|--------|--------|------&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> param <span class="keyword">in</span> <span class="string">&quot;<span class="variable">$&#123;!RECOMMENDED[@]&#125;</span>&quot;</span>; <span class="keyword">do</span></span><br><span class="line">    current=$(sysctl -n <span class="string">&quot;<span class="variable">$param</span>&quot;</span> 2&gt;/dev/null || <span class="built_in">echo</span> <span class="string">&quot;N/A&quot;</span>)</span><br><span class="line">    rec=<span class="string">&quot;<span class="variable">$&#123;RECOMMENDED[$param]&#125;</span>&quot;</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> [[ <span class="string">&quot;<span class="variable">$current</span>&quot;</span> == <span class="string">&quot;N/A&quot;</span> ]]; <span class="keyword">then</span></span><br><span class="line">        <span class="built_in">echo</span> -e <span class="string">&quot;<span class="variable">$param</span> | N/A | <span class="variable">$rec</span> | <span class="variable">$&#123;RED&#125;</span>NOT FOUND<span class="variable">$&#123;NC&#125;</span>&quot;</span></span><br><span class="line">        <span class="built_in">continue</span></span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> [[ <span class="string">&quot;<span class="variable">$current</span>&quot;</span> == <span class="string">&quot;<span class="variable">$rec</span>&quot;</span> ]]; <span class="keyword">then</span></span><br><span class="line">        <span class="built_in">echo</span> -e <span class="string">&quot;<span class="variable">$param</span> | <span class="variable">$current</span> | <span class="variable">$rec</span> | <span class="variable">$&#123;GREEN&#125;</span>OK<span class="variable">$&#123;NC&#125;</span>&quot;</span></span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="comment"># 数值类型：当前值 &gt;= 推荐值算通过</span></span><br><span class="line">        <span class="keyword">if</span> [[ <span class="string">&quot;<span class="variable">$current</span>&quot;</span> =~ ^[0-9]+$ ]] &amp;&amp; [[ <span class="string">&quot;<span class="variable">$rec</span>&quot;</span> =~ ^[0-9]+$ ]]; <span class="keyword">then</span></span><br><span class="line">            <span class="keyword">if</span> [[ <span class="string">&quot;<span class="variable">$current</span>&quot;</span> -ge <span class="string">&quot;<span class="variable">$rec</span>&quot;</span> ]]; <span class="keyword">then</span></span><br><span class="line">                <span class="built_in">echo</span> -e <span class="string">&quot;<span class="variable">$param</span> | <span class="variable">$current</span> | <span class="variable">$rec</span> | <span class="variable">$&#123;GREEN&#125;</span>OK (&gt;=推荐)<span class="variable">$&#123;NC&#125;</span>&quot;</span></span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                <span class="built_in">echo</span> -e <span class="string">&quot;<span class="variable">$param</span> | <span class="variable">$current</span> | <span class="variable">$rec</span> | <span class="variable">$&#123;RED&#125;</span>WARN (偏小)<span class="variable">$&#123;NC&#125;</span>&quot;</span></span><br><span class="line">            <span class="keyword">fi</span></span><br><span class="line">        <span class="keyword">elif</span> [[ <span class="string">&quot;<span class="variable">$current</span>&quot;</span> =~ ^[0-9]+\ [0-9]+\ [0-9]+$ ]] &amp;&amp; [[ <span class="string">&quot;<span class="variable">$rec</span>&quot;</span> =~ ^[0-9]+\ [0-9]+\ [0-9]+$ ]]; <span class="keyword">then</span></span><br><span class="line">            cur_max=$(<span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$current</span>&quot;</span> | awk <span class="string">&#x27;&#123;print $3&#125;&#x27;</span>)</span><br><span class="line">            rec_max=$(<span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$rec</span>&quot;</span> | awk <span class="string">&#x27;&#123;print $3&#125;&#x27;</span>)</span><br><span class="line">            <span class="keyword">if</span> [[ <span class="string">&quot;<span class="variable">$cur_max</span>&quot;</span> -ge <span class="string">&quot;<span class="variable">$rec_max</span>&quot;</span> ]]; <span class="keyword">then</span></span><br><span class="line">                <span class="built_in">echo</span> -e <span class="string">&quot;<span class="variable">$param</span> | <span class="variable">$current</span> | <span class="variable">$rec</span> | <span class="variable">$&#123;GREEN&#125;</span>OK<span class="variable">$&#123;NC&#125;</span>&quot;</span></span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                <span class="built_in">echo</span> -e <span class="string">&quot;<span class="variable">$param</span> | <span class="variable">$current</span> | <span class="variable">$rec</span> | <span class="variable">$&#123;RED&#125;</span>WARN (最大值偏小)<span class="variable">$&#123;NC&#125;</span>&quot;</span></span><br><span class="line">            <span class="keyword">fi</span></span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="built_in">echo</span> -e <span class="string">&quot;<span class="variable">$param</span> | <span class="variable">$current</span> | <span class="variable">$rec</span> | <span class="variable">$&#123;YELLOW&#125;</span>UNKNOWN<span class="variable">$&#123;NC&#125;</span>&quot;</span></span><br><span class="line">        <span class="keyword">fi</span></span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># ---------- 2. limits.conf 检查 ----------</span></span><br><span class="line"><span class="built_in">echo</span> -e <span class="string">&quot;\n<span class="variable">$&#123;BLUE&#125;</span>&gt;&gt;&gt; 2. /etc/security/limits.conf<span class="variable">$&#123;NC&#125;</span>&quot;</span></span><br><span class="line">grep -E <span class="string">&quot;^[^#]*nofile&quot;</span> /etc/security/limits.conf 2&gt;/dev/null || <span class="built_in">echo</span> <span class="string">&quot;无有效配置&quot;</span></span><br><span class="line">soft_cnt=$(grep -E <span class="string">&quot;^[^#]+\s+soft\s+nofile\s+65535&quot;</span> /etc/security/limits.conf 2&gt;/dev/null | <span class="built_in">wc</span> -l)</span><br><span class="line">hard_cnt=$(grep -E <span class="string">&quot;^[^#]+\s+hard\s+nofile\s+65535&quot;</span> /etc/security/limits.conf 2&gt;/dev/null | <span class="built_in">wc</span> -l)</span><br><span class="line"><span class="keyword">if</span> [[ <span class="string">&quot;<span class="variable">$soft_cnt</span>&quot;</span> -gt 0 ]] &amp;&amp; [[ <span class="string">&quot;<span class="variable">$hard_cnt</span>&quot;</span> -gt 0 ]]; <span class="keyword">then</span></span><br><span class="line">    <span class="built_in">echo</span> -e <span class="string">&quot;<span class="variable">$&#123;GREEN&#125;</span>✓ 已配置 nofile 65535<span class="variable">$&#123;NC&#125;</span>&quot;</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    <span class="built_in">echo</span> -e <span class="string">&quot;<span class="variable">$&#123;RED&#125;</span>✗ 未正确配置 nofile 65535<span class="variable">$&#123;NC&#125;</span>&quot;</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># ---------- 3. 常见服务进程实际限制 ----------</span></span><br><span class="line"><span class="built_in">echo</span> -e <span class="string">&quot;\n<span class="variable">$&#123;BLUE&#125;</span>&gt;&gt;&gt; 3. 常见服务进程实际限制<span class="variable">$&#123;NC&#125;</span>&quot;</span></span><br><span class="line"><span class="keyword">for</span> svc <span class="keyword">in</span> nginx java redis-server mysqld postgres httpd; <span class="keyword">do</span></span><br><span class="line">    pids=$(pgrep -x <span class="string">&quot;<span class="variable">$svc</span>&quot;</span> 2&gt;/dev/null | <span class="built_in">head</span> -2)</span><br><span class="line">    <span class="keyword">for</span> pid <span class="keyword">in</span> <span class="variable">$pids</span>; <span class="keyword">do</span></span><br><span class="line">        <span class="keyword">if</span> [[ -f /proc/<span class="variable">$pid</span>/limits ]]; <span class="keyword">then</span></span><br><span class="line">            hard=$(grep <span class="string">&quot;Max open files&quot;</span> /proc/<span class="variable">$pid</span>/limits | awk <span class="string">&#x27;&#123;print $4&#125;&#x27;</span>)</span><br><span class="line">            <span class="built_in">echo</span> -e <span class="string">&quot;  <span class="variable">$svc</span> (PID <span class="variable">$pid</span>): 硬限制 = <span class="variable">$hard</span> <span class="subst">$([ <span class="string">&quot;<span class="variable">$hard</span>&quot;</span> -ge 65535 ] &amp;&amp; echo <span class="string">&quot;<span class="variable">$&#123;GREEN&#125;</span>✓<span class="variable">$&#123;NC&#125;</span>&quot;</span> || echo <span class="string">&quot;<span class="variable">$&#123;RED&#125;</span>✗ 建议&gt;=65535<span class="variable">$&#123;NC&#125;</span>&quot;</span>)</span>&quot;</span></span><br><span class="line">        <span class="keyword">fi</span></span><br><span class="line">    <span class="keyword">done</span></span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># ---------- 4. systemd 服务检查 ----------</span></span><br><span class="line"><span class="built_in">echo</span> -e <span class="string">&quot;\n<span class="variable">$&#123;BLUE&#125;</span>&gt;&gt;&gt; 4. systemd 服务 LimitNOFILE<span class="variable">$&#123;NC&#125;</span>&quot;</span></span><br><span class="line"><span class="keyword">for</span> unit <span class="keyword">in</span> $(systemctl list-units --<span class="built_in">type</span>=service --state=running 2&gt;/dev/null | grep -E <span class="string">&quot;nginx|java|redis|mysql|postgres&quot;</span> | awk <span class="string">&#x27;&#123;print $1&#125;&#x27;</span>); <span class="keyword">do</span></span><br><span class="line">    nofile=$(systemctl show -p LimitNOFILE <span class="string">&quot;<span class="variable">$unit</span>&quot;</span> 2&gt;/dev/null | <span class="built_in">cut</span> -d= -f2)</span><br><span class="line">    <span class="built_in">echo</span> -e <span class="string">&quot;  <span class="variable">$unit</span> : LimitNOFILE = <span class="variable">$&#123;nofile:-未设置&#125;</span> <span class="subst">$([ <span class="string">&quot;<span class="variable">$&#123;nofile:-0&#125;</span>&quot;</span> -ge 65535 ] 2&gt;/dev/null &amp;&amp; echo <span class="string">&quot;<span class="variable">$&#123;GREEN&#125;</span>✓<span class="variable">$&#123;NC&#125;</span>&quot;</span> || echo <span class="string">&quot;<span class="variable">$&#123;RED&#125;</span>✗<span class="variable">$&#123;NC&#125;</span>&quot;</span>)</span>&quot;</span></span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> -e <span class="string">&quot;\n<span class="variable">$&#123;BLUE&#125;</span>=============================================<span class="variable">$&#123;NC&#125;</span>&quot;</span></span><br><span class="line"><span class="built_in">echo</span> -e <span class="string">&quot;<span class="variable">$&#123;GREEN&#125;</span>检查完成。请关注标记为 WARN 或 ✗ 的项目。<span class="variable">$&#123;NC&#125;</span>&quot;</span></span><br><span class="line"><span class="built_in">echo</span> -e <span class="string">&quot;<span class="variable">$&#123;BLUE&#125;</span>=============================================<span class="variable">$&#123;NC&#125;</span>&quot;</span></span><br></pre></td></tr></table></figure>
+</blockquote>
+<h2 id="最后说几句"><a href="#最后说几句" class="headerlink" title="最后说几句"></a>最后说几句</h2><p>那封投诉信里提到的两件事，单独拎出来看，每一件都不算“致命失误”——毕竟 Windows 跑 Nginx 也能转，file-max 没改也不一定会立刻崩。</p>
+<p>但合在一起，暴露的是一个更根本的问题：这个团队的生产环境部署，没有标准，没有检查清单，没有敬畏心。</p>
+<p>那位老前辈真正愤怒的，不是具体哪个选择做错了，而是这些错误“低级到只要有人在上线前随手查一下就能发现”。</p>
+<p>系统能跑，不等于能活。能活过流量高峰，才叫生产环境。</p>
+<p>生产环境不是玩具，是战场。</p>
+<p>最近在公司内部翻到一封“技术投诉信”，字里行间的锐利让我出了一身冷汗。投诉对象是某部门上线的系统，投诉人显然是位见过世面的前辈。信里有两点特别扎眼，今天就借这两把“飞刀”，来聊聊生产环境部署的那些“不是玩具”的事。</p>
+<div class="obsidian-callout obsidian-callout-tip" id="obsidian-callout-0m9swtdg2"><div class="obsidian-callout-header"><span class="obsidian-callout-icon">&#128161;</span><span class="obsidian-callout-title">投诉原文</span></div><div class="obsidian-callout-content"><p>(2)平台上线前部署代理操作系统为什么是 windows？我工作这么多年，多多少少接触了上百家公司，用 Linux 的至少 50 家，50 家里面你们是我见过第一家在 windows 上部署 nginx 的……<br>(3)贵司是否有专门的运维对 Linux 内核配置进行优化？我查看了部分机器的配置，nginx connections 设为 20W，但 Linux 的 file-max 还是默认值 1024。</p>
+</div></div>
+<p>两句话，两个巴掌，打在了两个不同的“常识”上。我们来一个个拆。</p>
+<h2 id="第一巴掌：Nginx-Windows，是什么神仙组合？"><a href="#第一巴掌：Nginx-Windows，是什么神仙组合？" class="headerlink" title="第一巴掌：Nginx + Windows，是什么神仙组合？"></a>第一巴掌：Nginx + Windows，是什么神仙组合？</h2><p>Nginx 诞生于 Linux 世界，它的 epoll（Linux） 和 kqueue（BSD&#x2F;macOS） 事件模型是高并发的基石。Windows 上虽然也有 IOCP，但 Nginx 官方对 Windows 的支持定位是 “开发测试”，生产环境强烈推荐 Linux。</p>
+<p>那为什么有些团队会选 Windows？</p>
+<ul>
+<li>历史包袱：早期业务跑在 .NET&#x2F;IIS 上，懒得迁；</li>
+<li>运维技能树单一：团队只熟 Windows，没 Linux 人手；</li>
+<li>反正能跑：启动后没报错，就以为万事大吉。</li>
+</ul>
+<p>但代价是什么？</p>
+<ul>
+<li>性能折损：Windows 上的 Nginx 用 select&#x2F;poll 模型，单进程并发上限被锁死在 1024 级别；</li>
+<li>稳定性玄学：Nginx on Windows 的 release notes 常年写着 “known issues with large number of connections”；</li>
+<li>生态割裂：要调优内核参数？Windows 的注册表调优和 Linux 的 <code>/etc/sysctl.conf</code> 完全两个宇宙。</li>
+</ul>
+<h2 id="第二巴掌：connections-20W，file-max-1024，这比“渣男”还渣"><a href="#第二巴掌：connections-20W，file-max-1024，这比“渣男”还渣" class="headerlink" title="第二巴掌：connections&#x3D;20W，file-max&#x3D;1024，这比“渣男”还渣"></a>第二巴掌：connections&#x3D;20W，file-max&#x3D;1024，这比“渣男”还渣</h2><p>这巴掌更狠，直接打在了内核参数没人管的痛点上。</p>
+<p>Linux 系统默认的 <code>fs.file-max</code> 通常是 1024（旧版）或按内存计算（新版），但无论如何，裸机默认值绝不会是 20W。而 Nginx 配置里设置了 <code>worker_connections 200000</code>，意味着每个 worker 进程希望打开 20 万个文件描述符。</p>
+<p>结果呢？系统说：不，你最多只能开 1024 个。 Nginx 启动时不会报错，但一旦流量上来，日志里就会 quietly 出现 <code>Too many open files</code>，然后连接被拒绝，用户 502，老板拍桌。</p>
+<p>这不是技术问题，这是运维基本素养的缺失，更可怕的是，这类疏忽往往不是孤例——投诉人“查看了部分机器”就发现，说明批量部署脚本里根本没有内核参数检查步骤。</p>
+<h3 id="用一份检查脚本，检查你的生产环境是否“裸奔”"><a href="#用一份检查脚本，检查你的生产环境是否“裸奔”" class="headerlink" title="用一份检查脚本，检查你的生产环境是否“裸奔”"></a>用一份检查脚本，检查你的生产环境是否“裸奔”</h3><p>下面这份脚本是纯只读的检查脚本，不会修改系统任何配置，可以放心在生产环境执行。它会扫描所有关键内核参数、<code>limits.conf</code> 配置、正在运行的常见服务进程的实际文件描述符限制，并给出红黄绿状态评估。</p>
+<p>将以下内容保存为 <code>check_prod.sh</code>，然后执行 <code>sudo bash check_prod.sh</code>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="comment"># ============================================================</span></span><br><span class="line"><span class="comment"># 文件名: check_production_sysctl.sh</span></span><br><span class="line"><span class="comment"># 用途: 检查生产环境内核参数是否符合推荐值（只读）</span></span><br><span class="line"><span class="comment"># 适用: Debian/Ubuntu/CentOS/RHEL</span></span><br><span class="line"><span class="comment"># ============================================================</span></span><br><span class="line"></span><br><span class="line">RED=<span class="string">&#x27;\033[0;31m&#x27;</span></span><br><span class="line">GREEN=<span class="string">&#x27;\033[0;32m&#x27;</span></span><br><span class="line">YELLOW=<span class="string">&#x27;\033[0;33m&#x27;</span></span><br><span class="line">BLUE=<span class="string">&#x27;\033[0;34m&#x27;</span></span><br><span class="line">NC=<span class="string">&#x27;\033[0m&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># ---------- 推荐值定义（可根据实际内存调整） ----------</span></span><br><span class="line"><span class="built_in">declare</span> -A RECOMMENDED=(</span><br><span class="line">    [<span class="string">&quot;fs.file-max&quot;</span>]=<span class="string">&quot;2097152&quot;</span></span><br><span class="line">    [<span class="string">&quot;fs.nr_open&quot;</span>]=<span class="string">&quot;1048576&quot;</span></span><br><span class="line">    [<span class="string">&quot;kernel.pid_max&quot;</span>]=<span class="string">&quot;65536&quot;</span></span><br><span class="line">    [<span class="string">&quot;net.core.somaxconn&quot;</span>]=<span class="string">&quot;65535&quot;</span></span><br><span class="line">    [<span class="string">&quot;net.ipv4.tcp_max_syn_backlog&quot;</span>]=<span class="string">&quot;65535&quot;</span></span><br><span class="line">    [<span class="string">&quot;net.core.netdev_max_backlog&quot;</span>]=<span class="string">&quot;65535&quot;</span></span><br><span class="line">    [<span class="string">&quot;net.ipv4.tcp_syncookies&quot;</span>]=<span class="string">&quot;1&quot;</span></span><br><span class="line">    [<span class="string">&quot;net.ipv4.tcp_tw_reuse&quot;</span>]=<span class="string">&quot;1&quot;</span></span><br><span class="line">    [<span class="string">&quot;net.ipv4.tcp_fin_timeout&quot;</span>]=<span class="string">&quot;30&quot;</span></span><br><span class="line">    [<span class="string">&quot;net.ipv4.ip_local_port_range&quot;</span>]=<span class="string">&quot;1024 65535&quot;</span></span><br><span class="line">    [<span class="string">&quot;net.ipv4.tcp_max_tw_buckets&quot;</span>]=<span class="string">&quot;2000000&quot;</span></span><br><span class="line">    [<span class="string">&quot;net.core.rmem_max&quot;</span>]=<span class="string">&quot;16777216&quot;</span></span><br><span class="line">    [<span class="string">&quot;net.core.wmem_max&quot;</span>]=<span class="string">&quot;16777216&quot;</span></span><br><span class="line">    [<span class="string">&quot;net.ipv4.tcp_rmem&quot;</span>]=<span class="string">&quot;4096 87380 16777216&quot;</span></span><br><span class="line">    [<span class="string">&quot;net.ipv4.tcp_wmem&quot;</span>]=<span class="string">&quot;4096 65536 16777216&quot;</span></span><br><span class="line">    [<span class="string">&quot;vm.swappiness&quot;</span>]=<span class="string">&quot;10&quot;</span></span><br><span class="line">    [<span class="string">&quot;vm.overcommit_memory&quot;</span>]=<span class="string">&quot;1&quot;</span></span><br><span class="line">    [<span class="string">&quot;net.netfilter.nf_conntrack_max&quot;</span>]=<span class="string">&quot;2097152&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> -e <span class="string">&quot;<span class="variable">$&#123;BLUE&#125;</span>=============================================<span class="variable">$&#123;NC&#125;</span>&quot;</span></span><br><span class="line"><span class="built_in">echo</span> -e <span class="string">&quot;<span class="variable">$&#123;BLUE&#125;</span>  生产环境内核参数检查报告 (只读)<span class="variable">$&#123;NC&#125;</span>&quot;</span></span><br><span class="line"><span class="built_in">echo</span> -e <span class="string">&quot;<span class="variable">$&#123;BLUE&#125;</span>  时间: <span class="subst">$(date)</span><span class="variable">$&#123;NC&#125;</span>&quot;</span></span><br><span class="line"><span class="built_in">echo</span> -e <span class="string">&quot;<span class="variable">$&#123;BLUE&#125;</span>  主机: <span class="subst">$(hostname)</span><span class="variable">$&#123;NC&#125;</span>&quot;</span></span><br><span class="line"><span class="built_in">echo</span> -e <span class="string">&quot;<span class="variable">$&#123;BLUE&#125;</span>=============================================<span class="variable">$&#123;NC&#125;</span>&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># ---------- 1. 内核参数检查 ----------</span></span><br><span class="line"><span class="built_in">echo</span> -e <span class="string">&quot;\n<span class="variable">$&#123;BLUE&#125;</span>&gt;&gt;&gt; 1. 内核参数检查 (sysctl)<span class="variable">$&#123;NC&#125;</span>&quot;</span></span><br><span class="line"><span class="built_in">echo</span> -e <span class="string">&quot;参数名 | 当前值 | 推荐值 | 状态&quot;</span></span><br><span class="line"><span class="built_in">echo</span> -e <span class="string">&quot;-------|--------|--------|------&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> param <span class="keyword">in</span> <span class="string">&quot;<span class="variable">$&#123;!RECOMMENDED[@]&#125;</span>&quot;</span>; <span class="keyword">do</span></span><br><span class="line">    current=$(sysctl -n <span class="string">&quot;<span class="variable">$param</span>&quot;</span> 2&gt;/dev/null || <span class="built_in">echo</span> <span class="string">&quot;N/A&quot;</span>)</span><br><span class="line">    rec=<span class="string">&quot;<span class="variable">$&#123;RECOMMENDED[$param]&#125;</span>&quot;</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> [[ <span class="string">&quot;<span class="variable">$current</span>&quot;</span> == <span class="string">&quot;N/A&quot;</span> ]]; <span class="keyword">then</span></span><br><span class="line">        <span class="built_in">echo</span> -e <span class="string">&quot;<span class="variable">$param</span> | N/A | <span class="variable">$rec</span> | <span class="variable">$&#123;RED&#125;</span>NOT FOUND<span class="variable">$&#123;NC&#125;</span>&quot;</span></span><br><span class="line">        <span class="built_in">continue</span></span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> [[ <span class="string">&quot;<span class="variable">$current</span>&quot;</span> == <span class="string">&quot;<span class="variable">$rec</span>&quot;</span> ]]; <span class="keyword">then</span></span><br><span class="line">        <span class="built_in">echo</span> -e <span class="string">&quot;<span class="variable">$param</span> | <span class="variable">$current</span> | <span class="variable">$rec</span> | <span class="variable">$&#123;GREEN&#125;</span>OK<span class="variable">$&#123;NC&#125;</span>&quot;</span></span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="comment"># 数值类型：当前值 &gt;= 推荐值算通过</span></span><br><span class="line">        <span class="keyword">if</span> [[ <span class="string">&quot;<span class="variable">$current</span>&quot;</span> =~ ^[0-9]+$ ]] &amp;&amp; [[ <span class="string">&quot;<span class="variable">$rec</span>&quot;</span> =~ ^[0-9]+$ ]]; <span class="keyword">then</span></span><br><span class="line">            <span class="keyword">if</span> [[ <span class="string">&quot;<span class="variable">$current</span>&quot;</span> -ge <span class="string">&quot;<span class="variable">$rec</span>&quot;</span> ]]; <span class="keyword">then</span></span><br><span class="line">                <span class="built_in">echo</span> -e <span class="string">&quot;<span class="variable">$param</span> | <span class="variable">$current</span> | <span class="variable">$rec</span> | <span class="variable">$&#123;GREEN&#125;</span>OK (&gt;=推荐)<span class="variable">$&#123;NC&#125;</span>&quot;</span></span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                <span class="built_in">echo</span> -e <span class="string">&quot;<span class="variable">$param</span> | <span class="variable">$current</span> | <span class="variable">$rec</span> | <span class="variable">$&#123;RED&#125;</span>WARN (偏小)<span class="variable">$&#123;NC&#125;</span>&quot;</span></span><br><span class="line">            <span class="keyword">fi</span></span><br><span class="line">        <span class="keyword">elif</span> [[ <span class="string">&quot;<span class="variable">$current</span>&quot;</span> =~ ^[0-9]+\ [0-9]+\ [0-9]+$ ]] &amp;&amp; [[ <span class="string">&quot;<span class="variable">$rec</span>&quot;</span> =~ ^[0-9]+\ [0-9]+\ [0-9]+$ ]]; <span class="keyword">then</span></span><br><span class="line">            cur_max=$(<span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$current</span>&quot;</span> | awk <span class="string">&#x27;&#123;print $3&#125;&#x27;</span>)</span><br><span class="line">            rec_max=$(<span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$rec</span>&quot;</span> | awk <span class="string">&#x27;&#123;print $3&#125;&#x27;</span>)</span><br><span class="line">            <span class="keyword">if</span> [[ <span class="string">&quot;<span class="variable">$cur_max</span>&quot;</span> -ge <span class="string">&quot;<span class="variable">$rec_max</span>&quot;</span> ]]; <span class="keyword">then</span></span><br><span class="line">                <span class="built_in">echo</span> -e <span class="string">&quot;<span class="variable">$param</span> | <span class="variable">$current</span> | <span class="variable">$rec</span> | <span class="variable">$&#123;GREEN&#125;</span>OK<span class="variable">$&#123;NC&#125;</span>&quot;</span></span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                <span class="built_in">echo</span> -e <span class="string">&quot;<span class="variable">$param</span> | <span class="variable">$current</span> | <span class="variable">$rec</span> | <span class="variable">$&#123;RED&#125;</span>WARN (最大值偏小)<span class="variable">$&#123;NC&#125;</span>&quot;</span></span><br><span class="line">            <span class="keyword">fi</span></span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="built_in">echo</span> -e <span class="string">&quot;<span class="variable">$param</span> | <span class="variable">$current</span> | <span class="variable">$rec</span> | <span class="variable">$&#123;YELLOW&#125;</span>UNKNOWN<span class="variable">$&#123;NC&#125;</span>&quot;</span></span><br><span class="line">        <span class="keyword">fi</span></span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># ---------- 2. limits.conf 检查 ----------</span></span><br><span class="line"><span class="built_in">echo</span> -e <span class="string">&quot;\n<span class="variable">$&#123;BLUE&#125;</span>&gt;&gt;&gt; 2. /etc/security/limits.conf<span class="variable">$&#123;NC&#125;</span>&quot;</span></span><br><span class="line">grep -E <span class="string">&quot;^[^#]*nofile&quot;</span> /etc/security/limits.conf 2&gt;/dev/null || <span class="built_in">echo</span> <span class="string">&quot;无有效配置&quot;</span></span><br><span class="line">soft_cnt=$(grep -E <span class="string">&quot;^[^#]+\s+soft\s+nofile\s+65535&quot;</span> /etc/security/limits.conf 2&gt;/dev/null | <span class="built_in">wc</span> -l)</span><br><span class="line">hard_cnt=$(grep -E <span class="string">&quot;^[^#]+\s+hard\s+nofile\s+65535&quot;</span> /etc/security/limits.conf 2&gt;/dev/null | <span class="built_in">wc</span> -l)</span><br><span class="line"><span class="keyword">if</span> [[ <span class="string">&quot;<span class="variable">$soft_cnt</span>&quot;</span> -gt 0 ]] &amp;&amp; [[ <span class="string">&quot;<span class="variable">$hard_cnt</span>&quot;</span> -gt 0 ]]; <span class="keyword">then</span></span><br><span class="line">    <span class="built_in">echo</span> -e <span class="string">&quot;<span class="variable">$&#123;GREEN&#125;</span>✓ 已配置 nofile 65535<span class="variable">$&#123;NC&#125;</span>&quot;</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    <span class="built_in">echo</span> -e <span class="string">&quot;<span class="variable">$&#123;RED&#125;</span>✗ 未正确配置 nofile 65535<span class="variable">$&#123;NC&#125;</span>&quot;</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># ---------- 3. 常见服务进程实际限制 ----------</span></span><br><span class="line"><span class="built_in">echo</span> -e <span class="string">&quot;\n<span class="variable">$&#123;BLUE&#125;</span>&gt;&gt;&gt; 3. 常见服务进程实际限制<span class="variable">$&#123;NC&#125;</span>&quot;</span></span><br><span class="line"><span class="keyword">for</span> svc <span class="keyword">in</span> nginx java redis-server mysqld postgres httpd; <span class="keyword">do</span></span><br><span class="line">    pids=$(pgrep -x <span class="string">&quot;<span class="variable">$svc</span>&quot;</span> 2&gt;/dev/null | <span class="built_in">head</span> -2)</span><br><span class="line">    <span class="keyword">for</span> pid <span class="keyword">in</span> <span class="variable">$pids</span>; <span class="keyword">do</span></span><br><span class="line">        <span class="keyword">if</span> [[ -f /proc/<span class="variable">$pid</span>/limits ]]; <span class="keyword">then</span></span><br><span class="line">            hard=$(grep <span class="string">&quot;Max open files&quot;</span> /proc/<span class="variable">$pid</span>/limits | awk <span class="string">&#x27;&#123;print $4&#125;&#x27;</span>)</span><br><span class="line">            <span class="built_in">echo</span> -e <span class="string">&quot;  <span class="variable">$svc</span> (PID <span class="variable">$pid</span>): 硬限制 = <span class="variable">$hard</span> <span class="subst">$([ <span class="string">&quot;<span class="variable">$hard</span>&quot;</span> -ge 65535 ] &amp;&amp; echo <span class="string">&quot;<span class="variable">$&#123;GREEN&#125;</span>✓<span class="variable">$&#123;NC&#125;</span>&quot;</span> || echo <span class="string">&quot;<span class="variable">$&#123;RED&#125;</span>✗ 建议&gt;=65535<span class="variable">$&#123;NC&#125;</span>&quot;</span>)</span>&quot;</span></span><br><span class="line">        <span class="keyword">fi</span></span><br><span class="line">    <span class="keyword">done</span></span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># ---------- 4. systemd 服务检查 ----------</span></span><br><span class="line"><span class="built_in">echo</span> -e <span class="string">&quot;\n<span class="variable">$&#123;BLUE&#125;</span>&gt;&gt;&gt; 4. systemd 服务 LimitNOFILE<span class="variable">$&#123;NC&#125;</span>&quot;</span></span><br><span class="line"><span class="keyword">for</span> unit <span class="keyword">in</span> $(systemctl list-units --<span class="built_in">type</span>=service --state=running 2&gt;/dev/null | grep -E <span class="string">&quot;nginx|java|redis|mysql|postgres&quot;</span> | awk <span class="string">&#x27;&#123;print $1&#125;&#x27;</span>); <span class="keyword">do</span></span><br><span class="line">    nofile=$(systemctl show -p LimitNOFILE <span class="string">&quot;<span class="variable">$unit</span>&quot;</span> 2&gt;/dev/null | <span class="built_in">cut</span> -d= -f2)</span><br><span class="line">    <span class="built_in">echo</span> -e <span class="string">&quot;  <span class="variable">$unit</span> : LimitNOFILE = <span class="variable">$&#123;nofile:-未设置&#125;</span> <span class="subst">$([ <span class="string">&quot;<span class="variable">$&#123;nofile:-0&#125;</span>&quot;</span> -ge 65535 ] 2&gt;/dev/null &amp;&amp; echo <span class="string">&quot;<span class="variable">$&#123;GREEN&#125;</span>✓<span class="variable">$&#123;NC&#125;</span>&quot;</span> || echo <span class="string">&quot;<span class="variable">$&#123;RED&#125;</span>✗<span class="variable">$&#123;NC&#125;</span>&quot;</span>)</span>&quot;</span></span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> -e <span class="string">&quot;\n<span class="variable">$&#123;BLUE&#125;</span>=============================================<span class="variable">$&#123;NC&#125;</span>&quot;</span></span><br><span class="line"><span class="built_in">echo</span> -e <span class="string">&quot;<span class="variable">$&#123;GREEN&#125;</span>检查完成。请关注标记为 WARN 或 ✗ 的项目。<span class="variable">$&#123;NC&#125;</span>&quot;</span></span><br><span class="line"><span class="built_in">echo</span> -e <span class="string">&quot;<span class="variable">$&#123;BLUE&#125;</span>=============================================<span class="variable">$&#123;NC&#125;</span>&quot;</span></span><br></pre></td></tr></table></figure>
+
+
+<h2 id="系统不是能用就可以，生产环境不是玩具"><a href="#系统不是能用就可以，生产环境不是玩具" class="headerlink" title="系统不是能用就可以，生产环境不是玩具"></a>系统不是能用就可以，生产环境不是玩具</h2><p>投诉信里的那位老哥，真正愤怒的，不是“Windows 跑 Nginx”这个选择本身——毕竟每个团队有自己的历史包袱。他愤怒的是：你们在选择了一个非常规方案后，没有给出任何额外的论证、测试或补偿措施。</p>
+<p>他愤怒的，也不是“file-max 没改”这个具体失误——毕竟谁都会忘。他愤怒的是：这个失误如此低级，以至于只要有人在上线前执行一次 <code>sysctl -a | grep file-max</code> 就能发现，但显然没有人做过。</p>
+<p>这两件事合并起来，暴露了一个更严重的问题：<strong>这个团队的生产环境部署，没有标准，没有检查清单，没有敬畏心。</strong></p>
+<p>我们做技术的，往往迷恋代码里的优雅设计，却忽略了下线后的运行环境。但真正决定系统上限的，从来不是那几行业务逻辑，而是操作系统配置、网络栈参数、文件句柄限制这些看不见的基石。</p>
+<p>一块基石歪了，整个大厦就摇摇欲坠。而生产环境里，没有重启试试这种后悔药。生产环境不是玩具，是战场。  而我们应该做个合格的士兵，不是马马虎虎的炮灰。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://gloamfox.cc">gloamfox</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://gloamfox.cc/20260806105303.html">https://gloamfox.cc/20260806105303.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://gloamfox.cc" target="_blank">暮色之狐</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E7%B3%BB%E7%BB%9F%E8%BF%90%E7%BB%B4/">系统运维</a><a class="post-meta__tags" href="/tags/Linux/">Linux</a><a class="post-meta__tags" href="/tags/Nginx/">Nginx</a></div><div class="post-share"><div class="social-share" data-image="https://oss.012700.xyz/butterfly/2024/11/butterfly-docs-changelog-cover-9.png" data-sites="facebook,x,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i>赞助</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/wechat.png" target="_blank"><img class="post-qr-code-img" src="/img/wechat.png" /></a><div class="post-qr-code-desc">wechat</div></li><li class="reward-item"><a href="/img/alipay.jpg" target="_blank"><img class="post-qr-code-img" src="/img/alipay.jpg" /></a><div class="post-qr-code-desc">alipay</div></li></ul></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related full-width" href="/20260805131423.html" title="Docker日志太多撑爆硬盘？一次搞定日志轮转与清理"><img class="cover" src="https://oss.012700.xyz/butterfly/2024/11/butterfly-docs-changelog-cover-5.png" onerror="onerror=null;src='/img/404.jpg'" ><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">Docker日志太多撑爆硬盘？一次搞定日志轮转与清理</div></div><div class="info-2"><div class="info-item-1">运维过Docker容器的朋友，大概率都经历过这样的惊魂时刻：突然收到磁盘告警，df -h一看，根目录使用率100%。顺着路径查下去，发现/var/lib/docker/containers/下躺着好几个几十GB的日志文件。 没错，Docker默认的json-file日志驱动不会自动轮转。容器里输出的每一条日志都会被原封不动地记录下来，日积月累，直到撑爆你的硬盘。 今天这篇文章，就带你彻底解决这个问题——包含全局配置、单容器配置，以及旧日志的清理方案。 全局配置（推荐生产环境兜底）修改Docker守护进程的配置文件/etc/docker/daemon.json（如果文件不存在，新建即可）： 12345678&#123;  &quot;log-driver&quot;: &quot;json-file&quot;,  &quot;log-opts&quot;: &#123;    &quot;max-size&quot;: &quot;10m&quot;,    &quot;max-file&quot;: &quot;3&quot;,    &quot;compress&quot;:...</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/20260805131423.html" title="Docker日志太多撑爆硬盘？一次搞定日志轮转与清理"><img class="cover" src="https://oss.012700.xyz/butterfly/2024/11/butterfly-docs-changelog-cover-5.png" ><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-08-05</div><div class="info-item-2">Docker日志太多撑爆硬盘？一次搞定日志轮转与清理</div></div><div class="info-2"><div class="info-item-1">运维过Docker容器的朋友，大概率都经历过这样的惊魂时刻：突然收到磁盘告警，df -h一看，根目录使用率100%。顺着路径查下去，发现/var/lib/docker/containers/下躺着好几个几十GB的日志文件。 没错，Docker默认的json-file日志驱动不会自动轮转。容器里输出的每一条日志都会被原封不动地记录下来，日积月累，直到撑爆你的硬盘。 今天这篇文章，就带你彻底解决这个问题——包含全局配置、单容器配置，以及旧日志的清理方案。 全局配置（推荐生产环境兜底）修改Docker守护进程的配置文件/etc/docker/daemon.json（如果文件不存在，新建即可）： 12345678&#123;  &quot;log-driver&quot;: &quot;json-file&quot;,  &quot;log-opts&quot;: &#123;    &quot;max-size&quot;: &quot;10m&quot;,    &quot;max-file&quot;: &quot;3&quot;,    &quot;compress&quot;:...</div></div></div></a><a class="pagination-related" href="/20260804135844.html" title="手把手教你给Debian服务器换国内镜像源，速度瞬间起飞！"><img class="cover" src="https://oss.012700.xyz/butterfly/2024/11/butterfly-docs-changelog-cover-7.png" ><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-08-04</div><div class="info-item-2">手把手教你给Debian服务器换国内镜像源，速度瞬间起飞！</div></div><div class="info-2"><div class="info-item-1">由于众所周知的原因，在国内使用Debian服务器，那么更换国内镜像源这件事几乎可以算是装机后的必备操作，虽然这个操作不常做，但却是运维的必备技能。 国内有一大批高速、稳定的镜像站（阿里云、清华、中科大……），换上之后，速度立竿见影，体验瞬间从“煎熬”变成“丝滑”。 今天我们就用最直接的方式，一步步和你一起完成配置。 第一步：查清你的Debian版本代号登录服务器，执行下面这条命令： 1lsb_release -c  你会看到一个代号，比如：  bookworm → Debian 12 bullseye → Debian 11 buster → Debian 10请一定记住这个代号，后面配置全靠它。  第二步：确认你的配置文件格式（关键！）Debian 12开始引入了一种新格式，配置文件位置变了。我们分两种情况，对号入座就行。 📁 情况A：传统格式（适用于Debian 11及更早，或部分Debian 12）配置文件是 /etc/apt/sources.list ① 先备份（防手误） 1sudo cp /etc/apt/sources.list /etc/apt/sources.l...</div></div></div></a><a class="pagination-related" href="/20251118103709.html" title="配置nginx实现https访问"><img class="cover" src="https://oss.012700.xyz/butterfly/2024/11/butterfly-docs-changelog-cover-1.png" ><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-11-18</div><div class="info-item-2">配置nginx实现https访问</div></div><div class="info-2"><div class="info-item-1">安装nginx在官网下载和系统匹配的nginx，解压即可 安装OpenSSL若网站有https的证书跳过2、3、4步即可，若没有证书则需要自己生成 由于代理https需要使用证书，这里我们使用OpenSSL生成自签名的证书，可以下载与系统相匹配的OpenSSL程序进行安装，安装过程一直下一步即可，下载地址 配置环境变量 新增环境变量 OPENSSL_HOME，变量值为 D:\OpenSSL-Win64，指向OpenSSL的安装路径 新增环境变量 OPENSSL_CONF，变量值为 D:\OpenSSL-Win64\bin\openssl.cfg，指向openssl.cfg文件目录 在环境变量path的末尾添加 %OPENSSL_HOME%\bin  生成证书在nginx安装目录创建 ssl文件夹，用于存放证书，如我的是 F:\nginx-1.16.1\ssl，以管理员权限运行cmd并进入创建的ssl目录 创建私钥在命令行中执行命令 openssl genrsa -des3 -out demo.key 1024 ，demo是私钥文件名，可以自定义，此处需要输入和验证密码，输入的密码...</div></div></div></a><a class="pagination-related" href="/20251120054736.html" title="Linux防火墙命令"><img class="cover" src="https://oss.012700.xyz/butterfly/2024/11/butterfly-docs-changelog-cover-9.png" ><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-11-20</div><div class="info-item-2">Linux防火墙命令</div></div><div class="info-2"><div class="info-item-1">linux系统常用的防火墙分别是iptables和firewall防火墙，记录一下常用的命令 firewall防火墙12345678910111213141516171819202122232425#查看firewall服务状态systemctl status firewalld#查看firewall的状态firewall-cmd --state# 开启service firewalld start# 重启service firewalld restart# 关闭service firewalld stop#查看防火墙规则firewall-cmd --list-all # 查询端口是否开放firewall-cmd --query-port=8080/tcp# 开放80端口firewall-cmd --permanent --add-port=80/tcp# 移除端口firewall-cmd --permanent --remove-port=8080/tcp#重启防火墙(修改配置后要重启防火墙)firewall-cmd --reload  参数解释firwall-cmd：是Lin...</div></div></div></a><a class="pagination-related" href="/20260728142700.html" title="Docker部署Keycloak：企业级身份认证平台搭建"><img class="cover" src="https://oss.012700.xyz/butterfly/2024/11/butterfly-docs-changelog-cover-5.png" ><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-07-28</div><div class="info-item-2">Docker部署Keycloak：企业级身份认证平台搭建</div></div><div class="info-2"><div class="info-item-1">为什么选择 Keycloak？   特性 Keycloak    开箱即用 OAuth2&#x2F;OIDC&#x2F;SAML 全支持   单点登录 原生支持 SSO   社交登录 微信&#x2F;GitHub&#x2F;Google 等开箱即用   用户管理 完整的管理控制台   企业认可度 Red Hat 出品，大量企业使用   本文聚焦 Docker 环境下的 Keycloak 部署与日常运维。 一、快速部署1. 准备数据库Keycloak支持多种数据库，下面以MySQL数据库举例 123456789101112131415-- 1. 创建数据库（指定字符集为 utf8mb4，以支持 Emoji 等特殊字符）CREATE DATABASE IF NOT EXISTS keycloakCHARACTER SET utf8mb4COLLATE utf8mb4_unicode_ci;-- 2. 创建用户（如果用户已存在，会先删除再重建，请确保数据安全）DROP USER IF EXISTS &#x27;keycloak&#x27;@&#x27;%&#x27;;CREATE US...</div></div></div></a><a class="pagination-related" href="/20260731164720.html" title="只有1个公网IP怎么玩？OpenVPN跨网络组网实战指南"><img class="cover" src="https://oss.012700.xyz/butterfly/2024/11/butterfly-docs-changelog-cover-6.png" ><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-07-31</div><div class="info-item-2">只有1个公网IP怎么玩？OpenVPN跨网络组网实战指南</div></div><div class="info-2"><div class="info-item-1">很多朋友会遇到这样的情况：手上有三台机器——机器A、机器B、机器C，它们各自处于不同的网络中，只有机器A拥有公网IP，机器B和机器C要么在NAT后面，要么在完全隔离的内网里，外面根本访问不到。 这时候问题来了：怎么让这三台机器像在同一个局域网里一样互相通信？ 用OpenVPN就能搞定！把有公网IP的机器A作为VPN服务端，机器B和机器C作为客户端拨入，三台机器就在同一个虚拟内网里了 网络拓扑图先看一下整体架构： 核心思路很简单：机器B和机器C主动向机器A发起VPN连接，建立加密隧道后，三台机器就在同一个虚拟子网（如10.8.0.0/24）里了。 完整配置步骤第一步：机器A（服务端）配置在机器A上编辑OpenVPN服务端配置文件（通常是/etc/openvpn/server.conf）： 12# 开启客户端之间互访client-to-client  如果机器B和机器C各自还有自己的内网子网需要互通（比如机器B后面还连着一个192.168.1.0/24的局域网），还需要在服务端配置中添加路由推送： 123# 推送路由给所有客户端push &quot;route 192.168.1.0...</div></div></div></a></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" /></div><div class="author-info-name">gloamfox</div><div class="author-info-description">君子以顺德，积小以高大。</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">88</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">106</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/gloamfox"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/gloamfox" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:rxhome@163.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">此博客为记录工作学习总结所用，供网友阅读参考，如有侵权，请通知我，我会核实后进行处理。</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E4%BB%B6%EF%BC%9ANginx-%E8%B7%91%E5%9C%A8-Windows-%E4%B8%8A"><span class="toc-number">1.</span> <span class="toc-text">第一件：Nginx 跑在 Windows 上</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E4%BB%B6%EF%BC%9Aconnections-%E8%AE%BE%E4%BA%86-20W%EF%BC%8Cfile-max-%E8%BF%98%E6%98%AF-1024"><span class="toc-number">2.</span> <span class="toc-text">第二件：connections 设了 20W，file-max 还是 1024</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E4%BB%BD%E5%8F%AA%E8%AF%BB%E8%84%9A%E6%9C%AC%EF%BC%8C%E5%B8%AE%E4%BD%A0%E6%A3%80%E6%9F%A5%E7%94%9F%E4%BA%A7%E7%8E%AF%E5%A2%83%E6%9C%89%E6%B2%A1%E6%9C%89%E8%A3%B8%E5%A5%94"><span class="toc-number">3.</span> <span class="toc-text">一份只读脚本，帮你检查生产环境有没有裸奔</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%80%E5%90%8E%E8%AF%B4%E5%87%A0%E5%8F%A5"><span class="toc-number">4.</span> <span class="toc-text">最后说几句</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E5%B7%B4%E6%8E%8C%EF%BC%9ANginx-Windows%EF%BC%8C%E6%98%AF%E4%BB%80%E4%B9%88%E7%A5%9E%E4%BB%99%E7%BB%84%E5%90%88%EF%BC%9F"><span class="toc-number">5.</span> <span class="toc-text">第一巴掌：Nginx + Windows，是什么神仙组合？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E5%B7%B4%E6%8E%8C%EF%BC%9Aconnections-20W%EF%BC%8Cfile-max-1024%EF%BC%8C%E8%BF%99%E6%AF%94%E2%80%9C%E6%B8%A3%E7%94%B7%E2%80%9D%E8%BF%98%E6%B8%A3"><span class="toc-number">6.</span> <span class="toc-text">第二巴掌：connections&#x3D;20W，file-max&#x3D;1024，这比“渣男”还渣</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8%E4%B8%80%E4%BB%BD%E6%A3%80%E6%9F%A5%E8%84%9A%E6%9C%AC%EF%BC%8C%E6%A3%80%E6%9F%A5%E4%BD%A0%E7%9A%84%E7%94%9F%E4%BA%A7%E7%8E%AF%E5%A2%83%E6%98%AF%E5%90%A6%E2%80%9C%E8%A3%B8%E5%A5%94%E2%80%9D"><span class="toc-number">6.1.</span> <span class="toc-text">用一份检查脚本，检查你的生产环境是否“裸奔”</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B3%BB%E7%BB%9F%E4%B8%8D%E6%98%AF%E8%83%BD%E7%94%A8%E5%B0%B1%E5%8F%AF%E4%BB%A5%EF%BC%8C%E7%94%9F%E4%BA%A7%E7%8E%AF%E5%A2%83%E4%B8%8D%E6%98%AF%E7%8E%A9%E5%85%B7"><span class="toc-number">7.</span> <span class="toc-text">系统不是能用就可以，生产环境不是玩具</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/20260806105303.html" title="把生产环境当玩具，客户投诉让人头都麻了"><img src="https://oss.012700.xyz/butterfly/2024/11/butterfly-docs-changelog-cover-9.png" onerror="this.onerror=null;this.src='/img/404.jpg'" /></a><div class="content"><a class="title" href="/20260806105303.html" title="把生产环境当玩具，客户投诉让人头都麻了">把生产环境当玩具，客户投诉让人头都麻了</a><time datetime="2026-08-06T10:53:03.000Z" title="发表于 2026-08-06 10:53:03">2026-08-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/20260805131423.html" title="Docker日志太多撑爆硬盘？一次搞定日志轮转与清理"><img src="https://oss.012700.xyz/butterfly/2024/11/butterfly-docs-changelog-cover-5.png" onerror="this.onerror=null;this.src='/img/404.jpg'" /></a><div class="content"><a class="title" href="/20260805131423.html" title="Docker日志太多撑爆硬盘？一次搞定日志轮转与清理">Docker日志太多撑爆硬盘？一次搞定日志轮转与清理</a><time datetime="2026-08-05T13:14:23.000Z" title="发表于 2026-08-05 13:14:23">2026-08-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/20260805091111.html" title="WG-Easy 极简部署 WireGuard VPN，可视化管理"><img src="https://oss.012700.xyz/butterfly/2024/11/butterfly-docs-changelog-cover-4.png" onerror="this.onerror=null;this.src='/img/404.jpg'" /></a><div class="content"><a class="title" href="/20260805091111.html" title="WG-Easy 极简部署 WireGuard VPN，可视化管理">WG-Easy 极简部署 WireGuard VPN，可视化管理</a><time datetime="2026-08-05T09:11:11.000Z" title="发表于 2026-08-05 09:11:11">2026-08-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/20260804135844.html" title="手把手教你给Debian服务器换国内镜像源，速度瞬间起飞！"><img src="https://oss.012700.xyz/butterfly/2024/11/butterfly-docs-changelog-cover-7.png" onerror="this.onerror=null;this.src='/img/404.jpg'" /></a><div class="content"><a class="title" href="/20260804135844.html" title="手把手教你给Debian服务器换国内镜像源，速度瞬间起飞！">手把手教你给Debian服务器换国内镜像源，速度瞬间起飞！</a><time datetime="2026-08-04T13:58:44.000Z" title="发表于 2026-08-04 13:58:44">2026-08-04</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/20260803151022.html" title="企业级VPN搭建实战：WireGuard极简操作，10分钟实现远程互联"><img src="https://oss.012700.xyz/butterfly/2024/11/butterfly-docs-changelog-cover-2.png" onerror="this.onerror=null;this.src='/img/404.jpg'" /></a><div class="content"><a class="title" href="/20260803151022.html" title="企业级VPN搭建实战：WireGuard极简操作，10分钟实现远程互联">企业级VPN搭建实战：WireGuard极简操作，10分钟实现远程互联</a><time datetime="2026-08-03T15:10:22.000Z" title="发表于 2026-08-03 15:10:22">2026-08-03</time></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By gloamfox</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.4</a></span></div><div class="footer_custom_text"><a href="https://beian.miit.gov.cn/" rel="external nofollow noreferrer" target="_blank">鲁ICP备2026017338号-1</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.4"></script><script src="/js/main.js?v=5.5.4"></script><div class="js-pjax"></div><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="false"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="local-search-input"><input placeholder="搜索文章" type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.5.4"></script></div></div><!-- hexo injector body_end start -->
+<script>
+(function() {
+  document.querySelectorAll('.obsidian-tab-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var tabsContainer = this.closest('.obsidian-tabs');
+      var tabId = this.getAttribute('data-tab');
+
+      tabsContainer.querySelectorAll('.obsidian-tab-btn').forEach(function(b) {
+        b.classList.remove('active');
+      });
+      tabsContainer.querySelectorAll('.obsidian-tab-panel').forEach(function(p) {
+        p.classList.remove('active');
+      });
+
+      this.classList.add('active');
+      document.getElementById(tabId).classList.add('active');
+    });
+  });
+})();
+</script>
+<!-- hexo injector body_end end --></body></html>
