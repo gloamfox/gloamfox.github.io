@@ -6,7 +6,7 @@
   <link href="https://gloamfox.cc/atom.xml" rel="self"/>
   
   <link href="https://gloamfox.cc/"/>
-  <updated>2026-08-06T06:02:25.172Z</updated>
+  <updated>2026-08-09T09:14:10.956Z</updated>
   <id>https://gloamfox.cc/</id>
   
   <author>
@@ -17,11 +17,42 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>轻量级服务器监控新选择：Beszel——比Grafana更简单的监控方案</title>
+    <link href="https://gloamfox.cc/20260809164332.html"/>
+    <id>https://gloamfox.cc/20260809164332.html</id>
+    <published>2026-08-09T16:43:32.000Z</published>
+    <updated>2026-08-09T09:14:10.956Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;给服务器装监控，比被监控本身还复杂？&quot;&gt;&lt;a href=&quot;#给服务器装监控，比被监控本身还复杂？&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="系统运维" scheme="https://gloamfox.cc/categories/%E7%B3%BB%E7%BB%9F%E8%BF%90%E7%BB%B4/"/>
+    
+    
+    <category term="系统运维" scheme="https://gloamfox.cc/tags/%E7%B3%BB%E7%BB%9F%E8%BF%90%E7%BB%B4/"/>
+    
+    <category term="Docker" scheme="https://gloamfox.cc/tags/Docker/"/>
+    
+    <category term="监控面板" scheme="https://gloamfox.cc/tags/%E7%9B%91%E6%8E%A7%E9%9D%A2%E6%9D%BF/"/>
+    
+    <category term="Beszel" scheme="https://gloamfox.cc/tags/Beszel/"/>
+    
+  </entry>
+  
+  <entry>
     <title>把生产环境当玩具，客户投诉让人头都麻了</title>
     <link href="https://gloamfox.cc/20260806105303.html"/>
     <id>https://gloamfox.cc/20260806105303.html</id>
     <published>2026-08-06T10:53:03.000Z</published>
-    <updated>2026-08-06T06:02:25.172Z</updated>
+    <updated>2026-08-09T09:14:10.955Z</updated>
     
     
       
@@ -50,7 +81,7 @@
     <link href="https://gloamfox.cc/20260805131423.html"/>
     <id>https://gloamfox.cc/20260805131423.html</id>
     <published>2026-08-05T13:14:23.000Z</published>
-    <updated>2026-08-06T06:02:25.168Z</updated>
+    <updated>2026-08-09T09:14:10.951Z</updated>
     
     
       
@@ -77,7 +108,7 @@
     <link href="https://gloamfox.cc/20260805091111.html"/>
     <id>https://gloamfox.cc/20260805091111.html</id>
     <published>2026-08-05T09:11:11.000Z</published>
-    <updated>2026-08-06T06:02:25.170Z</updated>
+    <updated>2026-08-09T09:14:10.954Z</updated>
     
     
       
@@ -104,7 +135,7 @@
     <link href="https://gloamfox.cc/20260804135844.html"/>
     <id>https://gloamfox.cc/20260804135844.html</id>
     <published>2026-08-04T13:58:44.000Z</published>
-    <updated>2026-08-06T06:02:25.172Z</updated>
+    <updated>2026-08-09T09:14:10.955Z</updated>
     
     
       
@@ -130,7 +161,7 @@
     <link href="https://gloamfox.cc/20260803151022.html"/>
     <id>https://gloamfox.cc/20260803151022.html</id>
     <published>2026-08-03T15:10:22.000Z</published>
-    <updated>2026-08-06T06:02:25.171Z</updated>
+    <updated>2026-08-09T09:14:10.954Z</updated>
     
     
       
@@ -159,7 +190,7 @@
     <link href="https://gloamfox.cc/20260801102416.html"/>
     <id>https://gloamfox.cc/20260801102416.html</id>
     <published>2026-08-01T10:24:16.000Z</published>
-    <updated>2026-08-06T06:02:25.169Z</updated>
+    <updated>2026-08-09T09:14:10.952Z</updated>
     
     
       
@@ -194,7 +225,7 @@
     <link href="https://gloamfox.cc/20260731164720.html"/>
     <id>https://gloamfox.cc/20260731164720.html</id>
     <published>2026-07-31T16:47:20.000Z</published>
-    <updated>2026-08-06T06:02:25.171Z</updated>
+    <updated>2026-08-09T09:14:10.955Z</updated>
     
     
       
@@ -220,7 +251,7 @@
     <link href="https://gloamfox.cc/20260728142700.html"/>
     <id>https://gloamfox.cc/20260728142700.html</id>
     <published>2026-07-28T14:27:00.000Z</published>
-    <updated>2026-08-06T06:02:25.168Z</updated>
+    <updated>2026-08-09T09:14:10.951Z</updated>
     
     
       
@@ -247,7 +278,7 @@
     <link href="https://gloamfox.cc/20260728103508.html"/>
     <id>https://gloamfox.cc/20260728103508.html</id>
     <published>2026-07-28T10:35:08.000Z</published>
-    <updated>2026-08-06T06:02:25.171Z</updated>
+    <updated>2026-08-09T09:14:10.955Z</updated>
     
     
       
@@ -275,7 +306,7 @@
     <link href="https://gloamfox.cc/20260725115109.html"/>
     <id>https://gloamfox.cc/20260725115109.html</id>
     <published>2026-07-25T11:51:09.000Z</published>
-    <updated>2026-08-06T06:02:25.169Z</updated>
+    <updated>2026-08-09T09:14:10.953Z</updated>
     
     
       
@@ -305,7 +336,7 @@
     <link href="https://gloamfox.cc/20260724170923.html"/>
     <id>https://gloamfox.cc/20260724170923.html</id>
     <published>2026-07-24T17:09:23.000Z</published>
-    <updated>2026-08-06T06:02:25.173Z</updated>
+    <updated>2026-08-09T09:14:10.956Z</updated>
     
     
       
@@ -335,7 +366,7 @@
     <link href="https://gloamfox.cc/20260723173559.html"/>
     <id>https://gloamfox.cc/20260723173559.html</id>
     <published>2026-07-23T17:35:59.000Z</published>
-    <updated>2026-08-06T06:02:25.169Z</updated>
+    <updated>2026-08-09T09:14:10.953Z</updated>
     
     
       
@@ -363,7 +394,7 @@
     <link href="https://gloamfox.cc/20260723153156.html"/>
     <id>https://gloamfox.cc/20260723153156.html</id>
     <published>2026-07-23T15:31:56.000Z</published>
-    <updated>2026-08-06T06:02:25.168Z</updated>
+    <updated>2026-08-09T09:14:10.951Z</updated>
     
     
       
@@ -388,7 +419,7 @@
     <link href="https://gloamfox.cc/20260721133341.html"/>
     <id>https://gloamfox.cc/20260721133341.html</id>
     <published>2026-07-21T13:33:41.000Z</published>
-    <updated>2026-08-06T06:02:25.169Z</updated>
+    <updated>2026-08-09T09:14:10.952Z</updated>
     
     
       
@@ -416,7 +447,7 @@
     <link href="https://gloamfox.cc/20260717163356.html"/>
     <id>https://gloamfox.cc/20260717163356.html</id>
     <published>2026-07-17T16:33:56.000Z</published>
-    <updated>2026-08-06T06:02:25.170Z</updated>
+    <updated>2026-08-09T09:14:10.953Z</updated>
     
     
       
@@ -442,7 +473,7 @@
     <link href="https://gloamfox.cc/20260715164504.html"/>
     <id>https://gloamfox.cc/20260715164504.html</id>
     <published>2026-07-15T16:45:04.000Z</published>
-    <updated>2026-08-06T06:02:25.169Z</updated>
+    <updated>2026-08-09T09:14:10.953Z</updated>
     
     
       
@@ -468,7 +499,7 @@
     <link href="https://gloamfox.cc/20260714103200.html"/>
     <id>https://gloamfox.cc/20260714103200.html</id>
     <published>2026-07-14T10:32:00.000Z</published>
-    <updated>2026-08-06T06:02:25.169Z</updated>
+    <updated>2026-08-09T09:14:10.953Z</updated>
     
     
       
@@ -494,7 +525,7 @@
     <link href="https://gloamfox.cc/20260713154719.html"/>
     <id>https://gloamfox.cc/20260713154719.html</id>
     <published>2026-07-13T15:47:19.000Z</published>
-    <updated>2026-08-06T06:02:25.169Z</updated>
+    <updated>2026-08-09T09:14:10.953Z</updated>
     
     
       
@@ -520,7 +551,7 @@
     <link href="https://gloamfox.cc/20260526095614.html"/>
     <id>https://gloamfox.cc/20260526095614.html</id>
     <published>2026-05-26T09:56:14.000Z</published>
-    <updated>2026-08-06T06:02:25.172Z</updated>
+    <updated>2026-08-09T09:14:10.956Z</updated>
     
     
       
@@ -545,34 +576,6 @@
     <category term="JSON" scheme="https://gloamfox.cc/tags/JSON/"/>
     
     <category term="序列化" scheme="https://gloamfox.cc/tags/%E5%BA%8F%E5%88%97%E5%8C%96/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>踩坑实录：读写分离导致批量删除逻辑问题</title>
-    <link href="https://gloamfox.cc/20260516121317.html"/>
-    <id>https://gloamfox.cc/20260516121317.html</id>
-    <published>2026-05-16T12:13:17.000Z</published>
-    <updated>2026-08-06T06:02:25.173Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;最近在帮同事review代码时，发现一段逻辑看似正常但执行结果却不符合预期的代码，特此记录问题排查过程。&lt;/p&gt;
-&lt;h2 id=&quot;原始代码实现&quot;&gt;&lt;a href=&quot;#原始代码实现&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="后端" scheme="https://gloamfox.cc/categories/%E5%90%8E%E7%AB%AF/"/>
-    
-    
-    <category term="后端" scheme="https://gloamfox.cc/tags/%E5%90%8E%E7%AB%AF/"/>
-    
-    <category term="数据库" scheme="https://gloamfox.cc/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
   </entry>
   
