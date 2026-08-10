@@ -6,7 +6,7 @@
   <link href="https://gloamfox.cc/atom.xml" rel="self"/>
   
   <link href="https://gloamfox.cc/"/>
-  <updated>2026-08-09T09:14:10.956Z</updated>
+  <updated>2026-08-10T09:07:55.251Z</updated>
   <id>https://gloamfox.cc/</id>
   
   <author>
@@ -17,11 +17,45 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>告别命令行搓VPN！Pritunl 一键搞定OpenVPN和WireGuard，5分钟上线</title>
+    <link href="https://gloamfox.cc/20260810162634.html"/>
+    <id>https://gloamfox.cc/20260810162634.html</id>
+    <published>2026-08-10T16:26:34.000Z</published>
+    <updated>2026-08-10T09:07:55.251Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;VPN已经成为企业和开发者的刚需，但生成证书、更改配置、配置下发这些高频操作，全靠命令行手搓，效率低还容易出错。更麻烦的是，OpenVPN和WireGuard各有千秋——前者成熟稳定但配置繁琐，后者性能强劲却缺少管理界面，选哪个都纠结。&lt;/p&gt;
+&lt;p&gt;Pritunl 就是来</summary>
+        
+      
+    
+    
+    
+    <category term="软件工具" scheme="https://gloamfox.cc/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/"/>
+    
+    
+    <category term="OpenVPN" scheme="https://gloamfox.cc/tags/OpenVPN/"/>
+    
+    <category term="WireGuard" scheme="https://gloamfox.cc/tags/WireGuard/"/>
+    
+    <category term="VPN" scheme="https://gloamfox.cc/tags/VPN/"/>
+    
+    <category term="企业级" scheme="https://gloamfox.cc/tags/%E4%BC%81%E4%B8%9A%E7%BA%A7/"/>
+    
+    <category term="管理平台" scheme="https://gloamfox.cc/tags/%E7%AE%A1%E7%90%86%E5%B9%B3%E5%8F%B0/"/>
+    
+  </entry>
+  
+  <entry>
     <title>轻量级服务器监控新选择：Beszel——比Grafana更简单的监控方案</title>
     <link href="https://gloamfox.cc/20260809164332.html"/>
     <id>https://gloamfox.cc/20260809164332.html</id>
     <published>2026-08-09T16:43:32.000Z</published>
-    <updated>2026-08-09T09:14:10.956Z</updated>
+    <updated>2026-08-10T09:07:55.252Z</updated>
     
     
       
@@ -52,7 +86,7 @@
     <link href="https://gloamfox.cc/20260806105303.html"/>
     <id>https://gloamfox.cc/20260806105303.html</id>
     <published>2026-08-06T10:53:03.000Z</published>
-    <updated>2026-08-09T09:14:10.955Z</updated>
+    <updated>2026-08-10T09:07:55.251Z</updated>
     
     
       
@@ -81,7 +115,7 @@
     <link href="https://gloamfox.cc/20260805131423.html"/>
     <id>https://gloamfox.cc/20260805131423.html</id>
     <published>2026-08-05T13:14:23.000Z</published>
-    <updated>2026-08-09T09:14:10.951Z</updated>
+    <updated>2026-08-10T09:07:55.247Z</updated>
     
     
       
@@ -108,7 +142,7 @@
     <link href="https://gloamfox.cc/20260805091111.html"/>
     <id>https://gloamfox.cc/20260805091111.html</id>
     <published>2026-08-05T09:11:11.000Z</published>
-    <updated>2026-08-09T09:14:10.954Z</updated>
+    <updated>2026-08-10T09:07:55.250Z</updated>
     
     
       
@@ -135,7 +169,7 @@
     <link href="https://gloamfox.cc/20260804135844.html"/>
     <id>https://gloamfox.cc/20260804135844.html</id>
     <published>2026-08-04T13:58:44.000Z</published>
-    <updated>2026-08-09T09:14:10.955Z</updated>
+    <updated>2026-08-10T09:07:55.251Z</updated>
     
     
       
@@ -161,7 +195,7 @@
     <link href="https://gloamfox.cc/20260803151022.html"/>
     <id>https://gloamfox.cc/20260803151022.html</id>
     <published>2026-08-03T15:10:22.000Z</published>
-    <updated>2026-08-09T09:14:10.954Z</updated>
+    <updated>2026-08-10T09:07:55.250Z</updated>
     
     
       
@@ -190,7 +224,7 @@
     <link href="https://gloamfox.cc/20260801102416.html"/>
     <id>https://gloamfox.cc/20260801102416.html</id>
     <published>2026-08-01T10:24:16.000Z</published>
-    <updated>2026-08-09T09:14:10.952Z</updated>
+    <updated>2026-08-10T09:07:55.248Z</updated>
     
     
       
@@ -225,7 +259,7 @@
     <link href="https://gloamfox.cc/20260731164720.html"/>
     <id>https://gloamfox.cc/20260731164720.html</id>
     <published>2026-07-31T16:47:20.000Z</published>
-    <updated>2026-08-09T09:14:10.955Z</updated>
+    <updated>2026-08-10T09:07:55.251Z</updated>
     
     
       
@@ -251,7 +285,7 @@
     <link href="https://gloamfox.cc/20260728142700.html"/>
     <id>https://gloamfox.cc/20260728142700.html</id>
     <published>2026-07-28T14:27:00.000Z</published>
-    <updated>2026-08-09T09:14:10.951Z</updated>
+    <updated>2026-08-10T09:07:55.247Z</updated>
     
     
       
@@ -278,7 +312,7 @@
     <link href="https://gloamfox.cc/20260728103508.html"/>
     <id>https://gloamfox.cc/20260728103508.html</id>
     <published>2026-07-28T10:35:08.000Z</published>
-    <updated>2026-08-09T09:14:10.955Z</updated>
+    <updated>2026-08-10T09:07:55.251Z</updated>
     
     
       
@@ -306,7 +340,7 @@
     <link href="https://gloamfox.cc/20260725115109.html"/>
     <id>https://gloamfox.cc/20260725115109.html</id>
     <published>2026-07-25T11:51:09.000Z</published>
-    <updated>2026-08-09T09:14:10.953Z</updated>
+    <updated>2026-08-10T09:07:55.248Z</updated>
     
     
       
@@ -336,7 +370,7 @@
     <link href="https://gloamfox.cc/20260724170923.html"/>
     <id>https://gloamfox.cc/20260724170923.html</id>
     <published>2026-07-24T17:09:23.000Z</published>
-    <updated>2026-08-09T09:14:10.956Z</updated>
+    <updated>2026-08-10T09:07:55.253Z</updated>
     
     
       
@@ -366,7 +400,7 @@
     <link href="https://gloamfox.cc/20260723173559.html"/>
     <id>https://gloamfox.cc/20260723173559.html</id>
     <published>2026-07-23T17:35:59.000Z</published>
-    <updated>2026-08-09T09:14:10.953Z</updated>
+    <updated>2026-08-10T09:07:55.249Z</updated>
     
     
       
@@ -394,7 +428,7 @@
     <link href="https://gloamfox.cc/20260723153156.html"/>
     <id>https://gloamfox.cc/20260723153156.html</id>
     <published>2026-07-23T15:31:56.000Z</published>
-    <updated>2026-08-09T09:14:10.951Z</updated>
+    <updated>2026-08-10T09:07:55.247Z</updated>
     
     
       
@@ -419,7 +453,7 @@
     <link href="https://gloamfox.cc/20260721133341.html"/>
     <id>https://gloamfox.cc/20260721133341.html</id>
     <published>2026-07-21T13:33:41.000Z</published>
-    <updated>2026-08-09T09:14:10.952Z</updated>
+    <updated>2026-08-10T09:07:55.248Z</updated>
     
     
       
@@ -447,7 +481,7 @@
     <link href="https://gloamfox.cc/20260717163356.html"/>
     <id>https://gloamfox.cc/20260717163356.html</id>
     <published>2026-07-17T16:33:56.000Z</published>
-    <updated>2026-08-09T09:14:10.953Z</updated>
+    <updated>2026-08-10T09:07:55.249Z</updated>
     
     
       
@@ -473,7 +507,7 @@
     <link href="https://gloamfox.cc/20260715164504.html"/>
     <id>https://gloamfox.cc/20260715164504.html</id>
     <published>2026-07-15T16:45:04.000Z</published>
-    <updated>2026-08-09T09:14:10.953Z</updated>
+    <updated>2026-08-10T09:07:55.249Z</updated>
     
     
       
@@ -499,7 +533,7 @@
     <link href="https://gloamfox.cc/20260714103200.html"/>
     <id>https://gloamfox.cc/20260714103200.html</id>
     <published>2026-07-14T10:32:00.000Z</published>
-    <updated>2026-08-09T09:14:10.953Z</updated>
+    <updated>2026-08-10T09:07:55.249Z</updated>
     
     
       
@@ -525,7 +559,7 @@
     <link href="https://gloamfox.cc/20260713154719.html"/>
     <id>https://gloamfox.cc/20260713154719.html</id>
     <published>2026-07-13T15:47:19.000Z</published>
-    <updated>2026-08-09T09:14:10.953Z</updated>
+    <updated>2026-08-10T09:07:55.249Z</updated>
     
     
       
@@ -543,39 +577,6 @@
     
     
     <category term="Redis" scheme="https://gloamfox.cc/tags/Redis/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>踩坑实录：接口正常Feign调用字段值为空</title>
-    <link href="https://gloamfox.cc/20260526095614.html"/>
-    <id>https://gloamfox.cc/20260526095614.html</id>
-    <published>2026-05-26T09:56:14.000Z</published>
-    <updated>2026-08-09T09:14:10.956Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;Feign字段取不到值问题解析&quot;&gt;&lt;a href=&quot;#Feign字段取不到值问题解析&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="后端" scheme="https://gloamfox.cc/categories/%E5%90%8E%E7%AB%AF/"/>
-    
-    
-    <category term="Java" scheme="https://gloamfox.cc/tags/Java/"/>
-    
-    <category term="Jackson" scheme="https://gloamfox.cc/tags/Jackson/"/>
-    
-    <category term="Feign" scheme="https://gloamfox.cc/tags/Feign/"/>
-    
-    <category term="JSON" scheme="https://gloamfox.cc/tags/JSON/"/>
-    
-    <category term="序列化" scheme="https://gloamfox.cc/tags/%E5%BA%8F%E5%88%97%E5%8C%96/"/>
     
   </entry>
   
