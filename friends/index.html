@@ -7,7 +7,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://gloamfox.cc/img/avatar.jpg">
 <meta property="article:published_time" content="2018-12-13T23:43:47.000Z">
-<meta property="article:modified_time" content="2026-09-04T03:09:12.447Z">
+<meta property="article:modified_time" content="2026-09-04T03:31:58.653Z">
 <meta property="article:author" content="gloamfox">
 <meta property="article:tag" content="暮色之狐, gloamfox">
 <meta name="twitter:card" content="summary">
@@ -155,6 +155,135 @@ btf.addGlobalFn('pjaxComplete', () => {
   isToc: false,
   pageType: 'friends'
 }</script><!-- hexo injector head_end start -->
+<style>
+.obsidian-tabs {
+  margin: 1.5em 0;
+  border: 1px solid var(--tab-border-color, #e0e0e0);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--tab-bg, #fafafa);
+}
+
+.obsidian-tabs-nav {
+  display: flex;
+  background: var(--tab-nav-bg, #f0f0f0);
+  border-bottom: 1px solid var(--tab-border-color, #e0e0e0);
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.obsidian-tabs-nav::-webkit-scrollbar {
+  display: none;
+}
+
+.obsidian-tab-btn {
+  padding: 12px 20px;
+  border: none;
+  background: transparent;
+  color: var(--tab-text-color, #666);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+}
+
+.obsidian-tab-btn:hover {
+  color: var(--tab-hover-color, #333);
+  background: var(--tab-hover-bg, rgba(0,0,0,0.03));
+}
+
+.obsidian-tab-btn.active {
+  color: var(--tab-active-color, #448aff);
+  border-bottom-color: var(--tab-active-color, #448aff);
+  background: var(--tab-bg, #fafafa);
+}
+
+.obsidian-tabs-content {
+  padding: 20px;
+  background: var(--tab-bg, #fafafa);
+}
+
+.obsidian-tab-panel {
+  display: none;
+  animation: fadeIn 0.3s ease;
+}
+
+.obsidian-tab-panel.active {
+  display: block;
+}
+
+.obsidian-tab-panel > *:first-child {
+  margin-top: 0;
+}
+
+.obsidian-tab-panel > *:last-child {
+  margin-bottom: 0;
+}
+
+.obsidian-tab-panel pre {
+  margin: 1em 0;
+  border-radius: 6px;
+}
+
+.obsidian-tab-panel code {
+  font-family: 'SF Mono', Monaco, 'Cascadia Code', monospace;
+}
+
+/* Fix code block background color inside tabs */
+.obsidian-tab-panel pre code {
+  background: transparent !important;
+}
+
+.obsidian-tab-panel .highlight {
+  background: transparent !important;
+}
+
+.obsidian-tab-panel .highlight pre {
+  background: var(--code-bg, #f5f5f5) !important;
+}
+
+.obsidian-tab-panel figure.highlight {
+  background: var(--code-bg, #f5f5f5) !important;
+}
+
+.obsidian-tab-panel td.gutter {
+  background: var(--code-gutter-bg, #f0f0f0) !important;
+}
+
+.obsidian-tab-panel td.code {
+  background: var(--code-bg, #f5f5f5) !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  .obsidian-tab-panel .highlight pre,
+  .obsidian-tab-panel figure.highlight {
+    --code-bg: #2d2d2d;
+    --code-gutter-bg: #252525;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .obsidian-tabs {
+    --tab-bg: #1e1e1e;
+    --tab-nav-bg: #252526;
+    --tab-border-color: #333;
+    --tab-text-color: #999;
+    --tab-hover-color: #ccc;
+    --tab-hover-bg: rgba(255,255,255,0.05);
+    --tab-active-color: #58a6ff;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+</style>
+
 <style>
 .obsidian-callout {
   margin: 1.5em 0;
@@ -362,144 +491,15 @@ btf.addGlobalFn('pjaxComplete', () => {
   }
 }
 </style>
-
-<style>
-.obsidian-tabs {
-  margin: 1.5em 0;
-  border: 1px solid var(--tab-border-color, #e0e0e0);
-  border-radius: 8px;
-  overflow: hidden;
-  background: var(--tab-bg, #fafafa);
-}
-
-.obsidian-tabs-nav {
-  display: flex;
-  background: var(--tab-nav-bg, #f0f0f0);
-  border-bottom: 1px solid var(--tab-border-color, #e0e0e0);
-  overflow-x: auto;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-
-.obsidian-tabs-nav::-webkit-scrollbar {
-  display: none;
-}
-
-.obsidian-tab-btn {
-  padding: 12px 20px;
-  border: none;
-  background: transparent;
-  color: var(--tab-text-color, #666);
-  font-size: 14px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  white-space: nowrap;
-  border-bottom: 2px solid transparent;
-  margin-bottom: -1px;
-}
-
-.obsidian-tab-btn:hover {
-  color: var(--tab-hover-color, #333);
-  background: var(--tab-hover-bg, rgba(0,0,0,0.03));
-}
-
-.obsidian-tab-btn.active {
-  color: var(--tab-active-color, #448aff);
-  border-bottom-color: var(--tab-active-color, #448aff);
-  background: var(--tab-bg, #fafafa);
-}
-
-.obsidian-tabs-content {
-  padding: 20px;
-  background: var(--tab-bg, #fafafa);
-}
-
-.obsidian-tab-panel {
-  display: none;
-  animation: fadeIn 0.3s ease;
-}
-
-.obsidian-tab-panel.active {
-  display: block;
-}
-
-.obsidian-tab-panel > *:first-child {
-  margin-top: 0;
-}
-
-.obsidian-tab-panel > *:last-child {
-  margin-bottom: 0;
-}
-
-.obsidian-tab-panel pre {
-  margin: 1em 0;
-  border-radius: 6px;
-}
-
-.obsidian-tab-panel code {
-  font-family: 'SF Mono', Monaco, 'Cascadia Code', monospace;
-}
-
-/* Fix code block background color inside tabs */
-.obsidian-tab-panel pre code {
-  background: transparent !important;
-}
-
-.obsidian-tab-panel .highlight {
-  background: transparent !important;
-}
-
-.obsidian-tab-panel .highlight pre {
-  background: var(--code-bg, #f5f5f5) !important;
-}
-
-.obsidian-tab-panel figure.highlight {
-  background: var(--code-bg, #f5f5f5) !important;
-}
-
-.obsidian-tab-panel td.gutter {
-  background: var(--code-gutter-bg, #f0f0f0) !important;
-}
-
-.obsidian-tab-panel td.code {
-  background: var(--code-bg, #f5f5f5) !important;
-}
-
-@media (prefers-color-scheme: dark) {
-  .obsidian-tab-panel .highlight pre,
-  .obsidian-tab-panel figure.highlight {
-    --code-bg: #2d2d2d;
-    --code-gutter-bg: #252525;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  .obsidian-tabs {
-    --tab-bg: #1e1e1e;
-    --tab-nav-bg: #252526;
-    --tab-border-color: #333;
-    --tab-text-color: #999;
-    --tab-hover-color: #ccc;
-    --tab-hover-bg: rgba(255,255,255,0.05);
-    --tab-active-color: #58a6ff;
-  }
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(5px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-</style>
 <!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="暮色之狐" type="application/atom+xml">
-</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" /></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">93</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">113</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 统计</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/tags"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories"><i class="fa-fw fas fa-bookmark"></i><span> 分类</span></a></li><li><a class="site-page child" href="/archives"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa-user-circle"></i><span> 关于</span></a></div></div></div></div><div class="page type-friends" id="body-wrap"><header class="not-home-page" id="page-header" style="background-image: url(https://oss.012700.xyz/butterfly/2024/10/index.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><img class="site-icon" src="/img/logo.png" ><span class="site-name">暮色之狐</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 统计</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/tags"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories"><i class="fa-fw fas fa-bookmark"></i><span> 分类</span></a></li><li><a class="site-page child" href="/archives"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa-user-circle"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="page-site-info"><h1 id="site-title">friends</h1></div></header><main class="layout" id="content-inner"><div id="page"><div class="container" id="article-container"></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" /></div><div class="author-info-name">gloamfox</div><div class="author-info-description">君子以顺德，积小以高大。</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">93</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">113</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/gloamfox"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/gloamfox" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:rxhome@163.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">此博客为记录工作学习总结所用，供网友阅读参考，如有侵权，请通知我，我会核实后进行处理。</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/20260902142533.html" title="把字段从 TIMESTAMP 改成 DATETIME，线上直接炸了！"><img src="https://oss.012700.xyz/butterfly/2024/11/butterfly-docs-changelog-cover-5.png" onerror="this.onerror=null;this.src='/img/404.jpg'" /></a><div class="content"><a class="title" href="/20260902142533.html" title="把字段从 TIMESTAMP 改成 DATETIME，线上直接炸了！">把字段从 TIMESTAMP 改成 DATETIME，线上直接炸了！</a><time datetime="2026-09-02T14:25:33.000Z" title="发表于 2026-09-02 14:25:33">2026-09-02</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/20260819145550.html" title="自建网盘不香吗？Docker 一键部署 Seafile ，告别会员费，你的文件你做主！"><img src="https://oss.012700.xyz/butterfly/2024/11/butterfly-docs-changelog-cover-4.png" onerror="this.onerror=null;this.src='/img/404.jpg'" /></a><div class="content"><a class="title" href="/20260819145550.html" title="自建网盘不香吗？Docker 一键部署 Seafile ，告别会员费，你的文件你做主！">自建网盘不香吗？Docker 一键部署 Seafile ，告别会员费，你的文件你做主！</a><time datetime="2026-08-19T14:55:50.000Z" title="发表于 2026-08-19 14:55:50">2026-08-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/20260812165206.html" title="Logto：企业级SaaS、AI身份认证方案"><img src="https://oss.012700.xyz/butterfly/2024/11/butterfly-docs-changelog-cover-6.png" onerror="this.onerror=null;this.src='/img/404.jpg'" /></a><div class="content"><a class="title" href="/20260812165206.html" title="Logto：企业级SaaS、AI身份认证方案">Logto：企业级SaaS、AI身份认证方案</a><time datetime="2026-08-12T16:52:06.000Z" title="发表于 2026-08-12 16:52:06">2026-08-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/20260810162634.html" title="告别命令行搓VPN！Pritunl 一键搞定OpenVPN和WireGuard，5分钟上线"><img src="https://oss.012700.xyz/butterfly/2024/11/butterfly-docs-changelog-cover-3.png" onerror="this.onerror=null;this.src='/img/404.jpg'" /></a><div class="content"><a class="title" href="/20260810162634.html" title="告别命令行搓VPN！Pritunl 一键搞定OpenVPN和WireGuard，5分钟上线">告别命令行搓VPN！Pritunl 一键搞定OpenVPN和WireGuard，5分钟上线</a><time datetime="2026-08-10T16:26:34.000Z" title="发表于 2026-08-10 16:26:34">2026-08-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/20260809164332.html" title="轻量级服务器监控新选择：Beszel——比Grafana更简单的监控方案"><img src="https://oss.012700.xyz/butterfly/2024/11/butterfly-docs-changelog-cover-8.png" onerror="this.onerror=null;this.src='/img/404.jpg'" /></a><div class="content"><a class="title" href="/20260809164332.html" title="轻量级服务器监控新选择：Beszel——比Grafana更简单的监控方案">轻量级服务器监控新选择：Beszel——比Grafana更简单的监控方案</a><time datetime="2026-08-09T16:43:32.000Z" title="发表于 2026-08-09 16:43:32">2026-08-09</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" /></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">93</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">113</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 统计</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/tags"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories"><i class="fa-fw fas fa-bookmark"></i><span> 分类</span></a></li><li><a class="site-page child" href="/archives"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa-user-circle"></i><span> 关于</span></a></div></div></div></div><div class="page type-friends" id="body-wrap"><header class="not-home-page" id="page-header" style="background-image: url(https://oss.012700.xyz/butterfly/2024/10/index.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><img class="site-icon" src="/img/logo.png" ><span class="site-name">暮色之狐</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 统计</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/tags"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories"><i class="fa-fw fas fa-bookmark"></i><span> 分类</span></a></li><li><a class="site-page child" href="/archives"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa-user-circle"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="page-site-info"><h1 id="site-title">friends</h1></div></header><main class="layout" id="content-inner"><div id="page"><div class="container" id="article-container"></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" /></div><div class="author-info-name">gloamfox</div><div class="author-info-description">君子以顺德，积小以高大。</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">93</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">113</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/gloamfox"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/gloamfox" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:rxhome@163.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">此博客为记录工作学习总结所用，供网友阅读参考，如有侵权，请通知我，我会核实后进行处理。</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/20260902142533.html" title="把字段从 TIMESTAMP 改成 DATETIME，线上直接炸了！"><img src="https://oss.012700.xyz/butterfly/2024/11/butterfly-docs-changelog-cover-2.png" onerror="this.onerror=null;this.src='/img/404.jpg'" /></a><div class="content"><a class="title" href="/20260902142533.html" title="把字段从 TIMESTAMP 改成 DATETIME，线上直接炸了！">把字段从 TIMESTAMP 改成 DATETIME，线上直接炸了！</a><time datetime="2026-09-02T14:25:33.000Z" title="发表于 2026-09-02 14:25:33">2026-09-02</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/20260819145550.html" title="自建网盘不香吗？Docker 一键部署 Seafile ，告别会员费，你的文件你做主！"><img src="https://oss.012700.xyz/butterfly/2024/11/butterfly-docs-changelog-cover-3.png" onerror="this.onerror=null;this.src='/img/404.jpg'" /></a><div class="content"><a class="title" href="/20260819145550.html" title="自建网盘不香吗？Docker 一键部署 Seafile ，告别会员费，你的文件你做主！">自建网盘不香吗？Docker 一键部署 Seafile ，告别会员费，你的文件你做主！</a><time datetime="2026-08-19T14:55:50.000Z" title="发表于 2026-08-19 14:55:50">2026-08-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/20260812165206.html" title="Logto：企业级SaaS、AI身份认证方案"><img src="https://oss.012700.xyz/butterfly/2024/11/butterfly-docs-changelog-cover-7.png" onerror="this.onerror=null;this.src='/img/404.jpg'" /></a><div class="content"><a class="title" href="/20260812165206.html" title="Logto：企业级SaaS、AI身份认证方案">Logto：企业级SaaS、AI身份认证方案</a><time datetime="2026-08-12T16:52:06.000Z" title="发表于 2026-08-12 16:52:06">2026-08-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/20260810162634.html" title="告别命令行搓VPN！Pritunl 一键搞定OpenVPN和WireGuard，5分钟上线"><img src="https://oss.012700.xyz/butterfly/2024/11/butterfly-docs-changelog-cover-8.png" onerror="this.onerror=null;this.src='/img/404.jpg'" /></a><div class="content"><a class="title" href="/20260810162634.html" title="告别命令行搓VPN！Pritunl 一键搞定OpenVPN和WireGuard，5分钟上线">告别命令行搓VPN！Pritunl 一键搞定OpenVPN和WireGuard，5分钟上线</a><time datetime="2026-08-10T16:26:34.000Z" title="发表于 2026-08-10 16:26:34">2026-08-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/20260809164332.html" title="轻量级服务器监控新选择：Beszel——比Grafana更简单的监控方案"><img src="https://oss.012700.xyz/butterfly/2024/11/butterfly-docs-changelog-cover-9.png" onerror="this.onerror=null;this.src='/img/404.jpg'" /></a><div class="content"><a class="title" href="/20260809164332.html" title="轻量级服务器监控新选择：Beszel——比Grafana更简单的监控方案">轻量级服务器监控新选择：Beszel——比Grafana更简单的监控方案</a><time datetime="2026-08-09T16:43:32.000Z" title="发表于 2026-08-09 16:43:32">2026-08-09</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
             <i class="fas fa-folder-open"></i>
             <span>分类</span>
             
           </div>
           <ul class="card-category-list" id="aside-cat-list">
             <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%89%8D%E7%AB%AF/"><span class="card-category-list-name">前端</span><span class="card-category-list-count">7</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%90%8E%E7%AB%AF/"><span class="card-category-list-name">后端</span><span class="card-category-list-count">25</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%80%9D%E7%BB%B4%E6%A8%A1%E5%9E%8B/"><span class="card-category-list-name">思维模型</span><span class="card-category-list-count">3</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E7%B3%BB%E7%BB%9F%E8%BF%90%E7%BB%B4/"><span class="card-category-list-name">系统运维</span><span class="card-category-list-count">25</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"><span class="card-category-list-name">计算机基础</span><span class="card-category-list-count">3</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/"><span class="card-category-list-name">软件工具</span><span class="card-category-list-count">24</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/"><span class="card-category-list-name">软件设计</span><span class="card-category-list-count">6</span></a></li>
-          </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0/" style="font-size: 1.1em; color: #999">图片上传</a> <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%8F%91%E7%8E%B0/" style="font-size: 1.1em; color: #999">服务发现</a> <a href="/tags/AI%E7%BC%96%E7%A0%81/" style="font-size: 1.1em; color: #999">AI编码</a> <a href="/tags/%E7%AC%94%E8%AE%B0%E7%AE%A1%E7%90%86/" style="font-size: 1.1em; color: #999">笔记管理</a> <a href="/tags/%E6%8A%80%E6%9C%AF%E9%9D%A2%E8%AF%95/" style="font-size: 1.1em; color: #999">技术面试</a> <a href="/tags/Jenkins/" style="font-size: 1.18em; color: #999ca1">Jenkins</a> <a href="/tags/Windows/" style="font-size: 1.18em; color: #999ca1">Windows</a> <a href="/tags/%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86/" style="font-size: 1.1em; color: #999">权限管理</a> <a href="/tags/%E5%A4%A7%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/" style="font-size: 1.1em; color: #999">大语言模型</a> <a href="/tags/IO%E6%A8%A1%E5%9E%8B/" style="font-size: 1.1em; color: #999">IO模型</a> <a href="/tags/Nacos/" style="font-size: 1.1em; color: #999">Nacos</a> <a href="/tags/Linux/" style="font-size: 1.18em; color: #999ca1">Linux</a> <a href="/tags/JUnit/" style="font-size: 1.18em; color: #999ca1">JUnit</a> <a href="/tags/Beszel/" style="font-size: 1.1em; color: #999">Beszel</a> <a href="/tags/%E7%B3%BB%E7%BB%9F%E8%BF%90%E7%BB%B4/" style="font-size: 1.5em; color: #99a9bf">系统运维</a> <a href="/tags/%E4%BE%9D%E8%B5%96%E7%AE%A1%E7%90%86/" style="font-size: 1.1em; color: #999">依赖管理</a> <a href="/tags/Node-js/" style="font-size: 1.18em; color: #999ca1">Node.js</a> <a href="/tags/Zookeeper/" style="font-size: 1.26em; color: #999fa8">Zookeeper</a> <a href="/tags/JSON/" style="font-size: 1.1em; color: #999">JSON</a> <a href="/tags/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/" style="font-size: 1.1em; color: #999">内存管理</a> <a href="/tags/AI%E7%BC%96%E7%A8%8B/" style="font-size: 1.42em; color: #99a6b7">AI编程</a> <a href="/tags/%E6%9C%8D%E5%8A%A1%E6%B3%A8%E5%86%8C/" style="font-size: 1.1em; color: #999">服务注册</a> <a href="/tags/%E7%BA%BF%E7%A8%8B%E6%B1%A0/" style="font-size: 1.1em; color: #999">线程池</a> <a href="/tags/Ubuntu/" style="font-size: 1.18em; color: #999ca1">Ubuntu</a> <a href="/tags/Mockito/" style="font-size: 1.1em; color: #999">Mockito</a> <a href="/tags/%E5%A4%9A%E8%B7%AF%E5%A4%8D%E7%94%A8/" style="font-size: 1.1em; color: #999">多路复用</a> <a href="/tags/Claude-Code/" style="font-size: 1.42em; color: #99a6b7">Claude Code</a> <a href="/tags/%E9%80%92%E5%BD%92/" style="font-size: 1.1em; color: #999">递归</a> <a href="/tags/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/" style="font-size: 1.1em; color: #999">软件设计</a> <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%90%E7%BB%B4/" style="font-size: 1.1em; color: #999">服务器运维</a> <a href="/tags/Feign/" style="font-size: 1.1em; color: #999">Feign</a> <a href="/tags/%E7%BC%93%E5%AD%98/" style="font-size: 1.1em; color: #999">缓存</a> <a href="/tags/VPN%E5%8D%8F%E8%AE%AE/" style="font-size: 1.1em; color: #999">VPN协议</a> <a href="/tags/%E6%96%87%E4%BB%B6%E5%90%8C%E6%AD%A5/" style="font-size: 1.1em; color: #999">文件同步</a> <a href="/tags/%E8%B4%A3%E4%BB%BB%E9%93%BE/" style="font-size: 1.1em; color: #999">责任链</a> <a href="/tags/%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/" style="font-size: 1.26em; color: #999fa8">网络配置</a> <a href="/tags/SNAT/" style="font-size: 1.1em; color: #999">SNAT</a> <a href="/tags/Swap/" style="font-size: 1.1em; color: #999">Swap</a> <a href="/tags/%E9%85%8D%E7%BD%AE%E7%AE%A1%E7%90%86/" style="font-size: 1.1em; color: #999">配置管理</a> <a href="/tags/Spring/" style="font-size: 1.34em; color: #99a3b0">Spring</a></div></div><div class="card-widget card-archives">
+          </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/IDEA/" style="font-size: 1.1em; color: #999">IDEA</a> <a href="/tags/%E5%BA%8F%E5%88%97%E5%8C%96/" style="font-size: 1.1em; color: #999">序列化</a> <a href="/tags/Beszel/" style="font-size: 1.1em; color: #999">Beszel</a> <a href="/tags/%E7%9B%91%E6%8E%A7%E9%9D%A2%E6%9D%BF/" style="font-size: 1.1em; color: #999">监控面板</a> <a href="/tags/IO%E6%A8%A1%E5%9E%8B/" style="font-size: 1.1em; color: #999">IO模型</a> <a href="/tags/LaTeX/" style="font-size: 1.1em; color: #999">LaTeX</a> <a href="/tags/Jenkins/" style="font-size: 1.2em; color: #999da3">Jenkins</a> <a href="/tags/%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/" style="font-size: 1.1em; color: #999">安装教程</a> <a href="/tags/Mockito/" style="font-size: 1.1em; color: #999">Mockito</a> <a href="/tags/Feign/" style="font-size: 1.1em; color: #999">Feign</a> <a href="/tags/Tomcat/" style="font-size: 1.1em; color: #999">Tomcat</a> <a href="/tags/Node-js/" style="font-size: 1.2em; color: #999da3">Node.js</a> <a href="/tags/Windows/" style="font-size: 1.2em; color: #999da3">Windows</a> <a href="/tags/JavaScript/" style="font-size: 1.2em; color: #999da3">JavaScript</a> <a href="/tags/%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 1.1em; color: #999">技术学习</a> <a href="/tags/Spring/" style="font-size: 1.4em; color: #99a5b6">Spring</a> <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%8F%91%E7%8E%B0/" style="font-size: 1.1em; color: #999">服务发现</a> <a href="/tags/%E7%B3%BB%E7%BB%9F%E8%BF%90%E7%BB%B4/" style="font-size: 1.5em; color: #99a9bf">系统运维</a> <a href="/tags/%E5%9B%BE%E7%89%87%E4%BC%98%E5%8C%96/" style="font-size: 1.3em; color: #99a1ac">图片优化</a> <a href="/tags/uniCloud/" style="font-size: 1.1em; color: #999">uniCloud</a> <a href="/tags/Flynn%E5%88%86%E7%B1%BB/" style="font-size: 1.1em; color: #999">Flynn分类</a> <a href="/tags/%E5%86%B3%E7%AD%96%E5%88%86%E6%9E%90/" style="font-size: 1.1em; color: #999">决策分析</a> <a href="/tags/JUnit/" style="font-size: 1.2em; color: #999da3">JUnit</a> <a href="/tags/%E6%9C%8D%E5%8A%A1%E6%B3%A8%E5%86%8C/" style="font-size: 1.1em; color: #999">服务注册</a> <a href="/tags/%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0/" style="font-size: 1.1em; color: #999">图片上传</a> <a href="/tags/Zookeeper/" style="font-size: 1.3em; color: #99a1ac">Zookeeper</a> <a href="/tags/%E5%90%91%E9%87%8F%E6%A3%80%E7%B4%A2/" style="font-size: 1.1em; color: #999">向量检索</a> <a href="/tags/%E8%87%AA%E6%88%91%E6%8F%90%E5%8D%87/" style="font-size: 1.1em; color: #999">自我提升</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%93%E6%9E%84/" style="font-size: 1.1em; color: #999">计算机结构</a> <a href="/tags/VPN%E5%8D%8F%E8%AE%AE/" style="font-size: 1.1em; color: #999">VPN协议</a> <a href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/" style="font-size: 1.1em; color: #999">虚拟机</a> <a href="/tags/%E7%BC%96%E7%A0%81%E8%A7%84%E8%8C%83/" style="font-size: 1.1em; color: #999">编码规范</a> <a href="/tags/SOLID/" style="font-size: 1.1em; color: #999">SOLID</a> <a href="/tags/jsDelivr/" style="font-size: 1.1em; color: #999">jsDelivr</a> <a href="/tags/%E5%A4%9A%E8%B7%AF%E5%A4%8D%E7%94%A8/" style="font-size: 1.1em; color: #999">多路复用</a> <a href="/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" style="font-size: 1.3em; color: #99a1ac">性能优化</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BC%96%E7%A0%81/" style="font-size: 1.1em; color: #999">数据编码</a> <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%90%E7%BB%B4/" style="font-size: 1.1em; color: #999">服务器运维</a> <a href="/tags/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/" style="font-size: 1.1em; color: #999">软件设计</a> <a href="/tags/%E7%BB%88%E7%AB%AF%E9%85%8D%E7%BD%AE/" style="font-size: 1.1em; color: #999">终端配置</a></div></div><div class="card-widget card-archives">
     <div class="item-headline">
       <i class="fas fa-archive"></i>
       <span>归档</span>
@@ -584,7 +584,7 @@ btf.addGlobalFn('pjaxComplete', () => {
         </li>
       
     </ul>
-  </div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">93</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总浏览量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2026-09-04T03:14:26.391Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By gloamfox</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.4</a></span></div><div class="footer_custom_text"><a href="https://beian.miit.gov.cn/" rel="external nofollow noreferrer" target="_blank">鲁ICP备2026017338号-1</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.4"></script><script src="/js/main.js?v=5.5.4"></script><div class="js-pjax"></div><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="false"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="local-search-input"><input placeholder="搜索文章" type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.5.4"></script></div></div><!-- hexo injector body_end start -->
+  </div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">93</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总浏览量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2026-09-04T03:34:10.910Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By gloamfox</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.4</a></span></div><div class="footer_custom_text"><a href="https://beian.miit.gov.cn/" rel="external nofollow noreferrer" target="_blank">鲁ICP备2026017338号-1</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.4"></script><script src="/js/main.js?v=5.5.4"></script><div class="js-pjax"></div><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="false"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="local-search-input"><input placeholder="搜索文章" type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.5.4"></script></div></div><!-- hexo injector body_end start -->
 <script>
 (function() {
   document.querySelectorAll('.obsidian-tab-btn').forEach(function(btn) {
