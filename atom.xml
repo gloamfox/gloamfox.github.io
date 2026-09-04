@@ -6,7 +6,7 @@
   <link href="https://gloamfox.cc/atom.xml" rel="self"/>
   
   <link href="https://gloamfox.cc/"/>
-  <updated>2026-08-19T07:35:06.411Z</updated>
+  <updated>2026-09-04T02:55:06.135Z</updated>
   <id>https://gloamfox.cc/</id>
   
   <author>
@@ -17,11 +17,38 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>把字段从 TIMESTAMP 改成 DATETIME，线上直接炸了！</title>
+    <link href="https://gloamfox.cc/20260902142533.html"/>
+    <id>https://gloamfox.cc/20260902142533.html</id>
+    <published>2026-09-02T14:25:33.000Z</published>
+    <updated>2026-09-04T02:55:06.135Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;事发：一个莫名其妙的空指针&quot;&gt;&lt;a href=&quot;#事发：一个莫名其妙的空指针&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="后端" scheme="https://gloamfox.cc/categories/%E5%90%8E%E7%AB%AF/"/>
+    
+    
+    <category term="系统运维" scheme="https://gloamfox.cc/tags/%E7%B3%BB%E7%BB%9F%E8%BF%90%E7%BB%B4/"/>
+    
+    <category term="后端" scheme="https://gloamfox.cc/tags/%E5%90%8E%E7%AB%AF/"/>
+    
+  </entry>
+  
+  <entry>
     <title>自建网盘不香吗？Docker 一键部署 Seafile ，告别会员费，你的文件你做主！</title>
     <link href="https://gloamfox.cc/20260819145550.html"/>
     <id>https://gloamfox.cc/20260819145550.html</id>
     <published>2026-08-19T14:55:50.000Z</published>
-    <updated>2026-08-19T07:35:06.411Z</updated>
+    <updated>2026-09-04T02:55:06.136Z</updated>
     
     
       
@@ -53,7 +80,7 @@
     <link href="https://gloamfox.cc/20260812165206.html"/>
     <id>https://gloamfox.cc/20260812165206.html</id>
     <published>2026-08-12T16:52:06.000Z</published>
-    <updated>2026-08-19T07:35:06.407Z</updated>
+    <updated>2026-09-04T02:55:06.132Z</updated>
     
     
       
@@ -84,7 +111,7 @@
     <link href="https://gloamfox.cc/20260810162634.html"/>
     <id>https://gloamfox.cc/20260810162634.html</id>
     <published>2026-08-10T16:26:34.000Z</published>
-    <updated>2026-08-19T07:35:06.410Z</updated>
+    <updated>2026-09-04T02:55:06.135Z</updated>
     
     
       
@@ -118,7 +145,7 @@
     <link href="https://gloamfox.cc/20260809164332.html"/>
     <id>https://gloamfox.cc/20260809164332.html</id>
     <published>2026-08-09T16:43:32.000Z</published>
-    <updated>2026-08-19T07:35:06.411Z</updated>
+    <updated>2026-09-04T02:55:06.136Z</updated>
     
     
       
@@ -149,7 +176,7 @@
     <link href="https://gloamfox.cc/20260806105303.html"/>
     <id>https://gloamfox.cc/20260806105303.html</id>
     <published>2026-08-06T10:53:03.000Z</published>
-    <updated>2026-08-19T07:35:06.410Z</updated>
+    <updated>2026-09-04T02:55:06.135Z</updated>
     
     
       
@@ -178,7 +205,7 @@
     <link href="https://gloamfox.cc/20260805131423.html"/>
     <id>https://gloamfox.cc/20260805131423.html</id>
     <published>2026-08-05T13:14:23.000Z</published>
-    <updated>2026-08-19T07:35:06.406Z</updated>
+    <updated>2026-09-04T02:55:06.132Z</updated>
     
     
       
@@ -205,7 +232,7 @@
     <link href="https://gloamfox.cc/20260805091111.html"/>
     <id>https://gloamfox.cc/20260805091111.html</id>
     <published>2026-08-05T09:11:11.000Z</published>
-    <updated>2026-08-19T07:35:06.408Z</updated>
+    <updated>2026-09-04T02:55:06.134Z</updated>
     
     
       
@@ -232,7 +259,7 @@
     <link href="https://gloamfox.cc/20260804135844.html"/>
     <id>https://gloamfox.cc/20260804135844.html</id>
     <published>2026-08-04T13:58:44.000Z</published>
-    <updated>2026-08-19T07:35:06.410Z</updated>
+    <updated>2026-09-04T02:55:06.135Z</updated>
     
     
       
@@ -258,7 +285,7 @@
     <link href="https://gloamfox.cc/20260803151022.html"/>
     <id>https://gloamfox.cc/20260803151022.html</id>
     <published>2026-08-03T15:10:22.000Z</published>
-    <updated>2026-08-19T07:35:06.409Z</updated>
+    <updated>2026-09-04T02:55:06.135Z</updated>
     
     
       
@@ -287,7 +314,7 @@
     <link href="https://gloamfox.cc/20260801102416.html"/>
     <id>https://gloamfox.cc/20260801102416.html</id>
     <published>2026-08-01T10:24:16.000Z</published>
-    <updated>2026-08-19T07:35:06.407Z</updated>
+    <updated>2026-09-04T02:55:06.133Z</updated>
     
     
       
@@ -322,7 +349,7 @@
     <link href="https://gloamfox.cc/20260731164720.html"/>
     <id>https://gloamfox.cc/20260731164720.html</id>
     <published>2026-07-31T16:47:20.000Z</published>
-    <updated>2026-08-19T07:35:06.409Z</updated>
+    <updated>2026-09-04T02:55:06.135Z</updated>
     
     
       
@@ -348,7 +375,7 @@
     <link href="https://gloamfox.cc/20260728142700.html"/>
     <id>https://gloamfox.cc/20260728142700.html</id>
     <published>2026-07-28T14:27:00.000Z</published>
-    <updated>2026-08-19T07:35:06.406Z</updated>
+    <updated>2026-09-04T02:55:06.132Z</updated>
     
     
       
@@ -375,7 +402,7 @@
     <link href="https://gloamfox.cc/20260728103508.html"/>
     <id>https://gloamfox.cc/20260728103508.html</id>
     <published>2026-07-28T10:35:08.000Z</published>
-    <updated>2026-08-19T07:35:06.409Z</updated>
+    <updated>2026-09-04T02:55:06.135Z</updated>
     
     
       
@@ -403,7 +430,7 @@
     <link href="https://gloamfox.cc/20260725115109.html"/>
     <id>https://gloamfox.cc/20260725115109.html</id>
     <published>2026-07-25T11:51:09.000Z</published>
-    <updated>2026-08-19T07:35:06.407Z</updated>
+    <updated>2026-09-04T02:55:06.133Z</updated>
     
     
       
@@ -433,7 +460,7 @@
     <link href="https://gloamfox.cc/20260724170923.html"/>
     <id>https://gloamfox.cc/20260724170923.html</id>
     <published>2026-07-24T17:09:23.000Z</published>
-    <updated>2026-08-19T07:35:06.411Z</updated>
+    <updated>2026-09-04T02:55:06.136Z</updated>
     
     
       
@@ -463,7 +490,7 @@
     <link href="https://gloamfox.cc/20260723173559.html"/>
     <id>https://gloamfox.cc/20260723173559.html</id>
     <published>2026-07-23T17:35:59.000Z</published>
-    <updated>2026-08-19T07:35:06.407Z</updated>
+    <updated>2026-09-04T02:55:06.133Z</updated>
     
     
       
@@ -491,7 +518,7 @@
     <link href="https://gloamfox.cc/20260723153156.html"/>
     <id>https://gloamfox.cc/20260723153156.html</id>
     <published>2026-07-23T15:31:56.000Z</published>
-    <updated>2026-08-19T07:35:06.406Z</updated>
+    <updated>2026-09-04T02:55:06.132Z</updated>
     
     
       
@@ -516,7 +543,7 @@
     <link href="https://gloamfox.cc/20260721133341.html"/>
     <id>https://gloamfox.cc/20260721133341.html</id>
     <published>2026-07-21T13:33:41.000Z</published>
-    <updated>2026-08-19T07:35:06.407Z</updated>
+    <updated>2026-09-04T02:55:06.133Z</updated>
     
     
       
@@ -544,7 +571,7 @@
     <link href="https://gloamfox.cc/20260717163356.html"/>
     <id>https://gloamfox.cc/20260717163356.html</id>
     <published>2026-07-17T16:33:56.000Z</published>
-    <updated>2026-08-19T07:35:06.408Z</updated>
+    <updated>2026-09-04T02:55:06.134Z</updated>
     
     
       
@@ -562,32 +589,6 @@
     
     
     <category term="网络安全" scheme="https://gloamfox.cc/tags/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Redis通关手册（三）：Redis Geo实现地理位置检索</title>
-    <link href="https://gloamfox.cc/20260715164504.html"/>
-    <id>https://gloamfox.cc/20260715164504.html</id>
-    <published>2026-07-15T16:45:04.000Z</published>
-    <updated>2026-08-19T07:35:06.407Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;做业务开发时，我们经常遇到这类需求：&lt;/p&gt;
-&lt;p&gt;✅ 同城筛选附近门店、外卖骑手匹配&lt;br&gt;✅ 社交APP附近的人、同城动态&lt;br&gt;✅</summary>
-        
-      
-    
-    
-    
-    <category term="后端" scheme="https://gloamfox.cc/categories/%E5%90%8E%E7%AB%AF/"/>
-    
-    
-    <category term="Redis" scheme="https://gloamfox.cc/tags/Redis/"/>
     
   </entry>
   
