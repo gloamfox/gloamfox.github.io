@@ -6,7 +6,7 @@
   <link href="https://gloamfox.cc/atom.xml" rel="self"/>
   
   <link href="https://gloamfox.cc/"/>
-  <updated>2026-09-14T02:31:39.796Z</updated>
+  <updated>2026-09-24T01:55:26.485Z</updated>
   <id>https://gloamfox.cc/</id>
   
   <author>
@@ -17,11 +17,74 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>开了代理 WSL 里还不生效？写个后台脚本盯着它</title>
+    <link href="https://gloamfox.cc/20260922162511.html"/>
+    <id>https://gloamfox.cc/20260922162511.html</id>
+    <published>2026-09-22T16:25:11.000Z</published>
+    <updated>2026-09-24T01:55:26.485Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;用 WSL 开发的人，大概率都遇到过这个破事：Windows 上 Clash 一开，WSL 里的终端该连不上还是连不上，就算开启了网络镜像模式以及自动代理也非得 &lt;code&gt;wsl --shutdown&lt;/code&gt;</summary>
+        
+      
+    
+    
+    
+    <category term="系统运维" scheme="https://gloamfox.cc/categories/%E7%B3%BB%E7%BB%9F%E8%BF%90%E7%BB%B4/"/>
+    
+    
+    <category term="系统运维" scheme="https://gloamfox.cc/tags/%E7%B3%BB%E7%BB%9F%E8%BF%90%E7%BB%B4/"/>
+    
+    <category term="WSL" scheme="https://gloamfox.cc/tags/WSL/"/>
+    
+    <category term="Clash" scheme="https://gloamfox.cc/tags/Clash/"/>
+    
+    <category term="代理同步" scheme="https://gloamfox.cc/tags/%E4%BB%A3%E7%90%86%E5%90%8C%E6%AD%A5/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>WSL开发网络模式选择：NAT与镜像模式详解</title>
+    <link href="https://gloamfox.cc/20260914103947.html"/>
+    <id>https://gloamfox.cc/20260914103947.html</id>
+    <published>2026-09-14T10:39:47.000Z</published>
+    <updated>2026-09-24T01:55:26.484Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;如果你在 Windows 上用 WSL开发，大概率经历过这些瞬间：&lt;/p&gt;
+&lt;p&gt;在 WSL 里跑了个服务，Windows 浏览器用 &lt;code&gt;localhost&lt;/code&gt; 死活打不开；手机想连电脑调试个页面，发现局域网根本访问不到；更别提公司 VPN 一开，WSL</summary>
+        
+      
+    
+    
+    
+    <category term="系统运维" scheme="https://gloamfox.cc/categories/%E7%B3%BB%E7%BB%9F%E8%BF%90%E7%BB%B4/"/>
+    
+    
+    <category term="系统运维" scheme="https://gloamfox.cc/tags/%E7%B3%BB%E7%BB%9F%E8%BF%90%E7%BB%B4/"/>
+    
+    <category term="WSL" scheme="https://gloamfox.cc/tags/WSL/"/>
+    
+    <category term="网络模式" scheme="https://gloamfox.cc/tags/%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%BC%8F/"/>
+    
+    <category term="开发工具" scheme="https://gloamfox.cc/tags/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
+    
+  </entry>
+  
+  <entry>
     <title>WSL自定义路径安装Ubuntu</title>
     <link href="https://gloamfox.cc/20260914094203.html"/>
     <id>https://gloamfox.cc/20260914094203.html</id>
     <published>2026-09-14T09:42:03.000Z</published>
-    <updated>2026-09-14T02:31:39.796Z</updated>
+    <updated>2026-09-24T01:55:26.484Z</updated>
     
     
       
@@ -52,7 +115,7 @@
     <link href="https://gloamfox.cc/20260908173109.html"/>
     <id>https://gloamfox.cc/20260908173109.html</id>
     <published>2026-09-08T17:31:09.000Z</published>
-    <updated>2026-09-14T02:31:39.798Z</updated>
+    <updated>2026-09-24T01:55:26.485Z</updated>
     
     
       
@@ -81,7 +144,7 @@
     <link href="https://gloamfox.cc/20260908145757.html"/>
     <id>https://gloamfox.cc/20260908145757.html</id>
     <published>2026-09-08T14:57:57.000Z</published>
-    <updated>2026-09-14T02:31:39.795Z</updated>
+    <updated>2026-09-24T01:55:26.482Z</updated>
     
     
       
@@ -111,7 +174,7 @@
     <link href="https://gloamfox.cc/20260902142533.html"/>
     <id>https://gloamfox.cc/20260902142533.html</id>
     <published>2026-09-02T14:25:33.000Z</published>
-    <updated>2026-09-14T02:31:39.798Z</updated>
+    <updated>2026-09-24T01:55:26.485Z</updated>
     
     
       
@@ -138,7 +201,7 @@
     <link href="https://gloamfox.cc/20260819145550.html"/>
     <id>https://gloamfox.cc/20260819145550.html</id>
     <published>2026-08-19T14:55:50.000Z</published>
-    <updated>2026-09-14T02:31:39.799Z</updated>
+    <updated>2026-09-24T01:55:26.486Z</updated>
     
     
       
@@ -166,20 +229,20 @@
   </entry>
   
   <entry>
-    <title>Logto：企业级SaaS、AI身份认证方案</title>
+    <title>AI Agent 来了，认证该怎么做？Logto 用 MCP 协议给出了答案</title>
     <link href="https://gloamfox.cc/20260812165206.html"/>
     <id>https://gloamfox.cc/20260812165206.html</id>
     <published>2026-08-12T16:52:06.000Z</published>
-    <updated>2026-09-14T02:31:39.795Z</updated>
+    <updated>2026-09-24T01:55:26.482Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;自己做登录？OAuth 2.1 和 OIDC 协议能把人绕晕，多租户隔离、RBAC 权限、企业 SSO 这些硬需求更让工期直接翻倍。&lt;/p&gt;
-&lt;p&gt;Logto 对于身份认证给出了不一样的答案，专为 SaaS 和 AI 应用深度优化。&lt;/p&gt;
-&lt;h2</summary>
+    <summary type="html">&lt;p&gt;做过 AI 应用开发的都知道，用户登录不难，难的是让 AI Agent 替用户干活。&lt;/p&gt;
+&lt;p&gt;传统的 OAuth 2.0 是给人设计的——弹窗、点击授权、拿 Code。换成异步的 AI Agent，这套流程根本走不通。&lt;/p&gt;
+&lt;p&gt;当大家都在卷大模型和 RAG</summary>
         
       
     
@@ -201,7 +264,7 @@
     <link href="https://gloamfox.cc/20260810162634.html"/>
     <id>https://gloamfox.cc/20260810162634.html</id>
     <published>2026-08-10T16:26:34.000Z</published>
-    <updated>2026-09-14T02:31:39.798Z</updated>
+    <updated>2026-09-24T01:55:26.485Z</updated>
     
     
       
@@ -235,7 +298,7 @@
     <link href="https://gloamfox.cc/20260809164332.html"/>
     <id>https://gloamfox.cc/20260809164332.html</id>
     <published>2026-08-09T16:43:32.000Z</published>
-    <updated>2026-09-14T02:31:39.799Z</updated>
+    <updated>2026-09-24T01:55:26.486Z</updated>
     
     
       
@@ -266,7 +329,7 @@
     <link href="https://gloamfox.cc/20260806105303.html"/>
     <id>https://gloamfox.cc/20260806105303.html</id>
     <published>2026-08-06T10:53:03.000Z</published>
-    <updated>2026-09-14T02:31:39.798Z</updated>
+    <updated>2026-09-24T01:55:26.486Z</updated>
     
     
       
@@ -295,7 +358,7 @@
     <link href="https://gloamfox.cc/20260805131423.html"/>
     <id>https://gloamfox.cc/20260805131423.html</id>
     <published>2026-08-05T13:14:23.000Z</published>
-    <updated>2026-09-14T02:31:39.795Z</updated>
+    <updated>2026-09-24T01:55:26.482Z</updated>
     
     
       
@@ -322,7 +385,7 @@
     <link href="https://gloamfox.cc/20260805091111.html"/>
     <id>https://gloamfox.cc/20260805091111.html</id>
     <published>2026-08-05T09:11:11.000Z</published>
-    <updated>2026-09-14T02:31:39.796Z</updated>
+    <updated>2026-09-24T01:55:26.483Z</updated>
     
     
       
@@ -349,7 +412,7 @@
     <link href="https://gloamfox.cc/20260804135844.html"/>
     <id>https://gloamfox.cc/20260804135844.html</id>
     <published>2026-08-04T13:58:44.000Z</published>
-    <updated>2026-09-14T02:31:39.798Z</updated>
+    <updated>2026-09-24T01:55:26.485Z</updated>
     
     
       
@@ -375,7 +438,7 @@
     <link href="https://gloamfox.cc/20260803151022.html"/>
     <id>https://gloamfox.cc/20260803151022.html</id>
     <published>2026-08-03T15:10:22.000Z</published>
-    <updated>2026-09-14T02:31:39.797Z</updated>
+    <updated>2026-09-24T01:55:26.484Z</updated>
     
     
       
@@ -404,7 +467,7 @@
     <link href="https://gloamfox.cc/20260801102416.html"/>
     <id>https://gloamfox.cc/20260801102416.html</id>
     <published>2026-08-01T10:24:16.000Z</published>
-    <updated>2026-09-14T02:31:39.795Z</updated>
+    <updated>2026-09-24T01:55:26.482Z</updated>
     
     
       
@@ -439,7 +502,7 @@
     <link href="https://gloamfox.cc/20260731164720.html"/>
     <id>https://gloamfox.cc/20260731164720.html</id>
     <published>2026-07-31T16:47:20.000Z</published>
-    <updated>2026-09-14T02:31:39.798Z</updated>
+    <updated>2026-09-24T01:55:26.485Z</updated>
     
     
       
@@ -465,7 +528,7 @@
     <link href="https://gloamfox.cc/20260728142700.html"/>
     <id>https://gloamfox.cc/20260728142700.html</id>
     <published>2026-07-28T14:27:00.000Z</published>
-    <updated>2026-09-14T02:31:39.795Z</updated>
+    <updated>2026-09-24T01:55:26.482Z</updated>
     
     
       
@@ -492,7 +555,7 @@
     <link href="https://gloamfox.cc/20260728103508.html"/>
     <id>https://gloamfox.cc/20260728103508.html</id>
     <published>2026-07-28T10:35:08.000Z</published>
-    <updated>2026-09-14T02:31:39.797Z</updated>
+    <updated>2026-09-24T01:55:26.484Z</updated>
     
     
       
@@ -520,7 +583,7 @@
     <link href="https://gloamfox.cc/20260725115109.html"/>
     <id>https://gloamfox.cc/20260725115109.html</id>
     <published>2026-07-25T11:51:09.000Z</published>
-    <updated>2026-09-14T02:31:39.795Z</updated>
+    <updated>2026-09-24T01:55:26.482Z</updated>
     
     
       
@@ -542,64 +605,6 @@
     <category term="后端" scheme="https://gloamfox.cc/tags/%E5%90%8E%E7%AB%AF/"/>
     
     <category term="Redis" scheme="https://gloamfox.cc/tags/Redis/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>面试官一句“Redis 怎么持久化”，很多人张口就是 “RDB + AOF”，追问到 fork、刷盘策略和日志重写就开始卡壳...</title>
-    <link href="https://gloamfox.cc/20260724170923.html"/>
-    <id>https://gloamfox.cc/20260724170923.html</id>
-    <published>2026-07-24T17:09:23.000Z</published>
-    <updated>2026-09-14T02:31:39.800Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;这大概是 Redis 面试里最常见的一道“送命题”。&lt;/p&gt;
-&lt;p&gt;面试官问：“Redis 怎么持久化？”&lt;/p&gt;
-&lt;p&gt;你心里一喜，这题我背过：“RDB 和 AOF，RDB 是做快照的，AOF 是记录命令的，两个可以一起用。”&lt;/p&gt;
-&lt;p&gt;面试官点点头，追问道：“那</summary>
-        
-      
-    
-    
-    
-    <category term="后端" scheme="https://gloamfox.cc/categories/%E5%90%8E%E7%AB%AF/"/>
-    
-    
-    <category term="Redis" scheme="https://gloamfox.cc/tags/Redis/"/>
-    
-    <category term="持久化" scheme="https://gloamfox.cc/tags/%E6%8C%81%E4%B9%85%E5%8C%96/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Redis向量检索：缓存之王卷进向量赛道</title>
-    <link href="https://gloamfox.cc/20260723173559.html"/>
-    <id>https://gloamfox.cc/20260723173559.html</id>
-    <published>2026-07-23T17:35:59.000Z</published>
-    <updated>2026-09-14T02:31:39.795Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;提到 Redis，大多数开发者的第一反应是缓存、分布式锁、或者消息队列。但你可能不知道是，这个陪伴了我们很多年的老朋友，如今已经在向量数据库的赛道上一路狂奔——不仅跑得快，还跑得相当稳。&lt;/p&gt;
-&lt;h2 id=&quot;什么是向量检索？&quot;&gt;&lt;a href=&quot;#什么是向量检索？&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="后端" scheme="https://gloamfox.cc/categories/%E5%90%8E%E7%AB%AF/"/>
-    
-    
-    <category term="Redis" scheme="https://gloamfox.cc/tags/Redis/"/>
-    
-    <category term="向量检索" scheme="https://gloamfox.cc/tags/%E5%90%91%E9%87%8F%E6%A3%80%E7%B4%A2/"/>
     
   </entry>
   
