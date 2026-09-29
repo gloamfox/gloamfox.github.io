@@ -1,0 +1,48 @@
+.wechat-card {
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #e1e8ed;
+}
+.wechat-card .qr-wrapper {
+    position: relative;
+    width: 100%;
+    padding: 16px 0;
+    text-align: center;
+}
+.wechat-card .qr-wrapper img {
+    width: 80%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+.wechat-card .scan-tag {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(7, 193, 96, 0.95);
+    color: #fff;
+    font-size: 12px;
+    padding: 4px 14px;
+    border-radius: 12px;
+    white-space: nowrap;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+.wechat-card .content {
+    padding: 14px 16px;
+    background: #f8f9fa;
+}
+.wechat-card .title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 8px;
+    text-align: center;
+}
+.wechat-card .desc {
+    font-size: 13px;
+    color: #555;
+    line-height: 1.6;
+    text-align: justify;
+}
