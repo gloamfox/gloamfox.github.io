@@ -6,7 +6,7 @@
   <link href="https://gloamfox.cc/atom.xml" rel="self"/>
   
   <link href="https://gloamfox.cc/"/>
-  <updated>2026-10-21T09:20:48.747Z</updated>
+  <updated>2026-10-27T07:17:07.321Z</updated>
   <id>https://gloamfox.cc/</id>
   
   <author>
@@ -17,11 +17,39 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>企业级内网DNS实战：用 dnsmasq 搭个内网 DNS</title>
+    <link href="https://gloamfox.cc/20261025105045.html"/>
+    <id>https://gloamfox.cc/20261025105045.html</id>
+    <published>2026-10-25T10:50:45.000Z</published>
+    <updated>2026-10-27T07:17:07.321Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;内网服务一多，Jenkins、Git、测试环境各一个 IP，开发运维各记一套，换台机器还得重新配。&lt;/p&gt;
+&lt;p&gt;与其继续维护 hosts，不如在内网放一台自己的 DNS：内部域名统一解析，外部域名缓存转发，客户端只改一个 DNS 地址。dnsmasq</summary>
+        
+      
+    
+    
+    
+    <category term="系统运维" scheme="https://gloamfox.cc/categories/%E7%B3%BB%E7%BB%9F%E8%BF%90%E7%BB%B4/"/>
+    
+    
+    <category term="Docker" scheme="https://gloamfox.cc/tags/Docker/"/>
+    
+    <category term="dnsmasq" scheme="https://gloamfox.cc/tags/dnsmasq/"/>
+    
+  </entry>
+  
+  <entry>
     <title>一次 Maven 版本升级引发的构建失败：传递依赖与 reactor 排序</title>
     <link href="https://gloamfox.cc/20261009101231.html"/>
     <id>https://gloamfox.cc/20261009101231.html</id>
     <published>2026-10-09T10:12:31.000Z</published>
-    <updated>2026-10-21T09:20:48.747Z</updated>
+    <updated>2026-10-27T07:17:07.320Z</updated>
     
     
       
@@ -53,7 +81,7 @@
     <link href="https://gloamfox.cc/20260922162511.html"/>
     <id>https://gloamfox.cc/20260922162511.html</id>
     <published>2026-09-22T16:25:11.000Z</published>
-    <updated>2026-10-21T09:20:48.748Z</updated>
+    <updated>2026-10-27T07:17:07.322Z</updated>
     
     
       
@@ -84,7 +112,7 @@
     <link href="https://gloamfox.cc/20260914103947.html"/>
     <id>https://gloamfox.cc/20260914103947.html</id>
     <published>2026-09-14T10:39:47.000Z</published>
-    <updated>2026-10-21T09:20:48.747Z</updated>
+    <updated>2026-10-27T07:17:07.319Z</updated>
     
     
       
@@ -116,7 +144,7 @@
     <link href="https://gloamfox.cc/20260914094203.html"/>
     <id>https://gloamfox.cc/20260914094203.html</id>
     <published>2026-09-14T09:42:03.000Z</published>
-    <updated>2026-10-21T09:20:48.747Z</updated>
+    <updated>2026-10-27T07:17:07.319Z</updated>
     
     
       
@@ -147,7 +175,7 @@
     <link href="https://gloamfox.cc/20260908173109.html"/>
     <id>https://gloamfox.cc/20260908173109.html</id>
     <published>2026-09-08T17:31:09.000Z</published>
-    <updated>2026-10-21T09:20:48.749Z</updated>
+    <updated>2026-10-27T07:17:07.322Z</updated>
     
     
       
@@ -176,7 +204,7 @@
     <link href="https://gloamfox.cc/20260908145757.html"/>
     <id>https://gloamfox.cc/20260908145757.html</id>
     <published>2026-09-08T14:57:57.000Z</published>
-    <updated>2026-10-21T09:20:48.745Z</updated>
+    <updated>2026-10-27T07:17:07.315Z</updated>
     
     
       
@@ -206,7 +234,7 @@
     <link href="https://gloamfox.cc/20260902142533.html"/>
     <id>https://gloamfox.cc/20260902142533.html</id>
     <published>2026-09-02T14:25:33.000Z</published>
-    <updated>2026-10-21T09:20:48.749Z</updated>
+    <updated>2026-10-27T07:17:07.322Z</updated>
     
     
       
@@ -233,7 +261,7 @@
     <link href="https://gloamfox.cc/20260819145550.html"/>
     <id>https://gloamfox.cc/20260819145550.html</id>
     <published>2026-08-19T14:55:50.000Z</published>
-    <updated>2026-10-21T09:20:48.749Z</updated>
+    <updated>2026-10-27T07:17:07.323Z</updated>
     
     
       
@@ -265,7 +293,7 @@
     <link href="https://gloamfox.cc/20260812165206.html"/>
     <id>https://gloamfox.cc/20260812165206.html</id>
     <published>2026-08-12T16:52:06.000Z</published>
-    <updated>2026-10-21T09:20:48.745Z</updated>
+    <updated>2026-10-27T07:17:07.316Z</updated>
     
     
       
@@ -296,7 +324,7 @@
     <link href="https://gloamfox.cc/20260810162634.html"/>
     <id>https://gloamfox.cc/20260810162634.html</id>
     <published>2026-08-10T16:26:34.000Z</published>
-    <updated>2026-10-21T09:20:48.748Z</updated>
+    <updated>2026-10-27T07:17:07.321Z</updated>
     
     
       
@@ -330,7 +358,7 @@
     <link href="https://gloamfox.cc/20260809164332.html"/>
     <id>https://gloamfox.cc/20260809164332.html</id>
     <published>2026-08-09T16:43:32.000Z</published>
-    <updated>2026-10-21T09:20:48.750Z</updated>
+    <updated>2026-10-27T07:17:07.324Z</updated>
     
     
       
@@ -361,7 +389,7 @@
     <link href="https://gloamfox.cc/20260806105303.html"/>
     <id>https://gloamfox.cc/20260806105303.html</id>
     <published>2026-08-06T10:53:03.000Z</published>
-    <updated>2026-10-21T09:20:48.749Z</updated>
+    <updated>2026-10-27T07:17:07.322Z</updated>
     
     
       
@@ -390,7 +418,7 @@
     <link href="https://gloamfox.cc/20260805131423.html"/>
     <id>https://gloamfox.cc/20260805131423.html</id>
     <published>2026-08-05T13:14:23.000Z</published>
-    <updated>2026-10-21T09:20:48.745Z</updated>
+    <updated>2026-10-27T07:17:07.315Z</updated>
     
     
       
@@ -417,7 +445,7 @@
     <link href="https://gloamfox.cc/20260805091111.html"/>
     <id>https://gloamfox.cc/20260805091111.html</id>
     <published>2026-08-05T09:11:11.000Z</published>
-    <updated>2026-10-21T09:20:48.747Z</updated>
+    <updated>2026-10-27T07:17:07.319Z</updated>
     
     
       
@@ -444,7 +472,7 @@
     <link href="https://gloamfox.cc/20260804135844.html"/>
     <id>https://gloamfox.cc/20260804135844.html</id>
     <published>2026-08-04T13:58:44.000Z</published>
-    <updated>2026-10-21T09:20:48.748Z</updated>
+    <updated>2026-10-27T07:17:07.322Z</updated>
     
     
       
@@ -470,7 +498,7 @@
     <link href="https://gloamfox.cc/20260803151022.html"/>
     <id>https://gloamfox.cc/20260803151022.html</id>
     <published>2026-08-03T15:10:22.000Z</published>
-    <updated>2026-10-21T09:20:48.748Z</updated>
+    <updated>2026-10-27T07:17:07.320Z</updated>
     
     
       
@@ -499,7 +527,7 @@
     <link href="https://gloamfox.cc/20260801102416.html"/>
     <id>https://gloamfox.cc/20260801102416.html</id>
     <published>2026-08-01T10:24:16.000Z</published>
-    <updated>2026-10-21T09:20:48.745Z</updated>
+    <updated>2026-10-27T07:17:07.317Z</updated>
     
     
       
@@ -534,7 +562,7 @@
     <link href="https://gloamfox.cc/20260731164720.html"/>
     <id>https://gloamfox.cc/20260731164720.html</id>
     <published>2026-07-31T16:47:20.000Z</published>
-    <updated>2026-10-21T09:20:48.748Z</updated>
+    <updated>2026-10-27T07:17:07.321Z</updated>
     
     
       
@@ -560,7 +588,7 @@
     <link href="https://gloamfox.cc/20260728142700.html"/>
     <id>https://gloamfox.cc/20260728142700.html</id>
     <published>2026-07-28T14:27:00.000Z</published>
-    <updated>2026-10-21T09:20:48.745Z</updated>
+    <updated>2026-10-27T07:17:07.315Z</updated>
     
     
       
@@ -579,34 +607,6 @@
     <category term="系统运维" scheme="https://gloamfox.cc/tags/%E7%B3%BB%E7%BB%9F%E8%BF%90%E7%BB%B4/"/>
     
     <category term="Keycloak" scheme="https://gloamfox.cc/tags/Keycloak/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>别再硬扛内存爆仓！Swap 才是救命底线</title>
-    <link href="https://gloamfox.cc/20260728103508.html"/>
-    <id>https://gloamfox.cc/20260728103508.html</id>
-    <published>2026-07-28T10:35:08.000Z</published>
-    <updated>2026-10-21T09:20:48.748Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;身边不少朋友在搞开发测试时，习惯性把云服务器买最小配置——2C4G ，跑个 Nacos 或一堆微服务，内存分分钟见底。&lt;/p&gt;
-&lt;p&gt;然后呢？服务莫名其妙挂了，SSH 连不上，&lt;code&gt;compactd&lt;/code&gt; 进程卡死 200</summary>
-        
-      
-    
-    
-    
-    <category term="系统运维" scheme="https://gloamfox.cc/categories/%E7%B3%BB%E7%BB%9F%E8%BF%90%E7%BB%B4/"/>
-    
-    
-    <category term="系统运维" scheme="https://gloamfox.cc/tags/%E7%B3%BB%E7%BB%9F%E8%BF%90%E7%BB%B4/"/>
-    
-    <category term="Swap" scheme="https://gloamfox.cc/tags/Swap/"/>
     
   </entry>
   
