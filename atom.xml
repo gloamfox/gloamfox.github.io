@@ -6,7 +6,7 @@
   <link href="https://gloamfox.com/atom.xml" rel="self"/>
   
   <link href="https://gloamfox.com/"/>
-  <updated>2026-11-17T02:09:39.200Z</updated>
+  <updated>2026-11-18T06:36:46.603Z</updated>
   <id>https://gloamfox.com/</id>
   
   <author>
@@ -17,11 +17,39 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>一张图片搞定多尺寸图片：CDN 图片处理</title>
+    <link href="https://gloamfox.com/20261118111512.html"/>
+    <id>https://gloamfox.com/20261118111512.html</id>
+    <published>2026-11-18T11:15:12.000Z</published>
+    <updated>2026-11-18T06:36:46.603Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;做前端或者后端的人，大概都经历过这种局面：用户头像要 48px、列表缩略图要 200px、详情页要 800px，移动端还要再来一套 WebP。&lt;/p&gt;
+&lt;p&gt;最原始的做法很直接：上传的时候一次性生成好四五个版本，全部丢进对象存储，数据库多存几个地址分别对应。</summary>
+        
+      
+    
+    
+    
+    <category term="系统运维" scheme="https://gloamfox.com/categories/%E7%B3%BB%E7%BB%9F%E8%BF%90%E7%BB%B4/"/>
+    
+    
+    <category term="CDN" scheme="https://gloamfox.com/tags/CDN/"/>
+    
+    <category term="图片处理" scheme="https://gloamfox.com/tags/%E5%9B%BE%E7%89%87%E5%A4%84%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Linux企业级内部DNS与VPN集成方案</title>
     <link href="https://gloamfox.com/20261025112727.html"/>
     <id>https://gloamfox.com/20261025112727.html</id>
     <published>2026-10-25T11:27:27.000Z</published>
-    <updated>2026-11-17T02:09:39.200Z</updated>
+    <updated>2026-11-18T06:36:46.601Z</updated>
     
     
       
@@ -52,7 +80,7 @@
     <link href="https://gloamfox.com/20261025105045.html"/>
     <id>https://gloamfox.com/20261025105045.html</id>
     <published>2026-10-25T10:50:45.000Z</published>
-    <updated>2026-11-17T02:09:39.201Z</updated>
+    <updated>2026-11-18T06:36:46.603Z</updated>
     
     
       
@@ -80,7 +108,7 @@
     <link href="https://gloamfox.com/20261009101231.html"/>
     <id>https://gloamfox.com/20261009101231.html</id>
     <published>2026-10-09T10:12:31.000Z</published>
-    <updated>2026-11-17T02:09:39.201Z</updated>
+    <updated>2026-11-18T06:36:46.603Z</updated>
     
     
       
@@ -112,7 +140,7 @@
     <link href="https://gloamfox.com/20260922162511.html"/>
     <id>https://gloamfox.com/20260922162511.html</id>
     <published>2026-09-22T16:25:11.000Z</published>
-    <updated>2026-11-17T02:09:39.202Z</updated>
+    <updated>2026-11-18T06:36:46.604Z</updated>
     
     
       
@@ -143,7 +171,7 @@
     <link href="https://gloamfox.com/20260914103947.html"/>
     <id>https://gloamfox.com/20260914103947.html</id>
     <published>2026-09-14T10:39:47.000Z</published>
-    <updated>2026-11-17T02:09:39.201Z</updated>
+    <updated>2026-11-18T06:36:46.603Z</updated>
     
     
       
@@ -175,7 +203,7 @@
     <link href="https://gloamfox.com/20260914094203.html"/>
     <id>https://gloamfox.com/20260914094203.html</id>
     <published>2026-09-14T09:42:03.000Z</published>
-    <updated>2026-11-17T02:09:39.201Z</updated>
+    <updated>2026-11-18T06:36:46.603Z</updated>
     
     
       
@@ -206,7 +234,7 @@
     <link href="https://gloamfox.com/20260908173109.html"/>
     <id>https://gloamfox.com/20260908173109.html</id>
     <published>2026-09-08T17:31:09.000Z</published>
-    <updated>2026-11-17T02:09:39.202Z</updated>
+    <updated>2026-11-18T06:36:46.604Z</updated>
     
     
       
@@ -235,7 +263,7 @@
     <link href="https://gloamfox.com/20260908145757.html"/>
     <id>https://gloamfox.com/20260908145757.html</id>
     <published>2026-09-08T14:57:57.000Z</published>
-    <updated>2026-11-17T02:09:39.199Z</updated>
+    <updated>2026-11-18T06:36:46.601Z</updated>
     
     
       
@@ -265,7 +293,7 @@
     <link href="https://gloamfox.com/20260902142533.html"/>
     <id>https://gloamfox.com/20260902142533.html</id>
     <published>2026-09-02T14:25:33.000Z</published>
-    <updated>2026-11-17T02:09:39.202Z</updated>
+    <updated>2026-11-18T06:36:46.604Z</updated>
     
     
       
@@ -292,7 +320,7 @@
     <link href="https://gloamfox.com/20260819145550.html"/>
     <id>https://gloamfox.com/20260819145550.html</id>
     <published>2026-08-19T14:55:50.000Z</published>
-    <updated>2026-11-17T02:09:39.203Z</updated>
+    <updated>2026-11-18T06:36:46.605Z</updated>
     
     
       
@@ -324,7 +352,7 @@
     <link href="https://gloamfox.com/20260812165206.html"/>
     <id>https://gloamfox.com/20260812165206.html</id>
     <published>2026-08-12T16:52:06.000Z</published>
-    <updated>2026-11-17T02:09:39.200Z</updated>
+    <updated>2026-11-18T06:36:46.601Z</updated>
     
     
       
@@ -355,7 +383,7 @@
     <link href="https://gloamfox.com/20260810162634.html"/>
     <id>https://gloamfox.com/20260810162634.html</id>
     <published>2026-08-10T16:26:34.000Z</published>
-    <updated>2026-11-17T02:09:39.202Z</updated>
+    <updated>2026-11-18T06:36:46.604Z</updated>
     
     
       
@@ -389,7 +417,7 @@
     <link href="https://gloamfox.com/20260809164332.html"/>
     <id>https://gloamfox.com/20260809164332.html</id>
     <published>2026-08-09T16:43:32.000Z</published>
-    <updated>2026-11-17T02:09:39.203Z</updated>
+    <updated>2026-11-18T06:36:46.605Z</updated>
     
     
       
@@ -420,7 +448,7 @@
     <link href="https://gloamfox.com/20260806105303.html"/>
     <id>https://gloamfox.com/20260806105303.html</id>
     <published>2026-08-06T10:53:03.000Z</published>
-    <updated>2026-11-17T02:09:39.202Z</updated>
+    <updated>2026-11-18T06:36:46.604Z</updated>
     
     
       
@@ -449,7 +477,7 @@
     <link href="https://gloamfox.com/20260805131423.html"/>
     <id>https://gloamfox.com/20260805131423.html</id>
     <published>2026-08-05T13:14:23.000Z</published>
-    <updated>2026-11-17T02:09:39.199Z</updated>
+    <updated>2026-11-18T06:36:46.600Z</updated>
     
     
       
@@ -476,7 +504,7 @@
     <link href="https://gloamfox.com/20260805091111.html"/>
     <id>https://gloamfox.com/20260805091111.html</id>
     <published>2026-08-05T09:11:11.000Z</published>
-    <updated>2026-11-17T02:09:39.201Z</updated>
+    <updated>2026-11-18T06:36:46.603Z</updated>
     
     
       
@@ -503,7 +531,7 @@
     <link href="https://gloamfox.com/20260804135844.html"/>
     <id>https://gloamfox.com/20260804135844.html</id>
     <published>2026-08-04T13:58:44.000Z</published>
-    <updated>2026-11-17T02:09:39.202Z</updated>
+    <updated>2026-11-18T06:36:46.604Z</updated>
     
     
       
@@ -529,7 +557,7 @@
     <link href="https://gloamfox.com/20260803151022.html"/>
     <id>https://gloamfox.com/20260803151022.html</id>
     <published>2026-08-03T15:10:22.000Z</published>
-    <updated>2026-11-17T02:09:39.201Z</updated>
+    <updated>2026-11-18T06:36:46.603Z</updated>
     
     
       
@@ -558,7 +586,7 @@
     <link href="https://gloamfox.com/20260801102416.html"/>
     <id>https://gloamfox.com/20260801102416.html</id>
     <published>2026-08-01T10:24:16.000Z</published>
-    <updated>2026-11-17T02:09:39.200Z</updated>
+    <updated>2026-11-18T06:36:46.602Z</updated>
     
     
       
@@ -585,32 +613,6 @@
     <category term="iptables" scheme="https://gloamfox.com/tags/iptables/"/>
     
     <category term="SNAT" scheme="https://gloamfox.com/tags/SNAT/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>只有1个公网IP怎么玩？OpenVPN跨网络组网实战指南</title>
-    <link href="https://gloamfox.com/20260731164720.html"/>
-    <id>https://gloamfox.com/20260731164720.html</id>
-    <published>2026-07-31T16:47:20.000Z</published>
-    <updated>2026-11-17T02:09:39.202Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;很多朋友会遇到这样的情况：手上有三台机器——机器A、机器B、机器C，它们各自处于不同的网络中，只有机器A拥有公网IP，机器B和机器C要么在NAT后面，要么在完全隔离的内网里，外面根本访问不到。&lt;/p&gt;
-&lt;p&gt;这时候问题来了：怎么让这三台机器像在同一个局域网里一样互相通信？&lt;</summary>
-        
-      
-    
-    
-    
-    <category term="系统运维" scheme="https://gloamfox.com/categories/%E7%B3%BB%E7%BB%9F%E8%BF%90%E7%BB%B4/"/>
-    
-    
-    <category term="系统运维" scheme="https://gloamfox.com/tags/%E7%B3%BB%E7%BB%9F%E8%BF%90%E7%BB%B4/"/>
     
   </entry>
   
